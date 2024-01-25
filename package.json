@@ -10,6 +10,9 @@
     "format": "prettier --write src/ *.ts *.mts *.json",
     "format:check": "prettier --list-different src/ *.ts *.mts *.json"
   },
+  "publishConfig": {
+    "@bihealth:registry": "https://npm.pkg.github.com"
+  },
   "dependencies": {
     "@mdi/font": "^7.3.67",
     "@reactgular/chunks": "^1.0.1",
