@@ -1,3 +1,7 @@
+# nodejs
+/node_modules
+
+# Windows LFS
 *:Zone.Identifier
 
 # Root Pipfile
@@ -5,6 +9,7 @@
 /Pipfile.lock
 
 # Coverage information.
+/coverage
 .coverage
 coverage.lcov
 
