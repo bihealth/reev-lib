@@ -1,6 +1,6 @@
 {
   "name": "@bihealth/reev-frontend-lib",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "scripts": {
     "test:unit": "vitest --coverage",
     "test:unit:nocov": "vitest",
