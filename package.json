@@ -1,7 +1,6 @@
 {
-  "name": "reev-frontend-lib",
+  "name": "@bihealth/reev-frontend-lib",
   "version": "0.4.0",
-  "private": true,
   "scripts": {
     "test:unit": "vitest --coverage",
     "test:unit:nocov": "vitest",
@@ -9,6 +8,9 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/ *.ts *.mts *.json",
     "format:check": "prettier --list-different src/ *.ts *.mts *.json"
+  },
+  "publishConfig": {
+    "@bihealth:registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
     "@mdi/font": "^7.3.67",
