@@ -1,0 +1,1081 @@
+syntax = "proto3";
+
+package annonars.genes.base;
+
+// Information from ACMG secondary findings list.
+message AcmgSecondaryFindingRecord {
+    // The HGNC ID.
+    string hgnc_id = 1;
+    // The Ensembl gene ID.
+    string ensembl_gene_id = 2;
+    // The NCBI gene ID.
+    string ncbi_gene_id = 3;
+    // The HGNC gene symbol.
+    string gene_symbol = 4;
+    // The MIM gene ID.
+    string mim_gene_id = 5;
+    // The disease phenotype.
+    string disease_phenotype = 6;
+    // The disease MIM id.
+    string disorder_mim = 7;
+    // The phenotype category.
+    string phenotype_category = 8;
+    // The mode of inheritance.
+    string inheritance = 9;
+    // The version of the ACMG SF list of first appearance.
+    string sf_list_version = 10;
+    // The variants to report according to ACMG SF.
+    string variants_to_report = 11;
+}
+
+/// Enumeration for Haploinsufficiency / Triplosensitivity scores.
+enum ClingenDosageScore {
+    // unknown
+    CLINGEN_DOSAGE_SCORE_UNKNOWN = 0;
+    // Sufficient evidence for dosage pathogenicity
+    CLINGEN_DOSAGE_SCORE_SUFFICIENT_EVIDENCE_AVAILABLE = 1;
+    // Some evidence for dosage pathogenicity
+    CLINGEN_DOSAGE_SCORE_SOME_EVIDENCE_AVAILABLE = 2;
+    // Little evidence for dosage pathogenicity
+    CLINGEN_DOSAGE_SCORE_LITTLE_EVIDENCE = 3;
+    // No evidence available
+    CLINGEN_DOSAGE_SCORE_NO_EVIDENCE_AVAILABLE = 4;
+    // Gene associated with autosomal recessive phenotype
+    CLINGEN_DOSAGE_SCORE_RECESSIVE = 5;
+    // Dosage sensitivity unlikely
+    CLINGEN_DOSAGE_SCORE_UNLIKELY = 6;
+}
+
+/// `ClinGen` gene dosage sensitivity record.
+message ClingenDosageRecord {
+    // Gene symbol.
+    string gene_symbol = 1;
+    // NCBI gene ID.
+    string ncbi_gene_id = 2;
+    // Genomic location GRCh37.
+    string genomic_location_37 = 3;
+    // Genomic location GRCh38.
+    string genomic_location_38 = 4;
+    // Haploinsufficiency score.
+    ClingenDosageScore haploinsufficiency_score = 5;
+    // Triplosensitivity score.
+    ClingenDosageScore triplosensitivity_score = 6;
+    // Haploinsufficiency Disease ID.
+    optional string haploinsufficiency_disease_id = 7;
+    // Haploinsufficiency Disease ID.
+    optional string triplosensitivity_disease_id = 8;
+}
+
+// Decipher HI Predictions
+message DecipherHiRecord {
+    // HGNC identifier.
+    string hgnc_id = 1;
+    // Official HGNC gene symbol.
+    string hgnc_symbol = 2;
+    // P(HI) prediction from DECIPHER HI.
+    double p_hi = 3;
+    // Percent HI index.
+    double hi_index = 4;
+}
+
+// Information from DOMINO.
+message DominoRecord {
+    // Gene symbol.
+    string gene_symbol = 1;
+    // The score.
+    double score = 2;
+}
+
+// Code for data from the dbNSFP database.
+message DbnsfpRecord {
+    // Gene symbol from HGNC.
+    string gene_name = 1;
+    // Ensembl gene id (from HGNC).
+    optional string ensembl_gene = 2;
+    // Chromosome number (from HGNC).
+    optional string chr = 3;
+    // Old gene symbol (from HGNC).
+    repeated string gene_old_names = 4;
+    // Other gene names (from HGNC).
+    repeated string gene_other_names = 5;
+    // Uniprot acc (from HGNC).
+    optional string uniprot_acc = 6;
+    // Uniprot id (from HGNC).
+    optional string uniprot_id = 7;
+    // Uniprot id (from HGNC).
+    optional string entrez_gene_id = 8;
+    // CCDS id (from HGNC).
+    repeated string ccds_id = 9;
+    // Refseq gene id (from HGNC).
+    repeated string refseq_id = 10;
+    // UCSC gene id (from HGNC).
+    optional string ucsc_id = 11;
+    // MIM gene id (from OMIM).
+    repeated string mim_id = 12;
+    // MIM gene id from OMIM.
+    repeated string omim_id = 13;
+    // Gene full name (from HGNC).
+    optional string gene_full_name = 14;
+
+    // Pathway description from Uniprot.
+    optional string pathway_uniprot = 15;
+    // Short name of the Pathway(s) the gene belongs to (from BioCarta).
+    repeated string pathway_biocarta_short = 16;
+    // Full name(s) of the Pathway(s) the gene belongs to (from BioCarta).
+    repeated string pathway_biocarta_full = 17;
+    // Pathway(s) the gene belongs to (from ConsensusPathDB).
+    repeated string pathway_consensus_path_db = 18;
+    // ID(s) of the Pathway(s) the gene belongs to (from KEGG).
+    repeated string pathway_kegg_id = 19;
+    // Full name(s) of the Pathway(s) the gene belongs to (from KEGG).
+    repeated string pathway_kegg_full = 20;
+
+    // Function description of the gene (from Uniprot).
+    repeated string function_description = 21;
+    // Disease(s) the gene caused or associated with (from Uniprot).
+    repeated string disease_description = 22;
+    // MIM id(s) of the phenotype the gene caused or associated with (from Uniprot).
+    repeated string mim_phenotype_id = 23;
+    // MIM disease name(s) with MIM id(s) in [] (from Uniprot).
+    repeated string mim_disease = 24;
+    // Orphanet Number of the disorder the gene caused or associated with.
+    repeated string orphanet_disorder_id = 25;
+    // Disorder name from Orphanet.
+    repeated string orphanet_disorder = 26;
+    // The type of association beteen the gene and the disorder in Orphanet.
+    repeated string orphanet_association_type = 27;
+    // Trait(s) the gene associated with (from GWAS catalog).
+    repeated string trait_association_gwas = 28;
+    // ID of the mapped Human Phenotype Ontology.
+    repeated string hpo_id = 29;
+    // Name of the mapped Human Phenotype Ontology.
+    repeated string hpo_name = 30;
+    // GO terms for biological process.
+    repeated string go_biological_process = 31;
+    // GO terms for cellular component.
+    repeated string go_cellular_component = 32;
+    // GO terms for molecular function.
+    repeated string go_molecular_function = 33;
+    // Tissue specificity description from Uniprot.
+    repeated string tissue_specificity_uniprot = 34;
+    // Tissues/organs the gene expressed in (egenetics data from BioMart).
+    repeated string expression_egenetics = 35;
+    // Tissues/organs the gene expressed in (GNF/Atlas data from BioMart).
+    repeated string expression_gnf_atlas = 36;
+    // The interacting genes from IntAct.
+    repeated string interactions_intact = 37;
+    // The interacting genes from BioGRID.
+    repeated string interactions_biogrid = 38;
+    // The interacting genes from ConsensusPathDB.
+    repeated string interactions_consensus_path_db = 39;
+
+    // Estimated probability of haploinsufficiency of the gene (from
+    // doi:10.1371/journal.pgen.1001154).
+    optional double haploinsufficiency = 40;
+    // Estimated probability of haploinsufficiency of the gene (from
+    // doi:10.1093/bioinformatics/btx028).
+    optional double hipred_score = 41;
+    // HIPred prediction of haploinsufficiency of the gene. Y(es) or N(o). (from
+    // doi:10.1093/bioinformatics/btx028).
+    optional string hipred = 42;
+    // A score predicting the gene haploinsufficiency. The higher the score the more likely the
+    // gene is haploinsufficient (from doi: 10.1093/nar/gkv474).
+    optional double ghis = 43;
+    // Estimated probability that gene is a recessive disease gene (from
+    // DOI:10.1126/science.1215040).
+    optional double prec = 44;
+    // Known recessive status of the gene (from DOI:10.1126/science.1215040) "lof-tolerant =
+    // seen in homozygous state in at least one 1000G individual" "recessive = known OMIM
+    // recessive disease" (original annotations from DOI:10.1126/science.1215040).
+    optional string known_rec_info = 45;
+    // Residual Variation Intolerance Score, a measure of intolerance of mutational burden, the
+    // higher the score the more tolerant to mutational burden the gene is. Based on EVS
+    // (ESP6500) data.  from doi:10.1371/journal.pgen.1003709.
+    optional double rvis_evs = 46;
+    // The percentile rank of the gene based on RVIS, the higher the percentile the more
+    // tolerant to mutational burden the gene is. Based on EVS (ESP6500) data.
+    optional double rvis_percentile_evs = 47;
+    // "A gene's corresponding FDR p-value for preferential LoF depletion among the ExAC
+    // population.  Lower FDR corresponds with genes that are increasingly depleted of LoF
+    // variants." cited from RVIS document.
+    optional double lof_fdr_exac = 48;
+    // "ExAC-based RVIS; setting 'common' MAF filter at 0.05% in at least one of the six
+    // individual ethnic strata from ExAC." cited from RVIS document.
+    optional double rvis_exac = 49;
+    // "Genome-Wide percentile for the new ExAC-based RVIS; setting 'common' MAF filter at 0.05%
+    // in at least one of the six individual ethnic strata from ExAC." cited from RVIS document.
+    optional double rvis_percentile_exac = 50;
+    // "the probability of being loss-of-function intolerant (intolerant of both heterozygous
+    // and homozygous lof variants)" based on ExAC r0.3 data.
+    optional double exac_pli = 51;
+    // "the probability of being intolerant of homozygous, but not heterozygous lof variants"
+    // based on ExAC r0.3 data.
+    optional double exac_prec = 52;
+    // "the probability of being tolerant of both heterozygous and homozygous lof variants"
+    // based on ExAC r0.3 data.
+    optional double exac_pnull = 53;
+    // "the probability of being loss-of-function intolerant (intolerant of both heterozygous
+    // and homozygous lof variants)" based on ExAC r0.3 nonTCGA subset.
+    optional double exac_nontcga_pli = 54;
+    // "the probability of being intolerant of homozygous, but not heterozygous lof variants"
+    // based on ExAC r0.3 nonTCGA subset.
+    optional double exac_nontcga_prec = 55;
+    // "the probability of being tolerant of both heterozygous and homozygous lof variants"
+    // based on ExAC r0.3 nonTCGA subset.
+    optional double exac_nontcga_pnull = 56;
+    // "the probability of being loss-of-function intolerant (intolerant of both heterozygous
+    // and homozygous lof variants)" based on ExAC r0.3 nonpsych subset.
+    optional double exac_nonpsych_pli = 57;
+    // "the probability of being intolerant of homozygous, but not heterozygous lof variants"
+    // based on ExAC r0.3 nonpsych subset.
+    optional double exac_nonpsych_prec = 58;
+    // "the probability of being tolerant of both heterozygous and homozygous lof variants"
+    // based on ExAC r0.3 nonpsych subset/
+    optional double exac_nonpsych_pnull = 59;
+    // "the probability of being loss-of-function intolerant (intolerant of both heterozygous
+    // and homozygous lof variants)" based on gnomAD 2.1 data.
+    optional double gnomad_pli = 60;
+    // "the probability of being intolerant of homozygous, but not heterozygous lof variants"
+    // based on gnomAD 2.1 data.
+    optional double gnomad_prec = 61;
+    // "the probability of being tolerant of both heterozygous and homozygous lof variants"
+    // based on gnomAD 2.1 data.
+    optional double gnomad_pnull = 62;
+    // "Winsorised deletion intolerance z-score" based on ExAC r0.3.1 CNV data.
+    optional double exac_del_score = 63;
+    // "Winsorised duplication intolerance z-score" based on ExAC r0.3.1 CNV data.
+    optional double exac_dup_score = 64;
+    // "Winsorised cnv intolerance z-score" based on ExAC r0.3.1 CNV data.
+    optional double exac_cnv_score = 65;
+    // "Gene is in a known region of recurrent CNVs mediated by tandem segmental duplications
+    // and intolerance scores are more likely to be biased or noisy." from ExAC r0.3.1 CNV
+    // release.
+    optional string exac_cnv_flag = 66;
+    // gene damage index score, "a genome-wide, gene-level metric of the mutational damage that
+    // has accumulated in the general population" from doi: 10.1073/pnas.1518646112. The higher
+    // the score the less likely the gene is to be responsible for monogenic diseases.
+    optional double gdi = 67;
+    // Phred-scaled GDI scores.
+    optional double gdi_phred = 68;
+    // gene damage prediction (low/medium/high) by GDI for all diseases.,
+    optional string gdp_all_disease_causing = 69;
+    // gene damage prediction (low/medium/high) by GDI for all Mendelian diseases.
+    optional string gdp_all_mendelian = 70;
+    // gene damage prediction (low/medium/high) by GDI for Mendelian autosomal dominant
+    // diseases.
+    optional string gdp_all_mendelian_ad = 71;
+    // gene damage prediction (low/medium/high) by GDI for Mendelian autosomal recessive
+    // diseases.
+    optional string gdp_mendelian_ar = 72;
+    // gene damage prediction (low/medium/high) by GDI for all primary immunodeficiency
+    // diseases.
+    optional string gdp_pid = 73;
+    // gene damage prediction (low/medium/high) by GDI for primary immunodeficiency autosomal
+    // dominant diseases.
+    optional string gdp_pid_ad = 74;
+    // gene damage prediction (low/medium/high) by GDI for primary immunodeficiency autosomal
+    // recessive diseases.
+    optional string gdp_pid_ar = 75;
+    // gene damage prediction (low/medium/high) by GDI for all cancer disease.
+    optional string gdp_cancer = 76;
+    // gene damage prediction (low/medium/high) by GDI for cancer recessive disease.
+    optional string gdb_cancer_rec = 77;
+    // gene damage prediction (low/medium/high) by GDI for cancer dominant disease.
+    optional string gdp_cancer_dom = 78;
+    // A percentile score for gene intolerance to functional change. The lower the score the
+    // higher gene intolerance to functional change. For details see doi:
+    // 10.1093/bioinformatics/btv602.
+    optional double loftool_score = 79;
+    // The fraction of individuals in the 1000 Genomes Project data (N=2504) who are either
+    // Heterozygote or Homozygote of LOF SNVs whose MAF<0.005. This fraction is from a method
+    // for ranking genes based on mutational burden called SORVA (Significance Of Rare
+    // VAriants). Please see doi: 10.1101/103218 for details.
+    optional double sorva_lof_maf_5_het_or_hom = 80;
+    // The fraction of individuals in the 1000 Genomes Project data (N=2504) who are either
+    // Compound Heterozygote or Homozygote of LOF SNVs whose MAF<0.005. This fraction is from a
+    // method for ranking genes based on mutational burden called SORVA (Significance Of Rare
+    // VAriants). Please see doi: 10.1101/103218 for details.
+    optional double sorva_lof_maf_5_hom_or_comphet = 81;
+    // The fraction of individuals in the 1000 Genomes Project data (N=2504) who are either
+    // Heterozygote or Homozygote of LOF SNVs whose MAF<0.001. This fraction is from a method
+    // for ranking genes based on mutational burden called SORVA (Significance Of Rare
+    // VAriants). Please see doi: 10.1101/103218 for details.
+    optional double sorva_lof_maf_1_het_or_hom = 82;
+    // The fraction of individuals in the 1000 Genomes Project data (N=2504) who are either
+    // Compound Heterozygote or Homozygote of LOF SNVs whose MAF<0.001. This fraction is from a
+    // method for ranking genes based on mutational burden called SORVA (Significance Of Rare
+    // VAriants). Please see doi: 10.1101/103218 for details.
+    optional double sorva_lof_maf_1_hom_or_comphet = 83;
+    // The fraction of individuals in the 1000 Genomes Project data (N=2504) who are either
+    // Heterozygote or Homozygote of LOF or missense SNVs whose MAF<0.005. This fraction is from
+    // a method for ranking genes based on mutational burden called SORVA (Significance Of Rare
+    // VAriants).  Please see doi: 10.1101/103218 for details.
+    optional double sorva_lof_or_mis_maf_5_het_or_hom = 84;
+    // The fraction of individuals in the 1000 Genomes Project data (N=2504) who are either
+    // Compound Heterozygote or Homozygote of LOF or missense SNVs whose MAF<0.005. This
+    // fraction is from a method for ranking genes based on mutational burden called SORVA
+    // (Significance Of Rare VAriants).  Please see doi: 10.1101/103218 for details.
+    optional double sorva_lof_or_mis_maf_5_hom_or_comphet = 85;
+    // The fraction of individuals in the 1000 Genomes Project data (N=2504) who are either
+    // Heterozygote or Homozygote of LOF or missense SNVs whose MAF<0.001. This fraction is from
+    // a method for ranking genes based on mutational burden called SORVA (Significance Of Rare
+    // VAriants).  Please see doi: 10.1101/103218 for details.
+    optional double sorva_lof_or_mis_maf_1_het_or_hom = 86;
+    // The fraction of individuals in the 1000 Genomes Project data (N=2504) who are either
+    // Compound Heterozygote or Homozygote of LOF or missense SNVs whose MAF<0.001. This
+    // fraction is from a method for ranking genes based on mutational burden called SORVA
+    // (Significance Of Rare VAriants).  Please see doi: 10.1101/103218 for details.
+    optional double sorva_lof_or_mis_maf_1_hom_or_comphet = 87;
+    // Essential ("E") or Non-essential phenotype-changing ("N") based on Mouse Genome
+    // Informatics database. from doi:10.1371/journal.pgen.1003484.
+    optional string essential_gene = 88;
+    // Essential ("E") or Non-essential phenotype-changing ("N") based on large scale CRISPR
+    // experiments. from doi: 10.1126/science.aac7041.
+    optional string essential_gene_crispr = 89;
+    // Essential ("E"), context-Specific essential ("S"), or Non-essential phenotype-changing
+    // ("N") based on large scale CRISPR experiments. from
+    // http://dx.doi.org/10.1016/j.cell.2015.11.015.
+    optional string essential_gene_crispr2 = 90;
+    // Essential ("E"), HAP1-Specific essential ("H"), KBM7-Specific essential ("K"), or
+    // Non-essential phenotype-changing ("N"), based on large scale mutagenesis experiments.
+    // from doi: 10.1126/science.aac7557.
+    optional string essential_gene_gene_trap = 91;
+    // A probability prediction of the gene being essential. From
+    // doi:10.1371/journal.pcbi.1002886.
+    optional double gene_indispensability_score = 92;
+    // Essential ("E") or loss-of-function tolerant ("N") based on Gene_indispensability_score.
+    optional string gene_indispensability_pred = 93;
+    // Homolog mouse gene name from MGI.
+    optional string mgi_mouse_gene = 94;
+    // Phenotype description for the homolog mouse gene from MGI.
+    optional string mgi_mouse_phenotype = 95;
+    // Homolog zebrafish gene name from ZFIN.
+    optional string zfin_zebrafish_gene = 96;
+    // Affected structure of the homolog zebrafish gene from ZFIN.
+    optional string zfin_zebrafish_structure = 97;
+    // Phenotype description for the homolog zebrafish gene from ZFIN.
+    optional string zfin_zebrafish_phenotype_quality = 98;
+    // Phenotype tag for the homolog zebrafish gene from ZFIN"
+    optional string zfin_zebrafish_phenotype_tag = 99;
+}
+
+// Code for data from the gnomAD constraints.
+message GnomadConstraintsRecord {
+  /// The Ensembl gene ID.
+  string ensembl_gene_id = 1;
+  /// The NCBI gene ID.
+  string entrez_id = 2;
+  /// The HGNC gene symbol.
+  string gene_symbol = 3;
+  /// The expected number of loss-of-function variants.
+  optional double exp_lof = 4;
+  /// The expected number of missense variants.
+  optional double exp_mis = 5;
+  /// The expected number of synonymous variants.
+  optional double exp_syn = 6;
+  /// The missense-related Z-score.
+  optional double mis_z = 7;
+  /// The observed number of loss-of-function variants.
+  optional uint32 obs_lof = 8;
+  /// The observed number of missense variants.
+  optional uint32 obs_mis = 9;
+  /// The observed number of synonymous variants.
+  optional uint32 obs_syn = 10;
+  /// The loss-of-function observed/expected ratio.
+  optional double oe_lof = 11;
+  /// The lower bound of the loss-of-function observed/expected ratio.
+  optional double oe_lof_lower = 12;
+  /// The upper bound of the loss-of-function observed/expected ratio.
+  optional double oe_lof_upper = 13;
+  /// The missense observed/expected ratio.
+  optional double oe_mis = 14;
+  /// The lower bound of the missense observed/expected ratio.
+  optional double oe_mis_lower = 15;
+  /// The upper bound of the missense observed/expected ratio.
+  optional double oe_mis_upper = 16;
+  /// The synonymous observed/expected ratio.
+  optional double oe_syn = 17;
+  /// The lower bound of the synonymous observed/expected ratio.
+  optional double oe_syn_lower = 18;
+  /// The upper bound of the synonymous observed/expected ratio.
+  optional double oe_syn_upper = 19;
+  /// The probability of loss-of-function intolerance (pLI score).
+  optional double pli = 20;
+  /// The synonymous-related Z-score.
+  optional double syn_z = 21;
+  /// The probability of loss-of-function intolerance (pLI score) from ExAC.
+  optional double exac_pli = 22;
+  /// The observed number of loss-of-function variants from ExAC.
+  optional double exac_obs_lof = 23;
+  /// The expected number of loss-of-function variants from ExAC.
+  optional double exac_exp_lof = 24;
+  /// The loss-of-function observed/expected ratio from ExAC.
+  optional double exac_oe_lof = 25;
+}
+
+// Status of the symbol report, which can be either "Approved" or "Entry Withdrawn".
+enum HgncStatus {
+    // unknown
+    HGNC_STATUS_UNKNOWN = 0;
+    // Approved by HGNC.
+    HGNC_STATUS_APPROVED = 1;
+    // Withdrawn by HGNC.
+    HGNC_STATUS_WITHDRAWN = 2;
+}
+
+// Information from the locus-specific dabase.
+message HgncLsdb {
+    // The name of the Locus Specific Mutation Database.
+    string name = 1;
+    // The URL for the gene.
+    string url = 2;
+}
+
+// A record from the HGNC database.
+message HgncRecord {
+    // HGNC ID. A unique ID created by the HGNC for every approved symbol.
+    string hgnc_id = 1;
+    // The HGNC approved gene symbol.
+    string symbol = 2;
+    // HGNC approved name for the gene.
+    string name = 3;
+    // A group name for a set of related locus types as defined by the HGNC
+    // (e.g. non-coding RNA).
+    optional string locus_group = 4;
+    // The locus type as defined by the HGNC (e.g. RNA, transfer).
+    optional string locus_type = 5;
+    // Status of the symbol report.
+    HgncStatus status = 6;
+    // Cytogenetic location of the gene (e.g. 2q34).
+    optional string location = 7;
+    // Sortable cytogenic location of the gene (e.g. 02q34).
+    optional string location_sortable = 8;
+    // Other symbols used to refer to this gene.
+    repeated string alias_symbol = 9;
+    // Other names used to refer to this gene.
+    repeated string alias_name = 10;
+    // Prevous symbols used to refer to this gene.
+    repeated string prev_symbol = 11;
+    // Previous names used to refer to this gene.
+    repeated string prev_name = 12;
+    // Name given to a gene group.
+    repeated string gene_group = 13;
+    // ID used to designate a gene group.
+    repeated uint32 gene_group_id = 14;
+    // The date the entry was first approved.
+    optional string date_approved_reserved = 15;
+    // The date the gene symbol was last changed.
+    optional string date_symbol_changed = 16;
+    // The date the gene name was last changed.
+    optional string date_name_changed = 17;
+    // Date the entry was last modified.
+    optional string date_modified = 18;
+    // Entrez gene id.
+    optional string entrez_id = 19;
+    // Ensembl gene id.
+    optional string ensembl_gene_id = 20;
+    // Vega gene id.
+    optional string vega_id = 21;
+    // UCSC gene id.
+    optional string ucsc_id = 22;
+    // ENA accession number(s).
+    repeated string ena = 23;
+    // RefSeq nucleotide accession(s).
+    repeated string refseq_accession = 24;
+    // Consensus CDS ID(ds).
+    repeated string ccds_id = 25;
+    // Uniprot IDs.
+    repeated string uniprot_ids = 26;
+    // Pubmed IDs.
+    repeated uint32 pubmed_id = 27;
+    // Mouse genome informatics database ID(s).
+    repeated string mgd_id = 28;
+    // Rat genome database gene ID(s).
+    repeated string rgd_id = 29;
+    // The name of the Locus Specific Mutation Database and URL for the gene.
+    repeated HgncLsdb lsdb = 30;
+    // Symbol used within COSMIC.
+    optional string cosmic = 31;
+    // OMIM ID(s).
+    repeated string omim_id = 32;
+    // miRBase ID.
+    optional string mirbase = 33;
+    // Homeobox Database ID.
+    optional uint32 homeodb = 34;
+    // snoRNABase ID.
+    optional string snornabase = 35;
+    // Symbol used to link to the SLC tables database at bioparadigms.org
+    // for the gene.
+    optional string bioparadigms_slc = 36;
+    // Orphanet ID.
+    optional uint32 orphanet = 37;
+    // Pseudogene.org.
+    optional string pseudogene_org = 38;
+    // Symbol used within HORDE for the gene.
+    optional string horde_id = 39;
+    // ID used to link to the MEROPS peptidase database.
+    optional string merops = 40;
+    // Symbol used within international ImMunoGeneTics information system.
+    optional string imgt = 41;
+    // The objectId used to link to the IUPHAR/BPS Guide to PHARMACOLOGY
+    // database.
+    optional string iuphar = 42;
+    // Symbol used within the Human Cell Differentiation Molecule database.
+    optional string cd = 43;
+    // ID to link to the Mamit-tRNA database
+    optional uint32 mamit_trnadb = 44;
+    // lncRNA Database ID.
+    optional string lncrnadb = 45;
+    // ENZYME EC accession number.
+    repeated string enzyme_id = 46;
+    // ID used to link to the Human Intermediate Filament Database.
+    optional string intermediate_filament_db = 47;
+    // The HGNC ID that the Alliance of Genome Resources (AGR) use.
+    optional string agr = 48;
+    // NCBI and Ensembl transcript IDs/acessions including the version
+    // number.
+    repeated string mane_select = 49;
+}
+
+// Reference into function record.
+message RifEntry {
+    // The RIF text.
+    string text = 1;
+    // PubMed IDs.
+    repeated uint32 pmids = 2;
+}
+
+// A record from the NCBI gene database.
+message NcbiRecord {
+    // NCBI Gene ID.
+    string gene_id = 1;
+    // Gene summary.
+    optional string summary = 2;
+    // "Reference Into Function" entry.
+    repeated RifEntry rif_entries = 3;
+}
+
+// Description of an OMIM record.
+message OmimTerm {
+    // The OMIM ID.
+    string omim_id = 1;
+    // The OMIM label.
+    string label = 2;
+}
+
+// A record from the OMIM gene association.
+message OmimRecord {
+    // The HGNC gene ID.
+    string hgnc_id = 1;
+    // The associated OMIM records.
+    repeated OmimTerm omim_diseases = 2;
+}
+
+// Description of an ORDO record.
+message OrphaTerm {
+    // The ORPHA ID.
+    string orpha_id = 1;
+    // The disease name.
+    string label = 2;
+}
+
+// A record from the ORDO gene association.
+message OrphaRecord {
+    // The HGNC gene ID.
+    string hgnc_id = 1;
+    // The associated ORPHA diseases.
+    repeated OrphaTerm orpha_diseases = 2;
+}
+
+// Entry in the rCNV dosage sensitivity scores (Collins et al., 2022).
+message RcnvRecord {
+    // The HGNC ID.
+    string hgnc_id = 1;
+    // The pHaplo value.
+    double p_haplo = 2;
+    // The pTriplo value.
+    double p_triplo = 3;
+}
+
+// Entry with sHet information (Weghorn et al., 2019).
+message ShetRecord {
+    // The HGNC ID.
+    string hgnc_id = 1;
+    // The sHet value.
+    double s_het = 2;
+}
+
+// Enumeration for GTEx V8 tissue
+enum GtexTissue {
+    // unknown
+    GTEX_TISSUE_UNKNOWN = 0;
+    // Adipose Tissue
+    GTEX_TISSUE_ADIPOSE_TISSUE = 1;
+    // Adrenal Gland
+    GTEX_TISSUE_ADRENAL_GLAND = 2;
+    // Bladder
+    GTEX_TISSUE_BLADDER = 3;
+    // Blood
+    GTEX_TISSUE_BLOOD = 4;
+    // Blood Vessel
+    GTEX_TISSUE_BLOOD_VESSEL = 5;
+    // Bone Marrow
+    GTEX_TISSUE_BONE_MARROW = 6;
+    // Brain
+    GTEX_TISSUE_BRAIN = 7;
+    // Breast
+    GTEX_TISSUE_BREAST = 8;
+    // Cervix Uteri
+    GTEX_TISSUE_CERVIX_UTERI = 9;
+    // Colon
+    GTEX_TISSUE_COLON = 10;
+    // Esophagus
+    GTEX_TISSUE_ESOPHAGUS = 11;
+    // Fallopian Tube
+    GTEX_TISSUE_FALLOPIAN_TUBE = 12;
+    // Heart
+    GTEX_TISSUE_HEART = 13;
+    // Kidney
+    GTEX_TISSUE_KIDNEY = 14;
+    // Liver
+    GTEX_TISSUE_LIVER = 15;
+    // Lung
+    GTEX_TISSUE_LUNG = 16;
+    // Muscle
+    GTEX_TISSUE_MUSCLE = 17;
+    // Nerve
+    GTEX_TISSUE_NERVE = 18;
+    // Ovary
+    GTEX_TISSUE_OVARY = 19;
+    // Pancreas
+    GTEX_TISSUE_PANCREAS = 20;
+    // Pituitary
+    GTEX_TISSUE_PITUITARY = 21;
+    // Prostate
+    GTEX_TISSUE_PROSTATE = 22;
+    // Salivary Gland
+    GTEX_TISSUE_SALIVARY_GLAND = 23;
+    // Skin
+    GTEX_TISSUE_SKIN = 24;
+    // Small Intestine
+    GTEX_TISSUE_SMALL_INTESTINE = 25;
+    // Spleen
+    GTEX_TISSUE_SPLEEN = 26;
+    // Stomach
+    GTEX_TISSUE_STOMACH = 27;
+    // Testis
+    GTEX_TISSUE_TESTIS = 28;
+    // Thyroid
+    GTEX_TISSUE_THYROID = 29;
+    // Uterus
+    GTEX_TISSUE_UTERUS = 30;
+    // Vagina
+    GTEX_TISSUE_VAGINA = 31;
+}
+
+
+// Enumeration for GTEx V8 tissue details
+enum GtexTissueDetailed {
+    // unknown
+    GTEX_TISSUE_DETAILED_UNKNOWN = 0;
+    // Adipose - Subcutaneous
+    GTEX_TISSUE_DETAILED_ADIPOSE_SUBCUTANEOUS = 1;
+    // Adipose - Visceral (Omentum)
+    GTEX_TISSUE_DETAILED_ADIPOSE_VISCERAL_OMENTUM = 2;
+    // Adrenal Gland
+    GTEX_TISSUE_DETAILED_ADRENAL_GLAND = 3;
+    // Artery - Aorta
+    GTEX_TISSUE_DETAILED_ARTERY_AORTA = 4;
+    // Artery - Coronary
+    GTEX_TISSUE_DETAILED_ARTERY_CORONARY = 5;
+    // Artery - Tibial
+    GTEX_TISSUE_DETAILED_ARTERY_TIBIAL = 6;
+    // Bladder
+    GTEX_TISSUE_DETAILED_BLADDER = 7;
+    // Brain - Amygdala
+    GTEX_TISSUE_DETAILED_BRAIN_AMYGDALA = 8;
+    // Brain - Anterior cingulate cortex (BA24)
+    GTEX_TISSUE_DETAILED_BRAIN_ANTERIOR_CINGULATE_CORTEX = 9;
+    // Brain - Caudate (basal ganglia)
+    GTEX_TISSUE_DETAILED_BRAIN_CAUDATE_BASAL_GANGLIA = 10;
+    // Brain - Cerebellar Hemisphere
+    GTEX_TISSUE_DETAILED_BRAIN_CEREBELLAR_HEMISPHERE = 11;
+    // Brain - Cerebellum
+    GTEX_TISSUE_DETAILED_BRAIN_CEREBELLUM = 12;
+    // Brain - Cortex
+    GTEX_TISSUE_DETAILED_BRAIN_CORTEX = 13;
+    // Brain - Frontal Cortex (BA9)
+    GTEX_TISSUE_DETAILED_BRAIN_FRONTAL_CORTEX = 14;
+    // Brain - Hippocampus
+    GTEX_TISSUE_DETAILED_BRAIN_HIPPOCAMPUS = 15;
+    // Brain - Hypothalamus
+    GTEX_TISSUE_DETAILED_BRAIN_HYPOTHALAMUS = 16;
+    // Brain - Nucleus accumbens (basal ganglia)
+    GTEX_TISSUE_DETAILED_BRAIN_NUCLEUS_ACCUMBENS = 17;
+    // Brain - Putamen (basal ganglia)
+    GTEX_TISSUE_DETAILED_BRAIN_PUTAMEN_BASAL_GANGLIA = 18;
+    // Brain - Spinal cord (cervical c-1)
+    GTEX_TISSUE_DETAILED_BRAIN_SPINAL_CORD = 19;
+    // Brain - Substantia nigra
+    GTEX_TISSUE_DETAILED_BRAIN_SUBSTANTIA_NIGRA = 20;
+    // Breast - Mammary Tissue
+    GTEX_TISSUE_DETAILED_BREAST_MAMMARY_TISSUE = 21;
+    // Cells - Cultured fibroblasts
+    GTEX_TISSUE_DETAILED_CELLS_CULTURED_FIBROBLASTS = 22;
+    // Cells - EBV-transformed lymphocytes
+    GTEX_TISSUE_DETAILED_CELLS_EBV_TRANSFORMED_LYMPHOCYTES = 23;
+    // Cells - Leukemia cell line (CML)
+    GTEX_TISSUE_DETAILED_CELLS_LEUKEMIA_CELL_LINE = 24;
+    // Cervix - Ectocervix
+    GTEX_TISSUE_DETAILED_CERVIX_ECTOCERVIX = 25;
+    // Cervix - Endocervix
+    GTEX_TISSUE_DETAILED_CERVIX_ENDOCERVIX = 26;
+    // Colon - Sigmoid
+    GTEX_TISSUE_DETAILED_COLON_SIGMOID = 27;
+    // Colon - Transverse
+    GTEX_TISSUE_DETAILED_COLON_TRANSVERSE = 28;
+    // Esophagus - Gastroesophageal Junction
+    GTEX_TISSUE_DETAILED_ESOPHAGUS_GASTROESOPHAGEAL_JUNCTION = 29;
+    // Esophagus - Mucosa
+    GTEX_TISSUE_DETAILED_ESOPHAGUS_MUCOSA = 30;
+    // Esophagus - Muscularis
+    GTEX_TISSUE_DETAILED_ESOPHAGUS_MUSCULARIS = 31;
+    // Fallopian Tube
+    GTEX_TISSUE_DETAILED_FALLOPIAN_TUBE = 32;
+    // Heart - Atrial Appendage
+    GTEX_TISSUE_DETAILED_HEART_ATRIAL_APPENDAGE = 33;
+    // Heart - Left Ventricle
+    GTEX_TISSUE_DETAILED_HEART_LEFT_VENTRICLE = 34;
+    // Kidney - Cortex
+    GTEX_TISSUE_DETAILED_KIDNEY_CORTEX = 35;
+    // Kidney - Medulla
+    GTEX_TISSUE_DETAILED_KIDNEY_MEDULLA = 36;
+    // Liver
+    GTEX_TISSUE_DETAILED_LIVER = 37;
+    // Lung
+    GTEX_TISSUE_DETAILED_LUNG = 38;
+    // Minor Salivary Gland
+    GTEX_TISSUE_DETAILED_MINOR_SALIVARY_GLAND = 39;
+    // Muscle - Skeletal
+    GTEX_TISSUE_DETAILED_MUSCLE_SKELETAL = 40;
+    // Nerve - Tibial
+    GTEX_TISSUE_DETAILED_NERVE_TIBIAL = 41;
+    // Ovary
+    GTEX_TISSUE_DETAILED_OVARY = 42;
+    // Pancreas
+    GTEX_TISSUE_DETAILED_PANCREAS = 43;
+    // Pituitary
+    GTEX_TISSUE_DETAILED_PITUITARY = 44;
+    // Prostate
+    GTEX_TISSUE_DETAILED_PROSTATE = 45;
+    // Salivary Gland
+    GTEX_TISSUE_DETAILED_SALIVARY_GLAND = 46;
+    // Skin - Not Sun Exposed (Suprapubic)
+    GTEX_TISSUE_DETAILED_SKIN_NOT_SUN_EXPOSED_SUPRAPUBIC = 47;
+    // Skin - Sun Exposed (Lower leg)
+    GTEX_TISSUE_DETAILED_SKIN_SUN_EXPOSED_LOWER_LEG = 48;
+    // Small Intestine - Terminal Ileum
+    GTEX_TISSUE_DETAILED_SMALL_INTESTINE_TERMINAL_ILEUM = 49;
+    // Spleen
+    GTEX_TISSUE_DETAILED_SPLEEN = 50;
+    // Stomach
+    GTEX_TISSUE_DETAILED_STOMACH = 51;
+    // Testis
+    GTEX_TISSUE_DETAILED_TESTIS = 52;
+    // Thyroid
+    GTEX_TISSUE_DETAILED_THYROID = 53;
+    // Uterus
+    GTEX_TISSUE_DETAILED_UTERUS = 54;
+    // Vagina
+    GTEX_TISSUE_DETAILED_VAGINA = 55;
+    // Whole Blood
+    GTEX_TISSUE_DETAILED_WHOLE_BLOOD = 56;
+}
+
+// Entry with the tissue-specific information for a gene.
+message GtexTissueRecord {
+    // The tissue type
+    GtexTissue tissue = 1;
+    // The detailed tissue type
+    GtexTissueDetailed tissue_detailed = 2;
+    // TPM counts
+    repeated float tpms = 3;
+}
+
+// Entry with the GTEx information.
+message GtexRecord {
+    // The HGNC ID.
+    string hgnc_id = 1;
+    // ENSEMBL gene ID.
+    string ensembl_gene_id = 2;
+    // ENSEMBL gene version.
+    string ensembl_gene_version = 3;
+    // Counts per tissue
+    repeated GtexTissueRecord records = 4;
+}
+
+// Entry in PanelApp.
+message PanelAppRecord {
+    /// Gene identity information.
+    message GeneData {
+        // HGNC ID.
+        optional string hgnc_id = 1;
+        // HGNC gene symbol.
+        optional string hgnc_symbol = 2;
+        // Gene symbol.
+        optional string gene_symbol = 3;
+    }
+
+    // Enumeration for entity types.
+    enum EntityType {
+        // Unknown
+        ENTITY_TYPE_UNKNOWN = 0;
+        // Gene
+        ENTITY_TYPE_GENE = 1;
+        // Short Tandem Repeat
+        ENTITY_TYPE_STR = 2;
+        // Region
+        ENTITY_TYPE_REGION = 3;
+    }
+
+    // Enumeration for confidence levels.
+    enum ConfidenceLevel {
+        // Unknown
+        CONFIDENCE_LEVEL_UNKNOWN = 0;
+        // None
+        CONFIDENCE_LEVEL_NONE = 1;
+        // Red
+        CONFIDENCE_LEVEL_RED = 2;
+        // Amber
+        CONFIDENCE_LEVEL_AMBER = 3;
+        // Green
+        CONFIDENCE_LEVEL_GREEN = 4;
+    }
+
+    // Enumeration for penetrance.
+    enum Penetrance {
+        // Unknown
+        PENETRANCE_UNKNOWN = 0;
+        // Complete
+        PENETRANCE_COMPLETE = 1;
+        // Incomplete
+        PENETRANCE_INCOMPLETE = 2;
+    }
+
+    // Message for panel statistics.
+    message PanelStats {
+        // Number of genes.
+        uint32 number_of_genes = 1;
+        // Number of STRs.
+        uint32 number_of_strs = 2;
+        // Number of regions.
+        uint32 number_of_regions = 3;
+    }
+
+    // Message for panel types.
+    message PanelType {
+        // Type name.
+        string name = 1;
+        // Slug.
+        string slug = 2;
+        // Description.
+        string description = 3;
+    }
+
+    // Message for panel information.
+    message Panel {
+        // Panel ID.
+        uint32 id = 1;
+        // Panel hash ID.
+        optional string hash_id = 2;
+        // Panel name.
+        string name = 3;
+        // Disease group.
+        string disease_group = 4;
+        // Disease subgroup.
+        string disease_sub_group = 5;
+        // Version
+        string version = 6;
+        // Creation date of version.
+        string version_created = 7;
+        // Relevant disorders.
+        repeated string relevant_disorders = 8;
+        // Stats.
+        PanelStats stats = 9;
+        // Panel types.
+        repeated PanelType types = 10;
+    }
+
+    // Gene identity information.
+    GeneData gene_data = 1;
+    // Entity type.
+    EntityType entity_type = 2;
+    // Entity name.
+    string entity_name = 3;
+    // Confidence level.
+    ConfidenceLevel confidence_level = 4;
+    // Penetrance.
+    Penetrance penetrance = 5;
+    // Publications.
+    repeated string publications = 6;
+    // Evidence.
+    repeated string evidence = 7;
+    // Phenotypes.
+    repeated string phenotypes = 8;
+    // Mode of inheritance.
+    string mode_of_inheritance = 9;
+    // Panel.
+    Panel panel = 10;
+}
+
+// Record from the integrated conditions computation.
+message ConditionsRecord {
+    // A gene-disease association entry.
+    message GeneDiseaseAssociationEntry {
+        // Enumeration for sources.
+        enum GeneDiseaseAssociationSource {
+            // nil
+            GENE_DISEASE_ASSOCIATION_SOURCE_UNKNOWN = 0;
+            // OMIM
+            GENE_DISEASE_ASSOCIATION_SOURCE_OMIM = 1;
+            // Orphanet
+            GENE_DISEASE_ASSOCIATION_SOURCE_ORPHANET = 2;
+            // PanelApp
+            GENE_DISEASE_ASSOCIATION_SOURCE_PANELAPP = 3;
+        }
+
+        // Enumeration for confidence levels.
+        enum ConfidenceLevel {
+            // nil
+            CONFIDENCE_LEVEL_UNKNOWN = 0;
+            // High confidence.
+            CONFIDENCE_LEVEL_HIGH = 1;
+            // Medium confidence.
+            CONFIDENCE_LEVEL_MEDIUM = 2;
+            // Low confidence.
+            CONFIDENCE_LEVEL_LOW = 3;
+        }
+
+        // The gene-disease association source.
+        GeneDiseaseAssociationSource source = 1;
+        // The gene-disease association confidence level.
+        ConfidenceLevel confidence = 2;
+    }
+
+    // A labeled disorder.
+    message LabeledDisorder {
+        // The disorder ID.
+        string term_id = 1;
+        // The disorder name.
+        optional string title = 2;
+    }
+
+    // A gene-disease association.
+    message GeneDiseaseAssociation {
+        // The HGNC ID.
+        string hgnc_id = 1;
+        // The gene-disease association entries.
+        repeated LabeledDisorder labeled_disorders = 2;
+        // Overall disease name.
+        optional string disease_name = 3;
+        // Disease definition.
+        optional string disease_definition = 4;
+        // The gene-disease association sources.
+        repeated GeneDiseaseAssociationEntry.GeneDiseaseAssociationSource sources = 5;
+        // Overall disease-gene association confidence level.
+        GeneDiseaseAssociationEntry.ConfidenceLevel confidence = 6;
+    }
+
+    // A panel from PanelApp.
+    message PanelappPanel {
+        // PanelApp panel ID.
+        int32 id = 1;
+        // PanelApp panel name.
+        string name = 2;
+        // PanelApp panel version.
+        string version = 3;
+    }
+
+    // An association of a gene by HGNC with a panel from PanelApp.
+    message PanelappAssociation {
+        // Enumeration for PanelApp confidence level.
+        enum PanelappConfidence {
+            // nil
+            PANELAPP_CONFIDENCE_UNKNOWN = 0;
+            // PanelApp green confidence.
+            PANELAPP_CONFIDENCE_GREEN = 1;
+            // PanelApp amber confidence.
+            PANELAPP_CONFIDENCE_AMBER = 2;
+            // PanelApp red confidence.
+            PANELAPP_CONFIDENCE_RED = 3;
+            // PanelApp none confidence (when removed after expert review).
+            PANELAPP_CONFIDENCE_NONE = 4;
+        }
+
+        // Enumeration for entity type.
+        enum PanelappEntityType {
+            // nil
+            PANELAPP_ENTITY_TYPE_UNKNOWN = 0;
+            // PanelApp gene entity type.
+            PANELAPP_ENTITY_TYPE_GENE = 1;
+            // PanelApp region entity type.
+            PANELAPP_ENTITY_TYPE_REGION = 2;
+            // PanelApp short tandem repeat entity type.
+            PANELAPP_ENTITY_TYPE_STR = 3;
+        }
+
+        // The HGNC ID.
+        string hgnc_id = 1;
+        // The PanelApp confidence level.
+        PanelappConfidence confidence_level = 2;
+        // The PanelApp entity type.
+        PanelappEntityType entity_type = 3;
+        // The PanelApp entity name.
+        optional string mode_of_inheritance = 4;
+        // The PanelApp publications.
+        repeated string phenotypes = 5;
+        // The PanelApp panel.
+        PanelappPanel panel = 6;
+    }
+
+    // The HGNC ID.
+    string hgnc_id = 1;
+    // The gene-disease associations.
+    repeated GeneDiseaseAssociation disease_associations = 2;
+    // The PanelApp associations.
+    repeated PanelappAssociation panelapp_associations = 3;
+}
+
+// Entry in the genes RocksDB database.
+message Record {
+    // Information from the ACMG secondary finding list.
+    AcmgSecondaryFindingRecord acmg_sf = 1;
+    // Information from ClinGen dosage curation.
+    ClingenDosageRecord clingen = 2;
+    // Information from dbNSFP.
+    DbnsfpRecord dbnsfp = 3;
+    // Information from the gnomAD constraints database.
+    GnomadConstraintsRecord gnomad_constraints = 4;
+    // Information from the HGNC database.
+    HgncRecord hgnc = 5;
+    // Information from the NCBI gene database (aka "Entrez").
+    NcbiRecord ncbi = 6;
+    // Information about gene to OMIM term annotation, composed from clingen and HPO.
+    OmimRecord omim = 7;
+    // Information about gene to Orphanet annotation, derived from Orphapacket.
+    OrphaRecord orpha = 8;
+    // Information from the rCNV dosage sensitivity scores (Collins et al., 2022).
+    RcnvRecord rcnv = 9;
+    // Information from the sHet score (Weghor et al., 2019)
+    ShetRecord shet = 10;
+    // Information from GTEx data
+    GtexRecord gtex = 11;
+    // Information from DOMINO.
+    DominoRecord domino = 12;
+    // DECIPHER HI score.
+    DecipherHiRecord decipher_hi = 13;
+    // GenomicsEngland PanelApp gene information.
+    repeated PanelAppRecord panelapp = 14;
+    // Conditions record.
+    ConditionsRecord conditions = 15;
+}

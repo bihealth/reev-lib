@@ -12,6 +12,9 @@ help:
 	@echo "  test        Run tests (no watch)"
 	@echo "  test-ci     Run tests (no watch) for CI (with coverage, single-threaded)"
 	@echo "  test-nocov  Run tests (no watch) without coverage"
+	@echo "  proto-fetch Fetch protobuf files"
+	@echo "  proto-ts    Generate .ts from .proto files"
+	@echo "  proto	     Fetch, generate, and format .ts from .proto files"
 	@echo "  test-w      Run tests (watch)"
 	@echo "  ci          Install dependencies, run lints and tests"
 	@echo "  serve       Run the Storybook server"
@@ -61,3 +64,18 @@ serve:
 .PHONY: serve-public
 serve-public:
 	npm run storybook -- --host=0.0.0.0
+
+PROTO_BASE := https://raw.githubusercontent.com/varfish-org/annonars/main
+
+.PHONY: proto-fetch
+proto-fetch:
+	mkdir -p protos/annonars/genes
+	wget -O protos/annonars/genes/base.proto $(PROTO_BASE)/protos/annonars/genes/base.proto
+
+.PHONY: proto-ts
+proto-ts:
+	mkdir -p src/pbs
+	npx protoc --ts_out src/pbs --proto_path protos protos/annonars/genes/base.proto
+
+.PHONY: proto
+proto: proto-fetch proto-ts format lint

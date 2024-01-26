@@ -18,3 +18,11 @@ npm ci
 make serve
 # hack away!
 ```
+
+## Generating TS for Protobuf
+
+Fetch protobuf files from main, and re-generate the TS files, and format them.
+
+```
+make proto
+```
