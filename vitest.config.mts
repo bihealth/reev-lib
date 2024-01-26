@@ -4,7 +4,7 @@ import { configDefaults, defineConfig } from 'vitest/config'
 
 import viteConfig from './vite.config.mts'
 
-const result = mergeConfig(
+export default mergeConfig(
   viteConfig,
   defineConfig({
     test: {
@@ -28,7 +28,3 @@ const result = mergeConfig(
     }
   }) as typeof viteConfig
 )
-
-console.log(result)
-
-export default result

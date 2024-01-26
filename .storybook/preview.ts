@@ -1,4 +1,7 @@
-import type { Preview } from '@storybook/vue3'
+import { type Preview, setup } from '@storybook/vue3'
+
+import { registerPlugins } from '../src/plugins'
+import { withVuetifyTheme } from './withVuetifyTheme.decorator'
 
 // import type { StoryIdentifier } from "@storybook/types"
 
@@ -14,7 +17,6 @@ const preview: Preview = {
     options: {
       // The `a` and `b` arguments in this function have a type of `import('@storybook/types').IndexEntry`. Remember that the function is executed in a JavaScript environment, so use JSDoc for IntelliSense to introspect it.
       storySort: (a /*: StoryIdentifier*/, b /*: StoryIdentifier*/) => {
-        console.log('a', a, 'b', b)
         if (a.id === b.id) {
           return 0
         } else {
@@ -25,4 +27,28 @@ const preview: Preview = {
   }
 }
 
+setup((app) => {
+  // Registers your app's plugins into Storybook
+  registerPlugins(app)
+})
+
 export default preview
+
+export const decorators = [withVuetifyTheme]
+
+export const globalTypes = {
+  theme: {
+    name: 'Theme',
+    description: 'Global theme for components',
+    toolbar: {
+      icon: 'paintbrush',
+      // Array of plain string values or MenuItem shape
+      items: [
+        { value: 'customLightTheme', title: 'Light', left: '🌞' },
+        { value: 'dark', title: 'Dark', left: '🌛' }
+      ],
+      // Change title based on selected value
+      dynamicTitle: true
+    }
+  }
+}
