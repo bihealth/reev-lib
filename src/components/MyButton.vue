@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { reactive } from "vue";
+import { reactive } from 'vue'
 
 interface Props {
-  primary?: boolean;
+  primary?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  primary: false,
-});
+  primary: false
+})
 
-const { primary } = reactive(props);
+const { primary } = reactive(props)
 </script>
 
 <template>

@@ -1,7 +1,7 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from 'vitest'
 
-describe.concurrent("MyButton.vue", () => {
-  it("tautology", async () => {
-    expect(true).toBe(true);
-  });
-});
+describe.concurrent('MyButton.vue', () => {
+  it('tautology', async () => {
+    expect(true).toBe(true)
+  })
+})

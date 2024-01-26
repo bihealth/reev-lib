@@ -6,6 +6,15 @@
 
 Refactored reuseable components for REEV.
 
-For "everything", see
+This README file describes how to setup your dev environment for this library.
+For everything else, see the [REEV Project](https://github.com/bihealth/reev).
 
-- [REEV Project](https://github.com/bihealth/reev)
+## Setup
+
+```
+git clone git@github.com:bihealth/reev-frontend-lib.git
+cd reev-frontend-lib
+npm ci
+make serve
+# hack away!
+```
