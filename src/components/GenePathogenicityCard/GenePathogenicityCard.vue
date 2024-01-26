@@ -1,4 +1,7 @@
 <script setup lang="ts">
+/**
+ * This component displays a VCard with gene pathogenicity information.
+ */
 import { roundIt } from '../../lib/utils'
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
 import DocsLink from '../DocsLink/DocsLink.vue'
