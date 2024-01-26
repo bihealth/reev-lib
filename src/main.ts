@@ -1,3 +1,3 @@
-import { MyButton } from "@/components";
+import { MyButton } from '@/components'
 
-export { MyButton };
+export { MyButton }

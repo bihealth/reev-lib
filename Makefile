@@ -14,7 +14,7 @@ help:
 	@echo "  test-nocov  Run tests (no watch) without coverage"
 	@echo "  test-w      Run tests (watch)"
 	@echo "  ci          Install dependencies, run lints and tests"
-	@echo "  serve       Run the (development) server"
+	@echo "  serve       Run the Storybook server"
 
 .PHONY: deps
 deps:
@@ -56,8 +56,8 @@ ci: \
 
 .PHONY: serve
 serve:
-	MODE=development npm run dev
+	npm run storybook
 
 .PHONY: serve-public
 serve-public:
-	MODE=development npm run dev-public
+	npm run storybook -- --host=0.0.0.0

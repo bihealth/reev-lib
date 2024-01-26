@@ -3,15 +3,23 @@ require('@rushstack/eslint-patch/modern-module-resolution')
 
 module.exports = {
   root: true,
-  'extends': [
+  extends: [
     '@vue/typescript/recommended',
     'plugin:vue/vue3-recommended',
     '@vue/eslint-config-typescript',
-    '@vue/eslint-config-prettier/skip-formatting'
+    '@vue/eslint-config-prettier/skip-formatting',
+    'plugin:storybook/recommended'
   ],
   rules: {
-    "@typescript-eslint/no-explicit-any": "off",
+    '@typescript-eslint/no-explicit-any': 'off',
+    'vue/multi-word-component-names': 'off'
   },
+  overrides: [
+    {
+      files: ['*.mdx'],
+      extends: 'plugin:mdx/recommended'
+    }
+  ],
   parserOptions: {
     ecmaVersion: 'latest'
   }
