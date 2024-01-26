@@ -51,6 +51,7 @@
     "vue": "^3.3.11"
   },
   "devDependencies": {
+    "@protobuf-ts/plugin": "^2.9.3",
     "@rushstack/eslint-patch": "^1.6.1",
     "@storybook/addon-essentials": "^7.6.10",
     "@storybook/addon-interactions": "^7.6.10",
