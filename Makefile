@@ -75,7 +75,7 @@ proto-fetch:
 .PHONY: proto-ts
 proto-ts:
 	mkdir -p src/pbs
-	npx protoc --ts_out src/pbs --proto_path protos protos/annonars/genes/base.proto
+	npx protoc --ts_opt keep_enum_prefix --ts_out src/pbs --proto_path protos protos/annonars/genes/base.proto
 
 .PHONY: proto
 proto: proto-fetch proto-ts format lint

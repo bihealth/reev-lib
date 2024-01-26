@@ -16,8 +16,8 @@ export default mergeConfig(
       },
       coverage: {
         provider: 'istanbul',
-        include: ['src/{lib,components}/*.{js,jsx,ts,tsx,vue}'],
-        exclude: ["*.spec.{js,jsx,ts,tsx,vue}", ".stories.{js,jsx,ts,tsx,vue}"]
+        include: ['src/{lib,components}/*.{js,jsx,ts,tsx,vue}']
+        // exclude: ["*.spec.{js,jsx,ts,tsx,vue}", "*.stories.{js,jsx,ts,tsx,vue}"]
       },
       environment: 'jsdom',
       exclude: [...configDefaults.exclude, 'e2e/*', "**/pbs/**"],
