@@ -16,11 +16,14 @@ export default mergeConfig(
       },
       coverage: {
         provider: 'istanbul',
-        include: ['src/{lib,components}/*.{js,jsx,ts,tsx,vue}']
-        // exclude: ["*.spec.{js,jsx,ts,tsx,vue}", "*.stories.{js,jsx,ts,tsx,vue}"]
+        include: [
+          'src/lib/**/*.ts',
+          'src/components/**/*.{vue,ts}',
+        ],
+        exclude: ["**/*.spec.ts", "**/*.stories.ts"]
       },
       environment: 'jsdom',
-      exclude: [...configDefaults.exclude, 'e2e/*', "**/pbs/**"],
+      exclude: [...configDefaults.exclude, 'e2e/*'],
       root: fileURLToPath(new URL('./', import.meta.url)),
       testTransformMode: {
         web: ["**/*.{jsx,tsx}"]

@@ -26,7 +26,7 @@ const props = withDefaults(
       Intolerance Constraints and Annotations
     </v-card-subtitle>
     <v-card-text class="pt-3">
-      <!-- no constraints symbol => display loader -->
+      <!-- no constraints symbol => display loader (geneInfo.hgnc is always available) -->
       <template v-if="!geneInfo">
         <v-skeleton-loader class="mt-3 mx-auto border" type="heading,subtitle,text,text" />
       </template>

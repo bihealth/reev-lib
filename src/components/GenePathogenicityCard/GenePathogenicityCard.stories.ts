@@ -38,3 +38,9 @@ export const BRCA1: Story = {
     geneInfo: geneInfoBrca1
   }
 }
+
+export const UndefinedGeneInfo: Story = {
+  args: {
+    geneInfo: undefined
+  }
+}

@@ -29,6 +29,7 @@ describe.concurrent('GenePathogenicityCard.vue', async () => {
     // act: nothing, only test rendering
 
     // assert:
+    // Check string contents for title and essential metrics
     expect(wrapper.text()).toContain('Gene Pathogenicity')
     expect(wrapper.text()).toContain('Intolerance Constraints and Annotations')
     expect(wrapper.text()).toContain('pLI 0.00')
@@ -37,7 +38,7 @@ describe.concurrent('GenePathogenicityCard.vue', async () => {
     expect(wrapper.text()).toContain('o/e Z-score 0.82')
     expect(wrapper.text()).toContain('DECIPHER  %HI  N/A')
     expect(wrapper.text()).toContain('sHet0.00pHaplo0.76pTriplo0.33')
-    // Find v-sheet components
+    // Count VSheet components
     const vSheets = wrapper.findAllComponents({ name: 'VSheet' })
     expect(vSheets.length).toBe(3)
   })
@@ -56,6 +57,7 @@ describe.concurrent('GenePathogenicityCard.vue', async () => {
     // act: nothing, only test rendering
 
     // assert:
+    // Check string contents for title and essential metrics
     expect(wrapper.text()).toContain('Gene Pathogenicity')
     expect(wrapper.text()).toContain('Intolerance Constraints and Annotations')
     expect(wrapper.text()).toContain('pLI 0.00')
@@ -64,8 +66,36 @@ describe.concurrent('GenePathogenicityCard.vue', async () => {
     expect(wrapper.text()).toContain('o/e Z-score 2.32')
     expect(wrapper.text()).toContain('DECIPHER  %HI  N/A')
     expect(wrapper.text()).toContain('sHet0.01pHaplo0.28pTriplo0.62')
-    // Find v-sheet components
+    // Count VSheet components
     const vSheets = wrapper.findAllComponents({ name: 'VSheet' })
     expect(vSheets.length).toBe(3)
+  })
+
+  it('renders correctly with undefined geneInfo', async () => {
+    // arrange:
+    const { wrapper } = await setupMountedComponents(
+      { component: GenePathogenicityCard },
+      {
+        props: {
+          geneInfo: undefined
+        }
+      }
+    )
+
+    // act: nothing, only test rendering
+
+    // assert:
+    // Check string contents for title and essential metrics
+    expect(wrapper.text()).toContain('Gene Pathogenicity')
+    expect(wrapper.text()).toContain('Intolerance Constraints and Annotations')
+    expect(wrapper.text()).not.toContain('pLI')
+    expect(wrapper.text()).not.toContain('LOEUF')
+    expect(wrapper.text()).not.toContain('Missense o/e (upper)')
+    expect(wrapper.text()).not.toContain('o/e Z-score')
+    expect(wrapper.text()).not.toContain('DECIPHER')
+    expect(wrapper.text()).not.toContain('sHet')
+    // Count VSkeletonLoader components
+    const vLoader = wrapper.findAllComponents({ name: 'VSkeletonLoader' })
+    expect(vLoader.length).toBe(1)
   })
 })
