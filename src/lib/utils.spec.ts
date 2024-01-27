@@ -1,6 +1,33 @@
 import { describe, expect, it } from 'vitest'
 
-import { roundIt } from './utils'
+import { roundIt, separateIt } from './utils'
+
+describe.concurrent('separateIt method', () => {
+  it('should separate a positive value with default separator', () => {
+    const result = separateIt(123456789)
+    expect(result).toBe('123 456 789')
+  })
+
+  it('should separate a positive value with specified separator', () => {
+    const result = separateIt(123456789, ',')
+    expect(result).toBe('123,456,789')
+  })
+
+  it('should handle zero value', () => {
+    const result = separateIt(0)
+    expect(result).toBe('0')
+  })
+
+  it('should handle float value', () => {
+    const result = separateIt(123456789.12345)
+    expect(result).toBe('123 456 789')
+  })
+
+  it('should handle values less then 0', () => {
+    const result = separateIt(0.0134)
+    expect(result).toBe('0')
+  })
+})
 
 describe('roundIt', () => {
   it('rounds to 2 decimals by default', () => {

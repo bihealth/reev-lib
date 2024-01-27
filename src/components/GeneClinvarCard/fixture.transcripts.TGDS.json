@@ -1,0 +1,448 @@
+{
+  "transcripts": [
+    {
+      "id": "ENST00000261296.5",
+      "hgnc_id": "HGNC:20324",
+      "hgnc_symbol": "TGDS",
+      "alignments": [
+        {
+          "assembly": "GRCh37",
+          "contig": "NC_000013.10",
+          "cds_start": 95227035,
+          "cds_end": 95248390,
+          "exons": [
+            {
+              "ref_start": 95226307,
+              "ref_end": 95227106,
+              "exon_no": 11,
+              "tx_start": 1104,
+              "tx_end": 1902,
+              "alignment": null
+            },
+            {
+              "ref_start": 95228567,
+              "ref_end": 95228665,
+              "exon_no": 10,
+              "tx_start": 1006,
+              "tx_end": 1103,
+              "alignment": null
+            },
+            {
+              "ref_start": 95229624,
+              "ref_end": 95229683,
+              "exon_no": 9,
+              "tx_start": 947,
+              "tx_end": 1005,
+              "alignment": null
+            },
+            {
+              "ref_start": 95230258,
+              "ref_end": 95230424,
+              "exon_no": 8,
+              "tx_start": 781,
+              "tx_end": 946,
+              "alignment": null
+            },
+            {
+              "ref_start": 95230983,
+              "ref_end": 95231027,
+              "exon_no": 7,
+              "tx_start": 737,
+              "tx_end": 780,
+              "alignment": null
+            },
+            {
+              "ref_start": 95232147,
+              "ref_end": 95232207,
+              "exon_no": 6,
+              "tx_start": 677,
+              "tx_end": 736,
+              "alignment": null
+            },
+            {
+              "ref_start": 95233344,
+              "ref_end": 95233443,
+              "exon_no": 5,
+              "tx_start": 578,
+              "tx_end": 676,
+              "alignment": null
+            },
+            {
+              "ref_start": 95235347,
+              "ref_end": 95235490,
+              "exon_no": 4,
+              "tx_start": 435,
+              "tx_end": 577,
+              "alignment": null
+            },
+            {
+              "ref_start": 95243106,
+              "ref_end": 95243197,
+              "exon_no": 3,
+              "tx_start": 344,
+              "tx_end": 434,
+              "alignment": null
+            },
+            {
+              "ref_start": 95244494,
+              "ref_end": 95244563,
+              "exon_no": 2,
+              "tx_start": 275,
+              "tx_end": 343,
+              "alignment": null
+            },
+            {
+              "ref_start": 95246094,
+              "ref_end": 95246161,
+              "exon_no": 1,
+              "tx_start": 208,
+              "tx_end": 274,
+              "alignment": null
+            },
+            {
+              "ref_start": 95248304,
+              "ref_end": 95248511,
+              "exon_no": 0,
+              "tx_start": 1,
+              "tx_end": 207,
+              "alignment": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NM_001304430.2",
+      "hgnc_id": "HGNC:20324",
+      "hgnc_symbol": "TGDS",
+      "alignments": [
+        {
+          "assembly": "GRCh37",
+          "contig": "NC_000013.10",
+          "cds_start": 95227035,
+          "cds_end": 95246151,
+          "exons": [
+            {
+              "ref_start": 95226307,
+              "ref_end": 95227106,
+              "exon_no": 11,
+              "tx_start": 1075,
+              "tx_end": 1873,
+              "alignment": null
+            },
+            {
+              "ref_start": 95228567,
+              "ref_end": 95228665,
+              "exon_no": 10,
+              "tx_start": 977,
+              "tx_end": 1074,
+              "alignment": null
+            },
+            {
+              "ref_start": 95229624,
+              "ref_end": 95229683,
+              "exon_no": 9,
+              "tx_start": 918,
+              "tx_end": 976,
+              "alignment": null
+            },
+            {
+              "ref_start": 95230258,
+              "ref_end": 95230424,
+              "exon_no": 8,
+              "tx_start": 752,
+              "tx_end": 917,
+              "alignment": null
+            },
+            {
+              "ref_start": 95230983,
+              "ref_end": 95231027,
+              "exon_no": 7,
+              "tx_start": 708,
+              "tx_end": 751,
+              "alignment": null
+            },
+            {
+              "ref_start": 95232147,
+              "ref_end": 95232207,
+              "exon_no": 6,
+              "tx_start": 648,
+              "tx_end": 707,
+              "alignment": null
+            },
+            {
+              "ref_start": 95233344,
+              "ref_end": 95233443,
+              "exon_no": 5,
+              "tx_start": 549,
+              "tx_end": 647,
+              "alignment": null
+            },
+            {
+              "ref_start": 95235347,
+              "ref_end": 95235490,
+              "exon_no": 4,
+              "tx_start": 406,
+              "tx_end": 548,
+              "alignment": null
+            },
+            {
+              "ref_start": 95243106,
+              "ref_end": 95243197,
+              "exon_no": 3,
+              "tx_start": 315,
+              "tx_end": 405,
+              "alignment": null
+            },
+            {
+              "ref_start": 95244494,
+              "ref_end": 95244563,
+              "exon_no": 2,
+              "tx_start": 246,
+              "tx_end": 314,
+              "alignment": null
+            },
+            {
+              "ref_start": 95246094,
+              "ref_end": 95246161,
+              "exon_no": 1,
+              "tx_start": 179,
+              "tx_end": 245,
+              "alignment": null
+            },
+            {
+              "ref_start": 95248228,
+              "ref_end": 95248406,
+              "exon_no": 0,
+              "tx_start": 1,
+              "tx_end": 178,
+              "alignment": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NM_014305.2",
+      "hgnc_id": "HGNC:20324",
+      "hgnc_symbol": "TGDS",
+      "alignments": [
+        {
+          "assembly": "GRCh37",
+          "contig": "NC_000013.10",
+          "cds_start": 95227035,
+          "cds_end": 95248390,
+          "exons": [
+            {
+              "ref_start": 95226307,
+              "ref_end": 95227106,
+              "exon_no": 11,
+              "tx_start": 1104,
+              "tx_end": 1902,
+              "alignment": null
+            },
+            {
+              "ref_start": 95228567,
+              "ref_end": 95228665,
+              "exon_no": 10,
+              "tx_start": 1006,
+              "tx_end": 1103,
+              "alignment": null
+            },
+            {
+              "ref_start": 95229624,
+              "ref_end": 95229683,
+              "exon_no": 9,
+              "tx_start": 947,
+              "tx_end": 1005,
+              "alignment": null
+            },
+            {
+              "ref_start": 95230258,
+              "ref_end": 95230424,
+              "exon_no": 8,
+              "tx_start": 781,
+              "tx_end": 946,
+              "alignment": null
+            },
+            {
+              "ref_start": 95230983,
+              "ref_end": 95231027,
+              "exon_no": 7,
+              "tx_start": 737,
+              "tx_end": 780,
+              "alignment": null
+            },
+            {
+              "ref_start": 95232147,
+              "ref_end": 95232207,
+              "exon_no": 6,
+              "tx_start": 677,
+              "tx_end": 736,
+              "alignment": null
+            },
+            {
+              "ref_start": 95233344,
+              "ref_end": 95233443,
+              "exon_no": 5,
+              "tx_start": 578,
+              "tx_end": 676,
+              "alignment": null
+            },
+            {
+              "ref_start": 95235347,
+              "ref_end": 95235490,
+              "exon_no": 4,
+              "tx_start": 435,
+              "tx_end": 577,
+              "alignment": null
+            },
+            {
+              "ref_start": 95243106,
+              "ref_end": 95243197,
+              "exon_no": 3,
+              "tx_start": 344,
+              "tx_end": 434,
+              "alignment": null
+            },
+            {
+              "ref_start": 95244494,
+              "ref_end": 95244563,
+              "exon_no": 2,
+              "tx_start": 275,
+              "tx_end": 343,
+              "alignment": null
+            },
+            {
+              "ref_start": 95246094,
+              "ref_end": 95246161,
+              "exon_no": 1,
+              "tx_start": 208,
+              "tx_end": 274,
+              "alignment": null
+            },
+            {
+              "ref_start": 95248304,
+              "ref_end": 95248511,
+              "exon_no": 0,
+              "tx_start": 1,
+              "tx_end": 207,
+              "alignment": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NM_014305.4",
+      "hgnc_id": "HGNC:20324",
+      "hgnc_symbol": "TGDS",
+      "alignments": [
+        {
+          "assembly": "GRCh37",
+          "contig": "NC_000013.10",
+          "cds_start": 95227035,
+          "cds_end": 95248390,
+          "exons": [
+            {
+              "ref_start": 95226307,
+              "ref_end": 95227106,
+              "exon_no": 11,
+              "tx_start": 999,
+              "tx_end": 1797,
+              "alignment": null
+            },
+            {
+              "ref_start": 95228567,
+              "ref_end": 95228665,
+              "exon_no": 10,
+              "tx_start": 901,
+              "tx_end": 998,
+              "alignment": null
+            },
+            {
+              "ref_start": 95229624,
+              "ref_end": 95229683,
+              "exon_no": 9,
+              "tx_start": 842,
+              "tx_end": 900,
+              "alignment": null
+            },
+            {
+              "ref_start": 95230258,
+              "ref_end": 95230424,
+              "exon_no": 8,
+              "tx_start": 676,
+              "tx_end": 841,
+              "alignment": null
+            },
+            {
+              "ref_start": 95230983,
+              "ref_end": 95231027,
+              "exon_no": 7,
+              "tx_start": 632,
+              "tx_end": 675,
+              "alignment": null
+            },
+            {
+              "ref_start": 95232147,
+              "ref_end": 95232207,
+              "exon_no": 6,
+              "tx_start": 572,
+              "tx_end": 631,
+              "alignment": null
+            },
+            {
+              "ref_start": 95233344,
+              "ref_end": 95233443,
+              "exon_no": 5,
+              "tx_start": 473,
+              "tx_end": 571,
+              "alignment": null
+            },
+            {
+              "ref_start": 95235347,
+              "ref_end": 95235490,
+              "exon_no": 4,
+              "tx_start": 330,
+              "tx_end": 472,
+              "alignment": null
+            },
+            {
+              "ref_start": 95243106,
+              "ref_end": 95243197,
+              "exon_no": 3,
+              "tx_start": 239,
+              "tx_end": 329,
+              "alignment": null
+            },
+            {
+              "ref_start": 95244494,
+              "ref_end": 95244563,
+              "exon_no": 2,
+              "tx_start": 170,
+              "tx_end": 238,
+              "alignment": null
+            },
+            {
+              "ref_start": 95246094,
+              "ref_end": 95246161,
+              "exon_no": 1,
+              "tx_start": 103,
+              "tx_end": 169,
+              "alignment": null
+            },
+            {
+              "ref_start": 95248304,
+              "ref_end": 95248406,
+              "exon_no": 0,
+              "tx_start": 1,
+              "tx_end": 102,
+              "alignment": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

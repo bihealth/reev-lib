@@ -1,4 +1,33 @@
 /**
+ * Converts a number to a string with thousands separator.
+ *
+ * @param value     The number to separate.
+ * @param separator The separator to use.
+ */
+export const separateIt = (value: number, separator: string = ' '): string => {
+  const asString = `${value}`
+  if (!asString.length) {
+    return '0'
+  }
+
+  const splitString = asString.split('.', 1)
+  const cardinal = splitString[0]
+
+  if (!cardinal?.length) {
+    splitString[0] = '0'
+  } else {
+    const offset = cardinal.length % 3
+    const arr = [cardinal.slice(0, offset)]
+    for (let i = 0; i <= cardinal.length; i += 3) {
+      arr.push(cardinal.slice(offset + i, offset + i + 3))
+    }
+    splitString[0] = arr.filter((s) => s.length).join(separator)
+  }
+
+  return splitString.join('.')
+}
+
+/**
  * Round `value` to `digits` and return an `<abbr>` tag that has the original value
  * as the `@title` and the rounded value as the inner text.  Optionally add a `label`
  * to the `@title`

@@ -1,0 +1,2474 @@
+{
+  "perImpactCounts": [
+    {
+      "impact": "IMPACT_FIVE_PRIME_UTR_VARIANT",
+      "counts": [3, 0, 3, 0, 0]
+    },
+    {
+      "impact": "IMPACT_FRAMESHIFT_VARIANT",
+      "counts": [0, 0, 0, 0, 1]
+    },
+    {
+      "impact": "IMPACT_INTRON_VARIANT",
+      "counts": [19, 6, 1, 0, 0]
+    },
+    {
+      "impact": "IMPACT_MISSENSE_VARIANT",
+      "counts": [0, 0, 18, 1, 7]
+    },
+    {
+      "impact": "IMPACT_NON_CODING_TRANSCRIPT_VARIANT",
+      "counts": [1, 8, 0, 0, 0]
+    },
+    {
+      "impact": "IMPACT_SPLICE_ACCEPTOR_VARIANT",
+      "counts": [0, 0, 1, 1, 0]
+    },
+    {
+      "impact": "IMPACT_SPLICE_DONOR_VARIANT",
+      "counts": [0, 0, 0, 1, 0]
+    }
+  ],
+  "perFreqCounts": [
+    {
+      "coarseClinsig": "COARSE_CLINICAL_SIGNIFICANCE_BENIGN",
+      "counts": [24, 0, 0, 0, 0, 2, 0, 1, 0, 2, 0, 4, 2, 1, 1, 3, 0, 0]
+    },
+    {
+      "coarseClinsig": "COARSE_CLINICAL_SIGNIFICANCE_UNCERTAIN",
+      "counts": [21, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    },
+    {
+      "coarseClinsig": "COARSE_CLINICAL_SIGNIFICANCE_PATHOGENIC",
+      "counts": [11, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    }
+  ],
+  "variants": [
+    {
+      "genomeRelease": "GRCh37",
+      "variants": [
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95243151,
+          "stop": 95243151,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV000162457",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000149819",
+              "title": "NM_014305.4(TGDS):c.269A>G (p.Glu90Gly) AND Catel-Manzke syndrome",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
+              "reviewStatus": "REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95243126,
+          "stop": 95243126,
+          "reference": "A",
+          "alternative": "C",
+          "vcv": "VCV000162458",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000149820",
+              "title": "NM_014305.4(TGDS):c.294T>G (p.Phe98Leu) AND Catel-Manzke syndrome",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
+              "reviewStatus": "REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95228658,
+          "stop": 95228658,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV000162460",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000149822",
+              "title": "NM_014305.4(TGDS):c.892A>G (p.Asn298Asp) AND Catel-Manzke syndrome",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
+              "reviewStatus": "REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95227114,
+          "stop": 95227114,
+          "reference": "G",
+          "alternative": "A",
+          "vcv": "VCV000720702",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000894054",
+              "title": "NM_014305.4(TGDS):c.983-8C>T AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95230976,
+          "stop": 95230976,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV000738027",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000913870",
+              "title": "NM_014305.4(TGDS):c.659+8A>G AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95231001,
+          "stop": 95231001,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV000744448",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000920899",
+              "title": "NM_014305.4(TGDS):c.642A>G (p.Leu214=) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95243156,
+          "stop": 95243156,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV000753804",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000931075",
+              "title": "NM_014305.4(TGDS):c.264A>G (p.Glu88=) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95235339,
+          "stop": 95235339,
+          "reference": "T",
+          "alternative": "G",
+          "vcv": "VCV000792360",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000975453",
+              "title": "NM_014305.4(TGDS):c.456+9A>C AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95227093,
+          "stop": 95227093,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV000792370",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000975465",
+              "title": "NM_014305.4(TGDS):c.996A>G (p.Arg332=) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95243134,
+          "stop": 95243134,
+          "reference": "G",
+          "alternative": "T",
+          "vcv": "VCV000521407",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000622534",
+              "title": "NM_014305.4(TGDS):c.286C>A (p.Leu96Ile) AND Inborn genetic diseases",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95244537,
+          "stop": 95244537,
+          "reference": "A",
+          "alternative": "T",
+          "vcv": "VCV000521406",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000624236",
+              "title": "NM_014305.4(TGDS):c.180T>A (p.Asn60Lys) AND Inborn genetic diseases",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95230370,
+          "stop": 95230370,
+          "reference": "A",
+          "alternative": "C",
+          "vcv": "VCV000741988",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000918201",
+              "title": "NM_014305.4(TGDS):c.714T>G (p.Val238=) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95244583,
+          "stop": 95244583,
+          "reference": "G",
+          "alternative": "C",
+          "vcv": "VCV001897819",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002569866",
+              "title": "NM_014305.4(TGDS):c.154-20C>G AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95235329,
+          "stop": 95235329,
+          "reference": "A",
+          "alternative": "G",
+          "vcv": "VCV001926065",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002605013",
+              "title": "NM_014305.4(TGDS):c.456+19T>C AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95235457,
+          "stop": 95235457,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV002209715",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002652836",
+              "title": "NM_014305.4(TGDS):c.347A>G (p.Tyr116Cys) AND Inborn genetic diseases",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95233331,
+          "stop": 95233331,
+          "reference": "C",
+          "alternative": "T",
+          "vcv": "VCV001968917",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002712156",
+              "title": "NM_014305.4(TGDS):c.555+14G>A AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95235365,
+          "stop": 95235365,
+          "reference": "C",
+          "alternative": "A",
+          "vcv": "VCV001962614",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002726264",
+              "title": "NM_014305.4(TGDS):c.439G>T (p.Gly147Cys) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95230291,
+          "stop": 95230291,
+          "reference": "C",
+          "alternative": "T",
+          "vcv": "VCV002246034",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002738091",
+              "title": "NM_014305.4(TGDS):c.793G>A (p.Val265Ile) AND Inborn genetic diseases",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95243115,
+          "stop": 95243115,
+          "reference": "G",
+          "alternative": "A",
+          "vcv": "VCV002412789",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002790047",
+              "title": "NM_014305.4(TGDS):c.305C>T (p.Thr102Ile) AND Catel-Manzke syndrome",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_PATHOGENIC",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95233353,
+          "stop": 95233353,
+          "reference": "G",
+          "alternative": "C",
+          "vcv": "VCV002260570",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002797906",
+              "title": "NM_014305.4(TGDS):c.547C>G (p.Gln183Glu) AND Inborn genetic diseases",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95229675,
+          "stop": 95229675,
+          "reference": "C",
+          "alternative": "G",
+          "vcv": "VCV002278206",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002822699",
+              "title": "NM_014305.4(TGDS):c.834G>C (p.Glu278Asp) AND Inborn genetic diseases",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95235415,
+          "stop": 95235415,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV002327705",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002929671",
+              "title": "NM_014305.4(TGDS):c.389A>G (p.His130Arg) AND Inborn genetic diseases",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95244490,
+          "stop": 95244490,
+          "reference": "C",
+          "alternative": "T",
+          "vcv": "VCV002066159",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002966071",
+              "title": "NM_014305.4(TGDS):c.222+5G>A AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95233409,
+          "stop": 95233409,
+          "reference": "T",
+          "alternative": "G",
+          "vcv": "VCV002437069",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV003140989",
+              "title": "NM_014305.4(TGDS):c.491A>C (p.Asn164Thr) AND Catel-Manzke syndrome",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95230343,
+          "stop": 95230343,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV001932516",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002605801",
+              "title": "NM_014305.4(TGDS):c.741A>G (p.Lys247=) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95243135,
+          "stop": 95243135,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV002160065",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV003075760",
+              "title": "NM_014305.4(TGDS):c.285A>G (p.Val95=) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95243106,
+          "stop": 95243106,
+          "reference": "C",
+          "alternative": "T",
+          "vcv": "VCV001878395",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002510448",
+              "title": "NM_014305.4(TGDS):c.313+1G>A AND Catel-Manzke syndrome",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_PATHOGENIC",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95233445,
+          "stop": 95233445,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV002412788",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002810053",
+              "title": "NM_014305.4(TGDS):c.457-2A>G AND Catel-Manzke syndrome",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_PATHOGENIC",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95228667,
+          "stop": 95228667,
+          "reference": "T",
+          "alternative": "G",
+          "vcv": "VCV002437068",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV003140988",
+              "title": "NM_014305.4(TGDS):c.885-2A>C AND Catel-Manzke syndrome",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95230399,
+          "stop": 95230399,
+          "reference": "T",
+          "alternative": "G",
+          "vcv": "VCV002531608",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV003249910",
+              "title": "NM_014305.4(TGDS):c.685A>C (p.Thr229Pro) AND Inborn genetic diseases",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95248302,
+          "stop": 95248302,
+          "reference": "T",
+          "alternative": "G",
+          "vcv": "VCV001900006",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002576293",
+              "title": "NM_014305.4(TGDS):c.86+3A>C AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95248354,
+          "stop": 95248354,
+          "reference": "G",
+          "alternative": "A",
+          "vcv": "VCV002476739",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV003198638",
+              "title": "NM_014305.4(TGDS):c.37C>T (p.Pro13Ser) AND Inborn genetic diseases",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95248366,
+          "stop": 95248366,
+          "reference": "G",
+          "alternative": "A",
+          "vcv": "VCV002564467",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV003310965",
+              "title": "NM_014305.4(TGDS):c.25C>T (p.Pro9Ser) AND Inborn genetic diseases",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95233346,
+          "stop": 95233346,
+          "reference": "T",
+          "alternative": "G",
+          "vcv": "VCV002585204",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV003337820",
+              "title": "NM_014305.4(TGDS):c.554A>C (p.Lys185Thr) AND Catel-Manzke syndrome",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95233419,
+          "stop": 95233419,
+          "reference": "G",
+          "alternative": "C",
+          "vcv": "VCV002419927",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV003118452",
+              "title": "NM_014305.4(TGDS):c.481C>G (p.Gln161Glu) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95230384,
+          "stop": 95230384,
+          "reference": "A",
+          "alternative": "G",
+          "vcv": "VCV000162456",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000149818",
+              "title": "NM_014305.4(TGDS):c.700T>C (p.Tyr234His) AND Catel-Manzke syndrome",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
+              "reviewStatus": "REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95243122,
+          "stop": 95243122,
+          "reference": "C",
+          "alternative": "A",
+          "vcv": "VCV000162455",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001092080",
+              "title": "NM_014305.4(TGDS):c.298G>T (p.Ala100Ser) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS"
+            },
+            {
+              "rcv": "RCV000624586",
+              "title": "NM_014305.4(TGDS):c.298G>T (p.Ala100Ser) AND Inborn genetic diseases",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            },
+            {
+              "rcv": "RCV003415988",
+              "title": "NM_014305.4(TGDS):c.298G>T (p.Ala100Ser) AND TGDS-related condition",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95246151,
+          "stop": 95246151,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV000747821",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000924565",
+              "title": "NM_014305.4(TGDS):c.97A>G (p.Met33Val) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95243123,
+          "stop": 95243123,
+          "reference": "G",
+          "alternative": "A",
+          "vcv": "VCV000773273",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000952993",
+              "title": "NM_014305.4(TGDS):c.297C>T (p.Ala99=) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95248348,
+          "stop": 95248348,
+          "reference": "C",
+          "alternative": "T",
+          "vcv": "VCV000777433",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000957904",
+              "title": "NM_014305.4(TGDS):c.43G>A (p.Gly15Ser) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95248379,
+          "stop": 95248379,
+          "reference": "C",
+          "alternative": "T",
+          "vcv": "VCV000778479",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000959128",
+              "title": "NM_014305.4(TGDS):c.12G>A (p.Ala4=) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95235175,
+          "stop": 95235175,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV001180334",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001537521",
+              "title": "NM_014305.4(TGDS):c.456+173A>G AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95227140,
+          "stop": 95227141,
+          "reference": "AAG",
+          "alternative": "A",
+          "vcv": "VCV001228958",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001616589",
+              "title": "NM_014305.4(TGDS):c.983-35_983-34del AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95230624,
+          "stop": 95230625,
+          "reference": "A",
+          "alternative": "AAGTGGCAAACATATT",
+          "vcv": "VCV001241711",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001645456",
+              "title": "NM_014305.4(TGDS):c.660-201_660-200insCACTAATATGTTTGC AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95227129,
+          "stop": 95227129,
+          "reference": "CA",
+          "alternative": "C",
+          "vcv": "VCV001244089",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001648355",
+              "title": "NM_014305.4(TGDS):c.983-23del AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95246440,
+          "stop": 95246440,
+          "reference": "C",
+          "alternative": "T",
+          "vcv": "VCV001244800",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001649008",
+              "title": "NM_014305.4(TGDS):c.87-279G>A AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95230877,
+          "stop": 95230877,
+          "reference": "G",
+          "alternative": "A",
+          "vcv": "VCV001244948",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001649156",
+              "title": "NM_014305.4(TGDS):c.659+107C>T AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95248566,
+          "stop": 95248566,
+          "reference": "C",
+          "alternative": "T",
+          "vcv": "VCV001255243",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001653352",
+              "title": "NC_000013.11:g.94596312C>T AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95229735,
+          "stop": 95229735,
+          "reference": "A",
+          "alternative": "G",
+          "vcv": "VCV001260430",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001669248",
+              "title": "NM_014305.4(TGDS):c.826-52T>C AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95227128,
+          "stop": 95227129,
+          "reference": "C",
+          "alternative": "CA",
+          "vcv": "VCV001261515",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001674093",
+              "title": "NM_014305.4(TGDS):c.983-34dup AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95231981,
+          "stop": 95231981,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV001263818",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001674812",
+              "title": "NM_014305.4(TGDS):c.615+167A>G AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95231235,
+          "stop": 95231235,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV001266393",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001676216",
+              "title": "NM_014305.4(TGDS):c.616-208A>G AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95230107,
+          "stop": 95230111,
+          "reference": "CTTAAT",
+          "alternative": "C",
+          "vcv": "VCV001266539",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001676362",
+              "title": "NM_014305.4(TGDS):c.825+148_825+152del AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95235557,
+          "stop": 95235557,
+          "reference": "A",
+          "alternative": "G",
+          "vcv": "VCV001273284",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001679107",
+              "title": "NM_014305.4(TGDS):c.314-67T>C AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95248751,
+          "stop": 95248751,
+          "reference": "C",
+          "alternative": "T",
+          "vcv": "VCV001269376",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001681009",
+              "title": "NC_000013.11:g.94596497C>T AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95227139,
+          "stop": 95227141,
+          "reference": "AAAG",
+          "alternative": "A",
+          "vcv": "VCV001282312",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001695704",
+              "title": "NM_014305.4(TGDS):c.983-35_983-33del AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95227340,
+          "stop": 95227340,
+          "reference": "C",
+          "alternative": "T",
+          "vcv": "VCV001288190",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001707165",
+              "title": "NM_014305.4(TGDS):c.983-234G>A AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95233607,
+          "stop": 95233607,
+          "reference": "G",
+          "alternative": "A",
+          "vcv": "VCV001287386",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001710513",
+              "title": "NM_014305.4(TGDS):c.457-164C>T AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95243270,
+          "stop": 95243270,
+          "reference": "G",
+          "alternative": "A",
+          "vcv": "VCV001289640",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001714148",
+              "title": "NM_014305.4(TGDS):c.223-73C>T AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95235626,
+          "stop": 95235626,
+          "reference": "A",
+          "alternative": "T",
+          "vcv": "VCV001294950",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001721615",
+              "title": "NM_014305.4(TGDS):c.314-136T>A AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95227055,
+          "stop": 95227055,
+          "reference": "A",
+          "alternative": "G",
+          "vcv": "VCV001309690",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001756758",
+              "title": "NM_014305.4(TGDS):c.1034T>C (p.Leu345Ser) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95232181,
+          "stop": 95232181,
+          "reference": "A",
+          "alternative": "C",
+          "vcv": "VCV001307216",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001760634",
+              "title": "NM_014305.4(TGDS):c.582T>G (p.Ser194Arg) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95243112,
+          "stop": 95243112,
+          "reference": "T",
+          "alternative": "A",
+          "vcv": "VCV001307217",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001760635",
+              "title": "NM_014305.4(TGDS):c.308A>T (p.His103Leu) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS"
+            },
+            {
+              "rcv": "RCV002540307",
+              "title": "NM_014305.4(TGDS):c.308A>T (p.His103Leu) AND Inborn genetic diseases",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95244548,
+          "stop": 95244548,
+          "reference": "T",
+          "alternative": "A",
+          "vcv": "VCV001475013",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001973800",
+              "title": "NM_014305.4(TGDS):c.169A>T (p.Ser57Cys) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95233400,
+          "stop": 95233400,
+          "reference": "G",
+          "alternative": "T",
+          "vcv": "VCV001480501",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001993954",
+              "title": "NM_014305.4(TGDS):c.500C>A (p.Ala167Glu) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95230255,
+          "stop": 95230255,
+          "reference": "A",
+          "alternative": "T",
+          "vcv": "VCV001523917",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002031328",
+              "title": "NM_014305.4(TGDS):c.825+4T>A AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95229697,
+          "stop": 95229697,
+          "reference": "A",
+          "alternative": "G",
+          "vcv": "VCV001617317",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002076513",
+              "title": "NM_014305.4(TGDS):c.826-14T>C AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95228593,
+          "stop": 95228593,
+          "reference": "A",
+          "alternative": "G",
+          "vcv": "VCV001575281",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002083442",
+              "title": "NM_014305.4(TGDS):c.957T>C (p.Pro319=) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95246122,
+          "stop": 95246122,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV001583659",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002093757",
+              "title": "NM_014305.4(TGDS):c.126A>G (p.Pro42=) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh37",
+          "chromosome": "13",
+          "start": 95248289,
+          "stop": 95248289,
+          "reference": "C",
+          "alternative": "T",
+          "vcv": "VCV001601222",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002136792",
+              "title": "NM_014305.4(TGDS):c.86+16G>A AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "genomeRelease": "GRCh38",
+      "variants": [
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94590897,
+          "stop": 94590897,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV000162457",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000149819",
+              "title": "NM_014305.4(TGDS):c.269A>G (p.Glu90Gly) AND Catel-Manzke syndrome",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
+              "reviewStatus": "REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94590872,
+          "stop": 94590872,
+          "reference": "A",
+          "alternative": "C",
+          "vcv": "VCV000162458",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000149820",
+              "title": "NM_014305.4(TGDS):c.294T>G (p.Phe98Leu) AND Catel-Manzke syndrome",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
+              "reviewStatus": "REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94576404,
+          "stop": 94576404,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV000162460",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000149822",
+              "title": "NM_014305.4(TGDS):c.892A>G (p.Asn298Asp) AND Catel-Manzke syndrome",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
+              "reviewStatus": "REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94574860,
+          "stop": 94574860,
+          "reference": "G",
+          "alternative": "A",
+          "vcv": "VCV000720702",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000894054",
+              "title": "NM_014305.4(TGDS):c.983-8C>T AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94578722,
+          "stop": 94578722,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV000738027",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000913870",
+              "title": "NM_014305.4(TGDS):c.659+8A>G AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94578747,
+          "stop": 94578747,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV000744448",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000920899",
+              "title": "NM_014305.4(TGDS):c.642A>G (p.Leu214=) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94590902,
+          "stop": 94590902,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV000753804",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000931075",
+              "title": "NM_014305.4(TGDS):c.264A>G (p.Glu88=) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94583085,
+          "stop": 94583085,
+          "reference": "T",
+          "alternative": "G",
+          "vcv": "VCV000792360",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000975453",
+              "title": "NM_014305.4(TGDS):c.456+9A>C AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94574839,
+          "stop": 94574839,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV000792370",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000975465",
+              "title": "NM_014305.4(TGDS):c.996A>G (p.Arg332=) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94590880,
+          "stop": 94590880,
+          "reference": "G",
+          "alternative": "T",
+          "vcv": "VCV000521407",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000622534",
+              "title": "NM_014305.4(TGDS):c.286C>A (p.Leu96Ile) AND Inborn genetic diseases",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94592283,
+          "stop": 94592283,
+          "reference": "A",
+          "alternative": "T",
+          "vcv": "VCV000521406",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000624236",
+              "title": "NM_014305.4(TGDS):c.180T>A (p.Asn60Lys) AND Inborn genetic diseases",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94578116,
+          "stop": 94578116,
+          "reference": "A",
+          "alternative": "C",
+          "vcv": "VCV000741988",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000918201",
+              "title": "NM_014305.4(TGDS):c.714T>G (p.Val238=) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94592329,
+          "stop": 94592329,
+          "reference": "G",
+          "alternative": "C",
+          "vcv": "VCV001897819",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002569866",
+              "title": "NM_014305.4(TGDS):c.154-20C>G AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94583075,
+          "stop": 94583075,
+          "reference": "A",
+          "alternative": "G",
+          "vcv": "VCV001926065",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002605013",
+              "title": "NM_014305.4(TGDS):c.456+19T>C AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94583203,
+          "stop": 94583203,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV002209715",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002652836",
+              "title": "NM_014305.4(TGDS):c.347A>G (p.Tyr116Cys) AND Inborn genetic diseases",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94581077,
+          "stop": 94581077,
+          "reference": "C",
+          "alternative": "T",
+          "vcv": "VCV001968917",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002712156",
+              "title": "NM_014305.4(TGDS):c.555+14G>A AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94583111,
+          "stop": 94583111,
+          "reference": "C",
+          "alternative": "A",
+          "vcv": "VCV001962614",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002726264",
+              "title": "NM_014305.4(TGDS):c.439G>T (p.Gly147Cys) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94578037,
+          "stop": 94578037,
+          "reference": "C",
+          "alternative": "T",
+          "vcv": "VCV002246034",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002738091",
+              "title": "NM_014305.4(TGDS):c.793G>A (p.Val265Ile) AND Inborn genetic diseases",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94590861,
+          "stop": 94590861,
+          "reference": "G",
+          "alternative": "A",
+          "vcv": "VCV002412789",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002790047",
+              "title": "NM_014305.4(TGDS):c.305C>T (p.Thr102Ile) AND Catel-Manzke syndrome",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_PATHOGENIC",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94581099,
+          "stop": 94581099,
+          "reference": "G",
+          "alternative": "C",
+          "vcv": "VCV002260570",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002797906",
+              "title": "NM_014305.4(TGDS):c.547C>G (p.Gln183Glu) AND Inborn genetic diseases",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94577421,
+          "stop": 94577421,
+          "reference": "C",
+          "alternative": "G",
+          "vcv": "VCV002278206",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002822699",
+              "title": "NM_014305.4(TGDS):c.834G>C (p.Glu278Asp) AND Inborn genetic diseases",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94583161,
+          "stop": 94583161,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV002327705",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002929671",
+              "title": "NM_014305.4(TGDS):c.389A>G (p.His130Arg) AND Inborn genetic diseases",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94592236,
+          "stop": 94592236,
+          "reference": "C",
+          "alternative": "T",
+          "vcv": "VCV002066159",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002966071",
+              "title": "NM_014305.4(TGDS):c.222+5G>A AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94581155,
+          "stop": 94581155,
+          "reference": "T",
+          "alternative": "G",
+          "vcv": "VCV002437069",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV003140989",
+              "title": "NM_014305.4(TGDS):c.491A>C (p.Asn164Thr) AND Catel-Manzke syndrome",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94578089,
+          "stop": 94578089,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV001932516",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002605801",
+              "title": "NM_014305.4(TGDS):c.741A>G (p.Lys247=) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94590881,
+          "stop": 94590881,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV002160065",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV003075760",
+              "title": "NM_014305.4(TGDS):c.285A>G (p.Val95=) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94590852,
+          "stop": 94590852,
+          "reference": "C",
+          "alternative": "T",
+          "vcv": "VCV001878395",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002510448",
+              "title": "NM_014305.4(TGDS):c.313+1G>A AND Catel-Manzke syndrome",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_PATHOGENIC",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94581191,
+          "stop": 94581191,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV002412788",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002810053",
+              "title": "NM_014305.4(TGDS):c.457-2A>G AND Catel-Manzke syndrome",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_PATHOGENIC",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94576413,
+          "stop": 94576413,
+          "reference": "T",
+          "alternative": "G",
+          "vcv": "VCV002437068",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV003140988",
+              "title": "NM_014305.4(TGDS):c.885-2A>C AND Catel-Manzke syndrome",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94578145,
+          "stop": 94578145,
+          "reference": "T",
+          "alternative": "G",
+          "vcv": "VCV002531608",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV003249910",
+              "title": "NM_014305.4(TGDS):c.685A>C (p.Thr229Pro) AND Inborn genetic diseases",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94596048,
+          "stop": 94596048,
+          "reference": "T",
+          "alternative": "G",
+          "vcv": "VCV001900006",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002576293",
+              "title": "NM_014305.4(TGDS):c.86+3A>C AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94596100,
+          "stop": 94596100,
+          "reference": "G",
+          "alternative": "A",
+          "vcv": "VCV002476739",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV003198638",
+              "title": "NM_014305.4(TGDS):c.37C>T (p.Pro13Ser) AND Inborn genetic diseases",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94596112,
+          "stop": 94596112,
+          "reference": "G",
+          "alternative": "A",
+          "vcv": "VCV002564467",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV003310965",
+              "title": "NM_014305.4(TGDS):c.25C>T (p.Pro9Ser) AND Inborn genetic diseases",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94581092,
+          "stop": 94581092,
+          "reference": "T",
+          "alternative": "G",
+          "vcv": "VCV002585204",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV003337820",
+              "title": "NM_014305.4(TGDS):c.554A>C (p.Lys185Thr) AND Catel-Manzke syndrome",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94581165,
+          "stop": 94581165,
+          "reference": "G",
+          "alternative": "C",
+          "vcv": "VCV002419927",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV003118452",
+              "title": "NM_014305.4(TGDS):c.481C>G (p.Gln161Glu) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94578130,
+          "stop": 94578130,
+          "reference": "A",
+          "alternative": "G",
+          "vcv": "VCV000162456",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000149818",
+              "title": "NM_014305.4(TGDS):c.700T>C (p.Tyr234His) AND Catel-Manzke syndrome",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
+              "reviewStatus": "REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94590868,
+          "stop": 94590868,
+          "reference": "C",
+          "alternative": "A",
+          "vcv": "VCV000162455",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001092080",
+              "title": "NM_014305.4(TGDS):c.298G>T (p.Ala100Ser) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS"
+            },
+            {
+              "rcv": "RCV000624586",
+              "title": "NM_014305.4(TGDS):c.298G>T (p.Ala100Ser) AND Inborn genetic diseases",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            },
+            {
+              "rcv": "RCV003415988",
+              "title": "NM_014305.4(TGDS):c.298G>T (p.Ala100Ser) AND TGDS-related condition",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94593897,
+          "stop": 94593897,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV000747821",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000924565",
+              "title": "NM_014305.4(TGDS):c.97A>G (p.Met33Val) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94590869,
+          "stop": 94590869,
+          "reference": "G",
+          "alternative": "A",
+          "vcv": "VCV000773273",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000952993",
+              "title": "NM_014305.4(TGDS):c.297C>T (p.Ala99=) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94596094,
+          "stop": 94596094,
+          "reference": "C",
+          "alternative": "T",
+          "vcv": "VCV000777433",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000957904",
+              "title": "NM_014305.4(TGDS):c.43G>A (p.Gly15Ser) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94596125,
+          "stop": 94596125,
+          "reference": "C",
+          "alternative": "T",
+          "vcv": "VCV000778479",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV000959128",
+              "title": "NM_014305.4(TGDS):c.12G>A (p.Ala4=) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94582921,
+          "stop": 94582921,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV001180334",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001537521",
+              "title": "NM_014305.4(TGDS):c.456+173A>G AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94574886,
+          "stop": 94574887,
+          "reference": "AAG",
+          "alternative": "A",
+          "vcv": "VCV001228958",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001616589",
+              "title": "NM_014305.4(TGDS):c.983-35_983-34del AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94578370,
+          "stop": 94578371,
+          "reference": "A",
+          "alternative": "AAGTGGCAAACATATT",
+          "vcv": "VCV001241711",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001645456",
+              "title": "NM_014305.4(TGDS):c.660-201_660-200insCACTAATATGTTTGC AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94574875,
+          "stop": 94574875,
+          "reference": "CA",
+          "alternative": "C",
+          "vcv": "VCV001244089",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001648355",
+              "title": "NM_014305.4(TGDS):c.983-23del AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94594186,
+          "stop": 94594186,
+          "reference": "C",
+          "alternative": "T",
+          "vcv": "VCV001244800",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001649008",
+              "title": "NM_014305.4(TGDS):c.87-279G>A AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94578623,
+          "stop": 94578623,
+          "reference": "G",
+          "alternative": "A",
+          "vcv": "VCV001244948",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001649156",
+              "title": "NM_014305.4(TGDS):c.659+107C>T AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94596312,
+          "stop": 94596312,
+          "reference": "C",
+          "alternative": "T",
+          "vcv": "VCV001255243",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001653352",
+              "title": "NC_000013.11:g.94596312C>T AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94577481,
+          "stop": 94577481,
+          "reference": "A",
+          "alternative": "G",
+          "vcv": "VCV001260430",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001669248",
+              "title": "NM_014305.4(TGDS):c.826-52T>C AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94574874,
+          "stop": 94574875,
+          "reference": "C",
+          "alternative": "CA",
+          "vcv": "VCV001261515",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001674093",
+              "title": "NM_014305.4(TGDS):c.983-34dup AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94579727,
+          "stop": 94579727,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV001263818",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001674812",
+              "title": "NM_014305.4(TGDS):c.615+167A>G AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94578981,
+          "stop": 94578981,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV001266393",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001676216",
+              "title": "NM_014305.4(TGDS):c.616-208A>G AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94577853,
+          "stop": 94577857,
+          "reference": "CTTAAT",
+          "alternative": "C",
+          "vcv": "VCV001266539",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001676362",
+              "title": "NM_014305.4(TGDS):c.825+148_825+152del AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94583303,
+          "stop": 94583303,
+          "reference": "A",
+          "alternative": "G",
+          "vcv": "VCV001273284",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001679107",
+              "title": "NM_014305.4(TGDS):c.314-67T>C AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94596497,
+          "stop": 94596497,
+          "reference": "C",
+          "alternative": "T",
+          "vcv": "VCV001269376",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001681009",
+              "title": "NC_000013.11:g.94596497C>T AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94574885,
+          "stop": 94574887,
+          "reference": "AAAG",
+          "alternative": "A",
+          "vcv": "VCV001282312",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001695704",
+              "title": "NM_014305.4(TGDS):c.983-35_983-33del AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94575086,
+          "stop": 94575086,
+          "reference": "C",
+          "alternative": "T",
+          "vcv": "VCV001288190",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001707165",
+              "title": "NM_014305.4(TGDS):c.983-234G>A AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94581353,
+          "stop": 94581353,
+          "reference": "G",
+          "alternative": "A",
+          "vcv": "VCV001287386",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001710513",
+              "title": "NM_014305.4(TGDS):c.457-164C>T AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94591016,
+          "stop": 94591016,
+          "reference": "G",
+          "alternative": "A",
+          "vcv": "VCV001289640",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001714148",
+              "title": "NM_014305.4(TGDS):c.223-73C>T AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94583372,
+          "stop": 94583372,
+          "reference": "A",
+          "alternative": "T",
+          "vcv": "VCV001294950",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001721615",
+              "title": "NM_014305.4(TGDS):c.314-136T>A AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94574801,
+          "stop": 94574801,
+          "reference": "A",
+          "alternative": "G",
+          "vcv": "VCV001309690",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001756758",
+              "title": "NM_014305.4(TGDS):c.1034T>C (p.Leu345Ser) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94579927,
+          "stop": 94579927,
+          "reference": "A",
+          "alternative": "C",
+          "vcv": "VCV001307216",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001760634",
+              "title": "NM_014305.4(TGDS):c.582T>G (p.Ser194Arg) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94590858,
+          "stop": 94590858,
+          "reference": "T",
+          "alternative": "A",
+          "vcv": "VCV001307217",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001760635",
+              "title": "NM_014305.4(TGDS):c.308A>T (p.His103Leu) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS"
+            },
+            {
+              "rcv": "RCV002540307",
+              "title": "NM_014305.4(TGDS):c.308A>T (p.His103Leu) AND Inborn genetic diseases",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94592294,
+          "stop": 94592294,
+          "reference": "T",
+          "alternative": "A",
+          "vcv": "VCV001475013",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001973800",
+              "title": "NM_014305.4(TGDS):c.169A>T (p.Ser57Cys) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94581146,
+          "stop": 94581146,
+          "reference": "G",
+          "alternative": "T",
+          "vcv": "VCV001480501",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV001993954",
+              "title": "NM_014305.4(TGDS):c.500C>A (p.Ala167Glu) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94578001,
+          "stop": 94578001,
+          "reference": "A",
+          "alternative": "T",
+          "vcv": "VCV001523917",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002031328",
+              "title": "NM_014305.4(TGDS):c.825+4T>A AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94577443,
+          "stop": 94577443,
+          "reference": "A",
+          "alternative": "G",
+          "vcv": "VCV001617317",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002076513",
+              "title": "NM_014305.4(TGDS):c.826-14T>C AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94576339,
+          "stop": 94576339,
+          "reference": "A",
+          "alternative": "G",
+          "vcv": "VCV001575281",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002083442",
+              "title": "NM_014305.4(TGDS):c.957T>C (p.Pro319=) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94593868,
+          "stop": 94593868,
+          "reference": "T",
+          "alternative": "C",
+          "vcv": "VCV001583659",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002093757",
+              "title": "NM_014305.4(TGDS):c.126A>G (p.Pro42=) AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_LIKELY_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        },
+        {
+          "release": "GRCh38",
+          "chromosome": "13",
+          "start": 94596035,
+          "stop": 94596035,
+          "reference": "C",
+          "alternative": "T",
+          "vcv": "VCV001601222",
+          "referenceAssertions": [
+            {
+              "rcv": "RCV002136792",
+              "title": "NM_014305.4(TGDS):c.86+16G>A AND not provided",
+              "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+              "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
