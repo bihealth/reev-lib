@@ -294,6 +294,10 @@ class TranscriptResult$Type {
       transcripts: json.transcripts.map((transcript) => Transcript.fromJson(transcript))
     }
   }
+
+  fromJsonString(jsonString: string): TranscriptResult {
+    return this.fromJson(JSON.parse(jsonString))
+  }
 }
 
 /**
