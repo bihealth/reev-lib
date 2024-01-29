@@ -1,9 +1,11 @@
 import { type Preview, setup } from '@storybook/vue3'
+import { createPinia } from 'pinia'
+import { type App } from 'vue'
 
 import { registerPlugins } from '../src/plugins'
 import { withVuetifyTheme } from './withVuetifyTheme.decorator'
 
-// import type { StoryIdentifier } from "@storybook/types"
+export const pinia = createPinia()
 
 const preview: Preview = {
   parameters: {
@@ -27,7 +29,10 @@ const preview: Preview = {
   }
 }
 
-setup((app) => {
+setup((app: App) => {
+  // Use pinia for state management, also in pinia.
+  console.log('Using pinia for state management')
+  app.use(pinia)
   // Registers your app's plugins into Storybook
   registerPlugins(app)
 })
