@@ -1,0 +1,4850 @@
+{
+  "30293211": {
+    "searchResult": {
+      "_id": "30293211",
+      "pmid": 30293211,
+      "title": "BRCA mutations: is everything said?",
+      "journal": "Breast Cancer Res Treat",
+      "authors": [
+        "López-Urrutia E",
+        "Salazar-Rojas V",
+        "Brito-Elías L",
+        "Coca-González M",
+        "Silva-García J",
+        "Sánchez-Marín D",
+        "Campos-Parra AD",
+        "Pérez-Plasencia C"
+      ],
+      "date": "2019-01-01T00:00:00Z",
+      "doi": "10.1007/s10549-018-4986-5",
+      "meta_date_publication": "2019 Jan",
+      "meta_volume": "173",
+      "meta_issue": "1",
+      "meta_pages": "49-54",
+      "score": 252.99637,
+      "text_hl": "@<m>GENE_BRCA1</m> @@@BRCA@@@ mutations: is everything said?",
+      "citations": {
+        "NLM": "López-Urrutia E, Salazar-Rojas V, Brito-Elías L, Coca-González M, Silva-García J, Sánchez-Marín D, Campos-Parra AD, Pérez-Plasencia C. BRCA mutations: is everything said? Breast Cancer Res Treat. 2019 Jan;173(1):49-54. PMID: 30293211",
+        "BibTeX": "@article{30293211, title={BRCA mutations: is everything said?}, author={López-Urrutia E and Salazar-Rojas V and Brito-Elías L and Coca-González M and Silva-García J and Sánchez-Marín D and Campos-Parra AD and Pérez-Plasencia C}, journal={Breast Cancer Res Treat}, volume={173}, number={1}, pages={49-54}}"
+      }
+    },
+    "abstract": {
+      "_id": "30293211|None",
+      "id": "30293211",
+      "infons": {},
+      "passages": [
+        {
+          "infons": {
+            "journal": "Breast Cancer Res Treat. 2019 Jan;173(1):49-54. doi: 10.1007/s10549-018-4986-5. ",
+            "year": "2019",
+            "type": "title",
+            "authors": "Lopez-Urrutia E, Salazar-Rojas V, Brito-Elias L, Coca-Gonzalez M, Silva-Garcia J, Sanchez-Marin D, Campos-Parra AD, Perez-Plasencia C"
+          },
+          "offset": 0,
+          "text": "BRCA mutations: is everything said?",
+          "sentences": [],
+          "annotations": [
+            {
+              "id": "1",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 0, "length": 4 }]
+            }
+          ],
+          "relations": []
+        },
+        {
+          "infons": { "type": "abstract" },
+          "offset": 36,
+          "text": "BACKGROUND: Mutations in the BRCA1 and BRCA2 genes constitute a risk factor for breast cancer development. BRCA mutation research has been an active field since the discovery of the genes, and new mutations in both genes are constantly described and classified according to several systems. AIM: We intend to provide an overview of the current state of BRCA1 and BRCA2 mutation description and classification. We wanted to know whether there was a trend towards a more frequently described mutation type and what the proportion of pathogenic mutations was. RESULTS: We found that, although new mutations are described each year as reflected in current database records, very few of them are reported in papers. Classification systems are highly heterogeneous and a consensus among them is still under development. Regarding their function, a large number of mutations are yet to be analyzed, a very complex task, due to the great number of possible variations and their diverse effect in the BRCA gene functions. After individual analysis, many variants of unknown significance turn out to be pathogenic, and many can disrupt interactions with other proteins involved in mechanisms such as DNA damage repair pathways. Recent data suggest that looking for mutation patterns or combinations would shed a wider light on BRCA-derived cancer susceptibility in the upcoming years.",
+          "sentences": [],
+          "annotations": [
+            {
+              "id": "10",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 65, "length": 5 }]
+            },
+            {
+              "id": "11",
+              "infons": {
+                "identifier": "675",
+                "type": "Gene",
+                "ncbi_homologene": "41",
+                "valid": true,
+                "normalized": [675],
+                "database": "ncbi_gene",
+                "normalized_id": 675,
+                "biotype": "gene",
+                "name": "BRCA2",
+                "accession": "@GENE_BRCA2"
+              },
+              "text": "BRCA2",
+              "locations": [{ "offset": 75, "length": 5 }]
+            },
+            {
+              "id": "12",
+              "infons": {
+                "identifier": "MESH:D001943",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D001943"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D001943",
+                "biotype": "disease",
+                "name": "Breast Neoplasms",
+                "accession": "@DISEASE_Breast_Neoplasms"
+              },
+              "text": "breast cancer",
+              "locations": [{ "offset": 116, "length": 13 }]
+            },
+            {
+              "id": "13",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 143, "length": 4 }]
+            },
+            {
+              "id": "14",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 389, "length": 5 }]
+            },
+            {
+              "id": "15",
+              "infons": {
+                "identifier": "675",
+                "type": "Gene",
+                "ncbi_homologene": "41",
+                "valid": true,
+                "normalized": [675],
+                "database": "ncbi_gene",
+                "normalized_id": 675,
+                "biotype": "gene",
+                "name": "BRCA2",
+                "accession": "@GENE_BRCA2"
+              },
+              "text": "BRCA2",
+              "locations": [{ "offset": 399, "length": 5 }]
+            },
+            {
+              "id": "16",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 1028, "length": 4 }]
+            },
+            {
+              "id": "17",
+              "infons": {
+                "identifier": "MESH:D009369",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D009369"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D009369",
+                "biotype": "disease",
+                "name": "Neoplasms",
+                "accession": "@DISEASE_Neoplasms"
+              },
+              "text": "cancer",
+              "locations": [{ "offset": 1366, "length": 6 }]
+            }
+          ],
+          "relations": []
+        }
+      ],
+      "relations": [
+        {
+          "id": "R1",
+          "infons": {
+            "score": "0.7471",
+            "role1": {
+              "identifier": "MESH:D009369",
+              "type": "Disease",
+              "valid": true,
+              "normalized": ["D009369"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D009369",
+              "biotype": "disease",
+              "name": "Neoplasms",
+              "accession": "@DISEASE_Neoplasms"
+            },
+            "role2": {
+              "identifier": "672",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [672],
+              "database": "ncbi_gene",
+              "normalized_id": 672,
+              "biotype": "gene",
+              "name": "BRCA1",
+              "accession": "@GENE_BRCA1"
+            },
+            "type": "Association"
+          },
+          "nodes": [{ "refid": "0", "role": "8,7" }]
+        },
+        {
+          "id": "R2",
+          "infons": {
+            "score": "0.9995",
+            "role1": {
+              "identifier": "MESH:D001943",
+              "type": "Disease",
+              "valid": true,
+              "normalized": ["D001943"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D001943",
+              "biotype": "disease",
+              "name": "Breast Neoplasms",
+              "accession": "@DISEASE_Breast_Neoplasms"
+            },
+            "role2": {
+              "identifier": "675",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [675],
+              "database": "ncbi_gene",
+              "normalized_id": 675,
+              "biotype": "gene",
+              "name": "BRCA2",
+              "accession": "@GENE_BRCA2"
+            },
+            "type": "Association"
+          },
+          "nodes": [{ "refid": "1", "role": "3,2" }]
+        },
+        {
+          "id": "R3",
+          "infons": {
+            "score": "0.9994",
+            "role1": {
+              "identifier": "MESH:D001943",
+              "type": "Disease",
+              "valid": true,
+              "normalized": ["D001943"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D001943",
+              "biotype": "disease",
+              "name": "Breast Neoplasms",
+              "accession": "@DISEASE_Breast_Neoplasms"
+            },
+            "role2": {
+              "identifier": "672",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [672],
+              "database": "ncbi_gene",
+              "normalized_id": 672,
+              "biotype": "gene",
+              "name": "BRCA1",
+              "accession": "@GENE_BRCA1"
+            },
+            "type": "Association"
+          },
+          "nodes": [{ "refid": "2", "role": "3,1" }]
+        }
+      ],
+      "pmid": 30293211,
+      "pmcid": null,
+      "meta": {},
+      "date": "2019-01-01T00:00:00Z",
+      "journal": "Breast Cancer Res Treat",
+      "authors": [
+        "López-Urrutia E",
+        "Salazar-Rojas V",
+        "Brito-Elías L",
+        "Coca-González M",
+        "Silva-García J",
+        "Sánchez-Marín D",
+        "Campos-Parra AD",
+        "Pérez-Plasencia C"
+      ],
+      "relations_display": [
+        { "name": "associate|@DISEASE_Neoplasms|@GENE_BRCA1" },
+        { "name": "associate|@DISEASE_Breast_Neoplasms|@GENE_BRCA2" },
+        { "name": "associate|@DISEASE_Breast_Neoplasms|@GENE_BRCA1" }
+      ]
+    }
+  },
+  "30679172": {
+    "searchResult": {
+      "_id": "30679172",
+      "pmid": 30679172,
+      "title": "BRCA Exchange Launches.",
+      "journal": "Cancer Discov",
+      "date": "2019-03-01T00:00:00Z",
+      "doi": "10.1158/2159-8290.CD-NB2019-008",
+      "meta_date_publication": "2019 Mar",
+      "meta_volume": "9",
+      "meta_issue": "3",
+      "meta_pages": "311-312",
+      "score": 250.37035,
+      "text_hl": "@<m>GENE_BRCA1</m> @@@BRCA@@@ Exchange Launches.",
+      "citations": {
+        "NLM": "BRCA Exchange Launches. Cancer Discov. 2019 Mar;9(3):311-312. PMID: 30679172",
+        "BibTeX": "@article{30679172, title={BRCA Exchange Launches.}, journal={Cancer Discov}, volume={9}, number={3}, pages={311-312}}"
+      }
+    },
+    "abstract": {
+      "_id": "30679172|None",
+      "id": "30679172",
+      "infons": {},
+      "passages": [
+        {
+          "infons": {
+            "journal": "Cancer Discov. 2019 Mar;9(3):311-312. doi: 10.1158/2159-8290.CD-NB2019-008. Epub ",
+            "year": "2019",
+            "type": "title"
+          },
+          "offset": 0,
+          "text": "BRCA Exchange Launches.",
+          "sentences": [],
+          "annotations": [
+            {
+              "id": "1",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 0, "length": 4 }]
+            }
+          ],
+          "relations": []
+        },
+        {
+          "infons": { "type": "abstract" },
+          "offset": 24,
+          "text": "The newly launched BRCA Exchange website and mobile app include data on more than 20,000 unique, inherited BRCA variants. Clinicians, researchers, and patients are expected to benefit from being able to access comprehensive, quality information on BRCA variants in a single place.",
+          "sentences": [],
+          "annotations": [
+            {
+              "id": "6",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 43, "length": 4 }]
+            },
+            {
+              "id": "7",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 131, "length": 4 }]
+            },
+            {
+              "id": "8",
+              "infons": {
+                "identifier": "9606",
+                "type": "Species",
+                "valid": true,
+                "normalized": [9606],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 9606,
+                "biotype": "species",
+                "name": "9606",
+                "accession": null
+              },
+              "text": "patients",
+              "locations": [{ "offset": 175, "length": 8 }]
+            },
+            {
+              "id": "9",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 272, "length": 4 }]
+            }
+          ],
+          "relations": []
+        }
+      ],
+      "relations": [],
+      "pmid": 30679172,
+      "pmcid": null,
+      "meta": {},
+      "date": "2019-03-01T00:00:00Z",
+      "journal": "Cancer Discov",
+      "authors": [],
+      "relations_display": []
+    }
+  },
+  "30992324": {
+    "searchResult": {
+      "_id": "30992324",
+      "pmid": 30992324,
+      "pmcid": "PMC6497576",
+      "title": "BRCA1-No Matter How You Splice It.",
+      "journal": "Cancer Res",
+      "authors": ["Li D", "Harlan-Williams LM", "Kumaraswamy E", "Jensen RA"],
+      "date": "2019-05-01T00:00:00Z",
+      "doi": "10.1158/0008-5472.CAN-18-3190",
+      "meta_date_publication": "2019 May 1",
+      "meta_volume": "79",
+      "meta_issue": "9",
+      "meta_pages": "2091-2098",
+      "score": 250.37035,
+      "text_hl": "@<m>GENE_BRCA1</m> @@@BRCA1@@@-No Matter How You Splice It.",
+      "citations": {
+        "NLM": "Li D, Harlan-Williams LM, Kumaraswamy E, Jensen RA. BRCA1-No Matter How You Splice It. Cancer Res. 2019 May 1;79(9):2091-2098. PMID: 30992324",
+        "BibTeX": "@article{30992324, title={BRCA1-No Matter How You Splice It.}, author={Li D and Harlan-Williams LM and Kumaraswamy E and Jensen RA}, journal={Cancer Res}, volume={79}, number={9}, pages={2091-2098}}"
+      }
+    },
+    "abstract": {
+      "_id": "30992324|None",
+      "id": "30992324",
+      "infons": {},
+      "passages": [
+        {
+          "infons": {
+            "journal": "Cancer Res. 2019 May 1;79(9):2091-2098. doi: 10.1158/0008-5472.CAN-18-3190. Epub ",
+            "year": "2019",
+            "article-id_pmc": "PMC6497576",
+            "type": "title",
+            "authors": "Li D, Harlan-Williams LM, Kumaraswamy E, Jensen RA"
+          },
+          "offset": 0,
+          "text": "BRCA1-No Matter How You Splice It.",
+          "sentences": [],
+          "annotations": [
+            {
+              "id": "1",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 0, "length": 5 }]
+            }
+          ],
+          "relations": []
+        },
+        {
+          "infons": { "type": "abstract" },
+          "offset": 35,
+          "text": "BRCA1 (breast cancer 1, early onset), a well-known breast cancer susceptibility gene, is a highly alternatively spliced gene. BRCA1 alternative splicing may serve as an alternative regulatory mechanism for the inactivation of the BRCA1 gene in both hereditary and sporadic breast cancers, and other BRCA1-associated cancers. The alternative transcripts of BRCA1 can mimic known functions, possess unique functions compared with the full-length BRCA1 transcript, and in some cases, appear to function in opposition to full-length BRCA1 In this review, we will summarize the functional \"naturally occurring\" alternative splicing transcripts of BRCA1 and then discuss the latest next-generation sequencing-based detection methods and techniques to detect alternative BRCA1 splicing patterns and their potential use in cancer diagnosis, prognosis, and therapy.",
+          "sentences": [],
+          "annotations": [
+            {
+              "id": "14",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 35, "length": 5 }]
+            },
+            {
+              "id": "15",
+              "infons": {
+                "identifier": "MESH:D001943",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D001943"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D001943",
+                "biotype": "disease",
+                "name": "Breast Neoplasms",
+                "accession": "@DISEASE_Breast_Neoplasms"
+              },
+              "text": "breast cancer",
+              "locations": [{ "offset": 86, "length": 13 }]
+            },
+            {
+              "id": "16",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 161, "length": 5 }]
+            },
+            {
+              "id": "17",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 265, "length": 5 }]
+            },
+            {
+              "id": "18",
+              "infons": {
+                "identifier": "MESH:D001943",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D001943"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D001943",
+                "biotype": "disease",
+                "name": "Breast Neoplasms",
+                "accession": "@DISEASE_Breast_Neoplasms"
+              },
+              "text": "hereditary and sporadic breast cancers",
+              "locations": [{ "offset": 284, "length": 38 }]
+            },
+            {
+              "id": "19",
+              "infons": {
+                "identifier": "MESH:D001943",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D001943"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D001943",
+                "biotype": "disease",
+                "name": "Breast Neoplasms",
+                "accession": "@DISEASE_Breast_Neoplasms"
+              },
+              "text": "BRCA1-associated cancers",
+              "locations": [{ "offset": 334, "length": 24 }]
+            },
+            {
+              "id": "20",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 391, "length": 5 }]
+            },
+            {
+              "id": "21",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 479, "length": 5 }]
+            },
+            {
+              "id": "22",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 564, "length": 5 }]
+            },
+            {
+              "id": "23",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 677, "length": 5 }]
+            },
+            {
+              "id": "24",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 799, "length": 5 }]
+            },
+            {
+              "id": "25",
+              "infons": {
+                "identifier": "MESH:D009369",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D009369"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D009369",
+                "biotype": "disease",
+                "name": "Neoplasms",
+                "accession": "@DISEASE_Neoplasms"
+              },
+              "text": "cancer",
+              "locations": [{ "offset": 850, "length": 6 }]
+            }
+          ],
+          "relations": []
+        }
+      ],
+      "relations": [
+        {
+          "id": "R1",
+          "infons": {
+            "score": "0.9976",
+            "role1": {
+              "identifier": "MESH:D009369",
+              "type": "Disease",
+              "valid": true,
+              "normalized": ["D009369"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D009369",
+              "biotype": "disease",
+              "name": "Neoplasms",
+              "accession": "@DISEASE_Neoplasms"
+            },
+            "role2": {
+              "identifier": "672",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [672],
+              "database": "ncbi_gene",
+              "normalized_id": 672,
+              "biotype": "gene",
+              "name": "BRCA1",
+              "accession": "@GENE_BRCA1"
+            },
+            "type": "Association"
+          },
+          "nodes": [{ "refid": "0", "role": "13,8" }]
+        },
+        {
+          "id": "R2",
+          "infons": {
+            "score": "0.9394",
+            "role1": {
+              "identifier": "MESH:D001943",
+              "type": "Disease",
+              "valid": true,
+              "normalized": ["D001943"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D001943",
+              "biotype": "disease",
+              "name": "Breast Neoplasms",
+              "accession": "@DISEASE_Breast_Neoplasms"
+            },
+            "role2": {
+              "identifier": "672",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [672],
+              "database": "ncbi_gene",
+              "normalized_id": 672,
+              "biotype": "gene",
+              "name": "BRCA1",
+              "accession": "@GENE_BRCA1"
+            },
+            "type": "Negative_Correlation"
+          },
+          "nodes": [{ "refid": "1", "role": "2,1" }]
+        }
+      ],
+      "pmid": 30992324,
+      "pmcid": null,
+      "meta": {},
+      "date": "2019-05-01T00:00:00Z",
+      "journal": "Cancer Res",
+      "authors": ["Li D", "Harlan-Williams LM", "Kumaraswamy E", "Jensen RA"],
+      "relations_display": [
+        { "name": "associate|@DISEASE_Neoplasms|@GENE_BRCA1" },
+        { "name": "inhibit|@DISEASE_Breast_Neoplasms|@GENE_BRCA1" }
+      ]
+    }
+  },
+  "31672679": {
+    "searchResult": {
+      "_id": "31672679",
+      "pmid": 31672679,
+      "pmcid": "PMC6934897",
+      "title": "Abdominal Imaging of Pancreatic Cysts and Cyst-Associated Pancreatic Cancer in BRCA1/2 Mutation Carriers: A Retrospective Cross-Sectional Study.",
+      "journal": "J Am Coll Surg",
+      "authors": [
+        "Cao CX",
+        "Sharib JM",
+        "Blanco AM",
+        "Goldberg D",
+        "Bracci P",
+        "Mukhtar RA",
+        "Esserman LJ",
+        "Kirkwood KS"
+      ],
+      "date": "2020-01-01T00:00:00Z",
+      "doi": "10.1016/j.jamcollsurg.2019.09.019",
+      "meta_date_publication": "2020 Jan",
+      "meta_volume": "230",
+      "meta_issue": "1",
+      "meta_pages": "53-63.e1",
+      "score": 251.35635,
+      "text_hl": "...BACKGROUND: Direct-to-consumer @<m>GENE_BRCA1</m> @@@BRCA@@@ testing will increase @<m>GENE_BRCA1</m> @@@BRCA@@@ diagnoses and subsequent abdominal imaging. ",
+      "citations": {
+        "NLM": "Cao CX, Sharib JM, Blanco AM, Goldberg D, Bracci P, Mukhtar RA, Esserman LJ, Kirkwood KS. Abdominal Imaging of Pancreatic Cysts and Cyst-Associated Pancreatic Cancer in BRCA1/2 Mutation Carriers: A Retrospective Cross-Sectional Study. J Am Coll Surg. 2020 Jan;230(1):53-63.e1. PMID: 31672679",
+        "BibTeX": "@article{31672679, title={Abdominal Imaging of Pancreatic Cysts and Cyst-Associated Pancreatic Cancer in BRCA1/2 Mutation Carriers: A Retrospective Cross-Sectional Study.}, author={Cao CX and Sharib JM and Blanco AM and Goldberg D and Bracci P and Mukhtar RA and Esserman LJ and Kirkwood KS}, journal={J Am Coll Surg}, volume={230}, number={1}, pages={53-63.e1}}"
+      }
+    },
+    "abstract": {
+      "_id": "31672679|None",
+      "id": "31672679",
+      "infons": {},
+      "passages": [
+        {
+          "infons": {
+            "journal": "J Am Coll Surg. 2020 Jan;230(1):53-63.e1. doi: 10.1016/j.jamcollsurg.2019.09.019. ",
+            "year": "2020",
+            "article-id_pmc": "PMC6934897",
+            "type": "title",
+            "authors": "Cao CX, Sharib JM, Blanco AM, Goldberg D, Bracci P, Mukhtar RA, Esserman LJ, Kirkwood KS"
+          },
+          "offset": 0,
+          "text": "Abdominal Imaging of Pancreatic Cysts and Cyst-Associated Pancreatic Cancer in BRCA1/2 Mutation Carriers: A Retrospective Cross-Sectional Study.",
+          "sentences": [],
+          "annotations": [
+            {
+              "id": "3",
+              "infons": {
+                "identifier": "MESH:D010181",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D010181"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D010181",
+                "biotype": "disease",
+                "name": "Pancreatic Cyst",
+                "accession": "@DISEASE_Pancreatic_Cyst"
+              },
+              "text": "Pancreatic Cysts",
+              "locations": [{ "offset": 21, "length": 16 }]
+            },
+            {
+              "id": "4",
+              "infons": {
+                "identifier": "MESH:D010190",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D010190"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D010190",
+                "biotype": "disease",
+                "name": "Pancreatic Neoplasms",
+                "accession": "@DISEASE_Pancreatic_Neoplasms"
+              },
+              "text": "Cyst-Associated Pancreatic Cancer",
+              "locations": [{ "offset": 42, "length": 33 }]
+            },
+            {
+              "id": "5",
+              "infons": {
+                "identifier": "672;675",
+                "type": "Gene",
+                "ncbi_homologene": "5276;41",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1/2",
+              "locations": [{ "offset": 79, "length": 7 }]
+            }
+          ],
+          "relations": []
+        },
+        {
+          "infons": { "type": "abstract" },
+          "offset": 145,
+          "text": "BACKGROUND: Direct-to-consumer BRCA testing will increase BRCA diagnoses and subsequent abdominal imaging. It is unclear whether BRCA carriers are at higher risk of developing pancreatic cysts (PCs) or cyst-associated pancreatic ductal adenocarcinoma (PDAC). We investigated the prevalence of PCs in BRCA-tested patients, and whether BRCA-carriers have higher rates of PDAC when PCs are found. STUDY DESIGN: This is a retrospective cross-sectional study of patients with BRCA testing and abdominal imaging between 1996 and 2018. Pancreatic cysts were identified on original imaging reports. Prevalence and risk characteristics of PCs, as well as incidence of PDAC, were compared between BRCA+, BRCA-, and BRCA-untested patients. RESULTS: Pancreatic cysts were identified in 4,045 patients among 128,164 unique patients with abdominal imaging, including 33 patients with PCs in 1,113 BRCA-tested patients. There was no difference in PC prevalence between BRCA+, BRCA-, and untested patients (3.6%, 2.6%, 3.2%, respectively; p = 0.64). Pancreatic cysts were diagnosed in BRCA+ patients at a younger age (57.1 vs 65.3 years, p < 0.001); however, there was no difference in risk stratification compared with BRCA- or untested patients by consensus criteria. Across the population of imaged patients, patients with PCs had significantly higher rates of PDAC compared with those without PCs (18.2% vs 2.4%, p < 0.001). Incidence of cyst-associated PDAC was similar in BRCA+ and BRCA- patients (13.3% vs 22.2%, p = 0.84). CONCLUSIONS: BRCA+ patients have similar rates of PCs, high-risk features in their cysts, and PDAC as BRCA- and untested patients. BRCA+ patients likely do not require dedicated abdominal imaging to evaluate for PCs and should follow management guidelines similar to those as the untested general population if an incidental PC is identified.",
+          "sentences": [],
+          "annotations": [
+            {
+              "id": "66",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 176, "length": 4 }]
+            },
+            {
+              "id": "67",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 203, "length": 4 }]
+            },
+            {
+              "id": "68",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 274, "length": 4 }]
+            },
+            {
+              "id": "69",
+              "infons": {
+                "identifier": "MESH:D010181",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D010181"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D010181",
+                "biotype": "disease",
+                "name": "Pancreatic Cyst",
+                "accession": "@DISEASE_Pancreatic_Cyst"
+              },
+              "text": "pancreatic cysts",
+              "locations": [{ "offset": 321, "length": 16 }]
+            },
+            {
+              "id": "70",
+              "infons": {
+                "identifier": "MESH:D010181",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D010181"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D010181",
+                "biotype": "disease",
+                "name": "Pancreatic Cyst",
+                "accession": "@DISEASE_Pancreatic_Cyst"
+              },
+              "text": "PCs",
+              "locations": [{ "offset": 339, "length": 3 }]
+            },
+            {
+              "id": "71",
+              "infons": {
+                "identifier": "MESH:D003560",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D003560"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D003560",
+                "biotype": "disease",
+                "name": "Cysts",
+                "accession": "@DISEASE_Cysts"
+              },
+              "text": "cyst",
+              "locations": [{ "offset": 347, "length": 4 }]
+            },
+            {
+              "id": "72",
+              "infons": {
+                "identifier": "MESH:D021441",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D021441"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D021441",
+                "biotype": "disease",
+                "name": "Carcinoma Pancreatic Ductal",
+                "accession": "@DISEASE_Carcinoma_Pancreatic_Ductal"
+              },
+              "text": "pancreatic ductal adenocarcinoma",
+              "locations": [{ "offset": 363, "length": 32 }]
+            },
+            {
+              "id": "73",
+              "infons": {
+                "identifier": "MESH:D021441",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D021441"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D021441",
+                "biotype": "disease",
+                "name": "Carcinoma Pancreatic Ductal",
+                "accession": "@DISEASE_Carcinoma_Pancreatic_Ductal"
+              },
+              "text": "PDAC",
+              "locations": [{ "offset": 397, "length": 4 }]
+            },
+            {
+              "id": "74",
+              "infons": {
+                "identifier": "MESH:D010181",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D010181"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D010181",
+                "biotype": "disease",
+                "name": "Pancreatic Cyst",
+                "accession": "@DISEASE_Pancreatic_Cyst"
+              },
+              "text": "PCs",
+              "locations": [{ "offset": 438, "length": 3 }]
+            },
+            {
+              "id": "75",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 445, "length": 4 }]
+            },
+            {
+              "id": "76",
+              "infons": {
+                "identifier": "9606",
+                "type": "Species",
+                "valid": true,
+                "normalized": [9606],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 9606,
+                "biotype": "species",
+                "name": "9606",
+                "accession": null
+              },
+              "text": "patients",
+              "locations": [{ "offset": 457, "length": 8 }]
+            },
+            {
+              "id": "77",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 479, "length": 4 }]
+            },
+            {
+              "id": "78",
+              "infons": {
+                "identifier": "MESH:D021441",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D021441"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D021441",
+                "biotype": "disease",
+                "name": "Carcinoma Pancreatic Ductal",
+                "accession": "@DISEASE_Carcinoma_Pancreatic_Ductal"
+              },
+              "text": "PDAC",
+              "locations": [{ "offset": 514, "length": 4 }]
+            },
+            {
+              "id": "79",
+              "infons": {
+                "identifier": "MESH:D010181",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D010181"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D010181",
+                "biotype": "disease",
+                "name": "Pancreatic Cyst",
+                "accession": "@DISEASE_Pancreatic_Cyst"
+              },
+              "text": "PCs",
+              "locations": [{ "offset": 524, "length": 3 }]
+            },
+            {
+              "id": "80",
+              "infons": {
+                "identifier": "9606",
+                "type": "Species",
+                "valid": true,
+                "normalized": [9606],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 9606,
+                "biotype": "species",
+                "name": "9606",
+                "accession": null
+              },
+              "text": "patients",
+              "locations": [{ "offset": 602, "length": 8 }]
+            },
+            {
+              "id": "81",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 616, "length": 4 }]
+            },
+            {
+              "id": "82",
+              "infons": {
+                "identifier": "MESH:D010181",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D010181"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D010181",
+                "biotype": "disease",
+                "name": "Pancreatic Cyst",
+                "accession": "@DISEASE_Pancreatic_Cyst"
+              },
+              "text": "Pancreatic cysts",
+              "locations": [{ "offset": 674, "length": 16 }]
+            },
+            {
+              "id": "83",
+              "infons": {
+                "identifier": "MESH:D010181",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D010181"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D010181",
+                "biotype": "disease",
+                "name": "Pancreatic Cyst",
+                "accession": "@DISEASE_Pancreatic_Cyst"
+              },
+              "text": "PCs",
+              "locations": [{ "offset": 775, "length": 3 }]
+            },
+            {
+              "id": "84",
+              "infons": {
+                "identifier": "MESH:D021441",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D021441"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D021441",
+                "biotype": "disease",
+                "name": "Carcinoma Pancreatic Ductal",
+                "accession": "@DISEASE_Carcinoma_Pancreatic_Ductal"
+              },
+              "text": "PDAC",
+              "locations": [{ "offset": 804, "length": 4 }]
+            },
+            {
+              "id": "85",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 832, "length": 4 }]
+            },
+            {
+              "id": "86",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 839, "length": 4 }]
+            },
+            {
+              "id": "87",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 850, "length": 4 }]
+            },
+            {
+              "id": "88",
+              "infons": {
+                "identifier": "9606",
+                "type": "Species",
+                "valid": true,
+                "normalized": [9606],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 9606,
+                "biotype": "species",
+                "name": "9606",
+                "accession": null
+              },
+              "text": "patients",
+              "locations": [{ "offset": 864, "length": 8 }]
+            },
+            {
+              "id": "89",
+              "infons": {
+                "identifier": "MESH:D010181",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D010181"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D010181",
+                "biotype": "disease",
+                "name": "Pancreatic Cyst",
+                "accession": "@DISEASE_Pancreatic_Cyst"
+              },
+              "text": "Pancreatic cysts",
+              "locations": [{ "offset": 883, "length": 16 }]
+            },
+            {
+              "id": "90",
+              "infons": {
+                "identifier": "9606",
+                "type": "Species",
+                "valid": true,
+                "normalized": [9606],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 9606,
+                "biotype": "species",
+                "name": "9606",
+                "accession": null
+              },
+              "text": "patients",
+              "locations": [{ "offset": 925, "length": 8 }]
+            },
+            {
+              "id": "91",
+              "infons": {
+                "identifier": "9606",
+                "type": "Species",
+                "valid": true,
+                "normalized": [9606],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 9606,
+                "biotype": "species",
+                "name": "9606",
+                "accession": null
+              },
+              "text": "patients",
+              "locations": [{ "offset": 955, "length": 8 }]
+            },
+            {
+              "id": "92",
+              "infons": {
+                "identifier": "9606",
+                "type": "Species",
+                "valid": true,
+                "normalized": [9606],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 9606,
+                "biotype": "species",
+                "name": "9606",
+                "accession": null
+              },
+              "text": "patients",
+              "locations": [{ "offset": 1001, "length": 8 }]
+            },
+            {
+              "id": "93",
+              "infons": {
+                "identifier": "MESH:D010181",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D010181"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D010181",
+                "biotype": "disease",
+                "name": "Pancreatic Cyst",
+                "accession": "@DISEASE_Pancreatic_Cyst"
+              },
+              "text": "PCs",
+              "locations": [{ "offset": 1015, "length": 3 }]
+            },
+            {
+              "id": "94",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 1028, "length": 4 }]
+            },
+            {
+              "id": "95",
+              "infons": {
+                "identifier": "9606",
+                "type": "Species",
+                "valid": true,
+                "normalized": [9606],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 9606,
+                "biotype": "species",
+                "name": "9606",
+                "accession": null
+              },
+              "text": "patients",
+              "locations": [{ "offset": 1040, "length": 8 }]
+            },
+            {
+              "id": "96",
+              "infons": {
+                "identifier": "MESH:D015324",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D015324"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D015324",
+                "biotype": "disease",
+                "name": "Pyruvate Carboxylase Deficiency Disease",
+                "accession": "@DISEASE_Pyruvate_Carboxylase_Deficiency_Disease"
+              },
+              "text": "PC",
+              "locations": [{ "offset": 1077, "length": 2 }]
+            },
+            {
+              "id": "97",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 1099, "length": 4 }]
+            },
+            {
+              "id": "98",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 1106, "length": 4 }]
+            },
+            {
+              "id": "99",
+              "infons": {
+                "identifier": "9606",
+                "type": "Species",
+                "valid": true,
+                "normalized": [9606],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 9606,
+                "biotype": "species",
+                "name": "9606",
+                "accession": null
+              },
+              "text": "patients",
+              "locations": [{ "offset": 1126, "length": 8 }]
+            },
+            {
+              "id": "100",
+              "infons": {
+                "identifier": "MESH:D010181",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D010181"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D010181",
+                "biotype": "disease",
+                "name": "Pancreatic Cyst",
+                "accession": "@DISEASE_Pancreatic_Cyst"
+              },
+              "text": "Pancreatic cysts",
+              "locations": [{ "offset": 1179, "length": 16 }]
+            },
+            {
+              "id": "101",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 1214, "length": 4 }]
+            },
+            {
+              "id": "102",
+              "infons": {
+                "identifier": "9606",
+                "type": "Species",
+                "valid": true,
+                "normalized": [9606],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 9606,
+                "biotype": "species",
+                "name": "9606",
+                "accession": null
+              },
+              "text": "patients",
+              "locations": [{ "offset": 1220, "length": 8 }]
+            },
+            {
+              "id": "103",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 1349, "length": 4 }]
+            },
+            {
+              "id": "104",
+              "infons": {
+                "identifier": "9606",
+                "type": "Species",
+                "valid": true,
+                "normalized": [9606],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 9606,
+                "biotype": "species",
+                "name": "9606",
+                "accession": null
+              },
+              "text": "patients",
+              "locations": [{ "offset": 1367, "length": 8 }]
+            },
+            {
+              "id": "105",
+              "infons": {
+                "identifier": "9606",
+                "type": "Species",
+                "valid": true,
+                "normalized": [9606],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 9606,
+                "biotype": "species",
+                "name": "9606",
+                "accession": null
+              },
+              "text": "patients",
+              "locations": [{ "offset": 1431, "length": 8 }]
+            },
+            {
+              "id": "106",
+              "infons": {
+                "identifier": "9606",
+                "type": "Species",
+                "valid": true,
+                "normalized": [9606],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 9606,
+                "biotype": "species",
+                "name": "9606",
+                "accession": null
+              },
+              "text": "patients",
+              "locations": [{ "offset": 1441, "length": 8 }]
+            },
+            {
+              "id": "107",
+              "infons": {
+                "identifier": "MESH:D010181",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D010181"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D010181",
+                "biotype": "disease",
+                "name": "Pancreatic Cyst",
+                "accession": "@DISEASE_Pancreatic_Cyst"
+              },
+              "text": "PCs",
+              "locations": [{ "offset": 1455, "length": 3 }]
+            },
+            {
+              "id": "108",
+              "infons": {
+                "identifier": "MESH:D021441",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D021441"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D021441",
+                "biotype": "disease",
+                "name": "Carcinoma Pancreatic Ductal",
+                "accession": "@DISEASE_Carcinoma_Pancreatic_Ductal"
+              },
+              "text": "PDAC",
+              "locations": [{ "offset": 1493, "length": 4 }]
+            },
+            {
+              "id": "109",
+              "infons": {
+                "identifier": "MESH:D010181",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D010181"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D010181",
+                "biotype": "disease",
+                "name": "Pancreatic Cyst",
+                "accession": "@DISEASE_Pancreatic_Cyst"
+              },
+              "text": "PCs",
+              "locations": [{ "offset": 1526, "length": 3 }]
+            },
+            {
+              "id": "110",
+              "infons": {
+                "identifier": "MESH:D003560",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D003560"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D003560",
+                "biotype": "disease",
+                "name": "Cysts",
+                "accession": "@DISEASE_Cysts"
+              },
+              "text": "cyst",
+              "locations": [{ "offset": 1571, "length": 4 }]
+            },
+            {
+              "id": "111",
+              "infons": {
+                "identifier": "MESH:D021441",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D021441"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D021441",
+                "biotype": "disease",
+                "name": "Carcinoma Pancreatic Ductal",
+                "accession": "@DISEASE_Carcinoma_Pancreatic_Ductal"
+              },
+              "text": "PDAC",
+              "locations": [{ "offset": 1587, "length": 4 }]
+            },
+            {
+              "id": "112",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 1607, "length": 4 }]
+            },
+            {
+              "id": "113",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 1617, "length": 4 }]
+            },
+            {
+              "id": "114",
+              "infons": {
+                "identifier": "9606",
+                "type": "Species",
+                "valid": true,
+                "normalized": [9606],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 9606,
+                "biotype": "species",
+                "name": "9606",
+                "accession": null
+              },
+              "text": "patients",
+              "locations": [{ "offset": 1623, "length": 8 }]
+            },
+            {
+              "id": "115",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 1673, "length": 4 }]
+            },
+            {
+              "id": "116",
+              "infons": {
+                "identifier": "9606",
+                "type": "Species",
+                "valid": true,
+                "normalized": [9606],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 9606,
+                "biotype": "species",
+                "name": "9606",
+                "accession": null
+              },
+              "text": "patients",
+              "locations": [{ "offset": 1679, "length": 8 }]
+            },
+            {
+              "id": "117",
+              "infons": {
+                "identifier": "MESH:D010181",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D010181"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D010181",
+                "biotype": "disease",
+                "name": "Pancreatic Cyst",
+                "accession": "@DISEASE_Pancreatic_Cyst"
+              },
+              "text": "PCs",
+              "locations": [{ "offset": 1710, "length": 3 }]
+            },
+            {
+              "id": "118",
+              "infons": {
+                "identifier": "MESH:D003560",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D003560"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D003560",
+                "biotype": "disease",
+                "name": "Cysts",
+                "accession": "@DISEASE_Cysts"
+              },
+              "text": "cysts",
+              "locations": [{ "offset": 1743, "length": 5 }]
+            },
+            {
+              "id": "119",
+              "infons": {
+                "identifier": "MESH:D021441",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D021441"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D021441",
+                "biotype": "disease",
+                "name": "Carcinoma Pancreatic Ductal",
+                "accession": "@DISEASE_Carcinoma_Pancreatic_Ductal"
+              },
+              "text": "PDAC",
+              "locations": [{ "offset": 1754, "length": 4 }]
+            },
+            {
+              "id": "120",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 1762, "length": 4 }]
+            },
+            {
+              "id": "121",
+              "infons": {
+                "identifier": "9606",
+                "type": "Species",
+                "valid": true,
+                "normalized": [9606],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 9606,
+                "biotype": "species",
+                "name": "9606",
+                "accession": null
+              },
+              "text": "patients",
+              "locations": [{ "offset": 1781, "length": 8 }]
+            },
+            {
+              "id": "122",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 1791, "length": 4 }]
+            },
+            {
+              "id": "123",
+              "infons": {
+                "identifier": "9606",
+                "type": "Species",
+                "valid": true,
+                "normalized": [9606],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 9606,
+                "biotype": "species",
+                "name": "9606",
+                "accession": null
+              },
+              "text": "patients",
+              "locations": [{ "offset": 1797, "length": 8 }]
+            },
+            {
+              "id": "124",
+              "infons": {
+                "identifier": "MESH:D010181",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D010181"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D010181",
+                "biotype": "disease",
+                "name": "Pancreatic Cyst",
+                "accession": "@DISEASE_Pancreatic_Cyst"
+              },
+              "text": "PCs",
+              "locations": [{ "offset": 1872, "length": 3 }]
+            },
+            {
+              "id": "125",
+              "infons": {
+                "identifier": "MESH:D015324",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D015324"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D015324",
+                "biotype": "disease",
+                "name": "Pyruvate Carboxylase Deficiency Disease",
+                "accession": "@DISEASE_Pyruvate_Carboxylase_Deficiency_Disease"
+              },
+              "text": "PC",
+              "locations": [{ "offset": 1985, "length": 2 }]
+            }
+          ],
+          "relations": []
+        }
+      ],
+      "relations": [
+        {
+          "id": "R1",
+          "infons": {
+            "score": "0.9996",
+            "role1": {
+              "identifier": "MESH:D010181",
+              "type": "Disease",
+              "valid": true,
+              "normalized": ["D010181"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D010181",
+              "biotype": "disease",
+              "name": "Pancreatic Cyst",
+              "accession": "@DISEASE_Pancreatic_Cyst"
+            },
+            "role2": {
+              "identifier": "672",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [672],
+              "database": "ncbi_gene",
+              "normalized_id": 672,
+              "biotype": "gene",
+              "name": "BRCA1",
+              "accession": "@GENE_BRCA1"
+            },
+            "type": "Association"
+          },
+          "nodes": [{ "refid": "0", "role": "0,2" }]
+        },
+        {
+          "id": "R2",
+          "infons": {
+            "score": "0.9985",
+            "role1": {
+              "identifier": "MESH:D010190",
+              "type": "Disease",
+              "valid": true,
+              "normalized": ["D010190"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D010190",
+              "biotype": "disease",
+              "name": "Pancreatic Neoplasms",
+              "accession": "@DISEASE_Pancreatic_Neoplasms"
+            },
+            "role2": {
+              "identifier": "672",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [672],
+              "database": "ncbi_gene",
+              "normalized_id": 672,
+              "biotype": "gene",
+              "name": "BRCA1",
+              "accession": "@GENE_BRCA1"
+            },
+            "type": "Association"
+          },
+          "nodes": [{ "refid": "1", "role": "1,2" }]
+        },
+        {
+          "id": "R3",
+          "infons": {
+            "score": "0.7007",
+            "role1": {
+              "identifier": "MESH:D015324",
+              "type": "Disease",
+              "valid": true,
+              "normalized": ["D015324"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D015324",
+              "biotype": "disease",
+              "name": "Pyruvate Carboxylase Deficiency Disease",
+              "accession": "@DISEASE_Pyruvate_Carboxylase_Deficiency_Disease"
+            },
+            "role2": {
+              "identifier": "672",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [672],
+              "database": "ncbi_gene",
+              "normalized_id": 672,
+              "biotype": "gene",
+              "name": "BRCA1",
+              "accession": "@GENE_BRCA1"
+            },
+            "type": "Association"
+          },
+          "nodes": [{ "refid": "2", "role": "33,34" }]
+        },
+        {
+          "id": "R4",
+          "infons": {
+            "score": "0.9982",
+            "role1": {
+              "identifier": "MESH:D021441",
+              "type": "Disease",
+              "valid": true,
+              "normalized": ["D021441"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D021441",
+              "biotype": "disease",
+              "name": "Carcinoma Pancreatic Ductal",
+              "accession": "@DISEASE_Carcinoma_Pancreatic_Ductal"
+            },
+            "role2": {
+              "identifier": "672",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [672],
+              "database": "ncbi_gene",
+              "normalized_id": 672,
+              "biotype": "gene",
+              "name": "BRCA1",
+              "accession": "@GENE_BRCA1"
+            },
+            "type": "Association"
+          },
+          "nodes": [{ "refid": "3", "role": "9,5" }]
+        }
+      ],
+      "pmid": 31672679,
+      "pmcid": null,
+      "meta": {},
+      "date": "2020-01-01T00:00:00Z",
+      "journal": "J Am Coll Surg",
+      "authors": [
+        "Cao CX",
+        "Sharib JM",
+        "Blanco AM",
+        "Goldberg D",
+        "Bracci P",
+        "Mukhtar RA",
+        "Esserman LJ",
+        "Kirkwood KS"
+      ],
+      "relations_display": [
+        { "name": "associate|@DISEASE_Pancreatic_Cyst|@GENE_BRCA1" },
+        { "name": "associate|@DISEASE_Pancreatic_Neoplasms|@GENE_BRCA1" },
+        { "name": "associate|@DISEASE_Pyruvate_Carboxylase_Deficiency_Disease|@GENE_BRCA1" },
+        { "name": "associate|@DISEASE_Carcinoma_Pancreatic_Ductal|@GENE_BRCA1" }
+      ]
+    }
+  },
+  "34083286": {
+    "searchResult": {
+      "_id": "34083286",
+      "pmid": 34083286,
+      "title": "BRCA1-BRCT Mutations Alter the Subcellular Localization of BRCA1 In Vitro.",
+      "journal": "Anticancer Res",
+      "authors": ["Drikos I", "Boutou E", "Kastritis PL", "Vorgias CE"],
+      "date": "2021-06-01T00:00:00Z",
+      "doi": "10.21873/anticanres.15077",
+      "meta_date_publication": "2021 Jun",
+      "meta_volume": "41",
+      "meta_issue": "6",
+      "meta_pages": "2953-2962",
+      "score": 252.84119,
+      "text_hl": "@<m>GENE_BRCA1</m> @@@BRCA1@@@-BRCT Mutations Alter the Subcellular Localization of @<m>GENE_BRCA1</m> @@@BRCA1@@@ In Vitro.",
+      "citations": {
+        "NLM": "Drikos I, Boutou E, Kastritis PL, Vorgias CE. BRCA1-BRCT Mutations Alter the Subcellular Localization of BRCA1 In Vitro. Anticancer Res. 2021 Jun;41(6):2953-2962. PMID: 34083286",
+        "BibTeX": "@article{34083286, title={BRCA1-BRCT Mutations Alter the Subcellular Localization of BRCA1 In Vitro.}, author={Drikos I and Boutou E and Kastritis PL and Vorgias CE}, journal={Anticancer Res}, volume={41}, number={6}, pages={2953-2962}}"
+      }
+    },
+    "abstract": {
+      "_id": "34083286|None",
+      "id": "34083286",
+      "infons": {},
+      "passages": [
+        {
+          "infons": {
+            "journal": "Anticancer Res. 2021 Jun;41(6):2953-2962. doi: 10.21873/anticanres.15077.",
+            "year": "2021",
+            "type": "title",
+            "authors": "Drikos I, Boutou E, Kastritis PL, Vorgias CE"
+          },
+          "offset": 0,
+          "text": "BRCA1-BRCT Mutations Alter the Subcellular Localization of BRCA1 In Vitro.",
+          "sentences": [],
+          "annotations": [
+            {
+              "id": "2",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 0, "length": 5 }]
+            },
+            {
+              "id": "3",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 59, "length": 5 }]
+            }
+          ],
+          "relations": []
+        },
+        {
+          "infons": { "type": "abstract" },
+          "offset": 75,
+          "text": "BACKGROUND/AIM: Numerous missense mutations have been determined in the BRCT domain of the BRCA1 gene, affecting localization and interaction of BRCA1 with other proteins. MATERIALS AND METHODS: We examined whether the M1775K and V1809F mutations in the BRCT domain affect BRCA1 cellular localization. Cells were transfected with pEGFP-C3-BRCA1 and detected by fluorescence microscopy. RESULTS: Following induction of DNA damage, cytoplasmic mislocalization was observed for both M1775K and V1809F mutants compared to EGFP-BRCA1wt and the less common variant M1652I. These results indicate that M1775K and V1809F mutations may change the function of the protein by affecting BRCA1 localization. CONCLUSION: There is a correlation between subcellular localization of BRCA1 and diminished DNA repair observed in breast cancer cells, which may be explained by structural variations and altered binding properties of phosphopeptides.",
+          "sentences": [],
+          "annotations": [
+            {
+              "id": "20",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 166, "length": 5 }]
+            },
+            {
+              "id": "21",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 220, "length": 5 }]
+            },
+            {
+              "id": "22",
+              "infons": {
+                "identifier": "tmVar:p|SUB|M|1775|K;HGVS:p.M1775K;VariantGroup:0;CorrespondingGene:672;RS#:41293463;CorrespondingSpecies:9606;CA#:3476",
+                "type": "Variant",
+                "valid": true,
+                "subtype": "ProteinMutation",
+                "database": "litvar",
+                "hgvs": "p.M1775K",
+                "gene_ids": [672],
+                "gene_id": 672,
+                "rsids": ["rs41293463"],
+                "species_ids": [9606],
+                "species_id": 9606,
+                "clingen_id": "CA3476",
+                "rsid": "rs41293463",
+                "normalized": ["rs41293463##", "#672#", "CA3476#rs41293463##"],
+                "normalized_id": "rs41293463##",
+                "biotype": "variant",
+                "name": "p.M1775K",
+                "accession": "@VARIANT_p.M1775R_BRCA1_human"
+              },
+              "text": "M1775K",
+              "locations": [{ "offset": 294, "length": 6 }]
+            },
+            {
+              "id": "23",
+              "infons": {
+                "identifier": "tmVar:p|SUB|V|1809|F;HGVS:p.V1809F;VariantGroup:2;CorrespondingGene:672;RS#:28897698;CorrespondingSpecies:9606;CA#:3588",
+                "type": "Variant",
+                "valid": true,
+                "subtype": "ProteinMutation",
+                "database": "litvar",
+                "hgvs": "p.V1809F",
+                "gene_ids": [672],
+                "gene_id": 672,
+                "rsids": ["rs28897698"],
+                "species_ids": [9606],
+                "species_id": 9606,
+                "clingen_id": "CA3588",
+                "rsid": "rs28897698",
+                "normalized": ["rs28897698##", "#672#", "CA3588#rs28897698##"],
+                "normalized_id": "rs28897698##",
+                "biotype": "variant",
+                "name": "p.V1809F",
+                "accession": "@VARIANT_p.V1809F_BRCA1_human"
+              },
+              "text": "V1809F",
+              "locations": [{ "offset": 305, "length": 6 }]
+            },
+            {
+              "id": "24",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 348, "length": 5 }]
+            },
+            {
+              "id": "25",
+              "infons": {
+                "identifier": "CVCL:1098",
+                "type": "CellLine",
+                "valid": true,
+                "normalized": ["1098"],
+                "database": "cvcl",
+                "normalized_id": "1098",
+                "biotype": "cellline",
+                "name": "1098",
+                "accession": null
+              },
+              "text": "-C3",
+              "locations": [{ "offset": 410, "length": 3 }]
+            },
+            {
+              "id": "26",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 414, "length": 5 }]
+            },
+            {
+              "id": "27",
+              "infons": {
+                "identifier": "tmVar:p|SUB|M|1775|K;HGVS:p.M1775K;VariantGroup:0;CorrespondingGene:672;RS#:41293463;CorrespondingSpecies:9606;CA#:3476",
+                "type": "Variant",
+                "valid": true,
+                "subtype": "ProteinMutation",
+                "database": "litvar",
+                "hgvs": "p.M1775K",
+                "gene_ids": [672],
+                "gene_id": 672,
+                "rsids": ["rs41293463"],
+                "species_ids": [9606],
+                "species_id": 9606,
+                "clingen_id": "CA3476",
+                "rsid": "rs41293463",
+                "normalized": ["rs41293463##", "#672#", "CA3476#rs41293463##"],
+                "normalized_id": "rs41293463##",
+                "biotype": "variant",
+                "name": "p.M1775K",
+                "accession": "@VARIANT_p.M1775R_BRCA1_human"
+              },
+              "text": "M1775K",
+              "locations": [{ "offset": 555, "length": 6 }]
+            },
+            {
+              "id": "28",
+              "infons": {
+                "identifier": "tmVar:p|SUB|V|1809|F;HGVS:p.V1809F;VariantGroup:2;CorrespondingGene:672;RS#:28897698;CorrespondingSpecies:9606;CA#:3588",
+                "type": "Variant",
+                "valid": true,
+                "subtype": "ProteinMutation",
+                "database": "litvar",
+                "hgvs": "p.V1809F",
+                "gene_ids": [672],
+                "gene_id": 672,
+                "rsids": ["rs28897698"],
+                "species_ids": [9606],
+                "species_id": 9606,
+                "clingen_id": "CA3588",
+                "rsid": "rs28897698",
+                "normalized": ["rs28897698##", "#672#", "CA3588#rs28897698##"],
+                "normalized_id": "rs28897698##",
+                "biotype": "variant",
+                "name": "p.V1809F",
+                "accession": "@VARIANT_p.V1809F_BRCA1_human"
+              },
+              "text": "V1809F",
+              "locations": [{ "offset": 566, "length": 6 }]
+            },
+            {
+              "id": "29",
+              "infons": {
+                "identifier": "tmVar:p|SUB|M|1652|I;HGVS:p.M1652I;VariantGroup:1;CorrespondingGene:672;RS#:1799967;CorrespondingSpecies:9606;CA#:3103",
+                "type": "Variant",
+                "valid": true,
+                "subtype": "ProteinMutation",
+                "database": "litvar",
+                "hgvs": "p.M1652I",
+                "gene_ids": [672],
+                "gene_id": 672,
+                "rsids": ["rs1799967"],
+                "species_ids": [9606],
+                "species_id": 9606,
+                "clingen_id": "CA3103",
+                "rsid": "rs1799967",
+                "normalized": ["rs1799967##", "#672#", "CA3103#rs1799967##"],
+                "normalized_id": "rs1799967##",
+                "biotype": "variant",
+                "name": "p.M1652I",
+                "accession": "@VARIANT_p.M1652I_BRCA1_human"
+              },
+              "text": "M1652I",
+              "locations": [{ "offset": 634, "length": 6 }]
+            },
+            {
+              "id": "30",
+              "infons": {
+                "identifier": "tmVar:p|SUB|M|1775|K;HGVS:p.M1775K;VariantGroup:0;CorrespondingGene:672;RS#:41293463;CorrespondingSpecies:9606;CA#:3476",
+                "type": "Variant",
+                "valid": true,
+                "subtype": "ProteinMutation",
+                "database": "litvar",
+                "hgvs": "p.M1775K",
+                "gene_ids": [672],
+                "gene_id": 672,
+                "rsids": ["rs41293463"],
+                "species_ids": [9606],
+                "species_id": 9606,
+                "clingen_id": "CA3476",
+                "rsid": "rs41293463",
+                "normalized": ["rs41293463##", "#672#", "CA3476#rs41293463##"],
+                "normalized_id": "rs41293463##",
+                "biotype": "variant",
+                "name": "p.M1775K",
+                "accession": "@VARIANT_p.M1775R_BRCA1_human"
+              },
+              "text": "M1775K",
+              "locations": [{ "offset": 670, "length": 6 }]
+            },
+            {
+              "id": "31",
+              "infons": {
+                "identifier": "tmVar:p|SUB|V|1809|F;HGVS:p.V1809F;VariantGroup:2;CorrespondingGene:672;RS#:28897698;CorrespondingSpecies:9606;CA#:3588",
+                "type": "Variant",
+                "valid": true,
+                "subtype": "ProteinMutation",
+                "database": "litvar",
+                "hgvs": "p.V1809F",
+                "gene_ids": [672],
+                "gene_id": 672,
+                "rsids": ["rs28897698"],
+                "species_ids": [9606],
+                "species_id": 9606,
+                "clingen_id": "CA3588",
+                "rsid": "rs28897698",
+                "normalized": ["rs28897698##", "#672#", "CA3588#rs28897698##"],
+                "normalized_id": "rs28897698##",
+                "biotype": "variant",
+                "name": "p.V1809F",
+                "accession": "@VARIANT_p.V1809F_BRCA1_human"
+              },
+              "text": "V1809F",
+              "locations": [{ "offset": 681, "length": 6 }]
+            },
+            {
+              "id": "32",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 750, "length": 5 }]
+            },
+            {
+              "id": "33",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 841, "length": 5 }]
+            },
+            {
+              "id": "34",
+              "infons": {
+                "identifier": "MESH:D001943",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D001943"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D001943",
+                "biotype": "disease",
+                "name": "Breast Neoplasms",
+                "accession": "@DISEASE_Breast_Neoplasms"
+              },
+              "text": "breast cancer",
+              "locations": [{ "offset": 885, "length": 13 }]
+            },
+            {
+              "id": "35",
+              "infons": {
+                "identifier": "MESH:D010748",
+                "type": "Chemical",
+                "valid": true,
+                "normalized": ["D010748"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D010748",
+                "biotype": "chemical",
+                "name": "Phosphopeptides",
+                "accession": "@CHEMICAL_Phosphopeptides"
+              },
+              "text": "phosphopeptides",
+              "locations": [{ "offset": 988, "length": 15 }]
+            }
+          ],
+          "relations": []
+        }
+      ],
+      "relations": [
+        {
+          "id": "R1",
+          "infons": {
+            "score": "0.9921",
+            "role1": {
+              "identifier": "MESH:D010748",
+              "type": "Chemical",
+              "valid": true,
+              "normalized": ["D010748"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D010748",
+              "biotype": "chemical",
+              "name": "Phosphopeptides",
+              "accession": "@CHEMICAL_Phosphopeptides"
+            },
+            "role2": {
+              "identifier": "672",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [672],
+              "database": "ncbi_gene",
+              "normalized_id": 672,
+              "biotype": "gene",
+              "name": "BRCA1",
+              "accession": "@GENE_BRCA1"
+            },
+            "type": "Association"
+          },
+          "nodes": [{ "refid": "0", "role": "17,15" }]
+        },
+        {
+          "id": "R2",
+          "infons": {
+            "score": "0.9993",
+            "role1": {
+              "identifier": "MESH:D001943",
+              "type": "Disease",
+              "valid": true,
+              "normalized": ["D001943"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D001943",
+              "biotype": "disease",
+              "name": "Breast Neoplasms",
+              "accession": "@DISEASE_Breast_Neoplasms"
+            },
+            "role2": {
+              "identifier": "672",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [672],
+              "database": "ncbi_gene",
+              "normalized_id": 672,
+              "biotype": "gene",
+              "name": "BRCA1",
+              "accession": "@GENE_BRCA1"
+            },
+            "type": "Association"
+          },
+          "nodes": [{ "refid": "1", "role": "16,15" }]
+        }
+      ],
+      "pmid": 34083286,
+      "pmcid": null,
+      "meta": {},
+      "date": "2021-06-01T00:00:00Z",
+      "journal": "Anticancer Res",
+      "authors": ["Drikos I", "Boutou E", "Kastritis PL", "Vorgias CE"],
+      "relations_display": [
+        { "name": "associate|@CHEMICAL_Phosphopeptides|@GENE_BRCA1" },
+        { "name": "associate|@DISEASE_Breast_Neoplasms|@GENE_BRCA1" }
+      ]
+    }
+  },
+  "34137566": {
+    "searchResult": {
+      "_id": "34137566",
+      "pmid": 34137566,
+      "title": "BRCA 1, 2 mutation and earlier menopause: could BRCA 1,2 be used as predictor of menopause?",
+      "journal": "Minerva Obstet Gynecol",
+      "authors": ["Nikolettos K", "Damaskos C", "Garmpis N", "Nikolettos N"],
+      "date": "2022-04-01T00:00:00Z",
+      "doi": "10.23736/S2724-606X.21.04813-2",
+      "meta_date_publication": "2022 Apr",
+      "meta_volume": "74",
+      "meta_issue": "2",
+      "meta_pages": "165-170",
+      "score": 250.24734,
+      "text_hl": "@<m>GENE_BRCA1</m> @@@BRCA 1, 2@@@ mutation and earlier menopause: could @<m>GENE_BRCA1</m> @@@BRCA 1,2@@@ be used as predictor of menopause?",
+      "citations": {
+        "NLM": "Nikolettos K, Damaskos C, Garmpis N, Nikolettos N. BRCA 1, 2 mutation and earlier menopause: could BRCA 1,2 be used as predictor of menopause? Minerva Obstet Gynecol. 2022 Apr;74(2):165-170. PMID: 34137566",
+        "BibTeX": "@article{34137566, title={BRCA 1, 2 mutation and earlier menopause: could BRCA 1,2 be used as predictor of menopause?}, author={Nikolettos K and Damaskos C and Garmpis N and Nikolettos N}, journal={Minerva Obstet Gynecol}, volume={74}, number={2}, pages={165-170}}"
+      }
+    },
+    "abstract": {
+      "_id": "34137566|None",
+      "id": "34137566",
+      "infons": {},
+      "passages": [
+        {
+          "infons": {
+            "journal": "Minerva Obstet Gynecol. 2022 Apr;74(2):165-170. doi: ",
+            "year": "2022",
+            "type": "title",
+            "authors": "Nikolettos K, Damaskos C, Garmpis N, Nikolettos N"
+          },
+          "offset": 0,
+          "text": "BRCA 1, 2 mutation and earlier menopause: could BRCA 1,2 be used as predictor of menopause?",
+          "sentences": [],
+          "annotations": [
+            {
+              "id": "2",
+              "infons": {
+                "identifier": "672;675",
+                "type": "Gene",
+                "ncbi_homologene": "5276;41",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA 1, 2",
+              "locations": [{ "offset": 0, "length": 9 }]
+            },
+            {
+              "id": "3",
+              "infons": {
+                "identifier": "672;675",
+                "type": "Gene",
+                "ncbi_homologene": "5276;41",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA 1,2",
+              "locations": [{ "offset": 48, "length": 8 }]
+            }
+          ],
+          "relations": []
+        },
+        {
+          "infons": { "type": "abstract" },
+          "offset": 92,
+          "text": "INTRODUCTION: Many studies have shown that BRCA mutation is not only related to cancer but also to ovarian aging. Studies in both human and mice oocytes have shown that Double-strand breaks (DSBs) accumulate with age. EVIDENCE ACQUISITION: A review of the literature was completed through the PubMed database aiming to find articles regarding BRCA 1,2 mutation and if they are related to early menopause in order to use them as predictive biomarkers in the near future. The research used keywords in numerous combinations, such as \"BRCA 1,2 mutation,\" \"menopause,\" \"ovarian reserves,\" \"AMH,\" \"genome-wide association studies,\" and \"biomarkers.\" The literature was limited in this specific topic. The initial research found 16 screened articles, 7 of which were not included because there were not relevant, as far as publications in non-English language. EVIDENCE SYNTHESIS: Genome-wide association studies (GWAS) have found 44 genetic loci that are related to variations when a female is about to have menopause. BRCA1 is involved in these 44 loci that are associated with the age of menopause. This review has gathered all results of literature search about the association between BRCA genes and early menopause. Most of the articles found that women with BRCA mutation have earlier menopause compared to non-carriers. CONCLUSIONS: In conclusion, in the near future BRCA1,2 genes could be used as predictive biomarkers of menopause.",
+          "sentences": [],
+          "annotations": [
+            {
+              "id": "16",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 135, "length": 4 }]
+            },
+            {
+              "id": "17",
+              "infons": {
+                "identifier": "MESH:D009369",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D009369"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D009369",
+                "biotype": "disease",
+                "name": "Neoplasms",
+                "accession": "@DISEASE_Neoplasms"
+              },
+              "text": "cancer",
+              "locations": [{ "offset": 172, "length": 6 }]
+            },
+            {
+              "id": "18",
+              "infons": {
+                "identifier": "9606",
+                "type": "Species",
+                "valid": true,
+                "normalized": [9606],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 9606,
+                "biotype": "species",
+                "name": "9606",
+                "accession": null
+              },
+              "text": "human",
+              "locations": [{ "offset": 222, "length": 5 }]
+            },
+            {
+              "id": "19",
+              "infons": {
+                "identifier": "10090",
+                "type": "Species",
+                "valid": true,
+                "normalized": [10090],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 10090,
+                "biotype": "species",
+                "name": "10090",
+                "accession": null
+              },
+              "text": "mice",
+              "locations": [{ "offset": 232, "length": 4 }]
+            },
+            {
+              "id": "20",
+              "infons": {
+                "identifier": "672;675",
+                "type": "Gene",
+                "ncbi_homologene": "5276;41",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA 1,2",
+              "locations": [{ "offset": 435, "length": 8 }]
+            },
+            {
+              "id": "21",
+              "infons": {
+                "identifier": "672;675",
+                "type": "Gene",
+                "ncbi_homologene": "5276;41",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA 1,2",
+              "locations": [{ "offset": 624, "length": 8 }]
+            },
+            {
+              "id": "22",
+              "infons": {
+                "identifier": "268",
+                "type": "Gene",
+                "ncbi_homologene": "68060",
+                "valid": true,
+                "normalized": [268],
+                "database": "ncbi_gene",
+                "normalized_id": 268,
+                "biotype": "gene",
+                "name": "AMH",
+                "accession": "@GENE_AMH"
+              },
+              "text": "AMH",
+              "locations": [{ "offset": 678, "length": 3 }]
+            },
+            {
+              "id": "23",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 1106, "length": 5 }]
+            },
+            {
+              "id": "24",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 1276, "length": 4 }]
+            },
+            {
+              "id": "25",
+              "infons": {
+                "identifier": "9606",
+                "type": "Species",
+                "valid": true,
+                "normalized": [9606],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 9606,
+                "biotype": "species",
+                "name": "9606",
+                "accession": null
+              },
+              "text": "women",
+              "locations": [{ "offset": 1340, "length": 5 }]
+            },
+            {
+              "id": "26",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA",
+              "locations": [{ "offset": 1351, "length": 4 }]
+            },
+            {
+              "id": "27",
+              "infons": {
+                "identifier": "672;675",
+                "type": "Gene",
+                "ncbi_homologene": "5276;41",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1,2",
+              "locations": [{ "offset": 1461, "length": 7 }]
+            }
+          ],
+          "relations": []
+        }
+      ],
+      "relations": [
+        {
+          "id": "R1",
+          "infons": {
+            "score": "0.9995",
+            "role1": {
+              "identifier": "MESH:D009369",
+              "type": "Disease",
+              "valid": true,
+              "normalized": ["D009369"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D009369",
+              "biotype": "disease",
+              "name": "Neoplasms",
+              "accession": "@DISEASE_Neoplasms"
+            },
+            "role2": {
+              "identifier": "672",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [672],
+              "database": "ncbi_gene",
+              "normalized_id": 672,
+              "biotype": "gene",
+              "name": "BRCA1",
+              "accession": "@GENE_BRCA1"
+            },
+            "type": "Association"
+          },
+          "nodes": [{ "refid": "0", "role": "3,2" }]
+        }
+      ],
+      "pmid": 34137566,
+      "pmcid": null,
+      "meta": {},
+      "date": "2022-04-01T00:00:00Z",
+      "journal": "Minerva Obstet Gynecol",
+      "authors": ["Nikolettos K", "Damaskos C", "Garmpis N", "Nikolettos N"],
+      "relations_display": [{ "name": "associate|@DISEASE_Neoplasms|@GENE_BRCA1" }]
+    }
+  },
+  "34421362": {
+    "searchResult": {
+      "_id": "34421362",
+      "pmid": 34421362,
+      "pmcid": "PMC8375228",
+      "title": "BRCA1 Antibodies Matter.",
+      "journal": "Int J Biol Sci",
+      "authors": ["Yang J", "Qi L", "Chiang HC", "Yuan B", "Li R", "Hu Y"],
+      "date": "2021-07-25T00:00:00Z",
+      "doi": "10.7150/ijbs.63115",
+      "meta_date_publication": "2021",
+      "meta_volume": "17",
+      "meta_issue": "12",
+      "meta_pages": "3239-3254",
+      "score": 250.55861,
+      "text_hl": "@<m>GENE_BRCA1</m> @@@BRCA1@@@ Antibodies Matter.",
+      "citations": {
+        "NLM": "Yang J, Qi L, Chiang HC, Yuan B, Li R, Hu Y. BRCA1 Antibodies Matter. Int J Biol Sci. 2021;17(12):3239-3254. PMID: 34421362",
+        "BibTeX": "@article{34421362, title={BRCA1 Antibodies Matter.}, author={Yang J and Qi L and Chiang HC and Yuan B and Li R and Hu Y}, journal={Int J Biol Sci}, volume={17}, number={12}, pages={3239-3254}}"
+      }
+    },
+    "abstract": {
+      "_id": "34421362|None",
+      "id": "34421362",
+      "infons": {},
+      "passages": [
+        {
+          "infons": {
+            "journal": "Int J Biol Sci. 2021 Jul 25;17(12):3239-3254. doi: 10.7150/ijbs.63115. ",
+            "year": "2021",
+            "article-id_pmc": "PMC8375228",
+            "type": "title",
+            "authors": "Yang J, Qi L, Chiang HC, Yuan B, Li R, Hu Y"
+          },
+          "offset": 0,
+          "text": "BRCA1 Antibodies Matter.",
+          "sentences": [],
+          "annotations": [
+            {
+              "id": "1",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 0, "length": 5 }]
+            }
+          ],
+          "relations": []
+        },
+        {
+          "infons": { "type": "abstract" },
+          "offset": 25,
+          "text": "Breast cancer susceptibility gene 1 (BRCA1) encodes a tumor suppressor that is frequently mutated in familial breast and ovarian cancer patients. BRCA1 functions in multiple important cellular processes including DNA damage repair, cell cycle checkpoint activation, protein ubiquitination, chromatin remodeling, transcriptional regulation, as well as R-loop formation and apoptosis. A large number of BRCA1 antibodies have been generated and become commercially available over the past three decades, however, many commercial antibodies are poorly characterized and, when widely used, led to unreliable data. In search of reliable and specific BRCA1 antibodies (Abs), particularly antibodies recognizing mouse BRCA1, we performed a rigorous validation of a number of commercially available anti-BRCA1 antibodies, using proper controls in a panel of validation applications, including Western blot (WB), immunoprecipitation (IP), immunoprecipitation-mass spectrometry (IP-MS), chromatin immunoprecipitation (ChIP) and immunofluorescence (IF). Furthermore, we assessed the specificity of these antibodies to detect mouse BRCA1 protein through the use of testis tissue and mouse embryonic fibroblasts (MEFs) from Brca1+/+ and Brca1Delta11/Delta11 mice. We find that Ab1, D-9, 07-434 (for recognizing human BRCA1) and 287.17, 440621, BR-64 (for recognizing mouse BRCA1) are specific with high quality performance in the indicated assays. We share these results here with the goal of helping the community combat the common challenges associated with anti-BRCA1 antibody specificity and reproducibility and, hopefully, better understanding BRCA1 functions at cellular and tissue levels.",
+          "sentences": [],
+          "annotations": [
+            {
+              "id": "23",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 62, "length": 5 }]
+            },
+            {
+              "id": "24",
+              "infons": {
+                "identifier": "MESH:D009369",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D009369"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D009369",
+                "biotype": "disease",
+                "name": "Neoplasms",
+                "accession": "@DISEASE_Neoplasms"
+              },
+              "text": "tumor",
+              "locations": [{ "offset": 79, "length": 5 }]
+            },
+            {
+              "id": "25",
+              "infons": {
+                "identifier": "MESH:D061325",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D061325"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D061325",
+                "biotype": "disease",
+                "name": "Hereditary Breast and Ovarian Cancer Syndrome",
+                "accession": "@DISEASE_Hereditary_Breast_and_Ovarian_Cancer_Syndrome"
+              },
+              "text": "familial breast and ovarian cancer",
+              "locations": [{ "offset": 126, "length": 34 }]
+            },
+            {
+              "id": "26",
+              "infons": {
+                "identifier": "9606",
+                "type": "Species",
+                "valid": true,
+                "normalized": [9606],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 9606,
+                "biotype": "species",
+                "name": "9606",
+                "accession": null
+              },
+              "text": "patients",
+              "locations": [{ "offset": 161, "length": 8 }]
+            },
+            {
+              "id": "27",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 171, "length": 5 }]
+            },
+            {
+              "id": "28",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 426, "length": 5 }]
+            },
+            {
+              "id": "29",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 669, "length": 5 }]
+            },
+            {
+              "id": "30",
+              "infons": {
+                "identifier": "10090",
+                "type": "Species",
+                "valid": true,
+                "normalized": [10090],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 10090,
+                "biotype": "species",
+                "name": "10090",
+                "accession": null
+              },
+              "text": "mouse",
+              "locations": [{ "offset": 729, "length": 5 }]
+            },
+            {
+              "id": "31",
+              "infons": {
+                "identifier": "12189",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [12189],
+                "database": "ncbi_gene",
+                "normalized_id": 12189,
+                "biotype": "gene",
+                "name": "Brca1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 735, "length": 5 }]
+            },
+            {
+              "id": "32",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 820, "length": 5 }]
+            },
+            {
+              "id": "33",
+              "infons": {
+                "identifier": "10090",
+                "type": "Species",
+                "valid": true,
+                "normalized": [10090],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 10090,
+                "biotype": "species",
+                "name": "10090",
+                "accession": null
+              },
+              "text": "mouse",
+              "locations": [{ "offset": 1138, "length": 5 }]
+            },
+            {
+              "id": "34",
+              "infons": {
+                "identifier": "12189",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [12189],
+                "database": "ncbi_gene",
+                "normalized_id": 12189,
+                "biotype": "gene",
+                "name": "Brca1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 1144, "length": 5 }]
+            },
+            {
+              "id": "35",
+              "infons": {
+                "identifier": "10090",
+                "type": "Species",
+                "valid": true,
+                "normalized": [10090],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 10090,
+                "biotype": "species",
+                "name": "10090",
+                "accession": null
+              },
+              "text": "mouse",
+              "locations": [{ "offset": 1195, "length": 5 }]
+            },
+            {
+              "id": "36",
+              "infons": {
+                "identifier": "12189",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [12189],
+                "database": "ncbi_gene",
+                "normalized_id": 12189,
+                "biotype": "gene",
+                "name": "Brca1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "Brca1",
+              "locations": [{ "offset": 1235, "length": 5 }]
+            },
+            {
+              "id": "37",
+              "infons": {
+                "identifier": "10090",
+                "type": "Species",
+                "valid": true,
+                "normalized": [10090],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 10090,
+                "biotype": "species",
+                "name": "10090",
+                "accession": null
+              },
+              "text": "mice",
+              "locations": [{ "offset": 1269, "length": 4 }]
+            },
+            {
+              "id": "38",
+              "infons": {
+                "identifier": "9606",
+                "type": "Species",
+                "valid": true,
+                "normalized": [9606],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 9606,
+                "biotype": "species",
+                "name": "9606",
+                "accession": null
+              },
+              "text": "human",
+              "locations": [{ "offset": 1322, "length": 5 }]
+            },
+            {
+              "id": "39",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 1328, "length": 5 }]
+            },
+            {
+              "id": "40",
+              "infons": {
+                "identifier": "10090",
+                "type": "Species",
+                "valid": true,
+                "normalized": [10090],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 10090,
+                "biotype": "species",
+                "name": "10090",
+                "accession": null
+              },
+              "text": "mouse",
+              "locations": [{ "offset": 1378, "length": 5 }]
+            },
+            {
+              "id": "41",
+              "infons": {
+                "identifier": "12189",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [12189],
+                "database": "ncbi_gene",
+                "normalized_id": 12189,
+                "biotype": "gene",
+                "name": "Brca1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 1384, "length": 5 }]
+            },
+            {
+              "id": "42",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 1576, "length": 5 }]
+            },
+            {
+              "id": "43",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 1660, "length": 5 }]
+            }
+          ],
+          "relations": []
+        }
+      ],
+      "relations": [
+        {
+          "id": "R1",
+          "infons": {
+            "score": "0.9005",
+            "role1": {
+              "identifier": "MESH:D009369",
+              "type": "Disease",
+              "valid": true,
+              "normalized": ["D009369"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D009369",
+              "biotype": "disease",
+              "name": "Neoplasms",
+              "accession": "@DISEASE_Neoplasms"
+            },
+            "role2": {
+              "identifier": "672",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [672],
+              "database": "ncbi_gene",
+              "normalized_id": 672,
+              "biotype": "gene",
+              "name": "BRCA1",
+              "accession": "@GENE_BRCA1"
+            },
+            "type": "Negative_Correlation"
+          },
+          "nodes": [{ "refid": "0", "role": "2,1" }]
+        },
+        {
+          "id": "R2",
+          "infons": {
+            "score": "0.9994",
+            "role1": {
+              "identifier": "MESH:D061325",
+              "type": "Disease",
+              "valid": true,
+              "normalized": ["D061325"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D061325",
+              "biotype": "disease",
+              "name": "Hereditary Breast and Ovarian Cancer Syndrome",
+              "accession": "@DISEASE_Hereditary_Breast_and_Ovarian_Cancer_Syndrome"
+            },
+            "role2": {
+              "identifier": "672",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [672],
+              "database": "ncbi_gene",
+              "normalized_id": 672,
+              "biotype": "gene",
+              "name": "BRCA1",
+              "accession": "@GENE_BRCA1"
+            },
+            "type": "Association"
+          },
+          "nodes": [{ "refid": "1", "role": "3,1" }]
+        }
+      ],
+      "pmid": 34421362,
+      "pmcid": null,
+      "meta": {},
+      "date": "2021-07-25T00:00:00Z",
+      "journal": "Int J Biol Sci",
+      "authors": ["Yang J", "Qi L", "Chiang HC", "Yuan B", "Li R", "Hu Y"],
+      "relations_display": [
+        { "name": "inhibit|@DISEASE_Neoplasms|@GENE_BRCA1" },
+        { "name": "associate|@DISEASE_Hereditary_Breast_and_Ovarian_Cancer_Syndrome|@GENE_BRCA1" }
+      ]
+    }
+  },
+  "34736119": {
+    "searchResult": {
+      "_id": "34736119",
+      "pmid": 34736119,
+      "pmcid": "PMC8577473",
+      "title": "Novel mechanisms in alcohol neurodevelopmental disorders via BRCA1 depletion and BRCA1-dependent NADPH oxidase regulation.",
+      "journal": "Redox Biol",
+      "authors": ["Drake DM", "Wells PG"],
+      "date": "2021-09-23T00:00:00Z",
+      "doi": "10.1016/j.redox.2021.102148",
+      "meta_date_publication": "2021 Sep 23",
+      "meta_volume": "48",
+      "meta_issue": "",
+      "meta_pages": "102148",
+      "score": 250.24426,
+      "text_hl": "Novel mechanisms in alcohol neurodevelopmental disorders via @<m>GENE_BRCA1</m> @@@BRCA1@@@ depletion and @<m>GENE_BRCA1</m> @@@BRCA1@@@-dependent NADPH oxidase regulation.",
+      "citations": {
+        "NLM": "Drake DM, Wells PG. Novel mechanisms in alcohol neurodevelopmental disorders via BRCA1 depletion and BRCA1-dependent NADPH oxidase regulation. Redox Biol. 2021 Sep 23;48():102148. PMID: 34736119",
+        "BibTeX": "@article{34736119, title={Novel mechanisms in alcohol neurodevelopmental disorders via BRCA1 depletion and BRCA1-dependent NADPH oxidase regulation.}, author={Drake DM and Wells PG}, journal={Redox Biol}, volume={48}, pages={102148}}"
+      }
+    },
+    "abstract": {
+      "_id": "34736119|None",
+      "id": "34736119",
+      "infons": {},
+      "passages": [
+        {
+          "infons": {
+            "journal": "Redox Biol. 2021 Sep 23;48:102148. doi: 10.1016/j.redox.2021.102148.",
+            "year": "2021",
+            "article-id_pmc": "PMC8577473",
+            "type": "title",
+            "authors": "Drake DM, Wells PG"
+          },
+          "offset": 0,
+          "text": "Novel mechanisms in alcohol neurodevelopmental disorders via BRCA1 depletion and BRCA1-dependent NADPH oxidase regulation.",
+          "sentences": [],
+          "annotations": [
+            {
+              "id": "3",
+              "infons": {
+                "identifier": "-",
+                "type": "Chemical",
+                "valid": false,
+                "normalized_id": null,
+                "biotype": "chemical"
+              },
+              "text": "alcohol neurodevelopmental disorders",
+              "locations": [{ "offset": 20, "length": 36 }]
+            },
+            {
+              "id": "4",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 61, "length": 5 }]
+            },
+            {
+              "id": "5",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 81, "length": 5 }]
+            }
+          ],
+          "relations": []
+        },
+        {
+          "infons": { "type": "abstract" },
+          "offset": 123,
+          "text": "The breast cancer 1 protein (BRCA1) facilitates DNA repair, preventing embryolethality and protecting the fetus from reactive oxygen species (ROS)-induced developmental disorders mediated by oxidatively damaged DNA. Alcohol (ethanol, EtOH) exposure during pregnancy causes fetal alcohol spectrum disorders (FASD), characterized by aberrant behaviour and enhanced ROS formation and proteasomal protein degradation. Herein, ROS-producing NADPH oxidase (NOX) activity was higher in Brca1 +/- vs. +/+ fetal and adult brains, and further enhanced by a single EtOH exposure. EtOH also enhanced catalase and proteasomal activities, while conversely reducing BRCA1 protein levels without affecting Brca1 gene expression. EtOH-initiated adaptive postnatal freezing behaviour was lost in Brca1 +/- progeny. Pretreatment with the free radical spin trap and ROS inhibitor phenylbutylnitrone blocked all EtOH effects, suggesting ROS-dependent mechanisms. This is the first in vivo evidence of NOX regulation by BRCA1, and of EtOH-induced, ROS-mediated depletion of BRCA1, revealing novel mechanisms of BRCA1 protection in FASD.",
+          "sentences": [],
+          "annotations": [
+            {
+              "id": "38",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "breast cancer 1 protein",
+              "locations": [{ "offset": 127, "length": 23 }]
+            },
+            {
+              "id": "39",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 152, "length": 5 }]
+            },
+            {
+              "id": "40",
+              "infons": {
+                "type": "Disease",
+                "valid": false,
+                "normalized_id": null,
+                "biotype": "disease"
+              },
+              "text": "embryolethality",
+              "locations": [{ "offset": 194, "length": 15 }]
+            },
+            {
+              "id": "41",
+              "infons": {
+                "identifier": "MESH:D017382",
+                "type": "Chemical",
+                "valid": true,
+                "normalized": ["D017382"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D017382",
+                "biotype": "chemical",
+                "name": "Reactive Oxygen Species",
+                "accession": "@CHEMICAL_Reactive_Oxygen_Species"
+              },
+              "text": "reactive oxygen species",
+              "locations": [{ "offset": 240, "length": 23 }]
+            },
+            {
+              "id": "42",
+              "infons": {
+                "identifier": "MESH:D017382",
+                "type": "Chemical",
+                "valid": true,
+                "normalized": ["D017382"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D017382",
+                "biotype": "chemical",
+                "name": "Reactive Oxygen Species",
+                "accession": "@CHEMICAL_Reactive_Oxygen_Species"
+              },
+              "text": "ROS",
+              "locations": [{ "offset": 265, "length": 3 }]
+            },
+            {
+              "id": "43",
+              "infons": {
+                "identifier": "MESH:D002658",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D002658"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D002658",
+                "biotype": "disease",
+                "name": "Developmental Disabilities",
+                "accession": "@DISEASE_Developmental_Disabilities"
+              },
+              "text": "developmental disorders",
+              "locations": [{ "offset": 278, "length": 23 }]
+            },
+            {
+              "id": "44",
+              "infons": {
+                "identifier": "MESH:D000438",
+                "type": "Chemical",
+                "valid": true,
+                "normalized": ["D000438"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D000438",
+                "biotype": "chemical",
+                "name": "Alcohols",
+                "accession": "@CHEMICAL_Alcohols"
+              },
+              "text": "Alcohol",
+              "locations": [{ "offset": 339, "length": 7 }]
+            },
+            {
+              "id": "45",
+              "infons": {
+                "identifier": "MESH:D000431",
+                "type": "Chemical",
+                "valid": true,
+                "normalized": ["D000431"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D000431",
+                "biotype": "chemical",
+                "name": "Ethanol",
+                "accession": "@CHEMICAL_Ethanol"
+              },
+              "text": "ethanol",
+              "locations": [{ "offset": 348, "length": 7 }]
+            },
+            {
+              "id": "46",
+              "infons": {
+                "identifier": "MESH:D000431",
+                "type": "Chemical",
+                "valid": true,
+                "normalized": ["D000431"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D000431",
+                "biotype": "chemical",
+                "name": "Ethanol",
+                "accession": "@CHEMICAL_Ethanol"
+              },
+              "text": "EtOH",
+              "locations": [{ "offset": 357, "length": 4 }]
+            },
+            {
+              "id": "47",
+              "infons": {
+                "identifier": "MESH:D063647",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D063647"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D063647",
+                "biotype": "disease",
+                "name": "Fetal Alcohol Spectrum Disorders",
+                "accession": "@DISEASE_Fetal_Alcohol_Spectrum_Disorders"
+              },
+              "text": "fetal alcohol spectrum disorders",
+              "locations": [{ "offset": 396, "length": 32 }]
+            },
+            {
+              "id": "48",
+              "infons": {
+                "identifier": "MESH:D063647",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D063647"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D063647",
+                "biotype": "disease",
+                "name": "Fetal Alcohol Spectrum Disorders",
+                "accession": "@DISEASE_Fetal_Alcohol_Spectrum_Disorders"
+              },
+              "text": "FASD",
+              "locations": [{ "offset": 430, "length": 4 }]
+            },
+            {
+              "id": "49",
+              "infons": {
+                "identifier": "MESH:D017382",
+                "type": "Chemical",
+                "valid": true,
+                "normalized": ["D017382"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D017382",
+                "biotype": "chemical",
+                "name": "Reactive Oxygen Species",
+                "accession": "@CHEMICAL_Reactive_Oxygen_Species"
+              },
+              "text": "ROS",
+              "locations": [{ "offset": 486, "length": 3 }]
+            },
+            {
+              "id": "50",
+              "infons": {
+                "identifier": "MESH:D017382",
+                "type": "Chemical",
+                "valid": true,
+                "normalized": ["D017382"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D017382",
+                "biotype": "chemical",
+                "name": "Reactive Oxygen Species",
+                "accession": "@CHEMICAL_Reactive_Oxygen_Species"
+              },
+              "text": "ROS",
+              "locations": [{ "offset": 545, "length": 3 }]
+            },
+            {
+              "id": "51",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "Brca1",
+              "locations": [{ "offset": 602, "length": 5 }]
+            },
+            {
+              "id": "52",
+              "infons": {
+                "identifier": "MESH:D000431",
+                "type": "Chemical",
+                "valid": true,
+                "normalized": ["D000431"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D000431",
+                "biotype": "chemical",
+                "name": "Ethanol",
+                "accession": "@CHEMICAL_Ethanol"
+              },
+              "text": "EtOH",
+              "locations": [{ "offset": 677, "length": 4 }]
+            },
+            {
+              "id": "53",
+              "infons": {
+                "identifier": "MESH:D000431",
+                "type": "Chemical",
+                "valid": true,
+                "normalized": ["D000431"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D000431",
+                "biotype": "chemical",
+                "name": "Ethanol",
+                "accession": "@CHEMICAL_Ethanol"
+              },
+              "text": "EtOH",
+              "locations": [{ "offset": 692, "length": 4 }]
+            },
+            {
+              "id": "54",
+              "infons": {
+                "identifier": "847",
+                "type": "Gene",
+                "ncbi_homologene": "55514",
+                "valid": true,
+                "normalized": [847],
+                "database": "ncbi_gene",
+                "normalized_id": 847,
+                "biotype": "gene",
+                "name": "CAT",
+                "accession": "@GENE_CAT"
+              },
+              "text": "catalase",
+              "locations": [{ "offset": 711, "length": 8 }]
+            },
+            {
+              "id": "55",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 774, "length": 5 }]
+            },
+            {
+              "id": "56",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "Brca1",
+              "locations": [{ "offset": 813, "length": 5 }]
+            },
+            {
+              "id": "57",
+              "infons": {
+                "identifier": "MESH:D000431",
+                "type": "Chemical",
+                "valid": true,
+                "normalized": ["D000431"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D000431",
+                "biotype": "chemical",
+                "name": "Ethanol",
+                "accession": "@CHEMICAL_Ethanol"
+              },
+              "text": "EtOH",
+              "locations": [{ "offset": 836, "length": 4 }]
+            },
+            {
+              "id": "58",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "Brca1",
+              "locations": [{ "offset": 901, "length": 5 }]
+            },
+            {
+              "id": "59",
+              "infons": {
+                "identifier": "MESH:D005609",
+                "type": "Chemical",
+                "valid": true,
+                "normalized": ["D005609"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D005609",
+                "biotype": "chemical",
+                "name": "Free Radicals",
+                "accession": "@CHEMICAL_Free_Radicals"
+              },
+              "text": "free radical",
+              "locations": [{ "offset": 942, "length": 12 }]
+            },
+            {
+              "id": "60",
+              "infons": {
+                "identifier": "MESH:D017382",
+                "type": "Chemical",
+                "valid": true,
+                "normalized": ["D017382"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D017382",
+                "biotype": "chemical",
+                "name": "Reactive Oxygen Species",
+                "accession": "@CHEMICAL_Reactive_Oxygen_Species"
+              },
+              "text": "ROS",
+              "locations": [{ "offset": 969, "length": 3 }]
+            },
+            {
+              "id": "61",
+              "infons": {
+                "identifier": "MESH:C029217",
+                "type": "Chemical",
+                "valid": true,
+                "normalized": ["C029217"],
+                "database": "ncbi_mesh",
+                "normalized_id": "C029217",
+                "biotype": "chemical",
+                "name": "phenyl-N-tert-butylnitrone",
+                "accession": "@CHEMICAL_phenyl_N_tert_butylnitrone"
+              },
+              "text": "phenylbutylnitrone",
+              "locations": [{ "offset": 983, "length": 18 }]
+            },
+            {
+              "id": "62",
+              "infons": {
+                "identifier": "MESH:D000431",
+                "type": "Chemical",
+                "valid": true,
+                "normalized": ["D000431"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D000431",
+                "biotype": "chemical",
+                "name": "Ethanol",
+                "accession": "@CHEMICAL_Ethanol"
+              },
+              "text": "EtOH",
+              "locations": [{ "offset": 1014, "length": 4 }]
+            },
+            {
+              "id": "63",
+              "infons": {
+                "identifier": "MESH:D017382",
+                "type": "Chemical",
+                "valid": true,
+                "normalized": ["D017382"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D017382",
+                "biotype": "chemical",
+                "name": "Reactive Oxygen Species",
+                "accession": "@CHEMICAL_Reactive_Oxygen_Species"
+              },
+              "text": "ROS",
+              "locations": [{ "offset": 1039, "length": 3 }]
+            },
+            {
+              "id": "64",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 1121, "length": 5 }]
+            },
+            {
+              "id": "65",
+              "infons": {
+                "identifier": "MESH:D000431",
+                "type": "Chemical",
+                "valid": true,
+                "normalized": ["D000431"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D000431",
+                "biotype": "chemical",
+                "name": "Ethanol",
+                "accession": "@CHEMICAL_Ethanol"
+              },
+              "text": "EtOH",
+              "locations": [{ "offset": 1135, "length": 4 }]
+            },
+            {
+              "id": "66",
+              "infons": {
+                "identifier": "MESH:D017382",
+                "type": "Chemical",
+                "valid": true,
+                "normalized": ["D017382"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D017382",
+                "biotype": "chemical",
+                "name": "Reactive Oxygen Species",
+                "accession": "@CHEMICAL_Reactive_Oxygen_Species"
+              },
+              "text": "ROS",
+              "locations": [{ "offset": 1149, "length": 3 }]
+            },
+            {
+              "id": "67",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 1175, "length": 5 }]
+            },
+            {
+              "id": "68",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 1212, "length": 5 }]
+            },
+            {
+              "id": "69",
+              "infons": {
+                "identifier": "MESH:D063647",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D063647"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D063647",
+                "biotype": "disease",
+                "name": "Fetal Alcohol Spectrum Disorders",
+                "accession": "@DISEASE_Fetal_Alcohol_Spectrum_Disorders"
+              },
+              "text": "FASD",
+              "locations": [{ "offset": 1232, "length": 4 }]
+            }
+          ],
+          "relations": []
+        }
+      ],
+      "relations": [
+        {
+          "id": "R1",
+          "infons": {
+            "score": "0.7079",
+            "role1": {
+              "identifier": "MESH:C029217",
+              "type": "Chemical",
+              "valid": true,
+              "normalized": ["C029217"],
+              "database": "ncbi_mesh",
+              "normalized_id": "C029217",
+              "biotype": "chemical",
+              "name": "phenyl-N-tert-butylnitrone",
+              "accession": "@CHEMICAL_phenyl_N_tert_butylnitrone"
+            },
+            "role2": {
+              "identifier": "MESH:D005609",
+              "type": "Chemical",
+              "valid": true,
+              "normalized": ["D005609"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D005609",
+              "biotype": "chemical",
+              "name": "Free Radicals",
+              "accession": "@CHEMICAL_Free_Radicals"
+            },
+            "type": "Negative_Correlation"
+          },
+          "nodes": [{ "refid": "0", "role": "26,24" }]
+        },
+        {
+          "id": "R2",
+          "infons": {
+            "score": "0.9885",
+            "role1": {
+              "identifier": "MESH:D000438",
+              "type": "Chemical",
+              "valid": true,
+              "normalized": ["D000438"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D000438",
+              "biotype": "chemical",
+              "name": "Alcohols",
+              "accession": "@CHEMICAL_Alcohols"
+            },
+            "role2": {
+              "identifier": "MESH:D017382",
+              "type": "Chemical",
+              "valid": true,
+              "normalized": ["D017382"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D017382",
+              "biotype": "chemical",
+              "name": "Reactive Oxygen Species",
+              "accession": "@CHEMICAL_Reactive_Oxygen_Species"
+            },
+            "type": "Positive_Correlation"
+          },
+          "nodes": [{ "refid": "1", "role": "9,14" }]
+        },
+        {
+          "id": "R3",
+          "infons": {
+            "score": "0.9651",
+            "role1": {
+              "identifier": "MESH:D017382",
+              "type": "Chemical",
+              "valid": true,
+              "normalized": ["D017382"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D017382",
+              "biotype": "chemical",
+              "name": "Reactive Oxygen Species",
+              "accession": "@CHEMICAL_Reactive_Oxygen_Species"
+            },
+            "role2": {
+              "identifier": "MESH:D002658",
+              "type": "Disease",
+              "valid": true,
+              "normalized": ["D002658"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D002658",
+              "biotype": "disease",
+              "name": "Developmental Disabilities",
+              "accession": "@DISEASE_Developmental_Disabilities"
+            },
+            "type": "Positive_Correlation"
+          },
+          "nodes": [{ "refid": "2", "role": "6,8" }]
+        },
+        {
+          "id": "R4",
+          "infons": {
+            "score": "0.9992",
+            "role1": {
+              "identifier": "MESH:D000431",
+              "type": "Chemical",
+              "valid": true,
+              "normalized": ["D000431"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D000431",
+              "biotype": "chemical",
+              "name": "Ethanol",
+              "accession": "@CHEMICAL_Ethanol"
+            },
+            "role2": {
+              "identifier": "672",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [672],
+              "database": "ncbi_gene",
+              "normalized_id": 672,
+              "biotype": "gene",
+              "name": "BRCA1",
+              "accession": "@GENE_BRCA1"
+            },
+            "type": "Negative_Correlation"
+          },
+          "nodes": [{ "refid": "3", "role": "17,16" }]
+        },
+        {
+          "id": "R5",
+          "infons": {
+            "score": "0.9912",
+            "role1": {
+              "identifier": "MESH:D000431",
+              "type": "Chemical",
+              "valid": true,
+              "normalized": ["D000431"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D000431",
+              "biotype": "chemical",
+              "name": "Ethanol",
+              "accession": "@CHEMICAL_Ethanol"
+            },
+            "role2": {
+              "identifier": "847",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [847],
+              "database": "ncbi_gene",
+              "normalized_id": 847,
+              "biotype": "gene",
+              "name": "CAT",
+              "accession": "@GENE_CAT"
+            },
+            "type": "Positive_Correlation"
+          },
+          "nodes": [{ "refid": "4", "role": "18,19" }]
+        },
+        {
+          "id": "R6",
+          "infons": {
+            "score": "0.7394",
+            "role1": {
+              "identifier": "MESH:D017382",
+              "type": "Chemical",
+              "valid": true,
+              "normalized": ["D017382"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D017382",
+              "biotype": "chemical",
+              "name": "Reactive Oxygen Species",
+              "accession": "@CHEMICAL_Reactive_Oxygen_Species"
+            },
+            "role2": {
+              "identifier": "672",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [672],
+              "database": "ncbi_gene",
+              "normalized_id": 672,
+              "biotype": "gene",
+              "name": "BRCA1",
+              "accession": "@GENE_BRCA1"
+            },
+            "type": "Negative_Correlation"
+          },
+          "nodes": [{ "refid": "5", "role": "6,3" }]
+        },
+        {
+          "id": "R7",
+          "infons": {
+            "score": "0.9993",
+            "role1": {
+              "identifier": "MESH:C029217",
+              "type": "Chemical",
+              "valid": true,
+              "normalized": ["C029217"],
+              "database": "ncbi_mesh",
+              "normalized_id": "C029217",
+              "biotype": "chemical",
+              "name": "phenyl-N-tert-butylnitrone",
+              "accession": "@CHEMICAL_phenyl_N_tert_butylnitrone"
+            },
+            "role2": {
+              "identifier": "MESH:D017382",
+              "type": "Chemical",
+              "valid": true,
+              "normalized": ["D017382"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D017382",
+              "biotype": "chemical",
+              "name": "Reactive Oxygen Species",
+              "accession": "@CHEMICAL_Reactive_Oxygen_Species"
+            },
+            "type": "Negative_Correlation"
+          },
+          "nodes": [{ "refid": "6", "role": "26,25" }]
+        },
+        {
+          "id": "R8",
+          "infons": {
+            "score": "0.9939",
+            "role1": {
+              "identifier": "MESH:D063647",
+              "type": "Disease",
+              "valid": true,
+              "normalized": ["D063647"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D063647",
+              "biotype": "disease",
+              "name": "Fetal Alcohol Spectrum Disorders",
+              "accession": "@DISEASE_Fetal_Alcohol_Spectrum_Disorders"
+            },
+            "role2": {
+              "identifier": "672",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [672],
+              "database": "ncbi_gene",
+              "normalized_id": 672,
+              "biotype": "gene",
+              "name": "BRCA1",
+              "accession": "@GENE_BRCA1"
+            },
+            "type": "Association"
+          },
+          "nodes": [{ "refid": "7", "role": "34,29" }]
+        },
+        {
+          "id": "R9",
+          "infons": {
+            "score": "0.9986",
+            "role1": {
+              "identifier": "MESH:D017382",
+              "type": "Chemical",
+              "valid": true,
+              "normalized": ["D017382"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D017382",
+              "biotype": "chemical",
+              "name": "Reactive Oxygen Species",
+              "accession": "@CHEMICAL_Reactive_Oxygen_Species"
+            },
+            "role2": {
+              "identifier": "MESH:D063647",
+              "type": "Disease",
+              "valid": true,
+              "normalized": ["D063647"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D063647",
+              "biotype": "disease",
+              "name": "Fetal Alcohol Spectrum Disorders",
+              "accession": "@DISEASE_Fetal_Alcohol_Spectrum_Disorders"
+            },
+            "type": "Positive_Correlation"
+          },
+          "nodes": [{ "refid": "8", "role": "14,12" }]
+        },
+        {
+          "id": "R10",
+          "infons": {
+            "score": "0.997",
+            "role1": {
+              "identifier": "MESH:C029217",
+              "type": "Chemical",
+              "valid": true,
+              "normalized": ["C029217"],
+              "database": "ncbi_mesh",
+              "normalized_id": "C029217",
+              "biotype": "chemical",
+              "name": "phenyl-N-tert-butylnitrone",
+              "accession": "@CHEMICAL_phenyl_N_tert_butylnitrone"
+            },
+            "role2": {
+              "identifier": "MESH:D000431",
+              "type": "Chemical",
+              "valid": true,
+              "normalized": ["D000431"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D000431",
+              "biotype": "chemical",
+              "name": "Ethanol",
+              "accession": "@CHEMICAL_Ethanol"
+            },
+            "type": "Negative_Correlation"
+          },
+          "nodes": [{ "refid": "9", "role": "26,27" }]
+        },
+        {
+          "id": "R11",
+          "infons": {
+            "score": "0.9991",
+            "role1": {
+              "identifier": "MESH:D000431",
+              "type": "Chemical",
+              "valid": true,
+              "normalized": ["D000431"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D000431",
+              "biotype": "chemical",
+              "name": "Ethanol",
+              "accession": "@CHEMICAL_Ethanol"
+            },
+            "role2": {
+              "identifier": "MESH:D017382",
+              "type": "Chemical",
+              "valid": true,
+              "normalized": ["D017382"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D017382",
+              "biotype": "chemical",
+              "name": "Reactive Oxygen Species",
+              "accession": "@CHEMICAL_Reactive_Oxygen_Species"
+            },
+            "type": "Positive_Correlation"
+          },
+          "nodes": [{ "refid": "10", "role": "10,14" }]
+        },
+        {
+          "id": "R12",
+          "infons": {
+            "score": "0.9972",
+            "role1": {
+              "identifier": "MESH:D000438",
+              "type": "Chemical",
+              "valid": true,
+              "normalized": ["D000438"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D000438",
+              "biotype": "chemical",
+              "name": "Alcohols",
+              "accession": "@CHEMICAL_Alcohols"
+            },
+            "role2": {
+              "identifier": "MESH:D063647",
+              "type": "Disease",
+              "valid": true,
+              "normalized": ["D063647"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D063647",
+              "biotype": "disease",
+              "name": "Fetal Alcohol Spectrum Disorders",
+              "accession": "@DISEASE_Fetal_Alcohol_Spectrum_Disorders"
+            },
+            "type": "Positive_Correlation"
+          },
+          "nodes": [{ "refid": "11", "role": "9,12" }]
+        },
+        {
+          "id": "R13",
+          "infons": {
+            "score": "0.8142",
+            "role1": {
+              "identifier": "MESH:D002658",
+              "type": "Disease",
+              "valid": true,
+              "normalized": ["D002658"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D002658",
+              "biotype": "disease",
+              "name": "Developmental Disabilities",
+              "accession": "@DISEASE_Developmental_Disabilities"
+            },
+            "role2": {
+              "identifier": "672",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [672],
+              "database": "ncbi_gene",
+              "normalized_id": 672,
+              "biotype": "gene",
+              "name": "BRCA1",
+              "accession": "@GENE_BRCA1"
+            },
+            "type": "Association"
+          },
+          "nodes": [{ "refid": "12", "role": "8,3" }]
+        },
+        {
+          "id": "R14",
+          "infons": {
+            "score": "0.9988",
+            "role1": {
+              "identifier": "MESH:D000431",
+              "type": "Chemical",
+              "valid": true,
+              "normalized": ["D000431"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D000431",
+              "biotype": "chemical",
+              "name": "Ethanol",
+              "accession": "@CHEMICAL_Ethanol"
+            },
+            "role2": {
+              "identifier": "MESH:D063647",
+              "type": "Disease",
+              "valid": true,
+              "normalized": ["D063647"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D063647",
+              "biotype": "disease",
+              "name": "Fetal Alcohol Spectrum Disorders",
+              "accession": "@DISEASE_Fetal_Alcohol_Spectrum_Disorders"
+            },
+            "type": "Positive_Correlation"
+          },
+          "nodes": [{ "refid": "13", "role": "10,12" }]
+        }
+      ],
+      "pmid": 34736119,
+      "pmcid": null,
+      "meta": {},
+      "date": "2021-09-23T00:00:00Z",
+      "journal": "Redox Biol",
+      "authors": ["Drake DM", "Wells PG"],
+      "relations_display": [
+        {
+          "name": "negative_correlate|@CHEMICAL_phenyl_N_tert_butylnitrone|@CHEMICAL_Free_Radicals"
+        },
+        { "name": "positive_correlate|@CHEMICAL_Alcohols|@CHEMICAL_Reactive_Oxygen_Species" },
+        { "name": "cause|@CHEMICAL_Reactive_Oxygen_Species|@DISEASE_Developmental_Disabilities" },
+        { "name": "negative_correlate|@CHEMICAL_Ethanol|@GENE_BRCA1" },
+        { "name": "positive_correlate|@CHEMICAL_Ethanol|@GENE_CAT" },
+        { "name": "negative_correlate|@CHEMICAL_Reactive_Oxygen_Species|@GENE_BRCA1" },
+        {
+          "name": "negative_correlate|@CHEMICAL_phenyl_N_tert_butylnitrone|@CHEMICAL_Reactive_Oxygen_Species"
+        },
+        { "name": "associate|@DISEASE_Fetal_Alcohol_Spectrum_Disorders|@GENE_BRCA1" },
+        {
+          "name": "cause|@CHEMICAL_Reactive_Oxygen_Species|@DISEASE_Fetal_Alcohol_Spectrum_Disorders"
+        },
+        { "name": "negative_correlate|@CHEMICAL_phenyl_N_tert_butylnitrone|@CHEMICAL_Ethanol" },
+        { "name": "positive_correlate|@CHEMICAL_Ethanol|@CHEMICAL_Reactive_Oxygen_Species" },
+        { "name": "cause|@CHEMICAL_Alcohols|@DISEASE_Fetal_Alcohol_Spectrum_Disorders" },
+        { "name": "associate|@DISEASE_Developmental_Disabilities|@GENE_BRCA1" },
+        { "name": "cause|@CHEMICAL_Ethanol|@DISEASE_Fetal_Alcohol_Spectrum_Disorders" }
+      ]
+    }
+  },
+  "35300412": {
+    "searchResult": {
+      "_id": "35300412",
+      "pmid": 35300412,
+      "pmcid": "PMC8921524",
+      "title": "BRCA1 and Breast Cancer: Molecular Mechanisms and Therapeutic Strategies.",
+      "journal": "Front Cell Dev Biol",
+      "authors": ["Fu X", "Tan W", "Song Q", "Pei H", "Li J"],
+      "date": "2022-03-01T00:00:00Z",
+      "doi": "10.3389/fcell.2022.813457",
+      "meta_date_publication": "2022",
+      "meta_volume": "10",
+      "meta_issue": "",
+      "meta_pages": "813457",
+      "score": 250.21066,
+      "text_hl": "... @<m>GENE_BRCA1</m> @@@BRCA1@@@ Gene",
+      "citations": {
+        "NLM": "Fu X, Tan W, Song Q, Pei H, Li J. BRCA1 and Breast Cancer: Molecular Mechanisms and Therapeutic Strategies. Front Cell Dev Biol. 2022;10():813457. PMID: 35300412",
+        "BibTeX": "@article{35300412, title={BRCA1 and Breast Cancer: Molecular Mechanisms and Therapeutic Strategies.}, author={Fu X and Tan W and Song Q and Pei H and Li J}, journal={Front Cell Dev Biol}, volume={10}, pages={813457}}"
+      }
+    },
+    "abstract": {
+      "_id": "35300412|None",
+      "id": "35300412",
+      "infons": {},
+      "passages": [
+        {
+          "infons": {
+            "journal": "Front Cell Dev Biol. 2022 Mar 1;10:813457. doi: 10.3389/fcell.2022.813457. ",
+            "year": "2022",
+            "article-id_pmc": "PMC8921524",
+            "type": "title",
+            "authors": "Fu X, Tan W, Song Q, Pei H, Li J"
+          },
+          "offset": 0,
+          "text": "BRCA1 and Breast Cancer: Molecular Mechanisms and Therapeutic Strategies.",
+          "sentences": [],
+          "annotations": [
+            {
+              "id": "2",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 0, "length": 5 }]
+            },
+            {
+              "id": "3",
+              "infons": {
+                "identifier": "MESH:D001943",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D001943"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D001943",
+                "biotype": "disease",
+                "name": "Breast Neoplasms",
+                "accession": "@DISEASE_Breast_Neoplasms"
+              },
+              "text": "Breast Cancer",
+              "locations": [{ "offset": 10, "length": 13 }]
+            }
+          ],
+          "relations": []
+        },
+        {
+          "infons": { "type": "abstract" },
+          "offset": 74,
+          "text": "Breast cancer susceptibility gene 1 (BRCA1) is a tumor suppressor gene, which is mainly involved in the repair of DNA damage, cell cycle regulation, maintenance of genome stability, and other important physiological processes. Mutations or defects in the BRCA1 gene significantly increase the risk of breast, ovarian, prostate, and other cancers in carriers. In this review, we summarized the molecular functions and regulation of BRCA1 and discussed recent insights into the detection and treatment of BRCA1 mutated breast cancer.",
+          "sentences": [],
+          "annotations": [
+            {
+              "id": "11",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 111, "length": 5 }]
+            },
+            {
+              "id": "12",
+              "infons": {
+                "identifier": "MESH:D009369",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D009369"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D009369",
+                "biotype": "disease",
+                "name": "Neoplasms",
+                "accession": "@DISEASE_Neoplasms"
+              },
+              "text": "tumor",
+              "locations": [{ "offset": 123, "length": 5 }]
+            },
+            {
+              "id": "13",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 329, "length": 5 }]
+            },
+            {
+              "id": "14",
+              "infons": {
+                "identifier": "MESH:D010051",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D010051"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D010051",
+                "biotype": "disease",
+                "name": "Ovarian Neoplasms",
+                "accession": "@DISEASE_Ovarian_Neoplasms"
+              },
+              "text": "breast, ovarian, prostate, and other cancers",
+              "locations": [{ "offset": 375, "length": 44 }]
+            },
+            {
+              "id": "15",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 505, "length": 5 }]
+            },
+            {
+              "id": "16",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 577, "length": 5 }]
+            },
+            {
+              "id": "17",
+              "infons": {
+                "identifier": "MESH:D001943",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D001943"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D001943",
+                "biotype": "disease",
+                "name": "Breast Neoplasms",
+                "accession": "@DISEASE_Breast_Neoplasms"
+              },
+              "text": "breast cancer",
+              "locations": [{ "offset": 591, "length": 13 }]
+            }
+          ],
+          "relations": []
+        }
+      ],
+      "relations": [
+        {
+          "id": "R1",
+          "infons": {
+            "score": "0.9996",
+            "role1": {
+              "identifier": "MESH:D010051",
+              "type": "Disease",
+              "valid": true,
+              "normalized": ["D010051"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D010051",
+              "biotype": "disease",
+              "name": "Ovarian Neoplasms",
+              "accession": "@DISEASE_Ovarian_Neoplasms"
+            },
+            "role2": {
+              "identifier": "672",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [672],
+              "database": "ncbi_gene",
+              "normalized_id": 672,
+              "biotype": "gene",
+              "name": "BRCA1",
+              "accession": "@GENE_BRCA1"
+            },
+            "type": "Association"
+          },
+          "nodes": [{ "refid": "0", "role": "5,4" }]
+        },
+        {
+          "id": "R2",
+          "infons": {
+            "score": "0.6924",
+            "role1": {
+              "identifier": "MESH:D009369",
+              "type": "Disease",
+              "valid": true,
+              "normalized": ["D009369"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D009369",
+              "biotype": "disease",
+              "name": "Neoplasms",
+              "accession": "@DISEASE_Neoplasms"
+            },
+            "role2": {
+              "identifier": "672",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [672],
+              "database": "ncbi_gene",
+              "normalized_id": 672,
+              "biotype": "gene",
+              "name": "BRCA1",
+              "accession": "@GENE_BRCA1"
+            },
+            "type": "Negative_Correlation"
+          },
+          "nodes": [{ "refid": "1", "role": "3,2" }]
+        },
+        {
+          "id": "R3",
+          "infons": {
+            "score": "0.9996",
+            "role1": {
+              "identifier": "MESH:D001943",
+              "type": "Disease",
+              "valid": true,
+              "normalized": ["D001943"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D001943",
+              "biotype": "disease",
+              "name": "Breast Neoplasms",
+              "accession": "@DISEASE_Breast_Neoplasms"
+            },
+            "role2": {
+              "identifier": "672",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [672],
+              "database": "ncbi_gene",
+              "normalized_id": 672,
+              "biotype": "gene",
+              "name": "BRCA1",
+              "accession": "@GENE_BRCA1"
+            },
+            "type": "Association"
+          },
+          "nodes": [{ "refid": "2", "role": "1,0" }]
+        }
+      ],
+      "pmid": 35300412,
+      "pmcid": null,
+      "meta": {},
+      "date": "2022-03-01T00:00:00Z",
+      "journal": "Front Cell Dev Biol",
+      "authors": ["Fu X", "Tan W", "Song Q", "Pei H", "Li J"],
+      "relations_display": [
+        { "name": "associate|@DISEASE_Ovarian_Neoplasms|@GENE_BRCA1" },
+        { "name": "inhibit|@DISEASE_Neoplasms|@GENE_BRCA1" },
+        { "name": "associate|@DISEASE_Breast_Neoplasms|@GENE_BRCA1" }
+      ]
+    }
+  },
+  "36270245": {
+    "searchResult": {
+      "_id": "36270245",
+      "pmid": 36270245,
+      "pmcid": "PMC10035668",
+      "title": "BRCA1 protects against its own fragility",
+      "journal": "Mol Cell",
+      "authors": ["Martin SK", "McVey M"],
+      "date": "2022-10-20T00:00:00Z",
+      "doi": "10.1016/j.molcel.2022.09.023",
+      "meta_date_publication": "2022 Oct 20",
+      "meta_volume": "82",
+      "meta_issue": "20",
+      "meta_pages": "3757-3759",
+      "score": 250.26907,
+      "text_hl": "@<m>GENE_BRCA1</m> @@@BRCA1@@@ protects against its own fragility",
+      "citations": {
+        "NLM": "Martin SK, McVey M. BRCA1 protects against its own fragility Mol Cell. 2022 Oct 20;82(20):3757-3759. PMID: 36270245",
+        "BibTeX": "@article{36270245, title={BRCA1 protects against its own fragility}, author={Martin SK and McVey M}, journal={Mol Cell}, volume={82}, number={20}, pages={3757-3759}}"
+      }
+    },
+    "abstract": {
+      "_id": "36270245|None",
+      "id": "36270245",
+      "infons": {},
+      "passages": [
+        {
+          "infons": {
+            "journal": "Mol Cell. 2022 Oct 20;82(20):3757-3759. doi: 10.1016/j.molcel.2022.09.023.",
+            "year": "2022",
+            "article-id_pmc": "PMC10035668",
+            "type": "title",
+            "authors": "Martin SK, McVey M"
+          },
+          "offset": 0,
+          "text": "BRCA1 protects against its own fragility.",
+          "sentences": [],
+          "annotations": [
+            {
+              "id": "1",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 0, "length": 5 }]
+            }
+          ],
+          "relations": []
+        },
+        {
+          "infons": { "type": "abstract" },
+          "offset": 42,
+          "text": "Deshpande et al. (2022) demonstrate that BRCA1, a tumor suppressor tasked with protecting the genome, is encoded by a gene that is intrinsically fragile.",
+          "sentences": [],
+          "annotations": [
+            {
+              "id": "4",
+              "infons": {
+                "identifier": "672",
+                "type": "Gene",
+                "ncbi_homologene": "5276",
+                "valid": true,
+                "normalized": [672],
+                "database": "ncbi_gene",
+                "normalized_id": 672,
+                "biotype": "gene",
+                "name": "BRCA1",
+                "accession": "@GENE_BRCA1"
+              },
+              "text": "BRCA1",
+              "locations": [{ "offset": 83, "length": 5 }]
+            },
+            {
+              "id": "5",
+              "infons": {
+                "identifier": "MESH:D009369",
+                "type": "Disease",
+                "valid": true,
+                "normalized": ["D009369"],
+                "database": "ncbi_mesh",
+                "normalized_id": "D009369",
+                "biotype": "disease",
+                "name": "Neoplasms",
+                "accession": "@DISEASE_Neoplasms"
+              },
+              "text": "tumor",
+              "locations": [{ "offset": 92, "length": 5 }]
+            }
+          ],
+          "relations": []
+        }
+      ],
+      "relations": [
+        {
+          "id": "R1",
+          "infons": {
+            "score": "0.9162",
+            "role1": {
+              "identifier": "MESH:D009369",
+              "type": "Disease",
+              "valid": true,
+              "normalized": ["D009369"],
+              "database": "ncbi_mesh",
+              "normalized_id": "D009369",
+              "biotype": "disease",
+              "name": "Neoplasms",
+              "accession": "@DISEASE_Neoplasms"
+            },
+            "role2": {
+              "identifier": "672",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [672],
+              "database": "ncbi_gene",
+              "normalized_id": 672,
+              "biotype": "gene",
+              "name": "BRCA1",
+              "accession": "@GENE_BRCA1"
+            },
+            "type": "Negative_Correlation"
+          },
+          "nodes": [{ "refid": "0", "role": "2,1" }]
+        }
+      ],
+      "pmid": 36270245,
+      "pmcid": null,
+      "meta": {},
+      "date": "2022-10-20T00:00:00Z",
+      "journal": "Mol Cell",
+      "authors": ["Martin SK", "McVey M"],
+      "relations_display": [{ "name": "inhibit|@DISEASE_Neoplasms|@GENE_BRCA1" }]
+    }
+  }
+}
