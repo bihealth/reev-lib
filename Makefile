@@ -69,13 +69,16 @@ PROTO_BASE := https://raw.githubusercontent.com/varfish-org/annonars/main
 
 .PHONY: proto-fetch
 proto-fetch:
-	mkdir -p protos/annonars/genes
+	mkdir -p protos/annonars/{genes,clinvar}
 	wget -O protos/annonars/genes/base.proto $(PROTO_BASE)/protos/annonars/genes/base.proto
+	wget -O protos/annonars/clinvar/minimal.proto $(PROTO_BASE)/protos/annonars/clinvar/minimal.proto
+	wget -O protos/annonars/clinvar/per_gene.proto $(PROTO_BASE)/protos/annonars/clinvar/per_gene.proto
+	wget -O protos/annonars/clinvar/sv.proto $(PROTO_BASE)/protos/annonars/clinvar/sv.proto
 
 .PHONY: proto-ts
 proto-ts:
 	mkdir -p src/pbs
-	npx protoc --ts_opt keep_enum_prefix --ts_out src/pbs --proto_path protos protos/annonars/genes/base.proto
+	npx protoc --ts_opt keep_enum_prefix --ts_out src/pbs --proto_path protos protos/annonars/*/*.proto
 
 .PHONY: proto
 proto: proto-fetch proto-ts format lint
