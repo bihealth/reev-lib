@@ -88,6 +88,9 @@ export const setupMountedComponents = async (
       stubs: {
         // never stub out these central components for convenience
         VApp: false,
+        VCard: false,
+        VCardTitle: false,
+        VCardText: false,
         VContainer: false,
         VList: false,
         VListGroup: false,

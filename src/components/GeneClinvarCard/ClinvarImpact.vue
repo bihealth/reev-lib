@@ -1,15 +1,21 @@
 <script setup lang="ts">
+/**
+ * This component displays ClinVar variant counts per impact and variant
+ * class.
+ */
 import { computed } from 'vue'
 
-import { separateIt } from '@/lib/utils'
+import { separateIt } from '../../lib/utils'
+import { ClinvarPerGeneRecord, Impact } from '../../pbs/annonars/clinvar/per_gene'
 
-export interface Props {
-  geneClinvar: any
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  geneClinvar: null
-})
+const props = withDefaults(
+  defineProps<{
+    clinvarPerGene?: ClinvarPerGeneRecord
+  }>(),
+  {
+    clinvarPerGene: undefined
+  }
+)
 
 /** Enumeration fo coarser impacts. */
 enum CoarseImpact {
@@ -23,47 +29,46 @@ enum CoarseImpact {
 }
 
 /** Mapping from coarse impact to index. */
-const COARSE_IMPACT_TO_INDEX: { [key: string]: number } = {
-  UNKNOWN: -1,
-  OTHER: -1,
-  NONSENSE: 0,
-  MISSENSE_INFRAME: 1,
-  NON_CODING: 2,
-  SYNONYMOUS: 3,
-  TOTAL: 4
+const COARSE_IMPACT_TO_INDEX: { [key in CoarseImpact]: number } = {
+  [CoarseImpact.UNKNOWN]: -1,
+  [CoarseImpact.OTHER]: -1,
+  [CoarseImpact.NONSENSE]: 0,
+  [CoarseImpact.MISSENSE_INFRAME]: 1,
+  [CoarseImpact.NON_CODING]: 2,
+  [CoarseImpact.SYNONYMOUS]: 3,
+  [CoarseImpact.TOTAL]: 4
 }
 
 /** Labels for coarse impact. */
-const COARSE_IMPACT_LABELS: { [key: string]: string } = {
-  UNKNOWN: 'unknown',
-  OTHER: 'other',
-  NONSENSE: 'LoF',
-  MISSENSE_INFRAME: 'missense / inframe',
-  NON_CODING: 'non-coding',
-  SYNONYMOUS: 'synonymous',
-  TOTAL: 'total'
+const COARSE_IMPACT_LABELS: { [key in CoarseImpact]: string } = {
+  [CoarseImpact.UNKNOWN]: 'unknown',
+  [CoarseImpact.OTHER]: 'other',
+  [CoarseImpact.NONSENSE]: 'LoF',
+  [CoarseImpact.MISSENSE_INFRAME]: 'missense / inframe',
+  [CoarseImpact.NON_CODING]: 'non-coding',
+  [CoarseImpact.SYNONYMOUS]: 'synonymous',
+  [CoarseImpact.TOTAL]: 'total'
 }
 
 /** Mapping from raw to coarse impact.  */
-const IMPACT_RAW_TO_COARSE: { [key: string]: CoarseImpact } = {
-  IMPACT_UNKNOWN: CoarseImpact.UNKNOWN,
-  IMPACT_STOP_LOST: CoarseImpact.OTHER,
-  IMPACT_NO_SEQUENCE_ALTERATION: CoarseImpact.SYNONYMOUS,
-  IMPACT_SYNONYMOUS_VARIANT: CoarseImpact.SYNONYMOUS,
-  IMPACT_THREE_PRIME_UTR_VARIANT: CoarseImpact.NON_CODING,
-  IMPACT_FIVE_PRIME_UTR_VARIANT: CoarseImpact.NON_CODING,
-  IMPACT_DOWNSTREAM_TRANSCRIPT_VARIANT: CoarseImpact.NON_CODING,
-  IMPACT_INTRON_VARIANT: CoarseImpact.NON_CODING,
-  IMPACT_NON_CODING_TRANSCRIPT_VARIANT: CoarseImpact.NON_CODING,
-  IMPACT_UPSTREAM_TRANSCRIPT_VARIANT: CoarseImpact.NON_CODING,
-  IMPACT_INFRAME_INDEL: CoarseImpact.MISSENSE_INFRAME,
-  IMPACT_MISSENSE_VARIANT: CoarseImpact.MISSENSE_INFRAME,
-  IMPACT_FRAMESHIFT_VARIANT: CoarseImpact.NONSENSE,
-  IMPACT_START_LOST: CoarseImpact.NONSENSE,
-  IMPACT_STOP_GAINED: CoarseImpact.NONSENSE,
-  IMPACT_SPLICE_ACCEPTOR_VARIANT: CoarseImpact.NONSENSE,
-  IMPACT_SPLICE_DONOR_VARIANT: CoarseImpact.NONSENSE,
-  total: CoarseImpact.TOTAL
+const IMPACT_RAW_TO_COARSE: { [key in Impact]: CoarseImpact } = {
+  [Impact.IMPACT_UNKNOWN]: CoarseImpact.UNKNOWN,
+  [Impact.IMPACT_STOP_LOST]: CoarseImpact.OTHER,
+  [Impact.IMPACT_NO_SEQUENCE_ALTERATION]: CoarseImpact.SYNONYMOUS,
+  [Impact.IMPACT_SYNONYMOUS_VARIANT]: CoarseImpact.SYNONYMOUS,
+  [Impact.IMPACT_THREE_PRIME_UTR_VARIANT]: CoarseImpact.NON_CODING,
+  [Impact.IMPACT_FIVE_PRIME_UTR_VARIANT]: CoarseImpact.NON_CODING,
+  [Impact.IMPACT_DOWNSTREAM_TRANSCRIPT_VARIANT]: CoarseImpact.NON_CODING,
+  [Impact.IMPACT_INTRON_VARIANT]: CoarseImpact.NON_CODING,
+  [Impact.IMPACT_NON_CODING_TRANSCRIPT_VARIANT]: CoarseImpact.NON_CODING,
+  [Impact.IMPACT_UPSTREAM_TRANSCRIPT_VARIANT]: CoarseImpact.NON_CODING,
+  [Impact.IMPACT_INFRAME_INDEL]: CoarseImpact.MISSENSE_INFRAME,
+  [Impact.IMPACT_MISSENSE_VARIANT]: CoarseImpact.MISSENSE_INFRAME,
+  [Impact.IMPACT_FRAMESHIFT_VARIANT]: CoarseImpact.NONSENSE,
+  [Impact.IMPACT_START_LOST]: CoarseImpact.NONSENSE,
+  [Impact.IMPACT_STOP_GAINED]: CoarseImpact.NONSENSE,
+  [Impact.IMPACT_SPLICE_ACCEPTOR_VARIANT]: CoarseImpact.NONSENSE,
+  [Impact.IMPACT_SPLICE_DONOR_VARIANT]: CoarseImpact.NONSENSE
 }
 
 /** Mapping from clinsig order to coarse order */
@@ -75,22 +80,27 @@ const CLINSIG_ORDER_TO_COARSE_ORDER = [
   0 // pathogenic
 ]
 
+/** Helper that returns all keys of enumeration `obj`. */
+function enumKeys<O extends object, K extends keyof O = keyof O>(obj: O): K[] {
+  return Object.keys(obj).filter((k) => !Number.isNaN(k)) as K[]
+}
+
 /** Labels of clinical significance by order in table. */
 const COARSE_CLINSIG_LABELS = ['pathogenic', 'uncertain', 'benign', 'total']
 
 /** Returns true for coarse impacts to show */
-const showCoarseImpact = (key: string): boolean => COARSE_IMPACT_TO_INDEX[key] >= 0
+const showCoarseImpact = (key: CoarseImpact): boolean => COARSE_IMPACT_TO_INDEX[key] >= 0
 
 /** Counts per coarse impact, `list[coarseImpact][coarseClinsig]` */
 const perCoarseImpactCounts = computed(() => {
-  const result = Object.keys(CoarseImpact)
-    .filter(showCoarseImpact)
+  const result = enumKeys(CoarseImpact)
+    .filter((value) => showCoarseImpact(CoarseImpact[value]))
     .map(() => {
       return [0, 0, 0, 0]
     })
 
-  if (props.geneClinvar?.perImpactCounts) {
-    for (const perImpactCount of props.geneClinvar.perImpactCounts) {
+  if (props.clinvarPerGene?.perImpactCounts) {
+    for (const perImpactCount of props.clinvarPerGene.perImpactCounts) {
       const coarseImpact = IMPACT_RAW_TO_COARSE[perImpactCount.impact]
       if (!showCoarseImpact(coarseImpact)) {
         continue
@@ -110,7 +120,7 @@ const perCoarseImpactCounts = computed(() => {
 })
 
 /** Return percent given the coarse impact and clinsig index */
-const percent = (coarseImpact: string, coarseClinsigIdx: number): number => {
+const percent = (coarseImpact: CoarseImpact, coarseClinsigIdx: number): number => {
   const idx = COARSE_IMPACT_TO_INDEX[coarseImpact]
   const idxTotal = COARSE_IMPACT_TO_INDEX[CoarseImpact.TOTAL]
   return (
@@ -145,7 +155,7 @@ const clinsigColor = (coarseClinsigIdx: number, percent: number): string => {
 
 <template>
   <!-- no ClinVar data => display loader -->
-  <template v-if="!geneClinvar?.perImpactCounts?.length">
+  <template v-if="!clinvarPerGene?.perImpactCounts?.length">
     <v-skeleton-loader
       class="mt-3 mx-auto border"
       type="table-heading,table-row,table-row,table-row,table-row"
@@ -158,7 +168,9 @@ const clinsigColor = (coarseClinsigIdx: number, percent: number): string => {
           <tr>
             <th width="20%" class="text-subtitle-1">Impact Counts</th>
             <th
-              v-for="key of Object.keys(CoarseImpact).filter(showCoarseImpact)"
+              v-for="key of enumKeys(CoarseImpact).filter((value) =>
+                showCoarseImpact(CoarseImpact[value])
+              )"
               :key="key"
               class="font-weight-bold text-center"
             >
@@ -172,14 +184,16 @@ const clinsigColor = (coarseClinsigIdx: number, percent: number): string => {
               {{ label }}
             </td>
             <td
-              v-for="key of Object.keys(COARSE_IMPACT_LABELS).filter(showCoarseImpact)"
+              v-for="key of enumKeys(CoarseImpact).filter((value) =>
+                showCoarseImpact(CoarseImpact[value])
+              )"
               :key="key"
               class="text-center"
-              :title="`${percent(key, idx)} %`"
+              :title="`${percent(CoarseImpact[key], idx)} %`"
             >
               <span
                 class="pa-3 rounded-lg text-no-wrap"
-                :style="`background-color: ${clinsigColor(idx, percent(key, idx))}`"
+                :style="`background-color: ${clinsigColor(idx, percent(CoarseImpact[key], idx))}`"
               >
                 {{ separateIt(perCoarseImpactCounts[COARSE_IMPACT_TO_INDEX[key]][idx]) }}
               </span>

@@ -26,3 +26,17 @@ Fetch protobuf files from main, and re-generate the TS files, and format them.
 ```
 make proto
 ```
+
+## Developer How-Tos
+
+Checking for upstream updates
+
+```
+npx npm-check-updates
+```
+
+Apply updates
+
+```
+npx npm-check-updates --upgrade
+```

@@ -1,12 +1,30 @@
 <script setup lang="ts">
+/**
+ * This component shows the ClinVar variants by impact and frequency.
+ */
 import { computed } from 'vue'
 
-import VegaPlot from '@/components/VegaPlot.vue'
+import {
+  ClinvarPerGeneRecord,
+  CoarseClinicalSignificance
+} from '../../pbs/annonars/clinvar/per_gene'
+import VegaPlot from '../VegaPlot/VegaPlot.vue'
 
-const coarseClinsigLabels: { [key: string]: string } = {
-  COARSE_CLINICAL_SIGNIFICANCE_BENIGN: 'benign',
-  COARSE_CLINICAL_SIGNIFICANCE_UNCERTAIN: 'uncertain',
-  COARSE_CLINICAL_SIGNIFICANCE_PATHOGENIC: 'pathogenic'
+const props = withDefaults(
+  defineProps<{
+    /** Gene per clinvar */
+    clinvarPerGene?: ClinvarPerGeneRecord
+  }>(),
+  {
+    clinvarPerGene: undefined
+  }
+)
+
+const COARSE_CLINSIG_LABELS: { [key in CoarseClinicalSignificance]: string } = {
+  [CoarseClinicalSignificance.COARSE_CLINICAL_SIGNIFICANCE_BENIGN]: 'benign',
+  [CoarseClinicalSignificance.COARSE_CLINICAL_SIGNIFICANCE_UNCERTAIN]: 'uncertain',
+  [CoarseClinicalSignificance.COARSE_CLINICAL_SIGNIFICANCE_PATHOGENIC]: 'pathogenic',
+  [CoarseClinicalSignificance.COARSE_CLINICAL_SIGNIFICANCE_UNKNOWN]: 'unknown'
 }
 
 const bucketLabels = [
@@ -36,22 +54,18 @@ export interface CountsRecord {
   counts: number[]
 }
 
-export interface Props {
-  /** Expression records */
-  perFreqCounts?: CountsRecord[]
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  perFreqCounts: () => []
-})
-
 const vegaData = computed<any>(() => {
-  const values = []
-  for (const record of props?.perFreqCounts || []) {
+  const values: {
+    coarseClinsig: string
+    freqBucket: string
+    freqBucketNo: number
+    value: number
+  }[] = []
+  for (const record of props.clinvarPerGene?.perFreqCounts || []) {
     for (let i = 0; i < record.counts.length; i++) {
       if (record.counts[i] > 0) {
         const value = {
-          coarseClinsig: coarseClinsigLabels[record.coarseClinsig],
+          coarseClinsig: COARSE_CLINSIG_LABELS[record.coarseClinsig],
           freqBucket: bucketLabels[i],
           freqBucketNo: i,
           value: record.counts[i]
@@ -105,15 +119,15 @@ const vegaEncoding = {
     field: 'coarseClinsig',
     title: 'clinical sig.',
     type: 'nominal',
-    sort: Object.values(coarseClinsigLabels)
+    sort: Object.values(COARSE_CLINSIG_LABELS)
   },
   color: {
     field: 'coarseClinsig',
     title: 'clinical sig.',
     type: 'nominal',
-    sort: Object.values(coarseClinsigLabels),
+    sort: Object.values(COARSE_CLINSIG_LABELS),
     scale: {
-      domain: Object.values(coarseClinsigLabels),
+      domain: Object.values(COARSE_CLINSIG_LABELS),
       range: ['#5d9936', '#f5c964', '#b05454']
     }
   }
@@ -124,7 +138,7 @@ const vegaEncoding = {
 </script>
 
 <template>
-  <template v-if="!perFreqCounts?.length">
+  <template v-if="!clinvarPerGene">
     <v-skeleton-loader class="mt-3 mx-auto border" type="image,image" />
   </template>
 

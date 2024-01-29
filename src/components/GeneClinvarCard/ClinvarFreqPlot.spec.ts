@@ -1,26 +1,63 @@
-import { describe, expect, it } from 'vitest'
+import fs from 'fs'
+import path from 'path'
+import { describe, expect, it, test } from 'vitest'
 
-import ClinVarFreqPlot from '@/components/GeneDetails/ClinvarCard/ClinvarFreqPlot.vue'
-import VegaPlot from '@/components/VegaPlot.vue'
-import { setupMountedComponents } from '@/lib/test-utils'
+import { setupMountedComponents } from '../../lib/testUtils'
+import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
+import ClinvarFreqPlot from './ClinvarFreqPlot.vue'
 
-describe.concurrent('ClinVarFreqPlot', async () => {
-  it('renders the ClinVarFreqPlot info', async () => {
+// Load fixture data for gene TGDS (little data) and BRCA1 (lots of data).
+const clinvarPerGeneTgds = ClinvarPerGeneRecord.fromJsonString(
+  fs.readFileSync(path.resolve(__dirname, './fixture.clinvarPerGene.TGDS.json'), 'utf8')
+)
+const clinvarPerGeneBrca1 = ClinvarPerGeneRecord.fromJsonString(
+  fs.readFileSync(path.resolve(__dirname, './fixture.clinvarPerGene.BRCA1.json'), 'utf8')
+)
+
+describe.concurrent('ClinvarFreqPlot.vue', async () => {
+  test.each([
+    ['TGDS', clinvarPerGeneTgds],
+    ['BRCA1', clinvarPerGeneBrca1]
+  ])(
+    'renders the ClinvarFreqPlot for %s',
+    async (geneSymbol: string, clinvarPerGene: ClinvarPerGeneRecord) => {
+      // arrange:
+      const { wrapper } = await setupMountedComponents(
+        { component: ClinvarFreqPlot },
+        {
+          props: {
+            geneSymbol,
+            clinvarPerGene
+          }
+        }
+      )
+
+      // act: nothing, only test rendering
+
+      // assert:
+      expect(wrapper.text()).toContain('Impact / Frequency')
+      const vegaPlot = wrapper.findComponent({ name: 'VegaPlot' })
+      expect(vegaPlot.exists()).toBe(true)
+    }
+  )
+
+  it('renders VSkeletonLoader when no data is available', async () => {
     const { wrapper } = await setupMountedComponents(
-      { component: ClinVarFreqPlot, template: false },
+      { component: ClinvarFreqPlot },
       {
         props: {
-          geneSymbol: 'BRCA1',
-          perFreqCounts: [
-            { coarse_clinsig: 1, counts: [1, 2] },
-            { coarse_clinsig: 2, counts: [0, 2] }
-          ]
+          geneSymbol: 'TGDS',
+          clinvarPerGene: undefined
         }
       }
     )
-    expect(wrapper.text()).toContain('Impact / Frequency')
 
-    const vegaPlot = wrapper.findComponent(VegaPlot)
-    expect(vegaPlot.exists()).toBe(true)
+    // act: nothing, only test rendering
+
+    // assert:
+    const vegaPlot = wrapper.findComponent({ name: 'VegaPlot' })
+    expect(vegaPlot.exists()).toBe(false)
+    const skeletonLoader = wrapper.findComponent({ name: 'VSkeletonLoader' })
+    expect(skeletonLoader.exists()).toBe(true)
   })
 })

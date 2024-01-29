@@ -1,20 +1,20 @@
 import fs from 'fs'
 import path from 'path'
-import { describe, expect, it, test } from 'vitest'
+import { describe, expect, test } from 'vitest'
 
 import { GenomeBuild } from '@/lib/genomeBuilds'
 
-import { Transcript, TranscriptResult } from '../../api/dotty'
+import { TranscriptResult } from '../../api/dotty'
 import { setupMountedComponents } from '../../lib/testUtils'
 import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
 import VariationLandscape from './VariationLandscape.vue'
 
 // Load fixture data for gene TGDS (little data) and BRCA1 (lots of data).
 const clinvarPerGeneTgds = ClinvarPerGeneRecord.fromJsonString(
-  fs.readFileSync(path.resolve(__dirname, './fixture.geneClinvar.TGDS.json'), 'utf8')
+  fs.readFileSync(path.resolve(__dirname, './fixture.clinvarPerGene.TGDS.json'), 'utf8')
 )
 const clinvarPerGeneBrca1 = ClinvarPerGeneRecord.fromJsonString(
-  fs.readFileSync(path.resolve(__dirname, './fixture.geneClinvar.BRCA1.json'), 'utf8')
+  fs.readFileSync(path.resolve(__dirname, './fixture.clinvarPerGene.BRCA1.json'), 'utf8')
 )
 const transcriptsTgds37 = TranscriptResult.fromJsonString(
   fs.readFileSync(path.resolve(__dirname, './fixture.transcripts.TGDS.37.json'), 'utf8')

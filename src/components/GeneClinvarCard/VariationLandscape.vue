@@ -1,4 +1,7 @@
 <script setup lang="ts">
+/**
+ * This component shows the ClinVar "variation landscape".
+ */
 import { computed } from 'vue'
 
 import { TranscriptResult } from '../../api/dotty'
@@ -27,7 +30,7 @@ const props = withDefaults(
   }
 )
 
-const clinvarSignificanceMapping: { [Key in ClinicalSignificance]: number } = {
+const CLINVAR_SIGNIFICANCE_TO_INT: { [Key in ClinicalSignificance]: number } = {
   [ClinicalSignificance.CLINICAL_SIGNIFICANCE_UNKNOWN]: -3,
   [ClinicalSignificance.CLINICAL_SIGNIFICANCE_PATHOGENIC]: 2,
   [ClinicalSignificance.CLINICAL_SIGNIFICANCE_LIKELY_PATHOGENIC]: 1,
@@ -37,8 +40,8 @@ const clinvarSignificanceMapping: { [Key in ClinicalSignificance]: number } = {
 }
 
 const convertClinvarSignificance = (input: ClinicalSignificance): number => {
-  if (input in clinvarSignificanceMapping) {
-    return clinvarSignificanceMapping[input]
+  if (input in CLINVAR_SIGNIFICANCE_TO_INT) {
+    return CLINVAR_SIGNIFICANCE_TO_INT[input]
   } else {
     return -4
   }
@@ -48,8 +51,8 @@ const minMax = computed(() => {
   if (!props.clinvarPerGene) {
     return []
   }
-  let min = null
-  let max = null
+  let min: number | null = null
+  let max: number | null = null
   for (const item of props.clinvarPerGene.variants) {
     if (item.genomeRelease.toLowerCase() == props.genomeBuild) {
       // Go through all variants and find the min and max pos.
@@ -80,18 +83,18 @@ const minMax = computed(() => {
   }
 })
 
-const paddedMinMax = computed(() => {
+const paddedMinMax = computed<[number, number]>(() => {
   const [min, max] = minMax.value
   const totalLength = max - min
   const padding = Math.round(totalLength * 0.05)
   return [min - padding, max + padding]
 })
 
-const exons = computed(() => {
+const exons = computed<{ start: number; stop: number }[]>(() => {
   if (!props.transcripts?.transcripts?.length) {
     return []
   }
-  const exons = []
+  const exons: { start: number; stop: number }[] = []
   for (const transcript of props.transcripts.transcripts) {
     for (const alignment of transcript.alignments) {
       for (const exon of alignment.exons) {
@@ -364,7 +367,7 @@ const vegaLayer = [
       />
       <div>
         The plot above shows the sequence variants in the ClinVar database that are that are located
-        in the gene <span class="font-italic"> {{ geneSymbol }} </span>.
+        in the gene <span class="font-italic"> {{ geneSymbol ?? 'UNDEFINED' }} </span>.
       </div>
     </v-sheet>
   </div>

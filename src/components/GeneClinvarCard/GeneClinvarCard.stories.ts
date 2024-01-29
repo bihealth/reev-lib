@@ -3,7 +3,10 @@ import type { Meta, StoryObj } from '@storybook/vue3'
 
 import { TranscriptResult } from '../../api/dotty'
 import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
-import VariationLandscape from './VariationLandscape.vue'
+import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
+import geneInfoBrca1Json from '../GenePathogenicityCard/fixture.geneInfo.BRCA1.json'
+import geneInfoTgdsJson from '../GenePathogenicityCard/fixture.geneInfo.TGDS.json'
+import GeneClinvarCard from './GeneClinvarCard.vue'
 import geneClinvarBrca1Json from './fixture.clinvarPerGene.BRCA1.json'
 import geneClinvarTgdsJson from './fixture.clinvarPerGene.TGDS.json'
 import transcriptsBrca1Json37 from './fixture.transcripts.BRCA1.37.json'
@@ -23,78 +26,61 @@ const transcriptsTgds37 = TranscriptResult.fromJson(transcriptsTgdsJson37 as Jso
 const transcriptsTgds38 = TranscriptResult.fromJson(transcriptsTgdsJson38 as JsonValue)
 // @ts-ignore
 const transcriptsBrca137 = TranscriptResult.fromJson(transcriptsBrca1Json37 as JsonValue)
+// @ts-ignore
+const geneInfoTgds = GeneInfoRecord.fromJson(geneInfoTgdsJson as JsonValue)
+// @ts-ignore
+const geneInfoBrca1 = GeneInfoRecord.fromJson(geneInfoBrca1Json as JsonValue)
 
 const meta = {
-  title: 'Gene/Clinvar/VariationLandscape',
-  component: VariationLandscape,
+  title: 'Gene/Clinvar/GeneClinvarCard',
+  component: GeneClinvarCard,
   tags: ['autodocs'],
   argTypes: {
-    geneSymbol: { control: 'text' },
+    clinvarPerGene: { control: 'object' },
+    geneInfo: { control: { type: 'object' } },
     genomeBuild: { control: 'text' },
-    transcripts: { control: 'object' },
-    clinvarPerGene: { control: 'object' }
+    transcripts: { control: 'object' }
   },
   args: {
-    geneSymbol: 'BRCA1',
+    clinvarPerGene: clinvarPerGeneTgds,
+    geneInfo: geneInfoTgds,
     genomeBuild: 'grch37',
-    transcripts: transcriptsBrca137,
-    clinvarPerGene: clinvarPerGeneBrca1
+    transcripts: transcriptsTgds37
   }
-} satisfies Meta<typeof VariationLandscape>
+} satisfies Meta<typeof GeneClinvarCard>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const TGDS: Story = {
   args: {
-    geneSymbol: 'TGDS',
+    clinvarPerGene: clinvarPerGeneTgds,
+    geneInfo: geneInfoTgds,
     genomeBuild: 'grch37',
-    transcripts: transcriptsTgds37,
-    clinvarPerGene: clinvarPerGeneTgds
+    transcripts: transcriptsTgds37
   }
 }
 
 export const TGDSGrch38: Story = {
   args: {
-    geneSymbol: 'TGDS',
+    clinvarPerGene: clinvarPerGeneTgds,
+    geneInfo: geneInfoTgds,
     genomeBuild: 'grch38',
-    transcripts: transcriptsTgds38,
-    clinvarPerGene: clinvarPerGeneTgds
+    transcripts: transcriptsTgds38
   }
 }
 
 export const BRCA1: Story = {
   args: {
-    geneSymbol: 'BRCA1',
+    clinvarPerGene: clinvarPerGeneBrca1,
+    geneInfo: geneInfoBrca1,
     genomeBuild: 'grch37',
-    transcripts: transcriptsBrca137,
-    clinvarPerGene: clinvarPerGeneBrca1
+    transcripts: transcriptsBrca137
   }
 }
 
-export const UndefinedGeneSymbol: Story = {
+export const Undefined: Story = {
   args: {
-    geneSymbol: undefined,
-    genomeBuild: 'grch37',
-    transcripts: transcriptsBrca137,
-    clinvarPerGene: clinvarPerGeneBrca1
-  }
-}
-
-export const UndefinedTranscripts: Story = {
-  args: {
-    geneSymbol: 'TGDS',
-    genomeBuild: 'grch37',
-    transcripts: undefined,
-    clinvarPerGene: clinvarPerGeneTgds
-  }
-}
-
-export const UndefinedPerGene: Story = {
-  args: {
-    geneSymbol: 'TGDS',
-    genomeBuild: 'grch37',
-    transcripts: transcriptsBrca137,
     clinvarPerGene: undefined
   }
 }
