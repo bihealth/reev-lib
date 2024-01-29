@@ -1,0 +1,136 @@
+{
+  "genes": [
+    {
+      "score": 0.75,
+      "data": {
+        "hgnc_id": "HGNC:3333",
+        "symbol": "EMP1",
+        "name": "epithelial membrane protein 1",
+        "alias_symbol": ["TMP", "CL-20"],
+        "alias_name": [],
+        "ensembl_gene_id": "ENSG00000134531",
+        "ncbi_gene_id": "2012"
+      }
+    },
+    {
+      "score": 0.75,
+      "data": {
+        "hgnc_id": "HGNC:3334",
+        "symbol": "EMP2",
+        "name": "epithelial membrane protein 2",
+        "alias_symbol": ["XMP"],
+        "alias_name": [],
+        "ensembl_gene_id": "ENSG00000213853",
+        "ncbi_gene_id": "2013"
+      }
+    },
+    {
+      "score": 0.75,
+      "data": {
+        "hgnc_id": "HGNC:3335",
+        "symbol": "EMP3",
+        "name": "epithelial membrane protein 3",
+        "alias_symbol": ["YMP"],
+        "alias_name": [],
+        "ensembl_gene_id": "ENSG00000142227",
+        "ncbi_gene_id": "2014"
+      }
+    },
+    {
+      "score": 0.6,
+      "data": {
+        "hgnc_id": "HGNC:29001",
+        "symbol": "NEMP1",
+        "name": "nuclear envelope integral membrane protein 1",
+        "alias_symbol": ["KIAA0286"],
+        "alias_name": [],
+        "ensembl_gene_id": "ENSG00000166881",
+        "ncbi_gene_id": "23306"
+      }
+    },
+    {
+      "score": 0.6,
+      "data": {
+        "hgnc_id": "HGNC:32553",
+        "symbol": "CEMP1",
+        "name": "cementum protein 1",
+        "alias_symbol": ["CP-23"],
+        "alias_name": ["cementum protein-23"],
+        "ensembl_gene_id": "ENSG00000205923",
+        "ncbi_gene_id": "752014"
+      }
+    },
+    {
+      "score": 0.6,
+      "data": {
+        "hgnc_id": "HGNC:33700",
+        "symbol": "NEMP2",
+        "name": "nuclear envelope integral membrane protein 2",
+        "alias_symbol": [],
+        "alias_name": [],
+        "ensembl_gene_id": "ENSG00000189362",
+        "ncbi_gene_id": "100131211"
+      }
+    },
+    {
+      "score": 0.5,
+      "data": {
+        "hgnc_id": "HGNC:27291",
+        "symbol": "MCEMP1",
+        "name": "mast cell expressed membrane protein 1",
+        "alias_symbol": ["MGC132456"],
+        "alias_name": [],
+        "ensembl_gene_id": "ENSG00000183019",
+        "ncbi_gene_id": "199675"
+      }
+    },
+    {
+      "score": 0.5,
+      "data": {
+        "hgnc_id": "HGNC:3218",
+        "symbol": "EFEMP1",
+        "name": "EGF containing fibulin extracellular matrix protein 1",
+        "alias_symbol": ["S1-5", "FBLN3", "MTLV"],
+        "alias_name": ["fibulin 3"],
+        "ensembl_gene_id": "ENSG00000115380",
+        "ncbi_gene_id": "2202"
+      }
+    },
+    {
+      "score": 0.5,
+      "data": {
+        "hgnc_id": "HGNC:3219",
+        "symbol": "EFEMP2",
+        "name": "EGF containing fibulin extracellular matrix protein 2",
+        "alias_symbol": ["FBLN4", "UPH1"],
+        "alias_name": ["fibulin 4"],
+        "ensembl_gene_id": "ENSG00000172638",
+        "ncbi_gene_id": "30008"
+      }
+    },
+    {
+      "score": 0.5,
+      "data": {
+        "hgnc_id": "HGNC:54651",
+        "symbol": "EMP2P1",
+        "name": "EMP2 pseudogene 1",
+        "alias_symbol": [],
+        "alias_name": [],
+        "ensembl_gene_id": "ENSG00000231655",
+        "ncbi_gene_id": "391359"
+      }
+    },
+    {
+      "score": 0.375,
+      "data": {
+        "hgnc_id": "HGNC:55713",
+        "symbol": "NEMP2-DT",
+        "name": "NEMP2 divergent transcript",
+        "alias_symbol": [],
+        "alias_name": [],
+        "ensembl_gene_id": "ENSG00000233654",
+        "ncbi_gene_id": "105376748"
+      }
+    }
+  ]
+}

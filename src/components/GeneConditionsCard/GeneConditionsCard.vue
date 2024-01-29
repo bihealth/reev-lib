@@ -77,12 +77,6 @@ const GDA_LABELS: {
     'Unknown'
 }
 
-enum ConfidenceLevel {
-  High = 'CONFIDENCE_LEVEL_HIGH',
-  Medium = 'CONFIDENCE_LEVEL_MEDIUM',
-  Low = 'CONFIDENCE_LEVEL_LOW'
-}
-
 const CONFIDENCE_LEVEL_LABELS: {
   [key in ConditionsRecord_GeneDiseaseAssociationEntry_ConfidenceLevel]: string
 } = {

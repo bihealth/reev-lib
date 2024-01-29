@@ -1,0 +1,3459 @@
+{
+  "server_version": "0.29.3",
+  "query": {
+    "genome_release": "grch37",
+    "chromosome": "17",
+    "pos": 41215920,
+    "reference": "G",
+    "alternative": "T"
+  },
+  "result": {
+    "cadd": {
+      "Chrom": "17",
+      "Pos": 41215920,
+      "Ref": "G",
+      "Alt": "T",
+      "Type": "SNV",
+      "Length": 0,
+      "AnnoType": "CodingTranscript",
+      "Consequence": "NON_SYNONYMOUS",
+      "ConsScore": 7,
+      "ConsDetail": "missense",
+      "GC": 0.391,
+      "CpG": 0.027,
+      "motifECount": null,
+      "motifEName": null,
+      "motifEHIPos": null,
+      "motifEScoreChng": null,
+      "oAA": "A",
+      "nAA": "E",
+      "GeneID": "ENSG00000012048",
+      "FeatureID": "ENST00000471181",
+      "GeneName": "BRCA1",
+      "CCDS": "CCDS11456.2",
+      "Intron": null,
+      "Exon": "18/24",
+      "cDNApos": 5418,
+      "relcDNApos": 0.913,
+      "CDSpos": 5186,
+      "relCDSpos": 0.917,
+      "protPos": 1729,
+      "relProtPos": 0.918,
+      "Domain": "ndomain",
+      "Dst2Splice": null,
+      "Dst2SplType": null,
+      "minDistTSS": 41014,
+      "minDistTSE": 543,
+      "SIFTcat": "deleterious",
+      "SIFTval": 0,
+      "PolyPhenCat": "probably_damaging",
+      "PolyPhenVal": 1,
+      "priPhCons": 0.994,
+      "mamPhCons": 1,
+      "verPhCons": 1,
+      "priPhyloP": 0.557,
+      "mamPhyloP": 2.76,
+      "verPhyloP": 3.376,
+      "bStatistic": 115,
+      "targetScan": null,
+      "mirSVR-Score": null,
+      "mirSVR-E": null,
+      "mirSVR-Aln": null,
+      "cHmmTssA": 0,
+      "cHmmTssAFlnk": 0,
+      "cHmmTxFlnk": 0,
+      "cHmmTx": 0.118,
+      "cHmmTxWk": 0.52,
+      "cHmmEnhG": 0.031,
+      "cHmmEnh": 0.047,
+      "cHmmZnfRpts": 0,
+      "cHmmHet": 0,
+      "cHmmTssBiv": 0,
+      "cHmmBivFlnk": 0,
+      "cHmmEnhBiv": 0,
+      "cHmmReprPC": 0,
+      "cHmmReprPCWk": 0,
+      "cHmmQuies": 0.283,
+      "GerpRS": 1096.2,
+      "GerpRSpval": 2.26414e-94,
+      "GerpN": 5.83,
+      "GerpS": 5.83,
+      "TFBS": null,
+      "TFBSPeaks": null,
+      "TFBSPeaksMax": null,
+      "tOverlapMotifs": null,
+      "motifDist": null,
+      "Segway": "GE0",
+      "EncH3K27Ac": 3.08,
+      "EncH3K4Me1": 4.24,
+      "EncH3K4Me3": 2,
+      "EncExp": 105.56,
+      "EncNucleo": 0.9,
+      "EncOCC": null,
+      "EncOCCombPVal": null,
+      "EncOCDNasePVal": null,
+      "EncOCFairePVal": null,
+      "EncOCpolIIPVal": null,
+      "EncOCctcfPVal": null,
+      "EncOCmycPVal": null,
+      "EncOCDNaseSig": null,
+      "EncOCFaireSig": null,
+      "EncOCpolIISig": null,
+      "EncOCctcfSig": null,
+      "EncOCmycSig": null,
+      "Grantham": 107,
+      "SpliceAI-acc-gain": 0,
+      "SpliceAI-acc-loss": 0,
+      "SpliceAI-don-gain": 0,
+      "SpliceAI-don-loss": 0.15,
+      "MMSp_acceptorIntron": 0,
+      "MMSp_acceptor": 0,
+      "MMSp_exon": -0.143,
+      "MMSp_donor": 0,
+      "MMSp_donorIntron": 0,
+      "Dist2Mutation": 55,
+      "Freq100bp": 0,
+      "Rare100bp": 0,
+      "Sngl100bp": 4,
+      "Freq1000bp": 4,
+      "Rare1000bp": 2,
+      "Sngl1000bp": 45,
+      "Freq10000bp": 27,
+      "Rare10000bp": 47,
+      "Sngl10000bp": 532,
+      "dbscSNV-ada_score": null,
+      "dbscSNV-rf_score": null,
+      "RawScore": 4.194706,
+      "PHRED": 29.4
+    },
+    "dbsnp": {
+      "chrom": "17",
+      "pos": 41215920,
+      "refAllele": "G",
+      "altAllele": "T",
+      "rsId": 28897696
+    },
+    "dbnsfp": {
+      "chr": "17",
+      "pos(1-based)": 43063903,
+      "ref": "G",
+      "alt": "T",
+      "aaref": "A",
+      "aaalt": "E",
+      "rs_dbSNP": "rs28897696",
+      "hg19_chr": "17",
+      "hg19_pos(1-based)": 41215920,
+      "hg18_chr": "17",
+      "hg18_pos(1-based)": 38469446,
+      "aapos": "566;1708;1729;604;199;18;1661;604;479;604;558",
+      "genename": "BRCA1;BRCA1;BRCA1;BRCA1;BRCA1;BRCA1;BRCA1;BRCA1;BRCA1;BRCA1;BRCA1",
+      "Ensembl_geneid": "ENSG00000012048;ENSG00000012048;ENSG00000012048;ENSG00000012048;ENSG00000012048;ENSG00000012048;ENSG00000012048;ENSG00000012048;ENSG00000012048;ENSG00000012048;ENSG00000012048",
+      "Ensembl_transcriptid": "ENST00000352993;ENST00000357654;ENST00000471181;ENST00000468300;ENST00000591534;ENST00000586385;ENST00000493795;ENST00000491747;ENST00000484087;ENST00000478531;ENST00000493919",
+      "Ensembl_proteinid": "ENSP00000312236;ENSP00000350283;ENSP00000418960;ENSP00000417148;ENSP00000467329;ENSP00000465818;ENSP00000418775;ENSP00000420705;ENSP00000419481;ENSP00000420412;ENSP00000418819",
+      "Uniprot_acc": "P38398-5;P38398;P38398-7;P38398-6;K7EPC7;C6YB45;P38398-8;P38398-3;H0Y8B8;E7EUM2;B7ZA85",
+      "Uniprot_entry": "BRCA1_HUMAN;BRCA1_HUMAN;BRCA1_HUMAN;BRCA1_HUMAN;K7EPC7_HUMAN;C6YB45_HUMAN;BRCA1_HUMAN;BRCA1_HUMAN;H0Y8B8_HUMAN;E7EUM2_HUMAN;B7ZA85_HUMAN",
+      "HGVSc_ANNOVAR": "c.1697C>A;c.5123C>A;c.5186C>A;c.1811C>A;c.596C>A;c.53C>A;c.4982C>A;c.1811C>A;.;.;.",
+      "HGVSp_ANNOVAR": "p.A566E;p.A1708E;p.A1729E;p.A604E;p.A199E;p.A18E;p.A1661E;p.A604E;.;.;.",
+      "HGVSc_snpEff": "c.1697C>A;c.5123C>A;c.5186C>A;c.1811C>A;c.596C>A;c.53C>A;c.4982C>A;c.1811C>A;c.1436C>A;c.1811C>A;c.1673C>A",
+      "HGVSp_snpEff": "p.Ala566Glu;p.Ala1708Glu;p.Ala1729Glu;p.Ala604Glu;p.Ala199Glu;p.Ala18Glu;p.Ala1661Glu;p.Ala604Glu;p.Ala479Glu;p.Ala604Glu;p.Ala558Glu",
+      "HGVSc_VEP": "c.1697C>A;c.5123C>A;c.5186C>A;c.1811C>A;c.596C>A;c.53C>A;c.4982C>A;c.1811C>A;c.1436C>A;c.1811C>A;c.1673C>A",
+      "HGVSp_VEP": "p.Ala566Glu;p.Ala1708Glu;p.Ala1729Glu;p.Ala604Glu;p.Ala199Glu;p.Ala18Glu;p.Ala1661Glu;p.Ala604Glu;p.Ala479Glu;p.Ala604Glu;p.Ala558Glu",
+      "APPRIS": ".;alternative2;principal4;.;.;.;.;.;.;.;.",
+      "GENCODE_basic": "Y;Y;Y;Y;Y;Y;Y;Y;.;.;.",
+      "TSL": "5;1;1;1;1;1;5;5;5;1;2",
+      "VEP_canonical": ".;.;YES;.;.;.;.;.;.;.;.",
+      "cds_strand": "-;-;-;-;-;-;-;-;-;-;-",
+      "refcodon": "GCG;GCG;GCG;GCG;GCG;GCG;GCG;GCG;GCG;GCG;GCG",
+      "codonpos": "2;2;2;2;2;2;2;2;2;2;2",
+      "codon_degeneracy": "0;0;0;0;0;0;0;0;0;0;0",
+      "Ancestral_allele": "G",
+      "AltaiNeandertal": "G/G",
+      "Denisova": "G/G",
+      "VindijiaNeandertal": "G/G",
+      "ChagyrskayaNeandertal": "G/G",
+      "SIFT_score": "0.001;0.0;.;0.002;.;.;0.0;0.001;0.001;0.0;0.001",
+      "SIFT_converted_rankscore": 0.91255,
+      "SIFT_pred": "D;D;.;D;.;.;D;D;D;D;D",
+      "SIFT4G_score": "0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;.;.;0.0",
+      "SIFT4G_converted_rankscore": 0.92824,
+      "SIFT4G_pred": "D;D;D;D;D;D;D;D;.;.;D",
+      "LRT_score": 0.000101,
+      "LRT_converted_rankscore": 0.50451,
+      "LRT_pred": "D",
+      "LRT_Omega": 0,
+      "MutationTaster_score": "0.999983;0.999983;0.999997;0.999983;0.999983;0.999899;0.999983;0.999983;0.999983;0.999983;0.999871;1;1;0.992545",
+      "MutationTaster_converted_rankscore": 0.81001,
+      "MutationTaster_pred": "D;D;D;D;D;D;D;D;D;D;D;D;D;N",
+      "MutationTaster_model": "simple_aae;simple_aae;simple_aae;simple_aae;simple_aae;simple_aae;simple_aae;simple_aae;simple_aae;simple_aae;simple_aae;without_aae;without_aae;simple_aae",
+      "MutationTaster_AAE": "A1708E;A604E;A18E;A199E;A1661E;A1729E;A604E;A566E;A525E;A557E;A1412E;.;.;A1469E",
+      "MutationAssessor_score": ".;3.135;.;.;.;.;.;.;.;.;.",
+      "MutationAssessor_rankscore": 0.88152,
+      "MutationAssessor_pred": ".;M;.;.;.;.;.;.;.;.;.",
+      "FATHMM_score": "-2.52;-2.52;-2.52;-2.52;-2.52;0.9;-2.52;-2.52;-2.52;-2.52;-2.52",
+      "FATHMM_converted_rankscore": 0.89363,
+      "FATHMM_pred": "D;D;D;D;D;T;D;D;D;D;D",
+      "PROVEAN_score": "-3.74;-0.7;.;-3.38;.;.;-0.69;-3.86;-3.73;-1.15;-3.41",
+      "PROVEAN_converted_rankscore": 0.72471,
+      "PROVEAN_pred": "D;N;.;D;.;.;N;D;D;N;D",
+      "MetaSVM_score": 0.8469,
+      "MetaSVM_rankscore": 0.9499,
+      "MetaSVM_pred": "D",
+      "MetaLR_score": 0.8399,
+      "MetaLR_rankscore": 0.94649,
+      "MetaLR_pred": "D",
+      "Reliability_index": 10,
+      "MetaRNN_score": "0.87201256;0.87201256;0.87201256;0.87201256;0.87201256;0.87201256;0.87201256;0.87201256;0.87201256;0.87201256;0.87201256",
+      "MetaRNN_rankscore": 0.86472,
+      "MetaRNN_pred": "D;D;D;D;D;D;D;D;D;D;D",
+      "M-CAP_score": 0.774402,
+      "M-CAP_rankscore": 0.98219,
+      "M-CAP_pred": "D",
+      "MutPred_score": ".;.;.;.;.;.;.;.;.;.;.;",
+      "MutPred_rankscore": null,
+      "MutPred_protID": ".;.;.;.;.;.;.;.;.;.;.;",
+      "MutPred_AAchange": ".;.;.;.;.;.;.;.;.;.;.;",
+      "MutPred_Top5features": ".;.;.;.;.;.;.;.;.;.;.;",
+      "MVP_score": "0.968445778971;0.968445778971;0.968445778971;0.968445778971;0.968445778971;0.968445778971;0.968445778971;0.968445778971;0.968445778971;0.968445778971;0.968445778971",
+      "MVP_rankscore": 0.96811,
+      "gMVP_score": ".;.;0.9448097838682963;.;.;.;.;.;.;.;.",
+      "gMVP_rankscore": 0.94462,
+      "MPC_score": ".;.;0.465648540865;.;.;.;.;.;.;.;.",
+      "MPC_rankscore": 0.45995,
+      "PrimateAI_score": 0.739370644093,
+      "PrimateAI_rankscore": 0.7288,
+      "PrimateAI_pred": "T",
+      "DEOGEN2_score": ".;0.392006;.;.;0.37435;0.332591;.;.;.;0.133139;.",
+      "DEOGEN2_rankscore": 0.75179,
+      "DEOGEN2_pred": ".;T;.;.;T;T;.;.;.;T;.",
+      "BayesDel_addAF_score": 0.337714,
+      "BayesDel_addAF_rankscore": 0.85681,
+      "BayesDel_addAF_pred": "D",
+      "BayesDel_noAF_score": 0.423173,
+      "BayesDel_noAF_rankscore": 0.92844,
+      "BayesDel_noAF_pred": "D",
+      "LIST-S2_score": "0.978202;0.978602;0.978202;0.963304;0.975769;0.966353;0.978602;0.978202;0.978602;0.978602;0.975502",
+      "LIST-S2_rankscore": 0.92442,
+      "LIST-S2_pred": "D;D;D;D;D;D;D;D;D;D;D",
+      "VARITY_R_score": ".;0.9765822;.;.;.;.;.;.;.;.;.",
+      "VARITY_R_rankscore": 0.98838,
+      "VARITY_ER_score": ".;0.88028455;.;.;.;.;.;.;.;.;.",
+      "VARITY_ER_rankscore": 0.93581,
+      "VARITY_R_LOO_score": ".;0.9347016;.;.;.;.;.;.;.;.;.",
+      "VARITY_R_LOO_rankscore": 0.9471,
+      "VARITY_ER_LOO_score": ".;0.87038726;.;.;.;.;.;.;.;.;.",
+      "VARITY_ER_LOO_rankscore": 0.92893,
+      "Aloft_Fraction_transcripts_affected": ".;.;.;.;.;.;.;.;.;.;.;",
+      "Aloft_prob_Tolerant": ".;.;.;.;.;.;.;.;.;.;.;",
+      "Aloft_prob_Recessive": ".;.;.;.;.;.;.;.;.;.;.;",
+      "Aloft_prob_Dominant": ".;.;.;.;.;.;.;.;.;.;.;",
+      "Aloft_pred": ".;.;.;.;.;.;.;.;.;.;.;",
+      "Aloft_Confidence": ".;.;.;.;.;.;.;.;.;.;.;",
+      "DANN_score": 0.9939658800777887,
+      "DANN_rankscore": 0.6261,
+      "fathmm-MKL_coding_score": 0.96498,
+      "fathmm-MKL_coding_rankscore": 0.69439,
+      "fathmm-MKL_coding_pred": "D",
+      "fathmm-MKL_coding_group": "AEFBI",
+      "fathmm-XF_coding_score": 0.836104,
+      "fathmm-XF_coding_rankscore": 0.75391,
+      "fathmm-XF_coding_pred": "D",
+      "Eigen-raw_coding": 0.892538362609427,
+      "Eigen-raw_coding_rankscore": 0.9139,
+      "Eigen-phred_coding": 10.85926,
+      "Eigen-PC-raw_coding": 0.861914927609744,
+      "Eigen-PC-raw_coding_rankscore": 0.93693,
+      "Eigen-PC-phred_coding": 12.21441,
+      "integrated_fitCons_score": 0.706298,
+      "integrated_fitCons_rankscore": 0.61202,
+      "integrated_confidence_value": 0,
+      "GM12878_fitCons_score": 0.724815,
+      "GM12878_fitCons_rankscore": 0.89359,
+      "GM12878_confidence_value": 0,
+      "H1-hESC_fitCons_score": 0.709663,
+      "H1-hESC_fitCons_rankscore": 0.75317,
+      "H1-hESC_confidence_value": 0,
+      "HUVEC_fitCons_score": 0.613276,
+      "HUVEC_fitCons_rankscore": 0.41899,
+      "HUVEC_confidence_value": 0,
+      "GERP++_NR": 5.83,
+      "GERP++_RS": 5.83,
+      "GERP++_RS_rankscore": 0.93059,
+      "phyloP100way_vertebrate": 6.179,
+      "phyloP100way_vertebrate_rankscore": 0.71907,
+      "phyloP470way_mammalian": 11.768,
+      "phyloP470way_mammalian_rankscore": 0.9579,
+      "phyloP17way_primate": 0.596,
+      "phyloP17way_primate_rankscore": 0.33519,
+      "phastCons100way_vertebrate": 1,
+      "phastCons100way_vertebrate_rankscore": 0.71638,
+      "phastCons470way_mammalian": 1,
+      "phastCons470way_mammalian_rankscore": 0.68203,
+      "phastCons17way_primate": 0.996,
+      "phastCons17way_primate_rankscore": 0.76049,
+      "SiPhy_29way_pi": "0.0:0.0:1.0:0.0",
+      "SiPhy_29way_logOdds": 15.6219,
+      "SiPhy_29way_logOdds_rankscore": 0.76562,
+      "bStatistic": 549,
+      "bStatistic_converted_rankscore": 0.72275,
+      "1000Gp3_AC": null,
+      "1000Gp3_AF": null,
+      "1000Gp3_AFR_AC": null,
+      "1000Gp3_AFR_AF": null,
+      "1000Gp3_EUR_AC": null,
+      "1000Gp3_EUR_AF": null,
+      "1000Gp3_AMR_AC": null,
+      "1000Gp3_AMR_AF": null,
+      "1000Gp3_EAS_AC": null,
+      "1000Gp3_EAS_AF": null,
+      "1000Gp3_SAS_AC": null,
+      "1000Gp3_SAS_AF": null,
+      "TWINSUK_AC": null,
+      "TWINSUK_AF": null,
+      "ALSPAC_AC": null,
+      "ALSPAC_AF": null,
+      "UK10K_AC": null,
+      "UK10K_AF": null,
+      "ESP6500_AA_AC": null,
+      "ESP6500_AA_AF": null,
+      "ESP6500_EA_AC": null,
+      "ESP6500_EA_AF": null,
+      "ExAC_AC": 3,
+      "ExAC_AF": 0.00002471,
+      "ExAC_Adj_AC": 3,
+      "ExAC_Adj_AF": 0.00002487,
+      "ExAC_AFR_AC": 0,
+      "ExAC_AFR_AF": 0,
+      "ExAC_AMR_AC": 1,
+      "ExAC_AMR_AF": 0.0000869,
+      "ExAC_EAS_AC": 0,
+      "ExAC_EAS_AF": 0,
+      "ExAC_FIN_AC": 0,
+      "ExAC_FIN_AF": 0,
+      "ExAC_NFE_AC": 2,
+      "ExAC_NFE_AF": 0.00003016,
+      "ExAC_SAS_AC": 0,
+      "ExAC_SAS_AF": 0,
+      "ExAC_nonTCGA_AC": 3,
+      "ExAC_nonTCGA_AF": 0.00002825,
+      "ExAC_nonTCGA_Adj_AC": 3,
+      "ExAC_nonTCGA_Adj_AF": 0.00002839,
+      "ExAC_nonTCGA_AFR_AC": 0,
+      "ExAC_nonTCGA_AFR_AF": 0,
+      "ExAC_nonTCGA_AMR_AC": 1,
+      "ExAC_nonTCGA_AMR_AF": 0.00008965,
+      "ExAC_nonTCGA_EAS_AC": 0,
+      "ExAC_nonTCGA_EAS_AF": 0,
+      "ExAC_nonTCGA_FIN_AC": 0,
+      "ExAC_nonTCGA_FIN_AF": 0,
+      "ExAC_nonTCGA_NFE_AC": 2,
+      "ExAC_nonTCGA_NFE_AF": 0.00003699,
+      "ExAC_nonTCGA_SAS_AC": 0,
+      "ExAC_nonTCGA_SAS_AF": 0,
+      "ExAC_nonpsych_AC": 3,
+      "ExAC_nonpsych_AF": 0.00003306,
+      "ExAC_nonpsych_Adj_AC": 3,
+      "ExAC_nonpsych_Adj_AF": 0.00003328,
+      "ExAC_nonpsych_AFR_AC": 0,
+      "ExAC_nonpsych_AFR_AF": 0,
+      "ExAC_nonpsych_AMR_AC": 1,
+      "ExAC_nonpsych_AMR_AF": 0.00008699,
+      "ExAC_nonpsych_EAS_AC": 0,
+      "ExAC_nonpsych_EAS_AF": 0,
+      "ExAC_nonpsych_FIN_AC": 0,
+      "ExAC_nonpsych_FIN_AF": 0,
+      "ExAC_nonpsych_NFE_AC": 2,
+      "ExAC_nonpsych_NFE_AF": 0.00004775,
+      "ExAC_nonpsych_SAS_AC": 0,
+      "ExAC_nonpsych_SAS_AF": 0,
+      "gnomAD_exomes_flag": null,
+      "gnomAD_exomes_AC": 5,
+      "gnomAD_exomes_AN": 251312,
+      "gnomAD_exomes_AF": 0.0000198956,
+      "gnomAD_exomes_nhomalt": 0,
+      "gnomAD_exomes_AFR_AC": 0,
+      "gnomAD_exomes_AFR_AN": 16244,
+      "gnomAD_exomes_AFR_AF": 0,
+      "gnomAD_exomes_AFR_nhomalt": 0,
+      "gnomAD_exomes_AMR_AC": 2,
+      "gnomAD_exomes_AMR_AN": 34580,
+      "gnomAD_exomes_AMR_AF": 0.0000578369,
+      "gnomAD_exomes_AMR_nhomalt": 0,
+      "gnomAD_exomes_ASJ_AC": 0,
+      "gnomAD_exomes_ASJ_AN": 10074,
+      "gnomAD_exomes_ASJ_AF": 0,
+      "gnomAD_exomes_ASJ_nhomalt": 0,
+      "gnomAD_exomes_EAS_AC": 0,
+      "gnomAD_exomes_EAS_AN": 18392,
+      "gnomAD_exomes_EAS_AF": 0,
+      "gnomAD_exomes_EAS_nhomalt": 0,
+      "gnomAD_exomes_FIN_AC": 0,
+      "gnomAD_exomes_FIN_AN": 21646,
+      "gnomAD_exomes_FIN_AF": 0,
+      "gnomAD_exomes_FIN_nhomalt": 0,
+      "gnomAD_exomes_NFE_AC": 3,
+      "gnomAD_exomes_NFE_AN": 113656,
+      "gnomAD_exomes_NFE_AF": 0.0000263954,
+      "gnomAD_exomes_NFE_nhomalt": 0,
+      "gnomAD_exomes_SAS_AC": 0,
+      "gnomAD_exomes_SAS_AN": 30598,
+      "gnomAD_exomes_SAS_AF": 0,
+      "gnomAD_exomes_SAS_nhomalt": 0,
+      "gnomAD_exomes_POPMAX_AC": 2,
+      "gnomAD_exomes_POPMAX_AN": 34580,
+      "gnomAD_exomes_POPMAX_AF": 0.0000578369,
+      "gnomAD_exomes_POPMAX_nhomalt": 0,
+      "gnomAD_exomes_controls_AC": 2,
+      "gnomAD_exomes_controls_AN": 109366,
+      "gnomAD_exomes_controls_AF": 0.0000182872,
+      "gnomAD_exomes_controls_nhomalt": 0,
+      "gnomAD_exomes_non_neuro_AC": 5,
+      "gnomAD_exomes_non_neuro_AN": 208020,
+      "gnomAD_exomes_non_neuro_AF": 0.0000240362,
+      "gnomAD_exomes_non_neuro_nhomalt": 0,
+      "gnomAD_exomes_non_cancer_AC": 5,
+      "gnomAD_exomes_non_cancer_AN": 236812,
+      "gnomAD_exomes_non_cancer_AF": 0.0000211138,
+      "gnomAD_exomes_non_cancer_nhomalt": 0,
+      "gnomAD_exomes_non_topmed_AC": 5,
+      "gnomAD_exomes_non_topmed_AN": 244696,
+      "gnomAD_exomes_non_topmed_AF": 0.0000204335,
+      "gnomAD_exomes_non_topmed_nhomalt": 0,
+      "gnomAD_exomes_controls_AFR_AC": 0,
+      "gnomAD_exomes_controls_AFR_AN": 7158,
+      "gnomAD_exomes_controls_AFR_AF": 0,
+      "gnomAD_exomes_controls_AFR_nhomalt": 0,
+      "gnomAD_exomes_controls_AMR_AC": 1,
+      "gnomAD_exomes_controls_AMR_AN": 17102,
+      "gnomAD_exomes_controls_AMR_AF": 0.0000584727,
+      "gnomAD_exomes_controls_AMR_nhomalt": 0,
+      "gnomAD_exomes_controls_ASJ_AC": 0,
+      "gnomAD_exomes_controls_ASJ_AN": 2320,
+      "gnomAD_exomes_controls_ASJ_AF": 0,
+      "gnomAD_exomes_controls_ASJ_nhomalt": 0,
+      "gnomAD_exomes_controls_EAS_AC": 0,
+      "gnomAD_exomes_controls_EAS_AN": 9044,
+      "gnomAD_exomes_controls_EAS_AF": 0,
+      "gnomAD_exomes_controls_EAS_nhomalt": 0,
+      "gnomAD_exomes_controls_FIN_AC": 0,
+      "gnomAD_exomes_controls_FIN_AN": 13394,
+      "gnomAD_exomes_controls_FIN_AF": 0,
+      "gnomAD_exomes_controls_FIN_nhomalt": 0,
+      "gnomAD_exomes_controls_NFE_AC": 1,
+      "gnomAD_exomes_controls_NFE_AN": 42754,
+      "gnomAD_exomes_controls_NFE_AF": 0.0000233896,
+      "gnomAD_exomes_controls_NFE_nhomalt": 0,
+      "gnomAD_exomes_controls_SAS_AC": 0,
+      "gnomAD_exomes_controls_SAS_AN": 15680,
+      "gnomAD_exomes_controls_SAS_AF": 0,
+      "gnomAD_exomes_controls_SAS_nhomalt": 0,
+      "gnomAD_exomes_controls_POPMAX_AC": 1,
+      "gnomAD_exomes_controls_POPMAX_AN": 17102,
+      "gnomAD_exomes_controls_POPMAX_AF": 0.0000584727,
+      "gnomAD_exomes_controls_POPMAX_nhomalt": 0,
+      "gnomAD_exomes_non_neuro_AFR_AC": 0,
+      "gnomAD_exomes_non_neuro_AFR_AN": 16206,
+      "gnomAD_exomes_non_neuro_AFR_AF": 0,
+      "gnomAD_exomes_non_neuro_AFR_nhomalt": 0,
+      "gnomAD_exomes_non_neuro_AMR_AC": 2,
+      "gnomAD_exomes_non_neuro_AMR_AN": 30512,
+      "gnomAD_exomes_non_neuro_AMR_AF": 0.000065548,
+      "gnomAD_exomes_non_neuro_AMR_nhomalt": 0,
+      "gnomAD_exomes_non_neuro_ASJ_AC": 0,
+      "gnomAD_exomes_non_neuro_ASJ_AN": 6212,
+      "gnomAD_exomes_non_neuro_ASJ_AF": 0,
+      "gnomAD_exomes_non_neuro_ASJ_nhomalt": 0,
+      "gnomAD_exomes_non_neuro_EAS_AC": 0,
+      "gnomAD_exomes_non_neuro_EAS_AN": 13414,
+      "gnomAD_exomes_non_neuro_EAS_AF": 0,
+      "gnomAD_exomes_non_neuro_EAS_nhomalt": 0,
+      "gnomAD_exomes_non_neuro_FIN_AC": 0,
+      "gnomAD_exomes_non_neuro_FIN_AN": 16734,
+      "gnomAD_exomes_non_neuro_FIN_AF": 0,
+      "gnomAD_exomes_non_neuro_FIN_nhomalt": 0,
+      "gnomAD_exomes_non_neuro_NFE_AC": 3,
+      "gnomAD_exomes_non_neuro_NFE_AN": 89494,
+      "gnomAD_exomes_non_neuro_NFE_AF": 0.0000335218,
+      "gnomAD_exomes_non_neuro_NFE_nhomalt": 0,
+      "gnomAD_exomes_non_neuro_SAS_AC": 0,
+      "gnomAD_exomes_non_neuro_SAS_AN": 30590,
+      "gnomAD_exomes_non_neuro_SAS_AF": 0,
+      "gnomAD_exomes_non_neuro_SAS_nhomalt": 0,
+      "gnomAD_exomes_non_neuro_POPMAX_AC": 2,
+      "gnomAD_exomes_non_neuro_POPMAX_AN": 30512,
+      "gnomAD_exomes_non_neuro_POPMAX_AF": 0.000065548,
+      "gnomAD_exomes_non_neuro_POPMAX_nhomalt": 0,
+      "gnomAD_exomes_non_cancer_AFR_AC": 0,
+      "gnomAD_exomes_non_cancer_AFR_AN": 14892,
+      "gnomAD_exomes_non_cancer_AFR_AF": 0,
+      "gnomAD_exomes_non_cancer_AFR_nhomalt": 0,
+      "gnomAD_exomes_non_cancer_AMR_AC": 2,
+      "gnomAD_exomes_non_cancer_AMR_AN": 34248,
+      "gnomAD_exomes_non_cancer_AMR_AF": 0.0000583976,
+      "gnomAD_exomes_non_cancer_AMR_nhomalt": 0,
+      "gnomAD_exomes_non_cancer_ASJ_AC": 0,
+      "gnomAD_exomes_non_cancer_ASJ_AN": 9566,
+      "gnomAD_exomes_non_cancer_ASJ_AF": 0,
+      "gnomAD_exomes_non_cancer_ASJ_nhomalt": 0,
+      "gnomAD_exomes_non_cancer_EAS_AC": 0,
+      "gnomAD_exomes_non_cancer_EAS_AN": 17690,
+      "gnomAD_exomes_non_cancer_EAS_AF": 0,
+      "gnomAD_exomes_non_cancer_EAS_nhomalt": 0,
+      "gnomAD_exomes_non_cancer_FIN_AC": 0,
+      "gnomAD_exomes_non_cancer_FIN_AN": 21630,
+      "gnomAD_exomes_non_cancer_FIN_AF": 0,
+      "gnomAD_exomes_non_cancer_FIN_nhomalt": 0,
+      "gnomAD_exomes_non_cancer_NFE_AC": 3,
+      "gnomAD_exomes_non_cancer_NFE_AN": 102672,
+      "gnomAD_exomes_non_cancer_NFE_AF": 0.0000292193,
+      "gnomAD_exomes_non_cancer_NFE_nhomalt": 0,
+      "gnomAD_exomes_non_cancer_SAS_AC": 0,
+      "gnomAD_exomes_non_cancer_SAS_AN": 30508,
+      "gnomAD_exomes_non_cancer_SAS_AF": 0,
+      "gnomAD_exomes_non_cancer_SAS_nhomalt": 0,
+      "gnomAD_exomes_non_cancer_POPMAX_AC": 2,
+      "gnomAD_exomes_non_cancer_POPMAX_AN": 34248,
+      "gnomAD_exomes_non_cancer_POPMAX_AF": 0.0000583976,
+      "gnomAD_exomes_non_cancer_POPMAX_nhomalt": 0,
+      "gnomAD_exomes_non_topmed_AFR_AC": 0,
+      "gnomAD_exomes_non_topmed_AFR_AN": 12016,
+      "gnomAD_exomes_non_topmed_AFR_AF": 0,
+      "gnomAD_exomes_non_topmed_AFR_nhomalt": 0,
+      "gnomAD_exomes_non_topmed_AMR_AC": 2,
+      "gnomAD_exomes_non_topmed_AMR_AN": 34446,
+      "gnomAD_exomes_non_topmed_AMR_AF": 0.0000580619,
+      "gnomAD_exomes_non_topmed_AMR_nhomalt": 0,
+      "gnomAD_exomes_non_topmed_ASJ_AC": 0,
+      "gnomAD_exomes_non_topmed_ASJ_AN": 9992,
+      "gnomAD_exomes_non_topmed_ASJ_AF": 0,
+      "gnomAD_exomes_non_topmed_ASJ_nhomalt": 0,
+      "gnomAD_exomes_non_topmed_EAS_AC": 0,
+      "gnomAD_exomes_non_topmed_EAS_AN": 18388,
+      "gnomAD_exomes_non_topmed_EAS_AF": 0,
+      "gnomAD_exomes_non_topmed_EAS_nhomalt": 0,
+      "gnomAD_exomes_non_topmed_FIN_AC": 0,
+      "gnomAD_exomes_non_topmed_FIN_AN": 21644,
+      "gnomAD_exomes_non_topmed_FIN_AF": 0,
+      "gnomAD_exomes_non_topmed_FIN_nhomalt": 0,
+      "gnomAD_exomes_non_topmed_NFE_AC": 3,
+      "gnomAD_exomes_non_topmed_NFE_AN": 111566,
+      "gnomAD_exomes_non_topmed_NFE_AF": 0.0000268899,
+      "gnomAD_exomes_non_topmed_NFE_nhomalt": 0,
+      "gnomAD_exomes_non_topmed_SAS_AC": 0,
+      "gnomAD_exomes_non_topmed_SAS_AN": 30598,
+      "gnomAD_exomes_non_topmed_SAS_AF": 0,
+      "gnomAD_exomes_non_topmed_SAS_nhomalt": 0,
+      "gnomAD_exomes_non_topmed_POPMAX_AC": 2,
+      "gnomAD_exomes_non_topmed_POPMAX_AN": 34446,
+      "gnomAD_exomes_non_topmed_POPMAX_AF": 0.0000580619,
+      "gnomAD_exomes_non_topmed_POPMAX_nhomalt": 0,
+      "gnomAD_genomes_flag": null,
+      "gnomAD_genomes_AC": null,
+      "gnomAD_genomes_AN": null,
+      "gnomAD_genomes_AF": null,
+      "gnomAD_genomes_nhomalt": null,
+      "gnomAD_genomes_POPMAX_AC": null,
+      "gnomAD_genomes_POPMAX_AN": null,
+      "gnomAD_genomes_POPMAX_AF": null,
+      "gnomAD_genomes_POPMAX_nhomalt": null,
+      "gnomAD_genomes_AFR_AC": null,
+      "gnomAD_genomes_AFR_AN": null,
+      "gnomAD_genomes_AFR_AF": null,
+      "gnomAD_genomes_AFR_nhomalt": null,
+      "gnomAD_genomes_AMI_AC": null,
+      "gnomAD_genomes_AMI_AN": null,
+      "gnomAD_genomes_AMI_AF": null,
+      "gnomAD_genomes_AMI_nhomalt": null,
+      "gnomAD_genomes_AMR_AC": null,
+      "gnomAD_genomes_AMR_AN": null,
+      "gnomAD_genomes_AMR_AF": null,
+      "gnomAD_genomes_AMR_nhomalt": null,
+      "gnomAD_genomes_ASJ_AC": null,
+      "gnomAD_genomes_ASJ_AN": null,
+      "gnomAD_genomes_ASJ_AF": null,
+      "gnomAD_genomes_ASJ_nhomalt": null,
+      "gnomAD_genomes_EAS_AC": null,
+      "gnomAD_genomes_EAS_AN": null,
+      "gnomAD_genomes_EAS_AF": null,
+      "gnomAD_genomes_EAS_nhomalt": null,
+      "gnomAD_genomes_FIN_AC": null,
+      "gnomAD_genomes_FIN_AN": null,
+      "gnomAD_genomes_FIN_AF": null,
+      "gnomAD_genomes_FIN_nhomalt": null,
+      "gnomAD_genomes_MID_AC": null,
+      "gnomAD_genomes_MID_AN": null,
+      "gnomAD_genomes_MID_AF": null,
+      "gnomAD_genomes_MID_nhomalt": null,
+      "gnomAD_genomes_NFE_AC": null,
+      "gnomAD_genomes_NFE_AN": null,
+      "gnomAD_genomes_NFE_AF": null,
+      "gnomAD_genomes_NFE_nhomalt": null,
+      "gnomAD_genomes_SAS_AC": null,
+      "gnomAD_genomes_SAS_AN": null,
+      "gnomAD_genomes_SAS_AF": null,
+      "gnomAD_genomes_SAS_nhomalt": null,
+      "gnomAD_genomes_controls_and_biobanks_AC": null,
+      "gnomAD_genomes_controls_and_biobanks_AN": null,
+      "gnomAD_genomes_controls_and_biobanks_AF": null,
+      "gnomAD_genomes_controls_and_biobanks_nhomalt": null,
+      "gnomAD_genomes_non_neuro_AC": null,
+      "gnomAD_genomes_non_neuro_AN": null,
+      "gnomAD_genomes_non_neuro_AF": null,
+      "gnomAD_genomes_non_neuro_nhomalt": null,
+      "gnomAD_genomes_non_cancer_AC": null,
+      "gnomAD_genomes_non_cancer_AN": null,
+      "gnomAD_genomes_non_cancer_AF": null,
+      "gnomAD_genomes_non_cancer_nhomalt": null,
+      "gnomAD_genomes_non_topmed_AC": null,
+      "gnomAD_genomes_non_topmed_AN": null,
+      "gnomAD_genomes_non_topmed_AF": null,
+      "gnomAD_genomes_non_topmed_nhomalt": null,
+      "gnomAD_genomes_controls_and_biobanks_AFR_AC": null,
+      "gnomAD_genomes_controls_and_biobanks_AFR_AN": null,
+      "gnomAD_genomes_controls_and_biobanks_AFR_AF": null,
+      "gnomAD_genomes_controls_and_biobanks_AFR_nhomalt": null,
+      "gnomAD_genomes_controls_and_biobanks_AMI_AC": null,
+      "gnomAD_genomes_controls_and_biobanks_AMI_AN": null,
+      "gnomAD_genomes_controls_and_biobanks_AMI_AF": null,
+      "gnomAD_genomes_controls_and_biobanks_AMI_nhomalt": null,
+      "gnomAD_genomes_controls_and_biobanks_AMR_AC": null,
+      "gnomAD_genomes_controls_and_biobanks_AMR_AN": null,
+      "gnomAD_genomes_controls_and_biobanks_AMR_AF": null,
+      "gnomAD_genomes_controls_and_biobanks_AMR_nhomalt": null,
+      "gnomAD_genomes_controls_and_biobanks_ASJ_AC": null,
+      "gnomAD_genomes_controls_and_biobanks_ASJ_AN": null,
+      "gnomAD_genomes_controls_and_biobanks_ASJ_AF": null,
+      "gnomAD_genomes_controls_and_biobanks_ASJ_nhomalt": null,
+      "gnomAD_genomes_controls_and_biobanks_EAS_AC": null,
+      "gnomAD_genomes_controls_and_biobanks_EAS_AN": null,
+      "gnomAD_genomes_controls_and_biobanks_EAS_AF": null,
+      "gnomAD_genomes_controls_and_biobanks_EAS_nhomalt": null,
+      "gnomAD_genomes_controls_and_biobanks_FIN_AC": null,
+      "gnomAD_genomes_controls_and_biobanks_FIN_AN": null,
+      "gnomAD_genomes_controls_and_biobanks_FIN_AF": null,
+      "gnomAD_genomes_controls_and_biobanks_FIN_nhomalt": null,
+      "gnomAD_genomes_controls_and_biobanks_MID_AC": null,
+      "gnomAD_genomes_controls_and_biobanks_MID_AN": null,
+      "gnomAD_genomes_controls_and_biobanks_MID_AF": null,
+      "gnomAD_genomes_controls_and_biobanks_MID_nhomalt": null,
+      "gnomAD_genomes_controls_and_biobanks_NFE_AC": null,
+      "gnomAD_genomes_controls_and_biobanks_NFE_AN": null,
+      "gnomAD_genomes_controls_and_biobanks_NFE_AF": null,
+      "gnomAD_genomes_controls_and_biobanks_NFE_nhomalt": null,
+      "gnomAD_genomes_controls_and_biobanks_SAS_AC": null,
+      "gnomAD_genomes_controls_and_biobanks_SAS_AN": null,
+      "gnomAD_genomes_controls_and_biobanks_SAS_AF": null,
+      "gnomAD_genomes_controls_and_biobanks_SAS_nhomalt": null,
+      "gnomAD_genomes_non_neuro_AFR_AC": null,
+      "gnomAD_genomes_non_neuro_AFR_AN": null,
+      "gnomAD_genomes_non_neuro_AFR_AF": null,
+      "gnomAD_genomes_non_neuro_AFR_nhomalt": null,
+      "gnomAD_genomes_non_neuro_AMI_AC": null,
+      "gnomAD_genomes_non_neuro_AMI_AN": null,
+      "gnomAD_genomes_non_neuro_AMI_AF": null,
+      "gnomAD_genomes_non_neuro_AMI_nhomalt": null,
+      "gnomAD_genomes_non_neuro_AMR_AC": null,
+      "gnomAD_genomes_non_neuro_AMR_AN": null,
+      "gnomAD_genomes_non_neuro_AMR_AF": null,
+      "gnomAD_genomes_non_neuro_AMR_nhomalt": null,
+      "gnomAD_genomes_non_neuro_ASJ_AC": null,
+      "gnomAD_genomes_non_neuro_ASJ_AN": null,
+      "gnomAD_genomes_non_neuro_ASJ_AF": null,
+      "gnomAD_genomes_non_neuro_ASJ_nhomalt": null,
+      "gnomAD_genomes_non_neuro_EAS_AC": null,
+      "gnomAD_genomes_non_neuro_EAS_AN": null,
+      "gnomAD_genomes_non_neuro_EAS_AF": null,
+      "gnomAD_genomes_non_neuro_EAS_nhomalt": null,
+      "gnomAD_genomes_non_neuro_FIN_AC": null,
+      "gnomAD_genomes_non_neuro_FIN_AN": null,
+      "gnomAD_genomes_non_neuro_FIN_AF": null,
+      "gnomAD_genomes_non_neuro_FIN_nhomalt": null,
+      "gnomAD_genomes_non_neuro_MID_AC": null,
+      "gnomAD_genomes_non_neuro_MID_AN": null,
+      "gnomAD_genomes_non_neuro_MID_AF": null,
+      "gnomAD_genomes_non_neuro_MID_nhomalt": null,
+      "gnomAD_genomes_non_neuro_NFE_AC": null,
+      "gnomAD_genomes_non_neuro_NFE_AN": null,
+      "gnomAD_genomes_non_neuro_NFE_AF": null,
+      "gnomAD_genomes_non_neuro_NFE_nhomalt": null,
+      "gnomAD_genomes_non_neuro_SAS_AC": null,
+      "gnomAD_genomes_non_neuro_SAS_AN": null,
+      "gnomAD_genomes_non_neuro_SAS_AF": null,
+      "gnomAD_genomes_non_neuro_SAS_nhomalt": null,
+      "gnomAD_genomes_non_cancer_AFR_AC": null,
+      "gnomAD_genomes_non_cancer_AFR_AN": null,
+      "gnomAD_genomes_non_cancer_AFR_AF": null,
+      "gnomAD_genomes_non_cancer_AFR_nhomalt": null,
+      "gnomAD_genomes_non_cancer_AMI_AC": null,
+      "gnomAD_genomes_non_cancer_AMI_AN": null,
+      "gnomAD_genomes_non_cancer_AMI_AF": null,
+      "gnomAD_genomes_non_cancer_AMI_nhomalt": null,
+      "gnomAD_genomes_non_cancer_AMR_AC": null,
+      "gnomAD_genomes_non_cancer_AMR_AN": null,
+      "gnomAD_genomes_non_cancer_AMR_AF": null,
+      "gnomAD_genomes_non_cancer_AMR_nhomalt": null,
+      "gnomAD_genomes_non_cancer_ASJ_AC": null,
+      "gnomAD_genomes_non_cancer_ASJ_AN": null,
+      "gnomAD_genomes_non_cancer_ASJ_AF": null,
+      "gnomAD_genomes_non_cancer_ASJ_nhomalt": null,
+      "gnomAD_genomes_non_cancer_EAS_AC": null,
+      "gnomAD_genomes_non_cancer_EAS_AN": null,
+      "gnomAD_genomes_non_cancer_EAS_AF": null,
+      "gnomAD_genomes_non_cancer_EAS_nhomalt": null,
+      "gnomAD_genomes_non_cancer_FIN_AC": null,
+      "gnomAD_genomes_non_cancer_FIN_AN": null,
+      "gnomAD_genomes_non_cancer_FIN_AF": null,
+      "gnomAD_genomes_non_cancer_FIN_nhomalt": null,
+      "gnomAD_genomes_non_cancer_MID_AC": null,
+      "gnomAD_genomes_non_cancer_MID_AN": null,
+      "gnomAD_genomes_non_cancer_MID_AF": null,
+      "gnomAD_genomes_non_cancer_MID_nhomalt": null,
+      "gnomAD_genomes_non_cancer_NFE_AC": null,
+      "gnomAD_genomes_non_cancer_NFE_AN": null,
+      "gnomAD_genomes_non_cancer_NFE_AF": null,
+      "gnomAD_genomes_non_cancer_NFE_nhomalt": null,
+      "gnomAD_genomes_non_cancer_SAS_AC": null,
+      "gnomAD_genomes_non_cancer_SAS_AN": null,
+      "gnomAD_genomes_non_cancer_SAS_AF": null,
+      "gnomAD_genomes_non_cancer_SAS_nhomalt": null,
+      "gnomAD_genomes_non_topmed_AFR_AC": null,
+      "gnomAD_genomes_non_topmed_AFR_AN": null,
+      "gnomAD_genomes_non_topmed_AFR_AF": null,
+      "gnomAD_genomes_non_topmed_AFR_nhomalt": null,
+      "gnomAD_genomes_non_topmed_AMI_AC": null,
+      "gnomAD_genomes_non_topmed_AMI_AN": null,
+      "gnomAD_genomes_non_topmed_AMI_AF": null,
+      "gnomAD_genomes_non_topmed_AMI_nhomalt": null,
+      "gnomAD_genomes_non_topmed_AMR_AC": null,
+      "gnomAD_genomes_non_topmed_AMR_AN": null,
+      "gnomAD_genomes_non_topmed_AMR_AF": null,
+      "gnomAD_genomes_non_topmed_AMR_nhomalt": null,
+      "gnomAD_genomes_non_topmed_ASJ_AC": null,
+      "gnomAD_genomes_non_topmed_ASJ_AN": null,
+      "gnomAD_genomes_non_topmed_ASJ_AF": null,
+      "gnomAD_genomes_non_topmed_ASJ_nhomalt": null,
+      "gnomAD_genomes_non_topmed_EAS_AC": null,
+      "gnomAD_genomes_non_topmed_EAS_AN": null,
+      "gnomAD_genomes_non_topmed_EAS_AF": null,
+      "gnomAD_genomes_non_topmed_EAS_nhomalt": null,
+      "gnomAD_genomes_non_topmed_FIN_AC": null,
+      "gnomAD_genomes_non_topmed_FIN_AN": null,
+      "gnomAD_genomes_non_topmed_FIN_AF": null,
+      "gnomAD_genomes_non_topmed_FIN_nhomalt": null,
+      "gnomAD_genomes_non_topmed_MID_AC": null,
+      "gnomAD_genomes_non_topmed_MID_AN": null,
+      "gnomAD_genomes_non_topmed_MID_AF": null,
+      "gnomAD_genomes_non_topmed_MID_nhomalt": null,
+      "gnomAD_genomes_non_topmed_NFE_AC": null,
+      "gnomAD_genomes_non_topmed_NFE_AN": null,
+      "gnomAD_genomes_non_topmed_NFE_AF": null,
+      "gnomAD_genomes_non_topmed_NFE_nhomalt": null,
+      "gnomAD_genomes_non_topmed_SAS_AC": null,
+      "gnomAD_genomes_non_topmed_SAS_AN": null,
+      "gnomAD_genomes_non_topmed_SAS_AF": null,
+      "gnomAD_genomes_non_topmed_SAS_nhomalt": null,
+      "ALFA_European_AC": 21,
+      "ALFA_European_AN": 31914,
+      "ALFA_European_AF": 0.0006580184245158864,
+      "ALFA_African_Others_AC": 0,
+      "ALFA_African_Others_AN": 144,
+      "ALFA_African_Others_AF": 0,
+      "ALFA_East_Asian_AC": 0,
+      "ALFA_East_Asian_AN": 132,
+      "ALFA_East_Asian_AF": 0,
+      "ALFA_African_American_AC": 1,
+      "ALFA_African_American_AN": 3892,
+      "ALFA_African_American_AF": 0.00025693730729701953,
+      "ALFA_Latin_American_1_AC": 0,
+      "ALFA_Latin_American_1_AN": 154,
+      "ALFA_Latin_American_1_AF": 0,
+      "ALFA_Latin_American_2_AC": 0,
+      "ALFA_Latin_American_2_AN": 616,
+      "ALFA_Latin_American_2_AF": 0,
+      "ALFA_Other_Asian_AC": 0,
+      "ALFA_Other_Asian_AN": 28,
+      "ALFA_Other_Asian_AF": 0,
+      "ALFA_South_Asian_AC": 0,
+      "ALFA_South_Asian_AN": 98,
+      "ALFA_South_Asian_AF": 0,
+      "ALFA_Other_AC": 0,
+      "ALFA_Other_AN": 1264,
+      "ALFA_Other_AF": 0,
+      "ALFA_African_AC": 1,
+      "ALFA_African_AN": 4036,
+      "ALFA_African_AF": 0.0002477700693756194,
+      "ALFA_Asian_AC": 0,
+      "ALFA_Asian_AN": 160,
+      "ALFA_Asian_AF": 0,
+      "ALFA_Total_AC": 22,
+      "ALFA_Total_AN": 38242,
+      "ALFA_Total_AF": 0.000575283719470739,
+      "clinvar_id": 55407,
+      "clinvar_clnsig": "Pathogenic",
+      "clinvar_trait": "Breast_and/or_ovarian_cancer|Hereditary_cancer-predisposing_syndrome|Breast_neoplasm|Breast-ovarian_cancer,_familial,_susceptibility_to,_1|not_provided|Hereditary_breast_ovarian_cancer_syndrome|Breast_carcinoma|Familial_cancer_of_breast",
+      "clinvar_review": "reviewed_by_expert_panel",
+      "clinvar_hgvs": "NC_000017.11:g.43063903G>T",
+      "clinvar_var_source": "BRCA1-HCI:BRCA1_00045|ClinGen:CA003252|UniProtKB:P38398#VAR_007796",
+      "clinvar_MedGen_id": "CN221562|C0027672|C1458155|C2676676|CN517202|C0677776|C0678222|C0346153",
+      "clinvar_OMIM_id": "604370|PS604370|114480",
+      "clinvar_Orphanet_id": "140162|145|145|227535",
+      "Interpro_domain": "BRCT domain|BRCT domain|BRCT domain|BRCT domain;BRCT domain|BRCT domain|BRCT domain|BRCT domain;.;.;BRCT domain|BRCT domain|BRCT domain|BRCT domain;BRCT domain;.;BRCT domain|BRCT domain|BRCT domain|BRCT domain;BRCT domain|BRCT domain|BRCT domain|BRCT domain;BRCT domain|BRCT domain|BRCT domain|BRCT domain;BRCT domain|BRCT domain|BRCT domain",
+      "GTEx_V8_gene": null,
+      "GTEx_V8_tissue": null,
+      "Geuvadis_eQTL_target_gene": null
+    },
+    "dbscsnv": null,
+    "gnomad_mtdna": null,
+    "gnomad_exomes": {
+      "chrom": "17",
+      "pos": 41215920,
+      "refAllele": "G",
+      "altAllele": "T",
+      "vep": [
+        {
+          "allele": "T",
+          "consequence": "missense_variant",
+          "impact": "MODERATE",
+          "symbol": "BRCA1",
+          "gene": "ENSG00000012048",
+          "featureType": "Transcript",
+          "feature": "ENST00000309486",
+          "featureBiotype": "protein_coding",
+          "exon": "16/22",
+          "hgvsc": "ENST00000309486.4:c.4235C>A",
+          "hgvsp": "ENSP00000310938.4:p.Ala1412Glu",
+          "cdnaPosition": "5263",
+          "cdsPosition": "4235",
+          "proteinPosition": "1412",
+          "aminoAcids": "A/E",
+          "codons": "gCg/gAg",
+          "existingVariation": "CM950153&rs28897696&CM065004",
+          "dbsnpId": "1",
+          "strand": "-1",
+          "variantClass": "SNV",
+          "minimised": "1",
+          "symbolSource": "HGNC",
+          "hgncId": "1100",
+          "ensp": "ENSP00000310938",
+          "trembl": "Q9UE29&Q9NQR3&Q7KYU6&Q3YB53&Q3YB50&Q3YB49&K7EPC7&K4K7V3&K4JXS7&K4JUB1&G4V4Z8&G4V4Z7&E7EP70&C9IZW4&C4PFY7",
+          "uniparc": "UPI000014170B",
+          "genePheno": "1",
+          "sift": {
+            "prediction": "deleterious"
+          },
+          "polyphen": {
+            "prediction": "probably_damaging",
+            "score": 0.9089999794960022
+          },
+          "domains": [
+            {
+              "id": "PS50172",
+              "source": "PROSITE_profiles"
+            },
+            {
+              "id": "PTHR13763",
+              "source": "hmmpanther"
+            },
+            {
+              "id": "PTHR13763",
+              "source": "hmmpanther"
+            },
+            {
+              "id": "3.40.50.10190",
+              "source": "Gene3D"
+            },
+            {
+              "id": "PF00533",
+              "source": "Pfam_domain"
+            },
+            {
+              "id": "PIRSF001734",
+              "source": "PIRSF_domain"
+            },
+            {
+              "id": "SM00292",
+              "source": "SMART_domains"
+            },
+            {
+              "id": "SSF52113",
+              "source": "Superfamily_domains"
+            },
+            {
+              "id": "PR00493",
+              "source": "Prints_domain"
+            }
+          ],
+          "eaMaf": 0.0005000000237487257,
+          "exacMaf": 0.00009999999747378752,
+          "exacAdjMaf": 0.00008689999958733097,
+          "exacAfrMaf": 0.000024709999706828967,
+          "exacAmrMaf": 0,
+          "exacEasMaf": 0.000024869999833754264,
+          "exacFinMaf": 0,
+          "exacNfeMaf": 0,
+          "exacOthMaf": 0.000030159999369061552,
+          "exacSasMaf": 0,
+          "clinSig": "uncertain_significance&pathogenic",
+          "pheno": "1&1&1",
+          "lofInfo": "INTRON_END:41215890&INTRON_START:41215391&EXON_END:41215968&DE_NOVO_DONOR_MES_POS:-28&DE_NOVO_DONOR_POS:-29&DE_NOVO_DONOR_PROB:0.031452812142167&EXON_START:41215891&DE_NOVO_DONOR_MES:0.588033946511443&MUTANT_DONOR_MES:7.9640258479777"
+        },
+        {
+          "allele": "T",
+          "consequence": "missense_variant",
+          "impact": "MODERATE",
+          "symbol": "BRCA1",
+          "gene": "ENSG00000012048",
+          "featureType": "Transcript",
+          "feature": "ENST00000346315",
+          "featureBiotype": "protein_coding",
+          "exon": "13/19",
+          "hgvsc": "ENST00000346315.3:c.4406C>A",
+          "hgvsp": "ENSP00000246907.4:p.Ala1469Glu",
+          "cdnaPosition": "4600",
+          "cdsPosition": "4406",
+          "proteinPosition": "1469",
+          "aminoAcids": "A/E",
+          "codons": "gCg/gAg",
+          "existingVariation": "CM950153&rs28897696&CM065004",
+          "dbsnpId": "1",
+          "strand": "-1",
+          "variantClass": "SNV",
+          "minimised": "1",
+          "symbolSource": "HGNC",
+          "hgncId": "1100",
+          "ensp": "ENSP00000246907",
+          "trembl": "Q9NQR3&Q92897&Q4EW25&Q3YB53&Q3YB50&Q3YB49&Q3B891&K4K7V3&K4JUB1&G4V503&G4V502&G4V500&G4V4Z8&G4V4Z7&G1UI37&E7EWN5&E7EMP0&C9IZW4&C4PFY7",
+          "uniparc": "UPI000014170D",
+          "genePheno": "1",
+          "sift": {
+            "prediction": "deleterious"
+          },
+          "polyphen": {
+            "prediction": "benign",
+            "score": 0.25600001215934753
+          },
+          "domains": [
+            {
+              "id": "SSF52113",
+              "source": "Superfamily_domains"
+            },
+            {
+              "id": "SM00292",
+              "source": "SMART_domains"
+            },
+            {
+              "id": "PIRSF001734",
+              "source": "PIRSF_domain"
+            },
+            {
+              "id": "3.40.50.10190",
+              "source": "Gene3D"
+            },
+            {
+              "id": "PTHR13763",
+              "source": "hmmpanther"
+            },
+            {
+              "id": "PTHR13763",
+              "source": "hmmpanther"
+            },
+            {
+              "id": "PS50172",
+              "source": "PROSITE_profiles"
+            }
+          ],
+          "eaMaf": 0.0005000000237487257,
+          "exacMaf": 0.00009999999747378752,
+          "exacAdjMaf": 0.00008689999958733097,
+          "exacAfrMaf": 0.000024709999706828967,
+          "exacAmrMaf": 0,
+          "exacEasMaf": 0.000024869999833754264,
+          "exacFinMaf": 0,
+          "exacNfeMaf": 0,
+          "exacOthMaf": 0.000030159999369061552,
+          "exacSasMaf": 0,
+          "clinSig": "uncertain_significance&pathogenic",
+          "pheno": "1&1&1",
+          "lofInfo": "DE_NOVO_DONOR_MES:0.588033946511443&MUTANT_DONOR_MES:7.9640258479777&DE_NOVO_DONOR_POS:-29&DE_NOVO_DONOR_MES_POS:-28&INTRON_START:41215391&EXON_END:41215968&INTRON_END:41215890&EXON_START:41215891&DE_NOVO_DONOR_PROB:0.031452812142167"
+        },
+        {
+          "allele": "T",
+          "consequence": "missense_variant",
+          "impact": "MODERATE",
+          "symbol": "BRCA1",
+          "gene": "ENSG00000012048",
+          "featureType": "Transcript",
+          "feature": "ENST00000351666",
+          "featureBiotype": "protein_coding",
+          "exon": "13/19",
+          "hgvsc": "ENST00000351666.3:c.1574C>A",
+          "hgvsp": "ENSP00000338007.3:p.Ala525Glu",
+          "cdnaPosition": "1593",
+          "cdsPosition": "1574",
+          "proteinPosition": "525",
+          "aminoAcids": "A/E",
+          "codons": "gCg/gAg",
+          "existingVariation": "CM950153&rs28897696&CM065004",
+          "dbsnpId": "1",
+          "strand": "-1",
+          "variantClass": "SNV",
+          "minimised": "1",
+          "symbolSource": "HGNC",
+          "hgncId": "1100",
+          "ensp": "ENSP00000338007",
+          "trembl": "G3XAC3&Q9UE29&Q9NQR3&Q92897&Q7KYU6&K7EPC7&K4JXS7&G1UI37&C4PFY7",
+          "uniparc": "UPI000014172D",
+          "genePheno": "1",
+          "sift": {
+            "prediction": "deleterious"
+          },
+          "polyphen": {
+            "prediction": "probably_damaging",
+            "score": 1
+          },
+          "domains": [
+            {
+              "id": "PS50172",
+              "source": "PROSITE_profiles"
+            },
+            {
+              "id": "PTHR13763",
+              "source": "hmmpanther"
+            },
+            {
+              "id": "PTHR13763",
+              "source": "hmmpanther"
+            },
+            {
+              "id": "PF00533",
+              "source": "Pfam_domain"
+            },
+            {
+              "id": "3.40.50.10190",
+              "source": "Gene3D"
+            },
+            {
+              "id": "SM00292",
+              "source": "SMART_domains"
+            },
+            {
+              "id": "PIRSF001734",
+              "source": "PIRSF_domain"
+            },
+            {
+              "id": "SSF52113",
+              "source": "Superfamily_domains"
+            }
+          ],
+          "eaMaf": 0.0005000000237487257,
+          "exacMaf": 0.00009999999747378752,
+          "exacAdjMaf": 0.00008689999958733097,
+          "exacAfrMaf": 0.000024709999706828967,
+          "exacAmrMaf": 0,
+          "exacEasMaf": 0.000024869999833754264,
+          "exacFinMaf": 0,
+          "exacNfeMaf": 0,
+          "exacOthMaf": 0.000030159999369061552,
+          "exacSasMaf": 0,
+          "clinSig": "uncertain_significance&pathogenic",
+          "pheno": "1&1&1",
+          "lofInfo": "DE_NOVO_DONOR_MES_POS:-28&DE_NOVO_DONOR_POS:-29&INTRON_START:41215391&EXON_END:41215968&INTRON_END:41215890&DE_NOVO_DONOR_PROB:0.031452812142167&EXON_START:41215891&DE_NOVO_DONOR_MES:0.588033946511443&MUTANT_DONOR_MES:7.9640258479777"
+        },
+        {
+          "allele": "T",
+          "consequence": "missense_variant",
+          "impact": "MODERATE",
+          "symbol": "BRCA1",
+          "gene": "ENSG00000012048",
+          "featureType": "Transcript",
+          "feature": "ENST00000352993",
+          "featureBiotype": "protein_coding",
+          "exon": "16/22",
+          "hgvsc": "ENST00000352993.3:c.1697C>A",
+          "hgvsp": "ENSP00000312236.5:p.Ala566Glu",
+          "cdnaPosition": "1929",
+          "cdsPosition": "1697",
+          "proteinPosition": "566",
+          "aminoAcids": "A/E",
+          "codons": "gCg/gAg",
+          "existingVariation": "CM950153&rs28897696&CM065004",
+          "dbsnpId": "1",
+          "strand": "-1",
+          "variantClass": "SNV",
+          "minimised": "1",
+          "symbolSource": "HGNC",
+          "hgncId": "1100",
+          "ensp": "ENSP00000312236",
+          "swissprot": "P38398",
+          "trembl": "Q9UE29&Q9NQR3&Q92897&Q7KYU6&K7EPC7&K4JXS7&G1UI37&C4PFY7",
+          "uniparc": "UPI000013ECD3",
+          "genePheno": "1",
+          "sift": {
+            "prediction": "deleterious"
+          },
+          "polyphen": {
+            "prediction": "probably_damaging",
+            "score": 0.996999979019165
+          },
+          "domains": [
+            {
+              "id": "PS50172",
+              "source": "PROSITE_profiles"
+            },
+            {
+              "id": "PTHR13763",
+              "source": "hmmpanther"
+            },
+            {
+              "id": "PTHR13763",
+              "source": "hmmpanther"
+            },
+            {
+              "id": "PF00533",
+              "source": "Pfam_domain"
+            },
+            {
+              "id": "3.40.50.10190",
+              "source": "Gene3D"
+            },
+            {
+              "id": "PIRSF001734",
+              "source": "PIRSF_domain"
+            },
+            {
+              "id": "SM00292",
+              "source": "SMART_domains"
+            },
+            {
+              "id": "SSF52113",
+              "source": "Superfamily_domains"
+            }
+          ],
+          "eaMaf": 0.0005000000237487257,
+          "exacMaf": 0.00009999999747378752,
+          "exacAdjMaf": 0.00008689999958733097,
+          "exacAfrMaf": 0.000024709999706828967,
+          "exacAmrMaf": 0,
+          "exacEasMaf": 0.000024869999833754264,
+          "exacFinMaf": 0,
+          "exacNfeMaf": 0,
+          "exacOthMaf": 0.000030159999369061552,
+          "exacSasMaf": 0,
+          "clinSig": "uncertain_significance&pathogenic",
+          "pheno": "1&1&1",
+          "lofInfo": "DE_NOVO_DONOR_PROB:0.031452812142167&EXON_START:41215891&DE_NOVO_DONOR_MES_POS:-28&DE_NOVO_DONOR_POS:-29&INTRON_START:41215391&EXON_END:41215968&INTRON_END:41215890&MUTANT_DONOR_MES:7.9640258479777&DE_NOVO_DONOR_MES:0.588033946511443"
+        },
+        {
+          "allele": "T",
+          "consequence": "intron_variant",
+          "impact": "MODIFIER",
+          "symbol": "BRCA1",
+          "gene": "ENSG00000012048",
+          "featureType": "Transcript",
+          "feature": "ENST00000354071",
+          "featureBiotype": "protein_coding",
+          "intron": "12/17",
+          "hgvsc": "ENST00000354071.3:c.4358-530C>A",
+          "existingVariation": "CM950153&rs28897696&CM065004",
+          "dbsnpId": "1",
+          "strand": "-1",
+          "variantClass": "SNV",
+          "minimised": "1",
+          "symbolSource": "HGNC",
+          "hgncId": "1100",
+          "ensp": "ENSP00000326002",
+          "trembl": "Q9NQR3&Q92897&Q4EW25&Q3YB53&Q3YB50&Q3YB49&Q3B891&K4K7V3&K4JUB1&G4V503&G4V502&G4V500&G4V4Z8&G4V4Z7&G1UI37&F8W8H7&E7EWN5&C9IZW4",
+          "uniparc": "UPI000013CC06",
+          "genePheno": "1",
+          "eaMaf": 0.0005000000237487257,
+          "exacMaf": 0.00009999999747378752,
+          "exacAdjMaf": 0.00008689999958733097,
+          "exacAfrMaf": 0.000024709999706828967,
+          "exacAmrMaf": 0,
+          "exacEasMaf": 0.000024869999833754264,
+          "exacFinMaf": 0,
+          "exacNfeMaf": 0,
+          "exacOthMaf": 0.000030159999369061552,
+          "exacSasMaf": 0,
+          "clinSig": "uncertain_significance&pathogenic",
+          "pheno": "1&1&1"
+        },
+        {
+          "allele": "T",
+          "consequence": "missense_variant",
+          "impact": "MODERATE",
+          "symbol": "BRCA1",
+          "gene": "ENSG00000012048",
+          "featureType": "Transcript",
+          "feature": "ENST00000357654",
+          "featureBiotype": "protein_coding",
+          "exon": "17/23",
+          "hgvsc": "ENST00000357654.3:c.5123C>A",
+          "hgvsp": "ENSP00000350283.3:p.Ala1708Glu",
+          "cdnaPosition": "5242",
+          "cdsPosition": "5123",
+          "proteinPosition": "1708",
+          "aminoAcids": "A/E",
+          "codons": "gCg/gAg",
+          "existingVariation": "CM950153&rs28897696&CM065004",
+          "dbsnpId": "1",
+          "strand": "-1",
+          "variantClass": "SNV",
+          "minimised": "1",
+          "symbolSource": "HGNC",
+          "hgncId": "1100",
+          "ccds": "CCDS11453.1",
+          "ensp": "ENSP00000350283",
+          "swissprot": "P38398",
+          "trembl": "Q9UE29&Q9NQR3&Q92897&Q7KYU6&Q4EW25&Q3YB53&Q3YB50&Q3YB49&Q3LRH8&Q3B891&K7EPC7&K4K7V3&K4JXS7&K4JUB1&G4V503&G4V502&G4V500&G4V4Z8&G4V4Z7&G1UI37&E9PFZ0&E7EWN5&E7EP70&C9IZW4&C4PFY7",
+          "uniparc": "UPI0000126AC8",
+          "genePheno": "1",
+          "sift": {
+            "prediction": "deleterious"
+          },
+          "polyphen": {
+            "prediction": "probably_damaging",
+            "score": 0.9089999794960022
+          },
+          "domains": [
+            {
+              "id": "3.40.50.10190",
+              "source": "Gene3D"
+            },
+            {
+              "id": "PF00533",
+              "source": "Pfam_domain"
+            },
+            {
+              "id": "PIRSF001734",
+              "source": "PIRSF_domain"
+            },
+            {
+              "id": "PR00493",
+              "source": "Prints_domain"
+            },
+            {
+              "id": "PS50172",
+              "source": "PROSITE_profiles"
+            },
+            {
+              "id": "PTHR13763",
+              "source": "hmmpanther"
+            },
+            {
+              "id": "PTHR13763",
+              "source": "hmmpanther"
+            },
+            {
+              "id": "SM00292",
+              "source": "SMART_domains"
+            },
+            {
+              "id": "SSF52113",
+              "source": "Superfamily_domains"
+            }
+          ],
+          "eaMaf": 0.0005000000237487257,
+          "exacMaf": 0.00009999999747378752,
+          "exacAdjMaf": 0.00008689999958733097,
+          "exacAfrMaf": 0.000024709999706828967,
+          "exacAmrMaf": 0,
+          "exacEasMaf": 0.000024869999833754264,
+          "exacFinMaf": 0,
+          "exacNfeMaf": 0,
+          "exacOthMaf": 0.000030159999369061552,
+          "exacSasMaf": 0,
+          "clinSig": "uncertain_significance&pathogenic",
+          "pheno": "1&1&1",
+          "lofInfo": "DE_NOVO_DONOR_MES_POS:-28&DE_NOVO_DONOR_POS:-29&INTRON_START:41215391&EXON_END:41215968&INTRON_END:41215890&EXON_START:41215891&DE_NOVO_DONOR_PROB:0.031452812142167&DE_NOVO_DONOR_MES:0.588033946511443&MUTANT_DONOR_MES:7.9640258479777"
+        },
+        {
+          "allele": "T",
+          "consequence": "3_prime_UTR_variant&NMD_transcript_variant",
+          "impact": "MODIFIER",
+          "symbol": "BRCA1",
+          "gene": "ENSG00000012048",
+          "featureType": "Transcript",
+          "feature": "ENST00000461221",
+          "featureBiotype": "nonsense_mediated_decay",
+          "exon": "17/23",
+          "hgvsc": "ENST00000461221.1:c.*4906C>A",
+          "cdnaPosition": "5224",
+          "existingVariation": "CM950153&rs28897696&CM065004",
+          "dbsnpId": "1",
+          "strand": "-1",
+          "variantClass": "SNV",
+          "minimised": "1",
+          "symbolSource": "HGNC",
+          "hgncId": "1100",
+          "ensp": "ENSP00000418548",
+          "swissprot": "P38398",
+          "trembl": "Q92897&G1UI37",
+          "uniparc": "UPI0000145115",
+          "genePheno": "1",
+          "eaMaf": 0.0005000000237487257,
+          "exacMaf": 0.00009999999747378752,
+          "exacAdjMaf": 0.00008689999958733097,
+          "exacAfrMaf": 0.000024709999706828967,
+          "exacAmrMaf": 0,
+          "exacEasMaf": 0.000024869999833754264,
+          "exacFinMaf": 0,
+          "exacNfeMaf": 0,
+          "exacOthMaf": 0.000030159999369061552,
+          "exacSasMaf": 0,
+          "clinSig": "uncertain_significance&pathogenic",
+          "pheno": "1&1&1"
+        },
+        {
+          "allele": "T",
+          "consequence": "missense_variant",
+          "impact": "MODERATE",
+          "symbol": "BRCA1",
+          "gene": "ENSG00000012048",
+          "featureType": "Transcript",
+          "feature": "ENST00000468300",
+          "featureBiotype": "protein_coding",
+          "exon": "17/22",
+          "hgvsc": "ENST00000468300.1:c.1811C>A",
+          "hgvsp": "ENSP00000417148.1:p.Ala604Glu",
+          "cdnaPosition": "2005",
+          "cdsPosition": "1811",
+          "proteinPosition": "604",
+          "aminoAcids": "A/E",
+          "codons": "gCg/gAg",
+          "existingVariation": "CM950153&rs28897696&CM065004",
+          "dbsnpId": "1",
+          "strand": "-1",
+          "variantClass": "SNV",
+          "minimised": "1",
+          "symbolSource": "HGNC",
+          "hgncId": "1100",
+          "ccds": "CCDS11455.2",
+          "ensp": "ENSP00000417148",
+          "swissprot": "P38398",
+          "trembl": "Q9UE29&Q9NQR3&Q92897&K4JXS7&G1UI37&C4PFY7",
+          "uniparc": "UPI000037834E",
+          "genePheno": "1",
+          "sift": {
+            "prediction": "deleterious"
+          },
+          "polyphen": {
+            "prediction": "probably_damaging",
+            "score": 1
+          },
+          "domains": [
+            {
+              "id": "PS50172",
+              "source": "PROSITE_profiles"
+            },
+            {
+              "id": "PTHR13763",
+              "source": "hmmpanther"
+            },
+            {
+              "id": "PTHR13763",
+              "source": "hmmpanther"
+            },
+            {
+              "id": "3.40.50.10190",
+              "source": "Gene3D"
+            },
+            {
+              "id": "PF00533",
+              "source": "Pfam_domain"
+            },
+            {
+              "id": "SM00292",
+              "source": "SMART_domains"
+            },
+            {
+              "id": "PIRSF001734",
+              "source": "PIRSF_domain"
+            },
+            {
+              "id": "SSF52113",
+              "source": "Superfamily_domains"
+            }
+          ],
+          "eaMaf": 0.0005000000237487257,
+          "exacMaf": 0.00009999999747378752,
+          "exacAdjMaf": 0.00008689999958733097,
+          "exacAfrMaf": 0.000024709999706828967,
+          "exacAmrMaf": 0,
+          "exacEasMaf": 0.000024869999833754264,
+          "exacFinMaf": 0,
+          "exacNfeMaf": 0,
+          "exacOthMaf": 0.000030159999369061552,
+          "exacSasMaf": 0,
+          "clinSig": "uncertain_significance&pathogenic",
+          "pheno": "1&1&1",
+          "lofInfo": "INTRON_END:41215890&EXON_END:41215968&INTRON_START:41215391&DE_NOVO_DONOR_POS:-29&DE_NOVO_DONOR_MES_POS:-28&EXON_START:41215891&DE_NOVO_DONOR_PROB:0.031452812142167&DE_NOVO_DONOR_MES:0.588033946511443&MUTANT_DONOR_MES:7.9640258479777"
+        },
+        {
+          "allele": "T",
+          "consequence": "missense_variant",
+          "impact": "MODERATE",
+          "symbol": "BRCA1",
+          "gene": "ENSG00000012048",
+          "featureType": "Transcript",
+          "feature": "ENST00000471181",
+          "featureBiotype": "protein_coding",
+          "exon": "18/24",
+          "hgvsc": "ENST00000471181.2:c.5186C>A",
+          "hgvsp": "ENSP00000418960.2:p.Ala1729Glu",
+          "cdnaPosition": "5418",
+          "cdsPosition": "5186",
+          "proteinPosition": "1729",
+          "aminoAcids": "A/E",
+          "codons": "gCg/gAg",
+          "existingVariation": "CM950153&rs28897696&CM065004",
+          "dbsnpId": "1",
+          "strand": "-1",
+          "variantClass": "SNV",
+          "minimised": "1",
+          "symbolSource": "HGNC",
+          "hgncId": "1100",
+          "canonical": true,
+          "ccds": "CCDS11456.2",
+          "ensp": "ENSP00000418960",
+          "trembl": "Q9UE29&Q9NQR3&Q92897&Q7KYU6&Q4EW25&Q3YB53&Q3YB50&Q3YB49&Q3B891&K7EPC7&K4K7V3&K4JXS7&K4JUB1&G4V503&G4V502&G4V500&G4V4Z8&G4V4Z7&G1UI37&E9PFC7&E7EWN5&C9IZW4&C4PFY7",
+          "uniparc": "UPI0000E0360B",
+          "genePheno": "1",
+          "sift": {
+            "prediction": "deleterious"
+          },
+          "polyphen": {
+            "prediction": "probably_damaging",
+            "score": 0.9580000042915344
+          },
+          "domains": [
+            {
+              "id": "3.40.50.10190",
+              "source": "Gene3D"
+            },
+            {
+              "id": "PF00533",
+              "source": "Pfam_domain"
+            },
+            {
+              "id": "PIRSF001734",
+              "source": "PIRSF_domain"
+            },
+            {
+              "id": "PR00493",
+              "source": "Prints_domain"
+            },
+            {
+              "id": "PS50172",
+              "source": "PROSITE_profiles"
+            },
+            {
+              "id": "PTHR13763",
+              "source": "hmmpanther"
+            },
+            {
+              "id": "PTHR13763",
+              "source": "hmmpanther"
+            },
+            {
+              "id": "SM00292",
+              "source": "SMART_domains"
+            },
+            {
+              "id": "SSF52113",
+              "source": "Superfamily_domains"
+            }
+          ],
+          "eaMaf": 0.0005000000237487257,
+          "exacMaf": 0.00009999999747378752,
+          "exacAdjMaf": 0.00008689999958733097,
+          "exacAfrMaf": 0.000024709999706828967,
+          "exacAmrMaf": 0,
+          "exacEasMaf": 0.000024869999833754264,
+          "exacFinMaf": 0,
+          "exacNfeMaf": 0,
+          "exacOthMaf": 0.000030159999369061552,
+          "exacSasMaf": 0,
+          "clinSig": "uncertain_significance&pathogenic",
+          "pheno": "1&1&1",
+          "lofInfo": "MUTANT_DONOR_MES:7.9640258479777&DE_NOVO_DONOR_MES:0.588033946511443&EXON_START:41215891&DE_NOVO_DONOR_PROB:0.031452812142167&INTRON_END:41215890&INTRON_START:41215391&EXON_END:41215968&DE_NOVO_DONOR_POS:-29&DE_NOVO_DONOR_MES_POS:-28"
+        },
+        {
+          "allele": "T",
+          "consequence": "downstream_gene_variant",
+          "impact": "MODIFIER",
+          "symbol": "BRCA1",
+          "gene": "ENSG00000012048",
+          "featureType": "Transcript",
+          "feature": "ENST00000472490",
+          "featureBiotype": "retained_intron",
+          "existingVariation": "CM950153&rs28897696&CM065004",
+          "dbsnpId": "1",
+          "distance": "3371",
+          "strand": "-1",
+          "variantClass": "SNV",
+          "minimised": "1",
+          "symbolSource": "HGNC",
+          "hgncId": "1100",
+          "genePheno": "1",
+          "eaMaf": 0.0005000000237487257,
+          "exacMaf": 0.00009999999747378752,
+          "exacAdjMaf": 0.00008689999958733097,
+          "exacAfrMaf": 0.000024709999706828967,
+          "exacAmrMaf": 0,
+          "exacEasMaf": 0.000024869999833754264,
+          "exacFinMaf": 0,
+          "exacNfeMaf": 0,
+          "exacOthMaf": 0.000030159999369061552,
+          "exacSasMaf": 0,
+          "clinSig": "uncertain_significance&pathogenic",
+          "pheno": "1&1&1"
+        },
+        {
+          "allele": "T",
+          "consequence": "missense_variant",
+          "impact": "MODERATE",
+          "symbol": "BRCA1",
+          "gene": "ENSG00000012048",
+          "featureType": "Transcript",
+          "feature": "ENST00000478531",
+          "featureBiotype": "protein_coding",
+          "exon": "17/18",
+          "hgvsc": "ENST00000478531.1:c.1811C>A",
+          "hgvsp": "ENSP00000420412.1:p.Ala604Glu",
+          "cdnaPosition": "1913",
+          "cdsPosition": "1811",
+          "proteinPosition": "604",
+          "aminoAcids": "A/E",
+          "codons": "gCg/gAg",
+          "existingVariation": "CM950153&rs28897696&CM065004",
+          "dbsnpId": "1",
+          "strand": "-1",
+          "flags": "cds_end_NF",
+          "variantClass": "SNV",
+          "minimised": "1",
+          "symbolSource": "HGNC",
+          "hgncId": "1100",
+          "ensp": "ENSP00000420412",
+          "trembl": "Q9UE29&Q92897&K4K7U9&K4JXS7&G1UI37&E7EUM2&E7EQW4&C4PFY7",
+          "uniparc": "UPI0001B79086",
+          "genePheno": "1",
+          "sift": {
+            "prediction": "deleterious"
+          },
+          "polyphen": {
+            "prediction": "probably_damaging",
+            "score": 0.9990000128746033
+          },
+          "domains": [
+            {
+              "id": "3.40.50.10190",
+              "source": "Gene3D"
+            },
+            {
+              "id": "PF00533",
+              "source": "Pfam_domain"
+            },
+            {
+              "id": "PS50172",
+              "source": "PROSITE_profiles"
+            },
+            {
+              "id": "SM00292",
+              "source": "SMART_domains"
+            },
+            {
+              "id": "SSF52113",
+              "source": "Superfamily_domains"
+            }
+          ],
+          "eaMaf": 0.0005000000237487257,
+          "exacMaf": 0.00009999999747378752,
+          "exacAdjMaf": 0.00008689999958733097,
+          "exacAfrMaf": 0.000024709999706828967,
+          "exacAmrMaf": 0,
+          "exacEasMaf": 0.000024869999833754264,
+          "exacFinMaf": 0,
+          "exacNfeMaf": 0,
+          "exacOthMaf": 0.000030159999369061552,
+          "exacSasMaf": 0,
+          "clinSig": "uncertain_significance&pathogenic",
+          "pheno": "1&1&1",
+          "lofInfo": "EXON_START:41215891&DE_NOVO_DONOR_PROB:0.031452812142167&DE_NOVO_DONOR_POS:-29&DE_NOVO_DONOR_MES_POS:-28&EXON_END:41215968&INTRON_START:41215391&INTRON_END:41215890&MUTANT_DONOR_MES:7.9640258479777&DE_NOVO_DONOR_MES:0.588033946511443"
+        },
+        {
+          "allele": "T",
+          "consequence": "missense_variant",
+          "impact": "MODERATE",
+          "symbol": "BRCA1",
+          "gene": "ENSG00000012048",
+          "featureType": "Transcript",
+          "feature": "ENST00000484087",
+          "featureBiotype": "protein_coding",
+          "exon": "11/12",
+          "hgvsc": "ENST00000484087.1:c.1436C>A",
+          "hgvsp": "ENSP00000419481.1:p.Ala479Glu",
+          "cdnaPosition": "1436",
+          "cdsPosition": "1436",
+          "proteinPosition": "479",
+          "aminoAcids": "A/E",
+          "codons": "gCg/gAg",
+          "existingVariation": "CM950153&rs28897696&CM065004",
+          "dbsnpId": "1",
+          "strand": "-1",
+          "flags": "cds_start_NF&cds_end_NF",
+          "variantClass": "SNV",
+          "minimised": "1",
+          "symbolSource": "HGNC",
+          "hgncId": "1100",
+          "ensp": "ENSP00000419481",
+          "trembl": "Q9UE29&K4K7U9&K4JXS7&H0Y8B8&C4PFY7",
+          "uniparc": "UPI0001B79085",
+          "genePheno": "1",
+          "sift": {
+            "prediction": "deleterious"
+          },
+          "polyphen": {
+            "prediction": "probably_damaging",
+            "score": 1
+          },
+          "domains": [
+            {
+              "id": "3.40.50.10190",
+              "source": "Gene3D"
+            },
+            {
+              "id": "PF00533",
+              "source": "Pfam_domain"
+            },
+            {
+              "id": "PR00493",
+              "source": "Prints_domain"
+            },
+            {
+              "id": "PS50172",
+              "source": "PROSITE_profiles"
+            },
+            {
+              "id": "PTHR13763",
+              "source": "hmmpanther"
+            },
+            {
+              "id": "PTHR13763",
+              "source": "hmmpanther"
+            },
+            {
+              "id": "SM00292",
+              "source": "SMART_domains"
+            },
+            {
+              "id": "SSF52113",
+              "source": "Superfamily_domains"
+            }
+          ],
+          "eaMaf": 0.0005000000237487257,
+          "exacMaf": 0.00009999999747378752,
+          "exacAdjMaf": 0.00008689999958733097,
+          "exacAfrMaf": 0.000024709999706828967,
+          "exacAmrMaf": 0,
+          "exacEasMaf": 0.000024869999833754264,
+          "exacFinMaf": 0,
+          "exacNfeMaf": 0,
+          "exacOthMaf": 0.000030159999369061552,
+          "exacSasMaf": 0,
+          "clinSig": "uncertain_significance&pathogenic",
+          "pheno": "1&1&1",
+          "lofInfo": "DE_NOVO_DONOR_PROB:0.031452812142167&EXON_START:41215891&INTRON_END:41215890&DE_NOVO_DONOR_MES_POS:-28&DE_NOVO_DONOR_POS:-29&INTRON_START:41215391&EXON_END:41215968&MUTANT_DONOR_MES:7.9640258479777&DE_NOVO_DONOR_MES:0.588033946511443"
+        },
+        {
+          "allele": "T",
+          "consequence": "missense_variant",
+          "impact": "MODERATE",
+          "symbol": "BRCA1",
+          "gene": "ENSG00000012048",
+          "featureType": "Transcript",
+          "feature": "ENST00000491747",
+          "featureBiotype": "protein_coding",
+          "exon": "17/23",
+          "hgvsc": "ENST00000491747.2:c.1811C>A",
+          "hgvsp": "ENSP00000420705.2:p.Ala604Glu",
+          "cdnaPosition": "1910",
+          "cdsPosition": "1811",
+          "proteinPosition": "604",
+          "aminoAcids": "A/E",
+          "codons": "gCg/gAg",
+          "existingVariation": "CM950153&rs28897696&CM065004",
+          "dbsnpId": "1",
+          "strand": "-1",
+          "variantClass": "SNV",
+          "minimised": "1",
+          "symbolSource": "HGNC",
+          "hgncId": "1100",
+          "ccds": "CCDS11454.2",
+          "ensp": "ENSP00000420705",
+          "swissprot": "P38398",
+          "trembl": "Q9UE29&Q9NQR3&Q92897&Q7KYU6&K7EPC7&K4JXS7&G1UI37&C4PFY7&B4DES0",
+          "uniparc": "UPI000013C85E",
+          "genePheno": "1",
+          "sift": {
+            "prediction": "deleterious"
+          },
+          "polyphen": {
+            "prediction": "probably_damaging",
+            "score": 1
+          },
+          "domains": [
+            {
+              "id": "SSF52113",
+              "source": "Superfamily_domains"
+            },
+            {
+              "id": "PIRSF001734",
+              "source": "PIRSF_domain"
+            },
+            {
+              "id": "SM00292",
+              "source": "SMART_domains"
+            },
+            {
+              "id": "3.40.50.10190",
+              "source": "Gene3D"
+            },
+            {
+              "id": "PF00533",
+              "source": "Pfam_domain"
+            },
+            {
+              "id": "PTHR13763",
+              "source": "hmmpanther"
+            },
+            {
+              "id": "PTHR13763",
+              "source": "hmmpanther"
+            },
+            {
+              "id": "PS50172",
+              "source": "PROSITE_profiles"
+            }
+          ],
+          "eaMaf": 0.0005000000237487257,
+          "exacMaf": 0.00009999999747378752,
+          "exacAdjMaf": 0.00008689999958733097,
+          "exacAfrMaf": 0.000024709999706828967,
+          "exacAmrMaf": 0,
+          "exacEasMaf": 0.000024869999833754264,
+          "exacFinMaf": 0,
+          "exacNfeMaf": 0,
+          "exacOthMaf": 0.000030159999369061552,
+          "exacSasMaf": 0,
+          "clinSig": "uncertain_significance&pathogenic",
+          "pheno": "1&1&1",
+          "lofInfo": "DE_NOVO_DONOR_MES:0.588033946511443&MUTANT_DONOR_MES:7.9640258479777&INTRON_END:41215890&DE_NOVO_DONOR_POS:-29&DE_NOVO_DONOR_MES_POS:-28&EXON_END:41215968&INTRON_START:41215391&DE_NOVO_DONOR_PROB:0.031452812142167&EXON_START:41215891"
+        },
+        {
+          "allele": "T",
+          "consequence": "missense_variant",
+          "impact": "MODERATE",
+          "symbol": "BRCA1",
+          "gene": "ENSG00000012048",
+          "featureType": "Transcript",
+          "feature": "ENST00000493795",
+          "featureBiotype": "protein_coding",
+          "exon": "16/22",
+          "hgvsc": "ENST00000493795.1:c.4982C>A",
+          "hgvsp": "ENSP00000418775.1:p.Ala1661Glu",
+          "cdnaPosition": "5214",
+          "cdsPosition": "4982",
+          "proteinPosition": "1661",
+          "aminoAcids": "A/E",
+          "codons": "gCg/gAg",
+          "existingVariation": "CM950153&rs28897696&CM065004",
+          "dbsnpId": "1",
+          "strand": "-1",
+          "variantClass": "SNV",
+          "minimised": "1",
+          "symbolSource": "HGNC",
+          "hgncId": "1100",
+          "ccds": "CCDS11459.2",
+          "ensp": "ENSP00000418775",
+          "trembl": "Q9UE29&Q9NQR3&Q7KYU6&Q4EW25&Q3YB53&Q3YB50&Q3YB49&K7EPC7&K4K7V3&K4JXS7&K4JUB1&G4V503&G4V502&G4V500&G4V4Z8&G4V4Z7&E9PFZ0&E7EP70&C9IZW4&C4PFY7",
+          "uniparc": "UPI000013C860",
+          "genePheno": "1",
+          "sift": {
+            "prediction": "deleterious"
+          },
+          "polyphen": {
+            "prediction": "probably_damaging",
+            "score": 0.9089999794960022
+          },
+          "domains": [
+            {
+              "id": "3.40.50.10190",
+              "source": "Gene3D"
+            },
+            {
+              "id": "PF00533",
+              "source": "Pfam_domain"
+            },
+            {
+              "id": "PIRSF001734",
+              "source": "PIRSF_domain"
+            },
+            {
+              "id": "PR00493",
+              "source": "Prints_domain"
+            },
+            {
+              "id": "PS50172",
+              "source": "PROSITE_profiles"
+            },
+            {
+              "id": "PTHR13763",
+              "source": "hmmpanther"
+            },
+            {
+              "id": "PTHR13763",
+              "source": "hmmpanther"
+            },
+            {
+              "id": "SM00292",
+              "source": "SMART_domains"
+            },
+            {
+              "id": "SSF52113",
+              "source": "Superfamily_domains"
+            }
+          ],
+          "eaMaf": 0.0005000000237487257,
+          "exacMaf": 0.00009999999747378752,
+          "exacAdjMaf": 0.00008689999958733097,
+          "exacAfrMaf": 0.000024709999706828967,
+          "exacAmrMaf": 0,
+          "exacEasMaf": 0.000024869999833754264,
+          "exacFinMaf": 0,
+          "exacNfeMaf": 0,
+          "exacOthMaf": 0.000030159999369061552,
+          "exacSasMaf": 0,
+          "clinSig": "uncertain_significance&pathogenic",
+          "pheno": "1&1&1",
+          "lofInfo": "DE_NOVO_DONOR_MES:0.588033946511443&MUTANT_DONOR_MES:7.9640258479777&INTRON_END:41215890&DE_NOVO_DONOR_MES_POS:-28&DE_NOVO_DONOR_POS:-29&INTRON_START:41215391&EXON_END:41215968&DE_NOVO_DONOR_PROB:0.031452812142167&EXON_START:41215891"
+        },
+        {
+          "allele": "T",
+          "consequence": "missense_variant",
+          "impact": "MODERATE",
+          "symbol": "BRCA1",
+          "gene": "ENSG00000012048",
+          "featureType": "Transcript",
+          "feature": "ENST00000493919",
+          "featureBiotype": "protein_coding",
+          "exon": "16/17",
+          "hgvsc": "ENST00000493919.1:c.1673C>A",
+          "hgvsp": "ENSP00000418819.1:p.Ala558Glu",
+          "cdnaPosition": "1905",
+          "cdsPosition": "1673",
+          "proteinPosition": "558",
+          "aminoAcids": "A/E",
+          "codons": "gCg/gAg",
+          "existingVariation": "CM950153&rs28897696&CM065004",
+          "dbsnpId": "1",
+          "strand": "-1",
+          "flags": "cds_end_NF",
+          "variantClass": "SNV",
+          "minimised": "1",
+          "symbolSource": "HGNC",
+          "hgncId": "1100",
+          "ensp": "ENSP00000418819",
+          "trembl": "Q9UE29&K4JXS7&C4PFY7&B7ZA85",
+          "uniparc": "UPI00019154A6",
+          "genePheno": "1",
+          "sift": {
+            "prediction": "deleterious"
+          },
+          "polyphen": {
+            "prediction": "probably_damaging",
+            "score": 1
+          },
+          "domains": [
+            {
+              "id": "3.40.50.10190",
+              "source": "Gene3D"
+            },
+            {
+              "id": "PF00533",
+              "source": "Pfam_domain"
+            },
+            {
+              "id": "PS50172",
+              "source": "PROSITE_profiles"
+            },
+            {
+              "id": "PTHR13763",
+              "source": "hmmpanther"
+            },
+            {
+              "id": "PTHR13763",
+              "source": "hmmpanther"
+            },
+            {
+              "id": "SSF52113",
+              "source": "Superfamily_domains"
+            }
+          ],
+          "eaMaf": 0.0005000000237487257,
+          "exacMaf": 0.00009999999747378752,
+          "exacAdjMaf": 0.00008689999958733097,
+          "exacAfrMaf": 0.000024709999706828967,
+          "exacAmrMaf": 0,
+          "exacEasMaf": 0.000024869999833754264,
+          "exacFinMaf": 0,
+          "exacNfeMaf": 0,
+          "exacOthMaf": 0.000030159999369061552,
+          "exacSasMaf": 0,
+          "clinSig": "uncertain_significance&pathogenic",
+          "pheno": "1&1&1",
+          "lofInfo": "DE_NOVO_DONOR_PROB:0.031452812142167&EXON_START:41215891&INTRON_END:41215890&DE_NOVO_DONOR_MES_POS:-28&DE_NOVO_DONOR_POS:-29&EXON_END:41215968&INTRON_START:41215391&MUTANT_DONOR_MES:7.9640258479777&DE_NOVO_DONOR_MES:0.588033946511443"
+        },
+        {
+          "allele": "T",
+          "consequence": "missense_variant",
+          "impact": "MODERATE",
+          "symbol": "BRCA1",
+          "gene": "ENSG00000012048",
+          "featureType": "Transcript",
+          "feature": "ENST00000586385",
+          "featureBiotype": "protein_coding",
+          "exon": "2/8",
+          "hgvsc": "ENST00000586385.1:c.53C>A",
+          "hgvsp": "ENSP00000465818.1:p.Ala18Glu",
+          "cdnaPosition": "197",
+          "cdsPosition": "53",
+          "proteinPosition": "18",
+          "aminoAcids": "A/E",
+          "codons": "gCg/gAg",
+          "existingVariation": "CM950153&rs28897696&CM065004",
+          "dbsnpId": "1",
+          "strand": "-1",
+          "variantClass": "SNV",
+          "minimised": "1",
+          "symbolSource": "HGNC",
+          "hgncId": "1100",
+          "ensp": "ENSP00000465818",
+          "trembl": "Q9NQR3&C6YB45&C4PFY7",
+          "uniparc": "UPI0001B065E7",
+          "genePheno": "1",
+          "sift": {
+            "prediction": "deleterious"
+          },
+          "polyphen": {
+            "prediction": "probably_damaging",
+            "score": 0.9980000257492065
+          },
+          "domains": [
+            {
+              "id": "3.40.50.10190",
+              "source": "Gene3D"
+            },
+            {
+              "id": "PR00493",
+              "source": "Prints_domain"
+            },
+            {
+              "id": "PS50172",
+              "source": "PROSITE_profiles"
+            },
+            {
+              "id": "PTHR13763",
+              "source": "hmmpanther"
+            },
+            {
+              "id": "PTHR13763",
+              "source": "hmmpanther"
+            },
+            {
+              "id": "SSF52113",
+              "source": "Superfamily_domains"
+            },
+            {
+              "id": "TMhelix",
+              "source": "Transmembrane_helices"
+            }
+          ],
+          "eaMaf": 0.0005000000237487257,
+          "exacMaf": 0.00009999999747378752,
+          "exacAdjMaf": 0.00008689999958733097,
+          "exacAfrMaf": 0.000024709999706828967,
+          "exacAmrMaf": 0,
+          "exacEasMaf": 0.000024869999833754264,
+          "exacFinMaf": 0,
+          "exacNfeMaf": 0,
+          "exacOthMaf": 0.000030159999369061552,
+          "exacSasMaf": 0,
+          "clinSig": "uncertain_significance&pathogenic",
+          "pheno": "1&1&1",
+          "lofInfo": "INTRON_END:41215890&INTRON_START:41215391&EXON_END:41215968&DE_NOVO_DONOR_MES_POS:-28&DE_NOVO_DONOR_POS:-29&EXON_START:41215891&DE_NOVO_DONOR_PROB:0.031452812142167&DE_NOVO_DONOR_MES:0.588033946511443&MUTANT_DONOR_MES:7.9640258479777"
+        },
+        {
+          "allele": "T",
+          "consequence": "missense_variant",
+          "impact": "MODERATE",
+          "symbol": "BRCA1",
+          "gene": "ENSG00000012048",
+          "featureType": "Transcript",
+          "feature": "ENST00000591534",
+          "featureBiotype": "protein_coding",
+          "exon": "5/11",
+          "hgvsc": "ENST00000591534.1:c.596C>A",
+          "hgvsp": "ENSP00000467329.1:p.Ala199Glu",
+          "cdnaPosition": "698",
+          "cdsPosition": "596",
+          "proteinPosition": "199",
+          "aminoAcids": "A/E",
+          "codons": "gCg/gAg",
+          "existingVariation": "CM950153&rs28897696&CM065004",
+          "dbsnpId": "1",
+          "strand": "-1",
+          "variantClass": "SNV",
+          "minimised": "1",
+          "symbolSource": "HGNC",
+          "hgncId": "1100",
+          "ensp": "ENSP00000467329",
+          "trembl": "Q9UE29&Q9NQR3&Q7KYU6&K7EPC7&K4JXS7&C4PFY7",
+          "uniparc": "UPI0002840F63",
+          "genePheno": "1",
+          "sift": {
+            "prediction": "deleterious"
+          },
+          "polyphen": {
+            "prediction": "probably_damaging",
+            "score": 0.9089999794960022
+          },
+          "domains": [
+            {
+              "id": "3.40.50.10190",
+              "source": "Gene3D"
+            },
+            {
+              "id": "PF00533",
+              "source": "Pfam_domain"
+            },
+            {
+              "id": "PS50172",
+              "source": "PROSITE_profiles"
+            },
+            {
+              "id": "PTHR13763",
+              "source": "hmmpanther"
+            },
+            {
+              "id": "PTHR13763",
+              "source": "hmmpanther"
+            },
+            {
+              "id": "SM00292",
+              "source": "SMART_domains"
+            },
+            {
+              "id": "SSF52113",
+              "source": "Superfamily_domains"
+            }
+          ],
+          "eaMaf": 0.0005000000237487257,
+          "exacMaf": 0.00009999999747378752,
+          "exacAdjMaf": 0.00008689999958733097,
+          "exacAfrMaf": 0.000024709999706828967,
+          "exacAmrMaf": 0,
+          "exacEasMaf": 0.000024869999833754264,
+          "exacFinMaf": 0,
+          "exacNfeMaf": 0,
+          "exacOthMaf": 0.000030159999369061552,
+          "exacSasMaf": 0,
+          "clinSig": "uncertain_significance&pathogenic",
+          "pheno": "1&1&1",
+          "lofInfo": "INTRON_START:41215391&EXON_END:41215968&DE_NOVO_DONOR_POS:-29&DE_NOVO_DONOR_MES_POS:-28&INTRON_END:41215890&DE_NOVO_DONOR_PROB:0.031452812142167&EXON_START:41215891&DE_NOVO_DONOR_MES:0.588033946511443&MUTANT_DONOR_MES:7.9640258479777"
+        },
+        {
+          "allele": "T",
+          "consequence": "intron_variant",
+          "impact": "MODIFIER",
+          "symbol": "BRCA1",
+          "gene": "ENSG00000012048",
+          "featureType": "Transcript",
+          "feature": "ENST00000591849",
+          "featureBiotype": "protein_coding",
+          "intron": "1/4",
+          "hgvsc": "ENST00000591849.1:c.-98-13713C>A",
+          "existingVariation": "CM950153&rs28897696&CM065004",
+          "dbsnpId": "1",
+          "strand": "-1",
+          "variantClass": "SNV",
+          "minimised": "1",
+          "symbolSource": "HGNC",
+          "hgncId": "1100",
+          "ensp": "ENSP00000465347",
+          "trembl": "K7EJW3",
+          "uniparc": "UPI0002840F64",
+          "genePheno": "1",
+          "eaMaf": 0.0005000000237487257,
+          "exacMaf": 0.00009999999747378752,
+          "exacAdjMaf": 0.00008689999958733097,
+          "exacAfrMaf": 0.000024709999706828967,
+          "exacAmrMaf": 0,
+          "exacEasMaf": 0.000024869999833754264,
+          "exacFinMaf": 0,
+          "exacNfeMaf": 0,
+          "exacOthMaf": 0.000030159999369061552,
+          "exacSasMaf": 0,
+          "clinSig": "uncertain_significance&pathogenic",
+          "pheno": "1&1&1"
+        }
+      ],
+      "alleleCounts": [
+        {
+          "byPopulation": [
+            {
+              "population": "afr",
+              "counts": {
+                "overall": {
+                  "an": 16244
+                },
+                "xx": {
+                  "an": 10058
+                },
+                "xy": {
+                  "an": 6186
+                }
+              },
+              "faf95": 0,
+              "faf99": 0
+            },
+            {
+              "population": "amr",
+              "counts": {
+                "overall": {
+                  "ac": 2,
+                  "an": 34580,
+                  "af": 0.00005783689994132146
+                },
+                "xx": {
+                  "ac": 1,
+                  "an": 20264,
+                  "af": 0.00004934860044158995
+                },
+                "xy": {
+                  "ac": 1,
+                  "an": 14316,
+                  "af": 0.00006985189975239336
+                }
+              },
+              "faf95": 0.000009579999641573522,
+              "faf99": 0.000009579999641573522
+            },
+            {
+              "population": "asj",
+              "counts": {
+                "overall": {
+                  "an": 10074
+                },
+                "xx": {
+                  "an": 4900
+                },
+                "xy": {
+                  "an": 5174
+                }
+              }
+            },
+            {
+              "population": "eas",
+              "counts": {
+                "overall": {
+                  "an": 18392
+                },
+                "xx": {
+                  "an": 9326
+                },
+                "xy": {
+                  "an": 9066
+                }
+              },
+              "faf95": 0,
+              "faf99": 0
+            },
+            {
+              "population": "eas_jpn",
+              "counts": {
+                "overall": {
+                  "an": 152
+                }
+              }
+            },
+            {
+              "population": "eas_oea",
+              "counts": {
+                "overall": {
+                  "an": 14424
+                }
+              }
+            },
+            {
+              "population": "eas_kor",
+              "counts": {
+                "overall": {
+                  "an": 3816
+                }
+              }
+            },
+            {
+              "population": "fin",
+              "counts": {
+                "overall": {
+                  "an": 21646
+                },
+                "xx": {
+                  "an": 10372
+                },
+                "xy": {
+                  "an": 11274
+                }
+              }
+            },
+            {
+              "population": "nfe",
+              "counts": {
+                "overall": {
+                  "ac": 3,
+                  "an": 113656,
+                  "af": 0.000026395400709589012
+                },
+                "xx": {
+                  "ac": 1,
+                  "an": 50088,
+                  "af": 0.000019964900275226682
+                },
+                "xy": {
+                  "ac": 2,
+                  "an": 63568,
+                  "af": 0.000031462401238968596
+                }
+              },
+              "faf95": 0.00000700999999025953,
+              "faf99": 0.000006950000170036219
+            },
+            {
+              "population": "nfe_bgr",
+              "counts": {
+                "overall": {
+                  "an": 2670
+                }
+              }
+            },
+            {
+              "population": "nfe_est",
+              "counts": {
+                "overall": {
+                  "an": 242
+                }
+              }
+            },
+            {
+              "population": "nfe_nwe",
+              "counts": {
+                "overall": {
+                  "ac": 1,
+                  "an": 42180,
+                  "af": 0.00002370790025452152
+                }
+              }
+            },
+            {
+              "population": "nfe_onf",
+              "counts": {
+                "overall": {
+                  "an": 30942
+                }
+              }
+            },
+            {
+              "population": "nfe_seu",
+              "counts": {
+                "overall": {
+                  "ac": 2,
+                  "an": 11500,
+                  "af": 0.0001739129947964102
+                }
+              }
+            },
+            {
+              "population": "nfe_swe",
+              "counts": {
+                "overall": {
+                  "an": 26122
+                }
+              }
+            },
+            {
+              "population": "oth",
+              "counts": {
+                "overall": {
+                  "an": 6122
+                },
+                "xx": {
+                  "an": 2920
+                },
+                "xy": {
+                  "an": 3202
+                }
+              }
+            },
+            {
+              "population": "sas",
+              "counts": {
+                "overall": {
+                  "an": 30598
+                },
+                "xx": {
+                  "an": 7538
+                },
+                "xy": {
+                  "an": 23060
+                }
+              },
+              "faf95": 0,
+              "faf99": 0
+            }
+          ],
+          "bySex": {
+            "overall": {
+              "ac": 5,
+              "an": 251312,
+              "af": 0.000019895600416930392
+            },
+            "xx": {
+              "ac": 2,
+              "an": 115466,
+              "af": 0.000017321099221589975
+            },
+            "xy": {
+              "ac": 3,
+              "an": 135846,
+              "af": 0.00002208379919466097
+            }
+          },
+          "raw": {
+            "ac": 5,
+            "an": 251496,
+            "af": 0.00001988099938898813
+          },
+          "popmax": "amr",
+          "afPopmax": 0.00005783689994132146,
+          "acPopmax": 2,
+          "anPopmax": 34580,
+          "nhomaltPopmax": 0
+        },
+        {
+          "cohort": "controls",
+          "byPopulation": [
+            {
+              "population": "afr",
+              "counts": {
+                "overall": {
+                  "an": 7158
+                },
+                "xx": {
+                  "an": 4234
+                },
+                "xy": {
+                  "an": 2924
+                }
+              },
+              "faf95": 0,
+              "faf99": 0
+            },
+            {
+              "population": "amr",
+              "counts": {
+                "overall": {
+                  "ac": 1,
+                  "an": 17102,
+                  "af": 0.00005847269858350046
+                },
+                "xx": {
+                  "ac": 1,
+                  "an": 10220,
+                  "af": 0.00009784739813767374
+                },
+                "xy": {
+                  "an": 6882
+                }
+              },
+              "faf95": 0.000009579999641573522,
+              "faf99": 0.000009579999641573522
+            },
+            {
+              "population": "asj",
+              "counts": {
+                "overall": {
+                  "an": 2320
+                },
+                "xx": {
+                  "an": 1214
+                },
+                "xy": {
+                  "an": 1106
+                }
+              }
+            },
+            {
+              "population": "eas",
+              "counts": {
+                "overall": {
+                  "an": 9044
+                },
+                "xx": {
+                  "an": 4786
+                },
+                "xy": {
+                  "an": 4258
+                }
+              },
+              "faf95": 0,
+              "faf99": 0
+            },
+            {
+              "population": "eas_jpn",
+              "counts": {
+                "overall": {
+                  "an": 114
+                }
+              }
+            },
+            {
+              "population": "eas_oea",
+              "counts": {
+                "overall": {
+                  "an": 7044
+                }
+              }
+            },
+            {
+              "population": "eas_kor",
+              "counts": {
+                "overall": {
+                  "an": 1886
+                }
+              }
+            },
+            {
+              "population": "fin",
+              "counts": {
+                "overall": {
+                  "an": 13394
+                },
+                "xx": {
+                  "an": 6474
+                },
+                "xy": {
+                  "an": 6920
+                }
+              }
+            },
+            {
+              "population": "nfe",
+              "counts": {
+                "overall": {
+                  "ac": 1,
+                  "an": 42754,
+                  "af": 0.00002338960075576324
+                },
+                "xx": {
+                  "ac": 1,
+                  "an": 19138,
+                  "af": 0.000052252100431360304
+                },
+                "xy": {
+                  "an": 23616
+                }
+              },
+              "faf95": 0.00000700999999025953,
+              "faf99": 0.000006950000170036219
+            },
+            {
+              "population": "nfe_bgr",
+              "counts": {
+                "overall": {
+                  "an": 678
+                }
+              }
+            },
+            {
+              "population": "nfe_est",
+              "counts": {
+                "overall": {
+                  "an": 70
+                }
+              }
+            },
+            {
+              "population": "nfe_nwe",
+              "counts": {
+                "overall": {
+                  "ac": 1,
+                  "an": 14448,
+                  "af": 0.00006921369640622288
+                }
+              }
+            },
+            {
+              "population": "nfe_onf",
+              "counts": {
+                "overall": {
+                  "an": 9990
+                }
+              }
+            },
+            {
+              "population": "nfe_seu",
+              "counts": {
+                "overall": {
+                  "an": 4760
+                }
+              }
+            },
+            {
+              "population": "nfe_swe",
+              "counts": {
+                "overall": {
+                  "an": 12808
+                }
+              }
+            },
+            {
+              "population": "oth",
+              "counts": {
+                "overall": {
+                  "an": 1914
+                },
+                "xx": {
+                  "an": 986
+                },
+                "xy": {
+                  "an": 928
+                }
+              }
+            },
+            {
+              "population": "sas",
+              "counts": {
+                "overall": {
+                  "an": 15680
+                },
+                "xx": {
+                  "an": 4208
+                },
+                "xy": {
+                  "an": 11472
+                }
+              },
+              "faf95": 0,
+              "faf99": 0
+            }
+          ],
+          "bySex": {
+            "overall": {
+              "ac": 2,
+              "an": 109366,
+              "af": 0.00001828720087360125
+            },
+            "xx": {
+              "ac": 2,
+              "an": 51260,
+              "af": 0.0000390167988371104
+            },
+            "xy": {
+              "an": 58106
+            }
+          },
+          "raw": {
+            "ac": 2,
+            "an": 109408,
+            "af": 0.000018280199583387002
+          },
+          "popmax": "amr",
+          "afPopmax": 0.00005847269858350046,
+          "acPopmax": 1,
+          "anPopmax": 17102,
+          "nhomaltPopmax": 0
+        },
+        {
+          "cohort": "non_cancer",
+          "byPopulation": [
+            {
+              "population": "afr",
+              "counts": {
+                "overall": {
+                  "an": 14892
+                },
+                "xx": {
+                  "an": 9220
+                },
+                "xy": {
+                  "an": 5672
+                }
+              },
+              "faf95": 0,
+              "faf99": 0
+            },
+            {
+              "population": "amr",
+              "counts": {
+                "overall": {
+                  "ac": 2,
+                  "an": 34248,
+                  "af": 0.000058397599786985666
+                },
+                "xx": {
+                  "ac": 1,
+                  "an": 20080,
+                  "af": 0.00004980080120731145
+                },
+                "xy": {
+                  "ac": 1,
+                  "an": 14168,
+                  "af": 0.0000705815982655622
+                }
+              },
+              "faf95": 0.000009579999641573522,
+              "faf99": 0.000009579999641573522
+            },
+            {
+              "population": "asj",
+              "counts": {
+                "overall": {
+                  "an": 9566
+                },
+                "xx": {
+                  "an": 4596
+                },
+                "xy": {
+                  "an": 4970
+                }
+              }
+            },
+            {
+              "population": "eas",
+              "counts": {
+                "overall": {
+                  "an": 17690
+                },
+                "xx": {
+                  "an": 8946
+                },
+                "xy": {
+                  "an": 8744
+                }
+              },
+              "faf95": 0,
+              "faf99": 0
+            },
+            {
+              "population": "eas_jpn",
+              "counts": {
+                "overall": {
+                  "an": 124
+                }
+              }
+            },
+            {
+              "population": "eas_oea",
+              "counts": {
+                "overall": {
+                  "an": 13794
+                }
+              }
+            },
+            {
+              "population": "eas_kor",
+              "counts": {
+                "overall": {
+                  "an": 3772
+                }
+              }
+            },
+            {
+              "population": "fin",
+              "counts": {
+                "overall": {
+                  "an": 21630
+                },
+                "xx": {
+                  "an": 10360
+                },
+                "xy": {
+                  "an": 11270
+                }
+              }
+            },
+            {
+              "population": "nfe",
+              "counts": {
+                "overall": {
+                  "ac": 3,
+                  "an": 102672,
+                  "af": 0.000029219299904070795
+                },
+                "xx": {
+                  "ac": 1,
+                  "an": 44258,
+                  "af": 0.000022594800611841492
+                },
+                "xy": {
+                  "ac": 2,
+                  "an": 58414,
+                  "af": 0.000034238400985486805
+                }
+              },
+              "faf95": 0.00000700999999025953,
+              "faf99": 0.000006950000170036219
+            },
+            {
+              "population": "nfe_bgr",
+              "counts": {
+                "overall": {
+                  "an": 2526
+                }
+              }
+            },
+            {
+              "population": "nfe_est",
+              "counts": {
+                "overall": {
+                  "an": 158
+                }
+              }
+            },
+            {
+              "population": "nfe_nwe",
+              "counts": {
+                "overall": {
+                  "ac": 1,
+                  "an": 39468,
+                  "af": 0.000025336999897263013
+                }
+              }
+            },
+            {
+              "population": "nfe_onf",
+              "counts": {
+                "overall": {
+                  "an": 24630
+                }
+              }
+            },
+            {
+              "population": "nfe_seu",
+              "counts": {
+                "overall": {
+                  "ac": 2,
+                  "an": 10608,
+                  "af": 0.00018853700021281838
+                }
+              }
+            },
+            {
+              "population": "nfe_swe",
+              "counts": {
+                "overall": {
+                  "an": 25282
+                }
+              }
+            },
+            {
+              "population": "oth",
+              "counts": {
+                "overall": {
+                  "an": 5606
+                },
+                "xx": {
+                  "an": 2678
+                },
+                "xy": {
+                  "an": 2928
+                }
+              }
+            },
+            {
+              "population": "sas",
+              "counts": {
+                "overall": {
+                  "an": 30508
+                },
+                "xx": {
+                  "an": 7488
+                },
+                "xy": {
+                  "an": 23020
+                }
+              },
+              "faf95": 0,
+              "faf99": 0
+            }
+          ],
+          "bySex": {
+            "overall": {
+              "ac": 5,
+              "an": 236812,
+              "af": 0.000021113799448357895
+            },
+            "xx": {
+              "ac": 2,
+              "an": 107626,
+              "af": 0.000018582899429020472
+            },
+            "xy": {
+              "ac": 3,
+              "an": 129186,
+              "af": 0.00002322229920537211
+            }
+          },
+          "raw": {
+            "ac": 5,
+            "an": 236958,
+            "af": 0.000021100799131090753
+          },
+          "popmax": "amr",
+          "afPopmax": 0.000058397599786985666,
+          "acPopmax": 2,
+          "anPopmax": 34248,
+          "nhomaltPopmax": 0
+        },
+        {
+          "cohort": "non_neuro",
+          "byPopulation": [
+            {
+              "population": "afr",
+              "counts": {
+                "overall": {
+                  "an": 16206
+                },
+                "xx": {
+                  "an": 10042
+                },
+                "xy": {
+                  "an": 6164
+                }
+              },
+              "faf95": 0,
+              "faf99": 0
+            },
+            {
+              "population": "amr",
+              "counts": {
+                "overall": {
+                  "ac": 2,
+                  "an": 30512,
+                  "af": 0.00006554800347657874
+                },
+                "xx": {
+                  "ac": 1,
+                  "an": 18260,
+                  "af": 0.00005476449950947426
+                },
+                "xy": {
+                  "ac": 1,
+                  "an": 12252,
+                  "af": 0.0000816192987258546
+                }
+              },
+              "faf95": 0.000009579999641573522,
+              "faf99": 0.000009579999641573522
+            },
+            {
+              "population": "asj",
+              "counts": {
+                "overall": {
+                  "an": 6212
+                },
+                "xx": {
+                  "an": 3086
+                },
+                "xy": {
+                  "an": 3126
+                }
+              }
+            },
+            {
+              "population": "eas",
+              "counts": {
+                "overall": {
+                  "an": 13414
+                },
+                "xx": {
+                  "an": 6840
+                },
+                "xy": {
+                  "an": 6574
+                }
+              },
+              "faf95": 0,
+              "faf99": 0
+            },
+            {
+              "population": "eas_jpn",
+              "counts": {
+                "overall": {
+                  "an": 150
+                }
+              }
+            },
+            {
+              "population": "eas_oea",
+              "counts": {
+                "overall": {
+                  "an": 9450
+                }
+              }
+            },
+            {
+              "population": "eas_kor",
+              "counts": {
+                "overall": {
+                  "an": 3814
+                }
+              }
+            },
+            {
+              "population": "fin",
+              "counts": {
+                "overall": {
+                  "an": 16734
+                },
+                "xx": {
+                  "an": 7650
+                },
+                "xy": {
+                  "an": 9084
+                }
+              }
+            },
+            {
+              "population": "nfe",
+              "counts": {
+                "overall": {
+                  "ac": 3,
+                  "an": 89494,
+                  "af": 0.000033521799196023494
+                },
+                "xx": {
+                  "ac": 1,
+                  "an": 39782,
+                  "af": 0.000025137000193353742
+                },
+                "xy": {
+                  "ac": 2,
+                  "an": 49712,
+                  "af": 0.00004023169822175987
+                }
+              },
+              "faf95": 0.00000700999999025953,
+              "faf99": 0.000006950000170036219
+            },
+            {
+              "population": "nfe_bgr",
+              "counts": {
+                "overall": {
+                  "an": 452
+                }
+              }
+            },
+            {
+              "population": "nfe_est",
+              "counts": {
+                "overall": {
+                  "an": 216
+                }
+              }
+            },
+            {
+              "population": "nfe_nwe",
+              "counts": {
+                "overall": {
+                  "ac": 1,
+                  "an": 35338,
+                  "af": 0.00002829810000548605
+                }
+              }
+            },
+            {
+              "population": "nfe_onf",
+              "counts": {
+                "overall": {
+                  "an": 27774
+                }
+              }
+            },
+            {
+              "population": "nfe_seu",
+              "counts": {
+                "overall": {
+                  "ac": 2,
+                  "an": 10940,
+                  "af": 0.00018281499797012657
+                }
+              }
+            },
+            {
+              "population": "nfe_swe",
+              "counts": {
+                "overall": {
+                  "an": 14774
+                }
+              }
+            },
+            {
+              "population": "oth",
+              "counts": {
+                "overall": {
+                  "an": 4858
+                },
+                "xx": {
+                  "an": 2384
+                },
+                "xy": {
+                  "an": 2474
+                }
+              }
+            },
+            {
+              "population": "sas",
+              "counts": {
+                "overall": {
+                  "an": 30590
+                },
+                "xx": {
+                  "an": 7536
+                },
+                "xy": {
+                  "an": 23054
+                }
+              },
+              "faf95": 0,
+              "faf99": 0
+            }
+          ],
+          "bySex": {
+            "overall": {
+              "ac": 5,
+              "an": 208020,
+              "af": 0.000024036200557020493
+            },
+            "xx": {
+              "ac": 2,
+              "an": 95580,
+              "af": 0.00002092489921778906
+            },
+            "xy": {
+              "ac": 3,
+              "an": 112440,
+              "af": 0.000026680900191422552
+            }
+          },
+          "raw": {
+            "ac": 5,
+            "an": 208136,
+            "af": 0.00002402280006208457
+          },
+          "popmax": "amr",
+          "afPopmax": 0.00006554800347657874,
+          "acPopmax": 2,
+          "anPopmax": 30512,
+          "nhomaltPopmax": 0
+        },
+        {
+          "cohort": "non_topmed",
+          "byPopulation": [
+            {
+              "population": "afr",
+              "counts": {
+                "overall": {
+                  "an": 12016
+                },
+                "xx": {
+                  "an": 7330
+                },
+                "xy": {
+                  "an": 4686
+                }
+              },
+              "faf95": 0,
+              "faf99": 0
+            },
+            {
+              "population": "amr",
+              "counts": {
+                "overall": {
+                  "ac": 2,
+                  "an": 34446,
+                  "af": 0.00005806190165458247
+                },
+                "xx": {
+                  "ac": 1,
+                  "an": 20188,
+                  "af": 0.00004953439929522574
+                },
+                "xy": {
+                  "ac": 1,
+                  "an": 14258,
+                  "af": 0.00007013609865680337
+                }
+              },
+              "faf95": 0.000009579999641573522,
+              "faf99": 0.000009579999641573522
+            },
+            {
+              "population": "asj",
+              "counts": {
+                "overall": {
+                  "an": 9992
+                },
+                "xx": {
+                  "an": 4854
+                },
+                "xy": {
+                  "an": 5138
+                }
+              }
+            },
+            {
+              "population": "eas",
+              "counts": {
+                "overall": {
+                  "an": 18388
+                },
+                "xx": {
+                  "an": 9326
+                },
+                "xy": {
+                  "an": 9062
+                }
+              },
+              "faf95": 0,
+              "faf99": 0
+            },
+            {
+              "population": "eas_jpn",
+              "counts": {
+                "overall": {
+                  "an": 152
+                }
+              }
+            },
+            {
+              "population": "eas_oea",
+              "counts": {
+                "overall": {
+                  "an": 14420
+                }
+              }
+            },
+            {
+              "population": "eas_kor",
+              "counts": {
+                "overall": {
+                  "an": 3816
+                }
+              }
+            },
+            {
+              "population": "fin",
+              "counts": {
+                "overall": {
+                  "an": 21644
+                },
+                "xx": {
+                  "an": 10370
+                },
+                "xy": {
+                  "an": 11274
+                }
+              }
+            },
+            {
+              "population": "nfe",
+              "counts": {
+                "overall": {
+                  "ac": 3,
+                  "an": 111566,
+                  "af": 0.000026889900254900567
+                },
+                "xx": {
+                  "ac": 1,
+                  "an": 48742,
+                  "af": 0.00002051619958365336
+                },
+                "xy": {
+                  "ac": 2,
+                  "an": 62824,
+                  "af": 0.00003183499939041212
+                }
+              },
+              "faf95": 0.00000700999999025953,
+              "faf99": 0.000006950000170036219
+            },
+            {
+              "population": "nfe_bgr",
+              "counts": {
+                "overall": {
+                  "an": 2662
+                }
+              }
+            },
+            {
+              "population": "nfe_est",
+              "counts": {
+                "overall": {
+                  "an": 238
+                }
+              }
+            },
+            {
+              "population": "nfe_nwe",
+              "counts": {
+                "overall": {
+                  "ac": 1,
+                  "an": 41060,
+                  "af": 0.000024354600100195967
+                }
+              }
+            },
+            {
+              "population": "nfe_onf",
+              "counts": {
+                "overall": {
+                  "an": 30142
+                }
+              }
+            },
+            {
+              "population": "nfe_seu",
+              "counts": {
+                "overall": {
+                  "ac": 2,
+                  "an": 11404,
+                  "af": 0.00017537700477987528
+                }
+              }
+            },
+            {
+              "population": "nfe_swe",
+              "counts": {
+                "overall": {
+                  "an": 26060
+                }
+              }
+            },
+            {
+              "population": "oth",
+              "counts": {
+                "overall": {
+                  "an": 6046
+                },
+                "xx": {
+                  "an": 2870
+                },
+                "xy": {
+                  "an": 3176
+                }
+              }
+            },
+            {
+              "population": "sas",
+              "counts": {
+                "overall": {
+                  "an": 30598
+                },
+                "xx": {
+                  "an": 7538
+                },
+                "xy": {
+                  "an": 23060
+                }
+              },
+              "faf95": 0,
+              "faf99": 0
+            }
+          ],
+          "bySex": {
+            "overall": {
+              "ac": 5,
+              "an": 244696,
+              "af": 0.000020433499230421148
+            },
+            "xx": {
+              "ac": 2,
+              "an": 111218,
+              "af": 0.00001798270022845827
+            },
+            "xy": {
+              "ac": 3,
+              "an": 133478,
+              "af": 0.00002247560041723773
+            }
+          },
+          "raw": {
+            "ac": 5,
+            "an": 244878,
+            "af": 0.00002041829975496512
+          },
+          "popmax": "amr",
+          "afPopmax": 0.00005806190165458247,
+          "acPopmax": 2,
+          "anPopmax": 34446,
+          "nhomaltPopmax": 0
+        }
+      ],
+      "seqvarInfo": {
+        "variantType": "multi-snv",
+        "alleleType": "snv",
+        "nAltAlleles": 3
+      },
+      "qualityInfo": {
+        "fs": 0.5249999761581421,
+        "inbreedingCoeff": 0.0003000000142492354,
+        "mq": 59.63999938964844,
+        "mqRankSum": 0.3100000023841858,
+        "qd": 12.319999694824219,
+        "readPosRankSum": 0.6930000185966492,
+        "vqsrPositiveTrainSite": true,
+        "baseQRankSum": 2.4700000286102295,
+        "clippingRankSum": 0.5009999871253967,
+        "sor": 0.7540000081062317,
+        "dp": 9111237,
+        "vqslod": 6.039999961853027,
+        "vqsrCulprit": "QD",
+        "pabMax": 0.9021589756011963
+      },
+      "ageInfo": {
+        "ageHistHomNSmaller": 0,
+        "ageHistHomNLarger": 0,
+        "ageHistHetNSmaller": 0,
+        "ageHistHetNLarger": 0
+      }
+    },
+    "gnomad_genomes": null,
+    "helixmtdb": null,
+    "ucsc_conservation": [
+      {
+        "records": [
+          {
+            "chrom": "17",
+            "start": 41215919,
+            "stop": 41215919,
+            "hgncId": "HGNC:1100",
+            "enstId": "ENST00000309486",
+            "exonNum": 16,
+            "exonCount": 21,
+            "alignment": "AAAAAAAAAAA-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-----A-------AAAAAA--A----AAAA------A-"
+          },
+          {
+            "chrom": "17",
+            "start": 41215919,
+            "stop": 41215919,
+            "hgncId": "HGNC:1100",
+            "enstId": "ENST00000352993",
+            "exonNum": 4,
+            "exonCount": 10,
+            "alignment": "AAAAAAAAAAA-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-----A-------AAAAAA--A----AAAA------A-"
+          },
+          {
+            "chrom": "17",
+            "start": 41215919,
+            "stop": 41215919,
+            "hgncId": "HGNC:1100",
+            "enstId": "ENST00000357654",
+            "exonNum": 16,
+            "exonCount": 22,
+            "alignment": "AAAAAAAAAAA-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-----A-------AAAAAA--A----AAAA------A-"
+          },
+          {
+            "chrom": "17",
+            "start": 41215919,
+            "stop": 41215919,
+            "hgncId": "HGNC:1100",
+            "enstId": "ENST00000468300",
+            "exonNum": 16,
+            "exonCount": 17,
+            "alignment": "AAAAAAAAAAA-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-----A-------AAAAAA--A----AAAA------A-"
+          },
+          {
+            "chrom": "17",
+            "start": 41215919,
+            "stop": 41215919,
+            "hgncId": "HGNC:1100",
+            "enstId": "ENST00000493795",
+            "exonNum": 10,
+            "exonCount": 11,
+            "alignment": "AAAAAAAAAAA-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-----A-------AAAAAA--A----AAAA------A-"
+          }
+        ]
+      }
+    ],
+    "clinvar": {
+      "release": "GRCh37",
+      "chromosome": "17",
+      "start": 41215920,
+      "stop": 41215920,
+      "reference": "G",
+      "alternative": "T",
+      "vcv": "VCV000055407",
+      "referenceAssertions": [
+        {
+          "rcv": "RCV000077599",
+          "title": "NM_007294.4(BRCA1):c.5123C>A (p.Ala1708Glu) AND Breast-ovarian cancer, familial, susceptibility to, 1",
+          "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
+          "reviewStatus": "REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL"
+        },
+        {
+          "rcv": "RCV000048802",
+          "title": "NM_007294.4(BRCA1):c.5123C>A (p.Ala1708Glu) AND not provided",
+          "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
+          "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS"
+        },
+        {
+          "rcv": "RCV000131831",
+          "title": "NM_007294.4(BRCA1):c.5123C>A (p.Ala1708Glu) AND Hereditary cancer-predisposing syndrome",
+          "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
+          "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS"
+        },
+        {
+          "rcv": "RCV000167826",
+          "title": "NM_007294.4(BRCA1):c.5123C>A (p.Ala1708Glu) AND Hereditary breast ovarian cancer syndrome",
+          "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
+          "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS"
+        },
+        {
+          "rcv": "RCV000413608",
+          "title": "NM_007294.4(BRCA1):c.5123C>A (p.Ala1708Glu) AND Breast neoplasm",
+          "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
+          "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+        },
+        {
+          "rcv": "RCV000457403",
+          "title": "NM_007294.4(BRCA1):c.5123C>A (p.Ala1708Glu) AND Familial cancer of breast",
+          "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
+          "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+        },
+        {
+          "rcv": "RCV003149709",
+          "title": "NM_007294.4(BRCA1):c.5123C>A (p.Ala1708Glu) AND Breast and/or ovarian cancer",
+          "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
+          "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+        },
+        {
+          "rcv": "RCV001579293",
+          "title": "NM_007294.4(BRCA1):c.5123C>A (p.Ala1708Glu) AND Breast carcinoma",
+          "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
+          "reviewStatus": "REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED"
+        }
+      ]
+    }
+  }
+}
