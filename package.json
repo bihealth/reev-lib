@@ -40,8 +40,8 @@
     "build": "vue-tsc && vite build",
     "type-check": "vue-tsc --noEmit --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.mdx --fix --ignore-path .gitignore",
-    "format": "prettier --write .storybook src/ *.json *.cjs",
-    "format:check": "prettier --list-different .storybook src/ *.json *.cjs",
+    "format": "prettier --write .storybook src/ *.json *.cjs *.mts",
+    "format:check": "prettier --list-different .storybook src/ *.json *.cjs *.mts",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

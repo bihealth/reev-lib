@@ -16,17 +16,15 @@ export default mergeConfig(
       },
       coverage: {
         provider: 'istanbul',
-        include: [
-          'src/lib/**/*.ts',
-          'src/components/**/*.{vue,ts}',
-        ],
-        exclude: ["**/*.spec.ts", "**/*.stories.ts"]
+        reporter: ['text', 'json', 'html'],
+        include: ['src/lib/**/*.ts', 'src/components/**/*.{vue,ts}'],
+        exclude: ['**/*.spec.ts', '**/*.stories.ts']
       },
       environment: 'jsdom',
       exclude: [...configDefaults.exclude, 'e2e/*'],
       root: fileURLToPath(new URL('./', import.meta.url)),
       testTransformMode: {
-        web: ["**/*.{jsx,tsx}"]
+        web: ['**/*.{jsx,tsx}']
       },
       testTimeout: 10000
     }
