@@ -11,6 +11,7 @@
   "result": [
     {
       "consequences": ["MissenseVariant"],
+      "feature_tag": ["ManeSelect"],
       "putative_impact": "Moderate",
       "gene_symbol": "BRCA1",
       "gene_id": "HGNC:1100",
