@@ -2,7 +2,7 @@ import type { LinearStrucvar, Seqvar } from '../../lib/genomicVars'
 import { SeqvarResult, StrucvarResult } from './types'
 
 /** API base URL to use. */
-const API_BASE_URL = '/internal/proxy/pubtator3-api'
+const API_BASE_URL = '/internal/proxy/mehari/'
 
 /**
  * Client for Mehari API requests.
