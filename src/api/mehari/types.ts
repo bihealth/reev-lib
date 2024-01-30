@@ -73,6 +73,44 @@ export enum SeqvarConsequence {
 }
 
 /**
+ * Interface for the rank as returned by API.
+ */
+export interface Rank$Api {
+  /** The exon / intron number. */
+  rank: number
+  /** The total number of exons / introns. */
+  total: number
+}
+
+/**
+ * Interface for the rank.
+ */
+export interface Rank {
+  /** The exon / intron number. */
+  rank: number
+  /** The total number of exons / introns. */
+  total: number
+}
+
+/**
+ * Helper class for converting `Rank$Api` to `Rank`.
+ */
+class Rank$Type {
+  /** Convert `Rank$Api` to `Rank`. */
+  fromJson(json: Rank$Api): Rank {
+    return {
+      rank: json.rank,
+      total: json.total
+    }
+  }
+}
+
+/**
+ * Helper for converting `Rank$Api` to `Rank`.
+ */
+export const Rank: Rank$Type = new Rank$Type()
+
+/**
  * Interface for one entry in the result as returned by API.
  */
 export interface SeqvarResultEntry$Api {
@@ -93,7 +131,7 @@ export interface SeqvarResultEntry$Api {
   /** The feature tags. */
   feature_tag: string[]
   /** The exon / intron rank. */
-  rank?: number
+  rank?: Rank$Api
   /** HGVS c. notation. */
   hgvs_t?: string
   /** HGVS p. notation. */
@@ -131,7 +169,7 @@ export interface SeqvarResultEntry {
   /** The feature tags. */
   featureTag: string[]
   /** The exon / intron rank. */
-  rank?: number
+  rank?: Rank
   /** HGVS c. notation. */
   hgvsT?: string
   /** HGVS p. notation. */
@@ -163,7 +201,7 @@ class SeqvarResultEntry$Type {
       featureId: json.feature_id,
       featureBiotype: json.feature_biotype,
       featureTag: json.feature_tag,
-      rank: json.rank,
+      rank: json.rank === undefined ? undefined : Rank.fromJson(json.rank),
       hgvsT: json.hgvs_t,
       hgvsP: json.hgvs_p,
       txPos: json.tx_pos,
