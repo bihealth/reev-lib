@@ -3,6 +3,7 @@ import { SeqvarResultEntry } from '../../api/mehari/types'
 import DocsLink from '../DocsLink/DocsLink.vue'
 
 /** This component's  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = withDefaults(
   defineProps<{
     /** The variant consequences. */
