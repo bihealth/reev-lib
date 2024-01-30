@@ -1,6 +1,7 @@
 import { chunks } from '@reactgular/chunks'
 
 import type { LinearStrucvar, Seqvar } from '../../lib/genomicVars'
+import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
 import { GeneInfoResult } from './types'
 
@@ -61,7 +62,7 @@ export class AnnonarsClient {
    * @param hgncId
    * @returns
    */
-  async fetchGeneClinvarInfo(hgncId: string): Promise<any> {
+  async fetchGeneClinvarInfo(hgncId: string): Promise<ClinvarPerGeneRecord> {
     const response = await fetch(`${this.apiBaseUrl}genes/clinvar?hgnc_id=${hgncId}`, {
       method: 'GET'
     })

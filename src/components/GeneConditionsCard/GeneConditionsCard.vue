@@ -2,6 +2,7 @@
 import { titleCase } from 'title-case'
 import { computed, onMounted, ref, useSlots, watch } from 'vue'
 
+import type { HpoTerm } from '../../api/viguno/types'
 import {
   ConditionsRecord,
   ConditionsRecord_GeneDiseaseAssociation,
@@ -13,7 +14,6 @@ import {
   PanelAppRecord_ConfidenceLevel
 } from '../../pbs/annonars/genes/base'
 import DocsLink from '../DocsLink/DocsLink.vue'
-import type { HpoTerm } from './types'
 
 /** This component's props. */
 const props = withDefaults(
