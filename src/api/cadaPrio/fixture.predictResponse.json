@@ -1,0 +1,135 @@
+[
+  {
+    "rank": 1,
+    "score": 76.84823608398438,
+    "gene_symbol": "WNT7A",
+    "ncbi_gene_id": "7476",
+    "hgnc_id": "HGNC:12786"
+  },
+  {
+    "rank": 2,
+    "score": 76.46592712402344,
+    "gene_symbol": "SMARCA2",
+    "ncbi_gene_id": "6595",
+    "hgnc_id": "HGNC:11098"
+  },
+  {
+    "rank": 3,
+    "score": 69.20905303955078,
+    "gene_symbol": "EFL1",
+    "ncbi_gene_id": "79631",
+    "hgnc_id": "HGNC:25789"
+  },
+  {
+    "rank": 4,
+    "score": 65.58743286132812,
+    "gene_symbol": "SRP54",
+    "ncbi_gene_id": "6729",
+    "hgnc_id": "HGNC:11301"
+  },
+  {
+    "rank": 5,
+    "score": 63.857845306396484,
+    "gene_symbol": "HPGD",
+    "ncbi_gene_id": "3248",
+    "hgnc_id": "HGNC:5154"
+  },
+  {
+    "rank": 6,
+    "score": 63.840911865234375,
+    "gene_symbol": "GALNS",
+    "ncbi_gene_id": "2588",
+    "hgnc_id": "HGNC:4122"
+  },
+  {
+    "rank": 7,
+    "score": 63.35689926147461,
+    "gene_symbol": "DNAJC21",
+    "ncbi_gene_id": "134218",
+    "hgnc_id": "HGNC:27030"
+  },
+  {
+    "rank": 8,
+    "score": 63.207393646240234,
+    "gene_symbol": "NOG",
+    "ncbi_gene_id": "9241",
+    "hgnc_id": "HGNC:7866"
+  },
+  {
+    "rank": 9,
+    "score": 63.09525680541992,
+    "gene_symbol": "ESCO2",
+    "ncbi_gene_id": "157570",
+    "hgnc_id": "HGNC:27230"
+  },
+  {
+    "rank": 10,
+    "score": 61.24506378173828,
+    "gene_symbol": "COL11A1",
+    "ncbi_gene_id": "1301",
+    "hgnc_id": "HGNC:2186"
+  },
+  {
+    "rank": 11,
+    "score": 60.995365142822266,
+    "gene_symbol": "PTDSS1",
+    "ncbi_gene_id": "9791",
+    "hgnc_id": "HGNC:9587"
+  },
+  {
+    "rank": 12,
+    "score": 60.21630859375,
+    "gene_symbol": "VAC14",
+    "ncbi_gene_id": "55697",
+    "hgnc_id": "HGNC:25507"
+  },
+  {
+    "rank": 13,
+    "score": 59.911136627197266,
+    "gene_symbol": "TBX3",
+    "ncbi_gene_id": "6926",
+    "hgnc_id": "HGNC:11602"
+  },
+  {
+    "rank": 14,
+    "score": 59.312957763671875,
+    "gene_symbol": "GRIA3",
+    "ncbi_gene_id": "2892",
+    "hgnc_id": "HGNC:4573"
+  },
+  {
+    "rank": 15,
+    "score": 59.29935836791992,
+    "gene_symbol": "RNU4ATAC",
+    "ncbi_gene_id": "100151683",
+    "hgnc_id": "HGNC:34016"
+  },
+  {
+    "rank": 16,
+    "score": 58.710994720458984,
+    "gene_symbol": "GDF5",
+    "ncbi_gene_id": "8200",
+    "hgnc_id": "HGNC:4220"
+  },
+  {
+    "rank": 17,
+    "score": 56.57151412963867,
+    "gene_symbol": "TRAPPC2",
+    "ncbi_gene_id": "6399",
+    "hgnc_id": "HGNC:23068"
+  },
+  {
+    "rank": 18,
+    "score": 55.67450714111328,
+    "gene_symbol": "IHH",
+    "ncbi_gene_id": "3549",
+    "hgnc_id": "HGNC:5956"
+  },
+  {
+    "rank": 19,
+    "score": 55.3505859375,
+    "gene_symbol": "PCNT",
+    "ncbi_gene_id": "5116",
+    "hgnc_id": "HGNC:16068"
+  }
+]
