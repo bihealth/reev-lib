@@ -72,7 +72,9 @@ export interface SeqvarInfoResult$Api {
   gnomad_exomes: Gnomad2Record | Gnomad3Record | Gnomad4Record | null
   gnomad_genomes: Gnomad2Record | Gnomad3Record | Gnomad4Record | null
   helixmtdb: HelixmtdbRecord | null
-  ucsc_conservation: UcscConservationRecord[]
+  ucsc_conservation: {
+    records: UcscConservationRecord[]
+  }[]
   clinvar: null
 }
 
@@ -88,7 +90,7 @@ export interface SeqvarInfoResult {
   gnomadExomes?: Gnomad2Record | Gnomad3Record | Gnomad4Record
   gnomadGenomes?: Gnomad2Record | Gnomad3Record | Gnomad4Record
   helixmtdb?: HelixmtdbRecord
-  ucscConservation: UcscConservationRecord[]
+  ucscConservation: UcscConservationRecord[][]
   clinvar?: ClinvarRecord
 }
 
@@ -122,7 +124,7 @@ class SeqvarInfoResult$Type {
           ? undefined
           : // @ts-ignore
             HelixmtdbRecord.fromJson(apiResult.helixmtdb as JsonValue),
-      ucscConservation: apiResult.ucsc_conservation,
+      ucscConservation: apiResult.ucsc_conservation.map((cons) => cons.records),
       clinvar:
         apiResult.clinvar === null
           ? undefined
@@ -159,7 +161,7 @@ export interface SeqvarInfoResponse {
  * Helper class to convert `SeqvarInfoResponse$Api` to `SeqvarInfoResponse`.
  */
 class SeqvarInfoResponse$Type {
-  static fromJson(apiResponse: SeqvarInfoResponse$Api): SeqvarInfoResponse {
+  fromJson(apiResponse: SeqvarInfoResponse$Api): SeqvarInfoResponse {
     return {
       serverVersion: apiResponse.server_version,
       query: SeqvarInfoQuery.fromJson(apiResponse.query),

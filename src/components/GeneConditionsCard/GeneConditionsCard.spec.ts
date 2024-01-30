@@ -110,7 +110,6 @@ describe.concurrent('GeneConditionsCard.vue', async () => {
 
     // assert:
     expect(showTermsIdSwitch?.vm.$props.value).toBe(true)
-    console.log(wrapper.text())
     expect(wrapper.text()).toContain('HP:0000001')
     expect(wrapper.text()).toContain('HP:0000002')
   })

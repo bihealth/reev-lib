@@ -31,7 +31,6 @@ const preview: Preview = {
 
 setup((app: App) => {
   // Use pinia for state management, also in pinia.
-  console.log('Using pinia for state management')
   app.use(pinia)
   // Registers your app's plugins into Storybook
   registerPlugins(app)
