@@ -1,14 +1,8 @@
 import fs from 'fs'
 import path from 'path'
-import { beforeEach, describe, expect, it, vi } from 'vitest'
-import createFetchMock from 'vitest-fetch-mock'
+import { describe, expect, it } from 'vitest'
 
-import { SeqvarImpl } from '../../lib/genomicVars'
-import { VariantValidatorClient } from './client'
 import { Response } from './types'
-
-/** Fixture Seqvar */
-const seqvar = new SeqvarImpl('grch37', '6', 24302274, 'T', 'C')
 
 /** Fixtures with response from API. */
 const maneResponseBrca1Json = JSON.parse(
