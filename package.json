@@ -50,6 +50,7 @@
     "@protobuf-ts/runtime": "^2.9.3",
     "@reactgular/chunks": "^1.0.1",
     "@types/luxon": "^3.4.2",
+    "igv": "^2.15.11",
     "luxon": "^3.4.4",
     "title-case": "^4.3.1",
     "vega": "^5.27.0",
