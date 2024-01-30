@@ -5,7 +5,6 @@ import createFetchMock from 'vitest-fetch-mock'
 
 import { SeqvarImpl } from '../../lib/genomicVars'
 import { VariantValidatorClient } from './client'
-import { Response } from './types'
 
 /** Fixture Seqvar */
 const seqvar = new SeqvarImpl('grch37', '6', 24302274, 'T', 'C')
