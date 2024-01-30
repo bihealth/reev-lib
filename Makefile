@@ -69,11 +69,27 @@ PROTO_BASE := https://raw.githubusercontent.com/varfish-org/annonars/main
 
 .PHONY: proto-fetch
 proto-fetch:
-	mkdir -p protos/annonars/{genes,clinvar}
-	wget -O protos/annonars/genes/base.proto $(PROTO_BASE)/protos/annonars/genes/base.proto
+	mkdir -p protos/annonars/{clinvar,cons,dbsnp,functional,genes,gnomad,helixmtdb,regions}
 	wget -O protos/annonars/clinvar/minimal.proto $(PROTO_BASE)/protos/annonars/clinvar/minimal.proto
 	wget -O protos/annonars/clinvar/per_gene.proto $(PROTO_BASE)/protos/annonars/clinvar/per_gene.proto
 	wget -O protos/annonars/clinvar/sv.proto $(PROTO_BASE)/protos/annonars/clinvar/sv.proto
+	wget -O protos/annonars/cons/base.proto $(PROTO_BASE)/protos/annonars/cons/base.proto
+	wget -O protos/annonars/dbsnp/base.proto $(PROTO_BASE)/protos/annonars/dbsnp/base.proto
+	wget -O protos/annonars/functional/refseq.proto $(PROTO_BASE)/protos/annonars/functional/refseq.proto
+	wget -O protos/annonars/gnomad/exac_cnv.proto $(PROTO_BASE)/protos/annonars/gnomad/exac_cnv.proto
+	wget -O protos/annonars/gnomad/gnomad2.proto $(PROTO_BASE)/protos/annonars/gnomad/gnomad2.proto
+	wget -O protos/annonars/gnomad/gnomad3.proto $(PROTO_BASE)/protos/annonars/gnomad/gnomad3.proto
+	wget -O protos/annonars/gnomad/gnomad4.proto $(PROTO_BASE)/protos/annonars/gnomad/gnomad4.proto
+	wget -O protos/annonars/gnomad/gnomad_cnv4.proto $(PROTO_BASE)/protos/annonars/gnomad/gnomad_cnv4.proto
+	wget -O protos/annonars/gnomad/gnomad_sv2.proto $(PROTO_BASE)/protos/annonars/gnomad/gnomad_sv2.proto
+	wget -O protos/annonars/gnomad/gnomad_sv4.proto $(PROTO_BASE)/protos/annonars/gnomad/gnomad_sv4.proto
+	wget -O protos/annonars/gnomad/mtdna.proto $(PROTO_BASE)/protos/annonars/gnomad/mtdna.proto
+	wget -O protos/annonars/gnomad/vep_common.proto $(PROTO_BASE)/protos/annonars/gnomad/vep_common.proto
+	wget -O protos/annonars/gnomad/vep_gnomad2.proto $(PROTO_BASE)/protos/annonars/gnomad/vep_gnomad2.proto
+	wget -O protos/annonars/gnomad/vep_gnomad3.proto $(PROTO_BASE)/protos/annonars/gnomad/vep_gnomad3.proto
+	wget -O protos/annonars/gnomad/vep_gnomad4.proto $(PROTO_BASE)/protos/annonars/gnomad/vep_gnomad4.proto
+	wget -O protos/annonars/helixmtdb/base.proto $(PROTO_BASE)/protos/annonars/helixmtdb/base.proto
+	wget -O protos/annonars/regions/clingen.proto $(PROTO_BASE)/protos/annonars/regions/clingen.proto
 
 .PHONY: proto-ts
 proto-ts:

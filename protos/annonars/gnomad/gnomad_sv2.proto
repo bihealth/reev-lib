@@ -1,0 +1,205 @@
+// Protocol buffers for representing gnomAD-SV v2 data.
+//
+// Note that we don't attempt to parse everything out of gnomAD-SV yet, just
+// the parts that are important for identifying SVs as potentially benign.
+
+syntax = "proto3";
+
+package annonars.gnomad.gnomad_sv2;
+
+// Protocol buffer enum for site-level filters.
+enum Filter {
+    // unknown
+    FILTER_UNKNOWN = 0;
+    // All filters passed.
+    FILTER_PASS = 1;
+    // Site does not meet minimum requirements for fraction of PCR- samples
+    // with non-null genotypes. Flags sites more prone to false discoveries.
+    FILTER_LOW_CALL_RATE = 2;
+    // Multiallelic site.
+    FILTER_MULTIALLELIC = 3;
+    // Site enriched for non-reference genotypes among PCR+ samples. Likely
+    // reflects technical batch effects. All PCR- samples have been assigned
+    // null GTs for these sites.
+    FILTER_PCRPLUS_ENRICHED = 4;
+    // Variant is unresolved.
+    FILTER_UNRESOLVED = 5;
+    // Allele frequency for this variant in PCR- samples is sensitive to
+    // choice of GQ filtering thresholds. All PCR- samples have been assigned
+    // null GTs for these sites.
+    FILTER_UNSTABLE_AF_PCRMINUS = 6;
+}
+
+// The types of SV in gnomad-SV v2.
+enum SvType {
+    // unknown
+    SV_TYPE_UNKNOWN = 0;
+    // Breakend.
+    SV_TYPE_BND = 1;
+    // Complex variant.
+    SV_TYPE_CPX = 2;
+    // Translocation.
+    SV_TYPE_CTX = 3;
+    // Deletion.
+    SV_TYPE_DEL = 4;
+    // Duplication.
+    SV_TYPE_DUP = 5;
+    // Insertion.
+    SV_TYPE_INS = 6;
+    // Inversion.
+    SV_TYPE_INV = 7;
+    // Copy number variable region.
+    SV_TYPE_MCNV = 8;
+}
+
+// Further definition of CPX type.
+enum CpxType {
+    // unknown
+    CPX_TYPE_UNKNOWN = 0;
+    // CCR: Complex chromosomal rearrangement, involving two or more
+    // chromosomes and multiple SV signatures.
+    CPX_TYPE_CCR = 1;
+    // INS_iDEL: Insertion with deletion at insertion site.
+    CPX_TYPE_INS_IDEL = 2;
+    // INVdel: Complex inversion with 3' flanking deletion.
+    CPX_TYPE_INV_DEL = 3;
+    // INVdup: Complex inversion with 3' flanking duplication.
+    CPX_TYPE_INV_DUP = 4;
+    // dDUP: Dispersed duplication.
+    CPX_TYPE_DDUP = 5;
+    // dDUP_iDEL: Dispersed duplication with deletion at insertion site.
+    CPX_TYPE_DDUP_IDEL = 6;
+    // delINVdel: Complex inversion with 5' and 3' flanking deletions.
+    CPX_TYPE_DEL_INV_DEL = 7;
+    // delINVdup: Complex inversion with 5' flanking deletion and 3' flanking
+    // duplication.
+    CPX_TYPE_DEL_INV_DUP = 8;
+    // delINV: Complex inversion with 5' flanking deletion.
+    CPX_TYPE_DEL_INV = 9;
+    // dupINVdel: Complex inversion with 5' flanking duplication and 3'
+    // flanking deletion.
+    CPX_TYPE_DUP_INV_DEL = 10;
+    // dupINVdup: Complex inversion with 5' and 3' flanking duplications.
+    CPX_TYPE_DUP_INV_DUP = 11;
+    // dupINV: Complex inversion with 5' flanking duplication.
+    CPX_TYPE_DUP_INV = 12;
+    // piDUP_FR: Palindromic inverted tandem duplication, forward-reverse
+    // orientation.
+    CPX_TYPE_PI_DUP_FR = 13;
+    // piDUP_RF: Palindromic inverted tandem duplication, reverse-forward
+    // orientation.
+    CPX_TYPE_PI_DUP_RF = 14;
+    // CTX_INV: new in gnomAD SV 4.0 but not documented yet
+    CPX_TYPE_CTX_INV = 15;
+    // CTX_PP/QQ: new in gnomAD SV 4.0 but not documented yet
+    CPX_TYPE_CTX_PP_QQ = 16;
+    // CTX_PQ/QP: new in gnomAD SV 4.0 but not documented yet
+    CPX_TYPE_CTX_PQ_QP = 17;
+}
+
+// Store the relevant allele counts and frequencies in a given sub cohort.
+message AlleleCounts {
+    // Total number of alleles genotyped (for biallelic sites) or individuals
+    // with copy-state estimates (for multiallelic sites).
+    int32 ac = 1;
+    // Number of non-reference alleles observed (for biallelic sites) or
+    // individuals at each copy state (for multiallelic sites).
+    int32 an = 2;
+    // Allele frequency (for biallelic sites) or copy-state frequency (for
+    // multiallelic sites).
+    float af = 3;
+    // Total number of individuals with complete genotypes (biallelic sites
+    // only).
+    int32 n_bi_genos = 4;
+    // Number of individuals with homozygous reference genotypes (biallelic
+    // sites only).
+    int32 n_homref = 5;
+    // Number of individuals with heterozygous genotypes (biallelic sites
+    // only).
+    int32 n_het = 6;
+    // Number of individuals with homozygous alternate genotypes (biallelic
+    // sites only).
+    int32 n_homalt = 7;
+    // Homozygous reference genotype frequency (biallelic sites only).
+    float freq_homref = 8;
+    // Heterozygous genotype frequency (biallelic sites only).
+    float freq_het = 9;
+    // Homozygous alternate genotype frequency (biallelic sites only).
+    float freq_homalt = 10;
+}
+
+// Store the allele counts for the given sub cohort and sub cohort factored by sex.
+message AlleleCountsBySex {
+    // Overall allele counts in the sub cohort.
+    AlleleCounts overall = 1;
+    // Allele counts in female/XX karyotype individuals of sub cohort.
+    AlleleCounts xx = 2;
+    // Allele counts in male/XY karyotype individuals of sub cohort.
+    AlleleCounts xy = 3;
+}
+
+// gnomAD SV population.
+enum Population {
+    // unknown
+    POPULATION_UNKNOWN = 0;
+    // African
+    POPULATION_AFR = 1;
+    // Ad Mixed American
+    POPULATION_AMR = 2;
+    // East Asian
+    POPULATION_EAS = 3;
+    // European.
+    POPULATION_EUR = 4;
+    // Other,
+    POPULATION_OTHER = 5;
+}
+
+// Store the allele counts for the given sub cohort in the given population.
+message PopulationAlleleCounts {
+    // Name of the population.
+    Population population = 1;
+    // The overall allele counts and the one by sex.
+    AlleleCountsBySex counts = 2;
+}
+
+// Store the allele counts for the given cohort.
+message CohortAlleleCounts {
+    // Name of the cohort, empty for global.
+    optional string cohort = 1;
+    // The overall allele counts and the one by sex.
+    AlleleCountsBySex by_sex = 2;
+    // Allele counts for each population.
+    repeated PopulationAlleleCounts by_population = 3;
+}
+
+// Protocol buffer for the gnomAD-SV v2 VCF record.
+//
+// The more specialized fields from the INFO column are stored in separate, optional fields such
+// that we don't end up with a humongous message.
+message Record {
+    // Chromosome name.
+    string chrom = 1;
+    // 1-based start position.
+    int32 pos = 2;
+    // End position of the structural variant
+    optional int32 end = 3;
+    // Chromosome of second breakpoint position.
+    optional string chrom2 = 4;
+    // End coordinate of second breakpoint position.
+    optional int32 end2 = 5;
+    // Identifier of the record.
+    string id = 6;
+
+    // Site-level filters.
+    repeated Filter filters = 7;
+    // SV Type.
+    SvType sv_type = 8;
+    // Refined complex type.
+    optional CpxType cpx_type = 9;
+
+    // Variant allele counts in the different cohorts and population.
+    //
+    // The populations in gnomAD v2/3 are: empty for global, "controls", "non_neuro",
+    // and "non_topmed".
+    repeated CohortAlleleCounts allele_counts = 10;
+}
