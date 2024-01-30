@@ -1,0 +1,101 @@
+// Protocolbuffers definition for RefSeq functional elements.
+
+syntax = "proto3";
+
+package annonars.functional.refseq;
+
+// Enumeration for `gbkey` field.
+enum Category {
+    // unknown
+    CATEGORY_UNKNOWN = 0;
+    // Miscaellaneous feature.
+    CATEGORY_MISC_FEATURE = 1;
+    // Miscaellaneous recombination feature.
+    CATEGORY_MISC_RECOMB = 2;
+    // Miscaellaneous structure.
+    CATEGORY_MISC_STRUCTURE = 3;
+    // Mobile element.
+    CATEGORY_MOBILE_ELEMENT = 4;
+    // Protein binding annotation.
+    CATEGORY_PROTEIN_BIND = 5;
+    // Region.
+    CATEGORY_REGION = 6;
+    // Regulatory element.
+    CATEGORY_REGULATORY = 7;
+    // Repeat region
+    CATEGORY_REPEAT_REGION = 8;
+    // Replication origin.
+    CATEGORY_REP_ORIGIN = 9;
+}
+
+// Enumeration for `regulatory_class` field.
+enum RegulatoryClass {
+    // unknown
+    REGULATORY_UNKNOWN = 0;
+    // CCAAT signal.
+    REGULATORY_CLASS_CAAT_SIGNAL = 1;
+    // DNase I hypersensitive site.
+    REGULATORY_CLASS_DNASE_I_HYPERSENSITIVE_SITE = 2;
+    // Enhancer.
+    REGULATORY_CLASS_ENHANCER = 3;
+    // Enhancer blocking element.
+    REGULATORY_CLASS_ENHANCER_BLOCKING_ELEMENT = 4;
+    // Epigenetically modified region.
+    REGULATORY_CLASS_EPIGENETICALLY_MODIFIED_REGION = 5;
+    // GC signal.
+    REGULATORY_CLASS_GC_SIGNAL = 6;
+    // Imprinting control region.
+    REGULATORY_CLASS_IMPRINTING_CONTROL_REGION = 7;
+    // Insulator.
+    REGULATORY_CLASS_INSULATOR = 8;
+    // Locus control region.
+    REGULATORY_CLASS_LOCUS_CONTROL_REGION = 9;
+    // Matrix attachment region.
+    REGULATORY_CLASS_MATRIX_ATTACHMENT_REGION = 10;
+    // Micrococcal nuclease hypersensitive site.
+    REGULATORY_CLASS_MICROCOCCAL_NUCLEASE_HYPERSENSITIVE_SITE = 11;
+    // Promoter.
+    REGULATORY_CLASS_PROMOTER = 12;
+    // Replication regulatory region.
+    REGULATORY_CLASS_REPLICATION_REGULATORY_REGION = 13;
+    // Response element.
+    REGULATORY_CLASS_RESPONSE_ELEMENT = 14;
+    // Silencer.
+    REGULATORY_CLASS_SILENCER = 15;
+    // TATA box.
+    REGULATORY_CLASS_TATA_BOX = 16;
+    // Transcriptional cis regulatory region.
+    REGULATORY_CLASS_TRANSCRIPTIONAL_CIS_REGULATORY_REGION = 17;
+}
+
+// Message for storing a RefSeq regulatory element.
+message Record {
+    // Chromosome
+    string chromosome = 1;
+    // Start position (1-based)
+    int32 start = 2;
+    // Stop position (1-based)
+    int32 stop = 3;
+
+    // ID
+    string id = 4;
+    // Dbxref
+    string dbxref = 5;
+
+    // Category of record.
+    Category category = 6;
+    // Regulatory class of record.
+    optional RegulatoryClass regulatory_class = 7;
+    // note
+    optional string note = 8;
+    // experiment
+    optional string experiment = 9;
+    // function
+    optional string function = 10;
+}
+
+// Message for storing multiple Gbxref IDs.
+message DbxrefList {
+    // Dbxref IDs.
+    repeated string dbxref = 1;
+}
