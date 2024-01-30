@@ -443,7 +443,7 @@ export interface StrucvarResult$Api {
   /** The original query records. */
   query: SeqvarQuery$Api
   /** The resulting records for the scored genes. */
-  result: SeqvarResultEntry$Api[]
+  result: GeneTranscriptEffects$Api[]
 }
 
 /**
@@ -455,7 +455,7 @@ export interface StrucvarResult {
   /** The original query records. */
   query: SeqvarQuery
   /** The resulting records for the scored genes. */
-  result: SeqvarResultEntry[]
+  result: GeneTranscriptEffects[]
 }
 
 /**
@@ -467,7 +467,7 @@ class StrucvarResult$Type {
     return {
       version: Version.fromJson(json.version),
       query: SeqvarQuery.fromJson(json.query),
-      result: json.result.map((entry) => SeqvarResultEntry.fromJson(entry))
+      result: json.result.map((entry) => GeneTranscriptEffects.fromJson(entry))
     }
   }
 }
