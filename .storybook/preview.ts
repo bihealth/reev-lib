@@ -2,7 +2,7 @@ import { type Preview, setup } from '@storybook/vue3'
 import { createPinia } from 'pinia'
 import { type App } from 'vue'
 
-import { registerPlugins } from '../src/plugins'
+import { registerPlugins } from './plugins'
 import { withVuetifyTheme } from './withVuetifyTheme.decorator'
 
 export const pinia = createPinia()
