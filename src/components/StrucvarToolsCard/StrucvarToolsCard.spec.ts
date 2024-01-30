@@ -21,8 +21,7 @@ describe.concurrent('StrucvarToolsCard.vue', async () => {
       { component: StrucvarToolsCard },
       {
         props: {
-          strucvar: structuredClone(strucvarInfo),
-          genomeBuild: 'grch37'
+          strucvar: structuredClone(strucvarInfo)
         }
       }
     )
