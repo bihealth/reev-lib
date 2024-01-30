@@ -2,36 +2,42 @@
 import { computed, ref, watch } from 'vue'
 import { onMounted } from 'vue'
 
+import { TX_EFFECT_LABELS } from '../../api/mehari/constants'
+import type { GeneTranscriptEffects } from '../../api/mehari/types'
+import { type Strucvar } from '../../lib/genomicVars'
+import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
+import { StoreState } from '../../store'
 import DocsLink from '../DocsLink/DocsLink.vue'
 import GeneListEntry from './GeneListEntry.vue'
-import { type Strucvar } from '../../lib/genomicVars'
-import { StoreState } from '../../store'
-import type { GeneTranscriptEffects, TranscriptEffect } from '../../api/mehari/types'
-import { TX_EFFECT_LABELS } from '../../api/mehari/constants'
-import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
 
 /** This component's props. */
-const props = withDefaults(defineProps<{
-  /** Strucvar to be displayed for. */
-  currentStrucvarRecord?: Strucvar
-  /** The consequences to be displayed. */
-  csq?: GeneTranscriptEffects[],
-  /** Gene info records to list for. */
-  genesInfos?: GeneInfoRecord[]
-  /** The state of the store that we display for. */
-  storeState?: StoreState
-  /** The HGNC ID of the selected gene. */
-  selectedGeneHgncId?: string
-}>(), {
-  currentStrucvarRecord: undefined,
-  csq: undefined,
-  genesInfos: undefined,
-  storeState: StoreState.Initial,
-  selectedGeneHgncId: undefined
-})
+const props = withDefaults(
+  defineProps<{
+    /** Strucvar to be displayed for. */
+    currentStrucvarRecord?: Strucvar
+    /** The consequences to be displayed. */
+    csq?: GeneTranscriptEffects[]
+    /** Gene info records to list for. */
+    genesInfos?: GeneInfoRecord[]
+    /** The state of the store that we display for. */
+    storeState?: StoreState
+    /** The HGNC ID of the selected gene. */
+    selectedGeneHgncId?: string
+  }>(),
+  {
+    currentStrucvarRecord: undefined,
+    csq: undefined,
+    genesInfos: undefined,
+    storeState: StoreState.Initial,
+    selectedGeneHgncId: undefined
+  }
+)
 
 /** This component's emits. */
-const emit = defineEmits(['update:selectedGeneHgncId'])
+const emit = defineEmits([
+  /** A gene was selected by its HGNC ID. */
+  'update:selectedGeneHgncId'
+])
 
 /** Available items per page. */
 const itemsPerPageChoices = [5, 10, 20, 50]
@@ -47,7 +53,6 @@ const isLoading = computed<boolean>(() => {
     [StoreState.Initial, StoreState.Loading].includes(props.storeState)
   )
 })
-
 
 /** Helper mapping from gene HGNC ID to worst transcript effect. */
 const hgncToEffect = computed<{ [key: string]: string }>(() => {

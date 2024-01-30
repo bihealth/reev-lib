@@ -2,6 +2,7 @@ import { type TestingPinia, createTestingPinia } from '@pinia/testing'
 import { type VueWrapper, flushPromises, mount } from '@vue/test-utils'
 import { vi } from 'vitest'
 import { h } from 'vue'
+import { RouteRecordRaw, RouterView, createRouter, createWebHistory } from 'vue-router'
 import { createVuetify } from 'vuetify'
 import { md3 } from 'vuetify/blueprints'
 import * as components from 'vuetify/components'
@@ -46,10 +47,15 @@ export const setupMountedComponents = async (
     props?: any
     /** Query to pass to the router */
     query?: any
-    /** A custom pinia instance to use. Use this option only if you need to mock a store getter
+    /**
+     * A custom pinia instance to use. Use this option only if you need to mock a store getter
      * or action.
      */
     pinia?: TestingPinia
+    /**
+     * Any routes to use.
+     */
+    routes?: RouteRecordRaw[]
   }
 ): Promise<MountedComponents> => {
   // Create new vuetify instance.
@@ -60,6 +66,20 @@ export const setupMountedComponents = async (
     },
     directives
   })
+
+  // Create a `Router` instance that will be used in the tests and mock `push()`.
+  const router = createRouter({
+    history: createWebHistory(),
+    routes: options?.routes ?? [
+      {
+        path: '/',
+        name: 'home',
+        component: h(RouterView)
+      }
+    ]
+  })
+  router.push = vi.fn()
+  router.replace = vi.fn()
 
   // Create a testing pinia with the initial data.
   const pinia = createTestingPinia({
@@ -83,7 +103,7 @@ export const setupMountedComponents = async (
   const wrapper = mount(componentMount, {
     query: options?.query,
     global: {
-      plugins: [vuetify, options?.pinia ?? pinia],
+      plugins: [router, vuetify, options?.pinia ?? pinia],
       components: knownComponents,
       stubs: {
         // never stub out these central components for convenience

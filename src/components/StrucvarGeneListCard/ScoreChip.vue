@@ -4,24 +4,27 @@ import { computed } from 'vue'
 import { roundIt } from '../../lib/utils'
 
 /** This component's props. */
-const props = withDefaults(defineProps<{
-  value: number | undefined
-  useRounded?: boolean
-  naValue?: string | number
-  hrefUrl?: string | undefined
-  rangeGray?: [number, number] | undefined
-  rangeGreen?: [number, number] | undefined
-  rangeOrange?: [number, number] | undefined
-  rangeRed?: [number, number] | undefined
-}>(), {
-  naValue: 'N/A',
-  useRounded: true,
-  hrefUrl: undefined,
-  rangeGray: undefined,
-  rangeGreen: undefined,
-  rangeOrange: undefined,
-  rangeRed: undefined
-})
+const props = withDefaults(
+  defineProps<{
+    value: number | undefined
+    useRounded?: boolean
+    naValue?: string | number
+    hrefUrl?: string | undefined
+    rangeGray?: [number, number] | undefined
+    rangeGreen?: [number, number] | undefined
+    rangeOrange?: [number, number] | undefined
+    rangeRed?: [number, number] | undefined
+  }>(),
+  {
+    naValue: 'N/A',
+    useRounded: true,
+    hrefUrl: undefined,
+    rangeGray: undefined,
+    rangeGreen: undefined,
+    rangeOrange: undefined,
+    rangeRed: undefined
+  }
+)
 
 /**
  * The computed chip color - based on the value and the ranges.

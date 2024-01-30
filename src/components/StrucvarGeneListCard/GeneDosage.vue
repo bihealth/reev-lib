@@ -1,18 +1,16 @@
 <script setup lang="ts">
-import {
-  CLINGEN_DOSAGE_COLOR,
-  CLINGEN_DOSAGE_SCORES
-} from '@/components/GeneDetails/PathogenicityCard.c'
+import { ClingenDosageScore } from '../../pbs/annonars/genes/base'
+import { CLINGEN_DOSAGE_COLOR, CLINGEN_DOSAGE_SCORES } from '../GenePathogenicityCard/constants'
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps<{
-  dosage?: string
+  dosage?: ClingenDosageScore
   geneSymbol?: string
 }>()
 </script>
 
 <template>
-  <template v-if="dosage === 'CLINGEN_DOSAGE_SCORE_RECESSIVE'">
+  <template v-if="dosage === ClingenDosageScore.CLINGEN_DOSAGE_SCORE_RECESSIVE">
     <a
       :href="`https://search.clinicalgenome.org/kb/gene-dosage/${geneSymbol ?? ''}`"
       target="_blank"
@@ -23,7 +21,9 @@ const props = defineProps<{
       <small class="pl-1"><v-icon>mdi-launch</v-icon></small>
     </a>
   </template>
-  <template v-else-if="!dosage || dosage === 'CLINGEN_DOSAGE_SCORE_UNKNOWN'">
+  <template
+    v-else-if="dosage === undefined || dosage === ClingenDosageScore.CLINGEN_DOSAGE_SCORE_UNKNOWN"
+  >
     <v-chip density="compact" rounded="xl" :class="`bg-grey-lighten-5`"> N/A </v-chip>
     <small class="pl-1">
       <v-icon><!--spacer only--></v-icon>
