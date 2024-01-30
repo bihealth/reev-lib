@@ -54,7 +54,6 @@ export const BRCA1: Story = {
     geneInfo: geneInfoBrca1
   },
   play: async () => {
-    console.log('play...')
     // Setup the store contents after story selection.
     const pubtatorStore = usePubtatorStore()
     pubtatorStore.storeState = StoreState.Loading
