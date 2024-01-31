@@ -79,10 +79,12 @@ const bestSpliceAi = computed<BestOf>(() => {
   return bestOf(props.varAnnos?.cadd, SpliceAiKeys)
 })
 
-const allSpliceAi = computed(() => {
-  const res: any = {}
+type ScoreMapping = { [key: string]: number }
+
+const allSpliceAi = computed<ScoreMapping>(() => {
+  const res: ScoreMapping = {}
   for (const key of SpliceAiKeys) {
-    res[key] = props.varAnnos?.cadd![key]
+    res[key] = props.varAnnos?.cadd![key] as number
   }
   return res
 })
@@ -91,10 +93,10 @@ const bestMMSplice = computed(() => {
   return bestOf(props.varAnnos?.cadd, MMSpliceKeys)
 })
 
-const allMMSplice = computed(() => {
-  const res: any = {}
+const allMMSplice = computed<ScoreMapping>(() => {
+  const res: ScoreMapping = {}
   for (const key of MMSpliceKeys) {
-    res[key] = props.varAnnos?.cadd![key]
+    res[key] = props.varAnnos?.cadd![key] as number
   }
   return res
 })

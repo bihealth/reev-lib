@@ -3,7 +3,12 @@ import { chunks } from '@reactgular/chunks'
 import type { LinearStrucvar, Seqvar } from '../../lib/genomicVars'
 import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
-import { GeneInfoResult } from './types'
+import {
+  ClinvarSvQueryResponse,
+  GeneInfoResult,
+  GeneSearchResponse,
+  SeqvarInfoResponse
+} from './types'
 
 /** Base URL for annonars API access */
 const API_BASE_URL = '/internal/proxy/annonars/'
@@ -35,7 +40,7 @@ export class AnnonarsClient {
    *
    * @param seqvar The variant to retrieve the information for.
    */
-  async fetchVariantInfo(seqvar: Seqvar): Promise<any> {
+  async fetchVariantInfo(seqvar: Seqvar): Promise<SeqvarInfoResponse> {
     const { genomeBuild, chrom, pos, del, ins } = seqvar
     let chromosome = chrom.replace('chr', '')
     if (genomeBuild !== 'grch37') {
@@ -53,7 +58,8 @@ export class AnnonarsClient {
     if (!response.ok) {
       throw new Error(`failed to fetch variant info: ${response.statusText}`)
     }
-    return await response.json()
+    const responseJson = await response.json()
+    return SeqvarInfoResponse.fromJson(responseJson)
   }
 
   /**
@@ -76,16 +82,18 @@ export class AnnonarsClient {
    * Search for genes, e.g., by symbol, via annonars REST API.
    *
    * @param query Query string to search for.
-   * @returns
+   * @returns Promise with gene search response.
+   * @throws Error if the request fails.
    */
-  async fetchGenes(query: string): Promise<any> {
+  async fetchGenes(query: string): Promise<GeneSearchResponse> {
     const response = await fetch(`${this.apiBaseUrl}genes/search?q=${query}`, {
       method: 'GET'
     })
     if (!response.ok) {
       throw new Error(`failed to fetch genes: ${response.statusText}`)
     }
-    return await response.json()
+    const responseJson = await response.json()
+    return GeneSearchResponse.fromJson(responseJson)
   }
 
   /**
@@ -98,7 +106,7 @@ export class AnnonarsClient {
   async fetchGeneInfos(hgncIds: string[], chunkSize?: number): Promise<GeneInfoRecord[]> {
     const hgncIdChunks = chunks(hgncIds, chunkSize ?? 10)
 
-    const promises = hgncIdChunks.map(async (chunk: any) => {
+    const promises = hgncIdChunks.map(async (chunk) => {
       const url = `${this.apiBaseUrl}genes/info?hgnc_id=${chunk.join(',')}`
 
       const response = await fetch(url, {
@@ -111,12 +119,13 @@ export class AnnonarsClient {
     })
 
     const responses = await Promise.all(promises)
-    const results = await Promise.all(responses.map((response: any) => response.json()))
+    const resultJsons = await Promise.all(responses.map((response) => response.json()))
 
-    const result: any = []
-    results.forEach((chunk: any) => {
+    const result: GeneInfoRecord[] = []
+    resultJsons.forEach((chunk: any) => {
       for (const value of Object.values(chunk.genes)) {
-        result.push(value)
+        // @ts-ignore
+        result.push(GeneInfoRecord.fromJson(value as JsonValue))
       }
     })
     return result
@@ -129,7 +138,7 @@ export class AnnonarsClient {
     strucvar: LinearStrucvar,
     pageSize: number = 1000,
     minOverlap: number = 0.1
-  ): Promise<any> {
+  ): Promise<ClinvarSvQueryResponse> {
     const { genomeBuild, chrom, start, stop } = strucvar
     const url =
       `${this.apiBaseUrl}clinvar-sv/query?genomeRelease=${genomeBuild}&` +
@@ -142,6 +151,7 @@ export class AnnonarsClient {
     if (!response.ok) {
       throw new Error(`failed to fetch clinvar strucvars: ${response.statusText}`)
     }
-    return await response.json()
+    const responseJson = await response.json()
+    return ClinvarSvQueryResponse.fromJson(responseJson)
   }
 }

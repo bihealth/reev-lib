@@ -4,7 +4,9 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import createFetchMock from 'vitest-fetch-mock'
 
 import { LinearStrucvarImpl, SeqvarImpl } from '../../lib/genomicVars'
+import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
 import { AnnonarsClient } from './client'
+import { ClinvarSvQueryResponse, GeneSearchResponse, SeqvarInfoResponse } from './types'
 
 const geneInfoBrca1Json = JSON.parse(
   fs.readFileSync(
@@ -82,7 +84,9 @@ describe.concurrent('AnnonarsClient.fetchVariantInfo()', () => {
     const result = await client.fetchVariantInfo(seqvar)
 
     // assert:
-    expect(JSON.stringify(result)).toEqual(JSON.stringify(variantInfoBrca1Json))
+    expect(JSON.stringify(result)).toEqual(
+      JSON.stringify(SeqvarInfoResponse.fromJson(variantInfoBrca1Json))
+    )
   })
 
   it('do removes chr prefix from chromosome if genome release is grch38', async () => {
@@ -99,7 +103,9 @@ describe.concurrent('AnnonarsClient.fetchVariantInfo()', () => {
     const result = await client.fetchVariantInfo(seqvar)
 
     // assert:
-    expect(JSON.stringify(result)).toEqual(JSON.stringify(variantInfoBrca1Json))
+    expect(JSON.stringify(result)).toEqual(
+      JSON.stringify(SeqvarInfoResponse.fromJson(variantInfoBrca1Json))
+    )
   })
 
   it('fails to fetch variant info with wrong variant', async () => {
@@ -179,7 +185,9 @@ describe.concurrent('AnnonarsClient.fetchGenes()', () => {
     )
 
     // assert:
-    expect(JSON.stringify(result)).toEqual(JSON.stringify(searchInfoInfoEmpJson))
+    expect(JSON.stringify(result)).toEqual(
+      JSON.stringify(GeneSearchResponse.fromJson(searchInfoInfoEmpJson))
+    )
   })
 
   it('fails to fetch genes with wrong query', async () => {
@@ -218,7 +226,9 @@ describe.concurrent('AnnonarsClient.fetchGeneInfos()', () => {
     const result = await client.fetchGeneInfos(['BRCA1', 'BRCA2'])
 
     // assert:
-    expect(JSON.stringify(result)).toMatch(JSON.stringify([geneInfoBrca1Json]))
+    expect(JSON.stringify(result)).toMatch(
+      JSON.stringify([GeneInfoRecord.fromJson(geneInfoBrca1Json)])
+    )
   })
 
   it('fails to fetch gene infos with wrong HGNC id', async () => {
@@ -254,7 +264,9 @@ describe.concurrent('AnnonarsClient.fetchClinvarStrucvars()', () => {
     const result = await client.fetchClinvarStrucvars(strucVar)
 
     // assert:
-    expect(JSON.stringify(result)).toMatch(JSON.stringify(clinvarStrucvarResponseBrca1Json))
+    expect(JSON.stringify(result)).toMatch(
+      JSON.stringify(ClinvarSvQueryResponse.fromJson(clinvarStrucvarResponseBrca1Json))
+    )
   })
 
   it('fails to overlapping ClinVar Strucvars if query fails', async () => {

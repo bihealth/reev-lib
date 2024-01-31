@@ -50,7 +50,8 @@ describe.concurrent('MitochondrialFreqs.vue', async () => {
 
   it('renders the info with no helixmtdb', async () => {
     // arrange:
-    const variantInfoNoHelixmtdb: any = structuredClone(seqvarInfoResponseChrMt.result)
+    const variantInfoNoHelixmtdb = structuredClone(seqvarInfoResponseChrMt.result)
+    // @ts-ignore
     variantInfoNoHelixmtdb.helixmtdb = {}
     const { wrapper } = await setupMountedComponents(
       { component: MitochondrialFreqs },
@@ -73,7 +74,8 @@ describe.concurrent('MitochondrialFreqs.vue', async () => {
 
   it('renders the info with no gnomad-mtdna', async () => {
     // arrange:
-    const variantInfoNoGnomad: any = structuredClone(seqvarInfoResponseChrMt.result)
+    const variantInfoNoGnomad = structuredClone(seqvarInfoResponseChrMt.result)
+    // @ts-ignore
     variantInfoNoGnomad['gnomad-mtdna'] = {}
     const { wrapper } = await setupMountedComponents(
       { component: MitochondrialFreqs },

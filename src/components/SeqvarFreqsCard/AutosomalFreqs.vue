@@ -82,7 +82,7 @@ const idKey = (token: string): string => {
   return `id-${props.dataset}-${token}`
 }
 
-const sexExpanded: any = ref({})
+const sexExpanded = ref<{ [key: string]: boolean }>({})
 </script>
 
 <template>

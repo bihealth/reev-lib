@@ -637,17 +637,14 @@ const conditionsCols = computed<number>(() => {
                 <template v-for="(term, idx) in hpoTermsToShow" :key="idx">
                   <template v-if="idx > 0"> , </template>
                   <template v-if="showTermLinks">
-                    <a
-                      :href="`https://hpo.jax.org/app/browse/term/${term.term_id}`"
-                      target="_blank"
-                    >
+                    <a :href="`https://hpo.jax.org/app/browse/term/${term.termId}`" target="_blank">
                       <v-icon>mdi-launch</v-icon>
-                      <template v-if="showTermIds"> [{{ term.term_id }}] </template>
+                      <template v-if="showTermIds"> [{{ term.termId }}] </template>
                       {{ term.name }}
                     </a>
                   </template>
                   <template v-else>
-                    <template v-if="showTermIds"> [{{ term.term_id }}] </template>
+                    <template v-if="showTermIds"> [{{ term.termId }}] </template>
                     {{ term.name }}
                   </template>
                 </template>

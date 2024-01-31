@@ -1,0 +1,11 @@
+{
+  "version": { "hpo": "2023-06-06", "viguno": "0.2.0" },
+  "query": {
+    "omim_id": null,
+    "name": "xxx",
+    "match_": null,
+    "max_results": 100,
+    "hpo_terms": false
+  },
+  "result": []
+}

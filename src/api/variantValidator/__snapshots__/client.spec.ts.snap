@@ -2,435 +2,427 @@
 
 exports[`VariantValidator > throws in case of fetching problems 1`] = `
 {
-  "NM_001195610.1:c.349-2A>G": {
-    "alt_genomic_loci": [],
-    "annotations": {
-      "chromosome": "6",
-      "db_xref": {
-        "CCDS": "CCDS4550.1",
-        "ensemblgene": null,
-        "hgnc": "HGNC:18141",
-        "ncbigene": "51473",
-        "select": false,
+  "entries": [
+    {
+      "annotations": {
+        "chromosome": "6",
+        "dbXref": {
+          "ccds": "CCDS4550.1",
+          "ensemblgene": null,
+          "hgnc": "HGNC:18141",
+          "ncbigene": "51473",
+          "select": false,
+        },
+        "ensemblSelect": false,
+        "manePlusClinicalTranscript": undefined,
+        "maneSelect": false,
+        "map": "6p22.3",
+        "note": "doublecortin domain containing 2",
+        "refseqSelect": false,
+        "variant": "2",
       },
-      "ensembl_select": false,
-      "mane_plus_clinical": false,
-      "mane_select": false,
-      "map": "6p22.3",
-      "note": "doublecortin domain containing 2",
-      "refseq_select": false,
-      "variant": "2",
-    },
-    "gene_ids": {
-      "ccds_ids": [
-        "CCDS4550",
+      "geneIds": {
+        "ccdIds": undefined,
+        "ensemblGeneId": "ENSG00000146038",
+        "entrezGeneId": "51473",
+        "hgncId": "HGNC:18141",
+        "omimId": [
+          "605755",
+        ],
+        "ucscId": "uc003ndx.4",
+      },
+      "geneSymbol": "DCDC2",
+      "genomeContextIntronicSequence": "NC_000006.11(NM_001195610.1):c.349-2A>G",
+      "hgvsLrgTranscriptVariant": "",
+      "hgvsLrgVariant": "",
+      "hgvsPredictedProteinConsequence": {
+        "lrgSlr": "",
+        "lrgTlr": "",
+        "slr": "NP_001182539.1:p.?",
+        "tlr": "NP_001182539.1:p.?",
+      },
+      "hgvsRefseqgeneVariant": "",
+      "hgvsTranscriptVariant": "NM_001195610.1:c.349-2A>G",
+      "primaryAssemblyLoci": {
+        "grch37": {
+          "hgvsGenomicDescription": "NC_000006.11:g.24302274T>C",
+          "vcf": {
+            "alt": "C",
+            "chr": "6",
+            "pos": "24302274",
+            "ref": "T",
+          },
+        },
+        "grch38": {
+          "hgvsGenomicDescription": "NC_000006.12:g.24302046T>C",
+          "vcf": {
+            "alt": "C",
+            "chr": "6",
+            "pos": "24302046",
+            "ref": "T",
+          },
+        },
+        "hg19": {
+          "hgvsGenomicDescription": "NC_000006.11:g.24302274T>C",
+          "vcf": {
+            "alt": "C",
+            "chr": "chr6",
+            "pos": "24302274",
+            "ref": "T",
+          },
+        },
+        "hg38": {
+          "hgvsGenomicDescription": "NC_000006.12:g.24302046T>C",
+          "vcf": {
+            "alt": "C",
+            "chr": "chr6",
+            "pos": "24302046",
+            "ref": "T",
+          },
+        },
+      },
+      "referenceSequenceRecords": {
+        "protein": "https://www.ncbi.nlm.nih.gov/nuccore/NP_001182539.1",
+        "refseqgene": undefined,
+        "transcript": "https://www.ncbi.nlm.nih.gov/nuccore/NM_001195610.1",
+      },
+      "refseqgeneContextIntronicSequence": "",
+      "rnaVariantDescriptions": null,
+      "selectedAssembly": "hg19",
+      "submittedVariant": "6-24302274-T-C",
+      "transcriptVariant": undefined,
+      "validationWarnings": [
+        "A more recent version of the selected reference sequence NM_001195610.1 is available (NM_001195610.2): NM_001195610.2:c.349-2A>G MUST be fully validated prior to use in reports: select_variants=NM_001195610.2:c.349-2A>G",
       ],
-      "ensembl_gene_id": "ENSG00000146038",
-      "entrez_gene_id": "51473",
-      "hgnc_id": "HGNC:18141",
-      "omim_id": [
-        "605755",
+      "variantExonicPositions": {
+        "NC_000006.11": {
+          "endExon": "3i",
+          "startExon": "3i",
+        },
+        "NC_000006.12": {
+          "endExon": "3i",
+          "startExon": "3i",
+        },
+      },
+    },
+    {
+      "annotations": {
+        "chromosome": "6",
+        "dbXref": {
+          "ccds": "CCDS4550.1",
+          "ensemblgene": null,
+          "hgnc": "HGNC:18141",
+          "ncbigene": "51473",
+          "select": false,
+        },
+        "ensemblSelect": false,
+        "manePlusClinicalTranscript": undefined,
+        "maneSelect": false,
+        "map": "6p22.3",
+        "note": "doublecortin domain containing 2",
+        "refseqSelect": false,
+        "variant": "2",
+      },
+      "geneIds": {
+        "ccdIds": undefined,
+        "ensemblGeneId": "ENSG00000146038",
+        "entrezGeneId": "51473",
+        "hgncId": "HGNC:18141",
+        "omimId": [
+          "605755",
+        ],
+        "ucscId": "uc003ndx.4",
+      },
+      "geneSymbol": "DCDC2",
+      "genomeContextIntronicSequence": "NC_000006.11(NM_001195610.2):c.349-2A>G",
+      "hgvsLrgTranscriptVariant": "",
+      "hgvsLrgVariant": "",
+      "hgvsPredictedProteinConsequence": {
+        "lrgSlr": "",
+        "lrgTlr": "",
+        "slr": "NP_001182539.1:p.?",
+        "tlr": "NP_001182539.1:p.?",
+      },
+      "hgvsRefseqgeneVariant": "",
+      "hgvsTranscriptVariant": "NM_001195610.2:c.349-2A>G",
+      "primaryAssemblyLoci": {
+        "grch37": {
+          "hgvsGenomicDescription": "NC_000006.11:g.24302274T>C",
+          "vcf": {
+            "alt": "C",
+            "chr": "6",
+            "pos": "24302274",
+            "ref": "T",
+          },
+        },
+        "grch38": {
+          "hgvsGenomicDescription": "NC_000006.12:g.24302046T>C",
+          "vcf": {
+            "alt": "C",
+            "chr": "6",
+            "pos": "24302046",
+            "ref": "T",
+          },
+        },
+        "hg19": {
+          "hgvsGenomicDescription": "NC_000006.11:g.24302274T>C",
+          "vcf": {
+            "alt": "C",
+            "chr": "chr6",
+            "pos": "24302274",
+            "ref": "T",
+          },
+        },
+        "hg38": {
+          "hgvsGenomicDescription": "NC_000006.12:g.24302046T>C",
+          "vcf": {
+            "alt": "C",
+            "chr": "chr6",
+            "pos": "24302046",
+            "ref": "T",
+          },
+        },
+      },
+      "referenceSequenceRecords": {
+        "protein": "https://www.ncbi.nlm.nih.gov/nuccore/NP_001182539.1",
+        "refseqgene": undefined,
+        "transcript": "https://www.ncbi.nlm.nih.gov/nuccore/NM_001195610.2",
+      },
+      "refseqgeneContextIntronicSequence": "",
+      "rnaVariantDescriptions": null,
+      "selectedAssembly": "hg19",
+      "submittedVariant": "6-24302274-T-C",
+      "transcriptVariant": undefined,
+      "validationWarnings": [],
+      "variantExonicPositions": {
+        "NC_000006.11": {
+          "endExon": "3i",
+          "startExon": "3i",
+        },
+        "NC_000006.12": {
+          "endExon": "3i",
+          "startExon": "3i",
+        },
+      },
+    },
+    {
+      "annotations": {
+        "chromosome": "6",
+        "dbXref": {
+          "ccds": "CCDS4550.1",
+          "ensemblgene": null,
+          "hgnc": "HGNC:18141",
+          "ncbigene": "51473",
+          "select": false,
+        },
+        "ensemblSelect": false,
+        "manePlusClinicalTranscript": undefined,
+        "maneSelect": false,
+        "map": "6p22.3",
+        "note": "doublecortin domain containing 2",
+        "refseqSelect": false,
+        "variant": "1",
+      },
+      "geneIds": {
+        "ccdIds": undefined,
+        "ensemblGeneId": "ENSG00000146038",
+        "entrezGeneId": "51473",
+        "hgncId": "HGNC:18141",
+        "omimId": [
+          "605755",
+        ],
+        "ucscId": "uc003ndx.4",
+      },
+      "geneSymbol": "DCDC2",
+      "genomeContextIntronicSequence": "NC_000006.11(NM_016356.4):c.349-2A>G",
+      "hgvsLrgTranscriptVariant": "",
+      "hgvsLrgVariant": "",
+      "hgvsPredictedProteinConsequence": {
+        "lrgSlr": "",
+        "lrgTlr": "",
+        "slr": "NP_057440.2:p.?",
+        "tlr": "NP_057440.2:p.?",
+      },
+      "hgvsRefseqgeneVariant": "NG_012829.1:g.61007A>G",
+      "hgvsTranscriptVariant": "NM_016356.4:c.349-2A>G",
+      "primaryAssemblyLoci": {
+        "grch37": {
+          "hgvsGenomicDescription": "NC_000006.11:g.24302274T>C",
+          "vcf": {
+            "alt": "C",
+            "chr": "6",
+            "pos": "24302274",
+            "ref": "T",
+          },
+        },
+        "grch38": {
+          "hgvsGenomicDescription": "NC_000006.12:g.24302046T>C",
+          "vcf": {
+            "alt": "C",
+            "chr": "6",
+            "pos": "24302046",
+            "ref": "T",
+          },
+        },
+        "hg19": {
+          "hgvsGenomicDescription": "NC_000006.11:g.24302274T>C",
+          "vcf": {
+            "alt": "C",
+            "chr": "chr6",
+            "pos": "24302274",
+            "ref": "T",
+          },
+        },
+        "hg38": {
+          "hgvsGenomicDescription": "NC_000006.12:g.24302046T>C",
+          "vcf": {
+            "alt": "C",
+            "chr": "chr6",
+            "pos": "24302046",
+            "ref": "T",
+          },
+        },
+      },
+      "referenceSequenceRecords": {
+        "protein": "https://www.ncbi.nlm.nih.gov/nuccore/NP_057440.2",
+        "refseqgene": "https://www.ncbi.nlm.nih.gov/nuccore/NG_012829.1",
+        "transcript": "https://www.ncbi.nlm.nih.gov/nuccore/NM_016356.4",
+      },
+      "refseqgeneContextIntronicSequence": "NG_012829.1(NM_016356.4):c.349-2A>G",
+      "rnaVariantDescriptions": null,
+      "selectedAssembly": "hg19",
+      "submittedVariant": "6-24302274-T-C",
+      "transcriptVariant": undefined,
+      "validationWarnings": [
+        "A more recent version of the selected reference sequence NM_016356.4 is available (NM_016356.5): NM_016356.5:c.349-2A>G MUST be fully validated prior to use in reports: select_variants=NM_016356.5:c.349-2A>G",
       ],
-      "ucsc_id": "uc003ndx.4",
-    },
-    "gene_symbol": "DCDC2",
-    "genome_context_intronic_sequence": "NC_000006.11(NM_001195610.1):c.349-2A>G",
-    "hgvs_lrg_transcript_variant": "",
-    "hgvs_lrg_variant": "",
-    "hgvs_predicted_protein_consequence": {
-      "lrg_slr": "",
-      "lrg_tlr": "",
-      "slr": "NP_001182539.1:p.?",
-      "tlr": "NP_001182539.1:p.?",
-    },
-    "hgvs_refseqgene_variant": "",
-    "hgvs_transcript_variant": "NM_001195610.1:c.349-2A>G",
-    "primary_assembly_loci": {
-      "grch37": {
-        "hgvs_genomic_description": "NC_000006.11:g.24302274T>C",
-        "vcf": {
-          "alt": "C",
-          "chr": "6",
-          "pos": "24302274",
-          "ref": "T",
+      "variantExonicPositions": {
+        "NC_000006.11": {
+          "endExon": "2i",
+          "startExon": "2i",
         },
-      },
-      "grch38": {
-        "hgvs_genomic_description": "NC_000006.12:g.24302046T>C",
-        "vcf": {
-          "alt": "C",
-          "chr": "6",
-          "pos": "24302046",
-          "ref": "T",
+        "NC_000006.12": {
+          "endExon": "2i",
+          "startExon": "2i",
         },
-      },
-      "hg19": {
-        "hgvs_genomic_description": "NC_000006.11:g.24302274T>C",
-        "vcf": {
-          "alt": "C",
-          "chr": "chr6",
-          "pos": "24302274",
-          "ref": "T",
-        },
-      },
-      "hg38": {
-        "hgvs_genomic_description": "NC_000006.12:g.24302046T>C",
-        "vcf": {
-          "alt": "C",
-          "chr": "chr6",
-          "pos": "24302046",
-          "ref": "T",
+        "NG_012829.1": {
+          "endExon": "2i",
+          "startExon": "2i",
         },
       },
     },
-    "reference_sequence_records": {
-      "protein": "https://www.ncbi.nlm.nih.gov/nuccore/NP_001182539.1",
-      "transcript": "https://www.ncbi.nlm.nih.gov/nuccore/NM_001195610.1",
-    },
-    "refseqgene_context_intronic_sequence": "",
-    "rna_variant_descriptions": null,
-    "selected_assembly": "hg19",
-    "submitted_variant": "6-24302274-T-C",
-    "transcript_description": "Homo sapiens doublecortin domain containing 2 (DCDC2), transcript variant 2, mRNA",
-    "validation_warnings": [
-      "A more recent version of the selected reference sequence NM_001195610.1 is available (NM_001195610.2): NM_001195610.2:c.349-2A>G MUST be fully validated prior to use in reports: select_variants=NM_001195610.2:c.349-2A>G",
-    ],
-    "variant_exonic_positions": {
-      "NC_000006.11": {
-        "end_exon": "3i",
-        "start_exon": "3i",
+    {
+      "annotations": {
+        "chromosome": "6",
+        "dbXref": {
+          "ccds": "CCDS4550.1",
+          "ensemblgene": null,
+          "hgnc": "HGNC:18141",
+          "ncbigene": "51473",
+          "select": "MANE",
+        },
+        "ensemblSelect": false,
+        "manePlusClinicalTranscript": undefined,
+        "maneSelect": true,
+        "map": "6p22.3",
+        "note": "doublecortin domain containing 2",
+        "refseqSelect": true,
+        "variant": "1",
       },
-      "NC_000006.12": {
-        "end_exon": "3i",
-        "start_exon": "3i",
+      "geneIds": {
+        "ccdIds": undefined,
+        "ensemblGeneId": "ENSG00000146038",
+        "entrezGeneId": "51473",
+        "hgncId": "HGNC:18141",
+        "omimId": [
+          "605755",
+        ],
+        "ucscId": "uc003ndx.4",
       },
-    },
-  },
-  "NM_001195610.2:c.349-2A>G": {
-    "alt_genomic_loci": [],
-    "annotations": {
-      "chromosome": "6",
-      "db_xref": {
-        "CCDS": "CCDS4550.1",
-        "ensemblgene": null,
-        "hgnc": "HGNC:18141",
-        "ncbigene": "51473",
-        "select": false,
+      "geneSymbol": "DCDC2",
+      "genomeContextIntronicSequence": "NC_000006.11(NM_016356.5):c.349-2A>G",
+      "hgvsLrgTranscriptVariant": "",
+      "hgvsLrgVariant": "",
+      "hgvsPredictedProteinConsequence": {
+        "lrgSlr": "",
+        "lrgTlr": "",
+        "slr": "NP_057440.2:p.?",
+        "tlr": "NP_057440.2:p.?",
       },
-      "ensembl_select": false,
-      "mane_plus_clinical": false,
-      "mane_select": false,
-      "map": "6p22.3",
-      "note": "doublecortin domain containing 2",
-      "refseq_select": false,
-      "variant": "2",
-    },
-    "gene_ids": {
-      "ccds_ids": [
-        "CCDS4550",
-      ],
-      "ensembl_gene_id": "ENSG00000146038",
-      "entrez_gene_id": "51473",
-      "hgnc_id": "HGNC:18141",
-      "omim_id": [
-        "605755",
-      ],
-      "ucsc_id": "uc003ndx.4",
-    },
-    "gene_symbol": "DCDC2",
-    "genome_context_intronic_sequence": "NC_000006.11(NM_001195610.2):c.349-2A>G",
-    "hgvs_lrg_transcript_variant": "",
-    "hgvs_lrg_variant": "",
-    "hgvs_predicted_protein_consequence": {
-      "lrg_slr": "",
-      "lrg_tlr": "",
-      "slr": "NP_001182539.1:p.?",
-      "tlr": "NP_001182539.1:p.?",
-    },
-    "hgvs_refseqgene_variant": "",
-    "hgvs_transcript_variant": "NM_001195610.2:c.349-2A>G",
-    "primary_assembly_loci": {
-      "grch37": {
-        "hgvs_genomic_description": "NC_000006.11:g.24302274T>C",
-        "vcf": {
-          "alt": "C",
-          "chr": "6",
-          "pos": "24302274",
-          "ref": "T",
+      "hgvsRefseqgeneVariant": "NG_012829.2:g.86247A>G",
+      "hgvsTranscriptVariant": "NM_016356.5:c.349-2A>G",
+      "primaryAssemblyLoci": {
+        "grch37": {
+          "hgvsGenomicDescription": "NC_000006.11:g.24302274T>C",
+          "vcf": {
+            "alt": "C",
+            "chr": "6",
+            "pos": "24302274",
+            "ref": "T",
+          },
+        },
+        "grch38": {
+          "hgvsGenomicDescription": "NC_000006.12:g.24302046T>C",
+          "vcf": {
+            "alt": "C",
+            "chr": "6",
+            "pos": "24302046",
+            "ref": "T",
+          },
+        },
+        "hg19": {
+          "hgvsGenomicDescription": "NC_000006.11:g.24302274T>C",
+          "vcf": {
+            "alt": "C",
+            "chr": "chr6",
+            "pos": "24302274",
+            "ref": "T",
+          },
+        },
+        "hg38": {
+          "hgvsGenomicDescription": "NC_000006.12:g.24302046T>C",
+          "vcf": {
+            "alt": "C",
+            "chr": "chr6",
+            "pos": "24302046",
+            "ref": "T",
+          },
         },
       },
-      "grch38": {
-        "hgvs_genomic_description": "NC_000006.12:g.24302046T>C",
-        "vcf": {
-          "alt": "C",
-          "chr": "6",
-          "pos": "24302046",
-          "ref": "T",
+      "referenceSequenceRecords": {
+        "protein": "https://www.ncbi.nlm.nih.gov/nuccore/NP_057440.2",
+        "refseqgene": "https://www.ncbi.nlm.nih.gov/nuccore/NG_012829.2",
+        "transcript": "https://www.ncbi.nlm.nih.gov/nuccore/NM_016356.5",
+      },
+      "refseqgeneContextIntronicSequence": "NG_012829.2(NM_016356.5):c.349-2A>G",
+      "rnaVariantDescriptions": null,
+      "selectedAssembly": "hg19",
+      "submittedVariant": "6-24302274-T-C",
+      "transcriptVariant": undefined,
+      "validationWarnings": [],
+      "variantExonicPositions": {
+        "NC_000006.11": {
+          "endExon": "2i",
+          "startExon": "2i",
         },
-      },
-      "hg19": {
-        "hgvs_genomic_description": "NC_000006.11:g.24302274T>C",
-        "vcf": {
-          "alt": "C",
-          "chr": "chr6",
-          "pos": "24302274",
-          "ref": "T",
+        "NC_000006.12": {
+          "endExon": "2i",
+          "startExon": "2i",
         },
-      },
-      "hg38": {
-        "hgvs_genomic_description": "NC_000006.12:g.24302046T>C",
-        "vcf": {
-          "alt": "C",
-          "chr": "chr6",
-          "pos": "24302046",
-          "ref": "T",
-        },
-      },
-    },
-    "reference_sequence_records": {
-      "protein": "https://www.ncbi.nlm.nih.gov/nuccore/NP_001182539.1",
-      "transcript": "https://www.ncbi.nlm.nih.gov/nuccore/NM_001195610.2",
-    },
-    "refseqgene_context_intronic_sequence": "",
-    "rna_variant_descriptions": null,
-    "selected_assembly": "hg19",
-    "submitted_variant": "6-24302274-T-C",
-    "transcript_description": "Homo sapiens doublecortin domain containing 2 (DCDC2), transcript variant 2, mRNA",
-    "validation_warnings": [],
-    "variant_exonic_positions": {
-      "NC_000006.11": {
-        "end_exon": "3i",
-        "start_exon": "3i",
-      },
-      "NC_000006.12": {
-        "end_exon": "3i",
-        "start_exon": "3i",
-      },
-    },
-  },
-  "NM_016356.4:c.349-2A>G": {
-    "alt_genomic_loci": [],
-    "annotations": {
-      "chromosome": "6",
-      "db_xref": {
-        "CCDS": "CCDS4550.1",
-        "ensemblgene": null,
-        "hgnc": "HGNC:18141",
-        "ncbigene": "51473",
-        "select": false,
-      },
-      "ensembl_select": false,
-      "mane_plus_clinical": false,
-      "mane_select": false,
-      "map": "6p22.3",
-      "note": "doublecortin domain containing 2",
-      "refseq_select": false,
-      "variant": "1",
-    },
-    "gene_ids": {
-      "ccds_ids": [
-        "CCDS4550",
-      ],
-      "ensembl_gene_id": "ENSG00000146038",
-      "entrez_gene_id": "51473",
-      "hgnc_id": "HGNC:18141",
-      "omim_id": [
-        "605755",
-      ],
-      "ucsc_id": "uc003ndx.4",
-    },
-    "gene_symbol": "DCDC2",
-    "genome_context_intronic_sequence": "NC_000006.11(NM_016356.4):c.349-2A>G",
-    "hgvs_lrg_transcript_variant": "",
-    "hgvs_lrg_variant": "",
-    "hgvs_predicted_protein_consequence": {
-      "lrg_slr": "",
-      "lrg_tlr": "",
-      "slr": "NP_057440.2:p.?",
-      "tlr": "NP_057440.2:p.?",
-    },
-    "hgvs_refseqgene_variant": "NG_012829.1:g.61007A>G",
-    "hgvs_transcript_variant": "NM_016356.4:c.349-2A>G",
-    "primary_assembly_loci": {
-      "grch37": {
-        "hgvs_genomic_description": "NC_000006.11:g.24302274T>C",
-        "vcf": {
-          "alt": "C",
-          "chr": "6",
-          "pos": "24302274",
-          "ref": "T",
-        },
-      },
-      "grch38": {
-        "hgvs_genomic_description": "NC_000006.12:g.24302046T>C",
-        "vcf": {
-          "alt": "C",
-          "chr": "6",
-          "pos": "24302046",
-          "ref": "T",
-        },
-      },
-      "hg19": {
-        "hgvs_genomic_description": "NC_000006.11:g.24302274T>C",
-        "vcf": {
-          "alt": "C",
-          "chr": "chr6",
-          "pos": "24302274",
-          "ref": "T",
-        },
-      },
-      "hg38": {
-        "hgvs_genomic_description": "NC_000006.12:g.24302046T>C",
-        "vcf": {
-          "alt": "C",
-          "chr": "chr6",
-          "pos": "24302046",
-          "ref": "T",
+        "NG_012829.2": {
+          "endExon": "2i",
+          "startExon": "2i",
         },
       },
     },
-    "reference_sequence_records": {
-      "protein": "https://www.ncbi.nlm.nih.gov/nuccore/NP_057440.2",
-      "refseqgene": "https://www.ncbi.nlm.nih.gov/nuccore/NG_012829.1",
-      "transcript": "https://www.ncbi.nlm.nih.gov/nuccore/NM_016356.4",
-    },
-    "refseqgene_context_intronic_sequence": "NG_012829.1(NM_016356.4):c.349-2A>G",
-    "rna_variant_descriptions": null,
-    "selected_assembly": "hg19",
-    "submitted_variant": "6-24302274-T-C",
-    "transcript_description": "Homo sapiens doublecortin domain containing 2 (DCDC2), transcript variant 1, mRNA",
-    "validation_warnings": [
-      "A more recent version of the selected reference sequence NM_016356.4 is available (NM_016356.5): NM_016356.5:c.349-2A>G MUST be fully validated prior to use in reports: select_variants=NM_016356.5:c.349-2A>G",
-    ],
-    "variant_exonic_positions": {
-      "NC_000006.11": {
-        "end_exon": "2i",
-        "start_exon": "2i",
-      },
-      "NC_000006.12": {
-        "end_exon": "2i",
-        "start_exon": "2i",
-      },
-      "NG_012829.1": {
-        "end_exon": "2i",
-        "start_exon": "2i",
-      },
-    },
-  },
-  "NM_016356.5:c.349-2A>G": {
-    "alt_genomic_loci": [],
-    "annotations": {
-      "chromosome": "6",
-      "db_xref": {
-        "CCDS": "CCDS4550.1",
-        "ensemblgene": null,
-        "hgnc": "HGNC:18141",
-        "ncbigene": "51473",
-        "select": "MANE",
-      },
-      "ensembl_select": false,
-      "mane_plus_clinical": false,
-      "mane_select": true,
-      "map": "6p22.3",
-      "note": "doublecortin domain containing 2",
-      "refseq_select": true,
-      "variant": "1",
-    },
-    "gene_ids": {
-      "ccds_ids": [
-        "CCDS4550",
-      ],
-      "ensembl_gene_id": "ENSG00000146038",
-      "entrez_gene_id": "51473",
-      "hgnc_id": "HGNC:18141",
-      "omim_id": [
-        "605755",
-      ],
-      "ucsc_id": "uc003ndx.4",
-    },
-    "gene_symbol": "DCDC2",
-    "genome_context_intronic_sequence": "NC_000006.11(NM_016356.5):c.349-2A>G",
-    "hgvs_lrg_transcript_variant": "",
-    "hgvs_lrg_variant": "",
-    "hgvs_predicted_protein_consequence": {
-      "lrg_slr": "",
-      "lrg_tlr": "",
-      "slr": "NP_057440.2:p.?",
-      "tlr": "NP_057440.2:p.?",
-    },
-    "hgvs_refseqgene_variant": "NG_012829.2:g.86247A>G",
-    "hgvs_transcript_variant": "NM_016356.5:c.349-2A>G",
-    "primary_assembly_loci": {
-      "grch37": {
-        "hgvs_genomic_description": "NC_000006.11:g.24302274T>C",
-        "vcf": {
-          "alt": "C",
-          "chr": "6",
-          "pos": "24302274",
-          "ref": "T",
-        },
-      },
-      "grch38": {
-        "hgvs_genomic_description": "NC_000006.12:g.24302046T>C",
-        "vcf": {
-          "alt": "C",
-          "chr": "6",
-          "pos": "24302046",
-          "ref": "T",
-        },
-      },
-      "hg19": {
-        "hgvs_genomic_description": "NC_000006.11:g.24302274T>C",
-        "vcf": {
-          "alt": "C",
-          "chr": "chr6",
-          "pos": "24302274",
-          "ref": "T",
-        },
-      },
-      "hg38": {
-        "hgvs_genomic_description": "NC_000006.12:g.24302046T>C",
-        "vcf": {
-          "alt": "C",
-          "chr": "chr6",
-          "pos": "24302046",
-          "ref": "T",
-        },
-      },
-    },
-    "reference_sequence_records": {
-      "protein": "https://www.ncbi.nlm.nih.gov/nuccore/NP_057440.2",
-      "refseqgene": "https://www.ncbi.nlm.nih.gov/nuccore/NG_012829.2",
-      "transcript": "https://www.ncbi.nlm.nih.gov/nuccore/NM_016356.5",
-    },
-    "refseqgene_context_intronic_sequence": "NG_012829.2(NM_016356.5):c.349-2A>G",
-    "rna_variant_descriptions": null,
-    "selected_assembly": "hg19",
-    "submitted_variant": "6-24302274-T-C",
-    "transcript_description": "Homo sapiens doublecortin domain containing 2 (DCDC2), transcript variant 1, mRNA",
-    "validation_warnings": [],
-    "variant_exonic_positions": {
-      "NC_000006.11": {
-        "end_exon": "2i",
-        "start_exon": "2i",
-      },
-      "NC_000006.12": {
-        "end_exon": "2i",
-        "start_exon": "2i",
-      },
-      "NG_012829.2": {
-        "end_exon": "2i",
-        "start_exon": "2i",
-      },
-    },
-  },
+  ],
   "flag": "gene_variant",
   "metadata": {
-    "variantvalidator_hgvs_version": "2.2.0",
-    "variantvalidator_version": "2.2.1.dev492+g032aa70",
-    "vvdb_version": "vvdb_2023_8",
-    "vvseqrepo_db": "VV_SR_2023_05/master",
-    "vvta_version": "vvta_2023_05",
+    "variantvalidatorHgvsVersion": "2.2.0",
+    "variantvalidatorVersion": "2.2.1.dev492+g032aa70",
+    "vvdbVersion": "vvdb_2023_8",
+    "vvseqrepoDb": "VV_SR_2023_05/master",
+    "vvtaVersion": "vvta_2023_05",
   },
 }
 `;

@@ -5,6 +5,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import createFetchMock from 'vitest-fetch-mock'
 
 import type { Strucvar } from '../../lib/genomicVars'
+import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
 import { StoreState } from '../../store'
 import { useStrucvarInfoStore } from './store'
 
@@ -107,7 +108,7 @@ describe('svInfo store', () => {
     // assert:
     expect(store.storeState).toBe(StoreState.Active)
     expect(store.strucvar).toStrictEqual(strucvarInfo)
-    expect(store.genesInfos).toStrictEqual([geneInfoBrca1Json])
+    expect(store.genesInfos).toStrictEqual([GeneInfoRecord.fromJson(geneInfoBrca1Json)])
   })
 
   it('should correctly handle errors', async () => {
