@@ -3,8 +3,7 @@ import path from 'path'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import createFetchMock from 'vitest-fetch-mock'
 
-import { SeqvarImpl } from '@/lib/genomicVars'
-
+import { SeqvarImpl } from '../../lib/genomicVars'
 import { LinearStrucvarImpl } from '../../lib/genomicVars'
 import { MehariClient } from './client'
 import { SeqvarResult, StrucvarResult } from './types'

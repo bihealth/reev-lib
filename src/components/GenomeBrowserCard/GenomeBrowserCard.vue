@@ -104,4 +104,4 @@ onMounted(() => {
     </v-card-text>
   </v-card>
 </template>
-@/lib/GenomeBrowser.c
+../../lib/GenomeBrowser.c

@@ -10,7 +10,7 @@ import {
   REFSEQ_CHROM_37,
   REFSEQ_CHROM_38,
   refseqToGenomeBuild
-} from '@/lib/genomeBuilds'
+} from './genomeBuilds'
 
 /** Regular expression for gnomAD variant identifiers. */
 export const REGEX_GNOMAD_VARIANT =
