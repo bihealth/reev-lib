@@ -1,13 +1,13 @@
 {
   "name": "@bihealth/reev-frontend-lib",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "0.4.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/bihealth/reev-frontend-lib.git"
-  },
-  "publishConfig": {
-    "@bihealth:registry": "https://npm.pkg.github.com"
   },
   "type": "module",
   "files": [
