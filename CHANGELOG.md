@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.4.5](https://github.com/bihealth/reev-frontend-lib/compare/v0.4.4...v0.4.5) (2024-01-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* more comprehensive usage of types ([#65](https://github.com/bihealth/reev-frontend-lib/issues/65))
+
+### Bug Fixes
+
+* more comprehensive usage of types ([#64](https://github.com/bihealth/reev-frontend-lib/issues/64)) ([c1c2ff3](https://github.com/bihealth/reev-frontend-lib/commit/c1c2ff38b861f65d88e4af5766879309cba41407))
+* more comprehensive usage of types ([#65](https://github.com/bihealth/reev-frontend-lib/issues/65)) ([74758a2](https://github.com/bihealth/reev-frontend-lib/commit/74758a25d546e235e41c647beb20d3d7979d5ad7))
+* no more @/includes in case of using as linked src ([#62](https://github.com/bihealth/reev-frontend-lib/issues/62)) ([649b423](https://github.com/bihealth/reev-frontend-lib/commit/649b423847dd30c326237f9660115d9d7e38887d))
+
 ## [0.4.4](https://github.com/bihealth/reev-frontend-lib/compare/v0.4.3...v0.4.4) (2024-01-31)
 
 
