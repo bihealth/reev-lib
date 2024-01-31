@@ -38,7 +38,7 @@ export const useSeqvarInfoStore = defineStore('seqvarInfo', () => {
   const txCsq = ref<SeqvarResultEntry[] | undefined>(undefined)
 
   /** Promise for initialization of the store. */
-  const loadDataRes = ref<Promise<any> | undefined>(undefined)
+  const initializeRes = ref<Promise<any> | undefined>(undefined)
 
   /** Clear all data in the store. */
   const clearData = () => {
@@ -51,16 +51,16 @@ export const useSeqvarInfoStore = defineStore('seqvarInfo', () => {
   }
 
   /**
-   * Load data from the server.
+   * Initialize and oad data from the server.
    *
    * @param seqvar$ The sequence variant to use for the query.
    * @param forceReload Whether to force-reload in case the variant is the same.
    * @returns
    */
-  const loadData = async (seqvar$: Seqvar, forceReload: boolean = false) => {
+  const initialize = async (seqvar$: Seqvar, forceReload: boolean = false) => {
     // Protect against loading multiple times.
     if (!forceReload && storeState.value !== StoreState.Initial && equal(seqvar$, seqvar.value)) {
-      return loadDataRes.value
+      return initializeRes.value
     }
 
     // Clear against artifact
@@ -74,7 +74,7 @@ export const useSeqvarInfoStore = defineStore('seqvarInfo', () => {
     let hgncId = ''
 
     // Retrieve variant information from annonars and mehari.
-    loadDataRes.value = Promise.all([
+    initializeRes.value = Promise.all([
       annonarsClient.fetchVariantInfo(seqvar$).then((data) => {
         varAnnos.value = data.result
       }),
@@ -117,11 +117,11 @@ export const useSeqvarInfoStore = defineStore('seqvarInfo', () => {
         storeState.value = StoreState.Error
       })
 
-    return loadDataRes.value
+    return initializeRes.value
   }
 
   return {
-    loadDataRes,
+    initializeRes,
     storeState,
     seqvar,
     varAnnos,
@@ -129,7 +129,7 @@ export const useSeqvarInfoStore = defineStore('seqvarInfo', () => {
     geneInfo,
     hpoTerms,
     txCsq,
-    loadData,
+    initialize,
     clearData
   }
 })

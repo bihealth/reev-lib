@@ -103,7 +103,7 @@ describe('svInfo store', () => {
     const store = useStrucvarInfoStore()
 
     // act:
-    await store.loadData(structuredClone(strucvarInfo))
+    await store.initialize(structuredClone(strucvarInfo))
 
     // assert:
     expect(store.storeState).toBe(StoreState.Active)
@@ -126,7 +126,7 @@ describe('svInfo store', () => {
     const store = useStrucvarInfoStore()
 
     // act:
-    await store.loadData(structuredClone(strucvarInfo))
+    await store.initialize(structuredClone(strucvarInfo))
 
     // assert:
     expect(store.storeState).toBe(StoreState.Error)
