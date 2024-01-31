@@ -106,7 +106,7 @@ export class AnnonarsClient {
   async fetchGeneInfos(hgncIds: string[], chunkSize?: number): Promise<GeneInfoRecord[]> {
     const hgncIdChunks = chunks(hgncIds, chunkSize ?? 10)
 
-    const promises = hgncIdChunks.map(async (chunk: any) => {
+    const promises = hgncIdChunks.map(async (chunk) => {
       const url = `${this.apiBaseUrl}genes/info?hgnc_id=${chunk.join(',')}`
 
       const response = await fetch(url, {
@@ -119,12 +119,13 @@ export class AnnonarsClient {
     })
 
     const responses = await Promise.all(promises)
-    const results = await Promise.all(responses.map((response: any) => response.json()))
+    const resultJsons = await Promise.all(responses.map((response) => response.json()))
 
-    const result: any = []
-    results.forEach((chunk: any) => {
+    const result: GeneInfoRecord[] = []
+    resultJsons.forEach((chunk: any) => {
       for (const value of Object.values(chunk.genes)) {
-        result.push(value)
+        // @ts-ignore
+        result.push(GeneInfoRecord.fromJson(value as JsonValue))
       }
     })
     return result

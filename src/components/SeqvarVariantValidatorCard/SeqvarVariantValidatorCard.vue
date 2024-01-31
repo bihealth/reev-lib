@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-import { Entry, Metadata, VariantValidatorClient } from '../../api/variantValidator'
+import {
+  Entry,
+  Metadata,
+  PrimaryAssemblyLoci,
+  VariantValidatorClient
+} from '../../api/variantValidator'
 import { type Seqvar } from '../../lib/genomicVars'
 import DocsLink from '../DocsLink/DocsLink.vue'
 
@@ -30,9 +35,9 @@ interface Results {
   metadata?: Metadata
 }
 
-const variantValidatorResults = ref<Results | null>(null)
+const variantValidatorResults = ref<Results | undefined>(undefined)
 
-const primaryAssemblyLoci = ref<any | null>(null)
+const primaryAssemblyLoci = ref<PrimaryAssemblyLoci | undefined>(undefined)
 
 const variantValidatorClient = new VariantValidatorClient()
 
@@ -43,8 +48,8 @@ const queryVariantValidatorApi = async () => {
   }
 
   variantValidatorState.value = VariantValidatorStates.Running
-  variantValidatorResults.value = null
-  primaryAssemblyLoci.value = null
+  variantValidatorResults.value = undefined
+  primaryAssemblyLoci.value = undefined
 
   try {
     const res = await variantValidatorClient.fetchVvResults(props.seqvar)
@@ -53,7 +58,7 @@ const queryVariantValidatorApi = async () => {
     const metadata = res.metadata
     for (const key in res.entries) {
       const value = res.entries[key]
-      if (primaryAssemblyLoci.value === null) {
+      if (primaryAssemblyLoci.value === undefined) {
         primaryAssemblyLoci.value = value.primaryAssemblyLoci
       }
       items.push({
@@ -143,9 +148,9 @@ const queryVariantValidatorApi = async () => {
             </tr>
           </thead>
           <tbody>
-            <tr v-if="primaryAssemblyLoci?.grch37?.hgvs_genomic_description">
+            <tr v-if="primaryAssemblyLoci?.grch37?.hgvsGenomicDescription">
               <td>
-                {{ primaryAssemblyLoci?.grch37.hgvs_genomic_description }}
+                {{ primaryAssemblyLoci?.grch37.hgvsGenomicDescription }}
               </td>
               <td>
                 GRCh37:{{ primaryAssemblyLoci?.grch37?.vcf?.chr }}:{{
@@ -155,9 +160,9 @@ const queryVariantValidatorApi = async () => {
                 }}
               </td>
             </tr>
-            <tr v-if="primaryAssemblyLoci?.grch38?.hgvs_genomic_description">
+            <tr v-if="primaryAssemblyLoci?.grch38?.hgvsGenomicDescription">
               <td>
-                {{ primaryAssemblyLoci?.grch38.hgvs_genomic_description }}
+                {{ primaryAssemblyLoci?.grch38.hgvsGenomicDescription }}
               </td>
               <td>
                 GRCh38:{{ primaryAssemblyLoci?.grch38?.vcf?.chr }}:{{

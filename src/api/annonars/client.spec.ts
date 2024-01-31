@@ -4,6 +4,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import createFetchMock from 'vitest-fetch-mock'
 
 import { LinearStrucvarImpl, SeqvarImpl } from '../../lib/genomicVars'
+import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
 import { AnnonarsClient } from './client'
 import { ClinvarSvQueryResponse, GeneSearchResponse, SeqvarInfoResponse } from './types'
 
@@ -225,7 +226,9 @@ describe.concurrent('AnnonarsClient.fetchGeneInfos()', () => {
     const result = await client.fetchGeneInfos(['BRCA1', 'BRCA2'])
 
     // assert:
-    expect(JSON.stringify(result)).toMatch(JSON.stringify([geneInfoBrca1Json]))
+    expect(JSON.stringify(result)).toMatch(
+      JSON.stringify([GeneInfoRecord.fromJson(geneInfoBrca1Json)])
+    )
   })
 
   it('fails to fetch gene infos with wrong HGNC id', async () => {
