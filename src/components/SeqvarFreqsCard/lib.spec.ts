@@ -1,8 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
-import { type GenomeBuild } from '@/lib/genomeBuilds'
-import { type Seqvar } from '@/lib/genomicVars'
-
+import { type GenomeBuild } from '../../lib/genomeBuilds'
+import { type Seqvar } from '../../lib/genomicVars'
 import { isVariantMt, isVariantMtHomopolymer } from './lib'
 
 /** Example Sequence variant. */

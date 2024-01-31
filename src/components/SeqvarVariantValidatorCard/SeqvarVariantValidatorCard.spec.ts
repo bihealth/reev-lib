@@ -4,9 +4,8 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import createFetchMock from 'vitest-fetch-mock'
 import { nextTick } from 'vue'
 
-import { setupMountedComponents } from '@/lib/testUtils'
-
 import type { Seqvar } from '../../lib/genomicVars'
+import { setupMountedComponents } from '../../lib/testUtils'
 import SeqvarVariantValidatorCard from './SeqvarVariantValidatorCard.vue'
 
 /** Example Sequence Variant */

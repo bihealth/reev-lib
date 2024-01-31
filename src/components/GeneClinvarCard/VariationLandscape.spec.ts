@@ -2,9 +2,8 @@ import fs from 'fs'
 import path from 'path'
 import { describe, expect, test } from 'vitest'
 
-import { GenomeBuild } from '@/lib/genomeBuilds'
-
 import { TranscriptResult } from '../../api/dotty'
+import { GenomeBuild } from '../../lib/genomeBuilds'
 import { setupMountedComponents } from '../../lib/testUtils'
 import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
 import VariationLandscape from './VariationLandscape.vue'

@@ -1,8 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
 
-import { setupMountedComponents } from '@/lib/testUtils'
-import { GtexTissueRecord } from '@/pbs/annonars/genes/base'
-
+import { setupMountedComponents } from '../../lib/testUtils'
+import { GtexTissueRecord } from '../../pbs/annonars/genes/base'
 import GeneExpressionCard from './GeneExpressionCard.vue'
 
 // A few GtexTissueRecords as test data

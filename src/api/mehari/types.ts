@@ -1,7 +1,7 @@
 /**
  * Types for interfacing with the Mehari API.
  */
-import { GenomeBuild } from '@/lib/genomeBuilds'
+import { GenomeBuild } from '../../lib/genomeBuilds'
 
 /**
  * Enumeration for the putative impact.
