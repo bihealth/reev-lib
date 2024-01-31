@@ -43,12 +43,12 @@ export const useStrucvarInfoStore = defineStore('strucvarInfo', () => {
   }
 
   /**
-   * Load data from the server.
+   * Initialize and load data from the server.
    *
    * @param strucvar$ The structural variant to use for the query.
    * @param forceReload Whether to force-reload in case the variant is the same.
    */
-  const loadData = async (strucvar$: Strucvar, forceReload: boolean = false) => {
+  const initialize = async (strucvar$: Strucvar, forceReload: boolean = false) => {
     // Protect against loading multiple times.
     if (
       !forceReload &&
@@ -104,6 +104,6 @@ export const useStrucvarInfoStore = defineStore('strucvarInfo', () => {
     genesInfos,
     clinvarSvRecords,
     clearData,
-    loadData
+    initialize
   }
 })
