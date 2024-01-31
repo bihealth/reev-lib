@@ -6,12 +6,12 @@ components when necessary.
 -->
 
 <script setup lang="ts">
-import DocsLink from '../DocsLinks/DocsLink.vue'
+import { SeqvarInfoResult } from '../../api/annonars/types'
+import { type Seqvar } from '../../lib/genomicVars'
+import DocsLink from '../DocsLink/DocsLink.vue'
 import AutosomalFreqs from './AutosomalFreqs.vue'
 import MitochondrialFreqs from './MitochondrialFreqs.vue'
-import { type Seqvar } from '../../lib/genomicVars'
 import { isVariantMt } from './lib'
-import { SeqvarInfoResult } from '../../api/annonars/types'
 
 /** The component's props with defaults applied. */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -38,18 +38,10 @@ const props = defineProps<{
       <div v-else>
         <v-row no-gutters>
           <v-col cols="6">
-            <AutosomalFreqs
-              :seqvar="seqvar"
-              :var-annos="varAnnos"
-              dataset="gnomad_exomes"
-            />
+            <AutosomalFreqs :seqvar="seqvar" :var-annos="varAnnos" dataset="gnomadExomes" />
           </v-col>
           <v-col cols="6">
-            <AutosomalFreqs
-              :seqvar="seqvar"
-              :var-annos="varAnnos"
-              dataset="gnomad_genomes"
-            />
+            <AutosomalFreqs :seqvar="seqvar" :var-annos="varAnnos" dataset="gnomadGenomes" />
           </v-col>
         </v-row>
       </div>

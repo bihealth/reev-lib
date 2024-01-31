@@ -25,7 +25,7 @@ const clinvarStrucvarResponseBrca1Json = JSON.parse(
 const fetchMocker = createFetchMock(vi)
 
 /** Example Sequence Variant */
-const seqVar = new SeqvarImpl('grch37', '1', 123, 'A', 'G')
+const seqvar = new SeqvarImpl('grch37', '1', 123, 'A', 'G')
 
 describe.concurrent('AnnonarsClient.fetchGeneInfo()', () => {
   beforeEach(() => {
@@ -79,7 +79,7 @@ describe.concurrent('AnnonarsClient.fetchVariantInfo()', () => {
 
     // act:
     const client = new AnnonarsClient()
-    const result = await client.fetchVariantInfo(seqVar)
+    const result = await client.fetchVariantInfo(seqvar)
 
     // assert:
     expect(JSON.stringify(result)).toEqual(JSON.stringify(variantInfoBrca1Json))
@@ -96,7 +96,7 @@ describe.concurrent('AnnonarsClient.fetchVariantInfo()', () => {
 
     // act:
     const client = new AnnonarsClient()
-    const result = await client.fetchVariantInfo(seqVar)
+    const result = await client.fetchVariantInfo(seqvar)
 
     // assert:
     expect(JSON.stringify(result)).toEqual(JSON.stringify(variantInfoBrca1Json))

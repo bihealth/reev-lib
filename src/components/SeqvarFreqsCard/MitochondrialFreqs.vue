@@ -1,39 +1,45 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
+import { SeqvarInfoResult } from '../../api/annonars/types'
 import { type Seqvar } from '../../lib/genomicVars'
 import { roundIt, separateIt as sep } from '../../lib/utils'
+import { Record as GnomadMtdnaRecord } from '../../pbs/annonars/gnomad/mtdna'
+import { Record as HelixMtdbRecord } from '../../pbs/annonars/helixmtdb/base'
 import { isVariantMtHomopolymer } from './lib'
 
+/** This component's props. */
 const props = defineProps<{
-  seqVar?: Seqvar
-  varAnnos?: any
+  /** Annotated sequence variant. */
+  seqvar?: Seqvar
+  /** Annotations. */
+  varAnnos?: SeqvarInfoResult
 }>()
 
-const helixMtDb = computed(() => {
+const helixMtDb = computed<HelixMtdbRecord | undefined>(() => {
   if (props?.varAnnos?.helixmtdb) {
     return props?.varAnnos?.helixmtdb
   } else {
-    return null
+    return undefined
   }
 })
 
-const gnomadMtDna = computed(() => {
-  if (props?.varAnnos && props?.varAnnos.gnomad_mtdna) {
-    return props?.varAnnos.gnomad_mtdna
+const gnomadMtDna = computed<GnomadMtdnaRecord | undefined>(() => {
+  if (props?.varAnnos && props?.varAnnos.gnomadMtdna) {
+    return props?.varAnnos.gnomadMtdna
   } else {
-    return null
+    return undefined
   }
 })
 </script>
 
 <template>
-  <template v-if="!seqVar">
+  <template v-if="seqvar === undefined || varAnnos === undefined">
     <v-skeleton-loader type="table" />
   </template>
   <template v-else>
     <div>
-      <div v-if="!isVariantMtHomopolymer(seqVar as Seqvar)">
+      <div v-if="!isVariantMtHomopolymer(seqvar as Seqvar)">
         <small>
           <v-icon>mdi-alert-circle-outline</v-icon>
           Variant in homopolymeric region

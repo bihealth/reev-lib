@@ -1,36 +1,65 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 
+import { SeqvarInfoResult } from '../../api/annonars/types'
 import { type Seqvar } from '../../lib/genomicVars'
 import { roundIt, separateIt as sep } from '../../lib/utils'
+import {
+  CohortAlleleCounts as Gnomad2CohortAlleleCounts,
+  PopulationAlleleCounts as Gnomad2PopulationAlleleCounts,
+  Record as Gnomad2Record
+} from '../../pbs/annonars/gnomad/gnomad2'
+import {
+  CohortAlleleCounts as Gnomad3CohortAlleleCounts,
+  PopulationAlleleCounts as Gnomad3PopulationAlleleCounts,
+  Record as Gnomad3Record
+} from '../../pbs/annonars/gnomad/gnomad3'
+import {
+  AncestryGroupAlleleCounts as Gnomad4AncestryGroupAlleleCounts,
+  CohortAlleleCounts as Gnomad4CohortAlleleCounts,
+  Record as Gnomad4Record
+} from '../../pbs/annonars/gnomad/gnomad4'
 
 const props = defineProps<{
+  /** Annotated sequence variant. */
   seqvar?: Seqvar
-  varAnnos?: any
-  dataset: "gnomad_exomes" | "gnomad_genomes"
+  /** Annotations. */
+  varAnnos?: SeqvarInfoResult
+  /** Dataset to use. */
+  dataset: 'gnomadExomes' | 'gnomadGenomes'
 }>()
 
 const FREQ_DIGITS = 5
 
-const selAnnos = computed(() => {
+const selAnnos = computed<Gnomad2Record | Gnomad3Record | Gnomad4Record | undefined>(() => {
   if (!props.varAnnos) {
-    return null
+    return undefined
   } else {
     return props.varAnnos[props.dataset]
   }
 })
 
-const noCohort = computed(() => {
+const noCohort = computed<
+  Gnomad2CohortAlleleCounts | Gnomad3CohortAlleleCounts | Gnomad4CohortAlleleCounts | undefined
+>(() => {
   for (const elem of selAnnos.value?.alleleCounts ?? []) {
     if (!elem.cohort) {
       return elem
     }
   }
-  return null
+  return undefined
 })
 
-const byPop = computed(() => {
-  const res: any = {}
+type ByPop = {
+  [key: string]:
+    | Gnomad2PopulationAlleleCounts
+    | Gnomad3PopulationAlleleCounts
+    | Gnomad4AncestryGroupAlleleCounts
+}
+
+const byPop = computed<ByPop>(() => {
+  const res: ByPop = {}
+  // @ts-ignore
   for (const record of noCohort.value?.byPopulation ?? noCohort.value?.byAncestryGroup ?? []) {
     res[record.population ?? record.ancestryGroup] = record
   }
@@ -64,8 +93,8 @@ const sexExpanded: any = ref({})
     <div>
       <div>
         <v-card-subtitle class="px-0 mb-3 text-overline">
-          <template v-if="props.dataset === 'gnomad_exomes'"> gnomAD Exomes </template>
-          <template v-if="props.dataset === 'gnomad_genomes'"> gnomAD Genomes </template>
+          <template v-if="props.dataset === 'gnomadExomes'"> gnomAD Exomes </template>
+          <template v-if="props.dataset === 'gnomadGenomes'"> gnomAD Genomes </template>
           <a
             v-if="seqvar.genomeBuild == 'grch37'"
             :href="`https://gnomad.broadinstitute.org/variant/${seqvar.chrom.replace(/^chr/, '')}-${
@@ -155,7 +184,7 @@ const sexExpanded: any = ref({})
                   {{ sep(byPop[key]?.counts?.xx?.ac ?? 0) }}
                 </td>
                 <td class="text-right text-no-wrap">
-                  {{ sep(byPop[key]?.counts?.xx?.nhomhalt ?? 0) }}
+                  {{ sep(byPop[key]?.counts?.xx?.nhomalt ?? 0) }}
                 </td>
                 <!-- eslint-disable vue/no-v-html -->
                 <td

@@ -1,30 +1,41 @@
+import fs from 'fs'
+import path from 'path'
 import { describe, expect, it } from 'vitest'
 
-import * as BRCA1VariantInfo from '@/assets/__tests__/BRCA1VariantInfo.json'
-import FreqsAutosomal from '@/components/SeqvarDetails/FreqsCard/AutosomalFreqs.vue'
-import type { Seqvar } from '@/lib/genomicVars'
-import { setupMountedComponents } from '@/lib/testUtils'
+import { SeqvarInfoResponse } from '../../api/annonars/types'
+import { setupMountedComponents } from '../../lib/testUtils'
+import AutosomalFreqs from './AutosomalFreqs.vue'
 
-/** Example Sequece Variant */
-const seqvarInfo: Seqvar = {
+/** Fixtures */
+const seqvarInfoResponseBrca1 = SeqvarInfoResponse.fromJson(
+  JSON.parse(
+    fs.readFileSync(
+      path.resolve(__dirname, '../../api/annonars/fixture.variantInfo.BRCA1.json'),
+      'utf-8'
+    )
+  )
+)
+
+// Sequence Variant in BRCA1
+const seqvarBrca1: Seqvar = {
   genomeBuild: 'grch37',
   chrom: '17',
-  pos: 43044295,
+  pos: 41215920,
   del: 'G',
-  ins: 'A',
-  userRepr: 'grch37-17-43044295-G-A'
+  ins: 'T',
+  userRepr: 'grch37-17-41215920-G-T'
 }
 
-describe.concurrent('FreqsAutosomal', async () => {
-  it('renders the FreqsAutosomal info', async () => {
+describe.concurrent('AutosomalFreqs.vue', async () => {
+  it('renders the info', async () => {
     // arrange:
     const { wrapper } = await setupMountedComponents(
-      { component: FreqsAutosomal },
+      { component: AutosomalFreqs },
       {
         props: {
-          seqvar: structuredClone(seqvarInfo),
-          varAnnos: BRCA1VariantInfo['result'],
-          dataset: 'gnomad_exomes'
+          seqvar: seqvarBrca1,
+          varAnnos: seqvarInfoResponseBrca1.result,
+          dataset: 'gnomadExomes'
         }
       }
     )
@@ -37,15 +48,15 @@ describe.concurrent('FreqsAutosomal', async () => {
     expect(table.exists()).toBe(true)
   })
 
-  it('renders the FreqsAutosomal info with no data', async () => {
+  it('renders the info with no data', async () => {
     // arrange:
     const { wrapper } = await setupMountedComponents(
-      { component: FreqsAutosomal },
+      { component: AutosomalFreqs },
       {
         props: {
-          seqvar: structuredClone(seqvarInfo),
-          varAnnos: null,
-          dataset: 'gnomad_genomes'
+          seqvar: seqvarBrca1,
+          varAnnos: undefined,
+          dataset: 'gnomadGenomes'
         }
       }
     )

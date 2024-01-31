@@ -1,4 +1,4 @@
-import { Seqvar } from "../../lib/genomicVars"
+import { Seqvar } from '../../lib/genomicVars'
 
 /**
  * Returns whether the given variant looks mitochondrial.

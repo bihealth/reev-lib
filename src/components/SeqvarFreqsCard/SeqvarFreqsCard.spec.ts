@@ -1,14 +1,32 @@
+import fs from 'fs'
+import path from 'path'
 import { describe, expect, it } from 'vitest'
 
-import * as BRCA1VariantInfo from '@/assets/__tests__/BRCA1VariantInfo.json'
-import Freqs from '@/components/SeqvarDetails/FreqsCard.vue'
-import VariantDetailsFreqsAutosomal from '@/components/SeqvarDetails/FreqsCard/AutosomalFreqs.vue'
-import VariantDetailsFreqsMitochondrial from '@/components/SeqvarDetails/FreqsCard/MitochondrialFreqs.vue'
+import { SeqvarInfoResponse } from '../../api/annonars/types'
 import type { Seqvar } from '../../lib/genomicVars'
 import { setupMountedComponents } from '../../lib/testUtils'
+import SeqvarFreqsCard from './SeqvarFreqsCard.vue'
 
-/** Example Sequence Variant */
-const seqvarInfo: Seqvar = {
+/** Fixtures */
+const seqvarInfoResponseBrca1 = SeqvarInfoResponse.fromJson(
+  JSON.parse(
+    fs.readFileSync(
+      path.resolve(__dirname, '../../api/annonars/fixture.variantInfo.BRCA1.json'),
+      'utf-8'
+    )
+  )
+)
+const seqvarInfoResponseChrMt = SeqvarInfoResponse.fromJson(
+  JSON.parse(
+    fs.readFileSync(
+      path.resolve(__dirname, '../../api/annonars/fixture.variantInfo.chrMT.json'),
+      'utf-8'
+    )
+  )
+)
+
+// Sequence Variant in BRCA1
+const seqvarBrca1: Seqvar = {
   genomeBuild: 'grch37',
   chrom: '17',
   pos: 41215920,
@@ -17,8 +35,8 @@ const seqvarInfo: Seqvar = {
   userRepr: 'grch37-17-41215920-G-T'
 }
 
-/** Example Mitochondrial Sequence Variant */
-const seqvarInfoMitochondrial = {
+// Mitochondrial Sequence Variant
+const seqvarChrMt = {
   genomeBuild: 'grch37',
   chrom: 'MT',
   pos: 7497,
@@ -27,15 +45,15 @@ const seqvarInfoMitochondrial = {
   userRepr: 'grch37-MT-7497-G-A'
 }
 
-describe.concurrent('Freqs', async () => {
+describe.concurrent('SeqvarFreqsCard.vue', async () => {
   it('renders the Freqs info for Autosonmal Variants', async () => {
     // arrange:
     const { wrapper } = await setupMountedComponents(
-      { component: Freqs },
+      { component: SeqvarFreqsCard },
       {
         props: {
-          seqvar: seqvarInfo,
-          varAnnos: BRCA1VariantInfo
+          seqvar: seqvarBrca1,
+          varAnnos: seqvarInfoResponseBrca1.result
         }
       }
     )
@@ -43,18 +61,18 @@ describe.concurrent('Freqs', async () => {
     // act: nothing, only test rendering
 
     // assert:
-    const freqsAutosomal = wrapper.findComponent(VariantDetailsFreqsAutosomal)
+    const freqsAutosomal = wrapper.findComponent({ name: 'AutosomalFreqs' })
     expect(freqsAutosomal.exists()).toBe(true)
   })
 
   it('renders the Freqs info for Mitochondrial Variants', async () => {
     // arrange:
     const { wrapper } = await setupMountedComponents(
-      { component: Freqs },
+      { component: SeqvarFreqsCard },
       {
         props: {
-          seqvar: seqvarInfoMitochondrial,
-          varAnnos: BRCA1VariantInfo
+          seqvar: seqvarChrMt,
+          varAnnos: seqvarInfoResponseChrMt.result
         }
       }
     )
@@ -62,7 +80,7 @@ describe.concurrent('Freqs', async () => {
     // act: nothing, only test rendering
 
     // assert:
-    const freqsMitochondrial = wrapper.findComponent(VariantDetailsFreqsMitochondrial)
+    const freqsMitochondrial = wrapper.findComponent({ name: 'MitochondrialFreqs' })
     expect(freqsMitochondrial.exists()).toBe(true)
   })
 })

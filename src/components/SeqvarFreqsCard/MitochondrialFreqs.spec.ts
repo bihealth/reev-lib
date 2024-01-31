@@ -1,47 +1,40 @@
+import fs from 'fs'
+import path from 'path'
 import { describe, expect, it } from 'vitest'
 
-import FreqsMitochondrial from '@/components/SeqvarDetails/FreqsCard/MitochondrialFreqs.vue'
-import { type Seqvar } from '@/lib/genomicVars'
-import { setupMountedComponents } from '@/lib/testUtils'
+import { SeqvarInfoResponse } from '../../api/annonars/types'
+import { setupMountedComponents } from '../../lib/testUtils'
+import MitochondrialFreqs from './MitochondrialFreqs.vue'
 
-/** Example Sequence Variant */
-const seqvarInfo: Seqvar = {
+/** Fixtures */
+const seqvarInfoResponseChrMt = SeqvarInfoResponse.fromJson(
+  JSON.parse(
+    fs.readFileSync(
+      path.resolve(__dirname, '../../api/annonars/fixture.variantInfo.chrMT.json'),
+      'utf-8'
+    )
+  )
+)
+
+// Mitochondrial Sequence Variant
+const seqvarChrMt = {
   genomeBuild: 'grch37',
-  chrom: '17',
-  pos: 43044295,
+  chrom: 'MT',
+  pos: 7497,
   del: 'G',
   ins: 'A',
-  userRepr: 'grch37-17-43044295-G-A'
+  userRepr: 'grch37-MT-7497-G-A'
 }
 
-/** Example Sequence Variant Data */
-const varAnnos = {
-  helixmtdb: {
-    num_total: 1,
-    num_het: 1,
-    num_hom: 0
-  },
-  'gnomad-mtdna': {
-    an: 0,
-    ac_het: 0,
-    ac_hom: 0
-  },
-  mtdna: {
-    an: 0,
-    ac_het: 0,
-    ac_hom: 0
-  }
-}
-
-describe.concurrent('FreqsMitochondrial', async () => {
-  it('renders the FreqsMitochondrial info', async () => {
+describe.concurrent('MitochondrialFreqs.vue', async () => {
+  it('renders the info', async () => {
     // arrange:
     const { wrapper } = await setupMountedComponents(
-      { component: FreqsMitochondrial },
+      { component: MitochondrialFreqs },
       {
         props: {
-          seqVar: seqvarInfo,
-          varAnnos
+          seqvar: seqvarChrMt,
+          varAnnos: seqvarInfoResponseChrMt.result
         }
       }
     )
@@ -55,15 +48,15 @@ describe.concurrent('FreqsMitochondrial', async () => {
     expect(table.exists()).toBe(true)
   })
 
-  it('renders the FreqsMitochondrial info with no helixmtdb', async () => {
+  it('renders the info with no helixmtdb', async () => {
     // arrange:
-    const variantInfoNoHelixmtdb: any = structuredClone(seqvarInfo)
+    const variantInfoNoHelixmtdb: any = structuredClone(seqvarInfoResponseChrMt.result)
     variantInfoNoHelixmtdb.helixmtdb = {}
     const { wrapper } = await setupMountedComponents(
-      { component: FreqsMitochondrial },
+      { component: MitochondrialFreqs },
       {
         props: {
-          seqVar: seqvarInfo,
+          seqvar: seqvarChrMt,
           varAnnos: variantInfoNoHelixmtdb
         }
       }
@@ -78,15 +71,15 @@ describe.concurrent('FreqsMitochondrial', async () => {
     expect(table.exists()).toBe(true)
   })
 
-  it('renders the FreqsMitochondrial info with no gnomad-mtdna', async () => {
+  it('renders the info with no gnomad-mtdna', async () => {
     // arrange:
-    const variantInfoNoGnomad: any = structuredClone(seqvarInfo)
+    const variantInfoNoGnomad: any = structuredClone(seqvarInfoResponseChrMt.result)
     variantInfoNoGnomad['gnomad-mtdna'] = {}
     const { wrapper } = await setupMountedComponents(
-      { component: FreqsMitochondrial },
+      { component: MitochondrialFreqs },
       {
         props: {
-          seqVar: seqvarInfo,
+          seqvar: seqvarChrMt,
           varAnnos: variantInfoNoGnomad
         }
       }
@@ -101,14 +94,14 @@ describe.concurrent('FreqsMitochondrial', async () => {
     expect(table.exists()).toBe(true)
   })
 
-  it('renders the FreqsMitochondrial info with invalid data', async () => {
+  it('renders the info with no data', async () => {
     // arrange:
     const { wrapper } = await setupMountedComponents(
-      { component: FreqsMitochondrial },
+      { component: MitochondrialFreqs },
       {
         props: {
-          seqVar: seqvarInfo,
-          varAnnos: {}
+          seqVar: seqvarChrMt,
+          varAnnos: undefined
         }
       }
     )
@@ -116,7 +109,7 @@ describe.concurrent('FreqsMitochondrial', async () => {
     // act: nothing, only test rendering
 
     // assert:
-    const alertIcon = wrapper.find('.mdi-alert-circle-outline')
+    const alertIcon = wrapper.findComponent({ name: 'VSkeletonLoader' })
     expect(alertIcon.exists()).toBe(true)
   })
 })
