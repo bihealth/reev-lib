@@ -1,0 +1,5 @@
+{
+  "version": { "hpo": "2023-06-06", "viguno": "0.2.0" },
+  "query": { "term_id": null, "name": "foobar", "max_results": 100, "genes": false },
+  "result": []
+}

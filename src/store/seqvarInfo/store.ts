@@ -7,10 +7,12 @@ import equal from 'fast-deep-equal'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
-import { AnnonarsClient } from '../../api/annonars'
-import { MehariClient } from '../../api/mehari'
+import { AnnonarsClient, SeqvarInfoResult } from '../../api/annonars'
+import { MehariClient, SeqvarResultEntry } from '../../api/mehari'
 import { type HpoTerm, VigunoClient } from '../../api/viguno'
 import { type Seqvar } from '../../lib/genomicVars'
+import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
+import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
 import { StoreState } from '../../store'
 
 export const useSeqvarInfoStore = defineStore('seqvarInfo', () => {
@@ -21,31 +23,31 @@ export const useSeqvarInfoStore = defineStore('seqvarInfo', () => {
   const seqvar = ref<Seqvar | undefined>(undefined)
 
   /** Variant-related information from annonars. */
-  const varAnnos = ref<any | null>(null)
+  const varAnnos = ref<SeqvarInfoResult | undefined>(undefined)
 
   /** ClinVar gene-related information from annoars. */
-  const geneClinvar = ref<any | null>(null)
+  const geneClinvar = ref<ClinvarPerGeneRecord | undefined>(undefined)
 
   /** Information about related gene. */
-  const geneInfo = ref<any | null>(null)
+  const geneInfo = ref<GeneInfoRecord | undefined>(undefined)
 
   /** The HPO terms retrieved from viguno. */
   const hpoTerms = ref<HpoTerm[]>([])
 
   /** Transcript consequence information from mehari. */
-  const txCsq = ref<any | null>(null)
+  const txCsq = ref<SeqvarResultEntry[] | undefined>(undefined)
 
   /** Promise for initialization of the store. */
-  const loadDataRes = ref<Promise<any> | null>(null)
+  const loadDataRes = ref<Promise<any> | undefined>(undefined)
 
   /** Clear all data in the store. */
   const clearData = () => {
     storeState.value = StoreState.Initial
     seqvar.value = undefined
-    varAnnos.value = null
-    txCsq.value = null
-    geneInfo.value = null
-    geneClinvar.value = null
+    varAnnos.value = undefined
+    txCsq.value = undefined
+    geneInfo.value = undefined
+    geneClinvar.value = undefined
   }
 
   /**
@@ -81,8 +83,8 @@ export const useSeqvarInfoStore = defineStore('seqvarInfo', () => {
       })
     ])
       .then((): Promise<any> => {
-        if (txCsq.value.length !== 0) {
-          hgncId = txCsq.value[0].gene_id
+        if (txCsq.value !== undefined && txCsq.value.length !== 0) {
+          hgncId = txCsq.value[0].geneId
           return Promise.all([
             annonarsClient.fetchGeneInfo(hgncId).then((data) => {
               for (const gene of data.genes) {
@@ -95,10 +97,10 @@ export const useSeqvarInfoStore = defineStore('seqvarInfo', () => {
               geneClinvar.value = data
             }),
             vigunoClient.fetchHpoTermsForHgncId(hgncId).then((data) => {
-              if (data === null) {
+              if (!data.results.length) {
                 throw new Error('No HPO terms found.')
               }
-              hpoTerms.value = data
+              hpoTerms.value = data.results
             })
           ])
         } else {

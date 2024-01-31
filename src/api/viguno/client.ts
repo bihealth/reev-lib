@@ -1,4 +1,4 @@
-import { HpoTerm } from './types'
+import { HpoGenesResult, HpoOmimsResult, HpoTermResult } from './types'
 
 /** Base URL for viguno API access */
 const API_BASE_URL = '/internal/proxy/viguno/'
@@ -10,7 +10,7 @@ export class VigunoClient {
     this.apiBaseUrl = apiBaseUrl ?? API_BASE_URL
   }
 
-  async resolveOmimTermById(id: string): Promise<any> {
+  async resolveOmimTermById(id: string): Promise<HpoOmimsResult> {
     const url = `${this.apiBaseUrl}hpo/omims?omim_id=${id}`
     const response = await fetch(url, {
       method: 'GET'
@@ -21,10 +21,14 @@ export class VigunoClient {
       throw new Error(errorBody.msg || response.statusText)
     }
 
-    return await response.json()
+    const responseJson = await response.json()
+    return HpoOmimsResult.fromJson(responseJson)
   }
 
-  async queryOmimTermsByName(query: string, matchType: string = 'contains'): Promise<any> {
+  async queryOmimTermsByName(
+    query: string,
+    matchType: string = 'contains'
+  ): Promise<HpoOmimsResult> {
     const url = `${this.apiBaseUrl}hpo/omims?name=${query}&match=${matchType}`
     const response = await fetch(url, {
       method: 'GET'
@@ -35,10 +39,11 @@ export class VigunoClient {
       throw new Error(errorBody.msg || response.statusText)
     }
 
-    return await response.json()
+    const responseJson = await response.json()
+    return HpoOmimsResult.fromJson(responseJson)
   }
 
-  async resolveHpoTermById(id: string): Promise<any> {
+  async resolveHpoTermById(id: string): Promise<HpoTermResult> {
     const url = `${this.apiBaseUrl}hpo/terms?term_id=${id}`
     const response = await fetch(url, {
       method: 'GET'
@@ -49,10 +54,11 @@ export class VigunoClient {
       throw new Error(errorBody.msg || response.statusText)
     }
 
-    return await response.json()
+    const responseJson = await response.json()
+    return HpoTermResult.fromJson(responseJson)
   }
 
-  async queryHpoTermsByName(query: string): Promise<any> {
+  async queryHpoTermsByName(query: string): Promise<HpoTermResult> {
     const url = `${this.apiBaseUrl}hpo/terms?name=${query}`
     const response = await fetch(url, {
       method: 'GET'
@@ -63,16 +69,17 @@ export class VigunoClient {
       throw new Error(errorBody.msg || response.statusText)
     }
 
-    return await response.json()
+    const responseJson = await response.json()
+    return HpoTermResult.fromJson(responseJson)
   }
 
   /**
    * Retrieves HPO terms associated with a gene.
    *
-   * @param hgncId
-   * @returns List of HPO terms associated with the gene.
+   * @param hgncId HGNC ID of the gene to query for.
+   * @returns Response of the server
    */
-  async fetchHpoTermsForHgncId(hgncId: string): Promise<HpoTerm[]> {
+  async fetchHpoTermsForHgncId(hgncId: string): Promise<HpoGenesResult> {
     const url = `${this.apiBaseUrl}hpo/genes?gene_id=${hgncId}&hpo_terms=true`
     const response = await fetch(url, {
       method: 'GET'
@@ -83,13 +90,7 @@ export class VigunoClient {
       throw new Error(errorBody.msg || response.statusText)
     }
 
-    const res = await response.json()
-    if (!res.result?.length || res.result.length === 0) {
-      return []
-    }
-    return (res.result[0].hpo_terms ?? []).map((term: HpoTerm) => ({
-      term_id: term.term_id,
-      name: term.name
-    }))
+    const responseJson = await response.json()
+    return HpoGenesResult.fromJson(responseJson)
   }
 }

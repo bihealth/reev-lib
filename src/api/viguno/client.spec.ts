@@ -1,9 +1,33 @@
+import fs from 'fs'
+import path from 'path'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import createFetchMock from 'vitest-fetch-mock'
 
 import { VigunoClient } from './client'
+import { HpoOmimsResult, HpoTermResult } from './types'
 
+/** Mock `fetch()` */
 const fetchMocker = createFetchMock(vi)
+
+/** Fixture with response from API. */
+const responseResolveOmim616145Json = JSON.parse(
+  fs.readFileSync(path.resolve(__dirname, './fixture.resolveOmim.616145.json'), 'utf8')
+)
+const responseQueryOmimTermsByNameEarly = JSON.parse(
+  fs.readFileSync(path.resolve(__dirname, './fixture.queryOmimTermsByName.early.json'), 'utf8')
+)
+const responseQueryOmimTermsByNameXxx = JSON.parse(
+  fs.readFileSync(path.resolve(__dirname, './fixture.queryOmimTermsByName.xxx.json'), 'utf8')
+)
+const responseResolveHpoTermById0000118 = JSON.parse(
+  fs.readFileSync(path.resolve(__dirname, './fixture.resolveHpoTermById.0000118.json'), 'utf8')
+)
+const responseResolveHpoTermByIdAbnormal = JSON.parse(
+  fs.readFileSync(path.resolve(__dirname, './fixture.resolveHpoTermByName.abnormal.json'), 'utf8')
+)
+const responseResolveHpoTermByIdFoobar = JSON.parse(
+  fs.readFileSync(path.resolve(__dirname, './fixture.resolveHpoTermByName.foobar.json'), 'utf8')
+)
 
 describe.concurrent('Viguno Client', () => {
   beforeEach(() => {
@@ -13,15 +37,14 @@ describe.concurrent('Viguno Client', () => {
 
   it('resolves OMIM term by ID correctly', async () => {
     // arrange:
-    const mockOmimTerm = { id: 'OMIM:123456', name: 'Example Disease' }
-    fetchMocker.mockResponseOnce(JSON.stringify(mockOmimTerm))
+    fetchMocker.mockResponseOnce(JSON.stringify(responseResolveOmim616145Json))
 
     // act:
     const client = new VigunoClient()
     const result = await client.resolveOmimTermById('123456')
 
     // assert:
-    expect(result).toEqual(mockOmimTerm)
+    expect(result).toEqual(HpoOmimsResult.fromJson(responseResolveOmim616145Json))
   })
 
   it('handles non-existent OMIM term ID', async () => {
@@ -61,30 +84,26 @@ describe.concurrent('Viguno Client', () => {
 
   it('returns a list of OMIM terms for a valid query', async () => {
     // arrange:
-    const mockResponse = [
-      { id: 'OMIM:123456', name: 'Example Disease 1' },
-      { id: 'OMIM:234567', name: 'Example Disease 2' }
-    ]
-    fetchMocker.mockResponseOnce(JSON.stringify(mockResponse))
+    fetchMocker.mockResponseOnce(JSON.stringify(responseQueryOmimTermsByNameEarly))
 
     // act:
     const client = new VigunoClient()
-    const result = await client.queryOmimTermsByName('Example')
+    const result = await client.queryOmimTermsByName('early')
 
     // assert:
-    expect(result).toEqual(mockResponse)
+    expect(result).toEqual(HpoOmimsResult.fromJson(responseQueryOmimTermsByNameEarly))
   })
 
   it('returns an empty list for a query with no results', async () => {
     // arrange:
-    fetchMocker.mockResponseOnce(JSON.stringify([]))
+    fetchMocker.mockResponseOnce(JSON.stringify(responseQueryOmimTermsByNameXxx))
 
     // act:
     const client = new VigunoClient()
-    const result = await client.queryOmimTermsByName('NonExistentDisease')
+    const result = await client.queryOmimTermsByName('xxx')
 
     // assert:
-    expect(result).toEqual([])
+    expect(result).toEqual(HpoOmimsResult.fromJson(responseQueryOmimTermsByNameXxx))
   })
 
   it('handles server error for a query', async () => {
@@ -112,15 +131,14 @@ describe.concurrent('Viguno Client', () => {
 
   it('resolves HPO term by ID correctly', async () => {
     // arrange:
-    const mockHpoTerm = { id: 'HP:0000118', name: 'Phenotypic abnormality' }
-    fetchMocker.mockResponseOnce(JSON.stringify(mockHpoTerm))
+    fetchMocker.mockResponseOnce(JSON.stringify(responseResolveHpoTermById0000118))
 
     // act:
     const client = new VigunoClient()
     const result = await client.resolveHpoTermById('0000118')
 
     // assert:
-    expect(result).toEqual(mockHpoTerm)
+    expect(result).toEqual(HpoTermResult.fromJson(responseResolveHpoTermById0000118))
   })
 
   it('handles non-existent HPO term ID', async () => {
@@ -160,30 +178,26 @@ describe.concurrent('Viguno Client', () => {
 
   it('queries HPO terms by name correctly', async () => {
     // arrange:
-    const mockHpoTerms = [
-      { id: 'HP:0000118', name: 'Phenotypic abnormality' },
-      { id: 'HP:0000152', name: 'Abnormality of head or neck' }
-    ]
-    fetchMocker.mockResponseOnce(JSON.stringify(mockHpoTerms))
+    fetchMocker.mockResponseOnce(JSON.stringify(responseResolveHpoTermByIdAbnormal))
 
     // act:
     const client = new VigunoClient()
-    const result = await client.queryHpoTermsByName('Phenotypic')
+    const result = await client.queryHpoTermsByName('abnormal')
 
     // assert:
-    expect(result).toEqual(mockHpoTerms)
+    expect(result).toEqual(HpoTermResult.fromJson(responseResolveHpoTermByIdAbnormal))
   })
 
   it('returns an empty list for a name query with no results', async () => {
     // arrange:
-    fetchMocker.mockResponseOnce(JSON.stringify([]))
+    fetchMocker.mockResponseOnce(JSON.stringify(responseResolveHpoTermByIdFoobar))
 
     // act:
     const client = new VigunoClient()
-    const result = await client.queryHpoTermsByName('NonExistentTerm')
+    const result = await client.queryHpoTermsByName('foobar')
 
     // assert:
-    expect(result).toEqual([])
+    expect(result).toEqual(HpoTermResult.fromJson(responseResolveHpoTermByIdFoobar))
   })
 
   it('handles server error during name query', async () => {

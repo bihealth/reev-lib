@@ -26,7 +26,7 @@ const meta = {
     geneInfo: geneInfoTgds,
     hpoTerms: [
       {
-        term_id: 'HP:0001654',
+        termId: 'HP:0001654',
         name: 'Abnormal heart valve morphology'
       }
     ]

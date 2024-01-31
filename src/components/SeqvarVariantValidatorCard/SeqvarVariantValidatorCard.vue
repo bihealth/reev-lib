@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-import { VariantValidatorClient } from '../../api/variantValidator'
+import { Entry, Metadata, VariantValidatorClient } from '../../api/variantValidator'
 import { type Seqvar } from '../../lib/genomicVars'
 import DocsLink from '../DocsLink/DocsLink.vue'
 
@@ -19,16 +19,22 @@ interface Props {
 const props = defineProps<Props>()
 
 const variantValidatorState = ref<VariantValidatorStates>(VariantValidatorStates.Initial)
-const variantValidatorResults = ref<any>(null)
+
+interface KeyValue {
+  key: string
+  value: Entry
+}
+
+interface Results {
+  items: KeyValue[]
+  metadata?: Metadata
+}
+
+const variantValidatorResults = ref<Results | null>(null)
 
 const primaryAssemblyLoci = ref<any | null>(null)
 
 const variantValidatorClient = new VariantValidatorClient()
-
-interface KeyValue {
-  key: string
-  value: string
-}
 
 const queryVariantValidatorApi = async () => {
   if (!props.seqvar) {
@@ -44,20 +50,16 @@ const queryVariantValidatorApi = async () => {
     const res = await variantValidatorClient.fetchVvResults(props.seqvar)
 
     const items: KeyValue[] = []
-    let metadata = null
-    for (const key in res) {
-      const value = res[key]
+    const metadata = res.metadata
+    for (const key in res.entries) {
+      const value = res.entries[key]
       if (primaryAssemblyLoci.value === null) {
-        primaryAssemblyLoci.value = value.primary_assembly_loci
+        primaryAssemblyLoci.value = value.primaryAssemblyLoci
       }
-      if (value?.submitted_variant?.length) {
-        items.push({
-          key,
-          value
-        })
-      } else if (key == 'metadata') {
-        metadata = value
-      }
+      items.push({
+        key,
+        value
+      })
     }
     variantValidatorResults.value = { items, metadata }
     variantValidatorState.value = VariantValidatorStates.Done
@@ -92,13 +94,13 @@ const queryVariantValidatorApi = async () => {
           <v-list-item class="px-0 mr-6">
             <v-list-item-title> VariantValidator HGVS Version </v-list-item-title>
             <v-list-item-subtitle>
-              {{ variantValidatorResults.metadata?.variantvalidator_hgvs_version ?? 'N/A' }}
+              {{ variantValidatorResults?.metadata?.variantvalidatorHgvsVersion ?? 'N/A' }}
             </v-list-item-subtitle>
           </v-list-item>
           <v-list-item class="px-0">
             <v-list-item-title> VariantValidator Version </v-list-item-title>
             <v-list-item-subtitle>
-              {{ variantValidatorResults.metadata?.variantvalidator_version ?? 'N/A' }}
+              {{ variantValidatorResults?.metadata?.variantvalidatorVersion ?? 'N/A' }}
             </v-list-item-subtitle>
           </v-list-item>
         </v-list>
@@ -114,18 +116,18 @@ const queryVariantValidatorApi = async () => {
             </tr>
           </thead>
           <tbody>
-            <template v-for="{ key, value } in variantValidatorResults.items" :key="key">
-              <template v-if="!value.gene_symbol?.length && value.validation_warnings?.length">
+            <template v-for="{ key, value } in variantValidatorResults?.items ?? []" :key="key">
+              <template v-if="!value.geneSymbol?.length && value.validationWarnings?.length">
                 <tr>
                   <td colspan="3" class="font-italic text-center">
-                    {{ value.validation_warnings.join(', ') }}
+                    {{ value.validationWarnings.join(', ') }}
                   </td>
                 </tr>
               </template>
               <tr>
-                <td>{{ value.gene_symbol }}</td>
-                <td>{{ value.hgvs_transcript_variant }}</td>
-                <td>{{ value.hgvs_predicted_protein_consequence?.slr || '&mdash;' }}</td>
+                <td>{{ value.geneSymbol }}</td>
+                <td>{{ value.hgvsTranscriptVariant }}</td>
+                <td>{{ value.hgvsPredictedProteinConsequence?.slr || '&mdash;' }}</td>
               </tr>
             </template>
           </tbody>
