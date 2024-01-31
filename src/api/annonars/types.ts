@@ -1,6 +1,7 @@
 import { JsonValue } from '@protobuf-ts/runtime'
 
-import { Record as ClinvarRecord } from '../../pbs/annonars/clinvar/minimal'
+import { Record as ClinvarSeqvarRecord } from '../../pbs/annonars/clinvar/minimal'
+import { Record as ClinvarStrucvarRecord } from '../../pbs/annonars/clinvar/sv'
 import { Record as UcscConservationRecord } from '../../pbs/annonars/cons/base'
 import { Record as DbsnpRecord } from '../../pbs/annonars/dbsnp/base'
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
@@ -9,6 +10,147 @@ import { Record as Gnomad3Record } from '../../pbs/annonars/gnomad/gnomad3'
 import { Record as Gnomad4Record } from '../../pbs/annonars/gnomad/gnomad4'
 import { Record as GnomadMtdnaRecord } from '../../pbs/annonars/gnomad/mtdna'
 import { Record as HelixmtdbRecord } from '../../pbs/annonars/helixmtdb/base'
+
+/**
+ * Interface for Clinvar Strucvars query response as returned by
+ */
+export interface ClinvarSvQueryResponse$Api {
+  records: ClinvarStrucvarRecord[]
+}
+
+/**
+ * Interface for Clinvar Strucvars query result.
+ */
+export interface ClinvarSvQueryResponse {
+  records: ClinvarStrucvarRecord[]
+}
+
+/**
+ * Helper class to convert `ClinvarSvQueryResponse$Api` to `ClinvarSvQueryResponse`.
+ */
+class ClinvarSvQueryResponse$Type {
+  fromJson(apiResponse: ClinvarSvQueryResponse$Api): ClinvarSvQueryResponse {
+    return {
+      records: apiResponse.records
+    }
+  }
+}
+
+/**
+ * Helper instance to convert `ClinvarSvQueryResponse$Api` to `ClinvarSvQueryResponse`.
+ */
+export const ClinvarSvQueryResponse = new ClinvarSvQueryResponse$Type()
+
+/**
+ * Interface for gene names as returned by `genes/search` API.
+ */
+export interface GeneNames$Api {
+  hgnc_id: string
+  symbol: string
+  name: string
+  alias_symbol: string[]
+  alias_name: string[]
+  ensembl_gene_id?: string
+  ncbi_gene_id?: string
+}
+
+/**
+ * Interface for gene names results.
+ */
+export interface GeneNames {
+  hgncId: string
+  symbol: string
+  name: string
+  aliasSymbol: string[]
+  aliasName: string[]
+  ensemblGeneId?: string
+  ncbiGeneId?: string
+}
+
+/**
+ * Helper class to convert `GeneNames$Api` to `GeneNames`.
+ */
+class GeneNames$Type {
+  fromJson(apiGene: GeneNames$Api): GeneNames {
+    return {
+      hgncId: apiGene.hgnc_id,
+      symbol: apiGene.symbol,
+      name: apiGene.name,
+      aliasSymbol: apiGene.alias_symbol,
+      aliasName: apiGene.alias_name,
+      ensemblGeneId: apiGene.ensembl_gene_id,
+      ncbiGeneId: apiGene.ncbi_gene_id
+    }
+  }
+}
+
+/**
+ * Helper instance to convert `GeneNames$Api` to `GeneNames`.
+ */
+export const GeneNames = new GeneNames$Type()
+
+/**
+ * Interface for scored gene names as returned by `genes/search` API.
+ */
+export interface ScoreGeneNames$Api {
+  score: number
+  data: GeneNames$Api
+}
+
+/**
+ * Interface for scored gene names results.
+ */
+export interface ScoreGeneNames {
+  score: number
+  data: GeneNames
+}
+
+/**
+ * Helper class to convert `ScoreGeneNames$Api` to `ScoreGeneNames`.
+ */
+class ScoreGeneNames$Type {
+  fromJson(apiGene: ScoreGeneNames$Api): ScoreGeneNames {
+    return {
+      score: apiGene.score,
+      data: GeneNames.fromJson(apiGene.data)
+    }
+  }
+}
+
+/**
+ * Helper instance to convert `ScoreGeneNames$Api` to `ScoreGeneNames`.
+ */
+export const ScoreGeneNames = new ScoreGeneNames$Type()
+
+/**
+ * Interface for gene search query response as returned by API.
+ */
+export interface GeneSearchResponse$Api {
+  genes: ScoreGeneNames$Api[]
+}
+
+/**
+ * Interface for gene search query result.
+ */
+export interface GeneSearchResponse {
+  genes: ScoreGeneNames[]
+}
+
+/**
+ * Helper class to convert `GeneSearchResponse$Api` to `GeneSearchResponse`.
+ */
+class GeneSearchResponse$Type {
+  fromJson(apiResponse: GeneSearchResponse$Api): GeneSearchResponse {
+    return {
+      genes: apiResponse.genes.map((gene) => ScoreGeneNames.fromJson(gene))
+    }
+  }
+}
+
+/**
+ * Helper instance to convert `GeneSearchResponse$Api` to `GeneSearchResponse`.
+ */
+export const GeneSearchResponse = new GeneSearchResponse$Type()
 
 /**
  * Interface for gene info result.
@@ -91,7 +233,7 @@ export interface SeqvarInfoResult {
   gnomadGenomes?: Gnomad2Record | Gnomad3Record | Gnomad4Record
   helixmtdb?: HelixmtdbRecord
   ucscConservation: UcscConservationRecord[][]
-  clinvar?: ClinvarRecord
+  clinvar?: ClinvarSeqvarRecord
 }
 
 /**
@@ -129,7 +271,7 @@ class SeqvarInfoResult$Type {
         apiResult.clinvar === null
           ? undefined
           : // @ts-ignore
-            ClinvarRecord.fromJson(apiResult.clinvar as JsonValue)
+            ClinvarSeqvarRecord.fromJson(apiResult.clinvar as JsonValue)
     }
   }
 }
