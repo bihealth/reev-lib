@@ -15,8 +15,9 @@ export default mergeConfig(
         }
       },
       coverage: {
+        all: true,
         provider: 'istanbul',
-        reporter: ['text', 'json', 'html'],
+        reporter: ['text', 'html', 'clover', 'json'],
         include: ['src/lib/**/*.ts', 'src/components/**/*.{vue,ts}'],
         exclude: ['**/*.spec.ts', '**/*.stories.ts']
       },
