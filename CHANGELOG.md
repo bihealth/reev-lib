@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.4](https://github.com/bihealth/reev-frontend-lib/compare/v0.4.3...v0.4.4) (2024-01-31)
+
+
+### Bug Fixes
+
+* npm package contents (was empty, fix in CI) ([#60](https://github.com/bihealth/reev-frontend-lib/issues/60)) ([c05525a](https://github.com/bihealth/reev-frontend-lib/commit/c05525ad06b8a5cbca269c644cdd59017430c015))
+
 ## [0.4.3](https://github.com/bihealth/reev-frontend-lib/compare/v0.4.2...v0.4.3) (2024-01-31)
 
 
