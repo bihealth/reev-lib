@@ -9,9 +9,9 @@ import { ref } from 'vue'
 import { AnnonarsClient } from '../../api/annonars'
 import { DottyClient } from '../../api/dotty'
 import { type HpoTerm, VigunoClient } from '../../api/viguno'
+import { GenomeBuild } from '../../lib/genomeBuilds'
 import { urlConfig } from '../../lib/urlConfig'
 import { StoreState } from '../types'
-import { GenomeBuild } from '../../lib/genomeBuilds'
 
 export const useGeneInfoStore = defineStore('geneInfo', () => {
   /** The current store state. */
@@ -40,7 +40,7 @@ export const useGeneInfoStore = defineStore('geneInfo', () => {
     transcripts.value = undefined
   }
 
-  const initialize = async (hgncIdQuery: string, genomeRelease: GenomeBuild) => {
+  const initialize = async (hgncIdQuery: string, genomeBuild: GenomeBuild) => {
     // Do not re-load data if the gene symbol is the same
     if (hgncIdQuery === hgncId.value) {
       return
@@ -86,7 +86,7 @@ export const useGeneInfoStore = defineStore('geneInfo', () => {
         const dottyClient = new DottyClient()
         const transcriptsData = await dottyClient.fetchTranscripts(
           hgncIdQuery,
-          genomeRelease === 'grch37' ? 'GRCh37' : 'GRCh38'
+          genomeBuild === 'grch37' ? 'GRCh37' : 'GRCh38'
         )
         transcripts.value = transcriptsData
       }

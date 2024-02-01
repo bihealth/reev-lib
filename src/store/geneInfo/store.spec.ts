@@ -90,7 +90,7 @@ describe('geneInfo Store', () => {
     })
 
     // act:
-    await store.initialize('HGNC:1100', 'GRCh37')
+    await store.initialize('HGNC:1100', 'grch37')
 
     // assert:
     expect(store.storeState).toBe(StoreState.Active)
@@ -120,7 +120,7 @@ describe('geneInfo Store', () => {
     })
 
     // act:
-    await store.initialize('invalid', 'invalid')
+    await store.initialize('invalid', 'grch37')
 
     // assert:
     expect(store.storeState).toBe(StoreState.Error)
@@ -150,7 +150,7 @@ describe('geneInfo Store', () => {
     })
 
     // act:
-    await store.initialize('invalid', 'invalid')
+    await store.initialize('invalid', 'grch37')
 
     // assert:
     expect(store.storeState).toBe(StoreState.Error)
@@ -178,7 +178,7 @@ describe('geneInfo Store', () => {
     })
 
     // act:
-    await store.initialize('HGNC:1100', 'GRCh37')
+    await store.initialize('HGNC:1100', 'grch37')
 
     // assert:
     expect(store.storeState).toBe(StoreState.Active)
@@ -188,7 +188,7 @@ describe('geneInfo Store', () => {
     expect(store.hgncId).toBe('HGNC:1100')
 
     // act2:
-    await store.initialize('HGNC:1100', 'GRCh37')
+    await store.initialize('HGNC:1100', 'grch37')
 
     // assert2:
     expect(fetchMocker.mock.calls.length).toBe(4)
