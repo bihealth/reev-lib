@@ -1,7 +1,5 @@
+import { urlConfig } from '../../lib/urlConfig'
 import { Response } from './types'
-
-/** Default API base URL to use. */
-const API_BASE_URL = '/internal/proxy/cada-prio/'
 
 /**
  * Client for the CADA-Prio API.
@@ -9,8 +7,19 @@ const API_BASE_URL = '/internal/proxy/cada-prio/'
 export class CadaPrioClient {
   private apiBaseUrl: string
 
+  /**
+   * @param apiBaseUrl
+   *            API base to the backend, excluding trailing `/`.
+   *            The default is declared in '@/lib/urlConfig`.
+   * @throws Error if the API base URL is not configured.
+   */
   constructor(apiBaseUrl?: string) {
-    this.apiBaseUrl = apiBaseUrl ?? API_BASE_URL
+    if (apiBaseUrl !== undefined || urlConfig.baseUrlCadaPrio !== undefined) {
+      // @ts-ignore
+      this.apiBaseUrl = apiBaseUrl ?? urlConfig.baseUrlCadaPrio
+    } else {
+      throw new Error('Configuration error: API base URL not configured')
+    }
   }
 
   /**
@@ -23,7 +32,7 @@ export class CadaPrioClient {
    */
   async predictGeneImpact(hpoTerms: string[], geneSymbols?: string[]): Promise<Response> {
     const geneSuffix = geneSymbols ? `&gene_symbols=${geneSymbols.join(',')}` : ''
-    const url = `${this.apiBaseUrl}api/v1/predict?hpo_terms=${hpoTerms.join(',')}${geneSuffix}`
+    const url = `${this.apiBaseUrl}/api/v1/predict?hpo_terms=${hpoTerms.join(',')}${geneSuffix}`
 
     const response = await fetch(url, {
       method: 'GET'

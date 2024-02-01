@@ -1,6 +1,7 @@
 import { chunks } from '@reactgular/chunks'
 
 import type { LinearStrucvar, Seqvar } from '../../lib/genomicVars'
+import { urlConfig } from '../../lib/urlConfig'
 import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
 import {
@@ -10,17 +11,25 @@ import {
   SeqvarInfoResponse
 } from './types'
 
-/** Base URL for annonars API access */
-const API_BASE_URL = '/internal/proxy/annonars/'
-
 /**
  * Client for accessing annonars REST API.
  */
 export class AnnonarsClient {
   private apiBaseUrl: string
 
+  /**
+   * @param apiBaseUrl
+   *            API base to the backend, excluding trailing `/`.
+   *            The default is declared in '@/lib/urlConfig`.
+   * @throws Error if the API base URL is not configured.
+   */
   constructor(apiBaseUrl?: string) {
-    this.apiBaseUrl = apiBaseUrl ?? API_BASE_URL
+    if (apiBaseUrl !== undefined || urlConfig.baseUrlAnnonars !== undefined) {
+      // @ts-ignore
+      this.apiBaseUrl = apiBaseUrl ?? urlConfig.baseUrlAnnonars
+    } else {
+      throw new Error('Configuration error: API base URL not configured')
+    }
   }
 
   /**
@@ -29,7 +38,7 @@ export class AnnonarsClient {
    * @param hgncId HGNC ID, e.g., `"HGNC:26467"`.
    */
   async fetchGeneInfo(hgncId: string): Promise<GeneInfoResult> {
-    const response = await fetch(`${this.apiBaseUrl}genes/info?hgnc_id=${hgncId}`, {
+    const response = await fetch(`${this.apiBaseUrl}/genes/info?hgnc_id=${hgncId}`, {
       method: 'GET'
     })
     return await response.json()
@@ -48,7 +57,7 @@ export class AnnonarsClient {
     }
 
     const url =
-      `${this.apiBaseUrl}annos/variant?genome_release=${genomeBuild}&` +
+      `${this.apiBaseUrl}/annos/variant?genome_release=${genomeBuild}&` +
       `chromosome=${chromosome}&pos=${pos}&reference=${del}&` +
       `alternative=${ins}`
 
@@ -69,7 +78,7 @@ export class AnnonarsClient {
    * @returns
    */
   async fetchGeneClinvarInfo(hgncId: string): Promise<ClinvarPerGeneRecord> {
-    const response = await fetch(`${this.apiBaseUrl}genes/clinvar?hgnc_id=${hgncId}`, {
+    const response = await fetch(`${this.apiBaseUrl}/genes/clinvar?hgnc_id=${hgncId}`, {
       method: 'GET'
     })
     if (!response.ok) {
@@ -86,7 +95,7 @@ export class AnnonarsClient {
    * @throws Error if the request fails.
    */
   async fetchGenes(query: string): Promise<GeneSearchResponse> {
-    const response = await fetch(`${this.apiBaseUrl}genes/search?q=${query}`, {
+    const response = await fetch(`${this.apiBaseUrl}/genes/search?q=${query}`, {
       method: 'GET'
     })
     if (!response.ok) {
@@ -107,7 +116,7 @@ export class AnnonarsClient {
     const hgncIdChunks = chunks(hgncIds, chunkSize ?? 10)
 
     const promises = hgncIdChunks.map(async (chunk) => {
-      const url = `${this.apiBaseUrl}genes/info?hgnc_id=${chunk.join(',')}`
+      const url = `${this.apiBaseUrl}/genes/info?hgnc_id=${chunk.join(',')}`
 
       const response = await fetch(url, {
         method: 'GET'
@@ -141,7 +150,7 @@ export class AnnonarsClient {
   ): Promise<ClinvarSvQueryResponse> {
     const { genomeBuild, chrom, start, stop } = strucvar
     const url =
-      `${this.apiBaseUrl}clinvar-sv/query?genomeRelease=${genomeBuild}&` +
+      `${this.apiBaseUrl}/clinvar-sv/query?genomeRelease=${genomeBuild}&` +
       `chromosome=${chrom}&start=${start}&stop=${stop}&pageSize=${pageSize}&` +
       `minOverlap=${minOverlap}`
 

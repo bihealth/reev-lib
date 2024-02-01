@@ -1,8 +1,6 @@
 import type { LinearStrucvar, Seqvar } from '../../lib/genomicVars'
+import { urlConfig } from '../../lib/urlConfig'
 import { SeqvarResult, StrucvarResult } from './types'
-
-/** API base URL to use. */
-const API_BASE_URL = '/internal/proxy/mehari/'
 
 /**
  * Client for Mehari API requests.
@@ -10,8 +8,19 @@ const API_BASE_URL = '/internal/proxy/mehari/'
 export class MehariClient {
   private apiBaseUrl: string
 
+  /**
+   * @param apiBaseUrl
+   *            API base to the backend, excluding trailing `/`.
+   *            The default is declared in '@/lib/urlConfig`.
+   * @throws Error if the API base URL is not configured.
+   */
   constructor(apiBaseUrl?: string) {
-    this.apiBaseUrl = apiBaseUrl ?? API_BASE_URL
+    if (apiBaseUrl !== undefined || urlConfig.baseUrlMehari !== undefined) {
+      // @ts-ignore
+      this.apiBaseUrl = apiBaseUrl ?? urlConfig.baseUrlMehari
+    } else {
+      throw new Error('Configuration error: API base URL not configured')
+    }
   }
 
   /**
@@ -26,7 +35,7 @@ export class MehariClient {
     const { genomeBuild, chrom, pos, del, ins } = seqvar
     const hgncSuffix = hgncId ? `&hgnc_id=${hgncId}` : ''
     const url =
-      `${this.apiBaseUrl}seqvars/csq?genome_release=${genomeBuild}&` +
+      `${this.apiBaseUrl}/seqvars/csq?genome_release=${genomeBuild}&` +
       `chromosome=${chrom}&position=${pos}&reference=${del}&` +
       `alternative=${ins}${hgncSuffix}`
 
@@ -50,7 +59,7 @@ export class MehariClient {
   async retrieveStrucvarsCsq(strucvar: LinearStrucvar): Promise<StrucvarResult> {
     const { genomeBuild, chrom, start, stop, svType } = strucvar
     const url =
-      `${this.apiBaseUrl}strucvars/csq?genome_release=${genomeBuild}&` +
+      `${this.apiBaseUrl}/strucvars/csq?genome_release=${genomeBuild}&` +
       `chromosome=${chrom}&start=${start}&stop=${stop}&sv_type=${svType}`
 
     const response = await fetch(url, {
