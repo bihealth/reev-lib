@@ -6,7 +6,12 @@ import createFetchMock from 'vitest-fetch-mock'
 import { LinearStrucvarImpl, SeqvarImpl } from '../../lib/genomicVars'
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
 import { AnnonarsClient } from './client'
-import { ClinvarSvQueryResponse, GeneSearchResponse, SeqvarInfoResponse } from './types'
+import {
+  ClinvarSvQueryResponse,
+  GeneInfoResult,
+  GeneSearchResponse,
+  SeqvarInfoResponse
+} from './types'
 
 const geneInfoBrca1Json = JSON.parse(
   fs.readFileSync(
@@ -45,7 +50,7 @@ describe.concurrent('AnnonarsClient.fetchGeneInfo()', () => {
 
     // assert:
     expect(JSON.stringify(result)).toEqual(
-      JSON.stringify({ genes: { 'HGNC:1100': geneInfoBrca1Json } })
+      JSON.stringify(GeneInfoResult.fromJson({ genes: { 'HGNC:1100': geneInfoBrca1Json } }))
     )
   })
 
