@@ -131,17 +131,17 @@ export interface SeqvarResultEntry$Api {
   /** The feature tags. */
   feature_tag: string[]
   /** The exon / intron rank. */
-  rank?: Rank$Api
+  rank: Rank$Api | null
   /** HGVS c. notation. */
-  hgvs_t?: string
+  hgvs_t: string | null
   /** HGVS p. notation. */
-  hgvs_p?: string
+  hgvs_p: string | null
   /** cDNA position. */
-  tx_pos?: number
+  tx_pos: number | null
   /** CDS position. */
-  cds_pos?: number
+  cds_pos: number | null
   /** Protein position. */
-  protein_pos?: number
+  protein_pos: number | null
   /** Distance to feature. */
   distance?: number
   /** Optional list of warnings and error messages. */
@@ -201,14 +201,14 @@ class SeqvarResultEntry$Type {
       featureId: json.feature_id,
       featureBiotype: json.feature_biotype,
       featureTag: json.feature_tag,
-      rank: json.rank === undefined ? undefined : Rank.fromJson(json.rank),
-      hgvsT: json.hgvs_t,
-      hgvsP: json.hgvs_p,
-      txPos: json.tx_pos,
-      cdsPos: json.cds_pos,
-      proteinPos: json.protein_pos,
-      distance: json.distance,
-      messages: json.messages
+      rank: json.rank === null ? undefined : Rank.fromJson(json.rank),
+      hgvsT: json.hgvs_t === null ? undefined : json.hgvs_t,
+      hgvsP: json.hgvs_p === null ? undefined : json.hgvs_p,
+      txPos: json.tx_pos === null ? undefined : json.tx_pos,
+      cdsPos: json.cds_pos === null ? undefined : json.cds_pos,
+      proteinPos: json.protein_pos === null ? undefined : json.protein_pos,
+      distance: json.distance === null ? undefined : json.distance,
+      messages: json.messages === null ? undefined : json.messages
     }
   }
 }
