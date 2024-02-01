@@ -6,7 +6,6 @@ import createFetchMock from 'vitest-fetch-mock'
 import { SeqvarImpl } from '../../lib/genomicVars'
 import { LinearStrucvarImpl } from '../../lib/genomicVars'
 import { MehariClient } from './client'
-import { SeqvarResult, StrucvarResult } from './types'
 
 /** Fixture Seqvar */
 const seqvar = new SeqvarImpl('grch37', '1', 123, 'A', 'G')
@@ -42,9 +41,7 @@ describe.concurrent('MehariClient/seqvar', () => {
     const result = await client.retrieveSeqvarsCsq(seqvar, 'HGNC:1100')
 
     // assert:
-    expect(JSON.stringify(result)).toEqual(
-      JSON.stringify(SeqvarResult.fromJson(seqvarCsqResponseBrca1))
-    )
+    expect(JSON.stringify(result)).toMatchSnapshot()
   })
 
   it('fetches TxCsq info correctly without HGNC id', async () => {
@@ -56,9 +53,7 @@ describe.concurrent('MehariClient/seqvar', () => {
     const result = await client.retrieveSeqvarsCsq(seqvar)
 
     // assert:
-    expect(JSON.stringify(result)).toEqual(
-      JSON.stringify(SeqvarResult.fromJson(seqvarCsqResponseBrca1))
-    )
+    expect(JSON.stringify(result)).toMatchSnapshot()
   })
 
   it('fails to fetch variant info with wrong variant', async () => {
@@ -97,9 +92,7 @@ describe.concurrent('MehariClient/strucvar', () => {
     const result = await client.retrieveStrucvarsCsq(strucvar)
 
     // assert:
-    expect(JSON.stringify(result)).toEqual(
-      JSON.stringify(StrucvarResult.fromJson(strucvarCsqResponseBrca1))
-    )
+    expect(JSON.stringify(result)).toMatchSnapshot()
   })
 
   it('fails to fetch variant info with wrong variant', async () => {

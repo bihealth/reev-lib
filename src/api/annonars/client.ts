@@ -85,7 +85,12 @@ export class AnnonarsClient {
     if (!response.ok) {
       throw new Error(`failed to fetch gene clinvar info: ${response.statusText}`)
     }
-    return await response.json()
+    const responseJson = await response.json()
+    if (responseJson?.genes && responseJson?.genes[hgncId]) {
+      return ClinvarPerGeneRecord.fromJson(responseJson.genes[hgncId])
+    } else {
+      throw new Error(`failed to fetch gene clinvar info for HGNC ID: ${hgncId}`)
+    }
   }
 
   /**
