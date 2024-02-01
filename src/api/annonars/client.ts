@@ -41,7 +41,8 @@ export class AnnonarsClient {
     const response = await fetch(`${this.apiBaseUrl}/genes/info?hgnc_id=${hgncId}`, {
       method: 'GET'
     })
-    return await response.json()
+    const responseJson = await response.json()
+    return GeneInfoResult.fromJson(responseJson)
   }
 
   /**

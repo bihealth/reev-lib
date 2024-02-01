@@ -153,12 +153,35 @@ class GeneSearchResponse$Type {
 export const GeneSearchResponse = new GeneSearchResponse$Type()
 
 /**
+ * Interface for gene info result as returned by API.
+ */
+export interface GeneInfoResult$Api {
+  genes: { [key: string]: GeneInfoRecord }
+}
+
+/**
  * Interface for gene info result.
  */
 export interface GeneInfoResult {
   /** Gehe information per HGNC ID. */
   genes: GeneInfoRecord[]
 }
+
+/**
+ * Helper class to convert `GeneInfoResult$Api` to `GeneInfoResult`.
+ */
+class GeneInfoResult$Type {
+  fromJson(apiResult: GeneInfoResult$Api): GeneInfoResult {
+    return {
+      genes: Object.values(apiResult.genes)
+    }
+  }
+}
+
+/**
+ * Helper instance to convert `GeneInfoResult$Api` to `GeneInfoResult`.
+ */
+export const GeneInfoResult = new GeneInfoResult$Type()
 
 /**
  * Interface for seqvar info query as returned by API.
