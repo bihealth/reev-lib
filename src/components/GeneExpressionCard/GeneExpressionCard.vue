@@ -148,12 +148,12 @@ const vegaLayer = [
 <template>
   <!-- no ENSG => display loader -->
   <template v-if="!ensemblGeneId?.length">
-    <v-skeleton-loader class="mt-3 mx-auto border" type="image,button" />
+    <v-skeleton-loader class="mx-auto border" type="image,button" />
   </template>
 
   <!-- otherwise, display actual card -->
   <template v-else>
-    <v-card class="mt-3">
+    <v-card>
       <v-card-title class="pb-0 pr-2">
         Expression
         <DocsLink anchor="expression" />

@@ -31,7 +31,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <v-card class="mt-3">
+  <v-card>
     <v-card-title class="pb-0 pr-2">
       ClinVar Information
       <small>
