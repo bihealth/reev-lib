@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CadaPrioClient > throws in case of fetching problems 1`] = `"{"entries":[{"geneSymbol":"WNT7A"},{"geneSymbol":"SMARCA2"},{"geneSymbol":"EFL1"},{"geneSymbol":"SRP54"},{"geneSymbol":"HPGD"},{"geneSymbol":"GALNS"},{"geneSymbol":"DNAJC21"},{"geneSymbol":"NOG"},{"geneSymbol":"ESCO2"},{"geneSymbol":"COL11A1"},{"geneSymbol":"PTDSS1"},{"geneSymbol":"VAC14"},{"geneSymbol":"TBX3"},{"geneSymbol":"GRIA3"},{"geneSymbol":"RNU4ATAC"},{"geneSymbol":"GDF5"},{"geneSymbol":"TRAPPC2"},{"geneSymbol":"IHH"},{"geneSymbol":"PCNT"}]}"`;

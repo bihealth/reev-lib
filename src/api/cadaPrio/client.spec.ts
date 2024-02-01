@@ -4,7 +4,6 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import createFetchMock from 'vitest-fetch-mock'
 
 import { CadaPrioClient } from './client'
-import { Response } from './types'
 
 /** Fixture with prediction results. */
 const cadaPrioPredictResultJson = JSON.parse(
@@ -29,9 +28,7 @@ describe.concurrent('CadaPrioClient', () => {
     const result = await client.predictGeneImpact(['HP:0000001'])
 
     // assert:
-    expect(JSON.stringify(result)).toEqual(
-      JSON.stringify(Response.fromJson(cadaPrioPredictResultJson))
-    )
+    expect(JSON.stringify(result)).toMatchSnapshot()
   })
 
   it('throws in case of fetching problems', async () => {

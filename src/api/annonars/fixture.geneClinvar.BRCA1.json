@@ -1,0 +1,216 @@
+{
+  "genes": {
+    "HGNC:1100": {
+      "perImpactCounts": [
+        { "impact": "IMPACT_THREE_PRIME_UTR_VARIANT", "counts": [30, 112, 196, 41, 115] },
+        { "impact": "IMPACT_FIVE_PRIME_UTR_VARIANT", "counts": [47, 376, 244, 33, 275] },
+        { "impact": "IMPACT_FRAMESHIFT_VARIANT", "counts": [0, 1, 31, 115, 3883] },
+        { "impact": "IMPACT_INFRAME_INDEL", "counts": [5, 15, 168, 10, 20] },
+        { "impact": "IMPACT_INTRON_VARIANT", "counts": [1085, 4679, 3585, 186, 1701] },
+        { "impact": "IMPACT_MISSENSE_VARIANT", "counts": [124, 374, 2202, 158, 212] },
+        { "impact": "IMPACT_NON_CODING_TRANSCRIPT_VARIANT", "counts": [0, 1, 7, 9, 437] },
+        { "impact": "IMPACT_STOP_GAINED", "counts": [1, 0, 1, 1, 12] },
+        { "impact": "IMPACT_SPLICE_ACCEPTOR_VARIANT", "counts": [0, 1, 4, 13, 82] },
+        { "impact": "IMPACT_SPLICE_DONOR_VARIANT", "counts": [0, 0, 7, 10, 87] },
+        { "impact": "IMPACT_SYNONYMOUS_VARIANT", "counts": [11, 178, 7, 0, 5] },
+        { "impact": "IMPACT_UPSTREAM_TRANSCRIPT_VARIANT", "counts": [4, 0, 0, 0, 0] }
+      ],
+      "perFreqCounts": [
+        {
+          "coarseClinsig": "COARSE_CLINICAL_SIGNIFICANCE_BENIGN",
+          "counts": [5712, 0, 0, 0, 0, 317, 87, 101, 133, 133, 113, 122, 31, 18, 24, 279, 3, 0]
+        },
+        {
+          "coarseClinsig": "COARSE_CLINICAL_SIGNIFICANCE_UNCERTAIN",
+          "counts": [6318, 0, 0, 0, 0, 173, 22, 20, 3, 2, 4, 3, 0, 1, 0, 10, 0, 0]
+        },
+        {
+          "coarseClinsig": "COARSE_CLINICAL_SIGNIFICANCE_PATHOGENIC",
+          "counts": [7934, 0, 0, 0, 0, 35, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        }
+      ],
+      "variants": [
+        {
+          "genomeRelease": "GRCh37",
+          "variants": [
+            {
+              "release": "GRCh37",
+              "chromosome": "17",
+              "start": 41197708,
+              "stop": 41197708,
+              "reference": "T",
+              "alternative": "G",
+              "vcv": "VCV000041833",
+              "referenceAssertions": [
+                {
+                  "rcv": "RCV000034760",
+                  "title": "NM_007294.4(BRCA1):c.5579A>C (p.His1860Pro) AND not provided",
+                  "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+                  "reviewStatus": "REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED"
+                }
+              ]
+            },
+            {
+              "release": "GRCh37",
+              "chromosome": "17",
+              "start": 41234473,
+              "stop": 41234473,
+              "reference": "G",
+              "alternative": "C",
+              "vcv": "VCV000182080",
+              "referenceAssertions": [
+                {
+                  "rcv": "RCV000159851",
+                  "title": "NM_007294.4(BRCA1):c.4305C>G (p.Asp1435Glu) AND not provided",
+                  "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+                  "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+                }
+              ]
+            },
+            {
+              "release": "GRCh37",
+              "chromosome": "17",
+              "start": 41234589,
+              "stop": 41234591,
+              "reference": "CTCT",
+              "alternative": "C",
+              "vcv": "VCV000182116",
+              "referenceAssertions": [
+                {
+                  "rcv": "RCV000159925",
+                  "title": "NM_007294.4(BRCA1):c.4187_4189del (p.Gln1396del) AND not provided",
+                  "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+                  "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+                }
+              ]
+            },
+            {
+              "release": "GRCh37",
+              "chromosome": "17",
+              "start": 41226408,
+              "stop": 41226409,
+              "reference": "GC",
+              "alternative": "AA",
+              "vcv": "VCV000182117",
+              "referenceAssertions": [
+                {
+                  "rcv": "RCV000159926",
+                  "title": "NM_007294.4(BRCA1):c.4614_4615delinsTT (p.Gln1538His) AND not specified",
+                  "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+                  "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+                }
+              ]
+            },
+            {
+              "release": "GRCh37",
+              "chromosome": "17",
+              "start": 41276145,
+              "stop": 41276149,
+              "reference": "AGAAA",
+              "alternative": "TT",
+              "vcv": "VCV000246265",
+              "referenceAssertions": [
+                {
+                  "rcv": "RCV000235381",
+                  "title": "NM_007294.4(BRCA1):c.-19-17_-19-13delinsAA AND not specified",
+                  "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+                  "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "genomeRelease": "GRCh38",
+          "variants": [
+            {
+              "release": "GRCh38",
+              "chromosome": "17",
+              "start": 43045691,
+              "stop": 43045691,
+              "reference": "T",
+              "alternative": "G",
+              "vcv": "VCV000041833",
+              "referenceAssertions": [
+                {
+                  "rcv": "RCV000034760",
+                  "title": "NM_007294.4(BRCA1):c.5579A>C (p.His1860Pro) AND not provided",
+                  "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
+                  "reviewStatus": "REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED"
+                }
+              ]
+            },
+            {
+              "release": "GRCh38",
+              "chromosome": "17",
+              "start": 43082456,
+              "stop": 43082456,
+              "reference": "G",
+              "alternative": "C",
+              "vcv": "VCV000182080",
+              "referenceAssertions": [
+                {
+                  "rcv": "RCV000159851",
+                  "title": "NM_007294.4(BRCA1):c.4305C>G (p.Asp1435Glu) AND not provided",
+                  "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+                  "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+                }
+              ]
+            },
+            {
+              "release": "GRCh38",
+              "chromosome": "17",
+              "start": 43082572,
+              "stop": 43082574,
+              "reference": "CTCT",
+              "alternative": "C",
+              "vcv": "VCV000182116",
+              "referenceAssertions": [
+                {
+                  "rcv": "RCV000159925",
+                  "title": "NM_007294.4(BRCA1):c.4187_4189del (p.Gln1396del) AND not provided",
+                  "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+                  "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+                }
+              ]
+            },
+            {
+              "release": "GRCh38",
+              "chromosome": "17",
+              "start": 43074391,
+              "stop": 43074392,
+              "reference": "GC",
+              "alternative": "AA",
+              "vcv": "VCV000182117",
+              "referenceAssertions": [
+                {
+                  "rcv": "RCV000159926",
+                  "title": "NM_007294.4(BRCA1):c.4614_4615delinsTT (p.Gln1538His) AND not specified",
+                  "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+                  "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+                }
+              ]
+            },
+            {
+              "release": "GRCh38",
+              "chromosome": "17",
+              "start": 43124128,
+              "stop": 43124132,
+              "reference": "AGAAA",
+              "alternative": "TT",
+              "vcv": "VCV000246265",
+              "referenceAssertions": [
+                {
+                  "rcv": "RCV000235381",
+                  "title": "NM_007294.4(BRCA1):c.-19-17_-19-13delinsAA AND not specified",
+                  "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
+                  "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
