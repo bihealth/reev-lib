@@ -11,6 +11,7 @@ import { DottyClient } from '../../api/dotty'
 import { type HpoTerm, VigunoClient } from '../../api/viguno'
 import { urlConfig } from '../../lib/urlConfig'
 import { StoreState } from '../types'
+import { GenomeBuild } from '../../lib/genomeBuilds'
 
 export const useGeneInfoStore = defineStore('geneInfo', () => {
   /** The current store state. */
@@ -39,7 +40,7 @@ export const useGeneInfoStore = defineStore('geneInfo', () => {
     transcripts.value = undefined
   }
 
-  const initialize = async (hgncIdQuery: string, genomeRelease: string) => {
+  const initialize = async (hgncIdQuery: string, genomeRelease: GenomeBuild) => {
     // Do not re-load data if the gene symbol is the same
     if (hgncIdQuery === hgncId.value) {
       return
