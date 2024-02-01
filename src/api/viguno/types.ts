@@ -285,14 +285,14 @@ export const HpoGeneQuery = new HpoGeneQuery$Type()
 export interface HpoGenesResult$Api {
   version: Version$Api
   query: HpoGeneQuery$Api
-  results: HpoTerm$Api[]
+  result: HpoTerm$Api[]
 }
 
 /** Interface for response of gene lookup. */
 export interface HpoGenesResult {
   version: Version
   query: HpoGeneQuery
-  results: HpoTerm[]
+  result: HpoTerm[]
 }
 
 /** Helper class for converting from `HpoGenesResult$Api` to `HpoGenesResult`. */
@@ -301,7 +301,7 @@ class HpoGenesResult$Type {
     return {
       version: Version.fromJson(api.version),
       query: HpoGeneQuery.fromJson(api.query),
-      results: api.results.map(HpoTerm.fromJson)
+      result: api.result.map(HpoTerm.fromJson)
     }
   }
 }
