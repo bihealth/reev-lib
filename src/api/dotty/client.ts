@@ -1,13 +1,22 @@
+import { urlConfig } from '../../lib/urlConfig'
 import { SpdiResult, TranscriptResult } from './types'
-
-/** Default base AURL for dotty API. */
-const API_BASE_URL = '/internal/proxy/dotty'
 
 export class DottyClient {
   private apiBaseUrl: string
 
+  /**
+   * @param apiBaseUrl
+   *            API base to the backend, excluding trailing `/`.
+   *            The default is declared in '@/lib/urlConfig`.
+   * @throws Error if the API base URL is not configured.
+   */
   constructor(apiBaseUrl?: string) {
-    this.apiBaseUrl = apiBaseUrl ?? API_BASE_URL
+    if (apiBaseUrl !== undefined || urlConfig.baseUrlDotty !== undefined) {
+      // @ts-ignore
+      this.apiBaseUrl = apiBaseUrl ?? urlConfig.baseUrlDotty
+    } else {
+      throw new Error('Configuration error: API base URL not configured')
+    }
   }
 
   /**

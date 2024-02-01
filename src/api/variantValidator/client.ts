@@ -1,8 +1,6 @@
 import type { Seqvar } from '../../lib/genomicVars'
+import { urlConfig } from '../../lib/urlConfig'
 import { Response as VariantValidatorResponse } from './types'
-
-/** Base URL for VariantValidator. */
-const API_BASE_URL = `/remote/variantvalidator`
 
 /**
  * Client for the VariantValidator API.
@@ -10,8 +8,19 @@ const API_BASE_URL = `/remote/variantvalidator`
 export class VariantValidatorClient {
   private apiBaseUrl: string
 
+  /**
+   * @param apiBaseUrl
+   *            API base to the backend, excluding trailing `/`.
+   *            The default is declared in '@/lib/urlConfig`.
+   * @throws Error if the API base URL is not configured.
+   */
   constructor(apiBaseUrl?: string) {
-    this.apiBaseUrl = apiBaseUrl ?? API_BASE_URL
+    if (apiBaseUrl !== undefined || urlConfig.baseUrlVariantValidator !== undefined) {
+      // @ts-ignore
+      this.apiBaseUrl = apiBaseUrl ?? urlConfig.baseUrlVariantValidator
+    } else {
+      throw new Error('Configuration error: API base URL not configured')
+    }
   }
 
   /**

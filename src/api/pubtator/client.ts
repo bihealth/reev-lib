@@ -1,7 +1,5 @@
+import { urlConfig } from '../../lib/urlConfig'
 import { SearchResult } from './types'
-
-/** API base URL to use. */
-const API_BASE_URL = '/internal/proxy/pubtator3-api'
 
 /**
  * Client for PubTator V3 API queries.
@@ -11,12 +9,17 @@ export class PubtatorClient {
   private apiBaseUrl: string
 
   /**
-   * Create a new PubTator client.
-   *
-   * @param apiBaseUrl The API base URL to use, defaults to `API_BASE_URL`.
+   * @param apiBaseUrl
+   *            API base to the backend, excluding trailing `/`.
+   *            The default is declared in '@/lib/urlConfig`.
    */
   constructor(apiBaseUrl?: string) {
-    this.apiBaseUrl = apiBaseUrl ?? API_BASE_URL
+    if (apiBaseUrl !== undefined || urlConfig.baseUrlPubtator !== undefined) {
+      // @ts-ignore
+      this.apiBaseUrl = apiBaseUrl ?? urlConfig.baseUrlPubtator
+    } else {
+      throw new Error('Configuration error: API base URL not configured')
+    }
   }
 
   /**
@@ -39,7 +42,7 @@ export class PubtatorClient {
     // Then, extract PMID list and retrieve biocjson for the PMIDs
     const pmids: string[] = searchData!.results!.map((doc: any) => doc.pmid)
     const exportRes = await fetch(
-      `${this.apiBaseUrl}}/publications/export/biocjson` + `?pmids=${pmids.join(',')}`
+      `${this.apiBaseUrl}/publications/export/biocjson` + `?pmids=${pmids.join(',')}`
     )
     if (!exportRes.ok) {
       throw new Error(`Error running PubTator 3 export: ${exportRes.statusText}`)
