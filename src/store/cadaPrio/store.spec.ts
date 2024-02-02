@@ -1,3 +1,5 @@
+import fs from 'fs'
+import path from 'path'
 import { createPinia, setActivePinia } from 'pinia'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import createFetchMock from 'vitest-fetch-mock'
@@ -5,9 +7,16 @@ import createFetchMock from 'vitest-fetch-mock'
 import { StoreState } from '../../store'
 import { useCadaPrioStore } from './store'
 
+const predictResponseJson = JSON.parse(
+  fs.readFileSync(
+    path.resolve(__dirname, '../../api/cadaPrio/fixture.predictResponse.json'),
+    'utf8'
+  )
+)
+
 const fetchMocker = createFetchMock(vi)
 
-describe.concurrent('Cada Prio Store', () => {
+describe('Cada Prio Store', () => {
   beforeEach(() => {
     setActivePinia(createPinia())
     fetchMocker.enableMocks()
@@ -21,21 +30,21 @@ describe.concurrent('Cada Prio Store', () => {
     // act: nothing to do
 
     // assert:
-    expect(store.storeState).toBe(StoreState.Initial)
-    expect(store.geneRanking).toBe(null)
+    expect(store.storeState).toEqual(StoreState.Initial)
+    expect(store.geneRanking).toBe(undefined)
   })
 
   it('should predict gene impact', async () => {
     // arrange:
-    fetchMocker.mockResponse(JSON.stringify({ result: 'pathogenic' }))
+    fetchMocker.mockResponse(JSON.stringify(predictResponseJson))
     const store = useCadaPrioStore()
 
     // act:
     await store.loadData(['HP:0000001'])
 
     // assert:
-    expect(store.storeState).toBe(StoreState.Active)
-    expect(store.geneRanking).toStrictEqual({ result: 'pathogenic' })
+    expect(store.storeState).toEqual(StoreState.Active)
+    expect(store.geneRanking).toMatchSnapshot()
   })
 
   it('should handle error when predicting gene impact', async () => {
@@ -49,7 +58,7 @@ describe.concurrent('Cada Prio Store', () => {
     await store.loadData(['HP:0000001'])
 
     // assert:
-    expect(store.storeState).toBe(StoreState.Error)
-    expect(store.geneRanking).toBe(null)
+    expect(store.storeState).toEqual(StoreState.Error)
+    expect(store.geneRanking).toBe(undefined)
   })
 })

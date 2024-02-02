@@ -22,11 +22,11 @@ export const useCadaPrioStore = defineStore('cadaPrio', () => {
   const storeState = ref<StoreState>(StoreState.Initial)
 
   /** The current gene Ranking. */
-  const geneRanking = ref<ResponseEntry[] | null>(null)
+  const geneRanking = ref<ResponseEntry[] | undefined>(undefined)
 
   function clearData() {
     storeState.value = StoreState.Initial
-    geneRanking.value = null
+    geneRanking.value = undefined
   }
 
   /**
@@ -52,11 +52,12 @@ export const useCadaPrioStore = defineStore('cadaPrio', () => {
     try {
       const client = new CadaPrioClient()
       const response = await client.predictGeneImpact(hpoTerms, options?.hgncIds)
+      console.log(response)
       const data = response.entries
       if (data.length === 0) {
-        geneRanking.value = null
+        geneRanking.value = undefined
       } else {
-        geneRanking.value = data
+        geneRanking.value = response.entries
       }
       storeState.value = StoreState.Active
     } catch (error) {
