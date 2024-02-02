@@ -1,4 +1,4 @@
-import { JsonValue } from '@protobuf-ts/runtime'
+import type { JsonValue } from '@protobuf-ts/runtime'
 
 import { Record as ClinvarSeqvarRecord } from '../../pbs/annonars/clinvar/minimal'
 import { Record as ClinvarStrucvarRecord } from '../../pbs/annonars/clinvar/sv'

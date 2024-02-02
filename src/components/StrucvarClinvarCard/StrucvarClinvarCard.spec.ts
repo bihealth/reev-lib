@@ -1,9 +1,9 @@
-import { JsonValue } from '@protobuf-ts/runtime'
+import type { JsonValue } from '@protobuf-ts/runtime'
 import fs from 'fs'
 import path from 'path'
 import { describe, expect, it } from 'vitest'
 
-import { Strucvar } from '../../lib/genomicVars'
+import type { Strucvar } from '../../lib/genomicVars'
 import { setupMountedComponents } from '../../lib/testUtils'
 import { ResponseRecord as ClinvarSvRecord } from '../../pbs/annonars/clinvar/sv'
 import StrucvarClinvarCard from './StrucvarClinvarCard.vue'

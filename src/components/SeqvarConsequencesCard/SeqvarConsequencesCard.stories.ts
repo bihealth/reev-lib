@@ -1,4 +1,4 @@
-import { JsonValue } from '@protobuf-ts/runtime'
+import type { JsonValue } from '@protobuf-ts/runtime'
 import type { Meta, StoryObj } from '@storybook/vue3'
 
 import seqvarCsqResultBrca1Json from '../../api/mehari/fixture.seqvarCsqResponse.BRCA1.json'

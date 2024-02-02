@@ -9,7 +9,7 @@ import { ref } from 'vue'
 import { AnnonarsClient } from '../../api/annonars'
 import { DottyClient } from '../../api/dotty'
 import { type HpoTerm, VigunoClient } from '../../api/viguno'
-import { GenomeBuild } from '../../lib/genomeBuilds'
+import { type GenomeBuild } from '../../lib/genomeBuilds'
 import { urlConfig } from '../../lib/urlConfig'
 import { StoreState } from '../types'
 

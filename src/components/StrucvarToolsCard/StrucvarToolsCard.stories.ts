@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 
-import { Strucvar } from '../../lib/genomicVars'
+import type { Strucvar } from '../../lib/genomicVars'
 import StrucvarToolsCard from './StrucvarToolsCard.vue'
 
 // We define the fixtures inline here as they are small.

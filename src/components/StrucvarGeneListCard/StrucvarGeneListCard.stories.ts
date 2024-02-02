@@ -1,10 +1,10 @@
-import { JsonValue } from '@protobuf-ts/runtime'
+import type { JsonValue } from '@protobuf-ts/runtime'
 import type { Meta, StoryObj } from '@storybook/vue3'
 
 import { StrucvarResult } from '../../api/mehari'
 import strucvarResultBrca1Json from '../../api/mehari/fixture.strucvarCsqResponse.BRCA1.json'
 import geneInfoBrca1Json from '../../components/GenePathogenicityCard/fixture.geneInfo.BRCA1.json'
-import { Strucvar } from '../../lib/genomicVars'
+import type { Strucvar } from '../../lib/genomicVars'
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
 import { StoreState } from '../../store'
 import StrucvarGeneListCard from './StrucvarGeneListCard.vue'

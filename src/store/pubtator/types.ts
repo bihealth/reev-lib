@@ -1,4 +1,4 @@
-import { SearchResult } from '../../api/pubtator'
+import { type SearchResult } from '../../api/pubtator'
 
 /** Enumeration for annotation types */
 export enum AnnotationType {

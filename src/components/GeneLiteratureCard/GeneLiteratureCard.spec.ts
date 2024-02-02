@@ -4,7 +4,7 @@ import { describe, expect, test } from 'vitest'
 
 import { setupMountedComponents } from '../../lib/testUtils'
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
-import { SearchResults } from '../../store/pubtator'
+import type { SearchResults } from '../../store/pubtator'
 import { StoreState } from '../../store/types'
 import GeneLiteratureCard from './GeneLiteratureCard.vue'
 
