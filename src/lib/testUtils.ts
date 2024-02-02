@@ -2,7 +2,7 @@ import { type TestingPinia, createTestingPinia } from '@pinia/testing'
 import { type VueWrapper, flushPromises, mount } from '@vue/test-utils'
 import { vi } from 'vitest'
 import { h } from 'vue'
-import { RouteRecordRaw, RouterView, createRouter, createWebHistory } from 'vue-router'
+import { RouteRecordRaw, Router, RouterView, createRouter, createWebHistory } from 'vue-router'
 import { createVuetify } from 'vuetify'
 import { md3 } from 'vuetify/blueprints'
 import * as components from 'vuetify/components'
@@ -16,6 +16,8 @@ export interface MountedComponents {
   pinia: TestingPinia
   /** The `VueWrapper` instance */
   wrapper: VueWrapper
+  /** The `Router` instance. */
+  router: Router
 }
 
 /**
@@ -128,5 +130,5 @@ export const setupMountedComponents = async (
   await flushPromises()
   await vi.dynamicImportSettled()
 
-  return { pinia, wrapper }
+  return { pinia, wrapper, router }
 }
