@@ -452,7 +452,9 @@ const conditionsCols = computed<number>(() => {
                       <div class="text-subtitle-1 mt-3">
                         PanelApp Panels for {{ geneInfo.hgnc!.symbol }}
                         <a
-                          :href="`https://panelapp.genomicsengland.co.uk/panels/entities/${geneInfo.hgnc!.symbol}`"
+                          :href="`https://panelapp.genomicsengland.co.uk/panels/entities/${
+                            geneInfo.hgnc!.symbol
+                          }`"
                           target="_blank"
                         >
                           <v-icon>mdi-launch</v-icon>
@@ -580,7 +582,9 @@ const conditionsCols = computed<number>(() => {
                             <v-expansion-panel-text>
                               Gene specific panel decision in PanelApp:
                               <a
-                                :href="`https://panelapp.genomicsengland.co.uk/panels/${item.raw.panel.id}/gene/${geneInfo.hgnc!.symbol}`"
+                                :href="`https://panelapp.genomicsengland.co.uk/panels/${
+                                  item.raw.panel.id
+                                }/gene/${geneInfo.hgnc!.symbol}`"
                                 target="_blank"
                               >
                                 <v-icon>mdi-launch</v-icon>
