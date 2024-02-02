@@ -1,0 +1,201 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Cada Prio Store > should handle error when predicting gene impact 1`] = `
+[
+  {
+    "geneSymbol": "WNT7A",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "SMARCA2",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "EFL1",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "SRP54",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "HPGD",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "GALNS",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "DNAJC21",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "NOG",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "ESCO2",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "COL11A1",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "PTDSS1",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "VAC14",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "TBX3",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "GRIA3",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "RNU4ATAC",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "GDF5",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "TRAPPC2",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "IHH",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "PCNT",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+]
+`;
+
+exports[`Cada Prio Store > should predict gene impact 1`] = `
+[
+  {
+    "geneSymbol": "WNT7A",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "SMARCA2",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "EFL1",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "SRP54",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "HPGD",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "GALNS",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "DNAJC21",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "NOG",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "ESCO2",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "COL11A1",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "PTDSS1",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "VAC14",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "TBX3",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "GRIA3",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "RNU4ATAC",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "GDF5",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "TRAPPC2",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "IHH",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+  {
+    "geneSymbol": "PCNT",
+    "hpoTerm": undefined,
+    "impact": undefined,
+  },
+]
+`;
