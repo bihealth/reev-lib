@@ -1,4 +1,4 @@
-import { JsonValue } from '@protobuf-ts/runtime'
+import type { JsonValue } from '@protobuf-ts/runtime'
 import type { Meta, StoryObj } from '@storybook/vue3'
 
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'

@@ -3,7 +3,7 @@ import path from 'path'
 import { describe, expect, it } from 'vitest'
 
 import { SeqvarInfoResponse } from '../../api/annonars/types'
-import { Seqvar } from '../../lib/genomicVars'
+import type { Seqvar } from '../../lib/genomicVars'
 import { setupMountedComponents } from '../../lib/testUtils'
 import AutosomalFreqs from './AutosomalFreqs.vue'
 

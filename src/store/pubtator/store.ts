@@ -6,7 +6,7 @@ import { ref } from 'vue'
 
 import { PubtatorClient } from '../../api/pubtator'
 import { StoreState } from '../../store/types'
-import { SearchResults } from './types'
+import { type SearchResults } from './types'
 
 export const usePubtatorStore = defineStore('pubtator', () => {
   /** The current store state. */

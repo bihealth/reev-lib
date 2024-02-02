@@ -1,5 +1,5 @@
 import { urlConfig } from '../../lib/urlConfig'
-import { SearchResult } from './types'
+import type { SearchResult } from './types'
 
 /**
  * Client for PubTator V3 API queries.

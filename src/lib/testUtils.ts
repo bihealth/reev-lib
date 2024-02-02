@@ -2,7 +2,13 @@ import { type TestingPinia, createTestingPinia } from '@pinia/testing'
 import { type VueWrapper, flushPromises, mount } from '@vue/test-utils'
 import { vi } from 'vitest'
 import { h } from 'vue'
-import { RouteRecordRaw, Router, RouterView, createRouter, createWebHistory } from 'vue-router'
+import {
+  type RouteRecordRaw,
+  type Router,
+  RouterView,
+  createRouter,
+  createWebHistory
+} from 'vue-router'
 import { createVuetify } from 'vuetify'
 import { md3 } from 'vuetify/blueprints'
 import * as components from 'vuetify/components'
