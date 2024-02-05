@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Response.fromJson > handles telomeric variant correctly 1`] = `
+exports[`Response.fromJson > handles BRCA1 variant correctly 1`] = `
 {
   "entries": [
     {
@@ -427,7 +427,7 @@ exports[`Response.fromJson > handles telomeric variant correctly 1`] = `
 }
 `;
 
-exports[`Response.fromJson > handles telomeric variant correctly 2`] = `
+exports[`Response.fromJson > handles telomeric variant correctly 1`] = `
 {
   "entries": [
     {

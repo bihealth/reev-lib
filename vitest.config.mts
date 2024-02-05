@@ -18,7 +18,7 @@ export default mergeConfig(
         all: true,
         provider: 'istanbul',
         reporter: ['text', 'html', 'clover', 'json'],
-        include: ['src/lib/**/*.ts', 'src/components/**/*.{vue,ts}'],
+        include: ['src/lib/**/*.ts', 'src/stores/**/*.ts', 'src/components/**/*.{vue,ts}'],
         exclude: ['**/*.spec.ts', '**/*.stories.ts']
       },
       environment: 'jsdom',

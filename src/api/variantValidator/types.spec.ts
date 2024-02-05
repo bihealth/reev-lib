@@ -12,7 +12,7 @@ const maneResponseTelomericJson = JSON.parse(
   fs.readFileSync(path.resolve(__dirname, './fixture.maneResponse.telomeric.json'), 'utf8')
 )
 
-describe.concurrent('Response.fromJson', () => {
+describe('Response.fromJson', () => {
   it('handles BRCA1 variant correctly', async () => {
     // arrange:
 

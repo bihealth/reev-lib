@@ -6,6 +6,8 @@ export interface ResponseEntry$Api {
   hgnc_id: string
   /** NCBI Gene ID */
   ncbi_gene_id: string
+  /** Gene symbol */
+  gene_symbol: string
   /** Rank */
   rank: number
   /** Score */
@@ -20,6 +22,8 @@ export interface ResponseEntry {
   hgncId: string
   /** NCBI Gene ID */
   ncbiGeneId: string
+  /** Gene symbol */
+  geneSymbol: string
   /** Rank */
   rank: number
   /** Score */
@@ -33,6 +37,7 @@ class ResponseEntry$Type {
     return {
       hgncId: data.hgnc_id,
       ncbiGeneId: data.ncbi_gene_id,
+      geneSymbol: data.gene_symbol,
       rank: data.rank,
       score: data.score
     }
