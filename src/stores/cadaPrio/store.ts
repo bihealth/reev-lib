@@ -6,8 +6,8 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
+import { StoreState } from '..'
 import { CadaPrioClient } from '../../api/cadaPrio'
-import { StoreState } from '../../store'
 import { GeneRank } from './types'
 
 /** Options for `loadData()` */

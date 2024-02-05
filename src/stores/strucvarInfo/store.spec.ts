@@ -4,9 +4,9 @@ import { createPinia, setActivePinia } from 'pinia'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import createFetchMock from 'vitest-fetch-mock'
 
+import { StoreState } from '..'
 import type { Strucvar } from '../../lib/genomicVars'
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
-import { StoreState } from '../../store'
 import { useStrucvarInfoStore } from './store'
 
 /** Fixtures loaded from JSON files. */

@@ -7,13 +7,13 @@ import equal from 'fast-deep-equal'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
+import { StoreState } from '..'
 import { AnnonarsClient, SeqvarInfoResult } from '../../api/annonars'
 import { MehariClient, SeqvarResultEntry } from '../../api/mehari'
 import { type HpoTerm, VigunoClient } from '../../api/viguno'
 import { type Seqvar } from '../../lib/genomicVars'
 import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
-import { StoreState } from '../../store'
 
 export const useSeqvarInfoStore = defineStore('seqvarInfo', () => {
   /** The current store state. */

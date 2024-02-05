@@ -3,8 +3,8 @@ import type { Meta, StoryObj } from '@storybook/vue3'
 
 import type { Strucvar } from '../../lib/genomicVars'
 import { ResponseRecord as ClinvarSvRecord } from '../../pbs/annonars/clinvar/sv'
-import { StoreState } from '../../store'
-import { useStrucvarInfoStore } from '../../store/strucvarInfo'
+import { StoreState } from '../../stores'
+import { useStrucvarInfoStore } from '../../stores/strucvarInfo'
 import StrucvarClinvarCard from './StrucvarClinvarCard.vue'
 import clinvarSvRecordsJson from './fixture.clinvarSvRecords.BRCA1.json'
 

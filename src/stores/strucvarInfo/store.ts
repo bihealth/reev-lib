@@ -7,10 +7,10 @@ import equal from 'fast-deep-equal'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
+import { StoreState } from '..'
 import { AnnonarsClient } from '../../api/annonars'
 import { MehariClient } from '../../api/mehari'
 import { type Strucvar } from '../../lib/genomicVars'
-import { StoreState } from '../../store'
 
 /** `ClinvarSvRecord` is a type alias for easier future interface definition. */
 export type ClinvarSvRecord = any | null
