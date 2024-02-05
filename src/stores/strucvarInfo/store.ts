@@ -11,11 +11,10 @@ import { StoreState } from '..'
 import { AnnonarsClient } from '../../api/annonars'
 import { MehariClient } from '../../api/mehari'
 import { type Strucvar } from '../../lib/genomicVars'
+import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
 
 /** `ClinvarSvRecord` is a type alias for easier future interface definition. */
 export type ClinvarSvRecord = any | null
-/** `GeneInfo` is a type alias for easier future interface definition. */
-export type GeneInfo = any | null
 /** `Consequence` is a type alias for future interface definition. */
 export type Consequence = any | null
 
@@ -30,7 +29,7 @@ export const useStrucvarInfoStore = defineStore('strucvarInfo', () => {
   const csq = ref<Consequence[] | undefined>(undefined)
 
   /** Infos on the variants of the record. */
-  const genesInfos = ref<GeneInfo[] | undefined>(undefined)
+  const genesInfos = ref<GeneInfoRecord[] | undefined>(undefined)
 
   /** The ClinVar SV records. */
   const clinvarSvRecords = ref<ClinvarSvRecord[] | undefined>(undefined)

@@ -285,7 +285,7 @@ export const HpoGeneQuery = new HpoGeneQuery$Type()
 export interface HpoGenesResult$Api {
   version: Version$Api
   query: HpoGeneQuery$Api
-  result: HpoTerm$Api[]
+  result: Gene$Api[]
 }
 
 /** Interface for response of gene lookup. */
@@ -301,7 +301,7 @@ class HpoGenesResult$Type {
     return {
       version: Version.fromJson(api.version),
       query: HpoGeneQuery.fromJson(api.query),
-      result: api.result.map(HpoTerm.fromJson)
+      result: (api.result[0]?.hpo_terms || []).map(HpoTerm.fromJson)
     }
   }
 }

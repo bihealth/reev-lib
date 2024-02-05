@@ -173,7 +173,10 @@ export interface GeneInfoResult {
 class GeneInfoResult$Type {
   fromJson(apiResult: GeneInfoResult$Api): GeneInfoResult {
     return {
-      genes: Object.values(apiResult.genes)
+      genes: Object.values(apiResult.genes).map((gene$Api) =>
+        // @ts-ignore
+        GeneInfoRecord.fromJson(gene$Api as JsonValue)
+      )
     }
   }
 }
