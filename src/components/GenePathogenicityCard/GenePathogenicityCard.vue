@@ -231,6 +231,9 @@ const props = withDefaults(
               <template v-else> No gnomAD constraints </template>
             </v-sheet>
           </v-col>
+          <v-col cols="3">
+            <slot></slot>
+          </v-col>
         </v-row>
       </template>
     </v-card-text>

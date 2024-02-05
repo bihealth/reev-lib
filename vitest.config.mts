@@ -19,10 +19,16 @@ export default mergeConfig(
         provider: 'istanbul',
         reporter: ['text', 'html', 'clover', 'json'],
         include: [
+          'src/router/**/*.ts',
+          'src/router/*.ts',
           'src/lib/**/*.ts',
+          'src/lib/*/*.ts',
           'src/stores/**/*.ts',
+          'src/stores/*/*.ts',
           'src/components/**/*.{vue,ts}',
-          'src/views/**/*.{vue,ts}'
+          'src/components/*/*.ts',
+          'src/views/**/*.{vue,ts}',
+          'src/views/*/*.ts'
         ],
         exclude: ['**/*.spec.ts', '**/*.stories.ts']
       },
