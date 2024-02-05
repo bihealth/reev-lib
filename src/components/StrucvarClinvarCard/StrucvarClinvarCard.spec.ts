@@ -19,7 +19,7 @@ const strucvarInfo: Strucvar = {
 }
 const clinvarSvRecords = JSON.parse(
   fs.readFileSync(path.resolve(__dirname, './fixture.clinvarSvRecords.BRCA1.json'), 'utf8')
-).map((record: JsonValue) => ClinvarSvRecord.fromJson(record))
+).records.map((record: JsonValue) => ClinvarSvRecord.fromJson(record))
 
 describe.concurrent('StrucvarClinvarCard.vue', async () => {
   it('renders the info', async () => {

@@ -1,7 +1,7 @@
 import type { JsonValue } from '@protobuf-ts/runtime'
 
 import { Record as ClinvarSeqvarRecord } from '../../pbs/annonars/clinvar/minimal'
-import { Record as ClinvarStrucvarRecord } from '../../pbs/annonars/clinvar/sv'
+import { ResponseRecord as ClinvarStrucvarResponseRecord } from '../../pbs/annonars/clinvar/sv'
 import { Record as UcscConservationRecord } from '../../pbs/annonars/cons/base'
 import { Record as DbsnpRecord } from '../../pbs/annonars/dbsnp/base'
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
@@ -15,14 +15,14 @@ import { Record as HelixmtdbRecord } from '../../pbs/annonars/helixmtdb/base'
  * Interface for Clinvar Strucvars query response as returned by
  */
 export interface ClinvarSvQueryResponse$Api {
-  records: ClinvarStrucvarRecord[]
+  records: JsonValue[]
 }
 
 /**
  * Interface for Clinvar Strucvars query result.
  */
 export interface ClinvarSvQueryResponse {
-  records: ClinvarStrucvarRecord[]
+  records: ClinvarStrucvarResponseRecord[]
 }
 
 /**
@@ -31,7 +31,7 @@ export interface ClinvarSvQueryResponse {
 class ClinvarSvQueryResponse$Type {
   fromJson(apiResponse: ClinvarSvQueryResponse$Api): ClinvarSvQueryResponse {
     return {
-      records: apiResponse.records
+      records: apiResponse.records.map((value) => ClinvarStrucvarResponseRecord.fromJson(value))
     }
   }
 }
