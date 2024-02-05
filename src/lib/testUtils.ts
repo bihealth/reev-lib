@@ -116,20 +116,21 @@ export const setupMountedComponents = async (
       components: knownComponents,
       stubs: {
         // never stub out these central components for convenience
+        RouterLink: false,
         VApp: false,
+        VBtn: false,
         VCard: false,
-        VCardTitle: false,
         VCardText: false,
+        VCardTitle: false,
+        VCol: false,
         VContainer: false,
+        VListChildren: false,
         VList: false,
+        VListGroup: false,
         VListItem: false,
         VListItemTitle: false,
-        VListGroup: false,
-        VListChildren: false,
         VMain: false,
         VRow: false,
-        VCol: false,
-        VBtn: false,
         // use more stubs options
         ...(componentOptions.stubs ?? {})
       }
