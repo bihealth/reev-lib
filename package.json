@@ -59,7 +59,7 @@
     "vite-plugin-static-copy": "^1.0.1",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5",
-    "vuetify": "^3.5.1"
+    "vuetify": "^3.5.2"
   },
   "devDependencies": {
     "@pinia/testing": "^0.1.3",
