@@ -10,13 +10,10 @@ import { ref } from 'vue'
 import { StoreState } from '..'
 import { AnnonarsClient } from '../../api/annonars'
 import { MehariClient } from '../../api/mehari'
+import { GeneTranscriptEffects } from '../../api/mehari/types'
 import { type Strucvar } from '../../lib/genomicVars'
+import { ResponseRecord as ClinvarStrucvarResponseRecord } from '../../pbs/annonars/clinvar/sv'
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
-
-/** `ClinvarSvRecord` is a type alias for easier future interface definition. */
-export type ClinvarSvRecord = any | null
-/** `Consequence` is a type alias for future interface definition. */
-export type Consequence = any | null
 
 export const useStrucvarInfoStore = defineStore('strucvarInfo', () => {
   /** The current store state. */
@@ -26,13 +23,13 @@ export const useStrucvarInfoStore = defineStore('strucvarInfo', () => {
   const strucvar = ref<Strucvar | undefined>(undefined)
 
   /** The consequences of the `currentStrucvar` */
-  const csq = ref<Consequence[] | undefined>(undefined)
+  const csq = ref<GeneTranscriptEffects[] | undefined>(undefined)
 
   /** Infos on the variants of the record. */
   const genesInfos = ref<GeneInfoRecord[] | undefined>(undefined)
 
   /** The ClinVar SV records. */
-  const clinvarSvRecords = ref<ClinvarSvRecord[] | undefined>(undefined)
+  const clinvarSvRecords = ref<ClinvarStrucvarResponseRecord[] | undefined>(undefined)
 
   function clearData() {
     storeState.value = StoreState.Initial
@@ -85,7 +82,9 @@ export const useStrucvarInfoStore = defineStore('strucvarInfo', () => {
       }
 
       // Sort by gene symbol
-      genesInfos.value!.sort((a, b) => (a?.hgnc?.agr ?? 'ZZZ').localeCompare(b?.hgnc?.agr ?? 'ZZZ'))
+      genesInfos.value!.sort((a, b) =>
+        (a?.hgnc!.hgncId ?? 'ZZZ').localeCompare(b?.hgnc!.hgncId ?? 'ZZZ')
+      )
 
       csq.value = mehariResult.result
       strucvar.value = strucvar$
