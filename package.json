@@ -67,7 +67,7 @@
     "@rushstack/eslint-patch": "^1.7.2",
     "@storybook/addon-essentials": "^7.6.10",
     "@storybook/addon-interactions": "^7.6.10",
-    "@storybook/addon-links": "^7.6.10",
+    "@storybook/addon-links": "^7.6.12",
     "@storybook/blocks": "^7.6.10",
     "@storybook/test": "^7.6.10",
     "@storybook/vue3": "^7.6.12",
