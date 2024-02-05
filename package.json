@@ -57,6 +57,7 @@
     "vega-embed": "^6.24.0",
     "vite-plugin-css-injected-by-js": "^3.4.0",
     "vite-plugin-static-copy": "^1.0.1",
+    "vite-plugin-vuetify": "^2.0.1",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5",
     "vuetify": "^3.5.2"

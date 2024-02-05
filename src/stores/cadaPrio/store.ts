@@ -28,7 +28,7 @@ export const useCadaPrioStore = defineStore('cadaPrio', () => {
   /**
    * Clear all data from store and reset it into initial state.
    */
-  function clearData() {
+  const clearData = () => {
     storeState.value = StoreState.Initial
     geneRanking.value = undefined
   }

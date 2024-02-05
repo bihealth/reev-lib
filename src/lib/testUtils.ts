@@ -1,5 +1,6 @@
 import { type TestingPinia, createTestingPinia } from '@pinia/testing'
 import { type VueWrapper, flushPromises, mount } from '@vue/test-utils'
+import { Pinia } from 'pinia'
 import { vi } from 'vitest'
 import { h } from 'vue'
 import {
@@ -59,7 +60,7 @@ export const setupMountedComponents = async (
      * A custom pinia instance to use. Use this option only if you need to mock a store getter
      * or action.
      */
-    pinia?: TestingPinia
+    pinia?: Pinia
     /**
      * Any routes to use.
      */
@@ -121,11 +122,14 @@ export const setupMountedComponents = async (
         VCardText: false,
         VContainer: false,
         VList: false,
+        VListItem: false,
+        VListItemTitle: false,
         VListGroup: false,
         VListChildren: false,
         VMain: false,
         VRow: false,
         VCol: false,
+        VBtn: false,
         // use more stubs options
         ...(componentOptions.stubs ?? {})
       }
