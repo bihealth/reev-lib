@@ -2,24 +2,28 @@
  * One entry of the result as returned by the API.
  */
 export interface ResponseEntry$Api {
-  /** The HPO term. */
-  hpo_term: string
-  /** The gene symbol. */
-  gene_symbol: string
-  /** The predicted impact. */
-  impact: string
+  /** HGNC ID */
+  hgnc_id: string
+  /** NCBI Gene ID */
+  ncbi_gene_id: string
+  /** Rank */
+  rank: number
+  /** Score */
+  score: number
 }
 
 /**
  * One entry of the result.
  */
 export interface ResponseEntry {
-  /** The HPO term. */
-  hpoTerm: string
-  /** The gene symbol. */
-  geneSymbol: string
-  /** The predicted impact. */
-  impact: string
+  /** HGNC ID */
+  hgncId: string
+  /** NCBI Gene ID */
+  ncbiGeneId: string
+  /** Rank */
+  rank: number
+  /** Score */
+  score: number
 }
 
 /** Helper class for converting `ResponseEntry$Api` to `ResponseEntry`. */
@@ -27,9 +31,10 @@ class ResponseEntry$Type {
   /** Converts `ResponseEntry$Api` to `ResponseEntry`. */
   fromJson(data: ResponseEntry$Api): ResponseEntry {
     return {
-      hpoTerm: data.hpo_term,
-      geneSymbol: data.gene_symbol,
-      impact: data.impact
+      hgncId: data.hgnc_id,
+      ncbiGeneId: data.ncbi_gene_id,
+      rank: data.rank,
+      score: data.score
     }
   }
 }

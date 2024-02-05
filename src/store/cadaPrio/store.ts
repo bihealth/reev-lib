@@ -6,8 +6,9 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
-import { CadaPrioClient, ResponseEntry } from '../../api/cadaPrio'
+import { CadaPrioClient } from '../../api/cadaPrio'
 import { StoreState } from '../../store'
+import { GeneRank } from './types'
 
 /** Options for `loadData()` */
 export interface LoadDataOptions {
@@ -22,8 +23,11 @@ export const useCadaPrioStore = defineStore('cadaPrio', () => {
   const storeState = ref<StoreState>(StoreState.Initial)
 
   /** The current gene Ranking. */
-  const geneRanking = ref<ResponseEntry[] | undefined>(undefined)
+  const geneRanking = ref<GeneRank[] | undefined>(undefined)
 
+  /**
+   * Clear all data from store and reset it into initial state.
+   */
   function clearData() {
     storeState.value = StoreState.Initial
     geneRanking.value = undefined
