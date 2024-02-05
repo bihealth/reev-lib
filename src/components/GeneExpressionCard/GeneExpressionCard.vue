@@ -88,15 +88,17 @@ const vegaData = computed<VegaData[]>(() => {
       }
     })
   }
-  return expressionRecords.map((record: GtexTissueRecord) => ({
-    tissue: TISSUE_LABELS[record.tissue],
-    tissueDetailed: TISSUE_DETAILED_LABELS[record.tissueDetailed],
-    lower: record.tpms[0],
-    q1: record.tpms[1],
-    median: record.tpms[2],
-    q3: record.tpms[3],
-    upper: record.tpms[4]
-  }))
+  return expressionRecords.map((record: GtexTissueRecord) => {
+    return {
+      tissue: TISSUE_LABELS[record.tissue],
+      tissueDetailed: TISSUE_DETAILED_LABELS[record.tissueDetailed],
+      lower: record.tpms[0],
+      q1: record.tpms[1],
+      median: record.tpms[2],
+      q3: record.tpms[3],
+      upper: record.tpms[4]
+    }
+  })
 })
 
 /** The encoding for the Vega plot. */

@@ -20,14 +20,14 @@ exports[`geneInfo Store > should load data 1`] = `
     "genomicLocation37": "chr17:41196312-41277500",
     "genomicLocation38": "chr17:43044295-43125364",
     "haploinsufficiencyDiseaseId": "MONDO:0011450",
-    "haploinsufficiencyScore": "CLINGEN_DOSAGE_SCORE_SUFFICIENT_EVIDENCE_AVAILABLE",
+    "haploinsufficiencyScore": 1,
     "ncbiGeneId": "672",
-    "triplosensitivityScore": "CLINGEN_DOSAGE_SCORE_NO_EVIDENCE_AVAILABLE",
+    "triplosensitivityScore": 4,
   },
   "conditions": {
     "diseaseAssociations": [
       {
-        "confidence": "CONFIDENCE_LEVEL_HIGH",
+        "confidence": 1,
         "diseaseDefinition": "A rare genetic multisystem disorder characterized by progressive pancytopenia with bone marrow failure, variable congenital malformations and predisposition to develop hematological or solid tumors.",
         "diseaseName": "Fanconi anemia",
         "hgncId": "HGNC:1100",
@@ -42,13 +42,13 @@ exports[`geneInfo Store > should load data 1`] = `
           },
         ],
         "sources": [
-          "GENE_DISEASE_ASSOCIATION_SOURCE_OMIM",
-          "GENE_DISEASE_ASSOCIATION_SOURCE_ORPHANET",
-          "GENE_DISEASE_ASSOCIATION_SOURCE_PANELAPP",
+          1,
+          2,
+          3,
         ],
       },
       {
-        "confidence": "CONFIDENCE_LEVEL_HIGH",
+        "confidence": 1,
         "diseaseDefinition": "A genetic condition characterized by hereditary susceptibility to breast and/or ovarian cancer. It can be defined using family history criteria, or through identification of germline pathogenic variants (GPVs) in clinically validated HBOC genes. However, the genetic basis of about half of clinical HBOC is currently unknown or unexplained by single-gene variants, and approximately half of individuals who harbour PVs in HBOC genes do not have a suggestive family history.",
         "diseaseName": "Hereditary breast and/or ovarian cancer syndrome",
         "hgncId": "HGNC:1100",
@@ -71,13 +71,13 @@ exports[`geneInfo Store > should load data 1`] = `
           },
         ],
         "sources": [
-          "GENE_DISEASE_ASSOCIATION_SOURCE_OMIM",
-          "GENE_DISEASE_ASSOCIATION_SOURCE_ORPHANET",
-          "GENE_DISEASE_ASSOCIATION_SOURCE_PANELAPP",
+          1,
+          2,
+          3,
         ],
       },
       {
-        "confidence": "CONFIDENCE_LEVEL_HIGH",
+        "confidence": 1,
         "diseaseDefinition": "Familial prostate cancer (FPC) is a malignant tumor of the prostate with an early onset. FPC is either asymptomatic or causes mictionary symptoms, erectile dysfunction, bone pain, venous compression and infectious or inflammatory syndrome (for the metastatic forms). It is also characterized by familial antecedents.",
         "diseaseName": "Familial prostate cancer",
         "hgncId": "HGNC:1100",
@@ -88,11 +88,11 @@ exports[`geneInfo Store > should load data 1`] = `
           },
         ],
         "sources": [
-          "GENE_DISEASE_ASSOCIATION_SOURCE_ORPHANET",
+          2,
         ],
       },
       {
-        "confidence": "CONFIDENCE_LEVEL_HIGH",
+        "confidence": 1,
         "diseaseDefinition": "Familial pancreatic carcinoma is defined by the presence of pancreatic cancer (PC) in two or more first-degree relatives.",
         "diseaseName": "Familial pancreatic carcinoma",
         "hgncId": "HGNC:1100",
@@ -111,13 +111,13 @@ exports[`geneInfo Store > should load data 1`] = `
           },
         ],
         "sources": [
-          "GENE_DISEASE_ASSOCIATION_SOURCE_OMIM",
-          "GENE_DISEASE_ASSOCIATION_SOURCE_ORPHANET",
-          "GENE_DISEASE_ASSOCIATION_SOURCE_PANELAPP",
+          1,
+          2,
+          3,
         ],
       },
       {
-        "confidence": "CONFIDENCE_LEVEL_HIGH",
+        "confidence": 1,
         "diseaseDefinition": "Primary peritoneal carcinoma (PPC) is a rare malignant tumor of the peritoneal cavity of extra-ovarian origin, clinically and histologically similar to advanced-stage serous ovarian carcinoma (see this term).",
         "diseaseName": "Primary peritoneal carcinoma",
         "hgncId": "HGNC:1100",
@@ -128,11 +128,11 @@ exports[`geneInfo Store > should load data 1`] = `
           },
         ],
         "sources": [
-          "GENE_DISEASE_ASSOCIATION_SOURCE_ORPHANET",
+          2,
         ],
       },
       {
-        "confidence": "CONFIDENCE_LEVEL_HIGH",
+        "confidence": 1,
         "diseaseDefinition": "Cholangiocarcinoma (CCA) is a biliary tract cancer (BTC, see this term) originating in the epithelium of the biliary tree, either intra or extra hepatic.",
         "diseaseName": "Cholangiocarcinoma",
         "hgncId": "HGNC:1100",
@@ -143,11 +143,11 @@ exports[`geneInfo Store > should load data 1`] = `
           },
         ],
         "sources": [
-          "GENE_DISEASE_ASSOCIATION_SOURCE_ORPHANET",
+          2,
         ],
       },
       {
-        "confidence": "CONFIDENCE_LEVEL_HIGH",
+        "confidence": 1,
         "diseaseName": "Autosomal dominant non-syndromic intellectual disability",
         "hgncId": "HGNC:1100",
         "labeledDisorders": [
@@ -161,15 +161,15 @@ exports[`geneInfo Store > should load data 1`] = `
           },
         ],
         "sources": [
-          "GENE_DISEASE_ASSOCIATION_SOURCE_PANELAPP",
+          3,
         ],
       },
     ],
     "hgncId": "HGNC:1100",
     "panelappAssociations": [
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_AMBER",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 2,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "MONOALLELIC, autosomal or pseudoautosomal, NOT imprinted",
         "panel": {
@@ -182,8 +182,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_AMBER",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 2,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "panel": {
@@ -196,8 +196,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "MONOALLELIC, autosomal or pseudoautosomal, NOT imprinted",
         "panel": {
@@ -210,8 +210,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "MONOALLELIC, autosomal or pseudoautosomal, imprinted status unknown",
         "panel": {
@@ -226,8 +226,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "panel": {
@@ -240,8 +240,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BOTH monoallelic and biallelic, autosomal or pseudoautosomal",
         "panel": {
@@ -254,8 +254,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BOTH monoallelic and biallelic, autosomal or pseudoautosomal",
         "panel": {
@@ -268,8 +268,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BOTH monoallelic and biallelic, autosomal or pseudoautosomal",
         "panel": {
@@ -283,8 +283,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BOTH monoallelic and biallelic, autosomal or pseudoautosomal",
         "panel": {
@@ -298,8 +298,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "panel": {
@@ -312,8 +312,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "MONOALLELIC, autosomal or pseudoautosomal, imprinted status unknown",
         "panel": {
@@ -327,8 +327,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BOTH monoallelic and biallelic, autosomal or pseudoautosomal",
         "panel": {
@@ -341,8 +341,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "panel": {
@@ -355,8 +355,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BOTH monoallelic and biallelic, autosomal or pseudoautosomal",
         "panel": {
@@ -370,8 +370,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "panel": {
@@ -384,8 +384,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "panel": {
@@ -398,8 +398,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "panel": {
@@ -412,8 +412,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "panel": {
@@ -426,8 +426,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BOTH monoallelic and biallelic, autosomal or pseudoautosomal",
         "panel": {
@@ -440,8 +440,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "panel": {
@@ -456,8 +456,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "MONOALLELIC, autosomal or pseudoautosomal, imprinted status unknown",
         "panel": {
@@ -471,8 +471,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "MONOALLELIC, autosomal or pseudoautosomal, imprinted status unknown",
         "panel": {
@@ -486,8 +486,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "MONOALLELIC, autosomal or pseudoautosomal, NOT imprinted",
         "panel": {
@@ -495,10 +495,11 @@ exports[`geneInfo Store > should load data 1`] = `
           "name": "Inherited prostate cancer",
           "version": "1.4",
         },
+        "phenotypes": [],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_RED",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 3,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "Unknown",
         "panel": {
@@ -511,8 +512,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_RED",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 3,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "",
         "panel": {
@@ -525,8 +526,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_RED",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 3,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "panel": {
@@ -539,8 +540,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_RED",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 3,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "panel": {
@@ -555,8 +556,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_RED",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 3,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "panel": {
@@ -663,6 +664,7 @@ exports[`geneInfo Store > should load data 1`] = `
     "geneIndispensabilityPred": "E",
     "geneIndispensabilityScore": 1,
     "geneName": "BRCA1",
+    "geneOldNames": [],
     "geneOtherNames": [
       "RNF53",
       "BRCC1",
@@ -5597,8 +5599,8 @@ exports[`geneInfo Store > should load data 1`] = `
     "hgncId": "HGNC:1100",
     "records": [
       {
-        "tissue": "GTEX_TISSUE_ADIPOSE_TISSUE",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ADIPOSE_SUBCUTANEOUS",
+        "tissue": 1,
+        "tissueDetailed": 1,
         "tpms": [
           0.2209,
           1.101,
@@ -5608,8 +5610,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_ADIPOSE_TISSUE",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ADIPOSE_VISCERAL_OMENTUM",
+        "tissue": 1,
+        "tissueDetailed": 2,
         "tpms": [
           0.1854,
           0.809,
@@ -5619,8 +5621,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_ADRENAL_GLAND",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ADRENAL_GLAND",
+        "tissue": 2,
+        "tissueDetailed": 3,
         "tpms": [
           0.03997,
           0.70615,
@@ -5630,8 +5632,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BLADDER",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BLADDER",
+        "tissue": 3,
+        "tissueDetailed": 7,
         "tpms": [
           0.8304,
           1.474,
@@ -5641,8 +5643,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BLOOD",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_CELLS_EBV_TRANSFORMED_LYMPHOCYTES",
+        "tissue": 4,
+        "tissueDetailed": 23,
         "tpms": [
           4.381,
           14.705,
@@ -5652,8 +5654,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BLOOD",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_WHOLE_BLOOD",
+        "tissue": 4,
+        "tissueDetailed": 56,
         "tpms": [
           0.03328,
           0.4607,
@@ -5663,8 +5665,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BLOOD_VESSEL",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ARTERY_AORTA",
+        "tissue": 5,
+        "tissueDetailed": 4,
         "tpms": [
           0.2705,
           0.911375,
@@ -5674,8 +5676,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BLOOD_VESSEL",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ARTERY_CORONARY",
+        "tissue": 5,
+        "tissueDetailed": 5,
         "tpms": [
           0.3367,
           0.9703,
@@ -5685,8 +5687,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BLOOD_VESSEL",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ARTERY_TIBIAL",
+        "tissue": 5,
+        "tissueDetailed": 6,
         "tpms": [
           0.1409,
           0.83585,
@@ -5696,8 +5698,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_AMYGDALA",
+        "tissue": 7,
+        "tissueDetailed": 8,
         "tpms": [
           0.1942,
           0.7064,
@@ -5707,8 +5709,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_ANTERIOR_CINGULATE_CORTEX",
+        "tissue": 7,
+        "tissueDetailed": 9,
         "tpms": [
           0.1907,
           0.48295,
@@ -5718,8 +5720,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_CAUDATE_BASAL_GANGLIA",
+        "tissue": 7,
+        "tissueDetailed": 10,
         "tpms": [
           0.1931,
           0.84465,
@@ -5729,8 +5731,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_CEREBELLAR_HEMISPHERE",
+        "tissue": 7,
+        "tissueDetailed": 11,
         "tpms": [
           0.1435,
           0.5071,
@@ -5740,8 +5742,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_CEREBELLUM",
+        "tissue": 7,
+        "tissueDetailed": 12,
         "tpms": [
           0.1807,
           0.5977,
@@ -5751,8 +5753,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_CORTEX",
+        "tissue": 7,
+        "tissueDetailed": 13,
         "tpms": [
           0.3276,
           0.69255,
@@ -5762,8 +5764,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_FRONTAL_CORTEX",
+        "tissue": 7,
+        "tissueDetailed": 14,
         "tpms": [
           0.2463,
           0.6357,
@@ -5773,8 +5775,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_HIPPOCAMPUS",
+        "tissue": 7,
+        "tissueDetailed": 15,
         "tpms": [
           0.2167,
           0.6819,
@@ -5784,8 +5786,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_HYPOTHALAMUS",
+        "tissue": 7,
+        "tissueDetailed": 16,
         "tpms": [
           0.2405,
           0.771325,
@@ -5795,8 +5797,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_NUCLEUS_ACCUMBENS",
+        "tissue": 7,
+        "tissueDetailed": 17,
         "tpms": [
           0.08648,
           0.59885,
@@ -5806,8 +5808,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_PUTAMEN_BASAL_GANGLIA",
+        "tissue": 7,
+        "tissueDetailed": 18,
         "tpms": [
           0.2729,
           0.8034,
@@ -5817,8 +5819,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_SPINAL_CORD",
+        "tissue": 7,
+        "tissueDetailed": 19,
         "tpms": [
           0.3637,
           1.737,
@@ -5828,8 +5830,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_SUBSTANTIA_NIGRA",
+        "tissue": 7,
+        "tissueDetailed": 20,
         "tpms": [
           0.4543,
           1.012,
@@ -5839,8 +5841,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BREAST",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BREAST_MAMMARY_TISSUE",
+        "tissue": 8,
+        "tissueDetailed": 21,
         "tpms": [
           0.1048,
           0.9573,
@@ -5850,8 +5852,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_CERVIX_UTERI",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_CERVIX_ECTOCERVIX",
+        "tissue": 9,
+        "tissueDetailed": 25,
         "tpms": [
           1.137,
           1.46,
@@ -5861,8 +5863,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_CERVIX_UTERI",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_CERVIX_ENDOCERVIX",
+        "tissue": 9,
+        "tissueDetailed": 26,
         "tpms": [
           1.188,
           1.502,
@@ -5872,8 +5874,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_COLON",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_COLON_SIGMOID",
+        "tissue": 10,
+        "tissueDetailed": 27,
         "tpms": [
           0.4501,
           1.69,
@@ -5883,8 +5885,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_COLON",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_COLON_TRANSVERSE",
+        "tissue": 10,
+        "tissueDetailed": 28,
         "tpms": [
           0.4739,
           1.45325,
@@ -5894,8 +5896,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_ESOPHAGUS",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ESOPHAGUS_GASTROESOPHAGEAL_JUNCTION",
+        "tissue": 11,
+        "tissueDetailed": 29,
         "tpms": [
           0.2521,
           1.3035,
@@ -5905,8 +5907,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_ESOPHAGUS",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ESOPHAGUS_MUCOSA",
+        "tissue": 11,
+        "tissueDetailed": 30,
         "tpms": [
           0.3604,
           1.847,
@@ -5916,8 +5918,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_ESOPHAGUS",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ESOPHAGUS_MUSCULARIS",
+        "tissue": 11,
+        "tissueDetailed": 31,
         "tpms": [
           0.2562,
           1.355,
@@ -5927,8 +5929,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_FALLOPIAN_TUBE",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_FALLOPIAN_TUBE",
+        "tissue": 12,
+        "tissueDetailed": 32,
         "tpms": [
           1.196,
           1.417,
@@ -5938,8 +5940,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_HEART",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_HEART_ATRIAL_APPENDAGE",
+        "tissue": 13,
+        "tissueDetailed": 33,
         "tpms": [
           0.07571,
           0.7861,
@@ -5949,8 +5951,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_HEART",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_HEART_LEFT_VENTRICLE",
+        "tissue": 13,
+        "tissueDetailed": 34,
         "tpms": [
           0.0263,
           0.4611,
@@ -5960,8 +5962,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_KIDNEY",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_KIDNEY_CORTEX",
+        "tissue": 14,
+        "tissueDetailed": 35,
         "tpms": [
           0.07574,
           0.2879,
@@ -5971,8 +5973,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_KIDNEY",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_KIDNEY_MEDULLA",
+        "tissue": 14,
+        "tissueDetailed": 36,
         "tpms": [
           0.3846,
           0.389625,
@@ -5982,8 +5984,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_LIVER",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_LIVER",
+        "tissue": 15,
+        "tissueDetailed": 37,
         "tpms": [
           0.06851,
           0.5388,
@@ -5993,8 +5995,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_LUNG",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_LUNG",
+        "tissue": 16,
+        "tissueDetailed": 38,
         "tpms": [
           0.2091,
           1.165,
@@ -6004,8 +6006,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_MUSCLE",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_MUSCLE_SKELETAL",
+        "tissue": 17,
+        "tissueDetailed": 40,
         "tpms": [
           0.06435,
           0.6387,
@@ -6015,8 +6017,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_NERVE",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_NERVE_TIBIAL",
+        "tissue": 18,
+        "tissueDetailed": 41,
         "tpms": [
           0.554,
           2.0265,
@@ -6026,8 +6028,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_OVARY",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_OVARY",
+        "tissue": 19,
+        "tissueDetailed": 42,
         "tpms": [
           0.4069,
           1.232,
@@ -6037,8 +6039,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_PANCREAS",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_PANCREAS",
+        "tissue": 20,
+        "tissueDetailed": 43,
         "tpms": [
           0.01594,
           0.3794,
@@ -6048,8 +6050,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_PITUITARY",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_PITUITARY",
+        "tissue": 21,
+        "tissueDetailed": 44,
         "tpms": [
           0.2558,
           1.4255,
@@ -6059,8 +6061,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_PROSTATE",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_PROSTATE",
+        "tissue": 22,
+        "tissueDetailed": 45,
         "tpms": [
           0.208,
           1.054,
@@ -6070,8 +6072,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_SALIVARY_GLAND",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_MINOR_SALIVARY_GLAND",
+        "tissue": 23,
+        "tissueDetailed": 39,
         "tpms": [
           0.2541,
           1.0235,
@@ -6081,8 +6083,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_SKIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_CELLS_CULTURED_FIBROBLASTS",
+        "tissue": 24,
+        "tissueDetailed": 22,
         "tpms": [
           1.211,
           4.502,
@@ -6092,8 +6094,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_SKIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_SKIN_NOT_SUN_EXPOSED_SUPRAPUBIC",
+        "tissue": 24,
+        "tissueDetailed": 47,
         "tpms": [
           0.2108,
           1.466,
@@ -6103,8 +6105,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_SKIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_SKIN_SUN_EXPOSED_LOWER_LEG",
+        "tissue": 24,
+        "tissueDetailed": 48,
         "tpms": [
           0.1891,
           1.306,
@@ -6114,8 +6116,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_SMALL_INTESTINE",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_SMALL_INTESTINE_TERMINAL_ILEUM",
+        "tissue": 25,
+        "tissueDetailed": 49,
         "tpms": [
           0.4102,
           1.502,
@@ -6125,8 +6127,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_SPLEEN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_SPLEEN",
+        "tissue": 26,
+        "tissueDetailed": 50,
         "tpms": [
           0.941,
           1.849,
@@ -6136,8 +6138,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_STOMACH",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_STOMACH",
+        "tissue": 27,
+        "tissueDetailed": 51,
         "tpms": [
           0.2336,
           0.75795,
@@ -6147,8 +6149,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_TESTIS",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_TESTIS",
+        "tissue": 28,
+        "tissueDetailed": 52,
         "tpms": [
           3.074,
           8.973,
@@ -6158,8 +6160,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_THYROID",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_THYROID",
+        "tissue": 29,
+        "tissueDetailed": 53,
         "tpms": [
           0.4751,
           2.301,
@@ -6169,8 +6171,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_UTERUS",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_UTERUS",
+        "tissue": 30,
+        "tissueDetailed": 54,
         "tpms": [
           0.8724,
           1.78075,
@@ -6180,8 +6182,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_VAGINA",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_VAGINA",
+        "tissue": 31,
+        "tissueDetailed": 55,
         "tpms": [
           0.6156,
           1.764,
@@ -6221,6 +6223,7 @@ exports[`geneInfo Store > should load data 1`] = `
     ],
     "ensemblGeneId": "ENSG00000012048",
     "entrezId": "672",
+    "enzymeId": [],
     "geneGroup": [
       "Ring finger proteins",
       "FA complementation groups",
@@ -6284,6 +6287,7 @@ exports[`geneInfo Store > should load data 1`] = `
       "breast cancer 1, early onset",
       "breast cancer 1",
     ],
+    "prevSymbol": [],
     "pubmedId": [
       1676470,
       25472942,
@@ -6294,7 +6298,7 @@ exports[`geneInfo Store > should load data 1`] = `
     "rgdId": [
       "RGD:2218",
     ],
-    "status": "HGNC_STATUS_APPROVED",
+    "status": 1,
     "symbol": "BRCA1",
     "ucscId": "uc002ict.4",
     "uniprotIds": [
@@ -22301,8 +22305,14 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
         "text": "germline mutation analysis by RNA-based sequencing",
       },
-      {},
-      {},
+      {
+        "pmids": [],
+        "text": "",
+      },
+      {
+        "pmids": [],
+        "text": "",
+      },
     ],
     "summary": "This gene encodes a 190 kD nuclear phosphoprotein that plays a role in maintaining genomic stability, and it also acts as a tumor suppressor. The BRCA1 gene contains 22 exons spanning about 110 kb of DNA. The encoded protein combines with other tumor suppressors, DNA damage sensors, and signal transducers to form a large multi-subunit protein complex known as the BRCA1-associated genome surveillance complex (BASC). This gene product associates with RNA polymerase II, and through the C-terminal domain, also interacts with histone deacetylase complexes. This protein thus plays a role in transcription, DNA repair of double-stranded breaks, and recombination. Mutations in this gene are responsible for approximately 40% of inherited breast cancers and more than 80% of inherited breast and ovarian cancers. Alternative splicing plays a role in modulating the subcellular localization and physiological function of this gene. Many alternatively spliced transcript variants, some of which are disease-associated mutations, have been described for this gene, but the full-length natures of only some of these variants has been described. A related pseudogene, which is also located on chromosome 17, has been identified. [provided by RefSeq, May 2020]",
   },
@@ -22325,9 +22335,9 @@ exports[`geneInfo Store > should load data 1`] = `
   },
   "panelapp": [
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Green",
         "Eligibility statement prior genetic testing",
@@ -22354,6 +22364,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
         "stats": {
           "numberOfGenes": 27,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -22365,15 +22377,16 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "1.20",
         "versionCreated": "2023-07-05T11:28:18.013178Z",
       },
-      "penetrance": "PENETRANCE_COMPLETE",
+      "penetrance": 1,
       "phenotypes": [
         "{Breast-ovarian cancer, familial, 1}, OMIM:604370",
       ],
+      "publications": [],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_AMBER",
+      "confidenceLevel": 3,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Amber",
         "Expert list",
@@ -22385,11 +22398,16 @@ exports[`geneInfo Store > should load data 1`] = `
       },
       "modeOfInheritance": "MONOALLELIC, autosomal or pseudoautosomal, NOT imprinted",
       "panel": {
+        "diseaseGroup": "",
+        "diseaseSubGroup": "",
         "hashId": "5763f2bf8f620350a1996047",
         "id": 318,
         "name": "Familial prostate cancer",
+        "relevantDisorders": [],
         "stats": {
           "numberOfGenes": 14,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -22401,7 +22419,7 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "1.3",
         "versionCreated": "2022-04-04T14:14:50.815532Z",
       },
-      "penetrance": "PENETRANCE_COMPLETE",
+      "penetrance": 1,
       "phenotypes": [
         "Prostate cancer, MONDO:0008315",
       ],
@@ -22421,9 +22439,9 @@ exports[`geneInfo Store > should load data 1`] = `
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_RED",
+      "confidenceLevel": 2,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Literature",
       ],
@@ -22439,8 +22457,11 @@ exports[`geneInfo Store > should load data 1`] = `
         "hashId": "576cd7ca8f6203609632be82",
         "id": 171,
         "name": "Inherited non-medullary thyroid cancer",
+        "relevantDisorders": [],
         "stats": {
           "numberOfGenes": 30,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -22452,7 +22473,7 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "1.7",
         "versionCreated": "2023-11-07T12:37:18.457761Z",
       },
-      "penetrance": "PENETRANCE_COMPLETE",
+      "penetrance": 1,
       "phenotypes": [
         "Non-medullary thyroid cancer",
       ],
@@ -22461,9 +22482,9 @@ exports[`geneInfo Store > should load data 1`] = `
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert list",
         "Expert Review Green",
@@ -22475,10 +22496,15 @@ exports[`geneInfo Store > should load data 1`] = `
       },
       "modeOfInheritance": "MONOALLELIC, autosomal or pseudoautosomal, imprinted status unknown",
       "panel": {
+        "diseaseGroup": "",
+        "diseaseSubGroup": "",
         "id": 399,
         "name": "Additional findings health related",
+        "relevantDisorders": [],
         "stats": {
           "numberOfGenes": 14,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -22490,16 +22516,18 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "0.114",
         "versionCreated": "2022-04-04T14:09:51.946635Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "{Breast-ovarian cancer, familial, 1}, OMIM:604370",
         "Breast and ovarian cancer predisposition",
         "Adult only",
       ],
+      "publications": [],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Green",
         "Curated sources",
@@ -22515,8 +22543,11 @@ exports[`geneInfo Store > should load data 1`] = `
         "diseaseSubGroup": "Tumour syndromes",
         "id": 407,
         "name": "Haematological malignancies for rare disease",
+        "relevantDisorders": [],
         "stats": {
           "numberOfGenes": 89,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -22528,6 +22559,7 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "1.16",
         "versionCreated": "2022-11-17T12:00:47.843065Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "Fanconi anemia, complementation group S, OMIM:617883",
       ],
@@ -22536,9 +22568,9 @@ exports[`geneInfo Store > should load data 1`] = `
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "NHS GMS",
         "Expert Review Green",
@@ -22561,6 +22593,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
         "stats": {
           "numberOfGenes": 7,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -22582,15 +22616,16 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "2.8",
         "versionCreated": "2024-01-08T15:48:36.828204Z",
       },
-      "penetrance": "PENETRANCE_COMPLETE",
+      "penetrance": 1,
       "phenotypes": [
         "{Breast-ovarian cancer, familial, 1}, OMIM:604370",
       ],
+      "publications": [],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "NHS GMS",
         "Expert Review Green",
@@ -22613,6 +22648,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
         "stats": {
           "numberOfGenes": 9,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -22634,15 +22671,16 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "2.3",
         "versionCreated": "2023-10-25T21:24:10.829247Z",
       },
-      "penetrance": "PENETRANCE_COMPLETE",
+      "penetrance": 1,
       "phenotypes": [
         "{Breast-ovarian cancer, familial, 1}, OMIM:604370",
       ],
+      "publications": [],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert list",
         "Expert Review Green",
@@ -22667,6 +22705,7 @@ exports[`geneInfo Store > should load data 1`] = `
         "stats": {
           "numberOfGenes": 58,
           "numberOfRegions": 1,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -22678,15 +22717,17 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "1.39",
         "versionCreated": "2024-01-09T13:56:42.713646Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "{Breast-ovarian cancer, familial, 1}, OMIM:604370",
         "Fanconi anemia, complementation group S, OMIM:617883",
       ],
+      "publications": [],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "NHS GMS",
         "Expert List",
@@ -22716,6 +22757,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
         "stats": {
           "numberOfGenes": 26,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -22737,7 +22780,7 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "4.3",
         "versionCreated": "2023-10-26T01:26:24.397363Z",
       },
-      "penetrance": "PENETRANCE_COMPLETE",
+      "penetrance": 1,
       "phenotypes": [
         "{Breast-ovarian cancer, familial, 1}, OMIM:604370",
         "Hereditary breast ovarian cancer syndrome, MONDO:0003582",
@@ -22747,9 +22790,9 @@ exports[`geneInfo Store > should load data 1`] = `
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_RED",
+      "confidenceLevel": 2,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Emory Genetics Laboratory",
       ],
@@ -22758,6 +22801,7 @@ exports[`geneInfo Store > should load data 1`] = `
         "hgncId": "HGNC:1100",
         "hgncSymbol": "BRCA1",
       },
+      "modeOfInheritance": "",
       "panel": {
         "diseaseGroup": "Tumour syndromes",
         "diseaseSubGroup": "GI tract",
@@ -22774,6 +22818,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
         "stats": {
           "numberOfGenes": 31,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -22785,15 +22831,16 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "1.22",
         "versionCreated": "2022-07-05T15:13:55.337743Z",
       },
-      "penetrance": "PENETRANCE_COMPLETE",
+      "penetrance": 1,
       "phenotypes": [
         "Gastrointestinal and Colorectal Cancer",
       ],
+      "publications": [],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "NHS GMS",
         "Expert Review Green",
@@ -22822,6 +22869,7 @@ exports[`geneInfo Store > should load data 1`] = `
         "stats": {
           "numberOfGenes": 121,
           "numberOfRegions": 1,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -22848,6 +22896,7 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "4.14",
         "versionCreated": "2024-01-09T14:21:36.308191Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "{Breast-ovarian cancer, familial, 1}, OMIM:604370",
       ],
@@ -22856,9 +22905,9 @@ exports[`geneInfo Store > should load data 1`] = `
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Green",
         "NHS GMS",
@@ -22870,6 +22919,8 @@ exports[`geneInfo Store > should load data 1`] = `
       },
       "modeOfInheritance": "MONOALLELIC, autosomal or pseudoautosomal, imprinted status unknown",
       "panel": {
+        "diseaseGroup": "",
+        "diseaseSubGroup": "",
         "id": 524,
         "name": "Inherited pancreatic cancer",
         "relevantDisorders": [
@@ -22877,6 +22928,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
         "stats": {
           "numberOfGenes": 12,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -22893,6 +22946,7 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "2.3",
         "versionCreated": "2023-10-26T10:44:06.794577Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "{Pancreatic cancer, susceptibility to, 4}, OMIM:614320",
         "Pancreatic cancer, susceptibility to, 4, MONDO:0013685",
@@ -22902,9 +22956,9 @@ exports[`geneInfo Store > should load data 1`] = `
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "NHS GMS",
         "Expert Review Green",
@@ -22916,6 +22970,8 @@ exports[`geneInfo Store > should load data 1`] = `
       },
       "modeOfInheritance": "BOTH monoallelic and biallelic, autosomal or pseudoautosomal",
       "panel": {
+        "diseaseGroup": "",
+        "diseaseSubGroup": "",
         "id": 635,
         "name": "Inherited breast cancer and ovarian cancer",
         "relevantDisorders": [
@@ -22923,6 +22979,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
         "stats": {
           "numberOfGenes": 7,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -22939,14 +22997,16 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "2.11",
         "versionCreated": "2023-10-26T09:46:50.383167Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "{Breast-ovarian cancer, familial, 1}, OMIM:604370",
       ],
+      "publications": [],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_AMBER",
+      "confidenceLevel": 3,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Amber",
         "BRIDGE consortium (NIHRBR-RD)",
@@ -22974,6 +23034,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
         "stats": {
           "numberOfGenes": 223,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -22985,7 +23047,7 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "1.114",
         "versionCreated": "2024-01-05T15:38:34.817892Z",
       },
-      "penetrance": "PENETRANCE_COMPLETE",
+      "penetrance": 1,
       "phenotypes": [
         "Fanconi anemia, complementation group S, OMIM:617883",
       ],
@@ -22997,9 +23059,9 @@ exports[`geneInfo Store > should load data 1`] = `
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Green",
         "Expert list",
@@ -23022,6 +23084,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
         "stats": {
           "numberOfGenes": 85,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -23033,7 +23097,7 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "1.25",
         "versionCreated": "2023-08-22T15:30:08.661192Z",
       },
-      "penetrance": "PENETRANCE_COMPLETE",
+      "penetrance": 1,
       "phenotypes": [
         "{Breast-ovarian cancer, familial, 1}, OMIM:604370",
       ],
@@ -23042,9 +23106,9 @@ exports[`geneInfo Store > should load data 1`] = `
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "NHS GMS",
         "Expert Review Green",
@@ -23069,6 +23133,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
         "stats": {
           "numberOfGenes": 105,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -23090,16 +23156,17 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "2.28",
         "versionCreated": "2024-01-09T11:30:02.542986Z",
       },
-      "penetrance": "PENETRANCE_COMPLETE",
+      "penetrance": 1,
       "phenotypes": [
         "{Breast-ovarian cancer, familial, 1}, OMIM:604370",
         "Fanconi anemia, complementation group S, OMIM:617883",
       ],
+      "publications": [],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Green",
         "Curated sources",
@@ -23122,6 +23189,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
         "stats": {
           "numberOfGenes": 108,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -23143,7 +23212,7 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "4.4",
         "versionCreated": "2023-10-25T21:35:42.752028Z",
       },
-      "penetrance": "PENETRANCE_COMPLETE",
+      "penetrance": 1,
       "phenotypes": [
         "Fanconi anemia, complementation group S, OMIM:617883",
       ],
@@ -23152,9 +23221,9 @@ exports[`geneInfo Store > should load data 1`] = `
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Green",
         "North West GLH",
@@ -23169,6 +23238,8 @@ exports[`geneInfo Store > should load data 1`] = `
       },
       "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
       "panel": {
+        "diseaseGroup": "",
+        "diseaseSubGroup": "",
         "id": 508,
         "name": "Confirmed Fanconi anaemia or Bloom syndrome",
         "relevantDisorders": [
@@ -23177,6 +23248,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
         "stats": {
           "numberOfGenes": 23,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -23198,6 +23271,7 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "2.4",
         "versionCreated": "2023-10-25T20:40:07.821145Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "Fanconi anemia, complementation group S, OMIM:617883",
       ],
@@ -23208,9 +23282,9 @@ exports[`geneInfo Store > should load data 1`] = `
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_RED",
+      "confidenceLevel": 2,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Red",
         "PAGE DD-Gene2Phenotype",
@@ -23222,6 +23296,8 @@ exports[`geneInfo Store > should load data 1`] = `
       },
       "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
       "panel": {
+        "diseaseGroup": "",
+        "diseaseSubGroup": "",
         "id": 478,
         "name": "Fetal anomalies",
         "relevantDisorders": [
@@ -23255,14 +23331,16 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "3.124",
         "versionCreated": "2024-01-07T18:02:14.275504Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "INTELLECTUAL DISABILITY",
       ],
+      "publications": [],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Green",
         "DD-Gene2Phenotype",
@@ -23274,10 +23352,14 @@ exports[`geneInfo Store > should load data 1`] = `
       },
       "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
       "panel": {
+        "diseaseGroup": "",
+        "diseaseSubGroup": "",
         "id": 484,
         "name": "DDG2P",
+        "relevantDisorders": [],
         "stats": {
           "numberOfGenes": 2349,
+          "numberOfRegions": 0,
           "numberOfStrs": 1,
         },
         "types": [
@@ -23300,6 +23382,7 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "3.79",
         "versionCreated": "2023-12-05T11:30:39.638529Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "INTELLECTUAL DISABILITY 616579",
       ],
@@ -23309,9 +23392,9 @@ exports[`geneInfo Store > should load data 1`] = `
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_RED",
+      "confidenceLevel": 2,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Red",
       ],
@@ -23368,7 +23451,7 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "5.405",
         "versionCreated": "2024-01-17T17:22:12.816088Z",
       },
-      "penetrance": "PENETRANCE_COMPLETE",
+      "penetrance": 1,
       "phenotypes": [
         "{Breast-ovarian cancer, familial, 1} 604370 autosomal dominant",
         "{Pancreatic cancer, susceptibility to, 4} 614320 autosomal dominant",
@@ -23381,9 +23464,9 @@ exports[`geneInfo Store > should load data 1`] = `
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Green",
         "Expert Review",
@@ -23395,6 +23478,8 @@ exports[`geneInfo Store > should load data 1`] = `
       },
       "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
       "panel": {
+        "diseaseGroup": "",
+        "diseaseSubGroup": "",
         "id": 559,
         "name": "Pigmentary skin disorders",
         "relevantDisorders": [
@@ -23403,6 +23488,7 @@ exports[`geneInfo Store > should load data 1`] = `
         "stats": {
           "numberOfGenes": 131,
           "numberOfRegions": 1,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -23424,6 +23510,7 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "3.6",
         "versionCreated": "2024-01-09T11:32:36.944142Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "Fanconi anemia, complementation group S, OMIM:617883",
       ],
@@ -23432,9 +23519,9 @@ exports[`geneInfo Store > should load data 1`] = `
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Next Generation Children Project",
         "Expert Review Green",
@@ -23447,10 +23534,15 @@ exports[`geneInfo Store > should load data 1`] = `
       },
       "modeOfInheritance": "BOTH monoallelic and biallelic, autosomal or pseudoautosomal",
       "panel": {
+        "diseaseGroup": "",
+        "diseaseSubGroup": "",
         "id": 921,
         "name": "Severe Paediatric Disorders",
+        "relevantDisorders": [],
         "stats": {
           "numberOfGenes": 2691,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -23462,6 +23554,7 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "1.178",
         "versionCreated": "2023-12-05T11:31:06.728258Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "Fanconi anemia, complementation group S, 617883",
       ],
@@ -23470,9 +23563,9 @@ exports[`geneInfo Store > should load data 1`] = `
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_RED",
+      "confidenceLevel": 2,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "IUIS Classification December 2019",
       ],
@@ -23483,6 +23576,8 @@ exports[`geneInfo Store > should load data 1`] = `
       },
       "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
       "panel": {
+        "diseaseGroup": "",
+        "diseaseSubGroup": "",
         "id": 398,
         "name": "Primary immunodeficiency or monogenic inflammatory bowel disease",
         "relevantDisorders": [
@@ -23513,6 +23608,7 @@ exports[`geneInfo Store > should load data 1`] = `
         "stats": {
           "numberOfGenes": 552,
           "numberOfRegions": 2,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -23534,6 +23630,7 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "4.162",
         "versionCreated": "2024-01-10T13:54:31.820063Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "Fanconi anemia, complementation group S, OMIM:617883",
         "Normal to low NK, CNS, skeletal, skin, cardiac, GI, urogenital anomalies, increased chromosomal breakage",
@@ -23545,9 +23642,9 @@ exports[`geneInfo Store > should load data 1`] = `
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Green",
         "IUIS Classification December 2019",
@@ -23560,6 +23657,7 @@ exports[`geneInfo Store > should load data 1`] = `
       "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
       "panel": {
         "diseaseGroup": "Viral research",
+        "diseaseSubGroup": "",
         "hashId": "58c7fd7f8f6203413360f1b6",
         "id": 111,
         "name": "COVID-19 research",
@@ -23569,6 +23667,7 @@ exports[`geneInfo Store > should load data 1`] = `
         "stats": {
           "numberOfGenes": 695,
           "numberOfRegions": 2,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -23580,6 +23679,7 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "1.141",
         "versionCreated": "2024-01-04T14:08:43.065350Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "Fanconi anemia, complementation group S, OMIM:617883",
         "Normal to low NK, CNS, skeletal, skin, cardiac, GI, urogenital anomalies, increased chromosomal breakage",
@@ -23591,9 +23691,9 @@ exports[`geneInfo Store > should load data 1`] = `
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Green",
         "Expert list",
@@ -23605,10 +23705,15 @@ exports[`geneInfo Store > should load data 1`] = `
       },
       "modeOfInheritance": "MONOALLELIC, autosomal or pseudoautosomal, imprinted status unknown",
       "panel": {
+        "diseaseGroup": "",
+        "diseaseSubGroup": "",
         "id": 929,
         "name": "Additional findings health related - adult specific",
+        "relevantDisorders": [],
         "stats": {
           "numberOfGenes": 6,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -23625,15 +23730,17 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "1.2",
         "versionCreated": "2022-04-04T14:14:10.695069Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "{Breast-ovarian cancer, familial, 1}, OMIM:604370",
         "Adult only",
       ],
+      "publications": [],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert list",
         "Expert Review Green",
@@ -23645,10 +23752,15 @@ exports[`geneInfo Store > should load data 1`] = `
       },
       "modeOfInheritance": "MONOALLELIC, autosomal or pseudoautosomal, imprinted status unknown",
       "panel": {
+        "diseaseGroup": "",
+        "diseaseSubGroup": "",
         "id": 931,
         "name": "Additional findings health related - CNV analysis adult specific",
+        "relevantDisorders": [],
         "stats": {
           "numberOfGenes": 6,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -23665,15 +23777,17 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "1.2",
         "versionCreated": "2022-04-04T14:14:17.762899Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "{Breast-ovarian cancer, familial, 1}, OMIM:604370",
         "Adult only",
       ],
+      "publications": [],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "NHS GMS",
         "Expert Review Green",
@@ -23685,6 +23799,8 @@ exports[`geneInfo Store > should load data 1`] = `
       },
       "modeOfInheritance": "MONOALLELIC, autosomal or pseudoautosomal, NOT imprinted",
       "panel": {
+        "diseaseGroup": "",
+        "diseaseSubGroup": "",
         "id": 1223,
         "name": "Inherited prostate cancer",
         "relevantDisorders": [
@@ -23692,6 +23808,8 @@ exports[`geneInfo Store > should load data 1`] = `
         ],
         "stats": {
           "numberOfGenes": 8,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -23708,6 +23826,9 @@ exports[`geneInfo Store > should load data 1`] = `
         "version": "1.4",
         "versionCreated": "2023-10-26T10:49:59.515119Z",
       },
+      "penetrance": 0,
+      "phenotypes": [],
+      "publications": [],
     },
   ],
   "rcnv": {
@@ -29435,14 +29556,14 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
     "genomicLocation37": "chr17:41196312-41277500",
     "genomicLocation38": "chr17:43044295-43125364",
     "haploinsufficiencyDiseaseId": "MONDO:0011450",
-    "haploinsufficiencyScore": "CLINGEN_DOSAGE_SCORE_SUFFICIENT_EVIDENCE_AVAILABLE",
+    "haploinsufficiencyScore": 1,
     "ncbiGeneId": "672",
-    "triplosensitivityScore": "CLINGEN_DOSAGE_SCORE_NO_EVIDENCE_AVAILABLE",
+    "triplosensitivityScore": 4,
   },
   "conditions": {
     "diseaseAssociations": [
       {
-        "confidence": "CONFIDENCE_LEVEL_HIGH",
+        "confidence": 1,
         "diseaseDefinition": "A rare genetic multisystem disorder characterized by progressive pancytopenia with bone marrow failure, variable congenital malformations and predisposition to develop hematological or solid tumors.",
         "diseaseName": "Fanconi anemia",
         "hgncId": "HGNC:1100",
@@ -29457,13 +29578,13 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
           },
         ],
         "sources": [
-          "GENE_DISEASE_ASSOCIATION_SOURCE_OMIM",
-          "GENE_DISEASE_ASSOCIATION_SOURCE_ORPHANET",
-          "GENE_DISEASE_ASSOCIATION_SOURCE_PANELAPP",
+          1,
+          2,
+          3,
         ],
       },
       {
-        "confidence": "CONFIDENCE_LEVEL_HIGH",
+        "confidence": 1,
         "diseaseDefinition": "A genetic condition characterized by hereditary susceptibility to breast and/or ovarian cancer. It can be defined using family history criteria, or through identification of germline pathogenic variants (GPVs) in clinically validated HBOC genes. However, the genetic basis of about half of clinical HBOC is currently unknown or unexplained by single-gene variants, and approximately half of individuals who harbour PVs in HBOC genes do not have a suggestive family history.",
         "diseaseName": "Hereditary breast and/or ovarian cancer syndrome",
         "hgncId": "HGNC:1100",
@@ -29486,13 +29607,13 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
           },
         ],
         "sources": [
-          "GENE_DISEASE_ASSOCIATION_SOURCE_OMIM",
-          "GENE_DISEASE_ASSOCIATION_SOURCE_ORPHANET",
-          "GENE_DISEASE_ASSOCIATION_SOURCE_PANELAPP",
+          1,
+          2,
+          3,
         ],
       },
       {
-        "confidence": "CONFIDENCE_LEVEL_HIGH",
+        "confidence": 1,
         "diseaseDefinition": "Familial prostate cancer (FPC) is a malignant tumor of the prostate with an early onset. FPC is either asymptomatic or causes mictionary symptoms, erectile dysfunction, bone pain, venous compression and infectious or inflammatory syndrome (for the metastatic forms). It is also characterized by familial antecedents.",
         "diseaseName": "Familial prostate cancer",
         "hgncId": "HGNC:1100",
@@ -29503,11 +29624,11 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
           },
         ],
         "sources": [
-          "GENE_DISEASE_ASSOCIATION_SOURCE_ORPHANET",
+          2,
         ],
       },
       {
-        "confidence": "CONFIDENCE_LEVEL_HIGH",
+        "confidence": 1,
         "diseaseDefinition": "Familial pancreatic carcinoma is defined by the presence of pancreatic cancer (PC) in two or more first-degree relatives.",
         "diseaseName": "Familial pancreatic carcinoma",
         "hgncId": "HGNC:1100",
@@ -29526,13 +29647,13 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
           },
         ],
         "sources": [
-          "GENE_DISEASE_ASSOCIATION_SOURCE_OMIM",
-          "GENE_DISEASE_ASSOCIATION_SOURCE_ORPHANET",
-          "GENE_DISEASE_ASSOCIATION_SOURCE_PANELAPP",
+          1,
+          2,
+          3,
         ],
       },
       {
-        "confidence": "CONFIDENCE_LEVEL_HIGH",
+        "confidence": 1,
         "diseaseDefinition": "Primary peritoneal carcinoma (PPC) is a rare malignant tumor of the peritoneal cavity of extra-ovarian origin, clinically and histologically similar to advanced-stage serous ovarian carcinoma (see this term).",
         "diseaseName": "Primary peritoneal carcinoma",
         "hgncId": "HGNC:1100",
@@ -29543,11 +29664,11 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
           },
         ],
         "sources": [
-          "GENE_DISEASE_ASSOCIATION_SOURCE_ORPHANET",
+          2,
         ],
       },
       {
-        "confidence": "CONFIDENCE_LEVEL_HIGH",
+        "confidence": 1,
         "diseaseDefinition": "Cholangiocarcinoma (CCA) is a biliary tract cancer (BTC, see this term) originating in the epithelium of the biliary tree, either intra or extra hepatic.",
         "diseaseName": "Cholangiocarcinoma",
         "hgncId": "HGNC:1100",
@@ -29558,11 +29679,11 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
           },
         ],
         "sources": [
-          "GENE_DISEASE_ASSOCIATION_SOURCE_ORPHANET",
+          2,
         ],
       },
       {
-        "confidence": "CONFIDENCE_LEVEL_HIGH",
+        "confidence": 1,
         "diseaseName": "Autosomal dominant non-syndromic intellectual disability",
         "hgncId": "HGNC:1100",
         "labeledDisorders": [
@@ -29576,15 +29697,15 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
           },
         ],
         "sources": [
-          "GENE_DISEASE_ASSOCIATION_SOURCE_PANELAPP",
+          3,
         ],
       },
     ],
     "hgncId": "HGNC:1100",
     "panelappAssociations": [
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_AMBER",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 2,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "MONOALLELIC, autosomal or pseudoautosomal, NOT imprinted",
         "panel": {
@@ -29597,8 +29718,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_AMBER",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 2,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "panel": {
@@ -29611,8 +29732,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "MONOALLELIC, autosomal or pseudoautosomal, NOT imprinted",
         "panel": {
@@ -29625,8 +29746,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "MONOALLELIC, autosomal or pseudoautosomal, imprinted status unknown",
         "panel": {
@@ -29641,8 +29762,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "panel": {
@@ -29655,8 +29776,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BOTH monoallelic and biallelic, autosomal or pseudoautosomal",
         "panel": {
@@ -29669,8 +29790,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BOTH monoallelic and biallelic, autosomal or pseudoautosomal",
         "panel": {
@@ -29683,8 +29804,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BOTH monoallelic and biallelic, autosomal or pseudoautosomal",
         "panel": {
@@ -29698,8 +29819,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BOTH monoallelic and biallelic, autosomal or pseudoautosomal",
         "panel": {
@@ -29713,8 +29834,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "panel": {
@@ -29727,8 +29848,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "MONOALLELIC, autosomal or pseudoautosomal, imprinted status unknown",
         "panel": {
@@ -29742,8 +29863,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BOTH monoallelic and biallelic, autosomal or pseudoautosomal",
         "panel": {
@@ -29756,8 +29877,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "panel": {
@@ -29770,8 +29891,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BOTH monoallelic and biallelic, autosomal or pseudoautosomal",
         "panel": {
@@ -29785,8 +29906,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "panel": {
@@ -29799,8 +29920,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "panel": {
@@ -29813,8 +29934,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "panel": {
@@ -29827,8 +29948,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "panel": {
@@ -29841,8 +29962,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BOTH monoallelic and biallelic, autosomal or pseudoautosomal",
         "panel": {
@@ -29855,8 +29976,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "panel": {
@@ -29871,8 +29992,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "MONOALLELIC, autosomal or pseudoautosomal, imprinted status unknown",
         "panel": {
@@ -29886,8 +30007,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "MONOALLELIC, autosomal or pseudoautosomal, imprinted status unknown",
         "panel": {
@@ -29901,8 +30022,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 1,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "MONOALLELIC, autosomal or pseudoautosomal, NOT imprinted",
         "panel": {
@@ -29910,10 +30031,11 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
           "name": "Inherited prostate cancer",
           "version": "1.4",
         },
+        "phenotypes": [],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_RED",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 3,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "Unknown",
         "panel": {
@@ -29926,8 +30048,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_RED",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 3,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "",
         "panel": {
@@ -29940,8 +30062,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_RED",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 3,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "panel": {
@@ -29954,8 +30076,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_RED",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 3,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "panel": {
@@ -29970,8 +30092,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "confidenceLevel": "PANELAPP_CONFIDENCE_RED",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
+        "confidenceLevel": 3,
+        "entityType": 1,
         "hgncId": "HGNC:1100",
         "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "panel": {
@@ -30078,6 +30200,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
     "geneIndispensabilityPred": "E",
     "geneIndispensabilityScore": 1,
     "geneName": "BRCA1",
+    "geneOldNames": [],
     "geneOtherNames": [
       "RNF53",
       "BRCC1",
@@ -35012,8 +35135,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
     "hgncId": "HGNC:1100",
     "records": [
       {
-        "tissue": "GTEX_TISSUE_ADIPOSE_TISSUE",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ADIPOSE_SUBCUTANEOUS",
+        "tissue": 1,
+        "tissueDetailed": 1,
         "tpms": [
           0.2209,
           1.101,
@@ -35023,8 +35146,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_ADIPOSE_TISSUE",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ADIPOSE_VISCERAL_OMENTUM",
+        "tissue": 1,
+        "tissueDetailed": 2,
         "tpms": [
           0.1854,
           0.809,
@@ -35034,8 +35157,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_ADRENAL_GLAND",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ADRENAL_GLAND",
+        "tissue": 2,
+        "tissueDetailed": 3,
         "tpms": [
           0.03997,
           0.70615,
@@ -35045,8 +35168,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BLADDER",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BLADDER",
+        "tissue": 3,
+        "tissueDetailed": 7,
         "tpms": [
           0.8304,
           1.474,
@@ -35056,8 +35179,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BLOOD",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_CELLS_EBV_TRANSFORMED_LYMPHOCYTES",
+        "tissue": 4,
+        "tissueDetailed": 23,
         "tpms": [
           4.381,
           14.705,
@@ -35067,8 +35190,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BLOOD",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_WHOLE_BLOOD",
+        "tissue": 4,
+        "tissueDetailed": 56,
         "tpms": [
           0.03328,
           0.4607,
@@ -35078,8 +35201,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BLOOD_VESSEL",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ARTERY_AORTA",
+        "tissue": 5,
+        "tissueDetailed": 4,
         "tpms": [
           0.2705,
           0.911375,
@@ -35089,8 +35212,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BLOOD_VESSEL",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ARTERY_CORONARY",
+        "tissue": 5,
+        "tissueDetailed": 5,
         "tpms": [
           0.3367,
           0.9703,
@@ -35100,8 +35223,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BLOOD_VESSEL",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ARTERY_TIBIAL",
+        "tissue": 5,
+        "tissueDetailed": 6,
         "tpms": [
           0.1409,
           0.83585,
@@ -35111,8 +35234,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_AMYGDALA",
+        "tissue": 7,
+        "tissueDetailed": 8,
         "tpms": [
           0.1942,
           0.7064,
@@ -35122,8 +35245,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_ANTERIOR_CINGULATE_CORTEX",
+        "tissue": 7,
+        "tissueDetailed": 9,
         "tpms": [
           0.1907,
           0.48295,
@@ -35133,8 +35256,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_CAUDATE_BASAL_GANGLIA",
+        "tissue": 7,
+        "tissueDetailed": 10,
         "tpms": [
           0.1931,
           0.84465,
@@ -35144,8 +35267,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_CEREBELLAR_HEMISPHERE",
+        "tissue": 7,
+        "tissueDetailed": 11,
         "tpms": [
           0.1435,
           0.5071,
@@ -35155,8 +35278,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_CEREBELLUM",
+        "tissue": 7,
+        "tissueDetailed": 12,
         "tpms": [
           0.1807,
           0.5977,
@@ -35166,8 +35289,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_CORTEX",
+        "tissue": 7,
+        "tissueDetailed": 13,
         "tpms": [
           0.3276,
           0.69255,
@@ -35177,8 +35300,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_FRONTAL_CORTEX",
+        "tissue": 7,
+        "tissueDetailed": 14,
         "tpms": [
           0.2463,
           0.6357,
@@ -35188,8 +35311,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_HIPPOCAMPUS",
+        "tissue": 7,
+        "tissueDetailed": 15,
         "tpms": [
           0.2167,
           0.6819,
@@ -35199,8 +35322,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_HYPOTHALAMUS",
+        "tissue": 7,
+        "tissueDetailed": 16,
         "tpms": [
           0.2405,
           0.771325,
@@ -35210,8 +35333,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_NUCLEUS_ACCUMBENS",
+        "tissue": 7,
+        "tissueDetailed": 17,
         "tpms": [
           0.08648,
           0.59885,
@@ -35221,8 +35344,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_PUTAMEN_BASAL_GANGLIA",
+        "tissue": 7,
+        "tissueDetailed": 18,
         "tpms": [
           0.2729,
           0.8034,
@@ -35232,8 +35355,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_SPINAL_CORD",
+        "tissue": 7,
+        "tissueDetailed": 19,
         "tpms": [
           0.3637,
           1.737,
@@ -35243,8 +35366,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_SUBSTANTIA_NIGRA",
+        "tissue": 7,
+        "tissueDetailed": 20,
         "tpms": [
           0.4543,
           1.012,
@@ -35254,8 +35377,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_BREAST",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BREAST_MAMMARY_TISSUE",
+        "tissue": 8,
+        "tissueDetailed": 21,
         "tpms": [
           0.1048,
           0.9573,
@@ -35265,8 +35388,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_CERVIX_UTERI",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_CERVIX_ECTOCERVIX",
+        "tissue": 9,
+        "tissueDetailed": 25,
         "tpms": [
           1.137,
           1.46,
@@ -35276,8 +35399,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_CERVIX_UTERI",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_CERVIX_ENDOCERVIX",
+        "tissue": 9,
+        "tissueDetailed": 26,
         "tpms": [
           1.188,
           1.502,
@@ -35287,8 +35410,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_COLON",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_COLON_SIGMOID",
+        "tissue": 10,
+        "tissueDetailed": 27,
         "tpms": [
           0.4501,
           1.69,
@@ -35298,8 +35421,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_COLON",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_COLON_TRANSVERSE",
+        "tissue": 10,
+        "tissueDetailed": 28,
         "tpms": [
           0.4739,
           1.45325,
@@ -35309,8 +35432,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_ESOPHAGUS",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ESOPHAGUS_GASTROESOPHAGEAL_JUNCTION",
+        "tissue": 11,
+        "tissueDetailed": 29,
         "tpms": [
           0.2521,
           1.3035,
@@ -35320,8 +35443,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_ESOPHAGUS",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ESOPHAGUS_MUCOSA",
+        "tissue": 11,
+        "tissueDetailed": 30,
         "tpms": [
           0.3604,
           1.847,
@@ -35331,8 +35454,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_ESOPHAGUS",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ESOPHAGUS_MUSCULARIS",
+        "tissue": 11,
+        "tissueDetailed": 31,
         "tpms": [
           0.2562,
           1.355,
@@ -35342,8 +35465,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_FALLOPIAN_TUBE",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_FALLOPIAN_TUBE",
+        "tissue": 12,
+        "tissueDetailed": 32,
         "tpms": [
           1.196,
           1.417,
@@ -35353,8 +35476,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_HEART",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_HEART_ATRIAL_APPENDAGE",
+        "tissue": 13,
+        "tissueDetailed": 33,
         "tpms": [
           0.07571,
           0.7861,
@@ -35364,8 +35487,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_HEART",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_HEART_LEFT_VENTRICLE",
+        "tissue": 13,
+        "tissueDetailed": 34,
         "tpms": [
           0.0263,
           0.4611,
@@ -35375,8 +35498,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_KIDNEY",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_KIDNEY_CORTEX",
+        "tissue": 14,
+        "tissueDetailed": 35,
         "tpms": [
           0.07574,
           0.2879,
@@ -35386,8 +35509,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_KIDNEY",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_KIDNEY_MEDULLA",
+        "tissue": 14,
+        "tissueDetailed": 36,
         "tpms": [
           0.3846,
           0.389625,
@@ -35397,8 +35520,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_LIVER",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_LIVER",
+        "tissue": 15,
+        "tissueDetailed": 37,
         "tpms": [
           0.06851,
           0.5388,
@@ -35408,8 +35531,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_LUNG",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_LUNG",
+        "tissue": 16,
+        "tissueDetailed": 38,
         "tpms": [
           0.2091,
           1.165,
@@ -35419,8 +35542,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_MUSCLE",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_MUSCLE_SKELETAL",
+        "tissue": 17,
+        "tissueDetailed": 40,
         "tpms": [
           0.06435,
           0.6387,
@@ -35430,8 +35553,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_NERVE",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_NERVE_TIBIAL",
+        "tissue": 18,
+        "tissueDetailed": 41,
         "tpms": [
           0.554,
           2.0265,
@@ -35441,8 +35564,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_OVARY",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_OVARY",
+        "tissue": 19,
+        "tissueDetailed": 42,
         "tpms": [
           0.4069,
           1.232,
@@ -35452,8 +35575,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_PANCREAS",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_PANCREAS",
+        "tissue": 20,
+        "tissueDetailed": 43,
         "tpms": [
           0.01594,
           0.3794,
@@ -35463,8 +35586,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_PITUITARY",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_PITUITARY",
+        "tissue": 21,
+        "tissueDetailed": 44,
         "tpms": [
           0.2558,
           1.4255,
@@ -35474,8 +35597,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_PROSTATE",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_PROSTATE",
+        "tissue": 22,
+        "tissueDetailed": 45,
         "tpms": [
           0.208,
           1.054,
@@ -35485,8 +35608,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_SALIVARY_GLAND",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_MINOR_SALIVARY_GLAND",
+        "tissue": 23,
+        "tissueDetailed": 39,
         "tpms": [
           0.2541,
           1.0235,
@@ -35496,8 +35619,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_SKIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_CELLS_CULTURED_FIBROBLASTS",
+        "tissue": 24,
+        "tissueDetailed": 22,
         "tpms": [
           1.211,
           4.502,
@@ -35507,8 +35630,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_SKIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_SKIN_NOT_SUN_EXPOSED_SUPRAPUBIC",
+        "tissue": 24,
+        "tissueDetailed": 47,
         "tpms": [
           0.2108,
           1.466,
@@ -35518,8 +35641,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_SKIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_SKIN_SUN_EXPOSED_LOWER_LEG",
+        "tissue": 24,
+        "tissueDetailed": 48,
         "tpms": [
           0.1891,
           1.306,
@@ -35529,8 +35652,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_SMALL_INTESTINE",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_SMALL_INTESTINE_TERMINAL_ILEUM",
+        "tissue": 25,
+        "tissueDetailed": 49,
         "tpms": [
           0.4102,
           1.502,
@@ -35540,8 +35663,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_SPLEEN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_SPLEEN",
+        "tissue": 26,
+        "tissueDetailed": 50,
         "tpms": [
           0.941,
           1.849,
@@ -35551,8 +35674,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_STOMACH",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_STOMACH",
+        "tissue": 27,
+        "tissueDetailed": 51,
         "tpms": [
           0.2336,
           0.75795,
@@ -35562,8 +35685,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_TESTIS",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_TESTIS",
+        "tissue": 28,
+        "tissueDetailed": 52,
         "tpms": [
           3.074,
           8.973,
@@ -35573,8 +35696,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_THYROID",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_THYROID",
+        "tissue": 29,
+        "tissueDetailed": 53,
         "tpms": [
           0.4751,
           2.301,
@@ -35584,8 +35707,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_UTERUS",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_UTERUS",
+        "tissue": 30,
+        "tissueDetailed": 54,
         "tpms": [
           0.8724,
           1.78075,
@@ -35595,8 +35718,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
       },
       {
-        "tissue": "GTEX_TISSUE_VAGINA",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_VAGINA",
+        "tissue": 31,
+        "tissueDetailed": 55,
         "tpms": [
           0.6156,
           1.764,
@@ -35636,6 +35759,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
     ],
     "ensemblGeneId": "ENSG00000012048",
     "entrezId": "672",
+    "enzymeId": [],
     "geneGroup": [
       "Ring finger proteins",
       "FA complementation groups",
@@ -35699,6 +35823,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       "breast cancer 1, early onset",
       "breast cancer 1",
     ],
+    "prevSymbol": [],
     "pubmedId": [
       1676470,
       25472942,
@@ -35709,7 +35834,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
     "rgdId": [
       "RGD:2218",
     ],
-    "status": "HGNC_STATUS_APPROVED",
+    "status": 1,
     "symbol": "BRCA1",
     "ucscId": "uc002ict.4",
     "uniprotIds": [
@@ -51716,8 +51841,14 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
         "text": "germline mutation analysis by RNA-based sequencing",
       },
-      {},
-      {},
+      {
+        "pmids": [],
+        "text": "",
+      },
+      {
+        "pmids": [],
+        "text": "",
+      },
     ],
     "summary": "This gene encodes a 190 kD nuclear phosphoprotein that plays a role in maintaining genomic stability, and it also acts as a tumor suppressor. The BRCA1 gene contains 22 exons spanning about 110 kb of DNA. The encoded protein combines with other tumor suppressors, DNA damage sensors, and signal transducers to form a large multi-subunit protein complex known as the BRCA1-associated genome surveillance complex (BASC). This gene product associates with RNA polymerase II, and through the C-terminal domain, also interacts with histone deacetylase complexes. This protein thus plays a role in transcription, DNA repair of double-stranded breaks, and recombination. Mutations in this gene are responsible for approximately 40% of inherited breast cancers and more than 80% of inherited breast and ovarian cancers. Alternative splicing plays a role in modulating the subcellular localization and physiological function of this gene. Many alternatively spliced transcript variants, some of which are disease-associated mutations, have been described for this gene, but the full-length natures of only some of these variants has been described. A related pseudogene, which is also located on chromosome 17, has been identified. [provided by RefSeq, May 2020]",
   },
@@ -51740,9 +51871,9 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
   },
   "panelapp": [
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Green",
         "Eligibility statement prior genetic testing",
@@ -51769,6 +51900,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
         "stats": {
           "numberOfGenes": 27,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -51780,15 +51913,16 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "1.20",
         "versionCreated": "2023-07-05T11:28:18.013178Z",
       },
-      "penetrance": "PENETRANCE_COMPLETE",
+      "penetrance": 1,
       "phenotypes": [
         "{Breast-ovarian cancer, familial, 1}, OMIM:604370",
       ],
+      "publications": [],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_AMBER",
+      "confidenceLevel": 3,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Amber",
         "Expert list",
@@ -51800,11 +51934,16 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       },
       "modeOfInheritance": "MONOALLELIC, autosomal or pseudoautosomal, NOT imprinted",
       "panel": {
+        "diseaseGroup": "",
+        "diseaseSubGroup": "",
         "hashId": "5763f2bf8f620350a1996047",
         "id": 318,
         "name": "Familial prostate cancer",
+        "relevantDisorders": [],
         "stats": {
           "numberOfGenes": 14,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -51816,7 +51955,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "1.3",
         "versionCreated": "2022-04-04T14:14:50.815532Z",
       },
-      "penetrance": "PENETRANCE_COMPLETE",
+      "penetrance": 1,
       "phenotypes": [
         "Prostate cancer, MONDO:0008315",
       ],
@@ -51836,9 +51975,9 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_RED",
+      "confidenceLevel": 2,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Literature",
       ],
@@ -51854,8 +51993,11 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "hashId": "576cd7ca8f6203609632be82",
         "id": 171,
         "name": "Inherited non-medullary thyroid cancer",
+        "relevantDisorders": [],
         "stats": {
           "numberOfGenes": 30,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -51867,7 +52009,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "1.7",
         "versionCreated": "2023-11-07T12:37:18.457761Z",
       },
-      "penetrance": "PENETRANCE_COMPLETE",
+      "penetrance": 1,
       "phenotypes": [
         "Non-medullary thyroid cancer",
       ],
@@ -51876,9 +52018,9 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert list",
         "Expert Review Green",
@@ -51890,10 +52032,15 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       },
       "modeOfInheritance": "MONOALLELIC, autosomal or pseudoautosomal, imprinted status unknown",
       "panel": {
+        "diseaseGroup": "",
+        "diseaseSubGroup": "",
         "id": 399,
         "name": "Additional findings health related",
+        "relevantDisorders": [],
         "stats": {
           "numberOfGenes": 14,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -51905,16 +52052,18 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "0.114",
         "versionCreated": "2022-04-04T14:09:51.946635Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "{Breast-ovarian cancer, familial, 1}, OMIM:604370",
         "Breast and ovarian cancer predisposition",
         "Adult only",
       ],
+      "publications": [],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Green",
         "Curated sources",
@@ -51930,8 +52079,11 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "diseaseSubGroup": "Tumour syndromes",
         "id": 407,
         "name": "Haematological malignancies for rare disease",
+        "relevantDisorders": [],
         "stats": {
           "numberOfGenes": 89,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -51943,6 +52095,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "1.16",
         "versionCreated": "2022-11-17T12:00:47.843065Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "Fanconi anemia, complementation group S, OMIM:617883",
       ],
@@ -51951,9 +52104,9 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "NHS GMS",
         "Expert Review Green",
@@ -51976,6 +52129,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
         "stats": {
           "numberOfGenes": 7,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -51997,15 +52152,16 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "2.8",
         "versionCreated": "2024-01-08T15:48:36.828204Z",
       },
-      "penetrance": "PENETRANCE_COMPLETE",
+      "penetrance": 1,
       "phenotypes": [
         "{Breast-ovarian cancer, familial, 1}, OMIM:604370",
       ],
+      "publications": [],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "NHS GMS",
         "Expert Review Green",
@@ -52028,6 +52184,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
         "stats": {
           "numberOfGenes": 9,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -52049,15 +52207,16 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "2.3",
         "versionCreated": "2023-10-25T21:24:10.829247Z",
       },
-      "penetrance": "PENETRANCE_COMPLETE",
+      "penetrance": 1,
       "phenotypes": [
         "{Breast-ovarian cancer, familial, 1}, OMIM:604370",
       ],
+      "publications": [],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert list",
         "Expert Review Green",
@@ -52082,6 +52241,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "stats": {
           "numberOfGenes": 58,
           "numberOfRegions": 1,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -52093,15 +52253,17 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "1.39",
         "versionCreated": "2024-01-09T13:56:42.713646Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "{Breast-ovarian cancer, familial, 1}, OMIM:604370",
         "Fanconi anemia, complementation group S, OMIM:617883",
       ],
+      "publications": [],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "NHS GMS",
         "Expert List",
@@ -52131,6 +52293,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
         "stats": {
           "numberOfGenes": 26,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -52152,7 +52316,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "4.3",
         "versionCreated": "2023-10-26T01:26:24.397363Z",
       },
-      "penetrance": "PENETRANCE_COMPLETE",
+      "penetrance": 1,
       "phenotypes": [
         "{Breast-ovarian cancer, familial, 1}, OMIM:604370",
         "Hereditary breast ovarian cancer syndrome, MONDO:0003582",
@@ -52162,9 +52326,9 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_RED",
+      "confidenceLevel": 2,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Emory Genetics Laboratory",
       ],
@@ -52173,6 +52337,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "hgncId": "HGNC:1100",
         "hgncSymbol": "BRCA1",
       },
+      "modeOfInheritance": "",
       "panel": {
         "diseaseGroup": "Tumour syndromes",
         "diseaseSubGroup": "GI tract",
@@ -52189,6 +52354,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
         "stats": {
           "numberOfGenes": 31,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -52200,15 +52367,16 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "1.22",
         "versionCreated": "2022-07-05T15:13:55.337743Z",
       },
-      "penetrance": "PENETRANCE_COMPLETE",
+      "penetrance": 1,
       "phenotypes": [
         "Gastrointestinal and Colorectal Cancer",
       ],
+      "publications": [],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "NHS GMS",
         "Expert Review Green",
@@ -52237,6 +52405,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "stats": {
           "numberOfGenes": 121,
           "numberOfRegions": 1,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -52263,6 +52432,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "4.14",
         "versionCreated": "2024-01-09T14:21:36.308191Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "{Breast-ovarian cancer, familial, 1}, OMIM:604370",
       ],
@@ -52271,9 +52441,9 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Green",
         "NHS GMS",
@@ -52285,6 +52455,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       },
       "modeOfInheritance": "MONOALLELIC, autosomal or pseudoautosomal, imprinted status unknown",
       "panel": {
+        "diseaseGroup": "",
+        "diseaseSubGroup": "",
         "id": 524,
         "name": "Inherited pancreatic cancer",
         "relevantDisorders": [
@@ -52292,6 +52464,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
         "stats": {
           "numberOfGenes": 12,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -52308,6 +52482,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "2.3",
         "versionCreated": "2023-10-26T10:44:06.794577Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "{Pancreatic cancer, susceptibility to, 4}, OMIM:614320",
         "Pancreatic cancer, susceptibility to, 4, MONDO:0013685",
@@ -52317,9 +52492,9 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "NHS GMS",
         "Expert Review Green",
@@ -52331,6 +52506,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       },
       "modeOfInheritance": "BOTH monoallelic and biallelic, autosomal or pseudoautosomal",
       "panel": {
+        "diseaseGroup": "",
+        "diseaseSubGroup": "",
         "id": 635,
         "name": "Inherited breast cancer and ovarian cancer",
         "relevantDisorders": [
@@ -52338,6 +52515,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
         "stats": {
           "numberOfGenes": 7,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -52354,14 +52533,16 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "2.11",
         "versionCreated": "2023-10-26T09:46:50.383167Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "{Breast-ovarian cancer, familial, 1}, OMIM:604370",
       ],
+      "publications": [],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_AMBER",
+      "confidenceLevel": 3,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Amber",
         "BRIDGE consortium (NIHRBR-RD)",
@@ -52389,6 +52570,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
         "stats": {
           "numberOfGenes": 223,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -52400,7 +52583,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "1.114",
         "versionCreated": "2024-01-05T15:38:34.817892Z",
       },
-      "penetrance": "PENETRANCE_COMPLETE",
+      "penetrance": 1,
       "phenotypes": [
         "Fanconi anemia, complementation group S, OMIM:617883",
       ],
@@ -52412,9 +52595,9 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Green",
         "Expert list",
@@ -52437,6 +52620,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
         "stats": {
           "numberOfGenes": 85,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -52448,7 +52633,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "1.25",
         "versionCreated": "2023-08-22T15:30:08.661192Z",
       },
-      "penetrance": "PENETRANCE_COMPLETE",
+      "penetrance": 1,
       "phenotypes": [
         "{Breast-ovarian cancer, familial, 1}, OMIM:604370",
       ],
@@ -52457,9 +52642,9 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "NHS GMS",
         "Expert Review Green",
@@ -52484,6 +52669,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
         "stats": {
           "numberOfGenes": 105,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -52505,16 +52692,17 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "2.28",
         "versionCreated": "2024-01-09T11:30:02.542986Z",
       },
-      "penetrance": "PENETRANCE_COMPLETE",
+      "penetrance": 1,
       "phenotypes": [
         "{Breast-ovarian cancer, familial, 1}, OMIM:604370",
         "Fanconi anemia, complementation group S, OMIM:617883",
       ],
+      "publications": [],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Green",
         "Curated sources",
@@ -52537,6 +52725,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
         "stats": {
           "numberOfGenes": 108,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -52558,7 +52748,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "4.4",
         "versionCreated": "2023-10-25T21:35:42.752028Z",
       },
-      "penetrance": "PENETRANCE_COMPLETE",
+      "penetrance": 1,
       "phenotypes": [
         "Fanconi anemia, complementation group S, OMIM:617883",
       ],
@@ -52567,9 +52757,9 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Green",
         "North West GLH",
@@ -52584,6 +52774,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       },
       "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
       "panel": {
+        "diseaseGroup": "",
+        "diseaseSubGroup": "",
         "id": 508,
         "name": "Confirmed Fanconi anaemia or Bloom syndrome",
         "relevantDisorders": [
@@ -52592,6 +52784,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
         "stats": {
           "numberOfGenes": 23,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -52613,6 +52807,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "2.4",
         "versionCreated": "2023-10-25T20:40:07.821145Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "Fanconi anemia, complementation group S, OMIM:617883",
       ],
@@ -52623,9 +52818,9 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_RED",
+      "confidenceLevel": 2,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Red",
         "PAGE DD-Gene2Phenotype",
@@ -52637,6 +52832,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       },
       "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
       "panel": {
+        "diseaseGroup": "",
+        "diseaseSubGroup": "",
         "id": 478,
         "name": "Fetal anomalies",
         "relevantDisorders": [
@@ -52670,14 +52867,16 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "3.124",
         "versionCreated": "2024-01-07T18:02:14.275504Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "INTELLECTUAL DISABILITY",
       ],
+      "publications": [],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Green",
         "DD-Gene2Phenotype",
@@ -52689,10 +52888,14 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       },
       "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
       "panel": {
+        "diseaseGroup": "",
+        "diseaseSubGroup": "",
         "id": 484,
         "name": "DDG2P",
+        "relevantDisorders": [],
         "stats": {
           "numberOfGenes": 2349,
+          "numberOfRegions": 0,
           "numberOfStrs": 1,
         },
         "types": [
@@ -52715,6 +52918,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "3.79",
         "versionCreated": "2023-12-05T11:30:39.638529Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "INTELLECTUAL DISABILITY 616579",
       ],
@@ -52724,9 +52928,9 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_RED",
+      "confidenceLevel": 2,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Red",
       ],
@@ -52783,7 +52987,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "5.405",
         "versionCreated": "2024-01-17T17:22:12.816088Z",
       },
-      "penetrance": "PENETRANCE_COMPLETE",
+      "penetrance": 1,
       "phenotypes": [
         "{Breast-ovarian cancer, familial, 1} 604370 autosomal dominant",
         "{Pancreatic cancer, susceptibility to, 4} 614320 autosomal dominant",
@@ -52796,9 +53000,9 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Green",
         "Expert Review",
@@ -52810,6 +53014,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       },
       "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
       "panel": {
+        "diseaseGroup": "",
+        "diseaseSubGroup": "",
         "id": 559,
         "name": "Pigmentary skin disorders",
         "relevantDisorders": [
@@ -52818,6 +53024,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "stats": {
           "numberOfGenes": 131,
           "numberOfRegions": 1,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -52839,6 +53046,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "3.6",
         "versionCreated": "2024-01-09T11:32:36.944142Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "Fanconi anemia, complementation group S, OMIM:617883",
       ],
@@ -52847,9 +53055,9 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Next Generation Children Project",
         "Expert Review Green",
@@ -52862,10 +53070,15 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       },
       "modeOfInheritance": "BOTH monoallelic and biallelic, autosomal or pseudoautosomal",
       "panel": {
+        "diseaseGroup": "",
+        "diseaseSubGroup": "",
         "id": 921,
         "name": "Severe Paediatric Disorders",
+        "relevantDisorders": [],
         "stats": {
           "numberOfGenes": 2691,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -52877,6 +53090,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "1.178",
         "versionCreated": "2023-12-05T11:31:06.728258Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "Fanconi anemia, complementation group S, 617883",
       ],
@@ -52885,9 +53099,9 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_RED",
+      "confidenceLevel": 2,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "IUIS Classification December 2019",
       ],
@@ -52898,6 +53112,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       },
       "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
       "panel": {
+        "diseaseGroup": "",
+        "diseaseSubGroup": "",
         "id": 398,
         "name": "Primary immunodeficiency or monogenic inflammatory bowel disease",
         "relevantDisorders": [
@@ -52928,6 +53144,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "stats": {
           "numberOfGenes": 552,
           "numberOfRegions": 2,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -52949,6 +53166,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "4.162",
         "versionCreated": "2024-01-10T13:54:31.820063Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "Fanconi anemia, complementation group S, OMIM:617883",
         "Normal to low NK, CNS, skeletal, skin, cardiac, GI, urogenital anomalies, increased chromosomal breakage",
@@ -52960,9 +53178,9 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Green",
         "IUIS Classification December 2019",
@@ -52975,6 +53193,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
       "panel": {
         "diseaseGroup": "Viral research",
+        "diseaseSubGroup": "",
         "hashId": "58c7fd7f8f6203413360f1b6",
         "id": 111,
         "name": "COVID-19 research",
@@ -52984,6 +53203,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "stats": {
           "numberOfGenes": 695,
           "numberOfRegions": 2,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -52995,6 +53215,7 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "1.141",
         "versionCreated": "2024-01-04T14:08:43.065350Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "Fanconi anemia, complementation group S, OMIM:617883",
         "Normal to low NK, CNS, skeletal, skin, cardiac, GI, urogenital anomalies, increased chromosomal breakage",
@@ -53006,9 +53227,9 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       ],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert Review Green",
         "Expert list",
@@ -53020,10 +53241,15 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       },
       "modeOfInheritance": "MONOALLELIC, autosomal or pseudoautosomal, imprinted status unknown",
       "panel": {
+        "diseaseGroup": "",
+        "diseaseSubGroup": "",
         "id": 929,
         "name": "Additional findings health related - adult specific",
+        "relevantDisorders": [],
         "stats": {
           "numberOfGenes": 6,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -53040,15 +53266,17 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "1.2",
         "versionCreated": "2022-04-04T14:14:10.695069Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "{Breast-ovarian cancer, familial, 1}, OMIM:604370",
         "Adult only",
       ],
+      "publications": [],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "Expert list",
         "Expert Review Green",
@@ -53060,10 +53288,15 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       },
       "modeOfInheritance": "MONOALLELIC, autosomal or pseudoautosomal, imprinted status unknown",
       "panel": {
+        "diseaseGroup": "",
+        "diseaseSubGroup": "",
         "id": 931,
         "name": "Additional findings health related - CNV analysis adult specific",
+        "relevantDisorders": [],
         "stats": {
           "numberOfGenes": 6,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -53080,15 +53313,17 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "1.2",
         "versionCreated": "2022-04-04T14:14:17.762899Z",
       },
+      "penetrance": 0,
       "phenotypes": [
         "{Breast-ovarian cancer, familial, 1}, OMIM:604370",
         "Adult only",
       ],
+      "publications": [],
     },
     {
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "confidenceLevel": 4,
       "entityName": "BRCA1",
-      "entityType": "ENTITY_TYPE_GENE",
+      "entityType": 1,
       "evidence": [
         "NHS GMS",
         "Expert Review Green",
@@ -53100,6 +53335,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
       },
       "modeOfInheritance": "MONOALLELIC, autosomal or pseudoautosomal, NOT imprinted",
       "panel": {
+        "diseaseGroup": "",
+        "diseaseSubGroup": "",
         "id": 1223,
         "name": "Inherited prostate cancer",
         "relevantDisorders": [
@@ -53107,6 +53344,8 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         ],
         "stats": {
           "numberOfGenes": 8,
+          "numberOfRegions": 0,
+          "numberOfStrs": 0,
         },
         "types": [
           {
@@ -53123,6 +53362,9 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 1`] = 
         "version": "1.4",
         "versionCreated": "2023-10-26T10:49:59.515119Z",
       },
+      "penetrance": 0,
+      "phenotypes": [],
+      "publications": [],
     },
   ],
   "rcnv": {
