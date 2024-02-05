@@ -71,7 +71,7 @@
     "@storybook/blocks": "^7.6.10",
     "@storybook/test": "^7.6.10",
     "@storybook/vue3": "^7.6.12",
-    "@storybook/vue3-vite": "^7.6.10",
+    "@storybook/vue3-vite": "^7.6.12",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@vitejs/plugin-vue": "^5.0.3",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
