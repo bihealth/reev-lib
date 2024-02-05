@@ -6,7 +6,7 @@ import { TX_EFFECT_LABELS } from '../../api/mehari/constants'
 import type { GeneTranscriptEffects } from '../../api/mehari/types'
 import { type Strucvar } from '../../lib/genomicVars'
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
-import { StoreState } from '../../store'
+import { StoreState } from '../../stores'
 import DocsLink from '../DocsLink/DocsLink.vue'
 import GeneListEntry from './GeneListEntry.vue'
 

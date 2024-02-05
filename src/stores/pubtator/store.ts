@@ -5,7 +5,7 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
 import { PubtatorClient } from '../../api/pubtator'
-import { StoreState } from '../../store/types'
+import { StoreState } from '../types'
 import { type SearchResults } from './types'
 
 export const usePubtatorStore = defineStore('pubtator', () => {

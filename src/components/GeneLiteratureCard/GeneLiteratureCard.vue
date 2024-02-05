@@ -12,8 +12,8 @@ import {
   type AnnotationLocation,
   AnnotationType,
   usePubtatorStore
-} from '../../store/pubtator'
-import { StoreState } from '../../store/types'
+} from '../../stores/pubtator'
+import { StoreState } from '../../stores/types'
 import DocsLink from '../DocsLink/DocsLink.vue'
 
 /** This component's props. */

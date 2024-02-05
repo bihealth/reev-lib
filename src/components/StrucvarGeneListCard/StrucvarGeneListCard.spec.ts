@@ -8,7 +8,7 @@ import { StrucvarResult } from '../../api/mehari/types'
 import { type Strucvar } from '../../lib/genomicVars'
 import { setupMountedComponents } from '../../lib/testUtils'
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
-import { StoreState } from '../../store'
+import { StoreState } from '../../stores'
 import StrucvarGeneListCard from './StrucvarGeneListCard.vue'
 
 /** Example Strucvar */

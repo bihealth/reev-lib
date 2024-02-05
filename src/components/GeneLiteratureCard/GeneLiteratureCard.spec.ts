@@ -4,8 +4,8 @@ import { describe, expect, test } from 'vitest'
 
 import { setupMountedComponents } from '../../lib/testUtils'
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
-import type { SearchResults } from '../../store/pubtator'
-import { StoreState } from '../../store/types'
+import type { SearchResults } from '../../stores/pubtator'
+import { StoreState } from '../../stores/types'
 import GeneLiteratureCard from './GeneLiteratureCard.vue'
 
 // Load fixture data for gene TGDS (little data) and BRCA1 (lots of data).

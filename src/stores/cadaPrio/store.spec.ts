@@ -4,7 +4,7 @@ import { createPinia, setActivePinia } from 'pinia'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import createFetchMock from 'vitest-fetch-mock'
 
-import { StoreState } from '../../store'
+import { StoreState } from '..'
 import { useCadaPrioStore } from './store'
 
 const predictResponseJson = JSON.parse(
