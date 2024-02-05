@@ -1,19 +1,6 @@
-export { default as DocsLink } from './components/DocsLink/DocsLink.vue';
-export { default as GeneClinvarCard } from './components/GeneClinvarCard/GeneClinvarCard.vue';
-export { default as GeneConditionsCard } from './components/GeneConditionsCard/GeneConditionsCard.vue';
-export { default as GeneExpressionCard } from './components/GeneExpressionCard/GeneExpressionCard.vue';
-export { default as GeneLiteratureCard } from './components/GeneLiteratureCard/GeneLiteratureCard.vue';
-export { default as GeneOverviewCard } from './components/GeneOverviewCard/GeneOverviewCard.vue';
-export { default as GenePathogenicityCard } from './components/GenePathogenicityCard/GenePathogenicityCard.vue';
-export { default as GenomeBrowserCard } from './components/GenomeBrowserCard/GenomeBrowserCard.vue';
-export { default as SeqvarBeaconNetworkCard } from './components/SeqvarBeaconNetworkCard/SeqvarBeaconNetworkCard.vue';
-export { default as SeqvarClinvarCard } from './components/SeqvarClinvarCard/SeqvarClinvarCard.vue';
-export { default as SeqvarConsequencesCard } from './components/SeqvarConsequencesCard/SeqvarConsequencesCard.vue';
-export { default as SeqvarFreqsCard } from './components/SeqvarFreqsCard/SeqvarFreqsCard.vue';
-export { default as SeqvarScoresCard } from './components/SeqvarScoresCard/SeqvarScoresCard.vue';
-export { default as SeqvarToolsCard } from './components/SeqvarToolsCard/SeqvarToolsCard.vue';
-export { default as SeqvarVariantValidatorCard } from './components/SeqvarVariantValidatorCard/SeqvarVariantValidatorCard.vue';
-export { default as StrucvarClinvarCard } from './components/StrucvarClinvarCard/StrucvarClinvarCard.vue';
-export { default as StrucvarGeneListCard } from './components/StrucvarGeneListCard/StrucvarGeneListCard.vue';
-export { default as StrucvarToolsCard } from './components/StrucvarToolsCard/StrucvarToolsCard.vue';
-export { default as VegaPlot } from './components/VegaPlot/VegaPlot.vue';
+import * as api from './api'
+import * as components from './components'
+import * as lib from './lib'
+import * as stores from './stores'
+
+export { api, components, stores, lib }

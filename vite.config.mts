@@ -34,7 +34,7 @@ export default defineConfig({
       // Could also be a dictionary or array of multiple entry points
       entry: 'src/main.ts',
       name: 'reevFrontendLib',
-      formats: ['umd', 'es', 'cjs'],  // order is important, see: https://github.com/rollup/rollup/issues/5095#issuecomment-1683264619
+      formats: ['umd', 'es', 'cjs'], // order is important, see: https://github.com/rollup/rollup/issues/5095#issuecomment-1683264619
       fileName: (format) => `reev-frontend-lib.${format}.js`
     },
     rollupOptions: {
