@@ -7,10 +7,12 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
 import { AnnonarsClient } from '../../api/annonars'
-import { DottyClient } from '../../api/dotty'
+import { DottyClient, TranscriptResult } from '../../api/dotty'
 import { type HpoTerm, VigunoClient } from '../../api/viguno'
 import { type GenomeBuild } from '../../lib/genomeBuilds'
 import { urlConfig } from '../../lib/urlConfig'
+import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
+import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
 import { StoreState } from '../types'
 
 export const useGeneInfoStore = defineStore('geneInfo', () => {
@@ -21,16 +23,16 @@ export const useGeneInfoStore = defineStore('geneInfo', () => {
   const hgncId = ref<string | undefined>(undefined)
 
   /** The retrieved gene data from annonars. */
-  const geneInfo = ref<any | undefined>(undefined)
+  const geneInfo = ref<GeneInfoRecord | undefined>(undefined)
 
   /** The HPO terms retrieved from viguno. */
   const hpoTerms = ref<HpoTerm[]>([])
 
   /** ClinVar gene-related information from annoars. */
-  const geneClinvar = ref<any | undefined>(undefined)
+  const geneClinvar = ref<ClinvarPerGeneRecord | undefined>(undefined)
 
   /** Transcript information from dotty (unless dotty API not available). */
-  const transcripts = ref<any | undefined>(undefined)
+  const transcripts = ref<TranscriptResult | undefined>(undefined)
 
   function clearData() {
     storeState.value = StoreState.Initial
@@ -88,7 +90,7 @@ export const useGeneInfoStore = defineStore('geneInfo', () => {
           hgncIdQuery,
           genomeBuild === 'grch37' ? 'GRCh37' : 'GRCh38'
         )
-        transcripts.value = transcriptsData
+        transcripts.value = transcriptsData ?? undefined
       }
     } catch (e) {
       console.error('There was an error loading the gene data.', e)
