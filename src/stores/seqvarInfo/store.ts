@@ -97,9 +97,6 @@ export const useSeqvarInfoStore = defineStore('seqvarInfo', () => {
               geneClinvar.value = data
             }),
             vigunoClient.fetchHpoTermsForHgncId(hgncId).then((data) => {
-              if (!data.result.length) {
-                throw new Error('No HPO terms found.')
-              }
               hpoTerms.value = data.result
             })
           ])
