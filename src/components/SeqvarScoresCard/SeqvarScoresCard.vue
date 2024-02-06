@@ -172,7 +172,7 @@ const polyphenScore = computed((): number | null =>
     </v-card-title>
     <v-card-subtitle class="text-overline"> Precomputed Sequence Variant Scores </v-card-subtitle>
     <v-card-text>
-      <div v-if="props.varAnnos?.dbnsfp">
+      <div v-if="props.varAnnos?.dbnsfp || props.varAnnos?.cadd">
         <v-table density="compact">
           <thead>
             <tr>
