@@ -68,7 +68,12 @@ const props = withDefaults(
                 <td>{{ oneTxCsq.consequences.join(', ') }}</td>
                 <td>{{ oneTxCsq.hgvsT }}</td>
                 <td>{{ oneTxCsq.hgvsP }}</td>
-                <td>{{ oneTxCsq.rank!.rank }} / {{ oneTxCsq.rank!.total }}</td>
+                <template v-if="oneTxCsq.rank">
+                  <td>{{ oneTxCsq.rank!.rank ?? 0 }} / {{ oneTxCsq.rank!.total ?? 0 }}</td>
+                </template>
+                <template v-else>
+                  <td>-</td>
+                </template>
               </tr>
             </template>
             <template v-else>
