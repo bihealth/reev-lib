@@ -15,8 +15,11 @@ import ClinvarImpact from './ClinvarImpact.vue'
 
 // The variation landascape is defined as an async component as rendering it
 // may take a while.
-const VariationLandscape = defineAsyncComponent(() => import('./VariationLandscape.vue'))
+const VariationLandscapePlotly = defineAsyncComponent(
+  () => import('./VariationLandscapePlotly.vue')
+)
 
+/** This component's props. */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps<{
   /** Gene per clinvar */
@@ -53,7 +56,7 @@ const props = defineProps<{
           <ClinvarFreqPlot :clinvar-per-gene="clinvarPerGene" />
         </v-col>
         <v-col cols="12">
-          <VariationLandscape
+          <VariationLandscapePlotly
             :clinvar-per-gene="clinvarPerGene"
             :transcripts="transcripts"
             :genome-build="genomeBuild"

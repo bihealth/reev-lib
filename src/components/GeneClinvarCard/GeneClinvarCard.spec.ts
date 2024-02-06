@@ -70,7 +70,7 @@ describe.concurrent('GeneClinvarCard.vue', async () => {
       expect(wrapper.text()).toContain('ClinVar Information')
       const clinvarImpact = wrapper.findComponent({ name: 'ClinvarImpact' })
       expect(clinvarImpact.exists()).toBe(true)
-      const variationLandscape = wrapper.findComponent({ name: 'VariationLandscape' })
+      const variationLandscape = wrapper.findComponent({ name: 'VariationLandscapePlotly' })
       expect(variationLandscape.exists()).toBe(true)
       const clinvarFreqPlot = wrapper.findComponent({ name: 'ClinvarFreqPlot' })
       expect(clinvarFreqPlot.exists()).toBe(true)
