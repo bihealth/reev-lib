@@ -297,7 +297,7 @@ const conditionsCols = computed<number>(() => {
                 >
                   <template #header>
                     <v-toolbar class="px-2 rounded-t-lg border" color="background">
-                      <div class="text-subtitle-1" :class="{ 'mt-3': geneInfo?.acmgSf }">
+                      <div class="text-subtitle-1" :class="{ 'mt-3': geneInfo?.hgnc }">
                         Associated Diseases
                         <small>
                           <template
