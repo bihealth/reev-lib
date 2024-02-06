@@ -40,7 +40,7 @@ interface BestOf {
   key: string | null
 }
 
-const bestOf = (obj: any, keys: string[]): BestOf => {
+const bestOf = (obj: any, keys: string[], abs: boolean = false): BestOf => {
   if (!obj) {
     return { score: null, key: null }
   }
@@ -48,7 +48,11 @@ const bestOf = (obj: any, keys: string[]): BestOf => {
     .map((key) => ({ score: obj[key] ?? null, key }))
     .filter(({ score }) => score !== null)
   if (values.length) {
-    values.sort((a, b) => b.score - a.score)
+    if (abs) {
+      values.sort((a, b) => b.score - a.score)
+    } else {
+      values.sort((a, b) => Math.abs(b.score) - Math.abs(a.score))
+    }
     return values[0]
   } else {
     return {
@@ -90,7 +94,7 @@ const allSpliceAi = computed<ScoreMapping>(() => {
 })
 
 const bestMMSplice = computed(() => {
-  return bestOf(props.varAnnos?.cadd, MMSpliceKeys)
+  return bestOf(props.varAnnos?.cadd, MMSpliceKeys, true)
 })
 
 const allMMSplice = computed<ScoreMapping>(() => {
