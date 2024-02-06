@@ -8,7 +8,7 @@ export default mergeConfig(
   viteConfig,
   defineConfig({
     test: {
-      setupFiles: ['./src/vitest.setup.ts'],
+      setupFiles: ['jsdom-worker', './src/vitest.setup.ts'],
       server: {
         deps: {
           inline: ['vuetify', 'vitest-canvas-mock']
