@@ -67,7 +67,7 @@ export type SvType = 'DEL' | 'DUP'
 
 /** Interface for regex groups when parsing with `REGEX_CNV_COLON` or `REGEX_CNV_HYPHEN`. */
 export interface RegexCnvGroups {
-  svType: SvType
+  svType: string
   genomeBuild?: string
   chrom?: string
   sequence?: string
@@ -420,7 +420,7 @@ export function parseSeparatedStrucvar(
   // Obtain the genome build and chromosome from the parsed groups.  Also,
   // perform validation.
   const {
-    svType,
+    svType: svType$Regex,
     genomeBuild: genomeBuildValue,
     sequence,
     chrom: chromValue,
@@ -458,6 +458,16 @@ export function parseSeparatedStrucvar(
     if (start > lengths[chrom] || stop > lengths[chrom]) {
       throw new ParseError(`Invalid positions: start=${start}, stop=${stop}`)
     }
+  }
+
+  // Normalize the SV type.
+  let svType: SvType
+  if (svType$Regex.toUpperCase() === 'DEL') {
+    svType = 'DEL'
+  } else if (svType$Regex.toUpperCase() === 'DUP') {
+    svType = 'DUP'
+  } else {
+    throw new ParseError(`Unknown SV type: ${svType$Regex}`)
   }
 
   return {

@@ -458,8 +458,8 @@ describe.concurrent('parseSeparatedStrucvar()', () => {
     })
   })
 
-  it('parse DEL:GRCh37:1:100:200', () => {
-    expect(parseSeparatedStrucvar('DEL:1:100:200')).toEqual({
+  it('parse Del:GRCh37:1:100:200', () => {
+    expect(parseSeparatedStrucvar('Del:1:100:200')).toEqual({
       chrom: '1',
       copyNumber: undefined,
       genomeBuild: 'grch37',
