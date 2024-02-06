@@ -144,7 +144,7 @@ const clinsigColor = (coarseClinsigIdx: number, percent: number): string => {
     case 2:
       return `rgba(93, 153, 54, ${intensity})`
     case 1:
-      return `rgba(150, 150, 150, ${intensity})`
+      return `rgba(245, 201, 100, ${intensity})`
     case 0:
       return `rgba(176, 84, 84, ${intensity})`
     default:

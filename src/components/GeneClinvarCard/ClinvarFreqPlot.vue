@@ -63,7 +63,10 @@ const vegaData = computed<any>(() => {
   }[] = []
   for (const record of props.clinvarPerGene?.perFreqCounts || []) {
     for (let i = 0; i < record.counts.length; i++) {
-      if (record.counts[i] > 0) {
+      if (
+        record.counts[i] > 0 &&
+        record.coarseClinsig !== CoarseClinicalSignificance.COARSE_CLINICAL_SIGNIFICANCE_UNKNOWN
+      ) {
         const value = {
           coarseClinsig: COARSE_CLINSIG_LABELS[record.coarseClinsig],
           freqBucket: bucketLabels[i],
@@ -127,7 +130,7 @@ const vegaEncoding = {
     type: 'nominal',
     sort: Object.values(COARSE_CLINSIG_LABELS),
     scale: {
-      domain: Object.values(COARSE_CLINSIG_LABELS),
+      domain: Object.values(COARSE_CLINSIG_LABELS).filter((label) => label !== 'unknown'),
       range: ['#5d9936', '#f5c964', '#b05454']
     }
   }
