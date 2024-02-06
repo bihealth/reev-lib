@@ -100,7 +100,7 @@ let TYPE_TO_FONT_COLOR =
     ? { ...TYPE_TO_FONT_COLOR_DARK }
     : { ...TYPE_TO_FONT_COLOR_LIGHT }
 
-    /** Helper that returns `Annotation.text` if name is just a number or empty. */
+/** Helper that returns `Annotation.text` if name is just a number or empty. */
 const annotationName = (annotation: Annotation) => {
   if (!annotation?.name?.length || annotation.name.match(/^\d+$/)) {
     return annotation.text
@@ -196,7 +196,8 @@ const highlight = (text: string, annotations: Annotation[], baseOffset: number):
         color: ${TYPE_TO_FONT_COLOR[locationAnnotation.annotation.type]};
         border-radius: 5px;
         padding-left: 5px;
-        padding-right: 5px;">`    )
+        padding-right: 5px;">`
+    )
     arr.push(text.slice(annoStart - baseOffset, annoEnd - baseOffset))
     arr.push('</span>')
 
