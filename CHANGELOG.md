@@ -1,5 +1,38 @@
 # Changelog
 
+## [0.5.0](https://github.com/bihealth/reev-frontend-lib/compare/v0.4.5...v0.5.0) (2024-02-06)
+
+
+### Features
+
+* adding store/cadaPrio ([#76](https://github.com/bihealth/reev-frontend-lib/issues/76)) ([4061290](https://github.com/bihealth/reev-frontend-lib/commit/40612907713becce6fdaa1305440bd89bbc1318c))
+* adding store/geneInfo ([#72](https://github.com/bihealth/reev-frontend-lib/issues/72)) ([92450e3](https://github.com/bihealth/reev-frontend-lib/commit/92450e3b8fa0a300e170eb2de06516f749cf9a47))
+* even more types for stores and apis ([#90](https://github.com/bihealth/reev-frontend-lib/issues/90)) ([94ecb9f](https://github.com/bihealth/reev-frontend-lib/commit/94ecb9febedf697b6966f8f717a1701669f3ec67))
+* expose router in setupMountedComponents ([#75](https://github.com/bihealth/reev-frontend-lib/issues/75)) ([e62f009](https://github.com/bihealth/reev-frontend-lib/commit/e62f0092edc1009e2dcb90524e47c35b4be8344a))
+* fix parsing of non-uppercase SvType (bihealth/reev[#434](https://github.com/bihealth/reev-frontend-lib/issues/434)) ([#95](https://github.com/bihealth/reev-frontend-lib/issues/95)) ([761d416](https://github.com/bihealth/reev-frontend-lib/commit/761d416e9180d35aeb5655ca257a6f2d562ff64a))
+* further improvements to literature highlighting ([#93](https://github.com/bihealth/reev-frontend-lib/issues/93)) ([538bfc0](https://github.com/bihealth/reev-frontend-lib/commit/538bfc06154da6a0465d9091094ab0a36e7e29a8))
+* integrate plotly-based clinvar landscape ([#94](https://github.com/bihealth/reev-frontend-lib/issues/94)) ([ec7641e](https://github.com/bihealth/reev-frontend-lib/commit/ec7641ed4579793721fb65401af2f5956d91866d))
+* make API base urls configurable ([#66](https://github.com/bihealth/reev-frontend-lib/issues/66)) ([7bd9dfd](https://github.com/bihealth/reev-frontend-lib/commit/7bd9dfd6a8152fac06c3e6b3799b70f02fc4f5f7))
+* more types in stores and slot in GenePathogenicityCard ([#89](https://github.com/bihealth/reev-frontend-lib/issues/89)) ([9be207e](https://github.com/bihealth/reev-frontend-lib/commit/9be207e77e4de33381d3e645d68ba3c0505262c5))
+
+
+### Bug Fixes
+
+* adjusting api/viguno to reality ([#70](https://github.com/bihealth/reev-frontend-lib/issues/70)) ([8aa9a87](https://github.com/bihealth/reev-frontend-lib/commit/8aa9a876e18f9650144c00ff37cf1ff7ce4606b0))
+* Allow components to be used in exports ([#71](https://github.com/bihealth/reev-frontend-lib/issues/71)) ([6f57554](https://github.com/bihealth/reev-frontend-lib/commit/6f575542a7daaeee1458324681a1f1ccf30b0162))
+* api/annonars type GeneInfoResult ([#68](https://github.com/bihealth/reev-frontend-lib/issues/68)) ([4476c13](https://github.com/bihealth/reev-frontend-lib/commit/4476c13a31229959909eac13b5225673c690f3ff))
+* api/mehari SeqvarResultEntry parsing ([#69](https://github.com/bihealth/reev-frontend-lib/issues/69)) ([65b5d96](https://github.com/bihealth/reev-frontend-lib/commit/65b5d96ce269d6b5ae5a5e72ea503a6809854d87))
+* cada-prio API result types ([#83](https://github.com/bihealth/reev-frontend-lib/issues/83)) ([18d85a2](https://github.com/bihealth/reev-frontend-lib/commit/18d85a243488bacd2afb81bbe00d844cbd254312))
+* color coding of gene-clinvar plots (bihealth/reev[#445](https://github.com/bihealth/reev-frontend-lib/issues/445)) ([#97](https://github.com/bihealth/reev-frontend-lib/issues/97)) ([79658a3](https://github.com/bihealth/reev-frontend-lib/commit/79658a318a4cb5f812b801faf1410d56a91d9a23))
+* display score with largest absolute value for MMSplice ([#444](https://github.com/bihealth/reev-frontend-lib/issues/444)) ([#100](https://github.com/bihealth/reev-frontend-lib/issues/100)) ([fd35564](https://github.com/bihealth/reev-frontend-lib/commit/fd35564263d7620381cc4339b4502aa73392d85e))
+* display splicing scores even when non-coding (bihealth/reev[#446](https://github.com/bihealth/reev-frontend-lib/issues/446)) ([#99](https://github.com/bihealth/reev-frontend-lib/issues/99)) ([d30f492](https://github.com/bihealth/reev-frontend-lib/commit/d30f492e95a917ae60813991ea159484ea91a0e1))
+* fixing rank display issues triggering bug (bihealth/reev[#433](https://github.com/bihealth/reev-frontend-lib/issues/433)) ([#96](https://github.com/bihealth/reev-frontend-lib/issues/96)) ([fcf376e](https://github.com/bihealth/reev-frontend-lib/commit/fcf376e4aba41fb531799b624f1516a079504e51))
+* more adjustments and fixes ([#92](https://github.com/bihealth/reev-frontend-lib/issues/92)) ([1f2f8b2](https://github.com/bihealth/reev-frontend-lib/commit/1f2f8b29d2d6a9e7fe49b0dc99c3cd908b19227a))
+* remove pinia export from stores ([#85](https://github.com/bihealth/reev-frontend-lib/issues/85)) ([78406e6](https://github.com/bihealth/reev-frontend-lib/commit/78406e612456070352e66983ea0ebdf0598ee91c))
+* remove requirement of genes having HPO terms (bihealth/reev[#447](https://github.com/bihealth/reev-frontend-lib/issues/447)) ([#98](https://github.com/bihealth/reev-frontend-lib/issues/98)) ([d570f1c](https://github.com/bihealth/reev-frontend-lib/commit/d570f1c7d1818322cdd35f4169f4fe8c93cb7100))
+* removing card component margins ([#74](https://github.com/bihealth/reev-frontend-lib/issues/74)) ([e62913b](https://github.com/bihealth/reev-frontend-lib/commit/e62913b471e33780e9dcb0b991ee78ada934c1c4))
+* use genomeRelease in geneInfo store ([#73](https://github.com/bihealth/reev-frontend-lib/issues/73)) ([6a9672d](https://github.com/bihealth/reev-frontend-lib/commit/6a9672de6527ad52a0aa9ad0a4323998afb7dfb6))
+
 ## [0.4.5](https://github.com/bihealth/reev-frontend-lib/compare/v0.4.4...v0.4.5) (2024-01-31)
 
 
