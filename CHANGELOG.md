@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.0](https://github.com/bihealth/reev-frontend-lib/compare/v0.5.0...v0.6.0) (2024-02-08)
+
+
+### Documentation
+
+* adding Zenodo DOI badge ([#102](https://github.com/bihealth/reev-frontend-lib/issues/102)) ([6740705](https://github.com/bihealth/reev-frontend-lib/commit/67407054163f128969d2c0b4e1ca278918a4535f))
+
 ## [0.5.0](https://github.com/bihealth/reev-frontend-lib/compare/v0.4.5...v0.5.0) (2024-02-06)
 
 
