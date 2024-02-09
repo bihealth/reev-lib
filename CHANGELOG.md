@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.6.1](https://github.com/bihealth/reev-frontend-lib/compare/v0.6.0...v0.6.1) (2024-02-09)
+
+
+### Features
+
+* use transcript infos from mehari server ([#115](https://github.com/bihealth/reev-frontend-lib/issues/115)) ([#118](https://github.com/bihealth/reev-frontend-lib/issues/118)) ([94c5e2e](https://github.com/bihealth/reev-frontend-lib/commit/94c5e2e4b0a2e765eb939815e81bcac904b23c94))
+
+
+### Bug Fixes
+
+* proper display of SpliceAI scores ([#104](https://github.com/bihealth/reev-frontend-lib/issues/104)) ([#117](https://github.com/bihealth/reev-frontend-lib/issues/117)) ([1507600](https://github.com/bihealth/reev-frontend-lib/commit/150760091fa578fd061282daa2585c031f97e639))
+
 ## [0.6.0](https://github.com/bihealth/reev-frontend-lib/compare/v0.5.0...v0.6.0) (2024-02-08)
 
 
