@@ -1,0 +1,235 @@
+{
+  "transcripts": [
+    {
+      "id": "NM_001304430.2",
+      "geneSymbol": "TGDS",
+      "geneId": "HGNC:20324",
+      "biotype": "TRANSCRIPT_BIOTYPE_CODING",
+      "protein": "NP_001291359.1",
+      "startCodon": 188,
+      "stopCodon": 1145,
+      "genomeAlignments": [
+        {
+          "genomeBuild": "GENOME_BUILD_GRCH38",
+          "contig": "NC_000013.11",
+          "cdsStart": 94574781,
+          "cdsEnd": 94593897,
+          "strand": "STRAND_MINUS",
+          "exons": [
+            {
+              "altStartI": 94574053,
+              "altEndI": 94574852,
+              "ord": 11,
+              "altCdsStartI": 1075,
+              "altCdsEndI": 1873,
+              "cigar": "799M"
+            },
+            {
+              "altStartI": 94576313,
+              "altEndI": 94576411,
+              "ord": 10,
+              "altCdsStartI": 977,
+              "altCdsEndI": 1074,
+              "cigar": "98M"
+            },
+            {
+              "altStartI": 94577370,
+              "altEndI": 94577429,
+              "ord": 9,
+              "altCdsStartI": 918,
+              "altCdsEndI": 976,
+              "cigar": "59M"
+            },
+            {
+              "altStartI": 94578004,
+              "altEndI": 94578170,
+              "ord": 8,
+              "altCdsStartI": 752,
+              "altCdsEndI": 917,
+              "cigar": "166M"
+            },
+            {
+              "altStartI": 94578729,
+              "altEndI": 94578773,
+              "ord": 7,
+              "altCdsStartI": 708,
+              "altCdsEndI": 751,
+              "cigar": "44M"
+            },
+            {
+              "altStartI": 94579893,
+              "altEndI": 94579953,
+              "ord": 6,
+              "altCdsStartI": 648,
+              "altCdsEndI": 707,
+              "cigar": "60M"
+            },
+            {
+              "altStartI": 94581090,
+              "altEndI": 94581189,
+              "ord": 5,
+              "altCdsStartI": 549,
+              "altCdsEndI": 647,
+              "cigar": "99M"
+            },
+            {
+              "altStartI": 94583093,
+              "altEndI": 94583236,
+              "ord": 4,
+              "altCdsStartI": 406,
+              "altCdsEndI": 548,
+              "cigar": "143M"
+            },
+            {
+              "altStartI": 94590852,
+              "altEndI": 94590943,
+              "ord": 3,
+              "altCdsStartI": 315,
+              "altCdsEndI": 405,
+              "cigar": "91M"
+            },
+            {
+              "altStartI": 94592240,
+              "altEndI": 94592309,
+              "ord": 2,
+              "altCdsStartI": 246,
+              "altCdsEndI": 314,
+              "cigar": "69M"
+            },
+            {
+              "altStartI": 94593840,
+              "altEndI": 94593907,
+              "ord": 1,
+              "altCdsStartI": 179,
+              "altCdsEndI": 245,
+              "cigar": "67M"
+            },
+            {
+              "altStartI": 94595974,
+              "altEndI": 94596152,
+              "altCdsStartI": 1,
+              "altCdsEndI": 178,
+              "cigar": "178M"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NM_014305.4",
+      "geneSymbol": "TGDS",
+      "geneId": "HGNC:20324",
+      "biotype": "TRANSCRIPT_BIOTYPE_CODING",
+      "tags": ["TRANSCRIPT_TAG_MANE_SELECT"],
+      "protein": "NP_055120.1",
+      "startCodon": 16,
+      "stopCodon": 1069,
+      "genomeAlignments": [
+        {
+          "genomeBuild": "GENOME_BUILD_GRCH38",
+          "contig": "NC_000013.11",
+          "cdsStart": 94574781,
+          "cdsEnd": 94596136,
+          "strand": "STRAND_MINUS",
+          "exons": [
+            {
+              "altStartI": 94574053,
+              "altEndI": 94574852,
+              "ord": 11,
+              "altCdsStartI": 999,
+              "altCdsEndI": 1797,
+              "cigar": "799M"
+            },
+            {
+              "altStartI": 94576313,
+              "altEndI": 94576411,
+              "ord": 10,
+              "altCdsStartI": 901,
+              "altCdsEndI": 998,
+              "cigar": "98M"
+            },
+            {
+              "altStartI": 94577370,
+              "altEndI": 94577429,
+              "ord": 9,
+              "altCdsStartI": 842,
+              "altCdsEndI": 900,
+              "cigar": "59M"
+            },
+            {
+              "altStartI": 94578004,
+              "altEndI": 94578170,
+              "ord": 8,
+              "altCdsStartI": 676,
+              "altCdsEndI": 841,
+              "cigar": "166M"
+            },
+            {
+              "altStartI": 94578729,
+              "altEndI": 94578773,
+              "ord": 7,
+              "altCdsStartI": 632,
+              "altCdsEndI": 675,
+              "cigar": "44M"
+            },
+            {
+              "altStartI": 94579893,
+              "altEndI": 94579953,
+              "ord": 6,
+              "altCdsStartI": 572,
+              "altCdsEndI": 631,
+              "cigar": "60M"
+            },
+            {
+              "altStartI": 94581090,
+              "altEndI": 94581189,
+              "ord": 5,
+              "altCdsStartI": 473,
+              "altCdsEndI": 571,
+              "cigar": "99M"
+            },
+            {
+              "altStartI": 94583093,
+              "altEndI": 94583236,
+              "ord": 4,
+              "altCdsStartI": 330,
+              "altCdsEndI": 472,
+              "cigar": "143M"
+            },
+            {
+              "altStartI": 94590852,
+              "altEndI": 94590943,
+              "ord": 3,
+              "altCdsStartI": 239,
+              "altCdsEndI": 329,
+              "cigar": "91M"
+            },
+            {
+              "altStartI": 94592240,
+              "altEndI": 94592309,
+              "ord": 2,
+              "altCdsStartI": 170,
+              "altCdsEndI": 238,
+              "cigar": "69M"
+            },
+            {
+              "altStartI": 94593840,
+              "altEndI": 94593907,
+              "ord": 1,
+              "altCdsStartI": 103,
+              "altCdsEndI": 169,
+              "cigar": "67M"
+            },
+            {
+              "altStartI": 94596050,
+              "altEndI": 94596152,
+              "altCdsStartI": 1,
+              "altCdsEndI": 102,
+              "cigar": "102M"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

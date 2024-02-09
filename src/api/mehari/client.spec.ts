@@ -3,12 +3,22 @@ import path from 'path'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import createFetchMock from 'vitest-fetch-mock'
 
+import { GenomeBuild } from '@/pbs/mehari/txs'
+
 import { SeqvarImpl } from '../../lib/genomicVars'
 import { LinearStrucvarImpl } from '../../lib/genomicVars'
 import { MehariClient } from './client'
 
 /** Fixture Seqvar */
 const seqvar = new SeqvarImpl('grch37', '1', 123, 'A', 'G')
+
+/** Fixture with gene trancripts. */
+const genesTxsBrca1 = JSON.parse(
+  fs.readFileSync(
+    path.resolve(__dirname, '../../components/GeneClinvarCard/fixture.genesTxs.BRCA1.37.json'),
+    'utf8'
+  )
+)
 
 /** Fixture with BRCA1 seqvar consequence. */
 const seqvarCsqResponseBrca1 = JSON.parse(
@@ -25,6 +35,28 @@ const strucvarCsqResponseBrca1 = JSON.parse(
 
 /** Initialize mock for `fetch()`. */
 const fetchMocker = createFetchMock(vi)
+
+describe.concurrent('MehariClient', () => {
+  beforeEach(() => {
+    fetchMocker.enableMocks()
+    fetchMocker.resetMocks()
+  })
+
+  it('properly returns gene transcripts', async () => {
+    // arrange:
+    fetchMocker.mockResponseOnce(JSON.stringify(genesTxsBrca1))
+
+    // act:
+    const client = new MehariClient()
+    const result = await client.retrieveGeneTranscripts(
+      'HGNC:1100',
+      GenomeBuild.GENOME_BUILD_GRCH37
+    )
+
+    // assert:
+    expect(JSON.stringify(result)).toMatchSnapshot()
+  })
+})
 
 describe.concurrent('MehariClient/seqvar', () => {
   beforeEach(() => {

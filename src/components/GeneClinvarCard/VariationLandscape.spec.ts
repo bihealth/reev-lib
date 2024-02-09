@@ -2,10 +2,11 @@ import fs from 'fs'
 import path from 'path'
 import { describe, expect, test } from 'vitest'
 
-import { TranscriptResult } from '../../api/dotty'
 import type { GenomeBuild } from '../../lib/genomeBuilds'
 import { setupMountedComponents } from '../../lib/testUtils'
 import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
+import { GeneTranscriptsResponse } from '../../pbs/mehari/server'
+import { type Transcript } from '../../pbs/mehari/txs'
 import VariationLandscape from './VariationLandscape.vue'
 
 // Load fixture data for gene TGDS (little data) and BRCA1 (lots of data).
@@ -15,27 +16,27 @@ const clinvarPerGeneTgds = ClinvarPerGeneRecord.fromJsonString(
 const clinvarPerGeneBrca1 = ClinvarPerGeneRecord.fromJsonString(
   fs.readFileSync(path.resolve(__dirname, './fixture.clinvarPerGene.BRCA1.json'), 'utf8')
 )
-const transcriptsTgds37 = TranscriptResult.fromJsonString(
-  fs.readFileSync(path.resolve(__dirname, './fixture.transcripts.TGDS.37.json'), 'utf8')
+const genesTxsTgds37 = GeneTranscriptsResponse.fromJsonString(
+  fs.readFileSync(path.resolve(__dirname, './fixture.genesTxs.TGDS.37.json'), 'utf8')
 )
-const transcriptsTgds38 = TranscriptResult.fromJsonString(
-  fs.readFileSync(path.resolve(__dirname, './fixture.transcripts.TGDS.38.json'), 'utf8')
+const genesTxsTgds38 = GeneTranscriptsResponse.fromJsonString(
+  fs.readFileSync(path.resolve(__dirname, './fixture.genesTxs.TGDS.38.json'), 'utf8')
 )
-const transcriptsBrca137 = TranscriptResult.fromJsonString(
-  fs.readFileSync(path.resolve(__dirname, './fixture.transcripts.BRCA1.37.json'), 'utf8')
+const genesTxsBrca137 = GeneTranscriptsResponse.fromJsonString(
+  fs.readFileSync(path.resolve(__dirname, './fixture.genesTxs.BRCA1.37.json'), 'utf8')
 )
 
 describe.concurrent('VariationLandscape.vue', async () => {
   test.each([
-    ['TGDS', 'grch37', transcriptsTgds37, clinvarPerGeneTgds],
-    ['TGDS', 'grch38', transcriptsTgds38, clinvarPerGeneTgds],
-    ['BRCA1', 'grch37', transcriptsBrca137, clinvarPerGeneBrca1]
+    ['TGDS', 'grch37', genesTxsTgds37.transcripts, clinvarPerGeneTgds],
+    ['TGDS', 'grch38', genesTxsTgds38.transcripts, clinvarPerGeneTgds],
+    ['BRCA1', 'grch37', genesTxsBrca137.transcripts, clinvarPerGeneBrca1]
   ])(
     'renders the plot for %s, %s',
     async (
       geneSymbol: string,
       genomeBuild: string,
-      transcripts: TranscriptResult,
+      transcripts: Transcript[],
       clinvarPerGene: ClinvarPerGeneRecord
     ) => {
       // arrange:
@@ -68,7 +69,7 @@ describe.concurrent('VariationLandscape.vue', async () => {
       const props = {
         geneSymbol: 'TGDS',
         genomeBuild: 'grch37',
-        transcriptsTgds37,
+        genesTxsTgds37,
         clinvarPerGeneTgds
       }
       // @ts-ignore

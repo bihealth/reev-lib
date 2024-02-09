@@ -5,10 +5,10 @@
  */
 import { defineAsyncComponent } from 'vue'
 
-import { TranscriptResult } from '../../api/dotty'
 import type { GenomeBuild } from '../../lib/genomeBuilds'
 import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
+import { Transcript } from '../../pbs/mehari/txs'
 import DocsLink from '../DocsLink/DocsLink.vue'
 import ClinvarFreqPlot from './ClinvarFreqPlot.vue'
 import ClinvarImpact from './ClinvarImpact.vue'
@@ -29,7 +29,7 @@ const props = defineProps<{
   /** The genome build to display for. */
   genomeBuild?: GenomeBuild
   /** Transctipts information. */
-  transcripts?: TranscriptResult
+  transcripts?: Transcript[]
 }>()
 </script>
 

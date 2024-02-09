@@ -5,11 +5,11 @@
 import Plotly from 'plotly.js-dist'
 import { computed, onMounted, ref } from 'vue'
 
-import { TranscriptResult } from '../../api/dotty'
 import type { GenomeBuild } from '../../lib/genomeBuilds'
 import { ClinicalSignificance } from '../../pbs/annonars/clinvar/minimal'
 import { Record as ClinvarRecord } from '../../pbs/annonars/clinvar/minimal'
 import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
+import { Transcript } from '../../pbs/mehari/txs'
 
 /** This component's props. */
 const props = withDefaults(
@@ -17,7 +17,7 @@ const props = withDefaults(
     /** Gene information from annonars. */
     clinvarPerGene?: ClinvarPerGeneRecord
     /** Transctipts information. */
-    transcripts?: TranscriptResult
+    transcripts?: Transcript[]
     /** The genome release. */
     genomeBuild?: GenomeBuild
     /** Gene symbol */
@@ -185,12 +185,12 @@ const exons = computed(() => {
     return []
   }
   const exons = []
-  for (const transcript of props.transcripts.transcripts) {
-    for (const alignment of transcript.alignments) {
-      for (const exon of alignment.exons) {
+  for (const transcript of props.transcripts) {
+    for (const ga of transcript.genomeAlignments) {
+      for (const exon of ga.exons) {
         exons.push({
-          start: exon.refStart,
-          stop: exon.refEnd
+          start: exon.altStartI,
+          stop: exon.altEndI
         })
       }
     }
