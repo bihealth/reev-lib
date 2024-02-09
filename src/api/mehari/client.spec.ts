@@ -14,7 +14,10 @@ const seqvar = new SeqvarImpl('grch37', '1', 123, 'A', 'G')
 
 /** Fixture with gene trancripts. */
 const genesTxsBrca1 = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, './fixture.genesTxs.BRCA1.json'), 'utf8')
+  fs.readFileSync(
+    path.resolve(__dirname, '../../components/GeneClinvarCard/fixture.genesTxs.BRCA1.37.json'),
+    'utf8'
+  )
 )
 
 /** Fixture with BRCA1 seqvar consequence. */

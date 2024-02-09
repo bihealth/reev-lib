@@ -1,7 +1,6 @@
 import type { JsonValue } from '@protobuf-ts/runtime'
 import type { Meta, StoryObj } from '@storybook/vue3'
 
-import { TranscriptResult } from '../../api/dotty'
 import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
 import geneInfoBrca1Json from '../GenePathogenicityCard/fixture.geneInfo.BRCA1.json'
@@ -9,9 +8,9 @@ import geneInfoTgdsJson from '../GenePathogenicityCard/fixture.geneInfo.TGDS.jso
 import GeneClinvarCard from './GeneClinvarCard.vue'
 import geneClinvarBrca1Json from './fixture.clinvarPerGene.BRCA1.json'
 import geneClinvarTgdsJson from './fixture.clinvarPerGene.TGDS.json'
-import transcriptsBrca1Json37 from './fixture.transcripts.BRCA1.37.json'
-import transcriptsTgdsJson37 from './fixture.transcripts.TGDS.37.json'
-import transcriptsTgdsJson38 from './fixture.transcripts.TGDS.38.json'
+import genesTxsBrca1Json37 from './fixture.genesTxs.BRCA1.37.json'
+import genesTxsTgdsJson37 from './fixture.genesTxs.TGDS.37.json'
+import genesTxsTgdsJson38 from './fixture.genesTxs.TGDS.38.json'
 
 // Here, fixture data is loaded via `import` from JSON file.  Reading the file
 // as in the tests fails with "process is not defined" error in the browser.
@@ -21,11 +20,11 @@ const clinvarPerGeneTgds = ClinvarPerGeneRecord.fromJson(geneClinvarTgdsJson as 
 // @ts-ignore
 const clinvarPerGeneBrca1 = ClinvarPerGeneRecord.fromJson(geneClinvarBrca1Json as JsonValue)
 // @ts-ignore
-const transcriptsTgds37 = TranscriptResult.fromJson(transcriptsTgdsJson37 as JsonValue)
+const genesTxsTgds37 = GeneTranscriptsResponse.fromJson(genesTxsTgdsJson37 as JsonValue)
 // @ts-ignore
-const transcriptsTgds38 = TranscriptResult.fromJson(transcriptsTgdsJson38 as JsonValue)
+const genesTxsTgds38 = GeneTranscriptsResponse.fromJson(genesTxsTgdsJson38 as JsonValue)
 // @ts-ignore
-const transcriptsBrca137 = TranscriptResult.fromJson(transcriptsBrca1Json37 as JsonValue)
+const genesTxsBrca137 = GeneTranscriptsResponse.fromJson(genesTxsBrca1Json37 as JsonValue)
 // @ts-ignore
 const geneInfoTgds = GeneInfoRecord.fromJson(geneInfoTgdsJson as JsonValue)
 // @ts-ignore
@@ -45,7 +44,7 @@ const meta = {
     clinvarPerGene: clinvarPerGeneTgds,
     geneInfo: geneInfoTgds,
     genomeBuild: 'grch37',
-    transcripts: transcriptsTgds37
+    transcripts: genesTxsTgds37.transcripts
   }
 } satisfies Meta<typeof GeneClinvarCard>
 
@@ -57,7 +56,7 @@ export const TGDS: Story = {
     clinvarPerGene: clinvarPerGeneTgds,
     geneInfo: geneInfoTgds,
     genomeBuild: 'grch37',
-    transcripts: transcriptsTgds37
+    transcripts: genesTxsTgds37.transcripts
   }
 }
 
@@ -66,7 +65,7 @@ export const TGDSGrch38: Story = {
     clinvarPerGene: clinvarPerGeneTgds,
     geneInfo: geneInfoTgds,
     genomeBuild: 'grch38',
-    transcripts: transcriptsTgds38
+    transcripts: genesTxsTgds38.transcripts
   }
 }
 
@@ -75,7 +74,7 @@ export const BRCA1: Story = {
     clinvarPerGene: clinvarPerGeneBrca1,
     geneInfo: geneInfoBrca1,
     genomeBuild: 'grch37',
-    transcripts: transcriptsBrca137
+    transcripts: genesTxsBrca137.transcripts
   }
 }
 

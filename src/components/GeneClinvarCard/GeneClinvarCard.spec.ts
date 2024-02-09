@@ -27,21 +27,21 @@ const clinvarPerGeneTgds = ClinvarPerGeneRecord.fromJsonString(
 const clinvarPerGeneBrca1 = ClinvarPerGeneRecord.fromJsonString(
   fs.readFileSync(path.resolve(__dirname, './fixture.clinvarPerGene.BRCA1.json'), 'utf8')
 )
-const transcriptsTgds37 = TranscriptResult.fromJsonString(
-  fs.readFileSync(path.resolve(__dirname, './fixture.transcripts.TGDS.37.json'), 'utf8')
+const genesTxsTgds37 = TranscriptResult.fromJsonString(
+  fs.readFileSync(path.resolve(__dirname, './fixture.genesTxs.TGDS.37.json'), 'utf8')
 )
-const transcriptsTgds38 = TranscriptResult.fromJsonString(
-  fs.readFileSync(path.resolve(__dirname, './fixture.transcripts.TGDS.38.json'), 'utf8')
+const genesTxsTgds38 = TranscriptResult.fromJsonString(
+  fs.readFileSync(path.resolve(__dirname, './fixture.genesTxs.TGDS.38.json'), 'utf8')
 )
-const transcriptsBrca137 = TranscriptResult.fromJsonString(
-  fs.readFileSync(path.resolve(__dirname, './fixture.transcripts.BRCA1.37.json'), 'utf8')
+const genesTxsBrca137 = TranscriptResult.fromJsonString(
+  fs.readFileSync(path.resolve(__dirname, './fixture.genesTxs.BRCA1.37.json'), 'utf8')
 )
 
 describe.concurrent('GeneClinvarCard.vue', async () => {
   test.each([
-    ['TGDS', 'grch37', transcriptsTgds37, clinvarPerGeneTgds, geneInfoTgds],
-    ['TGDS', 'grch38', transcriptsTgds38, clinvarPerGeneTgds, geneInfoBrca1],
-    ['BRCA1', 'grch37', transcriptsBrca137, clinvarPerGeneBrca1, geneInfoBrca1]
+    ['TGDS', 'grch37', genesTxsTgds37, clinvarPerGeneTgds, geneInfoTgds],
+    ['TGDS', 'grch38', genesTxsTgds38, clinvarPerGeneTgds, geneInfoBrca1],
+    ['BRCA1', 'grch37', genesTxsBrca137, clinvarPerGeneBrca1, geneInfoBrca1]
   ])(
     'renders the GeneClinvarCard for %s, %s',
     async (

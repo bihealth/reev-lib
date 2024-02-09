@@ -4,10 +4,10 @@
  */
 import { computed } from 'vue'
 
-import { TranscriptResult } from '../../api/dotty'
 import type { GenomeBuild } from '../../lib/genomeBuilds'
 import { ClinicalSignificance, type Record } from '../../pbs/annonars/clinvar/minimal'
 import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
+import { Transcript } from '../../pbs/mehari/txs'
 import VegaPlot from '../VegaPlot/VegaPlot.vue'
 
 /** This component's props. */
@@ -16,7 +16,7 @@ const props = withDefaults(
     /** Gene information from annonars. */
     clinvarPerGene?: ClinvarPerGeneRecord
     /** Transctipts information. */
-    transcripts?: TranscriptResult
+    transcripts?: Transcript[]
     /** The genome release. */
     genomeBuild?: GenomeBuild
     /** Gene symbol */
@@ -91,16 +91,16 @@ const paddedMinMax = computed<[number, number]>(() => {
 })
 
 const exons = computed<{ start: number; stop: number }[]>(() => {
-  if (!props.transcripts?.transcripts?.length) {
+  if (!props.transcripts?.length) {
     return []
   }
   const exons: { start: number; stop: number }[] = []
-  for (const transcript of props.transcripts.transcripts) {
-    for (const alignment of transcript.alignments) {
-      for (const exon of alignment.exons) {
+  for (const transcript of props.transcripts) {
+    for (const ga of transcript.genomeAlignments) {
+      for (const exon of ga.exons) {
         exons.push({
-          start: exon.refStart,
-          stop: exon.refEnd
+          start: exon.altStartI,
+          stop: exon.altEndI
         })
       }
     }
