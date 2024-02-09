@@ -67,9 +67,9 @@ const expandMMSplice = ref<boolean>(false)
 
 const SpliceAiKeys = [
   'SpliceAI-acc-gain',
-  'SpliceAi-acc-loss',
-  'SpliceAi-don-gain',
-  'SpliceAi-don-loss'
+  'SpliceAI-acc-loss',
+  'SpliceAI-don-gain',
+  'SpliceAI-don-loss'
 ]
 const MMSpliceKeys = [
   'MMSp_acceptorIntron',
