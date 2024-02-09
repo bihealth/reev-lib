@@ -2,10 +2,11 @@ import fs from 'fs'
 import path from 'path'
 import { describe, expect, test } from 'vitest'
 
-import { TranscriptResult } from '../../api/dotty'
 import { setupMountedComponents } from '../../lib/testUtils'
 import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
+import { GeneTranscriptsResponse } from '../../pbs/mehari/server'
+import { type Transcript } from '../../pbs/mehari/txs'
 import GeneClinvarCard from './GeneClinvarCard.vue'
 
 // Load fixture data for gene TGDS (little data) and BRCA1 (lots of data).
@@ -27,27 +28,27 @@ const clinvarPerGeneTgds = ClinvarPerGeneRecord.fromJsonString(
 const clinvarPerGeneBrca1 = ClinvarPerGeneRecord.fromJsonString(
   fs.readFileSync(path.resolve(__dirname, './fixture.clinvarPerGene.BRCA1.json'), 'utf8')
 )
-const genesTxsTgds37 = TranscriptResult.fromJsonString(
+const genesTxsTgds37 = GeneTranscriptsResponse.fromJsonString(
   fs.readFileSync(path.resolve(__dirname, './fixture.genesTxs.TGDS.37.json'), 'utf8')
 )
-const genesTxsTgds38 = TranscriptResult.fromJsonString(
+const genesTxsTgds38 = GeneTranscriptsResponse.fromJsonString(
   fs.readFileSync(path.resolve(__dirname, './fixture.genesTxs.TGDS.38.json'), 'utf8')
 )
-const genesTxsBrca137 = TranscriptResult.fromJsonString(
+const genesTxsBrca137 = GeneTranscriptsResponse.fromJsonString(
   fs.readFileSync(path.resolve(__dirname, './fixture.genesTxs.BRCA1.37.json'), 'utf8')
 )
 
 describe.concurrent('GeneClinvarCard.vue', async () => {
   test.each([
-    ['TGDS', 'grch37', genesTxsTgds37, clinvarPerGeneTgds, geneInfoTgds],
-    ['TGDS', 'grch38', genesTxsTgds38, clinvarPerGeneTgds, geneInfoBrca1],
-    ['BRCA1', 'grch37', genesTxsBrca137, clinvarPerGeneBrca1, geneInfoBrca1]
+    ['TGDS', 'grch37', genesTxsTgds37.transcripts, clinvarPerGeneTgds, geneInfoTgds],
+    ['TGDS', 'grch38', genesTxsTgds38.transcripts, clinvarPerGeneTgds, geneInfoBrca1],
+    ['BRCA1', 'grch37', genesTxsBrca137.transcripts, clinvarPerGeneBrca1, geneInfoBrca1]
   ])(
     'renders the GeneClinvarCard for %s, %s',
     async (
       _geneSymbol: string,
       genomeBuild: string,
-      transcripts: TranscriptResult,
+      transcripts: Transcript[],
       clinvarPerGene: ClinvarPerGeneRecord,
       geneInfo: GeneInfoRecord
     ) => {
