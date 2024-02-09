@@ -3,7 +3,7 @@ import path from 'path'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import createFetchMock from 'vitest-fetch-mock'
 
-import { GenomeBuild } from '@/pbs/mehari/txs'
+import { GenomeBuild } from '../../pbs/mehari/txs'
 
 import { SeqvarImpl } from '../../lib/genomicVars'
 import { LinearStrucvarImpl } from '../../lib/genomicVars'

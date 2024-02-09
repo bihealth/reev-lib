@@ -1,4 +1,4 @@
-import { GeneTranscriptsResponse } from '@/pbs/mehari/server'
+import { GeneTranscriptsResponse } from '../../pbs/mehari/server'
 
 import type { LinearStrucvar, Seqvar } from '../../lib/genomicVars'
 import { urlConfig } from '../../lib/urlConfig'
@@ -92,7 +92,7 @@ export class MehariClient {
   ): Promise<GeneTranscriptsResponse> {
     const urlGenomeBuild = GenomeBuild[genomeBuild]
     const url =
-      `${this.apiBaseUrl}/transcripts?hgncId=${hgncId}&` +
+      `${this.apiBaseUrl}/genes/txs?hgncId=${hgncId}&` +
       `genomeBuild=${urlGenomeBuild}&pageSize=${pageSize}` +
       (nextPageToken ? `&next_page_token=${nextPageToken}` : '')
 
