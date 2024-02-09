@@ -2,12 +2,6 @@
 export interface PlotlyDataPoint {
   x: number
   y: number
-}
-
-/** Interface for downsampled data point. */
-export interface DownsampledDataPoint {
-  x: number
-  y: number
   count: number
 }
 
@@ -23,18 +17,18 @@ export const downsample = (
   windowSize: number,
   start: number,
   end: number
-): DownsampledDataPoint[] => {
+): PlotlyDataPoint[] => {
   // First, filter the data points to only include those within the start and end range
   const filteredData = data.filter((item) => item.x >= start && item.x <= end)
 
   if (filteredData.length === 0) return []
 
-  // If there are less than 800 variants after filtering, do not downsample
-  if (filteredData.length < 800) {
+  // If there are less than 700 variants after filtering, do not downsample
+  if (filteredData.length < 700) {
     return filteredData.map((item) => ({ x: item.x, y: item.y, count: 1 }))
   }
 
-  const bins: DownsampledDataPoint[] = []
+  const bins: PlotlyDataPoint[] = []
   const minX = start // Use the provided start as minX
   const maxX = end // Use the provided end as maxX
 

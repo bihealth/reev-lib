@@ -6,7 +6,8 @@ import { PlotlyDataPoint, downsample } from './lib'
 const generateMockData = (count: number, start: number = 0): PlotlyDataPoint[] => {
   return Array.from({ length: count }, (_, i) => ({
     x: start + i,
-    y: Math.floor(Math.random() * 5) - 2 // Generate random y values between -2 and 2
+    y: Math.floor(Math.random() * 5) - 2, // Generate random y values between -2 and 2
+    count: 1
   }))
 }
 
@@ -28,7 +29,7 @@ describe.concurrent('downsample function', () => {
 
   it('should downsample data correctly when above the threshold', () => {
     // arrange
-    const mockData = generateMockData(801, 0) // Generate 800 data points
+    const mockData = generateMockData(800, 0) // Generate 700 data points
     const windowSize = 40 // Large window size to ensure noticeable downsampling
     const start = 0
     const end = 799
@@ -37,7 +38,7 @@ describe.concurrent('downsample function', () => {
     const result = downsample(mockData, windowSize, start, end)
 
     // assert
-    expect(result.length).toBeLessThan(800) // Expect downsampling to reduce data points
+    expect(result.length).toBeLessThan(700) // Expect downsampling to reduce data points
     expect(result.every((bin) => bin.count > 0)).toBe(true) // Every bin should have at least one data point
   })
 
