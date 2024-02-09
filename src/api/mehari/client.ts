@@ -1,5 +1,8 @@
+import { GeneTranscriptsResponse } from '@/pbs/mehari/server'
+
 import type { LinearStrucvar, Seqvar } from '../../lib/genomicVars'
 import { urlConfig } from '../../lib/urlConfig'
+import { GenomeBuild } from '../../pbs/mehari/txs'
 import { SeqvarResult, StrucvarResult } from './types'
 
 /**
@@ -70,5 +73,35 @@ export class MehariClient {
     }
     const responseJson = await response.json()
     return StrucvarResult.fromJson(responseJson)
+  }
+
+  /**
+   * Retrieve transcripts given a HGNC ID.
+   *
+   * @param hgncId HGNC ID of gene to retrieve transcripts for.
+   * @param genomeBuild Genome build to restrict results to.
+   * @param pageSize Number of results to return per page.
+   * @param nextPageToken Token to retrieve the next page of results.
+   * @returns The response from the API.
+   */
+  async retrieveGeneTranscripts(
+    hgncId: string,
+    genomeBuild: GenomeBuild,
+    pageSize: number = 1000,
+    nextPageToken?: string
+  ): Promise<GeneTranscriptsResponse> {
+    const urlGenomeBuild = GenomeBuild[genomeBuild]
+    const url =
+      `${this.apiBaseUrl}/transcripts?hgncId=${hgncId}&` +
+      `genomeBuild=${urlGenomeBuild}&pageSize=${pageSize}` +
+      (nextPageToken ? `&next_page_token=${nextPageToken}` : '')
+
+    const response = await fetch(url, {
+      method: 'GET'
+    })
+    if (!response.ok) {
+      throw new Error(`Failed to fetch transcripts: ${response.statusText}`)
+    }
+    return await response.json()
   }
 }
