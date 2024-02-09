@@ -1,7 +1,6 @@
-import { GeneTranscriptsResponse } from '../../pbs/mehari/server'
-
 import type { LinearStrucvar, Seqvar } from '../../lib/genomicVars'
 import { urlConfig } from '../../lib/urlConfig'
+import { GeneTranscriptsResponse } from '../../pbs/mehari/server'
 import { GenomeBuild } from '../../pbs/mehari/txs'
 import { SeqvarResult, StrucvarResult } from './types'
 

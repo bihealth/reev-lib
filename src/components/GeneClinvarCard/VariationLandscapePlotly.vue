@@ -3,13 +3,14 @@
  * This component shows the ClinVar "variation landscape".
  */
 import Plotly from 'plotly.js-dist'
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 
 import type { GenomeBuild } from '../../lib/genomeBuilds'
 import { ClinicalSignificance } from '../../pbs/annonars/clinvar/minimal'
 import { Record as ClinvarRecord } from '../../pbs/annonars/clinvar/minimal'
 import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
 import { Transcript } from '../../pbs/mehari/txs'
+import { type PlotlyDataPoint, downsample } from './lib'
 
 /** This component's props. */
 const props = withDefaults(
@@ -31,6 +32,13 @@ const props = withDefaults(
   }
 )
 
+/** The current plot boundaries. */
+const currentPlotBoundaries = ref({
+  minX: 0,
+  maxX: 0
+})
+
+/* Enumeration clinical significance. */
 const CLINVAR_SIGNIFICANCE_TO_INT: { [Key in ClinicalSignificance]: number } = {
   [ClinicalSignificance.CLINICAL_SIGNIFICANCE_UNKNOWN]: -3,
   [ClinicalSignificance.CLINICAL_SIGNIFICANCE_PATHOGENIC]: 2,
@@ -40,6 +48,7 @@ const CLINVAR_SIGNIFICANCE_TO_INT: { [Key in ClinicalSignificance]: number } = {
   [ClinicalSignificance.CLINICAL_SIGNIFICANCE_BENIGN]: -2
 }
 
+/* Convert clinical significance to integer. */
 const convertClinvarSignificance = (input: ClinicalSignificance): number => {
   if (input in CLINVAR_SIGNIFICANCE_TO_INT) {
     return CLINVAR_SIGNIFICANCE_TO_INT[input]
@@ -47,8 +56,7 @@ const convertClinvarSignificance = (input: ClinicalSignificance): number => {
     return -4
   }
 }
-
-/* Compute color for each point */
+/* Helper function to compute color for point value. */
 const markerColor = (value: number) => {
   if (value === 2) {
     return 'red'
@@ -64,23 +72,6 @@ const markerColor = (value: number) => {
     return 'grey'
   }
 }
-
-/** Interface for plotly data point. */
-interface PlotlyDataPoint {
-  x: number
-  y: number
-}
-/** Interface for downsampled data point. */
-interface DownsampledDataPoint {
-  x: number
-  y: number
-  count: number
-}
-/** The current plot boundaries. */
-const currentPlotBoundaries = ref({
-  minX: 0,
-  maxX: 0
-})
 
 /** Compute the min and max values for the plot */
 const clinvarData = computed<PlotlyDataPoint[]>(() => {
@@ -101,46 +92,28 @@ const clinvarData = computed<PlotlyDataPoint[]>(() => {
   }
   return clinvarInfo.map((variant: ClinvarRecord) => ({
     x: variant.start,
-    y: convertClinvarSignificance(variant.referenceAssertions[0].clinicalSignificance)
+    y: convertClinvarSignificance(variant.referenceAssertions[0].clinicalSignificance),
+    count: 1
   }))
 })
 
-/** Helper function for downstreaming data.
- * @param data - The data to downsample.
- * @param windowSize - The size of the window to downsample.
- * @returns The downsampled data.
- */
-const downsample = (data: PlotlyDataPoint[], windowSize: number): DownsampledDataPoint[] => {
-  if (data.length === 0) return []
-  // If there are less then 800 variants, do not downsample
-  if (data.length < 800) return data.map((item) => ({ x: item.x, y: item.y, count: 1 }))
-  const minX = data[0].x
-  const maxX = data[data.length - 1].x
-  const bins: DownsampledDataPoint[] = []
-  for (let x = minX; x <= maxX; x += windowSize) {
-    for (let y = -3; y <= 2; y++) {
-      bins.push({ x: x + windowSize / 2, y: y, count: 0 })
-    }
-  }
-  data.forEach((point) => {
-    const binIndex = Math.floor((point.x - minX) / windowSize)
-    const bin = bins[binIndex * 5 + (point.y + 3)]
-    bin.count++
-  })
-  // Return only bins with count > 0
-  return bins.filter((bin) => bin.count > 0)
-}
 /** Downsampled data. */
 const plotlyData = computed(() => {
-  // If there are less then 800 variants, return the data
-  if (clinvarData.value.length < 800) {
+  // If there are less then 700 variants, return the data TODO
+  if (clinvarData.value.length < 700) {
     return clinvarData.value
   }
-  const windowSize = (currentPlotBoundaries.value.maxX - currentPlotBoundaries.value.minX) / 800
-  return downsample(clinvarData.value, windowSize)
+  const windowSize = (currentPlotBoundaries.value.maxX - currentPlotBoundaries.value.minX) / 700
+  return downsample(
+    clinvarData.value,
+    windowSize,
+    currentPlotBoundaries.value.minX,
+    currentPlotBoundaries.value.maxX
+  ) as PlotlyDataPoint[]
   // DEBUG: Uncomment the line below to return the full data and compare with the original plot
   // return clinvarData.value
 })
+
 /** Plotly trace */
 const trace = {
   uid: 'fc47f27b-f3b0-4d31-8dac-9782780ba6b8',
@@ -150,12 +123,14 @@ const trace = {
   x: plotlyData.value ? plotlyData.value.map((item) => item.x) : [],
   ysrc: 'caiotaniguchi:3:9f1314',
   y: plotlyData.value ? plotlyData.value.map((item) => item.y) : [],
+  text: plotlyData.value ? plotlyData.value.map((item) => `Count: ${item.count}`) : [], // Hover text
   marker: {
     color: plotlyData.value ? plotlyData.value.map((item) => markerColor(item.y)) : [],
     size: 10
   },
   scaleanchor: 'y'
 }
+
 /** Initial Lollipop sticks for each variant */
 const initiallollipopSticks = computed(() => {
   if (!props.clinvarPerGene) {
@@ -179,6 +154,7 @@ const initiallollipopSticks = computed(() => {
   }
   return sticks
 })
+
 /** Exons for the gene */
 const exons = computed(() => {
   if (!props.transcripts) {
@@ -197,6 +173,7 @@ const exons = computed(() => {
   }
   return exons
 })
+
 // Horizontal line at y=3
 const horizontalLine = {
   type: 'line',
@@ -211,6 +188,7 @@ const horizontalLine = {
     width: 2
   }
 }
+
 // Grey rectangles for exons
 const exonShapes = exons.value.map((exon) => ({
   type: 'rect',
@@ -225,6 +203,7 @@ const exonShapes = exons.value.map((exon) => ({
     width: 0
   }
 }))
+
 /** Plot layout */
 const layout = {
   title: 'Variation Landscape',
@@ -258,12 +237,13 @@ const layout = {
     pad: 4
   }
 }
+
 /** Method to update plot with new data based on zoom or pan */
 const updatePlotData = (minX: number, maxX: number) => {
   // Filter clinvarData for new boundaries and compute new downsampled data
-  const windowSize = (maxX - minX) / 800
+  const windowSize = (maxX - minX) / 700
   const filteredClinvarData = clinvarData.value.filter((item) => item.x >= minX && item.x <= maxX)
-  const newDownsampledData = downsample(filteredClinvarData, windowSize)
+  const newDownsampledData = downsample(filteredClinvarData, windowSize, minX, maxX)
   trace.x = newDownsampledData.map((item) => item.x)
   trace.y = newDownsampledData.map((item) => item.y)
   trace.marker.color = newDownsampledData.map((item) => markerColor(item.y))
@@ -288,27 +268,42 @@ const updatePlotData = (minX: number, maxX: number) => {
   // Re-render plot with new data
   Plotly.react('plot', [trace], layout)
 }
+
 onMounted(() => {
-  Plotly.newPlot('plot', [trace], layout, { scrollZoom: true }).then(() => {
-    // @ts-expect-error Property 'on' seems to exist on type 'HTMLElement'
-    document.getElementById('plot')?.on('plotly_relayout', (eventdata: any) => {
-      if (eventdata['xaxis.range[0]'] && eventdata['xaxis.range[1]']) {
-        // Update plot boundaries based on zoom or pan
-        const minX = parseFloat(eventdata['xaxis.range[0]'])
-        const maxX = parseFloat(eventdata['xaxis.range[1]'])
+  const plotElement = document.getElementById('plot')
+  if (plotElement) {
+    Plotly.newPlot('plot', [trace], layout, { scrollZoom: true }).then(() => {
+      // @ts-expect-error Property 'on' seems to exist on type 'HTMLElement'
+      document.getElementById('plot')?.on('plotly_relayout', (eventdata: any) => {
+        if (eventdata['xaxis.range[0]'] && eventdata['xaxis.range[1]']) {
+          // Update plot boundaries based on zoom or pan
+          const minX = parseFloat(eventdata['xaxis.range[0]'])
+          const maxX = parseFloat(eventdata['xaxis.range[1]'])
+          currentPlotBoundaries.value = { minX, maxX }
+          updatePlotData(minX, maxX)
+        }
+      })
+      // @ts-expect-error Property 'on' seems to exist on type 'HTMLElement'
+      document.getElementById('plot')?.on('plotly_doubleclick', () => {
+        const minX = clinvarData.value[0].x
+        const maxX = clinvarData.value[clinvarData.value.length - 1].x
         currentPlotBoundaries.value = { minX, maxX }
         updatePlotData(minX, maxX)
-      }
+      })
     })
-    // @ts-expect-error Property 'on' seems to exist on type 'HTMLElement'
-    document.getElementById('plot')?.on('plotly_doubleclick', () => {
-      const minX = clinvarData.value[0].x
-      const maxX = clinvarData.value[clinvarData.value.length - 1].x
-      currentPlotBoundaries.value = { minX, maxX }
-      updatePlotData(minX, maxX)
-    })
-  })
+  }
 })
+
+watch(
+  clinvarData,
+  (newValue, oldValue) => {
+    const plotElement = document.getElementById('plot')
+    if (plotElement && newValue !== oldValue) {
+      updatePlotData(currentPlotBoundaries.value.minX, currentPlotBoundaries.value.maxX)
+    }
+  },
+  { deep: true }
+)
 </script>
 
 <template>
