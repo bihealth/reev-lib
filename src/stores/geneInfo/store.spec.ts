@@ -8,9 +8,9 @@ import { StoreState } from '../types'
 import { useGeneInfoStore } from './store'
 
 /** Fixtures with response from API. */
-const findTranscriptsResponseBrca1 = JSON.parse(
+const genesTxsResponseBrca1 = JSON.parse(
   fs.readFileSync(
-    path.resolve(__dirname, '../../api/dotty/fixture.findTranscriptsResponse.BRCA1.json'),
+    path.resolve(__dirname, '../../components/GeneClinvarCard/fixture.genesTxs.BRCA1.37.json'),
     'utf8'
   )
 )
@@ -80,8 +80,8 @@ describe('geneInfo Store', () => {
         return Promise.resolve(JSON.stringify(geneInfoResponseBrca1))
       } else if (req.url.includes('clinvar')) {
         return Promise.resolve(JSON.stringify(geneClinvarResponseBrca1))
-      } else if (req.url.includes('find-transcripts')) {
-        return Promise.resolve(JSON.stringify(findTranscriptsResponseBrca1))
+      } else if (req.url.includes('genes/txs')) {
+        return Promise.resolve(JSON.stringify(genesTxsResponseBrca1))
       } else if (req.url.includes('viguno')) {
         return Promise.resolve(JSON.stringify(hpoTermsResponseBrca1))
       } else {
@@ -110,8 +110,8 @@ describe('geneInfo Store', () => {
         return Promise.resolve(JSON.stringify(geneInfoResponseBrca1))
       } else if (req.url.includes('clinvar')) {
         return Promise.resolve(JSON.stringify(geneClinvarResponseBrca1))
-      } else if (req.url.includes('find-transcripts')) {
-        return Promise.resolve(JSON.stringify(findTranscriptsResponseBrca1))
+      } else if (req.url.includes('genes/txs')) {
+        return Promise.resolve(JSON.stringify(genesTxsResponseBrca1))
       } else if (req.url.includes('viguno')) {
         return Promise.resolve(JSON.stringify(hpoTermsResponseBrca1))
       } else {
@@ -140,8 +140,8 @@ describe('geneInfo Store', () => {
         return Promise.resolve(JSON.stringify(geneInfoResponseBrca1))
       } else if (req.url.includes('clinvar')) {
         return Promise.resolve(JSON.stringify(geneClinvarResponseBrca1))
-      } else if (req.url.includes('find-transcripts')) {
-        return Promise.resolve(JSON.stringify(findTranscriptsResponseBrca1))
+      } else if (req.url.includes('genes/txs')) {
+        return Promise.resolve(JSON.stringify(genesTxsResponseBrca1))
       } else if (req.url.includes('viguno')) {
         return Promise.resolve(JSON.stringify(hpoTermsResponseBrca1))
       } else {
@@ -168,8 +168,8 @@ describe('geneInfo Store', () => {
         return Promise.resolve(JSON.stringify(geneInfoResponseBrca1))
       } else if (req.url.includes('clinvar')) {
         return Promise.resolve(JSON.stringify(geneClinvarResponseBrca1))
-      } else if (req.url.includes('find-transcripts')) {
-        return Promise.resolve(JSON.stringify(findTranscriptsResponseBrca1))
+      } else if (req.url.includes('genes/txs')) {
+        return Promise.resolve(JSON.stringify(genesTxsResponseBrca1))
       } else if (req.url.includes('viguno')) {
         return Promise.resolve(JSON.stringify(hpoTermsResponseBrca1))
       } else {

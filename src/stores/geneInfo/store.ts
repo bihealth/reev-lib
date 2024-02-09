@@ -7,12 +7,12 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
 import { AnnonarsClient } from '../../api/annonars'
-import { DottyClient, TranscriptResult } from '../../api/dotty'
+import { MehariClient } from '../../api/mehari'
 import { type HpoTerm, VigunoClient } from '../../api/viguno'
 import { type GenomeBuild } from '../../lib/genomeBuilds'
-import { urlConfig } from '../../lib/urlConfig'
 import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
+import { GenomeBuild as MehariGenomeBuild, Transcript } from '../../pbs/mehari/txs'
 import { StoreState } from '../types'
 
 export const useGeneInfoStore = defineStore('geneInfo', () => {
@@ -32,7 +32,7 @@ export const useGeneInfoStore = defineStore('geneInfo', () => {
   const geneClinvar = ref<ClinvarPerGeneRecord | undefined>(undefined)
 
   /** Transcript information from dotty (unless dotty API not available). */
-  const transcripts = ref<TranscriptResult | undefined>(undefined)
+  const transcripts = ref<Transcript[] | undefined>(undefined)
 
   function clearData() {
     storeState.value = StoreState.Initial
@@ -83,15 +83,14 @@ export const useGeneInfoStore = defineStore('geneInfo', () => {
       hgncId.value = hgncIdQuery
       storeState.value = StoreState.Active
 
-      // Only load from dotty if API base URL configured.
-      if (urlConfig.baseUrlDotty !== undefined) {
-        const dottyClient = new DottyClient()
-        const transcriptsData = await dottyClient.fetchTranscripts(
-          hgncIdQuery,
-          genomeBuild === 'grch37' ? 'GRCh37' : 'GRCh38'
-        )
-        transcripts.value = transcriptsData ?? undefined
-      }
+      const mehariClient = new MehariClient()
+      const transcriptsData = await mehariClient.retrieveGeneTranscripts(
+        hgncIdQuery,
+        genomeBuild === 'grch37'
+          ? MehariGenomeBuild.GENOME_BUILD_GRCH37
+          : MehariGenomeBuild.GENOME_BUILD_GRCH38
+      )
+      transcripts.value = transcriptsData.transcripts ?? undefined
     } catch (e) {
       console.error('There was an error loading the gene data.', e)
       clearData()
