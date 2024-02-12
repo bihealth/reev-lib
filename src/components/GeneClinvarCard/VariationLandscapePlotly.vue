@@ -242,8 +242,7 @@ const layout = {
 const updatePlotData = (minX: number, maxX: number) => {
   // Filter clinvarData for new boundaries and compute new downsampled data
   const windowSize = (maxX - minX) / 700
-  const filteredClinvarData = clinvarData.value.filter((item) => item.x >= minX && item.x <= maxX)
-  const newDownsampledData = downsample(filteredClinvarData, windowSize, minX, maxX)
+  const newDownsampledData = downsample(clinvarData.value, windowSize, minX, maxX)
   trace.x = newDownsampledData.map((item) => item.x)
   trace.y = newDownsampledData.map((item) => item.y)
   trace.marker.color = newDownsampledData.map((item) => markerColor(item.y))
