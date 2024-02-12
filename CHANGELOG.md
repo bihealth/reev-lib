@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.7.0](https://github.com/bihealth/reev-frontend-lib/compare/v0.6.1...v0.7.0) (2024-02-12)
+
+
+### Features
+
+* use api/mehari rather than api/dotty in store/geneInfo ([#120](https://github.com/bihealth/reev-frontend-lib/issues/120)) ([5f50789](https://github.com/bihealth/reev-frontend-lib/commit/5f507890054c042a0ee9468f5a7b662932b4d8c2))
+
+
+### Bug Fixes
+
+* Proper counting in variation landscape plot ([#495](https://github.com/bihealth/reev-frontend-lib/issues/495)) ([#128](https://github.com/bihealth/reev-frontend-lib/issues/128)) ([8f4a0a7](https://github.com/bihealth/reev-frontend-lib/commit/8f4a0a7b1923807e820e55a1e63f55e5f55155f8))
+* Variation Landscape downsampling ([#462](https://github.com/bihealth/reev-frontend-lib/issues/462)) ([#122](https://github.com/bihealth/reev-frontend-lib/issues/122)) ([29e5a6d](https://github.com/bihealth/reev-frontend-lib/commit/29e5a6dbda42b85fe07cfe71222cb9bf3a1ccf8f))
+
 ## [0.6.1](https://github.com/bihealth/reev-frontend-lib/compare/v0.6.0...v0.6.1) (2024-02-09)
 
 
