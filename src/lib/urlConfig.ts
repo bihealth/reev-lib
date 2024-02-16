@@ -26,6 +26,8 @@ export interface UrlConfig {
   baseUrlVariantValidator?: string
   /** Base URL to the pubtator backend proxy. */
   baseUrlPubtator?: string
+  /** Base URL to the litVar backend proxy. */
+  baseUrlLitVar?: string
 }
 
 /**
