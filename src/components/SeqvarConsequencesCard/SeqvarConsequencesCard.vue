@@ -18,7 +18,16 @@ const props = withDefaults(
 <template>
   <template v-if="!consequences?.length">
     <!-- no ENSG => display loader -->
-    <v-skeleton-loader class="mt-3 mx-auto border" type="table" />
+    <!-- <v-skeleton-loader class="mt-3 mx-auto border" type="table" /> -->
+    <v-card>
+      <v-card-title class="pb-0 pr-2">
+        Consequences
+        <DocsLink anchor="consequences" />
+      </v-card-title>
+      <v-card-text>
+        <div class="text-muted text-center font-italic">No consequence data available.</div>
+      </v-card-text>
+    </v-card>
   </template>
   <template v-else>
     <v-card>
