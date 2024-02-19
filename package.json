@@ -53,7 +53,7 @@
     "downsample": "^1.4.0",
     "igv": "^2.15.11",
     "luxon": "^3.4.4",
-    "plotly.js-dist": "^2.29.0",
+    "plotly.js-dist": "^2.29.1",
     "title-case": "^4.3.1",
     "vega": "^5.27.0",
     "vega-embed": "^6.24.0",
