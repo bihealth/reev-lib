@@ -29,8 +29,8 @@ export class LitVarClient {
    * @returns Promise for the search results.
    * @throws Error if the search fails.
    */
-  async performSearch(hgncSymbol: string): Promise<{ [key: string]: SearchResult }> {
-    const url = `${this.apiBaseUrl}/search/?text=${hgncSymbol}`
+  async performSearch(seqVar: string): Promise<{ [key: string]: SearchResult }> {
+    const url = `${this.apiBaseUrl}/${seqVar}`
     const searchRes = await fetch(url, {
       method: 'GET'
     })
@@ -40,31 +40,31 @@ export class LitVarClient {
     const searchData = await searchRes.json()
 
     // Then, extract PMID list and retrieve biocjson for the PMIDs
-    const pmids: string[] = searchData!.results!.map((doc: any) => doc.pmid)
-    const exportRes = await fetch(
-      `${this.apiBaseUrl}/publications/export/biocjson` + `?pmids=${pmids.join(',')}`
-    )
-    if (!exportRes.ok) {
-      throw new Error(`Error running LitVar export: ${exportRes.statusText}`)
-    }
-    const exportDataText = await exportRes.text()
-    const exportDataLines = exportDataText.split(/\n/)
+    // const pmids: string[] = searchData!.results!.map((doc: any) => doc.pmid)
+    // const exportRes = await fetch(
+    //   `${this.apiBaseUrl}/publications/export/biocjson` + `?pmids=${pmids.join(',')}`
+    // )
+    // if (!exportRes.ok) {
+    //   throw new Error(`Error running LitVar export: ${exportRes.statusText}`)
+    // }
+    // const exportDataText = await exportRes.text()
+    // const exportDataLines = exportDataText.split(/\n/)
 
-    // Zip search results and exports into searchResults
-    const searchResults: { [key: string]: SearchResult } = {}
-    for (const searchDataRecord of searchData.results) {
-      searchResults[searchDataRecord.pmid] = {
-        searchResult: searchDataRecord,
-        abstract: undefined
-      }
-    }
-    for (const exportDataLine of exportDataLines) {
-      if (exportDataLine) {
-        const exportData = JSON.parse(exportDataLine)
-        searchResults[exportData.pmid].abstract = exportData
-      }
-    }
+    // // Zip search results and exports into searchResults
+    // const searchaResults: { [key: string]: SearchResult } = {}
+    // for (const searchDataRecord of searchData.results) {
+    //   searchResults[searchDataRecord.pmid] = {
+    //     searchResult: searchDataRecord,
+    //     abstract: undefined
+    //   }
+    // }
+    // for (const exportDataLine of exportDataLines) {
+    //   if (exportDataLine) {
+    //     const exportData = JSON.parse(exportDataLine)
+    //     searchResults[exportData.pmid].abstract = exportData
+    //   }
+    // }
 
-    return searchResults
+    return searchData
   }
 }
