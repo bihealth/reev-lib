@@ -31,7 +31,7 @@ watch(() => props.ncbi?.rifEntries, initializeItems)
 // Load more items.
 type Done = (status: 'error' | 'loading' | 'empty' | 'ok') => void
 type LoadItemsArgs = { done: Done }
-const loadItems = ({ done }: LoadItemsArgs) => {
+const loadItems = async ({ done }: LoadItemsArgs) => {
   if (props.ncbi?.rifEntries?.length) {
     if (items.value.length === props.ncbi.rifEntries.length) {
       done('empty')
@@ -53,7 +53,7 @@ const loadItems = ({ done }: LoadItemsArgs) => {
       </div>
     </div>
     <div v-if="ncbi?.rifEntries?.length" class="d-flex flex-column flex-grow-1">
-      <v-infinite-scroll :height="200" style="font-size: 90%" :items="items" :on-load="loadItems">
+      <v-infinite-scroll :height="200" style="font-size: 90%" :items="items" @load="loadItems">
         <template v-for="(item, index) in items" :key="index">
           <div v-if="item?.text?.length">
             {{ item.text }}
