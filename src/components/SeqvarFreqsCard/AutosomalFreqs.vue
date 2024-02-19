@@ -145,7 +145,7 @@ const sexExpanded = ref<{ [key: string]: boolean }>({})
                 <td colspan="2">
                   {{ label }}
                   <a>
-                    <v-btn size="40" color="" icon>
+                    <v-btn size="25" color="" icon>
                       <v-icon>
                         {{ sexExpanded[key] ? 'mdi-chevron-down' : 'mdi-chevron-right' }}
                       </v-icon>
