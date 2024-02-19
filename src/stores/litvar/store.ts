@@ -4,6 +4,8 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
+import { Seqvar } from '@/lib/genomicVars'
+
 import { LitVarClient } from '../../api/litvar'
 import { StoreState } from '../types'
 import { type SearchResults } from './types'
@@ -13,13 +15,13 @@ export const useLitVarStore = defineStore('litvar', () => {
   const storeState = ref<StoreState>(StoreState.Initial)
 
   /** The Seqvar name currently loaded for. */
-  const seqVar = ref<string | undefined>(undefined)
+  const seqVar = ref<Seqvar | undefined>(undefined)
 
   /** Detailed result information. */
   const searchResults = ref<SearchResults>({})
 
   /** Initialize the store for the given SeqVar name. */
-  const initialize = async (seqVar$?: string, force: boolean = false) => {
+  const initialize = async (seqVar$?: Seqvar, force: boolean = false) => {
     // Skip if already loaded
     if (!force && seqVar$ === seqVar.value) {
       return
@@ -39,7 +41,8 @@ export const useLitVarStore = defineStore('litvar', () => {
     // "Just" lookup via LitVar client.
     const client = new LitVarClient()
     try {
-      searchResults.value = await client.performSearch(seqVar$)
+      const seqvarName = seqVar$.toString()
+      searchResults.value = await client.performSearch(seqvarName)
       storeState.value = StoreState.Active
     } catch (err) {
       storeState.value = StoreState.Error
