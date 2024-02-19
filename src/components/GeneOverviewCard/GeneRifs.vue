@@ -36,9 +36,14 @@ const loadItems = async ({ done }: LoadItemsArgs) => {
     if (items.value.length === props.ncbi.rifEntries.length) {
       done('empty')
     } else {
-      const nextItems = props.ncbi.rifEntries.slice(items.value.length, items.value.length + 10)
-      items.value = items.value.concat(nextItems)
-      done('ok')
+      setTimeout(() => {
+        const nextItems = (props.ncbi?.rifEntries ?? []).slice(
+          items.value.length,
+          items.value.length + 10
+        )
+        items.value = items.value.concat(nextItems)
+        done('ok')
+      }, 1000)
     }
   }
 }
