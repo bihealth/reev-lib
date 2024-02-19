@@ -62,7 +62,7 @@
     "vite-plugin-vuetify": "^2.0.1",
     "vue": "^3.4.18",
     "vue-router": "^4.2.5",
-    "vuetify": "^3.5.3"
+    "vuetify": "^3.5.4"
   },
   "devDependencies": {
     "@pinia/testing": "^0.1.3",
