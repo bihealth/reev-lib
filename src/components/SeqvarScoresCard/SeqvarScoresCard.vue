@@ -444,7 +444,7 @@ const polyphenScore = computed((): number | null =>
                 <!-- Toggle Button -->
                 <a>
                   <v-btn
-                    size="40"
+                    size="25"
                     color=""
                     icon
                     :disabled="!bestMMSplice.key || bestMMSplice.score === Infinity"
@@ -774,7 +774,7 @@ const polyphenScore = computed((): number | null =>
                 <!-- Toggle Button -->
                 <a>
                   <v-btn
-                    size="40"
+                    size="25"
                     color=""
                     icon
                     :disabled="!bestSpliceAi.key || bestSpliceAi.score === Infinity"
