@@ -3,8 +3,6 @@
  * This component displays a Card with ClinVar variant information aggregated
  * to the gene level.
  */
-import { defineAsyncComponent } from 'vue'
-
 import type { GenomeBuild } from '../../lib/genomeBuilds'
 import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
@@ -12,12 +10,7 @@ import { Transcript } from '../../pbs/mehari/txs'
 import DocsLink from '../DocsLink/DocsLink.vue'
 import ClinvarFreqPlot from './ClinvarFreqPlot.vue'
 import ClinvarImpact from './ClinvarImpact.vue'
-
-// The variation landascape is defined as an async component as rendering it
-// may take a while.
-const VariationLandscapePlotly = defineAsyncComponent(
-  () => import('./VariationLandscapePlotly.vue')
-)
+import VariationLandscapePlotly from './VariationLandscapePlotly.vue'
 
 /** This component's props. */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
