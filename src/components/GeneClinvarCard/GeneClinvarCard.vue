@@ -10,7 +10,6 @@ import { Transcript } from '../../pbs/mehari/txs'
 import DocsLink from '../DocsLink/DocsLink.vue'
 import ClinvarFreqPlot from './ClinvarFreqPlot.vue'
 import ClinvarImpact from './ClinvarImpact.vue'
-
 import VariationLandscapePlotly from './VariationLandscapePlotly.vue'
 
 /** This component's props. */
