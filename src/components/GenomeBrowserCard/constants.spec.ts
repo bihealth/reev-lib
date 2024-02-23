@@ -8,7 +8,7 @@ describe('publicTracks', () => {
     // act: nothing to do
 
     // assert:
-    expect(publicTracks.length).toBeGreaterThan(0)
+    expect(publicTracks().length).toBeGreaterThan(0)
   })
 
   it('should have a name for each track', () => {
@@ -16,7 +16,7 @@ describe('publicTracks', () => {
     // act: nothing to do
 
     // assert:
-    publicTracks.forEach((track) => {
+    publicTracks().forEach((track) => {
       expect(track.name).toBeDefined()
     })
   })
@@ -26,7 +26,7 @@ describe('publicTracks', () => {
     // act: nothing to do
 
     // assert:
-    publicTracks.forEach((track) => {
+    publicTracks().forEach((track) => {
       expect(track.sourceType).toBeDefined()
     })
   })
@@ -36,7 +36,7 @@ describe('publicTracks', () => {
     // act: nothing to do
 
     // assert:
-    publicTracks.forEach((track) => {
+    publicTracks().forEach((track) => {
       expect(track.format).toBeDefined()
     })
   })
@@ -46,7 +46,7 @@ describe('publicTracks', () => {
     // act: nothing to do
 
     // assert:
-    publicTracks.forEach((track) => {
+    publicTracks().forEach((track) => {
       expect(track.visibilityWindow).toBeDefined()
     })
   })
@@ -56,7 +56,7 @@ describe('publicTracks', () => {
     // act: nothing to do
 
     // assert:
-    publicTracks.forEach((track) => {
+    publicTracks().forEach((track) => {
       expect(track.url).toBeDefined()
     })
   })
@@ -66,7 +66,7 @@ describe('publicTracks', () => {
     // act: nothing to do
 
     // assert:
-    publicTracks.forEach((track) => {
+    publicTracks().forEach((track) => {
       expect(track.color).toBeDefined()
     })
   })
