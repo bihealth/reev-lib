@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useRouter } from 'vue-router'
 
 import { type GenomeBuild } from '../../lib/genomeBuilds'
 import GeneDosage from './GeneDosage.vue'
@@ -17,6 +18,12 @@ const props = defineProps<{
 
 /** This component's emits. */
 const emit = defineEmits(['toggleSelected'])
+
+/** The global router. */
+const router = useRouter()
+
+/** Whether or not a gene detail route exists. */
+const hasGeneDetailsRoute = router.hasRoute('gene-details')
 
 /**
  * Pick smallest of the shortest RefSeq transcript IDs.
@@ -75,17 +82,19 @@ const sortIcon = computed<string>(() => {
           </div>
           <div>
             {{ pickRefSeqId(item.raw.dbnsfp?.refseqId) }}
-            |
-            <router-link
-              style="cursor: pointer"
-              title="go to Gene details page"
-              :to="{
-                name: 'gene-details',
-                params: { gene: item.raw.hgnc.symbol }
-              }"
-            >
-              <v-icon>mdi-arrow-right-circle-outline</v-icon>
-            </router-link>
+            <template v-if="hasGeneDetailsRoute">
+              |
+              <router-link
+                style="cursor: pointer"
+                title="go to Gene details page"
+                :to="{
+                  name: 'gene-details',
+                  params: { gene: item.raw.hgnc.symbol }
+                }"
+              >
+                <v-icon>mdi-arrow-right-circle-outline</v-icon>
+              </router-link>
+            </template>
           </div>
         </div>
       </v-col>
