@@ -59,10 +59,18 @@ export class MehariClient {
    * @throws Error if the API request fails.
    */
   async retrieveStrucvarsCsq(strucvar: Strucvar): Promise<StrucvarResult> {
-    const { genomeBuild, chrom, start, stop, svType } = strucvar
-    const url =
-      `${this.apiBaseUrl}/strucvars/csq?genome_release=${genomeBuild}&` +
-      `chromosome=${chrom}&start=${start}&stop=${stop}&sv_type=${svType}`
+    let url: string
+    const { svType, genomeBuild, chrom, start } = strucvar
+    if (svType === 'BND' || svType === 'INS') {
+      url =
+        `${this.apiBaseUrl}/strucvars/csq?genome_release=${genomeBuild}&` +
+        `chromosome=${chrom}&start=${start}&stop=${start + 1}&sv_type=${svType}`
+    } else {
+      const { stop } = strucvar
+      url =
+        `${this.apiBaseUrl}/strucvars/csq?genome_release=${genomeBuild}&` +
+        `chromosome=${chrom}&start=${start}&stop=${stop}&sv_type=${svType}`
+    }
 
     const response = await fetch(url, {
       method: 'GET'
