@@ -62,8 +62,11 @@ export const REGEX_CNV_COLON =
 export const REGEX_CNV_HYPHEN =
   /^(?<svType>DEL|DUP)-(?:(?:(?:(?<genomeBuild>(?:\w+))-)?(?<chrom>(?:chr)?(?:[1-9]|1[0-9]|2[0-2]|X|Y|M|MT)))|(?<sequence>NC_(?:\d\d\d\d\d\d\.\d+)))-(?<start>\d+)-(?<stop>\d+)$/i
 
+/** CNV types. */
+export type CnvType = 'DEL' | 'DUP'
+
 /** Currently supported SV types. */
-export type SvType = 'DEL' | 'DUP'
+export type SvType = CnvType | 'INV' | 'BND'
 
 /** Interface for regex groups when parsing with `REGEX_CNV_COLON` or `REGEX_CNV_HYPHEN`. */
 export interface RegexCnvGroups {
@@ -319,13 +322,13 @@ export function parseCanonicalSpdiSeqvar(value: string): Seqvar {
 }
 
 /**
- * Interface that describes a canonical DEL or DUP strucvar.
+ * Interface that describes a canonical DEL, DUP, or INV strucvar.
  *
  * This will later be extended to inversions as well.
  */
 export interface LinearStrucvar {
   /** The type of the SV. */
-  svType: 'DEL' | 'DUP'
+  svType: 'DEL' | 'DUP' | 'INV'
   /** The genome build. */
   genomeBuild: GenomeBuild
   /**
@@ -347,7 +350,7 @@ export interface LinearStrucvar {
  * Implementation of the `LinearStrucvar` interface.
  */
 export class LinearStrucvarImpl implements LinearStrucvar {
-  svType: 'DEL' | 'DUP'
+  svType: 'DEL' | 'DUP' | 'INV'
   genomeBuild: GenomeBuild
   chrom: string
   start: number
@@ -356,7 +359,7 @@ export class LinearStrucvarImpl implements LinearStrucvar {
   userRepr: string
 
   constructor(
-    svType: 'DEL' | 'DUP',
+    svType: 'DEL' | 'DUP' | 'INV',
     genomeBuild: GenomeBuild,
     chrom: string,
     start: number,
@@ -395,8 +398,110 @@ export function linearStrucvarImplFromLinearStrucvar(variant: LinearStrucvar): L
   )
 }
 
+/**
+ * The strand orientation of a breakend.
+ */
+export enum StrandOrientation {
+  /** 3' to 3' */
+  THREE_TO_THREE = '3to3',
+  /** 5' to 3' */
+  FIVE_TO_THREE = '5to3',
+  /** 3' to 5' */
+  THREE_TO_FIVE = '3to5',
+  /** 5' to 5' */
+  FIVE_TO_FIVE = '5to5',
+  /** not applicable or unknown */
+  NOT_APPLICABLE = 'NtoN'
+}
+
+/**
+ * Interface that describes a breakend.
+ */
+export interface BreakendStrucvar {
+  /** The type of the SV. */
+  svType: 'BND'
+  /** The genome build. */
+  genomeBuild: GenomeBuild
+  /**
+   * Canonical chromomsome name "1", .., "22", "X", "Y", "MT" **without**
+   * `chr` prefix.
+   */
+  chrom: string
+  /** Canonical chromosome of the second end. */
+  chrom2: string
+  /** The 1-based start position. */
+  start: number
+  /** The 1-based stop position (on second end). */
+  stop: number
+  /** Strand orientation */
+  strandOrientation: StrandOrientation
+  /** The user-facing representation. */
+  userRepr: string
+}
+
+/**
+ * Implementation of the `BreakendStrucvar` interface.
+ */
+export class BreakendStrucvarImpl implements BreakendStrucvar {
+  svType: 'BND'
+  genomeBuild: GenomeBuild
+  chrom: string
+  chrom2: string
+  start: number
+  stop: number
+  strandOrientation: StrandOrientation
+  userRepr: string
+
+  constructor(
+    genomeBuild: GenomeBuild,
+    chrom: string,
+    chrom2: string,
+    start: number,
+    stop: number,
+    strandOrientation?: StrandOrientation,
+    userRepr?: string
+  ) {
+    this.svType = 'BND'
+    this.genomeBuild = genomeBuild
+    this.chrom = chrom
+    this.chrom2 = chrom2
+    this.start = start
+    this.stop = stop
+    this.strandOrientation = strandOrientation ?? StrandOrientation.NOT_APPLICABLE
+    this.userRepr =
+      userRepr ??
+      `${this.svType}-${this.genomeBuild}-${this.chrom}-${this.start}-${this.chrom2}-` +
+        `${this.stop}-${this.strandOrientation}`
+  }
+
+  /** Return the "object name" to be used in the API to the backend etc. */
+  toName(): string {
+    return (
+      `${this.svType}-${this.genomeBuild}-${this.chrom}-${this.start}-${this.chrom2}-` +
+      `${this.stop}-${this.strandOrientation}`
+    )
+  }
+}
+
+/**
+ * Construct a `BreakendStrucvarImpl` from a `BreakendStrucvar`.
+ */
+export function breakendStrucvarImplFromBreakendStrucvar(
+  bnd: BreakendStrucvar
+): BreakendStrucvarImpl {
+  return new BreakendStrucvarImpl(
+    bnd.genomeBuild,
+    bnd.chrom,
+    bnd.chrom2,
+    bnd.start,
+    bnd.stop,
+    bnd.strandOrientation,
+    bnd.userRepr
+  )
+}
+
 /** All supported structural variant types. */
-export type Strucvar = LinearStrucvar // | ...
+export type Strucvar = LinearStrucvar | BreakendStrucvar
 
 /**
  * Attempt parsing of a colon/hyphen-separated structural variant.
@@ -411,7 +516,7 @@ export type Strucvar = LinearStrucvar // | ...
 export function parseSeparatedStrucvar(
   value: string,
   defaultGenomeBuild: GenomeBuild = 'grch37'
-): LinearStrucvar {
+): Strucvar {
   const match = value.match(REGEX_CNV_COLON) ?? value.match(REGEX_CNV_HYPHEN)
   if (!match || !match.groups) {
     throw new ParseError(`Unable to parse colon/hyphen separated strucvar: ${value}`)

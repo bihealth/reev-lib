@@ -1,4 +1,4 @@
-import type { LinearStrucvar, Seqvar } from '../../lib/genomicVars'
+import type { Seqvar, Strucvar } from '../../lib/genomicVars'
 import { urlConfig } from '../../lib/urlConfig'
 import { GeneTranscriptsResponse } from '../../pbs/mehari/server'
 import { GenomeBuild } from '../../pbs/mehari/txs'
@@ -58,7 +58,7 @@ export class MehariClient {
    * @returns The response from the API.
    * @throws Error if the API request fails.
    */
-  async retrieveStrucvarsCsq(strucvar: LinearStrucvar): Promise<StrucvarResult> {
+  async retrieveStrucvarsCsq(strucvar: Strucvar): Promise<StrucvarResult> {
     const { genomeBuild, chrom, start, stop, svType } = strucvar
     const url =
       `${this.apiBaseUrl}/strucvars/csq?genome_release=${genomeBuild}&` +
