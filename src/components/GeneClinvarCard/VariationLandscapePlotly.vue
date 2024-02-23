@@ -84,6 +84,9 @@ const clinvarData = computed<PlotlyDataPoint[]>(() => {
       clinvarInfo = item.variants.sort((a: ClinvarRecord, b: ClinvarRecord) => a.start - b.start)
     }
   }
+  if (clinvarInfo.length === 0) {
+    return []
+  }
   // Update plot boundaries
   // eslint-disable-next-line vue/no-side-effects-in-computed-properties
   currentPlotBoundaries.value = {
