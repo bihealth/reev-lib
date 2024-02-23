@@ -1,6 +1,6 @@
 import { chunks } from '@reactgular/chunks'
 
-import type { LinearStrucvar, Seqvar } from '../../lib/genomicVars'
+import type { Seqvar, Strucvar } from '../../lib/genomicVars'
 import { urlConfig } from '../../lib/urlConfig'
 import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
@@ -150,11 +150,16 @@ export class AnnonarsClient {
    * Fetch overlapping ClinVar strucvars via annonars REST API.
    */
   async fetchClinvarStrucvars(
-    strucvar: LinearStrucvar,
+    strucvar: Strucvar,
     pageSize: number = 1000,
     minOverlap: number = 0.1
   ): Promise<ClinvarSvQueryResponse> {
-    const { genomeBuild, chrom, start, stop } = strucvar
+    const { svType, genomeBuild, chrom, start, stop } = strucvar
+    if (svType === 'BND') {
+      // We don't properly support ClinVar BNDs (and there will be few..)
+      return { records: [] }
+    }
+
     const url =
       `${this.apiBaseUrl}/clinvar-sv/query?genomeRelease=${genomeBuild}&` +
       `chromosome=${chrom}&start=${start}&stop=${stop}&pageSize=${pageSize}&` +
