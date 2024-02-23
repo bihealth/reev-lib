@@ -154,11 +154,14 @@ export class AnnonarsClient {
     pageSize: number = 1000,
     minOverlap: number = 0.1
   ): Promise<ClinvarSvQueryResponse> {
-    const { svType, genomeBuild, chrom, start, stop } = strucvar
-    if (svType === 'BND') {
-      // We don't properly support ClinVar BNDs (and there will be few..)
+    // First, check if we can handle the SV type.
+    const { svType } = strucvar
+    if (svType === 'BND' || svType === 'INS') {
+      // We don't properly support ClinVar INS/BNDs (and there will be few..)
       return { records: [] }
     }
+    // Then, extract coordinates of linear strucvar.
+    const { genomeBuild, chrom, start, stop } = strucvar
 
     const url =
       `${this.apiBaseUrl}/clinvar-sv/query?genomeRelease=${genomeBuild}&` +

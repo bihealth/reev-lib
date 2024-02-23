@@ -38,8 +38,13 @@ const clinvarRange = computed<string>(() => {
     return ''
   }
   const release = props.strucvar.genomeBuild === 'grch37' ? 'GRCh37' : 'GRCh38'
-  const { chrom, start, stop } = props.strucvar
-  return `${release}:${chrom.replace('chr', '')}:${start}-${stop}`
+  const { svType, chrom, start } = props.strucvar
+  if (svType === 'BND' || svType === 'INS') {
+    return `${release}:${chrom.replace('chr', '')}:${start}-${start}`
+  } else {
+    const { stop } = props.strucvar
+    return `${release}:${chrom.replace('chr', '')}:${start}-${stop}`
+  }
 })
 
 const sortBy = ref<{ key: string; order: 'asc' | 'desc' }[]>([{ key: 'overlap', order: 'desc' }])

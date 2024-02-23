@@ -66,7 +66,7 @@ export const REGEX_CNV_HYPHEN =
 export type CnvType = 'DEL' | 'DUP'
 
 /** Currently supported SV types. */
-export type SvType = CnvType | 'INV' | 'BND'
+export type SvType = CnvType | 'INV' | 'INS' | 'BND'
 
 /** Interface for regex groups when parsing with `REGEX_CNV_COLON` or `REGEX_CNV_HYPHEN`. */
 export interface RegexCnvGroups {
@@ -415,6 +415,92 @@ export enum StrandOrientation {
 }
 
 /**
+ * Interface that describes a insertion strucvar.
+ */
+export interface InsertionStrucvar {
+  /** The type of the SV. */
+  svType: 'INS'
+  /** The genome build. */
+  genomeBuild: GenomeBuild
+  /**
+   * Canonical chromomsome name "1", .., "22", "X", "Y", "MT"
+   * **without** `chr` prefix.
+   */
+  chrom: string
+  /** The 1-based position. */
+  start: number
+  /** The inserted sequence. */
+  insSeq?: string
+  /** The length of the inserted sequence. */
+  insLen?: number
+  /** The user-facing representation. */
+  userRepr: string
+}
+
+/**
+ * Implementation of the `InsertionStrucvar` interface.
+ */
+export class InsertionStrucvarImpl implements InsertionStrucvar {
+  svType: 'INS'
+  genomeBuild: GenomeBuild
+  chrom: string
+  start: number
+  insSeq?: string
+  insLen?: number
+  userRepr: string
+
+  constructor(
+    genomeBuild: GenomeBuild,
+    chrom: string,
+    start: number,
+    insSeq?: string,
+    insLen?: number,
+    userRepr?: string
+  ) {
+    this.svType = 'INS'
+    this.genomeBuild = genomeBuild
+    this.chrom = chrom
+    this.start = start
+    this.insSeq = insSeq
+    this.insLen = insLen
+    let tmp = `${this.svType}-${this.genomeBuild}-${this.chrom}-${this.start}`
+    if (insSeq !== undefined) {
+      tmp += `-${insSeq}`
+    } else if (insLen !== undefined) {
+      tmp += `-${insLen}`
+    }
+    this.userRepr = userRepr ?? tmp
+  }
+
+  /** Return the "object name" to be used in the API to the backend etc. */
+  toName(): string {
+    let tmp = `${this.svType}-${this.genomeBuild}-${this.chrom}-${this.start}`
+    if (this.insSeq !== undefined) {
+      tmp += `-${this.insSeq}`
+    } else if (this.insLen !== undefined) {
+      tmp += `-${this.insLen}`
+    }
+    return tmp
+  }
+}
+
+/**
+ * Construct a `InsertionStrucvarImpl` from a `InsertionStrucvar`.
+ */
+export function insertionStrucvarImplFromInsertionStrucvar(
+  ins: InsertionStrucvar
+): InsertionStrucvarImpl {
+  return new InsertionStrucvarImpl(
+    ins.genomeBuild,
+    ins.chrom,
+    ins.start,
+    ins.insSeq,
+    ins.insLen,
+    ins.userRepr
+  )
+}
+
+/**
  * Interface that describes a breakend.
  */
 export interface BreakendStrucvar {
@@ -501,7 +587,7 @@ export function breakendStrucvarImplFromBreakendStrucvar(
 }
 
 /** All supported structural variant types. */
-export type Strucvar = LinearStrucvar | BreakendStrucvar
+export type Strucvar = LinearStrucvar | InsertionStrucvar | BreakendStrucvar
 
 /**
  * Attempt parsing of a colon/hyphen-separated structural variant.
