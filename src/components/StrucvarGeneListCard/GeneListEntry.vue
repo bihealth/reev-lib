@@ -7,14 +7,24 @@ import GeneDosage from './GeneDosage.vue'
 import ScoreChip from './ScoreChip.vue'
 
 /** This component's props. */
-const props = defineProps<{
-  item: any
-  hgncToEffect?: { [key: string]: string }
-  sortKey?: string
-  sortOrder?: 'asc' | 'desc'
-  isSelected: boolean
-  genomeBuild?: GenomeBuild
-}>()
+const props = withDefaults(
+  defineProps<{
+    item: any
+    hgncToEffect?: { [key: string]: string }
+    sortKey?: string
+    sortOrder?: 'asc' | 'desc'
+    isSelected: boolean
+    genomeBuild?: GenomeBuild
+    columnWidth?: string
+  }>(),
+  {
+    hgncToEffect: undefined,
+    sortKey: undefined,
+    sortOrder: undefined,
+    genomeBuild: undefined,
+    columnWidth: 'columnWidth'
+  }
+)
 
 /** This component's emits. */
 const emit = defineEmits(['toggleSelected'])
@@ -101,7 +111,7 @@ const sortIcon = computed<string>(() => {
       <v-col cols="10" class="d-flex flex-column pa-0">
         <v-row no-gutter class="ma-0">
           <v-col cols="3" class="pr-3 align-self-end pa-1">
-            <table style="width: 280px">
+            <table :style="`width: ${columnWidth}`">
               <tr>
                 <td
                   class="text-no-wrap"
@@ -147,7 +157,7 @@ const sortIcon = computed<string>(() => {
             </table>
           </v-col>
           <v-col cols="3" class="pr-3 align-self-end pa-1">
-            <table style="width: 280px">
+            <table :style="`width: ${columnWidth}`">
               <tr>
                 <td
                   class="text-no-wrap"
@@ -204,7 +214,7 @@ const sortIcon = computed<string>(() => {
               ClinGen Dosage Sensitivity Single Gene Evaluation Process v1.0 => >=0.9
 
             -->
-            <table style="width: 280px">
+            <table :style="`width: ${columnWidth}`">
               <tr>
                 <td
                   class="text-no-wrap"
@@ -242,7 +252,7 @@ const sortIcon = computed<string>(() => {
             <!--
               https://europepmc.org/article/MED/35917817
             -->
-            <table style="width: 280px">
+            <table :style="`width: ${columnWidth}`">
               <tr>
                 <td
                   class="text-no-wrap"
