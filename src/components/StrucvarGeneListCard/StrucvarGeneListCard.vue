@@ -23,13 +23,16 @@ const props = withDefaults(
     storeState?: StoreState
     /** The HGNC ID of the selected gene. */
     selectedGeneHgncId?: string
+    /** Column width of the entry. */
+    entryColumnWidth?: string
   }>(),
   {
     currentStrucvarRecord: undefined,
     csq: undefined,
     genesInfos: undefined,
     storeState: StoreState.Initial,
-    selectedGeneHgncId: undefined
+    selectedGeneHgncId: undefined,
+    entryColumnWidth: '280px'
   }
 )
 
@@ -225,6 +228,7 @@ onMounted(() => selectFirst(props.storeState))
               :sort-order="sortOrder"
               :is-selected="isSelected(item as any)"
               :genome-build="currentStrucvarRecord?.genomeBuild ?? 'grch37'"
+              :column-width="entryColumnWidth"
               @toggle-selected="() => toggleSelect(item as any)"
             />
           </template>
