@@ -70,7 +70,9 @@ export const useGeneInfoStore = defineStore('geneInfo', () => {
       try {
         geneClinvar.value = await annonarsClient.fetchGeneClinvarInfo(hgncIdQuery)
       } catch (e) {
-        throw new Error(`No gene clinvar data found: ${e}`)
+        // Query for gene ClinVar information failed, assuming no ClinVar information.
+        // TODO: differentiate 404 and others
+        geneClinvar.value = undefined
       }
 
       const vigunoClient = new VigunoClient()
