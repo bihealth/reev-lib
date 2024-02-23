@@ -46,7 +46,7 @@ const translateGenome = (value: GenomeBuild) => {
  * @param browser The IGV browser.
  */
 const addTracks = (browser: any) => {
-  for (const track of publicTracks) {
+  for (const track of publicTracks()) {
     browser.loadTrack(track)
   }
 }
