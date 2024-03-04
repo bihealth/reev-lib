@@ -128,11 +128,7 @@ const showAllDiseases = ref<boolean>(false)
 
 /** The diseases to show. */
 const diseasesToShow = computed<ConditionsRecord_GeneDiseaseAssociation[]>(() => {
-  if (showAllDiseases.value) {
-    return conditions.value.diseaseAssociations
-  } else {
-    return conditions.value.diseaseAssociations.slice(0, maxDiseases)
-  }
+  return conditions.value.diseaseAssociations
 })
 
 /** Whether to display disease details. */
@@ -196,11 +192,7 @@ const showAllPanels = ref<boolean>(false)
 
 /** The diseases to show. */
 const panelsToShow = computed<ConditionsRecord_PanelappAssociation[]>(() => {
-  if (showAllPanels.value) {
-    return conditions.value.panelappAssociations
-  } else {
-    return conditions.value.panelappAssociations.slice(0, maxPanels)
-  }
+  return conditions.value.panelappAssociations
 })
 
 /** Whether to display PanelApp panel details. */
@@ -291,7 +283,7 @@ const conditionsCols = computed<number>(() => {
                   :item-key="(item: ConditionsRecord_GeneDiseaseAssociation) => item.hgncId"
                   :sort-by="[{ key: sortKeyDisease, order: sortOrderDisease }]"
                   :custom-key-sort="customKeySortDisease"
-                  :items-per-page="-1"
+                  :items-per-page="showAllDiseases ? -1 : maxDiseases"
                   :hide-default-footer="true"
                   class="mt-3"
                 >
@@ -443,7 +435,7 @@ const conditionsCols = computed<number>(() => {
                   :item-key="(item: ConditionsRecord_PanelappAssociation) => item.panel!.id"
                   :sort-by="[{ key: sortKeyPanelApp, order: sortOrderPanelApp }]"
                   :custom-key-sort="customKeySortPanelApp"
-                  :items-per-page="-1"
+                  :items-per-page="showAllPanels ? -1 : maxPanels"
                   :hide-default-footer="true"
                   class="mt-3"
                 >
