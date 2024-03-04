@@ -1,4 +1,5 @@
 import { urlConfig } from '../../lib/urlConfig'
+import { ConfigError, InvalidResponseContent } from '../common'
 import { SpdiResult, TranscriptResult } from './types'
 
 export class DottyClient {
@@ -8,14 +9,14 @@ export class DottyClient {
    * @param apiBaseUrl
    *            API base to the backend, excluding trailing `/`.
    *            The default is declared in '@/lib/urlConfig`.
-   * @throws Error if the API base URL is not configured.
+   * @throws ConfigError if the API base URL is not configured.
    */
   constructor(apiBaseUrl?: string) {
     if (apiBaseUrl !== undefined || urlConfig.baseUrlDotty !== undefined) {
       // @ts-ignore
       this.apiBaseUrl = apiBaseUrl ?? urlConfig.baseUrlDotty
     } else {
-      throw new Error('Configuration error: API base URL not configured')
+      throw new ConfigError('Configuration error: API base URL not configured')
     }
   }
 
@@ -24,7 +25,8 @@ export class DottyClient {
    *
    * @param q Query to conert.
    * @param assembly Assembly to use.
-   * @returns Promise with the response form dotty or null if the request failed.
+   * @returns Promise with the response form dotty or `null` if the request failed.
+   * @throws InvalidResponseContent if the response is not valid JSON.
    */
   async toSpdi(q: string, assembly: 'GRCh37' | 'GRCh38' = 'GRCh38'): Promise<SpdiResult | null> {
     const escapedQ = encodeURIComponent(q)
@@ -33,8 +35,12 @@ export class DottyClient {
       method: 'GET'
     })
     if (response.status == 200) {
-      const responseJson = await response.json()
-      return SpdiResult.fromJson(responseJson)
+      try {
+        const responseJson = await response.json()
+        return SpdiResult.fromJson(responseJson)
+      } catch (e) {
+        throw new InvalidResponseContent(`failed to parse SPDI response: ${e}`)
+      }
     } else {
       return null
     }
@@ -45,7 +51,8 @@ export class DottyClient {
    *
    * @param hgncId HGNC ID to fetch transcripts for.
    * @param assembly Assembly to use.
-   * @returns Promise with the response form dotty or null if the request failed.
+   * @returns Promise with the response form dotty or `null` if the request failed.
+   * @throws InvalidResponseContent if the response is not valid JSON.
    */
   async fetchTranscripts(
     hgncId: string,
@@ -56,8 +63,12 @@ export class DottyClient {
       method: 'GET'
     })
     if (response.status == 200) {
-      const responseJson = await response.json()
-      return TranscriptResult.fromJson(responseJson)
+      try {
+        const responseJson = await response.json()
+        return TranscriptResult.fromJson(responseJson)
+      } catch (e) {
+        throw new InvalidResponseContent(`failed to parse transcript response: ${e}`)
+      }
     } else {
       return null
     }

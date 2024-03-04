@@ -1,4 +1,5 @@
 import { urlConfig } from '../../lib/urlConfig'
+import { ConfigError, InvalidResponseContent, StatusCodeNotOk } from '../common'
 import type { SearchResult } from './types'
 
 /**
@@ -12,13 +13,14 @@ export class PubtatorClient {
    * @param apiBaseUrl
    *            API base to the backend, excluding trailing `/`.
    *            The default is declared in '@/lib/urlConfig`.
+   * @throws ConfigError if the API base URL is not configured.
    */
   constructor(apiBaseUrl?: string) {
     if (apiBaseUrl !== undefined || urlConfig.baseUrlPubtator !== undefined) {
       // @ts-ignore
       this.apiBaseUrl = apiBaseUrl ?? urlConfig.baseUrlPubtator
     } else {
-      throw new Error('Configuration error: API base URL not configured')
+      throw new ConfigError('Configuration error: API base URL not configured')
     }
   }
 
@@ -27,7 +29,8 @@ export class PubtatorClient {
    *
    * @param hgncSymbol HGNC symbol to search for.
    * @returns Promise for the search results.
-   * @throws Error if the search fails.
+   * @throws StatusCodeNotOk if the API request fails.
+   * @throws InvalidResponseContent if the response is not valid JSON.
    */
   async performSearch(hgncSymbol: string): Promise<{ [key: string]: SearchResult }> {
     const url = `${this.apiBaseUrl}/search/?text=@GENE_${hgncSymbol}`
@@ -35,7 +38,7 @@ export class PubtatorClient {
       method: 'GET'
     })
     if (!searchRes.ok) {
-      throw new Error(`Error running PubTator 3 search: ${searchRes.statusText}`)
+      throw new StatusCodeNotOk(`Error running PubTator 3 search: ${searchRes.statusText}`)
     }
     const searchData = await searchRes.json()
 
@@ -45,7 +48,7 @@ export class PubtatorClient {
       `${this.apiBaseUrl}/publications/export/biocjson` + `?pmids=${pmids.join(',')}`
     )
     if (!exportRes.ok) {
-      throw new Error(`Error running PubTator 3 export: ${exportRes.statusText}`)
+      throw new StatusCodeNotOk(`Error running PubTator 3 export: ${exportRes.statusText}`)
     }
     const exportDataText = await exportRes.text()
     const exportDataLines = exportDataText.split(/\n/)
@@ -59,9 +62,13 @@ export class PubtatorClient {
       }
     }
     for (const exportDataLine of exportDataLines) {
-      if (exportDataLine) {
-        const exportDataRecord = JSON.parse(exportDataLine)
-        searchResults[exportDataRecord.pmid].abstract = exportDataRecord
+      try {
+        if (exportDataLine) {
+          const exportDataRecord = JSON.parse(exportDataLine)
+          searchResults[exportDataRecord.pmid].abstract = exportDataRecord
+        }
+      } catch (e) {
+        throw new InvalidResponseContent(`failed to parse PubTator 3 export: ${e}`)
       }
     }
 
