@@ -1,8 +1,9 @@
 import fs from 'fs'
 import path from 'path'
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import createFetchMock from 'vitest-fetch-mock'
 
+import { setupUrlConfigForTesting, urlConfig } from '../../lib/urlConfig'
 import { DottyClient } from './client'
 
 /** Fixtures with response from API. */
@@ -15,6 +16,38 @@ const findTranscriptsResponseBrca1 = JSON.parse(
 
 /** Initialize mock for `fetch()`. */
 const fetchMocker = createFetchMock(vi)
+
+describe.concurrent('DottyClient.construct()', () => {
+  afterEach(() => {
+    setupUrlConfigForTesting()
+  })
+
+  it('constructs correctly with default base URL', () => {
+    // act:
+    const client = new DottyClient()
+
+    // assert:
+    expect(client).toBeDefined()
+  })
+
+  it('constructs correctly with custom base URL', () => {
+    // act:
+    const client = new DottyClient('http://localhost:8080')
+
+    // assert:
+    expect(client).toBeDefined()
+  })
+
+  it('throws error if no base URL is configured', () => {
+    // arrange:
+    urlConfig.baseUrlDotty = undefined
+
+    // (guarded)
+    expect(() => new DottyClient(undefined)).toThrow(
+      'Configuration error: API base URL not configured'
+    )
+  })
+})
 
 describe.concurrent('DottyClient.toSpdi()', () => {
   beforeEach(() => {

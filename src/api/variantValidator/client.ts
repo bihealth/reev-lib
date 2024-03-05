@@ -1,5 +1,6 @@
 import type { Seqvar } from '../../lib/genomicVars'
 import { urlConfig } from '../../lib/urlConfig'
+import { ConfigError, InvalidResponseContent, StatusCodeNotOk } from '../common'
 import { Response as VariantValidatorResponse } from './types'
 
 /**
@@ -12,14 +13,14 @@ export class VariantValidatorClient {
    * @param apiBaseUrl
    *            API base to the backend, excluding trailing `/`.
    *            The default is declared in '@/lib/urlConfig`.
-   * @throws Error if the API base URL is not configured.
+   * @throws ConfigError if the API base URL is not configured.
    */
   constructor(apiBaseUrl?: string) {
     if (apiBaseUrl !== undefined || urlConfig.baseUrlVariantValidator !== undefined) {
       // @ts-ignore
       this.apiBaseUrl = apiBaseUrl ?? urlConfig.baseUrlVariantValidator
     } else {
-      throw new Error('Configuration error: API base URL not configured')
+      throw new ConfigError('Configuration error: API base URL not configured')
     }
   }
 
@@ -28,7 +29,8 @@ export class VariantValidatorClient {
    *
    * @param seqvar The `Seqvar` object to be validated.
    * @returns The response from the API.
-   * @throws Error if the API call fails.
+   * @throws StatusCodeNotOk if the API request fails.
+   * @throws InvalidResponseContent if the response is not valid JSON.
    */
   async fetchVvResults(seqvar: Seqvar): Promise<VariantValidatorResponse> {
     const { genomeBuild, chrom, pos, del, ins } = seqvar
@@ -39,9 +41,13 @@ export class VariantValidatorClient {
 
     const response = await fetch(url, { method: 'GET' })
     if (!response.ok) {
-      throw new Error(`Failed to fetch ACMG rating for ${seqvar.userRepr}`)
+      throw new StatusCodeNotOk(`Failed to fetch ACMG rating for ${seqvar.userRepr}`)
     }
-    const responseJson = await response.json()
-    return VariantValidatorResponse.fromJson(responseJson)
+    try {
+      const responseJson = await response.json()
+      return VariantValidatorResponse.fromJson(responseJson)
+    } catch (e) {
+      throw new InvalidResponseContent(`Invalid response content from VariantValidator: ${e}`)
+    }
   }
 }

@@ -1,4 +1,5 @@
 import { urlConfig } from '../../lib/urlConfig'
+import { ConfigError, InvalidResponseContent, StatusCodeNotOk } from '../common'
 import { Response } from './types'
 
 /**
@@ -11,14 +12,14 @@ export class CadaPrioClient {
    * @param apiBaseUrl
    *            API base to the backend, excluding trailing `/`.
    *            The default is declared in '@/lib/urlConfig`.
-   * @throws Error if the API base URL is not configured.
+   * @throws ConfigError if the API base URL is not configured.
    */
   constructor(apiBaseUrl?: string) {
     if (apiBaseUrl !== undefined || urlConfig.baseUrlCadaPrio !== undefined) {
       // @ts-ignore
       this.apiBaseUrl = apiBaseUrl ?? urlConfig.baseUrlCadaPrio
     } else {
-      throw new Error('Configuration error: API base URL not configured')
+      throw new ConfigError('Configuration error: API base URL not configured')
     }
   }
 
@@ -28,7 +29,8 @@ export class CadaPrioClient {
    * @param hpoTerms HPO term IDs (e.g. `HP:0000001`)
    * @param geneSymbols Gene symbols (e.g. `BRCA1`)
    * @returns Promise with response of impact prediction.
-   * @throws Error if the API returns an error.
+   * @throws StatusCodeNotOk if the request fails.
+   * @throws InvalidResponseContent if the response is not valid JSON.
    */
   async predictGeneImpact(hpoTerms: string[], geneSymbols?: string[]): Promise<Response> {
     const geneSuffix = geneSymbols ? `&gene_symbols=${geneSymbols.join(',')}` : ''
@@ -37,7 +39,14 @@ export class CadaPrioClient {
     const response = await fetch(url, {
       method: 'GET'
     })
-    const responseJson = await response.json()
-    return Response.fromJson(responseJson)
+    if (!response.ok) {
+      throw new StatusCodeNotOk(`failed to fetch gene impact prediction: ${response.statusText}`)
+    }
+    try {
+      const responseJson = await response.json()
+      return Response.fromJson(responseJson)
+    } catch (e) {
+      throw new InvalidResponseContent(`failed to parse gene impact prediction response: ${e}`)
+    }
   }
 }

@@ -23,6 +23,12 @@ interface Props {
 
 const props = defineProps<Props>()
 
+/** This component's emits. */
+const emit = defineEmits<{
+  /** An error occured, e.g., communicating with server. */
+  error: [msg: string]
+}>()
+
 const variantValidatorState = ref<VariantValidatorStates>(VariantValidatorStates.Initial)
 
 interface KeyValue {
@@ -70,6 +76,7 @@ const queryVariantValidatorApi = async () => {
     variantValidatorState.value = VariantValidatorStates.Done
   } catch (err) {
     variantValidatorState.value = VariantValidatorStates.Error
+    emit('error', `There was an error when communicating with VariantValidator API: ${err}`)
     return
   }
 }

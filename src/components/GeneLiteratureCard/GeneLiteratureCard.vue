@@ -30,6 +30,12 @@ const props = withDefaults(
   }
 )
 
+/** This component's emits. */
+const emit = defineEmits<{
+  /** An error occured, e.g., communicating with server. */
+  error: [msg: string]
+}>()
+
 /** Vuetify theme. */
 const theme = useTheme()
 
@@ -146,6 +152,7 @@ const loadPubTator = async () => {
   try {
     await pubtatorStore.initialize(props.geneInfo?.hgnc?.symbol)
   } catch (e) {
+    emit('error', `Error loading PubTator 3 data: ${e}`)
     errorMessage.value = `Error loading PubTator 3 data: ${e}`
   }
 }

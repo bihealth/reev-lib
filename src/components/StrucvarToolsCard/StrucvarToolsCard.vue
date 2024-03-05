@@ -9,6 +9,12 @@ const props = defineProps<{
   strucvar?: Strucvar
 }>()
 
+/** This component's emits. */
+const emit = defineEmits<{
+  /** An error occured, e.g., communicating with server. */
+  error: [msg: string]
+}>()
+
 const svStop = (strucvar: Strucvar): number => {
   return strucvar.svType === 'INS' || strucvar.svType === 'BND' ? strucvar.start + 1 : strucvar.stop
 }
@@ -96,7 +102,7 @@ const jumpToLocus = async () => {
     `http://127.0.0.1:60151/goto?locus=${chrPrefixed}:${props.strucvar?.start}-${svStop(props.strucvar!)}`
   ).catch((e) => {
     const msg = "Couldn't connect to IGV. Please make sure IGV is running and try again."
-    alert(msg)
+    emit('error', msg)
     console.error(msg, e)
   })
 }

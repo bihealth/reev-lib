@@ -13,6 +13,12 @@ const props = defineProps<{
   varAnnos?: SeqvarInfoResult
 }>()
 
+/** This component's emits. */
+const emit = defineEmits<{
+  /** An error occured, e.g., communicating with server. */
+  error: [msg: string]
+}>()
+
 const ucscLinkout = computed<string>(() => {
   if (!props.seqvar) {
     return '#'
@@ -127,7 +133,7 @@ const jumpToLocus = async () => {
     }`
   ).catch((e) => {
     const msg = "Couldn't connect to IGV. Please make sure IGV is running and try again."
-    alert(msg)
+    emit('error', msg)
     console.error(msg, e)
   })
 }

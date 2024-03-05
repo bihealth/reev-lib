@@ -2,6 +2,7 @@ import type { Seqvar, Strucvar } from '../../lib/genomicVars'
 import { urlConfig } from '../../lib/urlConfig'
 import { GeneTranscriptsResponse } from '../../pbs/mehari/server'
 import { GenomeBuild } from '../../pbs/mehari/txs'
+import { ConfigError, InvalidResponseContent, StatusCodeNotOk } from '../common'
 import { SeqvarResult, StrucvarResult } from './types'
 
 /**
@@ -14,14 +15,14 @@ export class MehariClient {
    * @param apiBaseUrl
    *            API base to the backend, excluding trailing `/`.
    *            The default is declared in '@/lib/urlConfig`.
-   * @throws Error if the API base URL is not configured.
+   * @throws ConfigError if the API base URL is not configured.
    */
   constructor(apiBaseUrl?: string) {
     if (apiBaseUrl !== undefined || urlConfig.baseUrlMehari !== undefined) {
       // @ts-ignore
       this.apiBaseUrl = apiBaseUrl ?? urlConfig.baseUrlMehari
     } else {
-      throw new Error('Configuration error: API base URL not configured')
+      throw new ConfigError('Configuration error: API base URL not configured')
     }
   }
 
@@ -30,8 +31,9 @@ export class MehariClient {
    *
    * @param seqvar Sequence variant to retrieve consequences for.
    * @param hgncId HGNC ID of gene to restrict results to.
-   * @returns The response from the API.
-   * @throws Error if the API request fails.
+   * @returns Promise with the response from the API.
+   * @throws StatusCodeNotOk if the API request fails.
+   * @throws InvalidResponseContent if the response is not valid JSON.
    */
   async retrieveSeqvarsCsq(seqvar: Seqvar, hgncId?: string): Promise<SeqvarResult> {
     const { genomeBuild, chrom, pos, del, ins } = seqvar
@@ -45,18 +47,27 @@ export class MehariClient {
       method: 'GET'
     })
     if (!response.ok) {
-      throw new Error(`Failed to fetch sequence variant consequences: ${response.statusText}`)
+      throw new StatusCodeNotOk(
+        `Failed to fetch sequence variant consequences: ${response.statusText}`
+      )
     }
-    const responseJson = await response.json()
-    return SeqvarResult.fromJson(responseJson)
+    try {
+      const responseJson = await response.json()
+      return SeqvarResult.fromJson(responseJson)
+    } catch (e) {
+      throw new InvalidResponseContent(
+        `Failed to parse sequence variant consequences response: ${e}`
+      )
+    }
   }
 
   /**
    * Retrieve consequences for structural variants.
    *
    * @param strucvar Structural variant to retrieve consequences for.
-   * @returns The response from the API.
-   * @throws Error if the API request fails.
+   * @returns Promise with the response from the API.
+   * @throws StatusCodeNotOk if the API request fails.
+   * @throws InvalidResponseContent if the response is not valid JSON.
    */
   async retrieveStrucvarsCsq(strucvar: Strucvar): Promise<StrucvarResult> {
     let url: string
@@ -76,10 +87,18 @@ export class MehariClient {
       method: 'GET'
     })
     if (!response.ok) {
-      throw new Error(`Failed to fetch structural variant consequences: ${response.statusText}`)
+      throw new StatusCodeNotOk(
+        `Failed to fetch structural variant consequences: ${response.statusText}`
+      )
     }
-    const responseJson = await response.json()
-    return StrucvarResult.fromJson(responseJson)
+    try {
+      const responseJson = await response.json()
+      return StrucvarResult.fromJson(responseJson)
+    } catch (e) {
+      throw new InvalidResponseContent(
+        `Failed to parse structural variant consequences response: ${e}`
+      )
+    }
   }
 
   /**
@@ -89,7 +108,9 @@ export class MehariClient {
    * @param genomeBuild Genome build to restrict results to.
    * @param pageSize Number of results to return per page.
    * @param nextPageToken Token to retrieve the next page of results.
-   * @returns The response from the API.
+   * @returns Promise with the response from the API.
+   * @throws StatusCodeNotOk if the API request fails.
+   * @throws InvalidResponseContent if the response is not valid JSON.
    */
   async retrieveGeneTranscripts(
     hgncId: string,
@@ -107,8 +128,13 @@ export class MehariClient {
       method: 'GET'
     })
     if (!response.ok) {
-      throw new Error(`Failed to fetch transcripts: ${response.statusText}`)
+      throw new StatusCodeNotOk(`Failed to fetch transcripts: ${response.statusText}`)
     }
-    return await response.json()
+    try {
+      const responseJson = await response.json()
+      return GeneTranscriptsResponse.fromJson(responseJson)
+    } catch (e) {
+      throw new InvalidResponseContent(`Failed to parse transcript response: ${e}`)
+    }
   }
 }

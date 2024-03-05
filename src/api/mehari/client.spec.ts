@@ -1,10 +1,11 @@
 import fs from 'fs'
 import path from 'path'
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import createFetchMock from 'vitest-fetch-mock'
 
 import { SeqvarImpl } from '../../lib/genomicVars'
 import { LinearStrucvarImpl } from '../../lib/genomicVars'
+import { setupUrlConfigForTesting, urlConfig } from '../../lib/urlConfig'
 import { GenomeBuild } from '../../pbs/mehari/txs'
 import { MehariClient } from './client'
 
@@ -34,6 +35,38 @@ const strucvarCsqResponseBrca1 = JSON.parse(
 
 /** Initialize mock for `fetch()`. */
 const fetchMocker = createFetchMock(vi)
+
+describe.concurrent('MehariClient.construct()', () => {
+  afterEach(() => {
+    setupUrlConfigForTesting()
+  })
+
+  it('constructs correctly with default base URL', () => {
+    // act:
+    const client = new MehariClient()
+
+    // assert:
+    expect(client).toBeDefined()
+  })
+
+  it('constructs correctly with custom base URL', () => {
+    // act:
+    const client = new MehariClient('http://localhost:8080')
+
+    // assert:
+    expect(client).toBeDefined()
+  })
+
+  it('throws error if no base URL is configured', () => {
+    // arrange:
+    urlConfig.baseUrlMehari = undefined
+
+    // (guarded)
+    expect(() => new MehariClient(undefined)).toThrow(
+      'Configuration error: API base URL not configured'
+    )
+  })
+})
 
 describe.concurrent('MehariClient', () => {
   beforeEach(() => {

@@ -32,3 +32,31 @@ export interface UrlConfig {
  * Global URL configuration instance.
  */
 export const urlConfig: UrlConfig = {}
+
+/**
+ * Helper that performs setup of the global URL configuration for testing.
+ */
+export const setupUrlConfigForTesting = () => {
+  urlConfig.baseUrlAnnonars = '/internal/proxy/annonars'
+  urlConfig.baseUrlMehari = '/internal/proxy/mehari'
+  urlConfig.baseUrlViguno = '/internal/proxy/viguno'
+  urlConfig.baseUrlCadaPrio = '/internal/proxy/cada-prio'
+  urlConfig.baseUrlDotty = '/internal/proxy/dotty'
+  urlConfig.baseUrlNginx = '/remote/variantvalidator'
+  urlConfig.baseUrlVariantValidator = '/remote/variantvalidator'
+  urlConfig.baseUrlPubtator = '/remote/pubtator3-api'
+}
+
+/**
+ * Helper that resets the global URL configuration for testing.
+ */
+export const resetUrlConfig = () => {
+  urlConfig.baseUrlAnnonars = undefined
+  urlConfig.baseUrlMehari = undefined
+  urlConfig.baseUrlViguno = undefined
+  urlConfig.baseUrlCadaPrio = undefined
+  urlConfig.baseUrlDotty = undefined
+  urlConfig.baseUrlNginx = undefined
+  urlConfig.baseUrlVariantValidator = undefined
+  urlConfig.baseUrlPubtator = undefined
+}

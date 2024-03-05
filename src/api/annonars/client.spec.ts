@@ -1,9 +1,10 @@
 import fs from 'fs'
 import path from 'path'
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import createFetchMock from 'vitest-fetch-mock'
 
 import { LinearStrucvarImpl, SeqvarImpl } from '../../lib/genomicVars'
+import { setupUrlConfigForTesting, urlConfig } from '../../lib/urlConfig'
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
 import { AnnonarsClient } from './client'
 import { ClinvarSvQueryResponse } from './types'
@@ -31,6 +32,38 @@ const fetchMocker = createFetchMock(vi)
 
 /** Example Sequence Variant */
 const seqvar = new SeqvarImpl('grch37', '1', 123, 'A', 'G')
+
+describe.concurrent('AnnonarsClient.construct()', () => {
+  afterEach(() => {
+    setupUrlConfigForTesting()
+  })
+
+  it('constructs correctly with default base URL', () => {
+    // act:
+    const client = new AnnonarsClient()
+
+    // assert:
+    expect(client).toBeDefined()
+  })
+
+  it('constructs correctly with custom base URL', () => {
+    // act:
+    const client = new AnnonarsClient('http://localhost:8080')
+
+    // assert:
+    expect(client).toBeDefined()
+  })
+
+  it('throws error if no base URL is configured', () => {
+    // arrange:
+    urlConfig.baseUrlAnnonars = undefined
+
+    // (guarded)
+    expect(() => new AnnonarsClient(undefined)).toThrow(
+      'Configuration error: API base URL not configured'
+    )
+  })
+})
 
 describe.concurrent('AnnonarsClient.fetchGeneInfo()', () => {
   beforeEach(() => {
