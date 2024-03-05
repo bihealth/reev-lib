@@ -18,7 +18,13 @@ export const usePubtatorStore = defineStore('pubtator', () => {
   /** Detailed result information. */
   const searchResults = ref<SearchResults>({})
 
-  /** Initialize the store for the given HGNC symbol. */
+  /**
+   * Initialize the store for the given HGNC symbol.
+   *
+   * @param hgncSymbol$ HGNC symbol to initialize the store for.
+   * @param force Whether to force re-initialization.
+   * @throws Error if the search fails.
+   */
   const initialize = async (hgncSymbol$?: string, force: boolean = false) => {
     // Skip if already loaded
     if (!force && hgncSymbol$ === hgncSymbol.value) {
