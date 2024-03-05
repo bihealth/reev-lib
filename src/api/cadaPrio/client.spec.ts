@@ -1,8 +1,9 @@
 import fs from 'fs'
 import path from 'path'
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import createFetchMock from 'vitest-fetch-mock'
 
+import { setupUrlConfigForTesting, urlConfig } from '../../lib/urlConfig'
 import { CadaPrioClient } from './client'
 
 /** Fixture with prediction results. */
@@ -13,7 +14,39 @@ const cadaPrioPredictResultJson = JSON.parse(
 /** Initialize mock for `fetch()`. */
 const fetchMocker = createFetchMock(vi)
 
-describe.concurrent('CadaPrioClient', () => {
+describe.concurrent('CadaPrioClient.construct()', () => {
+  afterEach(() => {
+    setupUrlConfigForTesting()
+  })
+
+  it('constructs correctly with default base URL', () => {
+    // act:
+    const client = new CadaPrioClient()
+
+    // assert:
+    expect(client).toBeDefined()
+  })
+
+  it('constructs correctly with custom base URL', () => {
+    // act:
+    const client = new CadaPrioClient('http://localhost:8080')
+
+    // assert:
+    expect(client).toBeDefined()
+  })
+
+  it('throws error if no base URL is configured', () => {
+    // arrange:
+    urlConfig.baseUrlCadaPrio = undefined
+
+    // (guarded)
+    expect(() => new CadaPrioClient(undefined)).toThrow(
+      'Configuration error: API base URL not configured'
+    )
+  })
+})
+
+describe.concurrent('CadaPrioClient.predictGeneImpact()', () => {
   beforeEach(() => {
     fetchMocker.enableMocks()
     fetchMocker.resetMocks()

@@ -1,8 +1,9 @@
 import fs from 'fs'
 import path from 'path'
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import createFetchMock from 'vitest-fetch-mock'
 
+import { setupUrlConfigForTesting, urlConfig } from '../../lib/urlConfig'
 import { VigunoClient } from './client'
 import { HpoOmimsResult, HpoTermResult } from './types'
 
@@ -28,6 +29,38 @@ const responseResolveHpoTermByIdAbnormal = JSON.parse(
 const responseResolveHpoTermByIdFoobar = JSON.parse(
   fs.readFileSync(path.resolve(__dirname, './fixture.resolveHpoTermByName.foobar.json'), 'utf8')
 )
+
+describe.concurrent('VigunoClient.construct()', () => {
+  afterEach(() => {
+    setupUrlConfigForTesting()
+  })
+
+  it('constructs correctly with default base URL', () => {
+    // act:
+    const client = new VigunoClient()
+
+    // assert:
+    expect(client).toBeDefined()
+  })
+
+  it('constructs correctly with custom base URL', () => {
+    // act:
+    const client = new VigunoClient('http://localhost:8080')
+
+    // assert:
+    expect(client).toBeDefined()
+  })
+
+  it('throws error if no base URL is configured', () => {
+    // arrange:
+    urlConfig.baseUrlViguno = undefined
+
+    // (guarded)
+    expect(() => new VigunoClient(undefined)).toThrow(
+      'Configuration error: API base URL not configured'
+    )
+  })
+})
 
 describe.concurrent('Viguno Client', () => {
   beforeEach(() => {

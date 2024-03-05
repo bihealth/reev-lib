@@ -1,9 +1,10 @@
 import fs from 'fs'
 import path from 'path'
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import createFetchMock from 'vitest-fetch-mock'
 
 import { SeqvarImpl } from '../../lib/genomicVars'
+import { setupUrlConfigForTesting, urlConfig } from '../../lib/urlConfig'
 import { VariantValidatorClient } from './client'
 
 /** Fixture Seqvar */
@@ -16,6 +17,38 @@ const responseManeBrca1Json = JSON.parse(
 
 /** Initialize mock for `fetch()`. */
 const fetchMocker = createFetchMock(vi)
+
+describe.concurrent('VariantValidatorClient.construct()', () => {
+  afterEach(() => {
+    setupUrlConfigForTesting()
+  })
+
+  it('constructs correctly with default base URL', () => {
+    // act:
+    const client = new VariantValidatorClient()
+
+    // assert:
+    expect(client).toBeDefined()
+  })
+
+  it('constructs correctly with custom base URL', () => {
+    // act:
+    const client = new VariantValidatorClient('http://localhost:8080')
+
+    // assert:
+    expect(client).toBeDefined()
+  })
+
+  it('throws error if no base URL is configured', () => {
+    // arrange:
+    urlConfig.baseUrlVariantValidator = undefined
+
+    // (guarded)
+    expect(() => new VariantValidatorClient(undefined)).toThrow(
+      'Configuration error: API base URL not configured'
+    )
+  })
+})
 
 describe.concurrent('VariantValidator', () => {
   beforeEach(() => {
