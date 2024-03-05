@@ -509,10 +509,10 @@ const conditionsCols = computed<number>(() => {
                     <template v-for="item in items" :key="item.raw.panel.name">
                       <v-sheet class="rounded-l px-3 py-2 mt-3" color="background">
                         <div class="text-h6">
-                          {{ item.raw.panel.name }}
-                          <small> (v{{ item.raw.panel.version }}) </small>
+                          {{ item.raw.panel!.name }}
+                          <small> (v{{ item.raw.panel!.version }}) </small>
                           <a
-                            :href="`https://panelapp.genomicsengland.co.uk/panels/${item.raw.panel.id}`"
+                            :href="`https://panelapp.genomicsengland.co.uk/panels/${item.raw.panel!.id}`"
                             target="_blank"
                             class="ml-2"
                           >
@@ -575,7 +575,7 @@ const conditionsCols = computed<number>(() => {
                               Gene specific panel decision in PanelApp:
                               <a
                                 :href="`https://panelapp.genomicsengland.co.uk/panels/${
-                                  item.raw.panel.id
+                                  item.raw.panel!.id
                                 }/gene/${geneInfo.hgnc!.symbol}`"
                                 target="_blank"
                               >
