@@ -15,7 +15,7 @@ import { Record as HelixmtdbRecord } from '../../pbs/annonars/helixmtdb/base'
  * Interface for Clinvar Strucvars query response as returned by
  */
 export interface ClinvarSvQueryResponse$Api {
-  records: JsonValue[]
+  records?: JsonValue[]
 }
 
 /**
@@ -30,8 +30,9 @@ export interface ClinvarSvQueryResponse {
  */
 class ClinvarSvQueryResponse$Type {
   fromJson(apiResponse: ClinvarSvQueryResponse$Api): ClinvarSvQueryResponse {
+    const records = apiResponse.records ?? []
     return {
-      records: apiResponse.records.map((value) => ClinvarStrucvarResponseRecord.fromJson(value))
+      records: records.map((value) => ClinvarStrucvarResponseRecord.fromJson(value))
     }
   }
 }
