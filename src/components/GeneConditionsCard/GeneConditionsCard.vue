@@ -239,7 +239,7 @@ const conditionsCols = computed<number>(() => {
 
 <template>
   <!-- no ENSG => display loader -->
-  <template v-if="!geneInfo?.dbnsfp?.geneName?.length">
+  <template v-if="!geneInfo && !hpoTerms">
     <v-skeleton-loader class="mx-auto border" type="image,button" />
   </template>
 
