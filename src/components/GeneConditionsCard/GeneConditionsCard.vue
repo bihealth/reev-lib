@@ -239,7 +239,7 @@ const conditionsCols = computed<number>(() => {
 
 <template>
   <!-- no ENSG => display loader -->
-  <template v-if="!geneInfo?.dbnsfp?.geneName?.length">
+  <template v-if="!geneInfo && !hpoTerms">
     <v-skeleton-loader class="mx-auto border" type="image,button" />
   </template>
 
@@ -442,10 +442,10 @@ const conditionsCols = computed<number>(() => {
                   <template #header>
                     <v-toolbar class="px-2 rounded-t-lg border" color="background">
                       <div class="text-subtitle-1 mt-3">
-                        PanelApp Panels for {{ geneInfo.hgnc!.symbol }}
+                        PanelApp Panels for {{ geneInfo?.hgnc!.symbol }}
                         <a
                           :href="`https://panelapp.genomicsengland.co.uk/panels/entities/${
-                            geneInfo.hgnc!.symbol
+                            geneInfo?.hgnc!.symbol
                           }`"
                           target="_blank"
                         >
@@ -576,7 +576,7 @@ const conditionsCols = computed<number>(() => {
                               <a
                                 :href="`https://panelapp.genomicsengland.co.uk/panels/${
                                   item.raw.panel!.id
-                                }/gene/${geneInfo.hgnc!.symbol}`"
+                                }/gene/${geneInfo?.hgnc!.symbol}`"
                                 target="_blank"
                               >
                                 <v-icon>mdi-launch</v-icon>
