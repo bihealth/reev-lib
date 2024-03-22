@@ -39,6 +39,9 @@ const emit = defineEmits<{
 /** Vuetify theme. */
 const theme = useTheme()
 
+/** Show all results */
+const showAllResults = ref(false)
+
 /** The PubTator store. */
 const pubtatorStore = usePubtatorStore()
 
@@ -264,90 +267,184 @@ watch(
           <v-progress-circular indeterminate />
         </div>
         <div v-else>
-          <div
-            v-for="(pmid, idx) in Object.keys(pubtatorStore.searchResults)"
-            :key="pmid"
-            :class="{ 'mt-3 pt-3 border-top': idx > 0 }"
-          >
-            <span>
-              #{{ idx + 1 }}
-              &middot;
-              <a
-                :href="`https://pubmed.ncbi.nlm.nih.gov/${pubtatorStore.searchResults[pmid]?.abstract.pmid}/`"
-                target="_blank"
-              >
-                {{ pubtatorStore.searchResults[pmid]?.abstract.pmid }}
-                <small><v-icon>mdi-launch</v-icon></small>
-              </a>
-              &middot;
-              {{ pubtatorStore.searchResults[pmid]?.abstract.journal }}
-              &middot;
-              {{
-                DateTime.fromISO(pubtatorStore.searchResults[pmid]?.abstract.date).toFormat(
-                  'yyyy/MM/dd'
-                )
-              }}
-            </span>
-
+          <div v-if="showAllResults">
             <div
-              v-for="passage in pubtatorStore.searchResults[pmid]?.abstract.passages"
-              :key="passage.offset"
+              v-for="(pmid, idx) in Object.keys(pubtatorStore.searchResults)"
+              :key="pmid"
+              :class="{ 'mt-3 pt-3 border-top': idx > 0 }"
             >
-              <div v-if="passage.infons.type === 'title'">
-                <div class="text-h6">
-                  <!-- eslint-disable vue/no-v-html -->
-                  <span
-                    v-html="
-                      highlight(passage.text, extractPassageAnnotations(passage), passage.offset)
-                    "
-                  />
-                  <!-- eslint-enable -->
-                </div>
-                <div
-                  class="text-body-2"
-                  :class="{
-                    'text-grey-lighten-1': theme.global.current.value.dark,
-                    'text-grey-darken-1': !theme.global.current.value.dark
-                  }"
+              <span>
+                #{{ idx + 1 }}
+                &middot;
+                <a
+                  :href="`https://pubmed.ncbi.nlm.nih.gov/${pubtatorStore.searchResults[pmid]?.abstract.pmid}/`"
+                  target="_blank"
                 >
-                  {{ pubtatorStore.searchResults[pmid]?.abstract?.authors.join(', ') }}
+                  {{ pubtatorStore.searchResults[pmid]?.abstract.pmid }}
+                  <small><v-icon>mdi-launch</v-icon></small>
+                </a>
+                &middot;
+                {{ pubtatorStore.searchResults[pmid]?.abstract.journal }}
+                &middot;
+                {{
+                  DateTime.fromISO(pubtatorStore.searchResults[pmid]?.abstract.date).toFormat(
+                    'yyyy/MM/dd'
+                  )
+                }}
+              </span>
+
+              <div
+                v-for="passage in pubtatorStore.searchResults[pmid]?.abstract.passages"
+                :key="passage.offset"
+              >
+                <div v-if="passage.infons.type === 'title'">
+                  <div class="text-h6">
+                    <!-- eslint-disable vue/no-v-html -->
+                    <span
+                      v-html="
+                        highlight(passage.text, extractPassageAnnotations(passage), passage.offset)
+                      "
+                    />
+                    <!-- eslint-enable -->
+                  </div>
+                  <div
+                    class="text-body-2"
+                    :class="{
+                      'text-grey-lighten-1': theme.global.current.value.dark,
+                      'text-grey-darken-1': !theme.global.current.value.dark
+                    }"
+                  >
+                    {{ pubtatorStore.searchResults[pmid]?.abstract?.authors.join(', ') }}
+                  </div>
+                </div>
+                <div v-else-if="passage.infons.type === 'abstract'">
+                  <div class="text-body-2">
+                    <!-- eslint-disable vue/no-v-html -->
+                    <span
+                      v-html="
+                        highlight(passage.text, extractPassageAnnotations(passage), passage.offset)
+                      "
+                    />
+                    <!-- eslint-enable -->
+                  </div>
                 </div>
               </div>
-              <div v-else-if="passage.infons.type === 'abstract'">
-                <div class="text-body-2">
-                  <!-- eslint-disable vue/no-v-html -->
-                  <span
-                    v-html="
-                      highlight(passage.text, extractPassageAnnotations(passage), passage.offset)
-                    "
+
+              <div
+                v-if="extractAnnotations(pubtatorStore.searchResults[pmid]?.abstract).length > 0"
+              >
+                <template
+                  v-for="(annotation, idxInner) in extractAnnotations(
+                    pubtatorStore.searchResults[pmid]?.abstract
+                  )"
+                  :key="idxInner"
+                >
+                  <v-chip
+                    rounded="xl"
+                    :text="annotationName(annotation)"
+                    :title="`'${annotation.text}' (${annotation.type})`"
+                    :color="TYPE_TO_CHIP_COLOR[annotation.type]"
+                    class="mt-3"
+                    :class="{ 'ml-1': idxInner > 0 }"
                   />
-                  <!-- eslint-enable -->
-                </div>
+                </template>
               </div>
             </div>
+          </div>
+          <div v-else>
+            <div
+              v-for="(pmid, idx) in Object.keys(pubtatorStore.searchResults).slice(0, 2)"
+              :key="pmid"
+              :class="{ 'mt-3 pt-3 border-top': idx > 0 }"
+            >
+              <span>
+                #{{ idx + 1 }}
+                &middot;
+                <a
+                  :href="`https://pubmed.ncbi.nlm.nih.gov/${pubtatorStore.searchResults[pmid]?.abstract.pmid}/`"
+                  target="_blank"
+                >
+                  {{ pubtatorStore.searchResults[pmid]?.abstract.pmid }}
+                  <small><v-icon>mdi-launch</v-icon></small>
+                </a>
+                &middot;
+                {{ pubtatorStore.searchResults[pmid]?.abstract.journal }}
+                &middot;
+                {{
+                  DateTime.fromISO(pubtatorStore.searchResults[pmid]?.abstract.date).toFormat(
+                    'yyyy/MM/dd'
+                  )
+                }}
+              </span>
 
-            <div v-if="extractAnnotations(pubtatorStore.searchResults[pmid]?.abstract).length > 0">
-              <template
-                v-for="(annotation, idxInner) in extractAnnotations(
-                  pubtatorStore.searchResults[pmid]?.abstract
-                )"
-                :key="idxInner"
+              <div
+                v-for="passage in pubtatorStore.searchResults[pmid]?.abstract.passages"
+                :key="passage.offset"
               >
-                <v-chip
-                  rounded="xl"
-                  :text="annotationName(annotation)"
-                  :title="`'${annotation.text}' (${annotation.type})`"
-                  :color="TYPE_TO_CHIP_COLOR[annotation.type]"
-                  class="mt-3"
-                  :class="{ 'ml-1': idxInner > 0 }"
-                />
-              </template>
+                <div v-if="passage.infons.type === 'title'">
+                  <div class="text-h6">
+                    <!-- eslint-disable vue/no-v-html -->
+                    <span
+                      v-html="
+                        highlight(passage.text, extractPassageAnnotations(passage), passage.offset)
+                      "
+                    />
+                    <!-- eslint-enable -->
+                  </div>
+                  <div
+                    class="text-body-2"
+                    :class="{
+                      'text-grey-lighten-1': theme.global.current.value.dark,
+                      'text-grey-darken-1': !theme.global.current.value.dark
+                    }"
+                  >
+                    {{ pubtatorStore.searchResults[pmid]?.abstract?.authors.join(', ') }}
+                  </div>
+                </div>
+                <div v-else-if="passage.infons.type === 'abstract'">
+                  <div class="text-body-2">
+                    <!-- eslint-disable vue/no-v-html -->
+                    <span
+                      v-html="
+                        highlight(passage.text, extractPassageAnnotations(passage), passage.offset)
+                      "
+                    />
+                    <!-- eslint-enable -->
+                  </div>
+                </div>
+              </div>
+
+              <div
+                v-if="extractAnnotations(pubtatorStore.searchResults[pmid]?.abstract).length > 0"
+              >
+                <template
+                  v-for="(annotation, idxInner) in extractAnnotations(
+                    pubtatorStore.searchResults[pmid]?.abstract
+                  )"
+                  :key="idxInner"
+                >
+                  <v-chip
+                    rounded="xl"
+                    :text="annotationName(annotation)"
+                    :title="`'${annotation.text}' (${annotation.type})`"
+                    :color="TYPE_TO_CHIP_COLOR[annotation.type]"
+                    class="mt-3"
+                    :class="{ 'ml-1': idxInner > 0 }"
+                  />
+                </template>
+              </div>
             </div>
           </div>
         </div>
       </v-card-text>
 
       <v-card-actions>
+        <v-btn
+          :append-icon="showAllResults ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+          @click="showAllResults = !showAllResults"
+        >
+          {{ showAllResults ? 'Hide' : 'Show' }} all results
+        </v-btn>
         <v-btn
           :href="`https://www.ncbi.nlm.nih.gov/research/pubtator3/docsum?text=@GENE_${geneInfo?.hgnc?.symbol}`"
           target="_blank"
