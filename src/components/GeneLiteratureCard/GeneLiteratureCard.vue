@@ -255,7 +255,7 @@ watch(
         Literature
         <DocsLink anchor="literature" />
       </v-card-title>
-      <v-card-subtitle class="text-overline"> Top 10 from PubTator 3 </v-card-subtitle>
+      <v-card-subtitle class="text-overline"> Top results from PubTator 3 </v-card-subtitle>
       <v-card-text class="pt-3">
         <v-alert v-if="errorMessage" type="error" dismissible>
           {{ errorMessage }}
@@ -443,7 +443,7 @@ watch(
           :append-icon="showAllResults ? 'mdi-chevron-up' : 'mdi-chevron-down'"
           @click="showAllResults = !showAllResults"
         >
-          {{ showAllResults ? 'Hide' : 'Show' }} all results
+          {{ showAllResults ? 'Show less' : 'Show more' }}
         </v-btn>
         <v-btn
           :href="`https://www.ncbi.nlm.nih.gov/research/pubtator3/docsum?text=@GENE_${geneInfo?.hgnc?.symbol}`"

@@ -45,8 +45,8 @@ const props = withDefaults(
               <th>Gene</th>
               <th>Transcript</th>
               <th>Consequence</th>
-              <th>HGVS.p</th>
               <th>HGVS.t</th>
+              <th>HGVS.p</th>
               <th>Exon/Intron</th>
             </tr>
           </thead>
