@@ -9,7 +9,7 @@ const hescTadTrack = (apiBaseUrl: string): Track => ({
   sourceType: 'annotation',
   format: 'bed',
   visibilityWindow,
-  url: `${apiBaseUrl}grch37/hesc.bed`,
+  url: `${apiBaseUrl}/grch37/hesc.bed`,
   color: 'gray'
 })
 
@@ -18,7 +18,7 @@ const curatedMmsTrack = (apiBaseUrl: string): Track => ({
   sourceType: 'annotation',
   format: 'bed',
   visibilityWindow,
-  url: `${apiBaseUrl}grch37/patho-mms.bed`,
+  url: `${apiBaseUrl}/grch37/patho-mms.bed`,
   color: 'red'
 })
 
@@ -27,8 +27,8 @@ const duplicationTrack = (apiBaseUrl: string): Track => ({
   sourceType: 'annotation',
   format: 'bed',
   visibilityWindow,
-  url: `${apiBaseUrl}grch37/genomicSuperDups.bed.gz`,
-  indexURL: `${apiBaseUrl}grch37/genomicSuperDups.bed.gz.tbi`,
+  url: `${apiBaseUrl}/grch37/genomicSuperDups.bed.gz`,
+  indexURL: `${apiBaseUrl}/grch37/genomicSuperDups.bed.gz.tbi`,
   color: 'black'
 })
 
@@ -37,8 +37,8 @@ const repeatsTrack = (apiBaseUrl: string): Track => ({
   sourceType: 'annotation',
   format: 'bed',
   visibilityWindow,
-  url: `${apiBaseUrl}grch37/rmsk.bed.gz`,
-  indexURL: `${apiBaseUrl}grch37/rmsk.bed.gz.tbi`,
+  url: `${apiBaseUrl}/grch37/rmsk.bed.gz`,
+  indexURL: `${apiBaseUrl}/grch37/rmsk.bed.gz.tbi`,
   color: 'black'
 })
 
@@ -47,8 +47,8 @@ const altTrack = (apiBaseUrl: string): Track => ({
   sourceType: 'annotation',
   format: 'bed',
   visibilityWindow,
-  url: `${apiBaseUrl}grch37/altSeqLiftOverPsl.bed.gz`,
-  indexURL: `${apiBaseUrl}grch37/altSeqLiftOverPsl.bed.gz.tbi`,
+  url: `${apiBaseUrl}/grch37/altSeqLiftOverPsl.bed.gz`,
+  indexURL: `${apiBaseUrl}/grch37/altSeqLiftOverPsl.bed.gz.tbi`,
   color: 'black'
 })
 
@@ -57,8 +57,8 @@ const fixTrack = (apiBaseUrl: string): Track => ({
   sourceType: 'annotation',
   format: 'bed',
   visibilityWindow,
-  url: `${apiBaseUrl}grch37/fixSeqLiftOverPsl.bed.gz`,
-  indexURL: `${apiBaseUrl}grch37/fixSeqLiftOverPsl.bed.gz.tbi`,
+  url: `${apiBaseUrl}/grch37/fixSeqLiftOverPsl.bed.gz`,
+  indexURL: `${apiBaseUrl}/grch37/fixSeqLiftOverPsl.bed.gz.tbi`,
   color: 'black'
 })
 
@@ -87,8 +87,8 @@ const bgDbTracks = (apiBaseUrl: string): Track[] => {
       format: 'bed',
       visibilityWindow,
       displayMode: 'SQUISHED',
-      url: `${apiBaseUrl}grch37/${token}.bed.gz`,
-      indexURL: `${apiBaseUrl}grch37/${token}.bed.gz.tbi`,
+      url: `${apiBaseUrl}/grch37/${token}.bed.gz`,
+      indexURL: `${apiBaseUrl}/grch37/${token}.bed.gz.tbi`,
       color: 'black'
     }
   })
