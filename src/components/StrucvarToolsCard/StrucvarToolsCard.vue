@@ -81,7 +81,9 @@ const varsomeLinkout = computed((): string => {
   const chrom = props.strucvar.chrom.startsWith('chr')
     ? props.strucvar.chrom
     : `chr${props.strucvar.chrom}`
-  return `https://varsome.com/cnv/${urlRelease}/${chrom}:${props.strucvar.start}:${svStop(props.strucvar)}:${props.strucvar.svType}`
+  return `https://varsome.com/cnv/${urlRelease}/${chrom}:${props.strucvar.start}:${svStop(
+    props.strucvar
+  )}:${props.strucvar.svType}`
 })
 
 const franklinLinkout = computed((): string => {
@@ -90,7 +92,9 @@ const franklinLinkout = computed((): string => {
   }
   const { chrom, start, svType } = props.strucvar
   const urlRelease = props.strucvar?.genomeBuild === 'grch37' ? 'hg19' : 'hg38'
-  return `https://franklin.genoox.com/clinical-db/variant/sv/chr${chrom}-${start}-${svStop(props.strucvar)}-${svType}-${urlRelease}`
+  return `https://franklin.genoox.com/clinical-db/variant/sv/chr${chrom}-${start}-${svStop(
+    props.strucvar
+  )}-${svType}-${urlRelease}`
 })
 
 const jumpToLocus = async () => {
@@ -99,7 +103,9 @@ const jumpToLocus = async () => {
     : `chr${props.strucvar?.chrom}`
   // NB: we allow the call to fetch here as it goes to local IGV.
   await fetch(
-    `http://127.0.0.1:60151/goto?locus=${chrPrefixed}:${props.strucvar?.start}-${svStop(props.strucvar!)}`
+    `http://127.0.0.1:60151/goto?locus=${chrPrefixed}:${props.strucvar?.start}-${svStop(
+      props.strucvar!
+    )}`
   ).catch((e) => {
     const msg = "Couldn't connect to IGV. Please make sure IGV is running and try again."
     emit('error', msg)

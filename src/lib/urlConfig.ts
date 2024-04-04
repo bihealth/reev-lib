@@ -42,7 +42,7 @@ export const setupUrlConfigForTesting = () => {
   urlConfig.baseUrlViguno = '/internal/proxy/viguno'
   urlConfig.baseUrlCadaPrio = '/internal/proxy/cada-prio'
   urlConfig.baseUrlDotty = '/internal/proxy/dotty'
-  urlConfig.baseUrlNginx = '/remote/variantvalidator'
+  urlConfig.baseUrlNginx = '/internal/proxy/nginx'
   urlConfig.baseUrlVariantValidator = '/remote/variantvalidator'
   urlConfig.baseUrlPubtator = '/remote/pubtator3-api'
 }

@@ -512,7 +512,9 @@ const conditionsCols = computed<number>(() => {
                           {{ item.raw.panel!.name }}
                           <small> (v{{ item.raw.panel!.version }}) </small>
                           <a
-                            :href="`https://panelapp.genomicsengland.co.uk/panels/${item.raw.panel!.id}`"
+                            :href="`https://panelapp.genomicsengland.co.uk/panels/${
+                              item.raw.panel!.id
+                            }`"
                             target="_blank"
                             class="ml-2"
                           >
