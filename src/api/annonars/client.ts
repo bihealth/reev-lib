@@ -66,9 +66,13 @@ export class AnnonarsClient {
    */
   async fetchVariantInfo(seqvar: Seqvar): Promise<SeqvarInfoResponse> {
     const { genomeBuild, chrom, pos, del, ins } = seqvar
-    let chromosome = chrom.replace('chr', '')
+    let chromosome = chrom
+    if (chromosome.startsWith('chr')) {
+      chromosome = chromosome.substring(3)
+    }
+
     if (genomeBuild !== 'grch37') {
-      chromosome = `chr${chrom}`
+      chromosome = `chr${chromosome}`
     }
 
     const url =
