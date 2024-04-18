@@ -50,8 +50,7 @@ export class PubtatorClient {
     if (!exportRes.ok) {
       throw new StatusCodeNotOk(`Error running PubTator 3 export: ${exportRes.statusText}`)
     }
-    const exportDataText = await exportRes.text()
-    const exportDataLines = exportDataText.split(/\n/)
+    const exportData = (await exportRes.json())['PubTator3']
 
     // Zip search results and exports into searchResults
     const searchResults: { [key: string]: SearchResult } = {}
@@ -61,12 +60,9 @@ export class PubtatorClient {
         abstract: undefined
       }
     }
-    for (const exportDataLine of exportDataLines) {
+    for (const record of exportData) {
       try {
-        if (exportDataLine) {
-          const exportDataRecord = JSON.parse(exportDataLine)
-          searchResults[exportDataRecord.pmid].abstract = exportDataRecord
-        }
+        searchResults[record.id].abstract = record
       } catch (e) {
         throw new InvalidResponseContent(`failed to parse PubTator 3 export: ${e}`)
       }
