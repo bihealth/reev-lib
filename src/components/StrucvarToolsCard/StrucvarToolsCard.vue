@@ -98,14 +98,10 @@ const franklinLinkout = computed((): string => {
 })
 
 const jumpToLocus = async () => {
-  const chrPrefixed = props.strucvar?.chrom.startsWith('chr')
-    ? props.strucvar?.chrom
-    : `chr${props.strucvar?.chrom}`
+  const chrom = props.strucvar?.chrom == 'chrMT' ? 'chrM' : props.strucvar?.chrom
   // NB: we allow the call to fetch here as it goes to local IGV.
   await fetch(
-    `http://127.0.0.1:60151/goto?locus=${chrPrefixed}:${props.strucvar?.start}-${svStop(
-      props.strucvar!
-    )}`
+    `http://127.0.0.1:60151/goto?locus=${chrom}:${props.strucvar?.start}-${svStop(props.strucvar!)}`
   ).catch((e) => {
     const msg = "Couldn't connect to IGV. Please make sure IGV is running and try again."
     emit('error', msg)
