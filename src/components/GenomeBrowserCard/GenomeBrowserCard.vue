@@ -51,18 +51,27 @@ const addTracks = (browser: any) => {
   }
 }
 
+const removeTracks = (browser: any) => {
+  for (const track of publicTracks()) {
+    browser.removeTrack(track)
+  }
+}
+
 // Watch changes to the genome (requires full reload).
 watch(
   () => props.genomeBuild,
   () => {
-    ;(igvBrowser.value! as GenomeBrowser)
-      .loadGenome(translateGenome(props.genomeBuild))
-      .then((browser: GenomeBrowser) => {
-        browser.search(props.locus)
-      })
-      .then((browser: GenomeBrowser) => {
-        addTracks(browser)
-      })
+    if (igvBrowser.value && props.genomeBuild) {
+      removeTracks(igvBrowser.value! as GenomeBrowser)
+      ;(igvBrowser.value! as GenomeBrowser)
+        .loadGenome(translateGenome(props.genomeBuild))
+        .then(() => {
+          addTracks(igvBrowser.value! as GenomeBrowser)
+          if (props.locus) {
+            ;(igvBrowser.value! as GenomeBrowser).search(props.locus)
+          }
+        })
+    }
   }
 )
 
@@ -70,7 +79,7 @@ watch(
 watch(
   () => props.locus,
   () => {
-    if (igvBrowser.value) {
+    if (igvBrowser.value && props.locus) {
       ;(igvBrowser.value! as GenomeBrowser).search(props.locus)
     }
   }
@@ -84,11 +93,11 @@ onMounted(() => {
       locus: props.locus
     })
     .then((browser: GenomeBrowser) => {
-      igvBrowser.value = browser
       addTracks(browser)
       if (props.locus) {
-        ;(igvBrowser.value! as GenomeBrowser).search(props.locus)
+        ;(browser! as GenomeBrowser).search(props.locus)
       }
+      igvBrowser.value = browser
     })
 })
 </script>
