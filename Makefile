@@ -70,10 +70,15 @@ PROTO_BASE_MEHARI := https://raw.githubusercontent.com/varfish-org/mehari/main
 
 .PHONY: proto-fetch
 proto-fetch:
-	mkdir -p protos/annonars/{clinvar,cons,dbsnp,functional,genes,gnomad,helixmtdb,regions}
+	rm -rf  protos/{annonars,mehari}
+	mkdir -p protos/annonars/{clinvar,clinvar_data,cons,dbsnp,functional,genes,gnomad,helixmtdb,regions}
 	wget -O protos/annonars/clinvar/minimal.proto $(PROTO_BASE_ANNONARS)/protos/annonars/clinvar/minimal.proto
 	wget -O protos/annonars/clinvar/per_gene.proto $(PROTO_BASE_ANNONARS)/protos/annonars/clinvar/per_gene.proto
 	wget -O protos/annonars/clinvar/sv.proto $(PROTO_BASE_ANNONARS)/protos/annonars/clinvar/sv.proto
+	wget -O protos/annonars/clinvar_data/class_by_freq.proto $(PROTO_BASE_ANNONARS)/protos/annonars/clinvar_data/class_by_freq.proto
+	wget -O protos/annonars/clinvar_data/clinvar_public.proto $(PROTO_BASE_ANNONARS)/protos/annonars/clinvar_data/clinvar_public.proto
+	wget -O protos/annonars/clinvar_data/extracted_vars.proto $(PROTO_BASE_ANNONARS)/protos/annonars/clinvar_data/extracted_vars.proto
+	wget -O protos/annonars/clinvar_data/gene_impact.proto $(PROTO_BASE_ANNONARS)/protos/annonars/clinvar_data/gene_impact.proto
 	wget -O protos/annonars/cons/base.proto $(PROTO_BASE_ANNONARS)/protos/annonars/cons/base.proto
 	wget -O protos/annonars/dbsnp/base.proto $(PROTO_BASE_ANNONARS)/protos/annonars/dbsnp/base.proto
 	wget -O protos/annonars/functional/refseq.proto $(PROTO_BASE_ANNONARS)/protos/annonars/functional/refseq.proto
