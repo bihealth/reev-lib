@@ -3,10 +3,11 @@ import path from 'path'
 import { describe, expect, it } from 'vitest'
 
 import { setupMountedComponents } from '../../lib/testUtils'
-import { Record as ClinvarRecord } from '../../pbs/annonars/clinvar/minimal'
+// import { Record as ClinvarRecord } from '../../pbs/annonars/clinvar/minimal'
+import { ExtractedVcvRecordList } from '../../pbs/annonars/clinvar/minimal'
 import SeqvarClinvarCard from './SeqvarClinvarCard.vue'
 
-const clinvarRecordBrca1 = ClinvarRecord.fromJson(
+const clinvarRecordBrca1 = ExtractedVcvRecordList.fromJson(
   JSON.parse(
     fs.readFileSync(
       path.resolve(__dirname, '../../api/annonars/fixture.variantInfo.BRCA1.json'),
