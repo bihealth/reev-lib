@@ -75,8 +75,8 @@ const props = withDefaults(
                   </v-chip>
                 </td>
                 <td>{{ oneTxCsq.consequences.join(', ') }}</td>
-                <td>{{ oneTxCsq.hgvsT }}</td>
-                <td>{{ oneTxCsq.hgvsP }}</td>
+                <td style="max-width: 400px;">{{ oneTxCsq.hgvsT }}</td>
+                <td style="max-width: 400px;">{{ oneTxCsq.hgvsP }}</td>
                 <template v-if="oneTxCsq.rank">
                   <td>{{ oneTxCsq.rank!.rank ?? 0 }} / {{ oneTxCsq.rank!.total ?? 0 }}</td>
                 </template>
