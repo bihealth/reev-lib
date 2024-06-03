@@ -4,27 +4,20 @@
  */
 import { computed } from 'vue'
 
-import {
-  ClinvarPerGeneRecord,
-  CoarseClinicalSignificance
-} from '../../pbs/annonars/clinvar/per_gene'
+import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
+import { CoarseClinicalSignificance } from '../../pbs/annonars/clinvar_data/class_by_freq'
 import VegaPlot from '../VegaPlot/VegaPlot.vue'
 
-const props = withDefaults(
-  defineProps<{
-    /** Gene per clinvar */
-    clinvarPerGene?: ClinvarPerGeneRecord
-  }>(),
-  {
-    clinvarPerGene: undefined
-  }
-)
+const props = defineProps<{
+  /** Gene per clinvar */
+  clinvarPerGene?: ClinvarPerGeneRecord
+}>()
 
 const COARSE_CLINSIG_LABELS: { [key in CoarseClinicalSignificance]: string } = {
   [CoarseClinicalSignificance.COARSE_CLINICAL_SIGNIFICANCE_BENIGN]: 'benign',
   [CoarseClinicalSignificance.COARSE_CLINICAL_SIGNIFICANCE_UNCERTAIN]: 'uncertain',
   [CoarseClinicalSignificance.COARSE_CLINICAL_SIGNIFICANCE_PATHOGENIC]: 'pathogenic',
-  [CoarseClinicalSignificance.COARSE_CLINICAL_SIGNIFICANCE_UNKNOWN]: 'unknown'
+  [CoarseClinicalSignificance.COARSE_CLINICAL_SIGNIFICANCE_UNSPECIFIED]: 'UNSPECIFIED'
 }
 
 const bucketLabels = [
@@ -61,22 +54,40 @@ const vegaData = computed<any>(() => {
     freqBucketNo: number
     value: number
   }[] = []
-  for (const record of props.clinvarPerGene?.perFreqCounts || []) {
-    for (let i = 0; i < record.counts.length; i++) {
-      if (
-        record.counts[i] > 0 &&
-        record.coarseClinsig !== CoarseClinicalSignificance.COARSE_CLINICAL_SIGNIFICANCE_UNKNOWN
-      ) {
-        const value = {
-          coarseClinsig: COARSE_CLINSIG_LABELS[record.coarseClinsig],
-          freqBucket: bucketLabels[i],
-          freqBucketNo: i,
-          value: record.counts[i]
-        }
-        values.push(value)
-      }
+  const benignCounts = props.clinvarPerGene?.perFreqCounts?.benignCounts ?? []
+  for (let i = 0; i < benignCounts.length; i++) {
+    if (benignCounts[i]) {
+      values.push({
+        coarseClinsig: 'benign',
+        freqBucket: bucketLabels[i] ?? "no frequency",
+        freqBucketNo: i,
+        value: benignCounts[i]
+      })
     }
   }
+  const uncertainCounts = props.clinvarPerGene?.perFreqCounts?.uncertainCounts ?? []
+  for (let i = 0; i < uncertainCounts.length; i++) {
+    if (uncertainCounts[i]) {
+      values.push({
+        coarseClinsig: 'uncertain',
+        freqBucket: bucketLabels[i] ?? "no frequency",
+        freqBucketNo: i,
+        value: uncertainCounts[i]
+      })
+    }
+  }
+  const pathogenicCounts = props.clinvarPerGene?.perFreqCounts?.pathogenicCounts ?? []
+  for (let i = 0; i < pathogenicCounts.length; i++) {
+    if (pathogenicCounts[i]) {
+      values.push({
+        coarseClinsig: 'pathogenic',
+        freqBucket: bucketLabels[i] ?? "no frequency",
+        freqBucketNo: i,
+        value: pathogenicCounts[i]
+      })
+    }
+  }
+
   if (values.length) {
     return values
   } else {
@@ -130,7 +141,7 @@ const vegaEncoding = {
     type: 'nominal',
     sort: Object.values(COARSE_CLINSIG_LABELS),
     scale: {
-      domain: Object.values(COARSE_CLINSIG_LABELS).filter((label) => label !== 'unknown'),
+      domain: Object.values(COARSE_CLINSIG_LABELS).filter((label) => label !== 'UNSPECIFIED'),
       range: ['#5d9936', '#f5c964', '#b05454']
     }
   }
