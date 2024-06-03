@@ -56,7 +56,6 @@ const props = withDefaults(
                       <td class="pa-0 text-right">
                         <v-chip
                           density="compact"
-                          rounded="xl"
                           :class="`bg-${
                             CLINGEN_DOSAGE_COLOR[geneInfo?.clingen.haploinsufficiencyScore]
                           }`"
@@ -72,7 +71,6 @@ const props = withDefaults(
                       <td class="pa-0 text-right">
                         <v-chip
                           density="compact"
-                          rounded="xl"
                           :class="`bg-${
                             CLINGEN_DOSAGE_COLOR[geneInfo?.clingen.triplosensitivityScore]
                           }`"

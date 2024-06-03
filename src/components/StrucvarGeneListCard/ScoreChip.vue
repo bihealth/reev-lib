@@ -64,7 +64,7 @@ const chipColor = computed<string>(() => {
 
 <template>
   <template v-if="hrefUrl === undefined">
-    <v-chip density="compact" rounded="xl" :class="`bg-${chipColor}`">
+    <v-chip density="compact" :class="`bg-${chipColor}`">
       <!-- eslint-disable vue/no-v-html -->
       <template v-if="value !== undefined && useRounded">
         <span v-html="roundIt(value)"></span>
@@ -77,7 +77,7 @@ const chipColor = computed<string>(() => {
   </template>
   <template v-else>
     <a :href="hrefUrl" target="blank">
-      <v-chip density="compact" rounded="xl" :class="`bg-${chipColor}`">
+      <v-chip density="compact" :class="`bg-${chipColor}`">
         <!-- eslint-disable vue/no-v-html -->
         <template v-if="value !== undefined && useRounded">
           <span v-html="roundIt(value)"></span>

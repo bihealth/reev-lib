@@ -30,7 +30,7 @@ const isMultiRecord = computed<boolean>(() => {
 <template>
   <tr v-if="rcv.classifications?.germlineClassification">
     <td>
-      <v-chip v-if="isMultiRecord" rounded="xl" class="tonal mr-2" size="small"> germline </v-chip>
+      <v-chip v-if="isMultiRecord" class="tonal mr-2" size="small"> germline </v-chip>
       {{ (rcv.title ?? 'AND not provided').split('AND')[1] }}
     </td>
     <td>
@@ -80,9 +80,7 @@ const isMultiRecord = computed<boolean>(() => {
 
   <tr v-if="rcv.classifications?.somaticClinicalImpact">
     <td>
-      <v-chip v-if="isMultiRecord" rounded="xl" class="tonal mr-2" size="small">
-        oncogenicity
-      </v-chip>
+      <v-chip v-if="isMultiRecord" class="tonal mr-2" size="small"> oncogenicity </v-chip>
       {{ (rcv.title ?? 'AND not provided').split('AND')[1] }}
     </td>
     <td>
@@ -138,9 +136,7 @@ const isMultiRecord = computed<boolean>(() => {
 
   <tr v-if="rcv.classifications?.oncogenicityClassification">
     <td>
-      <v-chip v-if="isMultiRecord" rounded="xl" class="tonal mr-2" size="small">
-        oncogenicity
-      </v-chip>
+      <v-chip v-if="isMultiRecord" class="tonal mr-2" size="small"> oncogenicity </v-chip>
       {{ (rcv.title ?? 'AND not provided').split('AND')[1] }}
     </td>
     <td>

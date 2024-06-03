@@ -6,6 +6,7 @@ import {
   AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_LABEL,
   AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_STARS
 } from './constants'
+import { clinsigColor } from './helpers'
 
 /** This component's props */
 const props = defineProps<{
@@ -37,7 +38,9 @@ const classificationLabel = computed<string>(() => {
     <v-row no-gutters class="flex-nowrap">
       <v-col cols="3" class="font-weight-bold"> Clinical Impact </v-col>
       <v-col cols="9">
-        {{ clinicalImpact?.description ?? 'UNSPECIFIED' }}
+        <v-chip :color="clinsigColor(clinicalImpact?.description)">
+          {{ clinicalImpact?.description ?? 'UNSPECIFIED' }}
+        </v-chip>
       </v-col>
     </v-row>
     <v-row no-gutters calss="flex-nowrap">

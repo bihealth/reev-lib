@@ -15,16 +15,14 @@ const props = defineProps<{
       :href="`https://search.clinicalgenome.org/kb/gene-dosage/${geneSymbol ?? ''}`"
       target="_blank"
     >
-      <v-chip density="compact" rounded="xl" :class="`bg-${CLINGEN_DOSAGE_COLOR[dosage]}`">
-        AR
-      </v-chip>
+      <v-chip density="compact" :class="`bg-${CLINGEN_DOSAGE_COLOR[dosage]}`"> AR </v-chip>
       <small class="pl-1"><v-icon>mdi-launch</v-icon></small>
     </a>
   </template>
   <template
     v-else-if="dosage === undefined || dosage === ClingenDosageScore.CLINGEN_DOSAGE_SCORE_UNKNOWN"
   >
-    <v-chip density="compact" rounded="xl" :class="`bg-grey-lighten-5`"> N/A </v-chip>
+    <v-chip density="compact" :class="`bg-grey-lighten-5`"> N/A </v-chip>
     <small class="pl-1">
       <v-icon><!--spacer only--></v-icon>
     </small>
@@ -34,7 +32,7 @@ const props = defineProps<{
       :href="`https://search.clinicalgenome.org/kb/gene-dosage/${geneSymbol ?? ''}`"
       target="_blank"
     >
-      <v-chip density="compact" rounded="xl" :class="`bg-${CLINGEN_DOSAGE_COLOR[dosage]}`">
+      <v-chip density="compact" :class="`bg-${CLINGEN_DOSAGE_COLOR[dosage]}`">
         {{ CLINGEN_DOSAGE_SCORES[dosage] }}
       </v-chip>
       <small class="pl-1"><v-icon>mdi-launch</v-icon></small>

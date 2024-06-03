@@ -340,7 +340,6 @@ watch(
                   :key="idxInner"
                 >
                   <v-chip
-                    rounded="xl"
                     :text="annotationName(annotation)"
                     :title="`'${annotation.text}' (${annotation.type})`"
                     :color="TYPE_TO_CHIP_COLOR[annotation.type]"
@@ -424,7 +423,6 @@ watch(
                   :key="idxInner"
                 >
                   <v-chip
-                    rounded="xl"
                     :text="annotationName(annotation)"
                     :title="`'${annotation.text}' (${annotation.type})`"
                     :color="TYPE_TO_CHIP_COLOR[annotation.type]"
