@@ -52,6 +52,6 @@ describe.concurrent('SeqvarClinvarCard.vue', async () => {
     // act: nothing, only test rendering
 
     // assert:
-    expect(wrapper.text()).toContain('No ClinVar information available.')
+    expect(wrapper.text()).toContain('Variant not present in local ClinVar copy.')
   })
 })
