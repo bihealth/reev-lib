@@ -6,7 +6,7 @@ import { setupMountedComponents } from '../../lib/testUtils'
 import { ExtractedVcvRecordList } from '../../pbs/annonars/clinvar/minimal'
 import SeqvarClinvarCard from './SeqvarClinvarCard.vue'
 
-const clinvarRecordBrca1 = ExtractedVcvRecordList.fromJson(
+const clinvarRecordListBrca1 = ExtractedVcvRecordList.fromJson(
   JSON.parse(
     fs.readFileSync(
       path.resolve(__dirname, '../../api/annonars/fixture.variantInfo.BRCA1.json'),
@@ -22,7 +22,7 @@ describe.concurrent('SeqvarClinvarCard.vue', async () => {
       { component: SeqvarClinvarCard },
       {
         props: {
-          clinvarRecord: clinvarRecordBrca1
+          clinvarRecords: clinvarRecordListBrca1
         }
       }
     )
@@ -35,7 +35,7 @@ describe.concurrent('SeqvarClinvarCard.vue', async () => {
     const stars = wrapper.findAll('.mdi-star')
     expect(stars.length).toBe(15)
     const starsOutline = wrapper.findAll('.mdi-star-outline')
-    expect(starsOutline.length).toBe(30)
+    expect(starsOutline.length).toBe(21)
   })
 
   it('renders the ClinVar info (not found)', async () => {
@@ -44,7 +44,7 @@ describe.concurrent('SeqvarClinvarCard.vue', async () => {
       { component: SeqvarClinvarCard },
       {
         props: {
-          clinvarRecord: undefined
+          clinvarRecords: { records: [] }
         }
       }
     )

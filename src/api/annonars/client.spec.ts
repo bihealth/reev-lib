@@ -33,7 +33,7 @@ const fetchMocker = createFetchMock(vi)
 /** Example Sequence Variant */
 const seqvar = new SeqvarImpl('grch37', '1', 123, 'A', 'G')
 
-describe.concurrent('AnnonarsClient.construct()', () => {
+describe('AnnonarsClient.construct()', () => {
   afterEach(() => {
     setupUrlConfigForTesting()
   })
@@ -65,7 +65,7 @@ describe.concurrent('AnnonarsClient.construct()', () => {
   })
 })
 
-describe.concurrent('AnnonarsClient.fetchGeneInfo()', () => {
+describe('AnnonarsClient.fetchGeneInfo()', () => {
   beforeEach(() => {
     fetchMocker.enableMocks()
     fetchMocker.resetMocks()
@@ -103,7 +103,7 @@ describe.concurrent('AnnonarsClient.fetchGeneInfo()', () => {
   })
 })
 
-describe.concurrent('AnnonarsClient.fetchVariantInfo()', () => {
+describe('AnnonarsClient.fetchVariantInfo()', () => {
   beforeEach(() => {
     fetchMocker.enableMocks()
     fetchMocker.resetMocks()
@@ -159,7 +159,7 @@ describe.concurrent('AnnonarsClient.fetchVariantInfo()', () => {
   })
 })
 
-describe.concurrent('AnnonarsClient.fetchGeneClinvarInfo()', () => {
+describe('AnnonarsClient.fetchGeneClinvarInfo()', () => {
   beforeEach(() => {
     fetchMocker.enableMocks()
     fetchMocker.resetMocks()
@@ -198,7 +198,7 @@ describe.concurrent('AnnonarsClient.fetchGeneClinvarInfo()', () => {
   })
 })
 
-describe.concurrent('AnnonarsClient.fetchGenes()', () => {
+describe('AnnonarsClient.fetchGenes()', () => {
   beforeEach(() => {
     fetchMocker.enableMocks()
     fetchMocker.resetMocks()
@@ -239,7 +239,7 @@ describe.concurrent('AnnonarsClient.fetchGenes()', () => {
   })
 })
 
-describe.concurrent('AnnonarsClient.fetchGeneInfos()', () => {
+describe('AnnonarsClient.fetchGeneInfos()', () => {
   beforeEach(() => {
     fetchMocker.enableMocks()
     fetchMocker.resetMocks()
@@ -276,7 +276,7 @@ describe.concurrent('AnnonarsClient.fetchGeneInfos()', () => {
   })
 })
 
-describe.concurrent('AnnonarsClient.fetchClinvarStrucvars()', () => {
+describe('AnnonarsClient.fetchClinvarStrucvars()', () => {
   beforeEach(() => {
     fetchMocker.enableMocks()
     fetchMocker.resetMocks()

@@ -8,10 +8,10 @@ describe.concurrent('helpers.ts', async () => {
     ['Likely benign', 'green-lighten-3'],
     ['Likely pathogenic', 'orange-darken-2'],
     ['Pathogenic', 'red-darken-3'],
-    ['Uncertain significance', 'greys-lighten-2'],
+    ['Uncertain significance', 'grey-lighten-2'],
     ['Likely benign/benign', 'green-lighten-3'],
     ['Likely pathogenic/pathogenic', 'orange-darken-2'],
-    ['Conflicting interpretations', 'greys-lighten-2']
+    ['Conflicting interpretations', 'grey-lighten-2']
   ])('returns the correct value for %s (%s)', (description: string, expected: string) => {
     expect(clinsigColor(description)).toEqual(expected)
   })
