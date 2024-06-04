@@ -14,7 +14,7 @@ export const clinsigColor = (description?: string) => {
     description.toLowerCase().includes('uncertain') ||
     description.toLowerCase().includes('conflicting')
   ) {
-    return 'grey-lighten-2'
+    return 'grey'
   } else {
     return 'grey-darken-2'
   }

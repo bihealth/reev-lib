@@ -36,7 +36,18 @@ const classificationLabel = computed<string>(() => {
 <template>
   <div v-if="clinicalImpact">
     <v-row no-gutters class="flex-nowrap">
-      <v-col cols="3" class="font-weight-bold"> Clinical Impact </v-col>
+      <v-col cols="3" class="font-weight-bold">
+        <v-chip
+          bg-color="grey-darken-4"
+          title="somatic clinical impact"
+          rounded="sm"
+          class="mr-2 pl-1 pr-1"
+          density="compact"
+        >
+          I
+        </v-chip>
+        Clinical Impact
+      </v-col>
       <v-col cols="9">
         <v-chip :color="clinsigColor(clinicalImpact?.description)">
           {{ clinicalImpact?.description ?? 'UNSPECIFIED' }}

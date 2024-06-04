@@ -8,7 +8,7 @@ describe.concurrent('helpers.ts', async () => {
     ['Likely benign', 'green-lighten-3'],
     ['Likely pathogenic', 'orange-darken-2'],
     ['Pathogenic', 'red-darken-3'],
-    ['Uncertain significance', 'grey-lighten-2'],
+    ['Uncertain significance', 'grey'],
     ['Likely benign/benign', 'green-lighten-3'],
     ['Likely pathogenic/pathogenic', 'orange-darken-2'],
     ['Conflicting interpretations', 'grey-lighten-2']

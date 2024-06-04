@@ -36,7 +36,18 @@ const classificationLabel = computed<string>(() => {
 <template>
   <div v-if="germlineClassification">
     <v-row no-gutters class="flex-nowrap">
-      <v-col cols="3" class="font-weight-bold"> Classification </v-col>
+      <v-col cols="3" class="font-weight-bold">
+        <v-chip
+          bg-color="grey-darken-4"
+          title="germline"
+          rounded="sm"
+          class="mr-2 pl-1 pr-1"
+          density="compact"
+        >
+          G
+        </v-chip>
+        Classification
+      </v-col>
       <v-col cols="9">
         <v-chip :color="clinsigColor(germlineClassification?.description)">
           {{ germlineClassification?.description ?? 'UNSPECIFIED' }}
