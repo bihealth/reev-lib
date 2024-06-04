@@ -3,7 +3,6 @@ import path from 'path'
 import { describe, expect, it } from 'vitest'
 
 import { setupMountedComponents } from '../../lib/testUtils'
-// import { Record as ClinvarRecord } from '../../pbs/annonars/clinvar/minimal'
 import { ExtractedVcvRecordList } from '../../pbs/annonars/clinvar/minimal'
 import SeqvarClinvarCard from './SeqvarClinvarCard.vue'
 

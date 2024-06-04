@@ -59,7 +59,7 @@ const vegaData = computed<any>(() => {
     if (benignCounts[i]) {
       values.push({
         coarseClinsig: 'benign',
-        freqBucket: bucketLabels[i] ?? "no frequency",
+        freqBucket: bucketLabels[i] ?? 'no frequency',
         freqBucketNo: i,
         value: benignCounts[i]
       })
@@ -70,7 +70,7 @@ const vegaData = computed<any>(() => {
     if (uncertainCounts[i]) {
       values.push({
         coarseClinsig: 'uncertain',
-        freqBucket: bucketLabels[i] ?? "no frequency",
+        freqBucket: bucketLabels[i] ?? 'no frequency',
         freqBucketNo: i,
         value: uncertainCounts[i]
       })
@@ -81,7 +81,7 @@ const vegaData = computed<any>(() => {
     if (pathogenicCounts[i]) {
       values.push({
         coarseClinsig: 'pathogenic',
-        freqBucket: bucketLabels[i] ?? "no frequency",
+        freqBucket: bucketLabels[i] ?? 'no frequency',
         freqBucketNo: i,
         value: pathogenicCounts[i]
       })

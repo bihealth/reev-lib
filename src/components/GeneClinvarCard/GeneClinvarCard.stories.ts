@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/vue3'
 
 import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
+import { GeneTranscriptsResponse } from '../../pbs/mehari/server'
 import geneInfoBrca1Json from '../GenePathogenicityCard/fixture.geneInfo.BRCA1.json'
 import geneInfoTgdsJson from '../GenePathogenicityCard/fixture.geneInfo.TGDS.json'
 import GeneClinvarCard from './GeneClinvarCard.vue'

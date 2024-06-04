@@ -5,10 +5,11 @@
 import { computed } from 'vue'
 
 import type { GenomeBuild } from '../../lib/genomeBuilds'
-import { ClinicalSignificance, type Record } from '../../pbs/annonars/clinvar/minimal'
 import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
+import { ExtractedVcvRecord } from '../../pbs/annonars/clinvar_data/extracted_vars'
 import { Transcript } from '../../pbs/mehari/txs'
 import VegaPlot from '../VegaPlot/VegaPlot.vue'
+import { CLINVAR_SIGNIFICANCE_TO_INT, convertClinvarSignificance } from './lib'
 
 /** This component's props. */
 const props = withDefaults(
@@ -30,38 +31,21 @@ const props = withDefaults(
   }
 )
 
-const CLINVAR_SIGNIFICANCE_TO_INT: { [Key in ClinicalSignificance]: number } = {
-  [ClinicalSignificance.CLINICAL_SIGNIFICANCE_UNKNOWN]: -3,
-  [ClinicalSignificance.CLINICAL_SIGNIFICANCE_PATHOGENIC]: 2,
-  [ClinicalSignificance.CLINICAL_SIGNIFICANCE_LIKELY_PATHOGENIC]: 1,
-  [ClinicalSignificance.CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE]: 0,
-  [ClinicalSignificance.CLINICAL_SIGNIFICANCE_LIKELY_BENIGN]: -1,
-  [ClinicalSignificance.CLINICAL_SIGNIFICANCE_BENIGN]: -2
-}
-
-const convertClinvarSignificance = (input: ClinicalSignificance): number => {
-  if (input in CLINVAR_SIGNIFICANCE_TO_INT) {
-    return CLINVAR_SIGNIFICANCE_TO_INT[input]
-  } else {
-    return -4
-  }
-}
-
 const minMax = computed(() => {
   if (!props.clinvarPerGene) {
     return []
   }
   let min: number | null = null
   let max: number | null = null
-  for (const item of props.clinvarPerGene.variants) {
-    if (item.genomeRelease.toLowerCase() == props.genomeBuild) {
+  for (const perRelease of props.clinvarPerGene.perReleaseVars) {
+    if (perRelease.release!.toLowerCase() == props.genomeBuild) {
       // Go through all variants and find the min and max pos.
-      for (const variant of item.variants ?? []) {
-        if (min === null || variant.start < min) {
-          min = variant.start
+      for (const variant of perRelease.variants) {
+        if (min === null || variant.sequenceLocation!.start! < min) {
+          min = variant.sequenceLocation!.start!
         }
-        if (max === null || variant.start > max) {
-          max = variant.start
+        if (max === null || variant.sequenceLocation!.start! > max) {
+          max = variant.sequenceLocation!.start!
         }
       }
     }
@@ -112,17 +96,25 @@ const vegaData = computed(() => {
   if (!props.clinvarPerGene) {
     return []
   }
-  let clinvarInfo: Record[] = []
-  for (const item of props.clinvarPerGene.variants ?? []) {
-    if (item.genomeRelease.toLowerCase() == props.genomeBuild) {
-      clinvarInfo = item.variants
+  let clinvarInfo: ExtractedVcvRecord[] = []
+  for (const perRelease of props.clinvarPerGene.perReleaseVars) {
+    if (perRelease.release!.toLowerCase() == props.genomeBuild) {
+      clinvarInfo = perRelease.variants
     }
   }
 
-  return clinvarInfo.map((variant: Record) => ({
-    pos: variant.start,
-    clinsig: convertClinvarSignificance(variant.referenceAssertions[0].clinicalSignificance)
-  }))
+  return clinvarInfo
+    .filter(
+      (variant: ExtractedVcvRecord) =>
+        variant.classifications?.germlineClassification?.description?.length
+    )
+    .map((variant: ExtractedVcvRecord) => ({
+      pos: variant.sequenceLocation!.start!,
+      clinsig:
+        CLINVAR_SIGNIFICANCE_TO_INT[
+          convertClinvarSignificance(variant.classifications?.germlineClassification?.description)
+        ]
+    }))
 })
 
 const vegaEncoding = {}
