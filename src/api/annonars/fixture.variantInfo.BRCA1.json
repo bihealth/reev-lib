@@ -1,5 +1,5 @@
 {
-  "server_version": "0.29.3",
+  "server_version": "0.37.0",
   "query": {
     "genome_release": "grch37",
     "chromosome": "17",
@@ -45,12 +45,12 @@
       "minDistTSS": 41014,
       "minDistTSE": 543,
       "SIFTcat": "deleterious",
-      "SIFTval": 0,
+      "SIFTval": 0.0,
       "PolyPhenCat": "probably_damaging",
-      "PolyPhenVal": 1,
+      "PolyPhenVal": 1.0,
       "priPhCons": 0.994,
-      "mamPhCons": 1,
-      "verPhCons": 1,
+      "mamPhCons": 1.0,
+      "verPhCons": 1.0,
       "priPhyloP": 0.557,
       "mamPhyloP": 2.76,
       "verPhyloP": 3.376,
@@ -59,20 +59,20 @@
       "mirSVR-Score": null,
       "mirSVR-E": null,
       "mirSVR-Aln": null,
-      "cHmmTssA": 0,
-      "cHmmTssAFlnk": 0,
-      "cHmmTxFlnk": 0,
+      "cHmmTssA": 0.0,
+      "cHmmTssAFlnk": 0.0,
+      "cHmmTxFlnk": 0.0,
       "cHmmTx": 0.118,
       "cHmmTxWk": 0.52,
       "cHmmEnhG": 0.031,
       "cHmmEnh": 0.047,
-      "cHmmZnfRpts": 0,
-      "cHmmHet": 0,
-      "cHmmTssBiv": 0,
-      "cHmmBivFlnk": 0,
-      "cHmmEnhBiv": 0,
-      "cHmmReprPC": 0,
-      "cHmmReprPCWk": 0,
+      "cHmmZnfRpts": 0.0,
+      "cHmmHet": 0.0,
+      "cHmmTssBiv": 0.0,
+      "cHmmBivFlnk": 0.0,
+      "cHmmEnhBiv": 0.0,
+      "cHmmReprPC": 0.0,
+      "cHmmReprPCWk": 0.0,
       "cHmmQuies": 0.283,
       "GerpRS": 1096.2,
       "GerpRSpval": 2.26414e-94,
@@ -86,7 +86,7 @@
       "Segway": "GE0",
       "EncH3K27Ac": 3.08,
       "EncH3K4Me1": 4.24,
-      "EncH3K4Me3": 2,
+      "EncH3K4Me3": 2.0,
       "EncExp": 105.56,
       "EncNucleo": 0.9,
       "EncOCC": null,
@@ -102,15 +102,15 @@
       "EncOCctcfSig": null,
       "EncOCmycSig": null,
       "Grantham": 107,
-      "SpliceAI-acc-gain": 0,
-      "SpliceAI-acc-loss": 0,
-      "SpliceAI-don-gain": 0,
+      "SpliceAI-acc-gain": 0.0,
+      "SpliceAI-acc-loss": 0.0,
+      "SpliceAI-don-gain": 0.0,
       "SpliceAI-don-loss": 0.15,
-      "MMSp_acceptorIntron": 0,
-      "MMSp_acceptor": 0,
+      "MMSp_acceptorIntron": 0.0,
+      "MMSp_acceptor": 0.0,
       "MMSp_exon": -0.143,
-      "MMSp_donor": 0,
-      "MMSp_donorIntron": 0,
+      "MMSp_donor": 0.0,
+      "MMSp_donorIntron": 0.0,
       "Dist2Mutation": 55,
       "Freq100bp": 0,
       "Rare100bp": 0,
@@ -177,10 +177,16 @@
       "SIFT4G_score": "0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;.;.;0.0",
       "SIFT4G_converted_rankscore": 0.92824,
       "SIFT4G_pred": "D;D;D;D;D;D;D;D;.;.;D",
+      "Polyphen2_HDIV_score": ".;0.991;.;.;.;1.0;.;.;.;1.0;.",
+      "Polyphen2_HDIV_rankscore": 0.90584,
+      "Polyphen2_HDIV_pred": ".;D;.;.;.;D;.;.;.;D;.",
+      "Polyphen2_HVAR_score": ".;0.691;.;.;.;1.0;.;.;.;1.0;.",
+      "Polyphen2_HVAR_rankscore": 0.97372,
+      "Polyphen2_HVAR_pred": ".;P;.;.;.;D;.;.;.;D;.",
       "LRT_score": 0.000101,
       "LRT_converted_rankscore": 0.50451,
       "LRT_pred": "D",
-      "LRT_Omega": 0,
+      "LRT_Omega": 0.0,
       "MutationTaster_score": "0.999983;0.999983;0.999997;0.999983;0.999983;0.999899;0.999983;0.999983;0.999983;0.999983;0.999871;1;1;0.992545",
       "MutationTaster_converted_rankscore": 0.81001,
       "MutationTaster_pred": "D;D;D;D;D;D;D;D;D;D;D;D;D;N",
@@ -195,6 +201,8 @@
       "PROVEAN_score": "-3.74;-0.7;.;-3.38;.;.;-0.69;-3.86;-3.73;-1.15;-3.41",
       "PROVEAN_converted_rankscore": 0.72471,
       "PROVEAN_pred": "D;N;.;D;.;.;N;D;D;N;D",
+      "VEST4_score": "0.922;0.866;0.859;0.809;0.933;0.934;0.875;0.924;.;.;.",
+      "VEST4_rankscore": 0.93959,
       "MetaSVM_score": 0.8469,
       "MetaSVM_rankscore": 0.9499,
       "MetaSVM_pred": "D",
@@ -208,6 +216,8 @@
       "M-CAP_score": 0.774402,
       "M-CAP_rankscore": 0.98219,
       "M-CAP_pred": "D",
+      "REVEL_score": "0.831;0.831;0.831;0.831;.;.;0.831;0.831;0.831;0.831;0.831",
+      "REVEL_rankscore": 0.94653,
       "MutPred_score": ".;.;.;.;.;.;.;.;.;.;.;",
       "MutPred_rankscore": null,
       "MutPred_protID": ".;.;.;.;.;.;.;.;.;.;.;",
@@ -231,6 +241,9 @@
       "BayesDel_noAF_score": 0.423173,
       "BayesDel_noAF_rankscore": 0.92844,
       "BayesDel_noAF_pred": "D",
+      "ClinPred_score": 0.838102221488953,
+      "ClinPred_rankscore": 0.49173,
+      "ClinPred_pred": "D",
       "LIST-S2_score": "0.978202;0.978602;0.978202;0.963304;0.975769;0.966353;0.978602;0.978202;0.978602;0.978602;0.975502",
       "LIST-S2_rankscore": 0.92442,
       "LIST-S2_pred": "D;D;D;D;D;D;D;D;D;D;D",
@@ -242,12 +255,37 @@
       "VARITY_R_LOO_rankscore": 0.9471,
       "VARITY_ER_LOO_score": ".;0.87038726;.;.;.;.;.;.;.;.;.",
       "VARITY_ER_LOO_rankscore": 0.92893,
+      "ESM1b_score": "-2.303;-2.214;-2.201;-3.672;.;.;-2.214;-2.342;.;.;.",
+      "ESM1b_rankscore": 0.35978,
+      "ESM1b_pred": "T;T;T;T;.;.;T;T;.;.;.",
+      "EVE_score": ".;0.8675047943285532;.;.;.;.;.;.;.;.;.",
+      "EVE_rankscore": 0.92917,
+      "EVE_Class10_pred": ".;U;.;.;.;.;.;.;.;.;.",
+      "EVE_Class20_pred": ".;U;.;.;.;.;.;.;.;.;.",
+      "EVE_Class25_pred": ".;U;.;.;.;.;.;.;.;.;.",
+      "EVE_Class30_pred": ".;U;.;.;.;.;.;.;.;.;.",
+      "EVE_Class40_pred": ".;P;.;.;.;.;.;.;.;.;.",
+      "EVE_Class50_pred": ".;P;.;.;.;.;.;.;.;.;.",
+      "EVE_Class60_pred": ".;P;.;.;.;.;.;.;.;.;.",
+      "EVE_Class70_pred": ".;P;.;.;.;.;.;.;.;.;.",
+      "EVE_Class75_pred": ".;P;.;.;.;.;.;.;.;.;.",
+      "EVE_Class80_pred": ".;P;.;.;.;.;.;.;.;.;.",
+      "EVE_Class90_pred": ".;P;.;.;.;.;.;.;.;.;.",
+      "AlphaMissense_score": "0.9784;0.9712;0.9737;0.9578;0.9914;0.9691;0.9697;0.978;0.9839;0.9784;0.9783",
+      "AlphaMissense_rankscore": 0.9406,
+      "AlphaMissense_pred": "P;P;P;P;P;P;P;P;P;P;P",
       "Aloft_Fraction_transcripts_affected": ".;.;.;.;.;.;.;.;.;.;.;",
       "Aloft_prob_Tolerant": ".;.;.;.;.;.;.;.;.;.;.;",
       "Aloft_prob_Recessive": ".;.;.;.;.;.;.;.;.;.;.;",
       "Aloft_prob_Dominant": ".;.;.;.;.;.;.;.;.;.;.;",
       "Aloft_pred": ".;.;.;.;.;.;.;.;.;.;.;",
       "Aloft_Confidence": ".;.;.;.;.;.;.;.;.;.;.;",
+      "CADD_raw": 4.091168,
+      "CADD_raw_rankscore": 0.81779,
+      "CADD_phred": 27.7,
+      "CADD_raw_hg19": 4.194706,
+      "CADD_raw_rankscore_hg19": 0.88122,
+      "CADD_phred_hg19": 29.4,
       "DANN_score": 0.9939658800777887,
       "DANN_rankscore": 0.6261,
       "fathmm-MKL_coding_score": 0.96498,
@@ -263,6 +301,8 @@
       "Eigen-PC-raw_coding": 0.861914927609744,
       "Eigen-PC-raw_coding_rankscore": 0.93693,
       "Eigen-PC-phred_coding": 12.21441,
+      "GenoCanyon_score": 0.50195373820695,
+      "GenoCanyon_rankscore": 0.2095,
       "integrated_fitCons_score": 0.706298,
       "integrated_fitCons_rankscore": 0.61202,
       "integrated_confidence_value": 0,
@@ -275,6 +315,8 @@
       "HUVEC_fitCons_score": 0.613276,
       "HUVEC_fitCons_rankscore": 0.41899,
       "HUVEC_confidence_value": 0,
+      "LINSIGHT": null,
+      "LINSIGHT_rankscore": null,
       "GERP++_NR": 5.83,
       "GERP++_RS": 5.83,
       "GERP++_RS_rankscore": 0.93059,
@@ -284,9 +326,9 @@
       "phyloP470way_mammalian_rankscore": 0.9579,
       "phyloP17way_primate": 0.596,
       "phyloP17way_primate_rankscore": 0.33519,
-      "phastCons100way_vertebrate": 1,
+      "phastCons100way_vertebrate": 1.0,
       "phastCons100way_vertebrate_rankscore": 0.71638,
-      "phastCons470way_mammalian": 1,
+      "phastCons470way_mammalian": 1.0,
       "phastCons470way_mammalian_rankscore": 0.68203,
       "phastCons17way_primate": 0.996,
       "phastCons17way_primate_rankscore": 0.76049,
@@ -322,49 +364,49 @@
       "ExAC_Adj_AC": 3,
       "ExAC_Adj_AF": 0.00002487,
       "ExAC_AFR_AC": 0,
-      "ExAC_AFR_AF": 0,
+      "ExAC_AFR_AF": 0.0,
       "ExAC_AMR_AC": 1,
       "ExAC_AMR_AF": 0.0000869,
       "ExAC_EAS_AC": 0,
-      "ExAC_EAS_AF": 0,
+      "ExAC_EAS_AF": 0.0,
       "ExAC_FIN_AC": 0,
-      "ExAC_FIN_AF": 0,
+      "ExAC_FIN_AF": 0.0,
       "ExAC_NFE_AC": 2,
       "ExAC_NFE_AF": 0.00003016,
       "ExAC_SAS_AC": 0,
-      "ExAC_SAS_AF": 0,
+      "ExAC_SAS_AF": 0.0,
       "ExAC_nonTCGA_AC": 3,
       "ExAC_nonTCGA_AF": 0.00002825,
       "ExAC_nonTCGA_Adj_AC": 3,
       "ExAC_nonTCGA_Adj_AF": 0.00002839,
       "ExAC_nonTCGA_AFR_AC": 0,
-      "ExAC_nonTCGA_AFR_AF": 0,
+      "ExAC_nonTCGA_AFR_AF": 0.0,
       "ExAC_nonTCGA_AMR_AC": 1,
       "ExAC_nonTCGA_AMR_AF": 0.00008965,
       "ExAC_nonTCGA_EAS_AC": 0,
-      "ExAC_nonTCGA_EAS_AF": 0,
+      "ExAC_nonTCGA_EAS_AF": 0.0,
       "ExAC_nonTCGA_FIN_AC": 0,
-      "ExAC_nonTCGA_FIN_AF": 0,
+      "ExAC_nonTCGA_FIN_AF": 0.0,
       "ExAC_nonTCGA_NFE_AC": 2,
       "ExAC_nonTCGA_NFE_AF": 0.00003699,
       "ExAC_nonTCGA_SAS_AC": 0,
-      "ExAC_nonTCGA_SAS_AF": 0,
+      "ExAC_nonTCGA_SAS_AF": 0.0,
       "ExAC_nonpsych_AC": 3,
       "ExAC_nonpsych_AF": 0.00003306,
       "ExAC_nonpsych_Adj_AC": 3,
       "ExAC_nonpsych_Adj_AF": 0.00003328,
       "ExAC_nonpsych_AFR_AC": 0,
-      "ExAC_nonpsych_AFR_AF": 0,
+      "ExAC_nonpsych_AFR_AF": 0.0,
       "ExAC_nonpsych_AMR_AC": 1,
       "ExAC_nonpsych_AMR_AF": 0.00008699,
       "ExAC_nonpsych_EAS_AC": 0,
-      "ExAC_nonpsych_EAS_AF": 0,
+      "ExAC_nonpsych_EAS_AF": 0.0,
       "ExAC_nonpsych_FIN_AC": 0,
-      "ExAC_nonpsych_FIN_AF": 0,
+      "ExAC_nonpsych_FIN_AF": 0.0,
       "ExAC_nonpsych_NFE_AC": 2,
       "ExAC_nonpsych_NFE_AF": 0.00004775,
       "ExAC_nonpsych_SAS_AC": 0,
-      "ExAC_nonpsych_SAS_AF": 0,
+      "ExAC_nonpsych_SAS_AF": 0.0,
       "gnomAD_exomes_flag": null,
       "gnomAD_exomes_AC": 5,
       "gnomAD_exomes_AN": 251312,
@@ -372,7 +414,7 @@
       "gnomAD_exomes_nhomalt": 0,
       "gnomAD_exomes_AFR_AC": 0,
       "gnomAD_exomes_AFR_AN": 16244,
-      "gnomAD_exomes_AFR_AF": 0,
+      "gnomAD_exomes_AFR_AF": 0.0,
       "gnomAD_exomes_AFR_nhomalt": 0,
       "gnomAD_exomes_AMR_AC": 2,
       "gnomAD_exomes_AMR_AN": 34580,
@@ -380,15 +422,15 @@
       "gnomAD_exomes_AMR_nhomalt": 0,
       "gnomAD_exomes_ASJ_AC": 0,
       "gnomAD_exomes_ASJ_AN": 10074,
-      "gnomAD_exomes_ASJ_AF": 0,
+      "gnomAD_exomes_ASJ_AF": 0.0,
       "gnomAD_exomes_ASJ_nhomalt": 0,
       "gnomAD_exomes_EAS_AC": 0,
       "gnomAD_exomes_EAS_AN": 18392,
-      "gnomAD_exomes_EAS_AF": 0,
+      "gnomAD_exomes_EAS_AF": 0.0,
       "gnomAD_exomes_EAS_nhomalt": 0,
       "gnomAD_exomes_FIN_AC": 0,
       "gnomAD_exomes_FIN_AN": 21646,
-      "gnomAD_exomes_FIN_AF": 0,
+      "gnomAD_exomes_FIN_AF": 0.0,
       "gnomAD_exomes_FIN_nhomalt": 0,
       "gnomAD_exomes_NFE_AC": 3,
       "gnomAD_exomes_NFE_AN": 113656,
@@ -396,7 +438,7 @@
       "gnomAD_exomes_NFE_nhomalt": 0,
       "gnomAD_exomes_SAS_AC": 0,
       "gnomAD_exomes_SAS_AN": 30598,
-      "gnomAD_exomes_SAS_AF": 0,
+      "gnomAD_exomes_SAS_AF": 0.0,
       "gnomAD_exomes_SAS_nhomalt": 0,
       "gnomAD_exomes_POPMAX_AC": 2,
       "gnomAD_exomes_POPMAX_AN": 34580,
@@ -420,7 +462,7 @@
       "gnomAD_exomes_non_topmed_nhomalt": 0,
       "gnomAD_exomes_controls_AFR_AC": 0,
       "gnomAD_exomes_controls_AFR_AN": 7158,
-      "gnomAD_exomes_controls_AFR_AF": 0,
+      "gnomAD_exomes_controls_AFR_AF": 0.0,
       "gnomAD_exomes_controls_AFR_nhomalt": 0,
       "gnomAD_exomes_controls_AMR_AC": 1,
       "gnomAD_exomes_controls_AMR_AN": 17102,
@@ -428,15 +470,15 @@
       "gnomAD_exomes_controls_AMR_nhomalt": 0,
       "gnomAD_exomes_controls_ASJ_AC": 0,
       "gnomAD_exomes_controls_ASJ_AN": 2320,
-      "gnomAD_exomes_controls_ASJ_AF": 0,
+      "gnomAD_exomes_controls_ASJ_AF": 0.0,
       "gnomAD_exomes_controls_ASJ_nhomalt": 0,
       "gnomAD_exomes_controls_EAS_AC": 0,
       "gnomAD_exomes_controls_EAS_AN": 9044,
-      "gnomAD_exomes_controls_EAS_AF": 0,
+      "gnomAD_exomes_controls_EAS_AF": 0.0,
       "gnomAD_exomes_controls_EAS_nhomalt": 0,
       "gnomAD_exomes_controls_FIN_AC": 0,
       "gnomAD_exomes_controls_FIN_AN": 13394,
-      "gnomAD_exomes_controls_FIN_AF": 0,
+      "gnomAD_exomes_controls_FIN_AF": 0.0,
       "gnomAD_exomes_controls_FIN_nhomalt": 0,
       "gnomAD_exomes_controls_NFE_AC": 1,
       "gnomAD_exomes_controls_NFE_AN": 42754,
@@ -444,7 +486,7 @@
       "gnomAD_exomes_controls_NFE_nhomalt": 0,
       "gnomAD_exomes_controls_SAS_AC": 0,
       "gnomAD_exomes_controls_SAS_AN": 15680,
-      "gnomAD_exomes_controls_SAS_AF": 0,
+      "gnomAD_exomes_controls_SAS_AF": 0.0,
       "gnomAD_exomes_controls_SAS_nhomalt": 0,
       "gnomAD_exomes_controls_POPMAX_AC": 1,
       "gnomAD_exomes_controls_POPMAX_AN": 17102,
@@ -452,7 +494,7 @@
       "gnomAD_exomes_controls_POPMAX_nhomalt": 0,
       "gnomAD_exomes_non_neuro_AFR_AC": 0,
       "gnomAD_exomes_non_neuro_AFR_AN": 16206,
-      "gnomAD_exomes_non_neuro_AFR_AF": 0,
+      "gnomAD_exomes_non_neuro_AFR_AF": 0.0,
       "gnomAD_exomes_non_neuro_AFR_nhomalt": 0,
       "gnomAD_exomes_non_neuro_AMR_AC": 2,
       "gnomAD_exomes_non_neuro_AMR_AN": 30512,
@@ -460,15 +502,15 @@
       "gnomAD_exomes_non_neuro_AMR_nhomalt": 0,
       "gnomAD_exomes_non_neuro_ASJ_AC": 0,
       "gnomAD_exomes_non_neuro_ASJ_AN": 6212,
-      "gnomAD_exomes_non_neuro_ASJ_AF": 0,
+      "gnomAD_exomes_non_neuro_ASJ_AF": 0.0,
       "gnomAD_exomes_non_neuro_ASJ_nhomalt": 0,
       "gnomAD_exomes_non_neuro_EAS_AC": 0,
       "gnomAD_exomes_non_neuro_EAS_AN": 13414,
-      "gnomAD_exomes_non_neuro_EAS_AF": 0,
+      "gnomAD_exomes_non_neuro_EAS_AF": 0.0,
       "gnomAD_exomes_non_neuro_EAS_nhomalt": 0,
       "gnomAD_exomes_non_neuro_FIN_AC": 0,
       "gnomAD_exomes_non_neuro_FIN_AN": 16734,
-      "gnomAD_exomes_non_neuro_FIN_AF": 0,
+      "gnomAD_exomes_non_neuro_FIN_AF": 0.0,
       "gnomAD_exomes_non_neuro_FIN_nhomalt": 0,
       "gnomAD_exomes_non_neuro_NFE_AC": 3,
       "gnomAD_exomes_non_neuro_NFE_AN": 89494,
@@ -476,7 +518,7 @@
       "gnomAD_exomes_non_neuro_NFE_nhomalt": 0,
       "gnomAD_exomes_non_neuro_SAS_AC": 0,
       "gnomAD_exomes_non_neuro_SAS_AN": 30590,
-      "gnomAD_exomes_non_neuro_SAS_AF": 0,
+      "gnomAD_exomes_non_neuro_SAS_AF": 0.0,
       "gnomAD_exomes_non_neuro_SAS_nhomalt": 0,
       "gnomAD_exomes_non_neuro_POPMAX_AC": 2,
       "gnomAD_exomes_non_neuro_POPMAX_AN": 30512,
@@ -484,7 +526,7 @@
       "gnomAD_exomes_non_neuro_POPMAX_nhomalt": 0,
       "gnomAD_exomes_non_cancer_AFR_AC": 0,
       "gnomAD_exomes_non_cancer_AFR_AN": 14892,
-      "gnomAD_exomes_non_cancer_AFR_AF": 0,
+      "gnomAD_exomes_non_cancer_AFR_AF": 0.0,
       "gnomAD_exomes_non_cancer_AFR_nhomalt": 0,
       "gnomAD_exomes_non_cancer_AMR_AC": 2,
       "gnomAD_exomes_non_cancer_AMR_AN": 34248,
@@ -492,15 +534,15 @@
       "gnomAD_exomes_non_cancer_AMR_nhomalt": 0,
       "gnomAD_exomes_non_cancer_ASJ_AC": 0,
       "gnomAD_exomes_non_cancer_ASJ_AN": 9566,
-      "gnomAD_exomes_non_cancer_ASJ_AF": 0,
+      "gnomAD_exomes_non_cancer_ASJ_AF": 0.0,
       "gnomAD_exomes_non_cancer_ASJ_nhomalt": 0,
       "gnomAD_exomes_non_cancer_EAS_AC": 0,
       "gnomAD_exomes_non_cancer_EAS_AN": 17690,
-      "gnomAD_exomes_non_cancer_EAS_AF": 0,
+      "gnomAD_exomes_non_cancer_EAS_AF": 0.0,
       "gnomAD_exomes_non_cancer_EAS_nhomalt": 0,
       "gnomAD_exomes_non_cancer_FIN_AC": 0,
       "gnomAD_exomes_non_cancer_FIN_AN": 21630,
-      "gnomAD_exomes_non_cancer_FIN_AF": 0,
+      "gnomAD_exomes_non_cancer_FIN_AF": 0.0,
       "gnomAD_exomes_non_cancer_FIN_nhomalt": 0,
       "gnomAD_exomes_non_cancer_NFE_AC": 3,
       "gnomAD_exomes_non_cancer_NFE_AN": 102672,
@@ -508,7 +550,7 @@
       "gnomAD_exomes_non_cancer_NFE_nhomalt": 0,
       "gnomAD_exomes_non_cancer_SAS_AC": 0,
       "gnomAD_exomes_non_cancer_SAS_AN": 30508,
-      "gnomAD_exomes_non_cancer_SAS_AF": 0,
+      "gnomAD_exomes_non_cancer_SAS_AF": 0.0,
       "gnomAD_exomes_non_cancer_SAS_nhomalt": 0,
       "gnomAD_exomes_non_cancer_POPMAX_AC": 2,
       "gnomAD_exomes_non_cancer_POPMAX_AN": 34248,
@@ -516,7 +558,7 @@
       "gnomAD_exomes_non_cancer_POPMAX_nhomalt": 0,
       "gnomAD_exomes_non_topmed_AFR_AC": 0,
       "gnomAD_exomes_non_topmed_AFR_AN": 12016,
-      "gnomAD_exomes_non_topmed_AFR_AF": 0,
+      "gnomAD_exomes_non_topmed_AFR_AF": 0.0,
       "gnomAD_exomes_non_topmed_AFR_nhomalt": 0,
       "gnomAD_exomes_non_topmed_AMR_AC": 2,
       "gnomAD_exomes_non_topmed_AMR_AN": 34446,
@@ -524,15 +566,15 @@
       "gnomAD_exomes_non_topmed_AMR_nhomalt": 0,
       "gnomAD_exomes_non_topmed_ASJ_AC": 0,
       "gnomAD_exomes_non_topmed_ASJ_AN": 9992,
-      "gnomAD_exomes_non_topmed_ASJ_AF": 0,
+      "gnomAD_exomes_non_topmed_ASJ_AF": 0.0,
       "gnomAD_exomes_non_topmed_ASJ_nhomalt": 0,
       "gnomAD_exomes_non_topmed_EAS_AC": 0,
       "gnomAD_exomes_non_topmed_EAS_AN": 18388,
-      "gnomAD_exomes_non_topmed_EAS_AF": 0,
+      "gnomAD_exomes_non_topmed_EAS_AF": 0.0,
       "gnomAD_exomes_non_topmed_EAS_nhomalt": 0,
       "gnomAD_exomes_non_topmed_FIN_AC": 0,
       "gnomAD_exomes_non_topmed_FIN_AN": 21644,
-      "gnomAD_exomes_non_topmed_FIN_AF": 0,
+      "gnomAD_exomes_non_topmed_FIN_AF": 0.0,
       "gnomAD_exomes_non_topmed_FIN_nhomalt": 0,
       "gnomAD_exomes_non_topmed_NFE_AC": 3,
       "gnomAD_exomes_non_topmed_NFE_AN": 111566,
@@ -540,7 +582,7 @@
       "gnomAD_exomes_non_topmed_NFE_nhomalt": 0,
       "gnomAD_exomes_non_topmed_SAS_AC": 0,
       "gnomAD_exomes_non_topmed_SAS_AN": 30598,
-      "gnomAD_exomes_non_topmed_SAS_AF": 0,
+      "gnomAD_exomes_non_topmed_SAS_AF": 0.0,
       "gnomAD_exomes_non_topmed_SAS_nhomalt": 0,
       "gnomAD_exomes_non_topmed_POPMAX_AC": 2,
       "gnomAD_exomes_non_topmed_POPMAX_AN": 34446,
@@ -756,46 +798,46 @@
       "ALFA_European_AF": 0.0006580184245158864,
       "ALFA_African_Others_AC": 0,
       "ALFA_African_Others_AN": 144,
-      "ALFA_African_Others_AF": 0,
+      "ALFA_African_Others_AF": 0.0,
       "ALFA_East_Asian_AC": 0,
       "ALFA_East_Asian_AN": 132,
-      "ALFA_East_Asian_AF": 0,
+      "ALFA_East_Asian_AF": 0.0,
       "ALFA_African_American_AC": 1,
       "ALFA_African_American_AN": 3892,
       "ALFA_African_American_AF": 0.00025693730729701953,
       "ALFA_Latin_American_1_AC": 0,
       "ALFA_Latin_American_1_AN": 154,
-      "ALFA_Latin_American_1_AF": 0,
+      "ALFA_Latin_American_1_AF": 0.0,
       "ALFA_Latin_American_2_AC": 0,
       "ALFA_Latin_American_2_AN": 616,
-      "ALFA_Latin_American_2_AF": 0,
+      "ALFA_Latin_American_2_AF": 0.0,
       "ALFA_Other_Asian_AC": 0,
       "ALFA_Other_Asian_AN": 28,
-      "ALFA_Other_Asian_AF": 0,
+      "ALFA_Other_Asian_AF": 0.0,
       "ALFA_South_Asian_AC": 0,
       "ALFA_South_Asian_AN": 98,
-      "ALFA_South_Asian_AF": 0,
+      "ALFA_South_Asian_AF": 0.0,
       "ALFA_Other_AC": 0,
       "ALFA_Other_AN": 1264,
-      "ALFA_Other_AF": 0,
+      "ALFA_Other_AF": 0.0,
       "ALFA_African_AC": 1,
       "ALFA_African_AN": 4036,
       "ALFA_African_AF": 0.0002477700693756194,
       "ALFA_Asian_AC": 0,
       "ALFA_Asian_AN": 160,
-      "ALFA_Asian_AF": 0,
+      "ALFA_Asian_AF": 0.0,
       "ALFA_Total_AC": 22,
       "ALFA_Total_AN": 38242,
       "ALFA_Total_AF": 0.000575283719470739,
       "clinvar_id": 55407,
       "clinvar_clnsig": "Pathogenic",
-      "clinvar_trait": "Breast_and/or_ovarian_cancer|Hereditary_cancer-predisposing_syndrome|Breast_neoplasm|Breast-ovarian_cancer,_familial,_susceptibility_to,_1|not_provided|Hereditary_breast_ovarian_cancer_syndrome|Breast_carcinoma|Familial_cancer_of_breast",
+      "clinvar_trait": "Breast_neoplasm|Breast-ovarian_cancer,_familial,_susceptibility_to,_1|Hereditary_cancer-predisposing_syndrome|Hereditary_breast_ovarian_cancer_syndrome|Familial_cancer_of_breast|Breast_carcinoma|Breast_and/or_ovarian_cancer|not_provided",
       "clinvar_review": "reviewed_by_expert_panel",
       "clinvar_hgvs": "NC_000017.11:g.43063903G>T",
       "clinvar_var_source": "BRCA1-HCI:BRCA1_00045|ClinGen:CA003252|UniProtKB:P38398#VAR_007796",
-      "clinvar_MedGen_id": "CN221562|C0027672|C1458155|C2676676|CN517202|C0677776|C0678222|C0346153",
-      "clinvar_OMIM_id": "604370|PS604370|114480",
-      "clinvar_Orphanet_id": "140162|145|145|227535",
+      "clinvar_MedGen_id": "C1458155|C2676676|C0027672|C0677776|C0346153|C0678222|CN221562|CN517202",
+      "clinvar_OMIM_id": "604370|114480",
+      "clinvar_Orphanet_id": "145|140162|145|227535",
       "Interpro_domain": "BRCT domain|BRCT domain|BRCT domain|BRCT domain;BRCT domain|BRCT domain|BRCT domain|BRCT domain;.;.;BRCT domain|BRCT domain|BRCT domain|BRCT domain;BRCT domain;.;BRCT domain|BRCT domain|BRCT domain|BRCT domain;BRCT domain|BRCT domain|BRCT domain|BRCT domain;BRCT domain|BRCT domain|BRCT domain|BRCT domain;BRCT domain|BRCT domain|BRCT domain",
       "GTEx_V8_gene": null,
       "GTEx_V8_tissue": null,
@@ -837,61 +879,29 @@
           "trembl": "Q9UE29&Q9NQR3&Q7KYU6&Q3YB53&Q3YB50&Q3YB49&K7EPC7&K4K7V3&K4JXS7&K4JUB1&G4V4Z8&G4V4Z7&E7EP70&C9IZW4&C4PFY7",
           "uniparc": "UPI000014170B",
           "genePheno": "1",
-          "sift": {
-            "prediction": "deleterious"
-          },
-          "polyphen": {
-            "prediction": "probably_damaging",
-            "score": 0.9089999794960022
-          },
+          "sift": { "prediction": "deleterious" },
+          "polyphen": { "prediction": "probably_damaging", "score": 0.9089999794960022 },
           "domains": [
-            {
-              "id": "PS50172",
-              "source": "PROSITE_profiles"
-            },
-            {
-              "id": "PTHR13763",
-              "source": "hmmpanther"
-            },
-            {
-              "id": "PTHR13763",
-              "source": "hmmpanther"
-            },
-            {
-              "id": "3.40.50.10190",
-              "source": "Gene3D"
-            },
-            {
-              "id": "PF00533",
-              "source": "Pfam_domain"
-            },
-            {
-              "id": "PIRSF001734",
-              "source": "PIRSF_domain"
-            },
-            {
-              "id": "SM00292",
-              "source": "SMART_domains"
-            },
-            {
-              "id": "SSF52113",
-              "source": "Superfamily_domains"
-            },
-            {
-              "id": "PR00493",
-              "source": "Prints_domain"
-            }
+            { "id": "PS50172", "source": "PROSITE_profiles" },
+            { "id": "PTHR13763", "source": "hmmpanther" },
+            { "id": "PTHR13763", "source": "hmmpanther" },
+            { "id": "3.40.50.10190", "source": "Gene3D" },
+            { "id": "PF00533", "source": "Pfam_domain" },
+            { "id": "PIRSF001734", "source": "PIRSF_domain" },
+            { "id": "SM00292", "source": "SMART_domains" },
+            { "id": "SSF52113", "source": "Superfamily_domains" },
+            { "id": "PR00493", "source": "Prints_domain" }
           ],
           "eaMaf": 0.0005000000237487257,
           "exacMaf": 0.00009999999747378752,
           "exacAdjMaf": 0.00008689999958733097,
           "exacAfrMaf": 0.000024709999706828967,
-          "exacAmrMaf": 0,
+          "exacAmrMaf": 0.0,
           "exacEasMaf": 0.000024869999833754264,
-          "exacFinMaf": 0,
-          "exacNfeMaf": 0,
+          "exacFinMaf": 0.0,
+          "exacNfeMaf": 0.0,
           "exacOthMaf": 0.000030159999369061552,
-          "exacSasMaf": 0,
+          "exacSasMaf": 0.0,
           "clinSig": "uncertain_significance&pathogenic",
           "pheno": "1&1&1",
           "lofInfo": "INTRON_END:41215890&INTRON_START:41215391&EXON_END:41215968&DE_NOVO_DONOR_MES_POS:-28&DE_NOVO_DONOR_POS:-29&DE_NOVO_DONOR_PROB:0.031452812142167&EXON_START:41215891&DE_NOVO_DONOR_MES:0.588033946511443&MUTANT_DONOR_MES:7.9640258479777"
@@ -924,53 +934,27 @@
           "trembl": "Q9NQR3&Q92897&Q4EW25&Q3YB53&Q3YB50&Q3YB49&Q3B891&K4K7V3&K4JUB1&G4V503&G4V502&G4V500&G4V4Z8&G4V4Z7&G1UI37&E7EWN5&E7EMP0&C9IZW4&C4PFY7",
           "uniparc": "UPI000014170D",
           "genePheno": "1",
-          "sift": {
-            "prediction": "deleterious"
-          },
-          "polyphen": {
-            "prediction": "benign",
-            "score": 0.25600001215934753
-          },
+          "sift": { "prediction": "deleterious" },
+          "polyphen": { "prediction": "benign", "score": 0.25600001215934753 },
           "domains": [
-            {
-              "id": "SSF52113",
-              "source": "Superfamily_domains"
-            },
-            {
-              "id": "SM00292",
-              "source": "SMART_domains"
-            },
-            {
-              "id": "PIRSF001734",
-              "source": "PIRSF_domain"
-            },
-            {
-              "id": "3.40.50.10190",
-              "source": "Gene3D"
-            },
-            {
-              "id": "PTHR13763",
-              "source": "hmmpanther"
-            },
-            {
-              "id": "PTHR13763",
-              "source": "hmmpanther"
-            },
-            {
-              "id": "PS50172",
-              "source": "PROSITE_profiles"
-            }
+            { "id": "SSF52113", "source": "Superfamily_domains" },
+            { "id": "SM00292", "source": "SMART_domains" },
+            { "id": "PIRSF001734", "source": "PIRSF_domain" },
+            { "id": "3.40.50.10190", "source": "Gene3D" },
+            { "id": "PTHR13763", "source": "hmmpanther" },
+            { "id": "PTHR13763", "source": "hmmpanther" },
+            { "id": "PS50172", "source": "PROSITE_profiles" }
           ],
           "eaMaf": 0.0005000000237487257,
           "exacMaf": 0.00009999999747378752,
           "exacAdjMaf": 0.00008689999958733097,
           "exacAfrMaf": 0.000024709999706828967,
-          "exacAmrMaf": 0,
+          "exacAmrMaf": 0.0,
           "exacEasMaf": 0.000024869999833754264,
-          "exacFinMaf": 0,
-          "exacNfeMaf": 0,
+          "exacFinMaf": 0.0,
+          "exacNfeMaf": 0.0,
           "exacOthMaf": 0.000030159999369061552,
-          "exacSasMaf": 0,
+          "exacSasMaf": 0.0,
           "clinSig": "uncertain_significance&pathogenic",
           "pheno": "1&1&1",
           "lofInfo": "DE_NOVO_DONOR_MES:0.588033946511443&MUTANT_DONOR_MES:7.9640258479777&DE_NOVO_DONOR_POS:-29&DE_NOVO_DONOR_MES_POS:-28&INTRON_START:41215391&EXON_END:41215968&INTRON_END:41215890&EXON_START:41215891&DE_NOVO_DONOR_PROB:0.031452812142167"
@@ -1003,57 +987,28 @@
           "trembl": "G3XAC3&Q9UE29&Q9NQR3&Q92897&Q7KYU6&K7EPC7&K4JXS7&G1UI37&C4PFY7",
           "uniparc": "UPI000014172D",
           "genePheno": "1",
-          "sift": {
-            "prediction": "deleterious"
-          },
-          "polyphen": {
-            "prediction": "probably_damaging",
-            "score": 1
-          },
+          "sift": { "prediction": "deleterious" },
+          "polyphen": { "prediction": "probably_damaging", "score": 1.0 },
           "domains": [
-            {
-              "id": "PS50172",
-              "source": "PROSITE_profiles"
-            },
-            {
-              "id": "PTHR13763",
-              "source": "hmmpanther"
-            },
-            {
-              "id": "PTHR13763",
-              "source": "hmmpanther"
-            },
-            {
-              "id": "PF00533",
-              "source": "Pfam_domain"
-            },
-            {
-              "id": "3.40.50.10190",
-              "source": "Gene3D"
-            },
-            {
-              "id": "SM00292",
-              "source": "SMART_domains"
-            },
-            {
-              "id": "PIRSF001734",
-              "source": "PIRSF_domain"
-            },
-            {
-              "id": "SSF52113",
-              "source": "Superfamily_domains"
-            }
+            { "id": "PS50172", "source": "PROSITE_profiles" },
+            { "id": "PTHR13763", "source": "hmmpanther" },
+            { "id": "PTHR13763", "source": "hmmpanther" },
+            { "id": "PF00533", "source": "Pfam_domain" },
+            { "id": "3.40.50.10190", "source": "Gene3D" },
+            { "id": "SM00292", "source": "SMART_domains" },
+            { "id": "PIRSF001734", "source": "PIRSF_domain" },
+            { "id": "SSF52113", "source": "Superfamily_domains" }
           ],
           "eaMaf": 0.0005000000237487257,
           "exacMaf": 0.00009999999747378752,
           "exacAdjMaf": 0.00008689999958733097,
           "exacAfrMaf": 0.000024709999706828967,
-          "exacAmrMaf": 0,
+          "exacAmrMaf": 0.0,
           "exacEasMaf": 0.000024869999833754264,
-          "exacFinMaf": 0,
-          "exacNfeMaf": 0,
+          "exacFinMaf": 0.0,
+          "exacNfeMaf": 0.0,
           "exacOthMaf": 0.000030159999369061552,
-          "exacSasMaf": 0,
+          "exacSasMaf": 0.0,
           "clinSig": "uncertain_significance&pathogenic",
           "pheno": "1&1&1",
           "lofInfo": "DE_NOVO_DONOR_MES_POS:-28&DE_NOVO_DONOR_POS:-29&INTRON_START:41215391&EXON_END:41215968&INTRON_END:41215890&DE_NOVO_DONOR_PROB:0.031452812142167&EXON_START:41215891&DE_NOVO_DONOR_MES:0.588033946511443&MUTANT_DONOR_MES:7.9640258479777"
@@ -1087,57 +1042,28 @@
           "trembl": "Q9UE29&Q9NQR3&Q92897&Q7KYU6&K7EPC7&K4JXS7&G1UI37&C4PFY7",
           "uniparc": "UPI000013ECD3",
           "genePheno": "1",
-          "sift": {
-            "prediction": "deleterious"
-          },
-          "polyphen": {
-            "prediction": "probably_damaging",
-            "score": 0.996999979019165
-          },
+          "sift": { "prediction": "deleterious" },
+          "polyphen": { "prediction": "probably_damaging", "score": 0.996999979019165 },
           "domains": [
-            {
-              "id": "PS50172",
-              "source": "PROSITE_profiles"
-            },
-            {
-              "id": "PTHR13763",
-              "source": "hmmpanther"
-            },
-            {
-              "id": "PTHR13763",
-              "source": "hmmpanther"
-            },
-            {
-              "id": "PF00533",
-              "source": "Pfam_domain"
-            },
-            {
-              "id": "3.40.50.10190",
-              "source": "Gene3D"
-            },
-            {
-              "id": "PIRSF001734",
-              "source": "PIRSF_domain"
-            },
-            {
-              "id": "SM00292",
-              "source": "SMART_domains"
-            },
-            {
-              "id": "SSF52113",
-              "source": "Superfamily_domains"
-            }
+            { "id": "PS50172", "source": "PROSITE_profiles" },
+            { "id": "PTHR13763", "source": "hmmpanther" },
+            { "id": "PTHR13763", "source": "hmmpanther" },
+            { "id": "PF00533", "source": "Pfam_domain" },
+            { "id": "3.40.50.10190", "source": "Gene3D" },
+            { "id": "PIRSF001734", "source": "PIRSF_domain" },
+            { "id": "SM00292", "source": "SMART_domains" },
+            { "id": "SSF52113", "source": "Superfamily_domains" }
           ],
           "eaMaf": 0.0005000000237487257,
           "exacMaf": 0.00009999999747378752,
           "exacAdjMaf": 0.00008689999958733097,
           "exacAfrMaf": 0.000024709999706828967,
-          "exacAmrMaf": 0,
+          "exacAmrMaf": 0.0,
           "exacEasMaf": 0.000024869999833754264,
-          "exacFinMaf": 0,
-          "exacNfeMaf": 0,
+          "exacFinMaf": 0.0,
+          "exacNfeMaf": 0.0,
           "exacOthMaf": 0.000030159999369061552,
-          "exacSasMaf": 0,
+          "exacSasMaf": 0.0,
           "clinSig": "uncertain_significance&pathogenic",
           "pheno": "1&1&1",
           "lofInfo": "DE_NOVO_DONOR_PROB:0.031452812142167&EXON_START:41215891&DE_NOVO_DONOR_MES_POS:-28&DE_NOVO_DONOR_POS:-29&INTRON_START:41215391&EXON_END:41215968&INTRON_END:41215890&MUTANT_DONOR_MES:7.9640258479777&DE_NOVO_DONOR_MES:0.588033946511443"
@@ -1168,12 +1094,12 @@
           "exacMaf": 0.00009999999747378752,
           "exacAdjMaf": 0.00008689999958733097,
           "exacAfrMaf": 0.000024709999706828967,
-          "exacAmrMaf": 0,
+          "exacAmrMaf": 0.0,
           "exacEasMaf": 0.000024869999833754264,
-          "exacFinMaf": 0,
-          "exacNfeMaf": 0,
+          "exacFinMaf": 0.0,
+          "exacNfeMaf": 0.0,
           "exacOthMaf": 0.000030159999369061552,
-          "exacSasMaf": 0,
+          "exacSasMaf": 0.0,
           "clinSig": "uncertain_significance&pathogenic",
           "pheno": "1&1&1"
         },
@@ -1207,61 +1133,29 @@
           "trembl": "Q9UE29&Q9NQR3&Q92897&Q7KYU6&Q4EW25&Q3YB53&Q3YB50&Q3YB49&Q3LRH8&Q3B891&K7EPC7&K4K7V3&K4JXS7&K4JUB1&G4V503&G4V502&G4V500&G4V4Z8&G4V4Z7&G1UI37&E9PFZ0&E7EWN5&E7EP70&C9IZW4&C4PFY7",
           "uniparc": "UPI0000126AC8",
           "genePheno": "1",
-          "sift": {
-            "prediction": "deleterious"
-          },
-          "polyphen": {
-            "prediction": "probably_damaging",
-            "score": 0.9089999794960022
-          },
+          "sift": { "prediction": "deleterious" },
+          "polyphen": { "prediction": "probably_damaging", "score": 0.9089999794960022 },
           "domains": [
-            {
-              "id": "3.40.50.10190",
-              "source": "Gene3D"
-            },
-            {
-              "id": "PF00533",
-              "source": "Pfam_domain"
-            },
-            {
-              "id": "PIRSF001734",
-              "source": "PIRSF_domain"
-            },
-            {
-              "id": "PR00493",
-              "source": "Prints_domain"
-            },
-            {
-              "id": "PS50172",
-              "source": "PROSITE_profiles"
-            },
-            {
-              "id": "PTHR13763",
-              "source": "hmmpanther"
-            },
-            {
-              "id": "PTHR13763",
-              "source": "hmmpanther"
-            },
-            {
-              "id": "SM00292",
-              "source": "SMART_domains"
-            },
-            {
-              "id": "SSF52113",
-              "source": "Superfamily_domains"
-            }
+            { "id": "3.40.50.10190", "source": "Gene3D" },
+            { "id": "PF00533", "source": "Pfam_domain" },
+            { "id": "PIRSF001734", "source": "PIRSF_domain" },
+            { "id": "PR00493", "source": "Prints_domain" },
+            { "id": "PS50172", "source": "PROSITE_profiles" },
+            { "id": "PTHR13763", "source": "hmmpanther" },
+            { "id": "PTHR13763", "source": "hmmpanther" },
+            { "id": "SM00292", "source": "SMART_domains" },
+            { "id": "SSF52113", "source": "Superfamily_domains" }
           ],
           "eaMaf": 0.0005000000237487257,
           "exacMaf": 0.00009999999747378752,
           "exacAdjMaf": 0.00008689999958733097,
           "exacAfrMaf": 0.000024709999706828967,
-          "exacAmrMaf": 0,
+          "exacAmrMaf": 0.0,
           "exacEasMaf": 0.000024869999833754264,
-          "exacFinMaf": 0,
-          "exacNfeMaf": 0,
+          "exacFinMaf": 0.0,
+          "exacNfeMaf": 0.0,
           "exacOthMaf": 0.000030159999369061552,
-          "exacSasMaf": 0,
+          "exacSasMaf": 0.0,
           "clinSig": "uncertain_significance&pathogenic",
           "pheno": "1&1&1",
           "lofInfo": "DE_NOVO_DONOR_MES_POS:-28&DE_NOVO_DONOR_POS:-29&INTRON_START:41215391&EXON_END:41215968&INTRON_END:41215890&EXON_START:41215891&DE_NOVO_DONOR_PROB:0.031452812142167&DE_NOVO_DONOR_MES:0.588033946511443&MUTANT_DONOR_MES:7.9640258479777"
@@ -1294,12 +1188,12 @@
           "exacMaf": 0.00009999999747378752,
           "exacAdjMaf": 0.00008689999958733097,
           "exacAfrMaf": 0.000024709999706828967,
-          "exacAmrMaf": 0,
+          "exacAmrMaf": 0.0,
           "exacEasMaf": 0.000024869999833754264,
-          "exacFinMaf": 0,
-          "exacNfeMaf": 0,
+          "exacFinMaf": 0.0,
+          "exacNfeMaf": 0.0,
           "exacOthMaf": 0.000030159999369061552,
-          "exacSasMaf": 0,
+          "exacSasMaf": 0.0,
           "clinSig": "uncertain_significance&pathogenic",
           "pheno": "1&1&1"
         },
@@ -1333,57 +1227,28 @@
           "trembl": "Q9UE29&Q9NQR3&Q92897&K4JXS7&G1UI37&C4PFY7",
           "uniparc": "UPI000037834E",
           "genePheno": "1",
-          "sift": {
-            "prediction": "deleterious"
-          },
-          "polyphen": {
-            "prediction": "probably_damaging",
-            "score": 1
-          },
+          "sift": { "prediction": "deleterious" },
+          "polyphen": { "prediction": "probably_damaging", "score": 1.0 },
           "domains": [
-            {
-              "id": "PS50172",
-              "source": "PROSITE_profiles"
-            },
-            {
-              "id": "PTHR13763",
-              "source": "hmmpanther"
-            },
-            {
-              "id": "PTHR13763",
-              "source": "hmmpanther"
-            },
-            {
-              "id": "3.40.50.10190",
-              "source": "Gene3D"
-            },
-            {
-              "id": "PF00533",
-              "source": "Pfam_domain"
-            },
-            {
-              "id": "SM00292",
-              "source": "SMART_domains"
-            },
-            {
-              "id": "PIRSF001734",
-              "source": "PIRSF_domain"
-            },
-            {
-              "id": "SSF52113",
-              "source": "Superfamily_domains"
-            }
+            { "id": "PS50172", "source": "PROSITE_profiles" },
+            { "id": "PTHR13763", "source": "hmmpanther" },
+            { "id": "PTHR13763", "source": "hmmpanther" },
+            { "id": "3.40.50.10190", "source": "Gene3D" },
+            { "id": "PF00533", "source": "Pfam_domain" },
+            { "id": "SM00292", "source": "SMART_domains" },
+            { "id": "PIRSF001734", "source": "PIRSF_domain" },
+            { "id": "SSF52113", "source": "Superfamily_domains" }
           ],
           "eaMaf": 0.0005000000237487257,
           "exacMaf": 0.00009999999747378752,
           "exacAdjMaf": 0.00008689999958733097,
           "exacAfrMaf": 0.000024709999706828967,
-          "exacAmrMaf": 0,
+          "exacAmrMaf": 0.0,
           "exacEasMaf": 0.000024869999833754264,
-          "exacFinMaf": 0,
-          "exacNfeMaf": 0,
+          "exacFinMaf": 0.0,
+          "exacNfeMaf": 0.0,
           "exacOthMaf": 0.000030159999369061552,
-          "exacSasMaf": 0,
+          "exacSasMaf": 0.0,
           "clinSig": "uncertain_significance&pathogenic",
           "pheno": "1&1&1",
           "lofInfo": "INTRON_END:41215890&EXON_END:41215968&INTRON_START:41215391&DE_NOVO_DONOR_POS:-29&DE_NOVO_DONOR_MES_POS:-28&EXON_START:41215891&DE_NOVO_DONOR_PROB:0.031452812142167&DE_NOVO_DONOR_MES:0.588033946511443&MUTANT_DONOR_MES:7.9640258479777"
@@ -1418,61 +1283,29 @@
           "trembl": "Q9UE29&Q9NQR3&Q92897&Q7KYU6&Q4EW25&Q3YB53&Q3YB50&Q3YB49&Q3B891&K7EPC7&K4K7V3&K4JXS7&K4JUB1&G4V503&G4V502&G4V500&G4V4Z8&G4V4Z7&G1UI37&E9PFC7&E7EWN5&C9IZW4&C4PFY7",
           "uniparc": "UPI0000E0360B",
           "genePheno": "1",
-          "sift": {
-            "prediction": "deleterious"
-          },
-          "polyphen": {
-            "prediction": "probably_damaging",
-            "score": 0.9580000042915344
-          },
+          "sift": { "prediction": "deleterious" },
+          "polyphen": { "prediction": "probably_damaging", "score": 0.9580000042915344 },
           "domains": [
-            {
-              "id": "3.40.50.10190",
-              "source": "Gene3D"
-            },
-            {
-              "id": "PF00533",
-              "source": "Pfam_domain"
-            },
-            {
-              "id": "PIRSF001734",
-              "source": "PIRSF_domain"
-            },
-            {
-              "id": "PR00493",
-              "source": "Prints_domain"
-            },
-            {
-              "id": "PS50172",
-              "source": "PROSITE_profiles"
-            },
-            {
-              "id": "PTHR13763",
-              "source": "hmmpanther"
-            },
-            {
-              "id": "PTHR13763",
-              "source": "hmmpanther"
-            },
-            {
-              "id": "SM00292",
-              "source": "SMART_domains"
-            },
-            {
-              "id": "SSF52113",
-              "source": "Superfamily_domains"
-            }
+            { "id": "3.40.50.10190", "source": "Gene3D" },
+            { "id": "PF00533", "source": "Pfam_domain" },
+            { "id": "PIRSF001734", "source": "PIRSF_domain" },
+            { "id": "PR00493", "source": "Prints_domain" },
+            { "id": "PS50172", "source": "PROSITE_profiles" },
+            { "id": "PTHR13763", "source": "hmmpanther" },
+            { "id": "PTHR13763", "source": "hmmpanther" },
+            { "id": "SM00292", "source": "SMART_domains" },
+            { "id": "SSF52113", "source": "Superfamily_domains" }
           ],
           "eaMaf": 0.0005000000237487257,
           "exacMaf": 0.00009999999747378752,
           "exacAdjMaf": 0.00008689999958733097,
           "exacAfrMaf": 0.000024709999706828967,
-          "exacAmrMaf": 0,
+          "exacAmrMaf": 0.0,
           "exacEasMaf": 0.000024869999833754264,
-          "exacFinMaf": 0,
-          "exacNfeMaf": 0,
+          "exacFinMaf": 0.0,
+          "exacNfeMaf": 0.0,
           "exacOthMaf": 0.000030159999369061552,
-          "exacSasMaf": 0,
+          "exacSasMaf": 0.0,
           "clinSig": "uncertain_significance&pathogenic",
           "pheno": "1&1&1",
           "lofInfo": "MUTANT_DONOR_MES:7.9640258479777&DE_NOVO_DONOR_MES:0.588033946511443&EXON_START:41215891&DE_NOVO_DONOR_PROB:0.031452812142167&INTRON_END:41215890&INTRON_START:41215391&EXON_END:41215968&DE_NOVO_DONOR_POS:-29&DE_NOVO_DONOR_MES_POS:-28"
@@ -1499,12 +1332,12 @@
           "exacMaf": 0.00009999999747378752,
           "exacAdjMaf": 0.00008689999958733097,
           "exacAfrMaf": 0.000024709999706828967,
-          "exacAmrMaf": 0,
+          "exacAmrMaf": 0.0,
           "exacEasMaf": 0.000024869999833754264,
-          "exacFinMaf": 0,
-          "exacNfeMaf": 0,
+          "exacFinMaf": 0.0,
+          "exacNfeMaf": 0.0,
           "exacOthMaf": 0.000030159999369061552,
-          "exacSasMaf": 0,
+          "exacSasMaf": 0.0,
           "clinSig": "uncertain_significance&pathogenic",
           "pheno": "1&1&1"
         },
@@ -1537,45 +1370,25 @@
           "trembl": "Q9UE29&Q92897&K4K7U9&K4JXS7&G1UI37&E7EUM2&E7EQW4&C4PFY7",
           "uniparc": "UPI0001B79086",
           "genePheno": "1",
-          "sift": {
-            "prediction": "deleterious"
-          },
-          "polyphen": {
-            "prediction": "probably_damaging",
-            "score": 0.9990000128746033
-          },
+          "sift": { "prediction": "deleterious" },
+          "polyphen": { "prediction": "probably_damaging", "score": 0.9990000128746033 },
           "domains": [
-            {
-              "id": "3.40.50.10190",
-              "source": "Gene3D"
-            },
-            {
-              "id": "PF00533",
-              "source": "Pfam_domain"
-            },
-            {
-              "id": "PS50172",
-              "source": "PROSITE_profiles"
-            },
-            {
-              "id": "SM00292",
-              "source": "SMART_domains"
-            },
-            {
-              "id": "SSF52113",
-              "source": "Superfamily_domains"
-            }
+            { "id": "3.40.50.10190", "source": "Gene3D" },
+            { "id": "PF00533", "source": "Pfam_domain" },
+            { "id": "PS50172", "source": "PROSITE_profiles" },
+            { "id": "SM00292", "source": "SMART_domains" },
+            { "id": "SSF52113", "source": "Superfamily_domains" }
           ],
           "eaMaf": 0.0005000000237487257,
           "exacMaf": 0.00009999999747378752,
           "exacAdjMaf": 0.00008689999958733097,
           "exacAfrMaf": 0.000024709999706828967,
-          "exacAmrMaf": 0,
+          "exacAmrMaf": 0.0,
           "exacEasMaf": 0.000024869999833754264,
-          "exacFinMaf": 0,
-          "exacNfeMaf": 0,
+          "exacFinMaf": 0.0,
+          "exacNfeMaf": 0.0,
           "exacOthMaf": 0.000030159999369061552,
-          "exacSasMaf": 0,
+          "exacSasMaf": 0.0,
           "clinSig": "uncertain_significance&pathogenic",
           "pheno": "1&1&1",
           "lofInfo": "EXON_START:41215891&DE_NOVO_DONOR_PROB:0.031452812142167&DE_NOVO_DONOR_POS:-29&DE_NOVO_DONOR_MES_POS:-28&EXON_END:41215968&INTRON_START:41215391&INTRON_END:41215890&MUTANT_DONOR_MES:7.9640258479777&DE_NOVO_DONOR_MES:0.588033946511443"
@@ -1609,57 +1422,28 @@
           "trembl": "Q9UE29&K4K7U9&K4JXS7&H0Y8B8&C4PFY7",
           "uniparc": "UPI0001B79085",
           "genePheno": "1",
-          "sift": {
-            "prediction": "deleterious"
-          },
-          "polyphen": {
-            "prediction": "probably_damaging",
-            "score": 1
-          },
+          "sift": { "prediction": "deleterious" },
+          "polyphen": { "prediction": "probably_damaging", "score": 1.0 },
           "domains": [
-            {
-              "id": "3.40.50.10190",
-              "source": "Gene3D"
-            },
-            {
-              "id": "PF00533",
-              "source": "Pfam_domain"
-            },
-            {
-              "id": "PR00493",
-              "source": "Prints_domain"
-            },
-            {
-              "id": "PS50172",
-              "source": "PROSITE_profiles"
-            },
-            {
-              "id": "PTHR13763",
-              "source": "hmmpanther"
-            },
-            {
-              "id": "PTHR13763",
-              "source": "hmmpanther"
-            },
-            {
-              "id": "SM00292",
-              "source": "SMART_domains"
-            },
-            {
-              "id": "SSF52113",
-              "source": "Superfamily_domains"
-            }
+            { "id": "3.40.50.10190", "source": "Gene3D" },
+            { "id": "PF00533", "source": "Pfam_domain" },
+            { "id": "PR00493", "source": "Prints_domain" },
+            { "id": "PS50172", "source": "PROSITE_profiles" },
+            { "id": "PTHR13763", "source": "hmmpanther" },
+            { "id": "PTHR13763", "source": "hmmpanther" },
+            { "id": "SM00292", "source": "SMART_domains" },
+            { "id": "SSF52113", "source": "Superfamily_domains" }
           ],
           "eaMaf": 0.0005000000237487257,
           "exacMaf": 0.00009999999747378752,
           "exacAdjMaf": 0.00008689999958733097,
           "exacAfrMaf": 0.000024709999706828967,
-          "exacAmrMaf": 0,
+          "exacAmrMaf": 0.0,
           "exacEasMaf": 0.000024869999833754264,
-          "exacFinMaf": 0,
-          "exacNfeMaf": 0,
+          "exacFinMaf": 0.0,
+          "exacNfeMaf": 0.0,
           "exacOthMaf": 0.000030159999369061552,
-          "exacSasMaf": 0,
+          "exacSasMaf": 0.0,
           "clinSig": "uncertain_significance&pathogenic",
           "pheno": "1&1&1",
           "lofInfo": "DE_NOVO_DONOR_PROB:0.031452812142167&EXON_START:41215891&INTRON_END:41215890&DE_NOVO_DONOR_MES_POS:-28&DE_NOVO_DONOR_POS:-29&INTRON_START:41215391&EXON_END:41215968&MUTANT_DONOR_MES:7.9640258479777&DE_NOVO_DONOR_MES:0.588033946511443"
@@ -1694,57 +1478,28 @@
           "trembl": "Q9UE29&Q9NQR3&Q92897&Q7KYU6&K7EPC7&K4JXS7&G1UI37&C4PFY7&B4DES0",
           "uniparc": "UPI000013C85E",
           "genePheno": "1",
-          "sift": {
-            "prediction": "deleterious"
-          },
-          "polyphen": {
-            "prediction": "probably_damaging",
-            "score": 1
-          },
+          "sift": { "prediction": "deleterious" },
+          "polyphen": { "prediction": "probably_damaging", "score": 1.0 },
           "domains": [
-            {
-              "id": "SSF52113",
-              "source": "Superfamily_domains"
-            },
-            {
-              "id": "PIRSF001734",
-              "source": "PIRSF_domain"
-            },
-            {
-              "id": "SM00292",
-              "source": "SMART_domains"
-            },
-            {
-              "id": "3.40.50.10190",
-              "source": "Gene3D"
-            },
-            {
-              "id": "PF00533",
-              "source": "Pfam_domain"
-            },
-            {
-              "id": "PTHR13763",
-              "source": "hmmpanther"
-            },
-            {
-              "id": "PTHR13763",
-              "source": "hmmpanther"
-            },
-            {
-              "id": "PS50172",
-              "source": "PROSITE_profiles"
-            }
+            { "id": "SSF52113", "source": "Superfamily_domains" },
+            { "id": "PIRSF001734", "source": "PIRSF_domain" },
+            { "id": "SM00292", "source": "SMART_domains" },
+            { "id": "3.40.50.10190", "source": "Gene3D" },
+            { "id": "PF00533", "source": "Pfam_domain" },
+            { "id": "PTHR13763", "source": "hmmpanther" },
+            { "id": "PTHR13763", "source": "hmmpanther" },
+            { "id": "PS50172", "source": "PROSITE_profiles" }
           ],
           "eaMaf": 0.0005000000237487257,
           "exacMaf": 0.00009999999747378752,
           "exacAdjMaf": 0.00008689999958733097,
           "exacAfrMaf": 0.000024709999706828967,
-          "exacAmrMaf": 0,
+          "exacAmrMaf": 0.0,
           "exacEasMaf": 0.000024869999833754264,
-          "exacFinMaf": 0,
-          "exacNfeMaf": 0,
+          "exacFinMaf": 0.0,
+          "exacNfeMaf": 0.0,
           "exacOthMaf": 0.000030159999369061552,
-          "exacSasMaf": 0,
+          "exacSasMaf": 0.0,
           "clinSig": "uncertain_significance&pathogenic",
           "pheno": "1&1&1",
           "lofInfo": "DE_NOVO_DONOR_MES:0.588033946511443&MUTANT_DONOR_MES:7.9640258479777&INTRON_END:41215890&DE_NOVO_DONOR_POS:-29&DE_NOVO_DONOR_MES_POS:-28&EXON_END:41215968&INTRON_START:41215391&DE_NOVO_DONOR_PROB:0.031452812142167&EXON_START:41215891"
@@ -1778,61 +1533,29 @@
           "trembl": "Q9UE29&Q9NQR3&Q7KYU6&Q4EW25&Q3YB53&Q3YB50&Q3YB49&K7EPC7&K4K7V3&K4JXS7&K4JUB1&G4V503&G4V502&G4V500&G4V4Z8&G4V4Z7&E9PFZ0&E7EP70&C9IZW4&C4PFY7",
           "uniparc": "UPI000013C860",
           "genePheno": "1",
-          "sift": {
-            "prediction": "deleterious"
-          },
-          "polyphen": {
-            "prediction": "probably_damaging",
-            "score": 0.9089999794960022
-          },
+          "sift": { "prediction": "deleterious" },
+          "polyphen": { "prediction": "probably_damaging", "score": 0.9089999794960022 },
           "domains": [
-            {
-              "id": "3.40.50.10190",
-              "source": "Gene3D"
-            },
-            {
-              "id": "PF00533",
-              "source": "Pfam_domain"
-            },
-            {
-              "id": "PIRSF001734",
-              "source": "PIRSF_domain"
-            },
-            {
-              "id": "PR00493",
-              "source": "Prints_domain"
-            },
-            {
-              "id": "PS50172",
-              "source": "PROSITE_profiles"
-            },
-            {
-              "id": "PTHR13763",
-              "source": "hmmpanther"
-            },
-            {
-              "id": "PTHR13763",
-              "source": "hmmpanther"
-            },
-            {
-              "id": "SM00292",
-              "source": "SMART_domains"
-            },
-            {
-              "id": "SSF52113",
-              "source": "Superfamily_domains"
-            }
+            { "id": "3.40.50.10190", "source": "Gene3D" },
+            { "id": "PF00533", "source": "Pfam_domain" },
+            { "id": "PIRSF001734", "source": "PIRSF_domain" },
+            { "id": "PR00493", "source": "Prints_domain" },
+            { "id": "PS50172", "source": "PROSITE_profiles" },
+            { "id": "PTHR13763", "source": "hmmpanther" },
+            { "id": "PTHR13763", "source": "hmmpanther" },
+            { "id": "SM00292", "source": "SMART_domains" },
+            { "id": "SSF52113", "source": "Superfamily_domains" }
           ],
           "eaMaf": 0.0005000000237487257,
           "exacMaf": 0.00009999999747378752,
           "exacAdjMaf": 0.00008689999958733097,
           "exacAfrMaf": 0.000024709999706828967,
-          "exacAmrMaf": 0,
+          "exacAmrMaf": 0.0,
           "exacEasMaf": 0.000024869999833754264,
-          "exacFinMaf": 0,
-          "exacNfeMaf": 0,
+          "exacFinMaf": 0.0,
+          "exacNfeMaf": 0.0,
           "exacOthMaf": 0.000030159999369061552,
-          "exacSasMaf": 0,
+          "exacSasMaf": 0.0,
           "clinSig": "uncertain_significance&pathogenic",
           "pheno": "1&1&1",
           "lofInfo": "DE_NOVO_DONOR_MES:0.588033946511443&MUTANT_DONOR_MES:7.9640258479777&INTRON_END:41215890&DE_NOVO_DONOR_MES_POS:-28&DE_NOVO_DONOR_POS:-29&INTRON_START:41215391&EXON_END:41215968&DE_NOVO_DONOR_PROB:0.031452812142167&EXON_START:41215891"
@@ -1866,49 +1589,26 @@
           "trembl": "Q9UE29&K4JXS7&C4PFY7&B7ZA85",
           "uniparc": "UPI00019154A6",
           "genePheno": "1",
-          "sift": {
-            "prediction": "deleterious"
-          },
-          "polyphen": {
-            "prediction": "probably_damaging",
-            "score": 1
-          },
+          "sift": { "prediction": "deleterious" },
+          "polyphen": { "prediction": "probably_damaging", "score": 1.0 },
           "domains": [
-            {
-              "id": "3.40.50.10190",
-              "source": "Gene3D"
-            },
-            {
-              "id": "PF00533",
-              "source": "Pfam_domain"
-            },
-            {
-              "id": "PS50172",
-              "source": "PROSITE_profiles"
-            },
-            {
-              "id": "PTHR13763",
-              "source": "hmmpanther"
-            },
-            {
-              "id": "PTHR13763",
-              "source": "hmmpanther"
-            },
-            {
-              "id": "SSF52113",
-              "source": "Superfamily_domains"
-            }
+            { "id": "3.40.50.10190", "source": "Gene3D" },
+            { "id": "PF00533", "source": "Pfam_domain" },
+            { "id": "PS50172", "source": "PROSITE_profiles" },
+            { "id": "PTHR13763", "source": "hmmpanther" },
+            { "id": "PTHR13763", "source": "hmmpanther" },
+            { "id": "SSF52113", "source": "Superfamily_domains" }
           ],
           "eaMaf": 0.0005000000237487257,
           "exacMaf": 0.00009999999747378752,
           "exacAdjMaf": 0.00008689999958733097,
           "exacAfrMaf": 0.000024709999706828967,
-          "exacAmrMaf": 0,
+          "exacAmrMaf": 0.0,
           "exacEasMaf": 0.000024869999833754264,
-          "exacFinMaf": 0,
-          "exacNfeMaf": 0,
+          "exacFinMaf": 0.0,
+          "exacNfeMaf": 0.0,
           "exacOthMaf": 0.000030159999369061552,
-          "exacSasMaf": 0,
+          "exacSasMaf": 0.0,
           "clinSig": "uncertain_significance&pathogenic",
           "pheno": "1&1&1",
           "lofInfo": "DE_NOVO_DONOR_PROB:0.031452812142167&EXON_START:41215891&INTRON_END:41215890&DE_NOVO_DONOR_MES_POS:-28&DE_NOVO_DONOR_POS:-29&EXON_END:41215968&INTRON_START:41215391&MUTANT_DONOR_MES:7.9640258479777&DE_NOVO_DONOR_MES:0.588033946511443"
@@ -1941,53 +1641,27 @@
           "trembl": "Q9NQR3&C6YB45&C4PFY7",
           "uniparc": "UPI0001B065E7",
           "genePheno": "1",
-          "sift": {
-            "prediction": "deleterious"
-          },
-          "polyphen": {
-            "prediction": "probably_damaging",
-            "score": 0.9980000257492065
-          },
+          "sift": { "prediction": "deleterious" },
+          "polyphen": { "prediction": "probably_damaging", "score": 0.9980000257492065 },
           "domains": [
-            {
-              "id": "3.40.50.10190",
-              "source": "Gene3D"
-            },
-            {
-              "id": "PR00493",
-              "source": "Prints_domain"
-            },
-            {
-              "id": "PS50172",
-              "source": "PROSITE_profiles"
-            },
-            {
-              "id": "PTHR13763",
-              "source": "hmmpanther"
-            },
-            {
-              "id": "PTHR13763",
-              "source": "hmmpanther"
-            },
-            {
-              "id": "SSF52113",
-              "source": "Superfamily_domains"
-            },
-            {
-              "id": "TMhelix",
-              "source": "Transmembrane_helices"
-            }
+            { "id": "3.40.50.10190", "source": "Gene3D" },
+            { "id": "PR00493", "source": "Prints_domain" },
+            { "id": "PS50172", "source": "PROSITE_profiles" },
+            { "id": "PTHR13763", "source": "hmmpanther" },
+            { "id": "PTHR13763", "source": "hmmpanther" },
+            { "id": "SSF52113", "source": "Superfamily_domains" },
+            { "id": "TMhelix", "source": "Transmembrane_helices" }
           ],
           "eaMaf": 0.0005000000237487257,
           "exacMaf": 0.00009999999747378752,
           "exacAdjMaf": 0.00008689999958733097,
           "exacAfrMaf": 0.000024709999706828967,
-          "exacAmrMaf": 0,
+          "exacAmrMaf": 0.0,
           "exacEasMaf": 0.000024869999833754264,
-          "exacFinMaf": 0,
-          "exacNfeMaf": 0,
+          "exacFinMaf": 0.0,
+          "exacNfeMaf": 0.0,
           "exacOthMaf": 0.000030159999369061552,
-          "exacSasMaf": 0,
+          "exacSasMaf": 0.0,
           "clinSig": "uncertain_significance&pathogenic",
           "pheno": "1&1&1",
           "lofInfo": "INTRON_END:41215890&INTRON_START:41215391&EXON_END:41215968&DE_NOVO_DONOR_MES_POS:-28&DE_NOVO_DONOR_POS:-29&EXON_START:41215891&DE_NOVO_DONOR_PROB:0.031452812142167&DE_NOVO_DONOR_MES:0.588033946511443&MUTANT_DONOR_MES:7.9640258479777"
@@ -2020,53 +1694,27 @@
           "trembl": "Q9UE29&Q9NQR3&Q7KYU6&K7EPC7&K4JXS7&C4PFY7",
           "uniparc": "UPI0002840F63",
           "genePheno": "1",
-          "sift": {
-            "prediction": "deleterious"
-          },
-          "polyphen": {
-            "prediction": "probably_damaging",
-            "score": 0.9089999794960022
-          },
+          "sift": { "prediction": "deleterious" },
+          "polyphen": { "prediction": "probably_damaging", "score": 0.9089999794960022 },
           "domains": [
-            {
-              "id": "3.40.50.10190",
-              "source": "Gene3D"
-            },
-            {
-              "id": "PF00533",
-              "source": "Pfam_domain"
-            },
-            {
-              "id": "PS50172",
-              "source": "PROSITE_profiles"
-            },
-            {
-              "id": "PTHR13763",
-              "source": "hmmpanther"
-            },
-            {
-              "id": "PTHR13763",
-              "source": "hmmpanther"
-            },
-            {
-              "id": "SM00292",
-              "source": "SMART_domains"
-            },
-            {
-              "id": "SSF52113",
-              "source": "Superfamily_domains"
-            }
+            { "id": "3.40.50.10190", "source": "Gene3D" },
+            { "id": "PF00533", "source": "Pfam_domain" },
+            { "id": "PS50172", "source": "PROSITE_profiles" },
+            { "id": "PTHR13763", "source": "hmmpanther" },
+            { "id": "PTHR13763", "source": "hmmpanther" },
+            { "id": "SM00292", "source": "SMART_domains" },
+            { "id": "SSF52113", "source": "Superfamily_domains" }
           ],
           "eaMaf": 0.0005000000237487257,
           "exacMaf": 0.00009999999747378752,
           "exacAdjMaf": 0.00008689999958733097,
           "exacAfrMaf": 0.000024709999706828967,
-          "exacAmrMaf": 0,
+          "exacAmrMaf": 0.0,
           "exacEasMaf": 0.000024869999833754264,
-          "exacFinMaf": 0,
-          "exacNfeMaf": 0,
+          "exacFinMaf": 0.0,
+          "exacNfeMaf": 0.0,
           "exacOthMaf": 0.000030159999369061552,
-          "exacSasMaf": 0,
+          "exacSasMaf": 0.0,
           "clinSig": "uncertain_significance&pathogenic",
           "pheno": "1&1&1",
           "lofInfo": "INTRON_START:41215391&EXON_END:41215968&DE_NOVO_DONOR_POS:-29&DE_NOVO_DONOR_MES_POS:-28&INTRON_END:41215890&DE_NOVO_DONOR_PROB:0.031452812142167&EXON_START:41215891&DE_NOVO_DONOR_MES:0.588033946511443&MUTANT_DONOR_MES:7.9640258479777"
@@ -2097,12 +1745,12 @@
           "exacMaf": 0.00009999999747378752,
           "exacAdjMaf": 0.00008689999958733097,
           "exacAfrMaf": 0.000024709999706828967,
-          "exacAmrMaf": 0,
+          "exacAmrMaf": 0.0,
           "exacEasMaf": 0.000024869999833754264,
-          "exacFinMaf": 0,
-          "exacNfeMaf": 0,
+          "exacFinMaf": 0.0,
+          "exacNfeMaf": 0.0,
           "exacOthMaf": 0.000030159999369061552,
-          "exacSasMaf": 0,
+          "exacSasMaf": 0.0,
           "clinSig": "uncertain_significance&pathogenic",
           "pheno": "1&1&1"
         }
@@ -2112,237 +1760,76 @@
           "byPopulation": [
             {
               "population": "afr",
-              "counts": {
-                "overall": {
-                  "an": 16244
-                },
-                "xx": {
-                  "an": 10058
-                },
-                "xy": {
-                  "an": 6186
-                }
-              },
-              "faf95": 0,
-              "faf99": 0
+              "counts": { "overall": { "an": 16244 }, "xx": { "an": 10058 }, "xy": { "an": 6186 } },
+              "faf95": 0.0,
+              "faf99": 0.0
             },
             {
               "population": "amr",
               "counts": {
-                "overall": {
-                  "ac": 2,
-                  "an": 34580,
-                  "af": 0.00005783689994132146
-                },
-                "xx": {
-                  "ac": 1,
-                  "an": 20264,
-                  "af": 0.00004934860044158995
-                },
-                "xy": {
-                  "ac": 1,
-                  "an": 14316,
-                  "af": 0.00006985189975239336
-                }
+                "overall": { "ac": 2, "an": 34580, "af": 0.00005783689994132146 },
+                "xx": { "ac": 1, "an": 20264, "af": 0.00004934860044158995 },
+                "xy": { "ac": 1, "an": 14316, "af": 0.00006985189975239336 }
               },
-              "faf95": 0.000009579999641573522,
-              "faf99": 0.000009579999641573522
+              "faf95": 9.579999641573522e-6,
+              "faf99": 9.579999641573522e-6
             },
             {
               "population": "asj",
-              "counts": {
-                "overall": {
-                  "an": 10074
-                },
-                "xx": {
-                  "an": 4900
-                },
-                "xy": {
-                  "an": 5174
-                }
-              }
+              "counts": { "overall": { "an": 10074 }, "xx": { "an": 4900 }, "xy": { "an": 5174 } }
             },
             {
               "population": "eas",
-              "counts": {
-                "overall": {
-                  "an": 18392
-                },
-                "xx": {
-                  "an": 9326
-                },
-                "xy": {
-                  "an": 9066
-                }
-              },
-              "faf95": 0,
-              "faf99": 0
+              "counts": { "overall": { "an": 18392 }, "xx": { "an": 9326 }, "xy": { "an": 9066 } },
+              "faf95": 0.0,
+              "faf99": 0.0
             },
-            {
-              "population": "eas_jpn",
-              "counts": {
-                "overall": {
-                  "an": 152
-                }
-              }
-            },
-            {
-              "population": "eas_oea",
-              "counts": {
-                "overall": {
-                  "an": 14424
-                }
-              }
-            },
-            {
-              "population": "eas_kor",
-              "counts": {
-                "overall": {
-                  "an": 3816
-                }
-              }
-            },
+            { "population": "eas_jpn", "counts": { "overall": { "an": 152 } } },
+            { "population": "eas_oea", "counts": { "overall": { "an": 14424 } } },
+            { "population": "eas_kor", "counts": { "overall": { "an": 3816 } } },
             {
               "population": "fin",
-              "counts": {
-                "overall": {
-                  "an": 21646
-                },
-                "xx": {
-                  "an": 10372
-                },
-                "xy": {
-                  "an": 11274
-                }
-              }
+              "counts": { "overall": { "an": 21646 }, "xx": { "an": 10372 }, "xy": { "an": 11274 } }
             },
             {
               "population": "nfe",
               "counts": {
-                "overall": {
-                  "ac": 3,
-                  "an": 113656,
-                  "af": 0.000026395400709589012
-                },
-                "xx": {
-                  "ac": 1,
-                  "an": 50088,
-                  "af": 0.000019964900275226682
-                },
-                "xy": {
-                  "ac": 2,
-                  "an": 63568,
-                  "af": 0.000031462401238968596
-                }
+                "overall": { "ac": 3, "an": 113656, "af": 0.000026395400709589012 },
+                "xx": { "ac": 1, "an": 50088, "af": 0.000019964900275226682 },
+                "xy": { "ac": 2, "an": 63568, "af": 0.000031462401238968596 }
               },
-              "faf95": 0.00000700999999025953,
-              "faf99": 0.000006950000170036219
+              "faf95": 7.00999999025953e-6,
+              "faf99": 6.950000170036219e-6
             },
-            {
-              "population": "nfe_bgr",
-              "counts": {
-                "overall": {
-                  "an": 2670
-                }
-              }
-            },
-            {
-              "population": "nfe_est",
-              "counts": {
-                "overall": {
-                  "an": 242
-                }
-              }
-            },
+            { "population": "nfe_bgr", "counts": { "overall": { "an": 2670 } } },
+            { "population": "nfe_est", "counts": { "overall": { "an": 242 } } },
             {
               "population": "nfe_nwe",
-              "counts": {
-                "overall": {
-                  "ac": 1,
-                  "an": 42180,
-                  "af": 0.00002370790025452152
-                }
-              }
+              "counts": { "overall": { "ac": 1, "an": 42180, "af": 0.00002370790025452152 } }
             },
-            {
-              "population": "nfe_onf",
-              "counts": {
-                "overall": {
-                  "an": 30942
-                }
-              }
-            },
+            { "population": "nfe_onf", "counts": { "overall": { "an": 30942 } } },
             {
               "population": "nfe_seu",
-              "counts": {
-                "overall": {
-                  "ac": 2,
-                  "an": 11500,
-                  "af": 0.0001739129947964102
-                }
-              }
+              "counts": { "overall": { "ac": 2, "an": 11500, "af": 0.0001739129947964102 } }
             },
-            {
-              "population": "nfe_swe",
-              "counts": {
-                "overall": {
-                  "an": 26122
-                }
-              }
-            },
+            { "population": "nfe_swe", "counts": { "overall": { "an": 26122 } } },
             {
               "population": "oth",
-              "counts": {
-                "overall": {
-                  "an": 6122
-                },
-                "xx": {
-                  "an": 2920
-                },
-                "xy": {
-                  "an": 3202
-                }
-              }
+              "counts": { "overall": { "an": 6122 }, "xx": { "an": 2920 }, "xy": { "an": 3202 } }
             },
             {
               "population": "sas",
-              "counts": {
-                "overall": {
-                  "an": 30598
-                },
-                "xx": {
-                  "an": 7538
-                },
-                "xy": {
-                  "an": 23060
-                }
-              },
-              "faf95": 0,
-              "faf99": 0
+              "counts": { "overall": { "an": 30598 }, "xx": { "an": 7538 }, "xy": { "an": 23060 } },
+              "faf95": 0.0,
+              "faf99": 0.0
             }
           ],
           "bySex": {
-            "overall": {
-              "ac": 5,
-              "an": 251312,
-              "af": 0.000019895600416930392
-            },
-            "xx": {
-              "ac": 2,
-              "an": 115466,
-              "af": 0.000017321099221589975
-            },
-            "xy": {
-              "ac": 3,
-              "an": 135846,
-              "af": 0.00002208379919466097
-            }
+            "overall": { "ac": 5, "an": 251312, "af": 0.000019895600416930392 },
+            "xx": { "ac": 2, "an": 115466, "af": 0.000017321099221589975 },
+            "xy": { "ac": 3, "an": 135846, "af": 0.00002208379919466097 }
           },
-          "raw": {
-            "ac": 5,
-            "an": 251496,
-            "af": 0.00001988099938898813
-          },
+          "raw": { "ac": 5, "an": 251496, "af": 0.00001988099938898813 },
           "popmax": "amr",
           "afPopmax": 0.00005783689994132146,
           "acPopmax": 2,
@@ -2354,229 +1841,73 @@
           "byPopulation": [
             {
               "population": "afr",
-              "counts": {
-                "overall": {
-                  "an": 7158
-                },
-                "xx": {
-                  "an": 4234
-                },
-                "xy": {
-                  "an": 2924
-                }
-              },
-              "faf95": 0,
-              "faf99": 0
+              "counts": { "overall": { "an": 7158 }, "xx": { "an": 4234 }, "xy": { "an": 2924 } },
+              "faf95": 0.0,
+              "faf99": 0.0
             },
             {
               "population": "amr",
               "counts": {
-                "overall": {
-                  "ac": 1,
-                  "an": 17102,
-                  "af": 0.00005847269858350046
-                },
-                "xx": {
-                  "ac": 1,
-                  "an": 10220,
-                  "af": 0.00009784739813767374
-                },
-                "xy": {
-                  "an": 6882
-                }
+                "overall": { "ac": 1, "an": 17102, "af": 0.00005847269858350046 },
+                "xx": { "ac": 1, "an": 10220, "af": 0.00009784739813767374 },
+                "xy": { "an": 6882 }
               },
-              "faf95": 0.000009579999641573522,
-              "faf99": 0.000009579999641573522
+              "faf95": 9.579999641573522e-6,
+              "faf99": 9.579999641573522e-6
             },
             {
               "population": "asj",
-              "counts": {
-                "overall": {
-                  "an": 2320
-                },
-                "xx": {
-                  "an": 1214
-                },
-                "xy": {
-                  "an": 1106
-                }
-              }
+              "counts": { "overall": { "an": 2320 }, "xx": { "an": 1214 }, "xy": { "an": 1106 } }
             },
             {
               "population": "eas",
-              "counts": {
-                "overall": {
-                  "an": 9044
-                },
-                "xx": {
-                  "an": 4786
-                },
-                "xy": {
-                  "an": 4258
-                }
-              },
-              "faf95": 0,
-              "faf99": 0
+              "counts": { "overall": { "an": 9044 }, "xx": { "an": 4786 }, "xy": { "an": 4258 } },
+              "faf95": 0.0,
+              "faf99": 0.0
             },
-            {
-              "population": "eas_jpn",
-              "counts": {
-                "overall": {
-                  "an": 114
-                }
-              }
-            },
-            {
-              "population": "eas_oea",
-              "counts": {
-                "overall": {
-                  "an": 7044
-                }
-              }
-            },
-            {
-              "population": "eas_kor",
-              "counts": {
-                "overall": {
-                  "an": 1886
-                }
-              }
-            },
+            { "population": "eas_jpn", "counts": { "overall": { "an": 114 } } },
+            { "population": "eas_oea", "counts": { "overall": { "an": 7044 } } },
+            { "population": "eas_kor", "counts": { "overall": { "an": 1886 } } },
             {
               "population": "fin",
-              "counts": {
-                "overall": {
-                  "an": 13394
-                },
-                "xx": {
-                  "an": 6474
-                },
-                "xy": {
-                  "an": 6920
-                }
-              }
+              "counts": { "overall": { "an": 13394 }, "xx": { "an": 6474 }, "xy": { "an": 6920 } }
             },
             {
               "population": "nfe",
               "counts": {
-                "overall": {
-                  "ac": 1,
-                  "an": 42754,
-                  "af": 0.00002338960075576324
-                },
-                "xx": {
-                  "ac": 1,
-                  "an": 19138,
-                  "af": 0.000052252100431360304
-                },
-                "xy": {
-                  "an": 23616
-                }
+                "overall": { "ac": 1, "an": 42754, "af": 0.00002338960075576324 },
+                "xx": { "ac": 1, "an": 19138, "af": 0.000052252100431360304 },
+                "xy": { "an": 23616 }
               },
-              "faf95": 0.00000700999999025953,
-              "faf99": 0.000006950000170036219
+              "faf95": 7.00999999025953e-6,
+              "faf99": 6.950000170036219e-6
             },
-            {
-              "population": "nfe_bgr",
-              "counts": {
-                "overall": {
-                  "an": 678
-                }
-              }
-            },
-            {
-              "population": "nfe_est",
-              "counts": {
-                "overall": {
-                  "an": 70
-                }
-              }
-            },
+            { "population": "nfe_bgr", "counts": { "overall": { "an": 678 } } },
+            { "population": "nfe_est", "counts": { "overall": { "an": 70 } } },
             {
               "population": "nfe_nwe",
-              "counts": {
-                "overall": {
-                  "ac": 1,
-                  "an": 14448,
-                  "af": 0.00006921369640622288
-                }
-              }
+              "counts": { "overall": { "ac": 1, "an": 14448, "af": 0.00006921369640622288 } }
             },
-            {
-              "population": "nfe_onf",
-              "counts": {
-                "overall": {
-                  "an": 9990
-                }
-              }
-            },
-            {
-              "population": "nfe_seu",
-              "counts": {
-                "overall": {
-                  "an": 4760
-                }
-              }
-            },
-            {
-              "population": "nfe_swe",
-              "counts": {
-                "overall": {
-                  "an": 12808
-                }
-              }
-            },
+            { "population": "nfe_onf", "counts": { "overall": { "an": 9990 } } },
+            { "population": "nfe_seu", "counts": { "overall": { "an": 4760 } } },
+            { "population": "nfe_swe", "counts": { "overall": { "an": 12808 } } },
             {
               "population": "oth",
-              "counts": {
-                "overall": {
-                  "an": 1914
-                },
-                "xx": {
-                  "an": 986
-                },
-                "xy": {
-                  "an": 928
-                }
-              }
+              "counts": { "overall": { "an": 1914 }, "xx": { "an": 986 }, "xy": { "an": 928 } }
             },
             {
               "population": "sas",
-              "counts": {
-                "overall": {
-                  "an": 15680
-                },
-                "xx": {
-                  "an": 4208
-                },
-                "xy": {
-                  "an": 11472
-                }
-              },
-              "faf95": 0,
-              "faf99": 0
+              "counts": { "overall": { "an": 15680 }, "xx": { "an": 4208 }, "xy": { "an": 11472 } },
+              "faf95": 0.0,
+              "faf99": 0.0
             }
           ],
           "bySex": {
-            "overall": {
-              "ac": 2,
-              "an": 109366,
-              "af": 0.00001828720087360125
-            },
-            "xx": {
-              "ac": 2,
-              "an": 51260,
-              "af": 0.0000390167988371104
-            },
-            "xy": {
-              "an": 58106
-            }
+            "overall": { "ac": 2, "an": 109366, "af": 0.00001828720087360125 },
+            "xx": { "ac": 2, "an": 51260, "af": 0.0000390167988371104 },
+            "xy": { "an": 58106 }
           },
-          "raw": {
-            "ac": 2,
-            "an": 109408,
-            "af": 0.000018280199583387002
-          },
+          "raw": { "ac": 2, "an": 109408, "af": 0.000018280199583387002 },
           "popmax": "amr",
           "afPopmax": 0.00005847269858350046,
           "acPopmax": 1,
@@ -2588,237 +1919,76 @@
           "byPopulation": [
             {
               "population": "afr",
-              "counts": {
-                "overall": {
-                  "an": 14892
-                },
-                "xx": {
-                  "an": 9220
-                },
-                "xy": {
-                  "an": 5672
-                }
-              },
-              "faf95": 0,
-              "faf99": 0
+              "counts": { "overall": { "an": 14892 }, "xx": { "an": 9220 }, "xy": { "an": 5672 } },
+              "faf95": 0.0,
+              "faf99": 0.0
             },
             {
               "population": "amr",
               "counts": {
-                "overall": {
-                  "ac": 2,
-                  "an": 34248,
-                  "af": 0.000058397599786985666
-                },
-                "xx": {
-                  "ac": 1,
-                  "an": 20080,
-                  "af": 0.00004980080120731145
-                },
-                "xy": {
-                  "ac": 1,
-                  "an": 14168,
-                  "af": 0.0000705815982655622
-                }
+                "overall": { "ac": 2, "an": 34248, "af": 0.000058397599786985666 },
+                "xx": { "ac": 1, "an": 20080, "af": 0.00004980080120731145 },
+                "xy": { "ac": 1, "an": 14168, "af": 0.0000705815982655622 }
               },
-              "faf95": 0.000009579999641573522,
-              "faf99": 0.000009579999641573522
+              "faf95": 9.579999641573522e-6,
+              "faf99": 9.579999641573522e-6
             },
             {
               "population": "asj",
-              "counts": {
-                "overall": {
-                  "an": 9566
-                },
-                "xx": {
-                  "an": 4596
-                },
-                "xy": {
-                  "an": 4970
-                }
-              }
+              "counts": { "overall": { "an": 9566 }, "xx": { "an": 4596 }, "xy": { "an": 4970 } }
             },
             {
               "population": "eas",
-              "counts": {
-                "overall": {
-                  "an": 17690
-                },
-                "xx": {
-                  "an": 8946
-                },
-                "xy": {
-                  "an": 8744
-                }
-              },
-              "faf95": 0,
-              "faf99": 0
+              "counts": { "overall": { "an": 17690 }, "xx": { "an": 8946 }, "xy": { "an": 8744 } },
+              "faf95": 0.0,
+              "faf99": 0.0
             },
-            {
-              "population": "eas_jpn",
-              "counts": {
-                "overall": {
-                  "an": 124
-                }
-              }
-            },
-            {
-              "population": "eas_oea",
-              "counts": {
-                "overall": {
-                  "an": 13794
-                }
-              }
-            },
-            {
-              "population": "eas_kor",
-              "counts": {
-                "overall": {
-                  "an": 3772
-                }
-              }
-            },
+            { "population": "eas_jpn", "counts": { "overall": { "an": 124 } } },
+            { "population": "eas_oea", "counts": { "overall": { "an": 13794 } } },
+            { "population": "eas_kor", "counts": { "overall": { "an": 3772 } } },
             {
               "population": "fin",
-              "counts": {
-                "overall": {
-                  "an": 21630
-                },
-                "xx": {
-                  "an": 10360
-                },
-                "xy": {
-                  "an": 11270
-                }
-              }
+              "counts": { "overall": { "an": 21630 }, "xx": { "an": 10360 }, "xy": { "an": 11270 } }
             },
             {
               "population": "nfe",
               "counts": {
-                "overall": {
-                  "ac": 3,
-                  "an": 102672,
-                  "af": 0.000029219299904070795
-                },
-                "xx": {
-                  "ac": 1,
-                  "an": 44258,
-                  "af": 0.000022594800611841492
-                },
-                "xy": {
-                  "ac": 2,
-                  "an": 58414,
-                  "af": 0.000034238400985486805
-                }
+                "overall": { "ac": 3, "an": 102672, "af": 0.000029219299904070795 },
+                "xx": { "ac": 1, "an": 44258, "af": 0.000022594800611841492 },
+                "xy": { "ac": 2, "an": 58414, "af": 0.000034238400985486805 }
               },
-              "faf95": 0.00000700999999025953,
-              "faf99": 0.000006950000170036219
+              "faf95": 7.00999999025953e-6,
+              "faf99": 6.950000170036219e-6
             },
-            {
-              "population": "nfe_bgr",
-              "counts": {
-                "overall": {
-                  "an": 2526
-                }
-              }
-            },
-            {
-              "population": "nfe_est",
-              "counts": {
-                "overall": {
-                  "an": 158
-                }
-              }
-            },
+            { "population": "nfe_bgr", "counts": { "overall": { "an": 2526 } } },
+            { "population": "nfe_est", "counts": { "overall": { "an": 158 } } },
             {
               "population": "nfe_nwe",
-              "counts": {
-                "overall": {
-                  "ac": 1,
-                  "an": 39468,
-                  "af": 0.000025336999897263013
-                }
-              }
+              "counts": { "overall": { "ac": 1, "an": 39468, "af": 0.000025336999897263013 } }
             },
-            {
-              "population": "nfe_onf",
-              "counts": {
-                "overall": {
-                  "an": 24630
-                }
-              }
-            },
+            { "population": "nfe_onf", "counts": { "overall": { "an": 24630 } } },
             {
               "population": "nfe_seu",
-              "counts": {
-                "overall": {
-                  "ac": 2,
-                  "an": 10608,
-                  "af": 0.00018853700021281838
-                }
-              }
+              "counts": { "overall": { "ac": 2, "an": 10608, "af": 0.00018853700021281838 } }
             },
-            {
-              "population": "nfe_swe",
-              "counts": {
-                "overall": {
-                  "an": 25282
-                }
-              }
-            },
+            { "population": "nfe_swe", "counts": { "overall": { "an": 25282 } } },
             {
               "population": "oth",
-              "counts": {
-                "overall": {
-                  "an": 5606
-                },
-                "xx": {
-                  "an": 2678
-                },
-                "xy": {
-                  "an": 2928
-                }
-              }
+              "counts": { "overall": { "an": 5606 }, "xx": { "an": 2678 }, "xy": { "an": 2928 } }
             },
             {
               "population": "sas",
-              "counts": {
-                "overall": {
-                  "an": 30508
-                },
-                "xx": {
-                  "an": 7488
-                },
-                "xy": {
-                  "an": 23020
-                }
-              },
-              "faf95": 0,
-              "faf99": 0
+              "counts": { "overall": { "an": 30508 }, "xx": { "an": 7488 }, "xy": { "an": 23020 } },
+              "faf95": 0.0,
+              "faf99": 0.0
             }
           ],
           "bySex": {
-            "overall": {
-              "ac": 5,
-              "an": 236812,
-              "af": 0.000021113799448357895
-            },
-            "xx": {
-              "ac": 2,
-              "an": 107626,
-              "af": 0.000018582899429020472
-            },
-            "xy": {
-              "ac": 3,
-              "an": 129186,
-              "af": 0.00002322229920537211
-            }
+            "overall": { "ac": 5, "an": 236812, "af": 0.000021113799448357895 },
+            "xx": { "ac": 2, "an": 107626, "af": 0.000018582899429020472 },
+            "xy": { "ac": 3, "an": 129186, "af": 0.00002322229920537211 }
           },
-          "raw": {
-            "ac": 5,
-            "an": 236958,
-            "af": 0.000021100799131090753
-          },
+          "raw": { "ac": 5, "an": 236958, "af": 0.000021100799131090753 },
           "popmax": "amr",
           "afPopmax": 0.000058397599786985666,
           "acPopmax": 2,
@@ -2830,237 +2000,76 @@
           "byPopulation": [
             {
               "population": "afr",
-              "counts": {
-                "overall": {
-                  "an": 16206
-                },
-                "xx": {
-                  "an": 10042
-                },
-                "xy": {
-                  "an": 6164
-                }
-              },
-              "faf95": 0,
-              "faf99": 0
+              "counts": { "overall": { "an": 16206 }, "xx": { "an": 10042 }, "xy": { "an": 6164 } },
+              "faf95": 0.0,
+              "faf99": 0.0
             },
             {
               "population": "amr",
               "counts": {
-                "overall": {
-                  "ac": 2,
-                  "an": 30512,
-                  "af": 0.00006554800347657874
-                },
-                "xx": {
-                  "ac": 1,
-                  "an": 18260,
-                  "af": 0.00005476449950947426
-                },
-                "xy": {
-                  "ac": 1,
-                  "an": 12252,
-                  "af": 0.0000816192987258546
-                }
+                "overall": { "ac": 2, "an": 30512, "af": 0.00006554800347657874 },
+                "xx": { "ac": 1, "an": 18260, "af": 0.00005476449950947426 },
+                "xy": { "ac": 1, "an": 12252, "af": 0.0000816192987258546 }
               },
-              "faf95": 0.000009579999641573522,
-              "faf99": 0.000009579999641573522
+              "faf95": 9.579999641573522e-6,
+              "faf99": 9.579999641573522e-6
             },
             {
               "population": "asj",
-              "counts": {
-                "overall": {
-                  "an": 6212
-                },
-                "xx": {
-                  "an": 3086
-                },
-                "xy": {
-                  "an": 3126
-                }
-              }
+              "counts": { "overall": { "an": 6212 }, "xx": { "an": 3086 }, "xy": { "an": 3126 } }
             },
             {
               "population": "eas",
-              "counts": {
-                "overall": {
-                  "an": 13414
-                },
-                "xx": {
-                  "an": 6840
-                },
-                "xy": {
-                  "an": 6574
-                }
-              },
-              "faf95": 0,
-              "faf99": 0
+              "counts": { "overall": { "an": 13414 }, "xx": { "an": 6840 }, "xy": { "an": 6574 } },
+              "faf95": 0.0,
+              "faf99": 0.0
             },
-            {
-              "population": "eas_jpn",
-              "counts": {
-                "overall": {
-                  "an": 150
-                }
-              }
-            },
-            {
-              "population": "eas_oea",
-              "counts": {
-                "overall": {
-                  "an": 9450
-                }
-              }
-            },
-            {
-              "population": "eas_kor",
-              "counts": {
-                "overall": {
-                  "an": 3814
-                }
-              }
-            },
+            { "population": "eas_jpn", "counts": { "overall": { "an": 150 } } },
+            { "population": "eas_oea", "counts": { "overall": { "an": 9450 } } },
+            { "population": "eas_kor", "counts": { "overall": { "an": 3814 } } },
             {
               "population": "fin",
-              "counts": {
-                "overall": {
-                  "an": 16734
-                },
-                "xx": {
-                  "an": 7650
-                },
-                "xy": {
-                  "an": 9084
-                }
-              }
+              "counts": { "overall": { "an": 16734 }, "xx": { "an": 7650 }, "xy": { "an": 9084 } }
             },
             {
               "population": "nfe",
               "counts": {
-                "overall": {
-                  "ac": 3,
-                  "an": 89494,
-                  "af": 0.000033521799196023494
-                },
-                "xx": {
-                  "ac": 1,
-                  "an": 39782,
-                  "af": 0.000025137000193353742
-                },
-                "xy": {
-                  "ac": 2,
-                  "an": 49712,
-                  "af": 0.00004023169822175987
-                }
+                "overall": { "ac": 3, "an": 89494, "af": 0.000033521799196023494 },
+                "xx": { "ac": 1, "an": 39782, "af": 0.000025137000193353742 },
+                "xy": { "ac": 2, "an": 49712, "af": 0.00004023169822175987 }
               },
-              "faf95": 0.00000700999999025953,
-              "faf99": 0.000006950000170036219
+              "faf95": 7.00999999025953e-6,
+              "faf99": 6.950000170036219e-6
             },
-            {
-              "population": "nfe_bgr",
-              "counts": {
-                "overall": {
-                  "an": 452
-                }
-              }
-            },
-            {
-              "population": "nfe_est",
-              "counts": {
-                "overall": {
-                  "an": 216
-                }
-              }
-            },
+            { "population": "nfe_bgr", "counts": { "overall": { "an": 452 } } },
+            { "population": "nfe_est", "counts": { "overall": { "an": 216 } } },
             {
               "population": "nfe_nwe",
-              "counts": {
-                "overall": {
-                  "ac": 1,
-                  "an": 35338,
-                  "af": 0.00002829810000548605
-                }
-              }
+              "counts": { "overall": { "ac": 1, "an": 35338, "af": 0.00002829810000548605 } }
             },
-            {
-              "population": "nfe_onf",
-              "counts": {
-                "overall": {
-                  "an": 27774
-                }
-              }
-            },
+            { "population": "nfe_onf", "counts": { "overall": { "an": 27774 } } },
             {
               "population": "nfe_seu",
-              "counts": {
-                "overall": {
-                  "ac": 2,
-                  "an": 10940,
-                  "af": 0.00018281499797012657
-                }
-              }
+              "counts": { "overall": { "ac": 2, "an": 10940, "af": 0.00018281499797012657 } }
             },
-            {
-              "population": "nfe_swe",
-              "counts": {
-                "overall": {
-                  "an": 14774
-                }
-              }
-            },
+            { "population": "nfe_swe", "counts": { "overall": { "an": 14774 } } },
             {
               "population": "oth",
-              "counts": {
-                "overall": {
-                  "an": 4858
-                },
-                "xx": {
-                  "an": 2384
-                },
-                "xy": {
-                  "an": 2474
-                }
-              }
+              "counts": { "overall": { "an": 4858 }, "xx": { "an": 2384 }, "xy": { "an": 2474 } }
             },
             {
               "population": "sas",
-              "counts": {
-                "overall": {
-                  "an": 30590
-                },
-                "xx": {
-                  "an": 7536
-                },
-                "xy": {
-                  "an": 23054
-                }
-              },
-              "faf95": 0,
-              "faf99": 0
+              "counts": { "overall": { "an": 30590 }, "xx": { "an": 7536 }, "xy": { "an": 23054 } },
+              "faf95": 0.0,
+              "faf99": 0.0
             }
           ],
           "bySex": {
-            "overall": {
-              "ac": 5,
-              "an": 208020,
-              "af": 0.000024036200557020493
-            },
-            "xx": {
-              "ac": 2,
-              "an": 95580,
-              "af": 0.00002092489921778906
-            },
-            "xy": {
-              "ac": 3,
-              "an": 112440,
-              "af": 0.000026680900191422552
-            }
+            "overall": { "ac": 5, "an": 208020, "af": 0.000024036200557020493 },
+            "xx": { "ac": 2, "an": 95580, "af": 0.00002092489921778906 },
+            "xy": { "ac": 3, "an": 112440, "af": 0.000026680900191422552 }
           },
-          "raw": {
-            "ac": 5,
-            "an": 208136,
-            "af": 0.00002402280006208457
-          },
+          "raw": { "ac": 5, "an": 208136, "af": 0.00002402280006208457 },
           "popmax": "amr",
           "afPopmax": 0.00006554800347657874,
           "acPopmax": 2,
@@ -3072,237 +2081,76 @@
           "byPopulation": [
             {
               "population": "afr",
-              "counts": {
-                "overall": {
-                  "an": 12016
-                },
-                "xx": {
-                  "an": 7330
-                },
-                "xy": {
-                  "an": 4686
-                }
-              },
-              "faf95": 0,
-              "faf99": 0
+              "counts": { "overall": { "an": 12016 }, "xx": { "an": 7330 }, "xy": { "an": 4686 } },
+              "faf95": 0.0,
+              "faf99": 0.0
             },
             {
               "population": "amr",
               "counts": {
-                "overall": {
-                  "ac": 2,
-                  "an": 34446,
-                  "af": 0.00005806190165458247
-                },
-                "xx": {
-                  "ac": 1,
-                  "an": 20188,
-                  "af": 0.00004953439929522574
-                },
-                "xy": {
-                  "ac": 1,
-                  "an": 14258,
-                  "af": 0.00007013609865680337
-                }
+                "overall": { "ac": 2, "an": 34446, "af": 0.00005806190165458247 },
+                "xx": { "ac": 1, "an": 20188, "af": 0.00004953439929522574 },
+                "xy": { "ac": 1, "an": 14258, "af": 0.00007013609865680337 }
               },
-              "faf95": 0.000009579999641573522,
-              "faf99": 0.000009579999641573522
+              "faf95": 9.579999641573522e-6,
+              "faf99": 9.579999641573522e-6
             },
             {
               "population": "asj",
-              "counts": {
-                "overall": {
-                  "an": 9992
-                },
-                "xx": {
-                  "an": 4854
-                },
-                "xy": {
-                  "an": 5138
-                }
-              }
+              "counts": { "overall": { "an": 9992 }, "xx": { "an": 4854 }, "xy": { "an": 5138 } }
             },
             {
               "population": "eas",
-              "counts": {
-                "overall": {
-                  "an": 18388
-                },
-                "xx": {
-                  "an": 9326
-                },
-                "xy": {
-                  "an": 9062
-                }
-              },
-              "faf95": 0,
-              "faf99": 0
+              "counts": { "overall": { "an": 18388 }, "xx": { "an": 9326 }, "xy": { "an": 9062 } },
+              "faf95": 0.0,
+              "faf99": 0.0
             },
-            {
-              "population": "eas_jpn",
-              "counts": {
-                "overall": {
-                  "an": 152
-                }
-              }
-            },
-            {
-              "population": "eas_oea",
-              "counts": {
-                "overall": {
-                  "an": 14420
-                }
-              }
-            },
-            {
-              "population": "eas_kor",
-              "counts": {
-                "overall": {
-                  "an": 3816
-                }
-              }
-            },
+            { "population": "eas_jpn", "counts": { "overall": { "an": 152 } } },
+            { "population": "eas_oea", "counts": { "overall": { "an": 14420 } } },
+            { "population": "eas_kor", "counts": { "overall": { "an": 3816 } } },
             {
               "population": "fin",
-              "counts": {
-                "overall": {
-                  "an": 21644
-                },
-                "xx": {
-                  "an": 10370
-                },
-                "xy": {
-                  "an": 11274
-                }
-              }
+              "counts": { "overall": { "an": 21644 }, "xx": { "an": 10370 }, "xy": { "an": 11274 } }
             },
             {
               "population": "nfe",
               "counts": {
-                "overall": {
-                  "ac": 3,
-                  "an": 111566,
-                  "af": 0.000026889900254900567
-                },
-                "xx": {
-                  "ac": 1,
-                  "an": 48742,
-                  "af": 0.00002051619958365336
-                },
-                "xy": {
-                  "ac": 2,
-                  "an": 62824,
-                  "af": 0.00003183499939041212
-                }
+                "overall": { "ac": 3, "an": 111566, "af": 0.000026889900254900567 },
+                "xx": { "ac": 1, "an": 48742, "af": 0.00002051619958365336 },
+                "xy": { "ac": 2, "an": 62824, "af": 0.00003183499939041212 }
               },
-              "faf95": 0.00000700999999025953,
-              "faf99": 0.000006950000170036219
+              "faf95": 7.00999999025953e-6,
+              "faf99": 6.950000170036219e-6
             },
-            {
-              "population": "nfe_bgr",
-              "counts": {
-                "overall": {
-                  "an": 2662
-                }
-              }
-            },
-            {
-              "population": "nfe_est",
-              "counts": {
-                "overall": {
-                  "an": 238
-                }
-              }
-            },
+            { "population": "nfe_bgr", "counts": { "overall": { "an": 2662 } } },
+            { "population": "nfe_est", "counts": { "overall": { "an": 238 } } },
             {
               "population": "nfe_nwe",
-              "counts": {
-                "overall": {
-                  "ac": 1,
-                  "an": 41060,
-                  "af": 0.000024354600100195967
-                }
-              }
+              "counts": { "overall": { "ac": 1, "an": 41060, "af": 0.000024354600100195967 } }
             },
-            {
-              "population": "nfe_onf",
-              "counts": {
-                "overall": {
-                  "an": 30142
-                }
-              }
-            },
+            { "population": "nfe_onf", "counts": { "overall": { "an": 30142 } } },
             {
               "population": "nfe_seu",
-              "counts": {
-                "overall": {
-                  "ac": 2,
-                  "an": 11404,
-                  "af": 0.00017537700477987528
-                }
-              }
+              "counts": { "overall": { "ac": 2, "an": 11404, "af": 0.00017537700477987528 } }
             },
-            {
-              "population": "nfe_swe",
-              "counts": {
-                "overall": {
-                  "an": 26060
-                }
-              }
-            },
+            { "population": "nfe_swe", "counts": { "overall": { "an": 26060 } } },
             {
               "population": "oth",
-              "counts": {
-                "overall": {
-                  "an": 6046
-                },
-                "xx": {
-                  "an": 2870
-                },
-                "xy": {
-                  "an": 3176
-                }
-              }
+              "counts": { "overall": { "an": 6046 }, "xx": { "an": 2870 }, "xy": { "an": 3176 } }
             },
             {
               "population": "sas",
-              "counts": {
-                "overall": {
-                  "an": 30598
-                },
-                "xx": {
-                  "an": 7538
-                },
-                "xy": {
-                  "an": 23060
-                }
-              },
-              "faf95": 0,
-              "faf99": 0
+              "counts": { "overall": { "an": 30598 }, "xx": { "an": 7538 }, "xy": { "an": 23060 } },
+              "faf95": 0.0,
+              "faf99": 0.0
             }
           ],
           "bySex": {
-            "overall": {
-              "ac": 5,
-              "an": 244696,
-              "af": 0.000020433499230421148
-            },
-            "xx": {
-              "ac": 2,
-              "an": 111218,
-              "af": 0.00001798270022845827
-            },
-            "xy": {
-              "ac": 3,
-              "an": 133478,
-              "af": 0.00002247560041723773
-            }
+            "overall": { "ac": 5, "an": 244696, "af": 0.000020433499230421148 },
+            "xx": { "ac": 2, "an": 111218, "af": 0.00001798270022845827 },
+            "xy": { "ac": 3, "an": 133478, "af": 0.00002247560041723773 }
           },
-          "raw": {
-            "ac": 5,
-            "an": 244878,
-            "af": 0.00002041829975496512
-          },
+          "raw": { "ac": 5, "an": 244878, "af": 0.00002041829975496512 },
           "popmax": "amr",
           "afPopmax": 0.00005806190165458247,
           "acPopmax": 2,
@@ -3310,11 +2158,7 @@
           "nhomaltPopmax": 0
         }
       ],
-      "seqvarInfo": {
-        "variantType": "multi-snv",
-        "alleleType": "snv",
-        "nAltAlleles": 3
-      },
+      "variantInfo": { "variantType": "multi-snv", "alleleType": "snv", "nAltAlleles": 3 },
       "qualityInfo": {
         "fs": 0.5249999761581421,
         "inbreedingCoeff": 0.0003000000142492354,
@@ -3397,61 +2241,146 @@
       }
     ],
     "clinvar": {
-      "release": "GRCh37",
-      "chromosome": "17",
-      "start": 41215920,
-      "stop": 41215920,
-      "reference": "G",
-      "alternative": "T",
-      "vcv": "VCV000055407",
-      "referenceAssertions": [
+      "records": [
         {
-          "rcv": "RCV000077599",
-          "title": "NM_007294.4(BRCA1):c.5123C>A (p.Ala1708Glu) AND Breast-ovarian cancer, familial, susceptibility to, 1",
-          "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
-          "reviewStatus": "REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL"
-        },
-        {
-          "rcv": "RCV000048802",
-          "title": "NM_007294.4(BRCA1):c.5123C>A (p.Ala1708Glu) AND not provided",
-          "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
-          "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS"
-        },
-        {
-          "rcv": "RCV000131831",
-          "title": "NM_007294.4(BRCA1):c.5123C>A (p.Ala1708Glu) AND Hereditary cancer-predisposing syndrome",
-          "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
-          "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS"
-        },
-        {
-          "rcv": "RCV000167826",
-          "title": "NM_007294.4(BRCA1):c.5123C>A (p.Ala1708Glu) AND Hereditary breast ovarian cancer syndrome",
-          "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
-          "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS"
-        },
-        {
-          "rcv": "RCV000413608",
-          "title": "NM_007294.4(BRCA1):c.5123C>A (p.Ala1708Glu) AND Breast neoplasm",
-          "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
-          "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
-        },
-        {
-          "rcv": "RCV000457403",
-          "title": "NM_007294.4(BRCA1):c.5123C>A (p.Ala1708Glu) AND Familial cancer of breast",
-          "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
-          "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
-        },
-        {
-          "rcv": "RCV003149709",
-          "title": "NM_007294.4(BRCA1):c.5123C>A (p.Ala1708Glu) AND Breast and/or ovarian cancer",
-          "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
-          "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
-        },
-        {
-          "rcv": "RCV001579293",
-          "title": "NM_007294.4(BRCA1):c.5123C>A (p.Ala1708Glu) AND Breast carcinoma",
-          "clinicalSignificance": "CLINICAL_SIGNIFICANCE_PATHOGENIC",
-          "reviewStatus": "REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED"
+          "accession": { "accession": "VCV000055407", "version": 47 },
+          "rcvs": [
+            {
+              "accession": { "accession": "RCV000048802", "version": 33 },
+              "title": "NM_007294.4(BRCA1):c.5123C>A (p.Ala1708Glu) AND not provided",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                  "description": {
+                    "value": "Pathogenic",
+                    "dateLastEvaluated": "2021-11-22T00:00:00+00:00",
+                    "submissionCount": 7
+                  }
+                }
+              }
+            },
+            {
+              "accession": { "accession": "RCV000077599", "version": 27 },
+              "title": "NM_007294.4(BRCA1):c.5123C>A (p.Ala1708Glu) AND Breast-ovarian cancer, familial, susceptibility to, 1",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                  "description": {
+                    "value": "Pathogenic",
+                    "dateLastEvaluated": "2015-08-10T00:00:00+00:00",
+                    "submissionCount": 15
+                  }
+                }
+              }
+            },
+            {
+              "accession": { "accession": "RCV000167826", "version": 29 },
+              "title": "NM_007294.4(BRCA1):c.5123C>A (p.Ala1708Glu) AND Hereditary breast ovarian cancer syndrome",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                  "description": {
+                    "value": "Pathogenic",
+                    "dateLastEvaluated": "2024-01-25T00:00:00+00:00",
+                    "submissionCount": 5
+                  }
+                }
+              }
+            },
+            {
+              "accession": { "accession": "RCV000131831", "version": 20 },
+              "title": "NM_007294.4(BRCA1):c.5123C>A (p.Ala1708Glu) AND Hereditary cancer-predisposing syndrome",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                  "description": {
+                    "value": "Pathogenic",
+                    "dateLastEvaluated": "2023-05-02T00:00:00+00:00",
+                    "submissionCount": 3
+                  }
+                }
+              }
+            },
+            {
+              "accession": { "accession": "RCV000457403", "version": 9 },
+              "title": "NM_007294.4(BRCA1):c.5123C>A (p.Ala1708Glu) AND Familial cancer of breast",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                  "description": {
+                    "value": "Pathogenic",
+                    "dateLastEvaluated": "2017-02-23T00:00:00+00:00",
+                    "submissionCount": 1
+                  }
+                }
+              }
+            },
+            {
+              "accession": { "accession": "RCV000413608", "version": 9 },
+              "title": "NM_007294.4(BRCA1):c.5123C>A (p.Ala1708Glu) AND Breast neoplasm",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                  "description": { "value": "Pathogenic", "submissionCount": 1 }
+                }
+              }
+            },
+            {
+              "accession": { "accession": "RCV001579293", "version": 9 },
+              "title": "NM_007294.4(BRCA1):c.5123C>A (p.Ala1708Glu) AND Breast carcinoma",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                  "description": {
+                    "value": "Pathogenic",
+                    "dateLastEvaluated": "2021-08-21T00:00:00+00:00",
+                    "submissionCount": 1
+                  }
+                }
+              }
+            },
+            {
+              "accession": { "accession": "RCV003149709", "version": 9 },
+              "title": "NM_007294.4(BRCA1):c.5123C>A (p.Ala1708Glu) AND Breast and/or ovarian cancer",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                  "description": {
+                    "value": "Pathogenic",
+                    "dateLastEvaluated": "2022-05-02T00:00:00+00:00",
+                    "submissionCount": 1
+                  }
+                }
+              }
+            }
+          ],
+          "name": "NM_007294.4(BRCA1):c.5123C>A (p.Ala1708Glu)",
+          "variationType": "VARIATION_TYPE_SNV",
+          "classifications": {
+            "germlineClassification": {
+              "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+              "description": "Pathogenic",
+              "dateLastEvaluated": "2015-08-10T00:00:00+00:00",
+              "dateCreated": "2014-04-01T00:00:00+00:00",
+              "mostRecentSubmission": "2024-05-01T00:00:00+00:00",
+              "numberOfSubmitters": 33,
+              "numberOfSubmissions": 34
+            }
+          },
+          "sequenceLocation": {
+            "assembly": "GRCh37",
+            "chr": "CHROMOSOME_17",
+            "accession": "NC_000017.10",
+            "start": 41215920,
+            "stop": 41215920,
+            "displayStart": 41215920,
+            "displayStop": 41215920,
+            "variantLength": 1,
+            "positionVcf": 41215920,
+            "referenceAlleleVcf": "G",
+            "alternateAlleleVcf": "T"
+          },
+          "hgncIds": ["HGNC:1100"]
         }
       ]
     }

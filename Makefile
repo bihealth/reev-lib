@@ -70,13 +70,20 @@ PROTO_BASE_MEHARI := https://raw.githubusercontent.com/varfish-org/mehari/main
 
 .PHONY: proto-fetch
 proto-fetch:
-	mkdir -p protos/annonars/{clinvar,cons,dbsnp,functional,genes,gnomad,helixmtdb,regions}
+	rm -rf protos/annonars/{clinvar,clinvar_data,cons,dbsnp,functional,genes,gnomad,helixmtdb,regions}
+	mkdir -p protos/annonars/{clinvar,clinvar_data,cons,dbsnp,functional,genes,gnomad,helixmtdb,regions}
 	wget -O protos/annonars/clinvar/minimal.proto $(PROTO_BASE_ANNONARS)/protos/annonars/clinvar/minimal.proto
 	wget -O protos/annonars/clinvar/per_gene.proto $(PROTO_BASE_ANNONARS)/protos/annonars/clinvar/per_gene.proto
 	wget -O protos/annonars/clinvar/sv.proto $(PROTO_BASE_ANNONARS)/protos/annonars/clinvar/sv.proto
+	wget -O protos/annonars/clinvar_data/class_by_freq.proto $(PROTO_BASE_ANNONARS)/protos/annonars/clinvar_data/class_by_freq.proto
+	wget -O protos/annonars/clinvar_data/clinvar_public.proto $(PROTO_BASE_ANNONARS)/protos/annonars/clinvar_data/clinvar_public.proto
+	wget -O protos/annonars/clinvar_data/extracted_vars.proto $(PROTO_BASE_ANNONARS)/protos/annonars/clinvar_data/extracted_vars.proto
+	wget -O protos/annonars/clinvar_data/gene_impact.proto $(PROTO_BASE_ANNONARS)/protos/annonars/clinvar_data/gene_impact.proto
+	wget -O protos/annonars/clinvar_data/phenotype_link.proto $(PROTO_BASE_ANNONARS)/protos/annonars/clinvar_data/phenotype_link.proto
 	wget -O protos/annonars/cons/base.proto $(PROTO_BASE_ANNONARS)/protos/annonars/cons/base.proto
 	wget -O protos/annonars/dbsnp/base.proto $(PROTO_BASE_ANNONARS)/protos/annonars/dbsnp/base.proto
 	wget -O protos/annonars/functional/refseq.proto $(PROTO_BASE_ANNONARS)/protos/annonars/functional/refseq.proto
+	wget -O protos/annonars/genes/base.proto $(PROTO_BASE_ANNONARS)/protos/annonars/genes/base.proto
 	wget -O protos/annonars/gnomad/exac_cnv.proto $(PROTO_BASE_ANNONARS)/protos/annonars/gnomad/exac_cnv.proto
 	wget -O protos/annonars/gnomad/gnomad2.proto $(PROTO_BASE_ANNONARS)/protos/annonars/gnomad/gnomad2.proto
 	wget -O protos/annonars/gnomad/gnomad3.proto $(PROTO_BASE_ANNONARS)/protos/annonars/gnomad/gnomad3.proto
@@ -98,8 +105,8 @@ proto-fetch:
 .PHONY: proto-ts
 proto-ts:
 	mkdir -p src/pbs
-	npx protoc --ts_opt keep_enum_prefix --ts_out src/pbs --proto_path protos protos/annonars/*/*.proto
-	npx protoc --ts_opt keep_enum_prefix --ts_out src/pbs --proto_path protos protos/mehari/*.proto
+	npx protoc --ts_opt keep_enum_prefix --ts_opt long_type_string --ts_out src/pbs --proto_path protos protos/annonars/*/*.proto
+	npx protoc --ts_opt keep_enum_prefix --ts_opt long_type_string --ts_out src/pbs --proto_path protos protos/mehari/*.proto
 
 .PHONY: proto
 proto: proto-fetch proto-ts format lint

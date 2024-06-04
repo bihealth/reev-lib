@@ -39,7 +39,7 @@
     "test:unit:nocov": "vitest --config vitest.config.mts",
     "build": "vue-tsc && vite build",
     "type-check": "vue-tsc --noEmit --composite false",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.mdx --fix --ignore-path .gitignore",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.mdx --fix --ignore-path .gitignore --ignore-pattern 'src/pbs/google/protobuf/*'",
     "format": "prettier --write .storybook src/ *.json *.cjs *.mts",
     "format:check": "prettier --list-different .storybook src/ *.json *.cjs *.mts",
     "storybook": "storybook dev -p 6006",

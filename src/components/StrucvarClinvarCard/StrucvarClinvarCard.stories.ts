@@ -17,8 +17,8 @@ const strucvarBrca1: Strucvar = {
   userRepr: 'DEL:chr17:41176312:41277500'
 }
 // @ts-ignore
-const clinvarSvRecords = clinvarSvRecordsJson.map((record) =>
-  ClinvarSvRecord.fromJson(record as JsonValue)
+const clinvarSvRecords = clinvarSvRecordsJson.records.map((record) =>
+  ClinvarSvRecord.fromJson(record as unknown as JsonValue)
 )
 
 const meta = {

@@ -6,10 +6,10 @@ import Plotly from 'plotly.js-dist'
 import { computed, onMounted, ref, watch } from 'vue'
 
 import type { GenomeBuild } from '../../lib/genomeBuilds'
-import { ClinicalSignificance } from '../../pbs/annonars/clinvar/minimal'
-import { Record as ClinvarRecord } from '../../pbs/annonars/clinvar/minimal'
 import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
+import { ExtractedVcvRecord } from '../../pbs/annonars/clinvar_data/extracted_vars'
 import { Transcript } from '../../pbs/mehari/txs'
+import { CLINVAR_SIGNIFICANCE_TO_INT, convertClinvarSignificance } from './lib'
 import { type PlotlyDataPoint, downsample } from './lib'
 
 /** This component's props. */
@@ -38,24 +38,6 @@ const currentPlotBoundaries = ref({
   maxX: 0
 })
 
-/* Enumeration clinical significance. */
-const CLINVAR_SIGNIFICANCE_TO_INT: { [Key in ClinicalSignificance]: number } = {
-  [ClinicalSignificance.CLINICAL_SIGNIFICANCE_UNKNOWN]: -3,
-  [ClinicalSignificance.CLINICAL_SIGNIFICANCE_PATHOGENIC]: 2,
-  [ClinicalSignificance.CLINICAL_SIGNIFICANCE_LIKELY_PATHOGENIC]: 1,
-  [ClinicalSignificance.CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE]: 0,
-  [ClinicalSignificance.CLINICAL_SIGNIFICANCE_LIKELY_BENIGN]: -1,
-  [ClinicalSignificance.CLINICAL_SIGNIFICANCE_BENIGN]: -2
-}
-
-/* Convert clinical significance to integer. */
-const convertClinvarSignificance = (input: ClinicalSignificance): number => {
-  if (input in CLINVAR_SIGNIFICANCE_TO_INT) {
-    return CLINVAR_SIGNIFICANCE_TO_INT[input]
-  } else {
-    return -4
-  }
-}
 /* Helper function to compute color for point value. */
 const markerColor = (value: number) => {
   if (value === 2) {
@@ -78,10 +60,13 @@ const clinvarData = computed<PlotlyDataPoint[]>(() => {
   if (!props.clinvarPerGene) {
     return []
   }
-  let clinvarInfo: ClinvarRecord[] = []
-  for (const item of props.clinvarPerGene.variants) {
-    if (item.genomeRelease.toLowerCase() == props.genomeBuild) {
-      clinvarInfo = item.variants.sort((a: ClinvarRecord, b: ClinvarRecord) => a.start - b.start)
+  let clinvarInfo: ExtractedVcvRecord[] = []
+  for (const perRelease of props.clinvarPerGene.perReleaseVars) {
+    if (perRelease.release!.toLowerCase() == props.genomeBuild) {
+      clinvarInfo = perRelease.variants.sort(
+        (a: ExtractedVcvRecord, b: ExtractedVcvRecord) =>
+          a.sequenceLocation!.start! - b.sequenceLocation!.start!
+      )
     }
   }
   if (clinvarInfo.length === 0) {
@@ -90,14 +75,21 @@ const clinvarData = computed<PlotlyDataPoint[]>(() => {
   // Update plot boundaries
   // eslint-disable-next-line vue/no-side-effects-in-computed-properties
   currentPlotBoundaries.value = {
-    minX: clinvarInfo[0].start,
-    maxX: clinvarInfo[clinvarInfo.length - 1].start
+    minX: clinvarInfo[0].sequenceLocation!.start!,
+    maxX: clinvarInfo[clinvarInfo.length - 1].sequenceLocation!.start!
   }
-  return clinvarInfo.map((variant: ClinvarRecord) => ({
-    x: variant.start,
-    y: convertClinvarSignificance(variant.referenceAssertions[0].clinicalSignificance),
-    count: 1
-  }))
+  return clinvarInfo
+    .filter(
+      (variant: ExtractedVcvRecord) =>
+        variant.classifications?.germlineClassification?.description?.length
+    )
+    .map((variant: ExtractedVcvRecord) => ({
+      x: variant.sequenceLocation!.start!,
+      y: CLINVAR_SIGNIFICANCE_TO_INT[
+        convertClinvarSignificance(variant.classifications?.germlineClassification?.description)
+      ],
+      count: 1
+    }))
 })
 
 /** Downsampled data. */

@@ -1,7 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 
 import { SeqvarImpl } from '../../lib/genomicVars'
+import { urlConfig } from '../../lib/urlConfig'
 import SeqvarVariantValidatorCard from './SeqvarVariantValidatorCard.vue'
+
+urlConfig.baseUrlVariantValidator =
+  'https://rest.variantvalidator.org/VariantValidator/variantvalidator'
 
 const seqvarBrca1 = new SeqvarImpl('grch37', '18', 41215920, 'G', 'T')
 

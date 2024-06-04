@@ -7,13 +7,20 @@ import { computed, ref } from 'vue'
 import { type Strucvar } from '../../lib/genomicVars'
 import { roundIt } from '../../lib/utils'
 import { ResponseRecord as ClinvarSvRecord } from '../../pbs/annonars/clinvar/sv'
+import {
+  AggregateClassificationSet,
+  AggregatedSomaticClinicalImpact
+} from '../../pbs/annonars/clinvar_data/clinvar_public'
 import DocsLink from '../DocsLink/DocsLink.vue'
 import {
-  CLINICAL_SIGNIFICANCE_COLOR,
-  CLINICAL_SIGNIFICANCE_LABEL,
-  REVIEW_STATUS_LABEL,
-  REVIEW_STATUS_STARS
+  AGGREGATE_GERMLINE_REVIEW_STATUS_LABEL,
+  AGGREGATE_GERMLINE_REVIEW_STATUS_STARS,
+  AGGREGATE_ONCOGENICITY_REVIEW_STATUS_LABEL,
+  AGGREGATE_ONCOGENICITY_REVIEW_STATUS_STARS,
+  AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_LABEL,
+  AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_STARS
 } from '../SeqvarClinvarCard/constants'
+import { clinsigColor } from '../SeqvarClinvarCard/helpers'
 
 /** This component's props. */
 const props = defineProps<{
@@ -49,6 +56,23 @@ const clinvarRange = computed<string>(() => {
 
 const sortBy = ref<{ key: string; order: 'asc' | 'desc' }[]>([{ key: 'overlap', order: 'desc' }])
 
+/** Compute maximal number of stars over `AggregateClassificationSet`. */
+const maxStars = (acs: AggregateClassificationSet) => {
+  const starsGermline = acs.germlineClassification?.reviewStatus
+    ? AGGREGATE_GERMLINE_REVIEW_STATUS_STARS[acs.germlineClassification?.reviewStatus]
+    : 0
+  const starsOncogenicity = acs.oncogenicityClassification?.reviewStatus
+    ? AGGREGATE_ONCOGENICITY_REVIEW_STATUS_STARS[acs.oncogenicityClassification?.reviewStatus]
+    : 0
+  const starsClinicalImpacts = acs.somaticClinicalImpacts.map(
+    (asci: AggregatedSomaticClinicalImpact): number => {
+      return AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_STARS[asci.reviewStatus]
+    }
+  )
+  const starsClinicalImpact = Math.max(...starsClinicalImpacts)
+  return Math.max(starsGermline, starsOncogenicity, starsClinicalImpact)
+}
+
 const headers = [
   { title: 'Accession', key: 'accession', sortable: true, align: 'start' },
   { title: 'Significance', key: 'clinSig', sortable: true, align: 'start' },
@@ -56,9 +80,7 @@ const headers = [
     title: 'Status',
     key: 'reviewStatus',
     sortRaw(a: ClinvarSvRecord, b: ClinvarSvRecord) {
-      const aStars = REVIEW_STATUS_STARS[a.record!.referenceAssertions[0].reviewStatus]
-      const bStars = REVIEW_STATUS_STARS[b.record!.referenceAssertions[0].reviewStatus]
-      return bStars - aStars
+      return maxStars(b.record!.classifications!) - maxStars(a.record!.classifications!)
     },
     align: 'start'
   },
@@ -83,50 +105,194 @@ const expanded = ref<string[]>([])
         density="compact"
         :headers="headers as any"
         :items="clinvarSvRecords ?? []"
-        item-value="record!.vcv"
+        item-value="record.accession.accession"
         :must-sort="true"
         show-expand
       >
         <!-- eslint-disable vue/valid-v-slot -->
         <template #item.accession="{ item: { record } }">
           <!-- eslint-enable -->
-          <a :href="vcvUrl(record!.vcv)" target="_blank">
-            {{ record!.vcv }}
+          <a :href="vcvUrl(`${record!.accession!.accession}`)" target="_blank">
+            {{ record!.accession!.accession }}.{{ record!.accession!.version }}
             <small><v-icon>mdi-launch</v-icon></small>
           </a>
         </template>
         <!-- eslint-disable vue/valid-v-slot -->
         <template #item.clinSig="{ item: { record } }">
           <!-- eslint-enable -->
-          <v-chip
-            density="compact"
-            rounded="xl"
-            :class="`bg-${
-              CLINICAL_SIGNIFICANCE_COLOR[record!.referenceAssertions[0].clinicalSignificance]
-            }`"
+          <div v-if="record!.classifications?.germlineClassification">
+            <v-chip
+              bg-color="grey-darken-4"
+              title="germline"
+              rounded="sm"
+              class="mr-2 pl-1 pr-1"
+              density="compact"
+            >
+              G
+            </v-chip>
+            <v-chip
+              density="compact"
+              :class="`bg-${clinsigColor(
+                record!.classifications!.germlineClassification!.description
+              )}`"
+            >
+              {{ record!.classifications!.germlineClassification!.description }}
+            </v-chip>
+          </div>
+          <div
+            v-for="(somaticClinicalImpact, idx) in record!.classifications?.somaticClinicalImpacts"
+            :key="idx"
           >
-            {{ CLINICAL_SIGNIFICANCE_LABEL[record!.referenceAssertions[0].clinicalSignificance] }}
-          </v-chip>
+            <v-chip
+              bg-color="grey-darken-4"
+              title="somatic clinical impact"
+              rounded="sm"
+              class="mr-2 pl-1 pr-1"
+              density="compact"
+            >
+              I
+            </v-chip>
+            <v-chip
+              density="compact"
+              :class="`bg-${clinsigColor(somaticClinicalImpact.description)}`"
+            >
+              {{ somaticClinicalImpact.description }}
+            </v-chip>
+          </div>
+          <div v-if="record!.classifications?.oncogenicityClassification">
+            <v-chip
+              bg-color="grey-darken-4"
+              title="oncogenicity"
+              rounded="sm"
+              class="mr-2 pl-1 pr-1"
+              density="compact"
+            >
+              O
+            </v-chip>
+            <v-chip
+              density="compact"
+              :class="`bg-${clinsigColor(
+                record!.classifications!.oncogenicityClassification!.description
+              )}`"
+            >
+              {{ record!.classifications!.oncogenicityClassification!.description }}
+            </v-chip>
+          </div>
         </template>
         <template #item.reviewStatus="{ item: { record } }">
-          <span class="text-no-wrap">
-            <span v-for="i of [1, 2, 3, 4]" :key="i">
-              <span v-if="i <= REVIEW_STATUS_STARS[record!.referenceAssertions[0]?.reviewStatus]">
-                <v-icon>mdi-star</v-icon>
-              </span>
-              <span v-else>
-                <v-icon>mdi-star-outline</v-icon>
+          <div v-if="record!.classifications?.germlineClassification">
+            <v-chip
+              bg-color="grey-darken-4"
+              title="germline"
+              rounded="sm"
+              class="mr-2 pl-1 pr-1"
+              density="compact"
+            >
+              G
+            </v-chip>
+
+            <span
+              :title="
+                AGGREGATE_GERMLINE_REVIEW_STATUS_LABEL[
+                  record!.classifications!.germlineClassification!.reviewStatus
+                ]
+              "
+            >
+              <span v-for="i of [1, 2, 3, 4]" :key="i">
+                <span
+                  v-if="
+                    i <=
+                    AGGREGATE_GERMLINE_REVIEW_STATUS_STARS[
+                      record!.classifications!.germlineClassification!.reviewStatus
+                    ]
+                  "
+                >
+                  <v-icon>mdi-star</v-icon>
+                </span>
+                <span v-else>
+                  <v-icon>mdi-star-outline</v-icon>
+                </span>
               </span>
             </span>
-          </span>
-          <span class="pl-3">
-            {{ REVIEW_STATUS_LABEL[record!.referenceAssertions[0].reviewStatus] }}
-          </span>
+          </div>
+          <div
+            v-for="(somaticClinicalImpact, idx) in record!.classifications?.somaticClinicalImpacts"
+            :key="idx"
+          >
+            <v-chip
+              bg-color="grey-darken-4"
+              title="somatic clinical impact"
+              rounded="sm"
+              class="mr-2 pl-1 pr-1"
+              density="compact"
+            >
+              I
+            </v-chip>
+
+            <span
+              :title="
+                AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_LABEL[
+                  somaticClinicalImpact.reviewStatus
+                ]
+              "
+            >
+              <span v-for="i of [1, 2, 3, 4]" :key="i">
+                <span
+                  v-if="
+                    i <=
+                    AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_STARS[
+                      somaticClinicalImpact.reviewStatus
+                    ]
+                  "
+                >
+                  <v-icon>mdi-star</v-icon>
+                </span>
+                <span v-else>
+                  <v-icon>mdi-star-outline</v-icon>
+                </span>
+              </span>
+            </span>
+          </div>
+          <div v-if="record!.classifications?.oncogenicityClassification">
+            <v-chip
+              bg-color="grey-darken-4"
+              title="oncogenicity"
+              rounded="sm"
+              class="mr-2 pl-1 pr-1"
+              density="compact"
+            >
+              O
+            </v-chip>
+
+            <span
+              :title="
+                AGGREGATE_ONCOGENICITY_REVIEW_STATUS_LABEL[
+                  record!.classifications!.oncogenicityClassification!.reviewStatus
+                ]
+              "
+            >
+              <span v-for="i of [1, 2, 3, 4]" :key="i">
+                <span
+                  v-if="
+                    i <=
+                    AGGREGATE_ONCOGENICITY_REVIEW_STATUS_STARS[
+                      record!.classifications!.oncogenicityClassification!.reviewStatus
+                    ]
+                  "
+                >
+                  <v-icon>mdi-star</v-icon>
+                </span>
+                <span v-else>
+                  <v-icon>mdi-star-outline</v-icon>
+                </span>
+              </span>
+            </span>
+          </div>
         </template>
         <!-- eslint-disable vue/valid-v-slot -->
         <template #item.condition="{ item: { record } }">
           <!-- eslint-enable -->
-          {{ record!.referenceAssertions[0].title.split(' AND ')[1] ?? 'N/A' }}
+          {{ record!.rcvs.map((rcv) => rcv.title.split('AND ')[1]).join(', ') }}
         </template>
         <!-- eslint-disable vue/valid-v-slot -->
         <template #item.overlap="{ item: { overlap } }">
@@ -139,35 +305,189 @@ const expanded = ref<string[]>([])
         <!-- eslint-disable vue/valid-v-slot -->
         <template #expanded-row="{ item }">
           <!-- eslint-enable -->
-          <tr
-            v-for="referenceAssertion in item.record!.referenceAssertions"
-            :key="referenceAssertion.rcv"
-          >
+          <tr v-for="rcv in item.record!.rcvs" :key="rcv.accession!.accession">
             <td class="text-no-wrap bg-grey-lighten-5">
               <v-icon>mdi-circle-small</v-icon>
 
-              <a :href="rcvUrl(referenceAssertion.rcv)" target="_blank">
-                {{ referenceAssertion.rcv }}
+              <a :href="rcvUrl(rcv.accession!.accession)" target="_blank">
+                {{ rcv.accession!.accession }}.{{ rcv.accession!.version }}
                 <small><v-icon>mdi-launch</v-icon></small>
               </a>
             </td>
             <td>
-              {{ CLINICAL_SIGNIFICANCE_LABEL[referenceAssertion.clinicalSignificance] ?? 'N/A' }}
+              <div v-if="rcv.classifications?.germlineClassification?.description?.value?.length">
+                <v-chip
+                  bg-color="grey-darken-4"
+                  title="germline"
+                  rounded="sm"
+                  class="mr-2 pl-1 pr-1"
+                  density="compact"
+                >
+                  G
+                </v-chip>
+                <v-chip
+                  density="compact"
+                  :class="`bg-${clinsigColor(
+                    rcv.classifications!.germlineClassification!.description!.value
+                  )}`"
+                >
+                  {{ rcv.classifications?.germlineClassification!.description!.value }}
+                </v-chip>
+                ({{
+                  rcv.classifications?.germlineClassification!.description!.submissionCount ?? 0
+                }})
+              </div>
+              <div
+                v-for="(description, idx) in rcv.classifications!.somaticClinicalImpact
+                  ?.descriptions ?? []"
+                :key="idx"
+              >
+                <v-chip
+                  bg-color="grey-darken-4"
+                  title="somatic clinical impact"
+                  rounded="sm"
+                  class="mr-2 pl-1 pr-1"
+                  density="compact"
+                >
+                  I
+                </v-chip>
+                <v-chip density="compact" :class="`bg-${clinsigColor(description.value)}`">
+                  {{ description.value }}
+                </v-chip>
+                ({{ description.submissionCount ?? 0 }})
+              </div>
+              <div
+                v-if="rcv.classifications?.oncogenicityClassification?.description?.value?.length"
+              >
+                <v-chip
+                  bg-color="grey-darken-4"
+                  title="oncogenicity"
+                  rounded="sm"
+                  class="mr-2 pl-1 pr-1"
+                  density="compact"
+                >
+                  O
+                </v-chip>
+                <v-chip
+                  density="compact"
+                  :class="`bg-${clinsigColor(
+                    rcv.classifications?.oncogenicityClassification?.description.value
+                  )}`"
+                >
+                  {{ rcv.classifications?.oncogenicityClassification?.description.value }}
+                </v-chip>
+                ({{
+                  rcv.classifications?.oncogenicityClassification!.description!.submissionCount ??
+                  0
+                }})
+              </div>
             </td>
             <td colspan="3">
-              <span class="text-no-wrap">
-                <span v-for="i of [1, 2, 3, 4, 5]" :key="i">
-                  <span v-if="i <= REVIEW_STATUS_STARS[referenceAssertion?.reviewStatus]">
-                    <v-icon>mdi-star</v-icon>
-                  </span>
-                  <span v-else>
-                    <v-icon>mdi-star-outline</v-icon>
+              <div v-if="rcv.classifications?.germlineClassification?.reviewStatus">
+                <v-chip
+                  bg-color="grey-darken-4"
+                  title="germline"
+                  rounded="sm"
+                  class="mr-2 pl-1 pr-1"
+                  density="compact"
+                >
+                  G
+                </v-chip>
+
+                <span
+                  :title="
+                    AGGREGATE_GERMLINE_REVIEW_STATUS_LABEL[
+                      rcv.classifications?.germlineClassification?.reviewStatus
+                    ]
+                  "
+                >
+                  <span v-for="i of [1, 2, 3, 4]" :key="i">
+                    <span
+                      v-if="
+                        i <=
+                        AGGREGATE_GERMLINE_REVIEW_STATUS_STARS[
+                          rcv.classifications?.germlineClassification?.reviewStatus
+                        ]
+                      "
+                    >
+                      <v-icon>mdi-star</v-icon>
+                    </span>
+                    <span v-else>
+                      <v-icon>mdi-star-outline</v-icon>
+                    </span>
                   </span>
                 </span>
-              </span>
-              <span class="pl-3">
-                {{ REVIEW_STATUS_LABEL[referenceAssertion.reviewStatus] }}
-              </span>
+              </div>
+              <div v-if="rcv.classifications?.somaticClinicalImpact?.reviewStatus">
+                <v-chip
+                  bg-color="grey-darken-4"
+                  title="somatic clinical impact"
+                  rounded="sm"
+                  class="mr-2 pl-1 pr-1"
+                  density="compact"
+                >
+                  I
+                </v-chip>
+
+                <span
+                  :title="
+                    AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_LABEL[
+                      rcv.classifications?.somaticClinicalImpact?.reviewStatus
+                    ]
+                  "
+                >
+                  <span v-for="i of [1, 2, 3, 4]" :key="i">
+                    <span
+                      v-if="
+                        i <=
+                        AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_STARS[
+                          rcv.classifications?.somaticClinicalImpact?.reviewStatus
+                        ]
+                      "
+                    >
+                      <v-icon>mdi-star</v-icon>
+                    </span>
+                    <span v-else>
+                      <v-icon>mdi-star-outline</v-icon>
+                    </span>
+                  </span>
+                </span>
+              </div>
+              <div v-if="rcv.classifications?.oncogenicityClassification?.reviewStatus">
+                <v-chip
+                  bg-color="grey-darken-4"
+                  title="oncogenicity"
+                  rounded="sm"
+                  class="mr-2 pl-1 pr-1"
+                  density="compact"
+                >
+                  O
+                </v-chip>
+
+                <span
+                  :title="
+                    AGGREGATE_ONCOGENICITY_REVIEW_STATUS_LABEL[
+                      rcv.classifications?.oncogenicityClassification?.reviewStatus
+                    ]
+                  "
+                >
+                  <span v-for="i of [1, 2, 3, 4]" :key="i">
+                    <span
+                      v-if="
+                        i <=
+                        AGGREGATE_ONCOGENICITY_REVIEW_STATUS_STARS[
+                          rcv.classifications?.oncogenicityClassification?.reviewStatus
+                        ]
+                      "
+                    >
+                      <v-icon>mdi-star</v-icon>
+                    </span>
+                    <span v-else>
+                      <v-icon>mdi-star-outline</v-icon>
+                    </span>
+                  </span>
+                </span>
+              </div>
             </td>
           </tr>
         </template>

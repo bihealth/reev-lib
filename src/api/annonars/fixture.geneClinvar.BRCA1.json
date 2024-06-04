@@ -1,212 +1,3542 @@
 {
   "genes": {
     "HGNC:1100": {
-      "perImpactCounts": [
-        { "impact": "IMPACT_THREE_PRIME_UTR_VARIANT", "counts": [30, 112, 196, 41, 115] },
-        { "impact": "IMPACT_FIVE_PRIME_UTR_VARIANT", "counts": [47, 376, 244, 33, 275] },
-        { "impact": "IMPACT_FRAMESHIFT_VARIANT", "counts": [0, 1, 31, 115, 3883] },
-        { "impact": "IMPACT_INFRAME_INDEL", "counts": [5, 15, 168, 10, 20] },
-        { "impact": "IMPACT_INTRON_VARIANT", "counts": [1085, 4679, 3585, 186, 1701] },
-        { "impact": "IMPACT_MISSENSE_VARIANT", "counts": [124, 374, 2202, 158, 212] },
-        { "impact": "IMPACT_NON_CODING_TRANSCRIPT_VARIANT", "counts": [0, 1, 7, 9, 437] },
-        { "impact": "IMPACT_STOP_GAINED", "counts": [1, 0, 1, 1, 12] },
-        { "impact": "IMPACT_SPLICE_ACCEPTOR_VARIANT", "counts": [0, 1, 4, 13, 82] },
-        { "impact": "IMPACT_SPLICE_DONOR_VARIANT", "counts": [0, 0, 7, 10, 87] },
-        { "impact": "IMPACT_SYNONYMOUS_VARIANT", "counts": [11, 178, 7, 0, 5] },
-        { "impact": "IMPACT_UPSTREAM_TRANSCRIPT_VARIANT", "counts": [4, 0, 0, 0, 0] }
-      ],
-      "perFreqCounts": [
+      "perImpactCounts": {
+        "hgncId": "HGNC:1100",
+        "impactCounts": [
+          {
+            "geneImpact": "GENE_IMPACT_FRAMESHIFT_VARIANT",
+            "countUncertainSignificance": 16,
+            "countLikelyPathogenic": 62,
+            "countPathogenic": 2257
+          },
+          {
+            "geneImpact": "GENE_IMPACT_INFRAME_INDEL",
+            "countUncertainSignificance": 1,
+            "countLikelyPathogenic": 1
+          },
+          {
+            "geneImpact": "GENE_IMPACT_INTRON_VARIANT",
+            "countBenign": 519,
+            "countLikelyBenign": 806,
+            "countUncertainSignificance": 238,
+            "countLikelyPathogenic": 9,
+            "countPathogenic": 20
+          },
+          {
+            "geneImpact": "GENE_IMPACT_MISSENSE_VARIANT",
+            "countBenign": 145,
+            "countLikelyBenign": 166,
+            "countUncertainSignificance": 1509,
+            "countLikelyPathogenic": 70,
+            "countPathogenic": 75
+          },
+          {
+            "geneImpact": "GENE_IMPACT_STOP_GAINED",
+            "countLikelyBenign": 1,
+            "countUncertainSignificance": 4,
+            "countLikelyPathogenic": 17,
+            "countPathogenic": 754
+          },
+          {
+            "geneImpact": "GENE_IMPACT_SPLICE_ACCEPTOR_VARIANT",
+            "countBenign": 1,
+            "countLikelyBenign": 1,
+            "countUncertainSignificance": 25,
+            "countLikelyPathogenic": 12,
+            "countPathogenic": 69
+          },
+          {
+            "geneImpact": "GENE_IMPACT_SPLICE_DONOR_VARIANT",
+            "countLikelyBenign": 2,
+            "countUncertainSignificance": 26,
+            "countLikelyPathogenic": 19,
+            "countPathogenic": 141
+          },
+          {
+            "geneImpact": "GENE_IMPACT_STOP_LOST",
+            "countUncertainSignificance": 2
+          },
+          {
+            "geneImpact": "GENE_IMPACT_SYNONYMOUS_VARIANT",
+            "countBenign": 23,
+            "countLikelyBenign": 1460,
+            "countUncertainSignificance": 32,
+            "countPathogenic": 2
+          },
+          {
+            "geneImpact": "GENE_IMPACT_UPSTREAM_TRANSCRIPT_VARIANT"
+          }
+        ]
+      },
+      "perFreqCounts": {
+        "hgncId": "HGNC:1100",
+        "pathogenicCounts": [3583, 0, 0, 0, 0, 14, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "uncertainCounts": [1963, 0, 0, 0, 0, 31, 3, 3, 1, 2, 0, 1, 0, 1, 0, 1, 0, 0],
+        "benignCounts": [2582, 0, 0, 0, 0, 104, 30, 33, 60, 88, 65, 81, 20, 11, 24, 164, 3, 0]
+      },
+      "perReleaseVars": [
         {
-          "coarseClinsig": "COARSE_CLINICAL_SIGNIFICANCE_BENIGN",
-          "counts": [5712, 0, 0, 0, 0, 317, 87, 101, 133, 133, 113, 122, 31, 18, 24, 279, 3, 0]
-        },
-        {
-          "coarseClinsig": "COARSE_CLINICAL_SIGNIFICANCE_UNCERTAIN",
-          "counts": [6318, 0, 0, 0, 0, 173, 22, 20, 3, 2, 4, 3, 0, 1, 0, 10, 0, 0]
-        },
-        {
-          "coarseClinsig": "COARSE_CLINICAL_SIGNIFICANCE_PATHOGENIC",
-          "counts": [7934, 0, 0, 0, 0, 35, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        }
-      ],
-      "variants": [
-        {
-          "genomeRelease": "GRCh37",
+          "release": "GRCh37",
           "variants": [
             {
-              "release": "GRCh37",
-              "chromosome": "17",
-              "start": 41197708,
-              "stop": 41197708,
-              "reference": "T",
-              "alternative": "G",
-              "vcv": "VCV000041833",
-              "referenceAssertions": [
+              "accession": {
+                "accession": "VCV000017660",
+                "version": 35
+              },
+              "rcvs": [
                 {
-                  "rcv": "RCV000034760",
-                  "title": "NM_007294.4(BRCA1):c.5579A>C (p.His1860Pro) AND not provided",
-                  "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
-                  "reviewStatus": "REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED"
+                  "accession": {
+                    "accession": "RCV000235121",
+                    "version": 10
+                  },
+                  "title": "NM_007294.4(BRCA1):c.190T>G (p.Cys64Gly) AND not provided",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-01-19T00:00:00+00:00",
+                        "submissionCount": 2
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000496255",
+                    "version": 2
+                  },
+                  "title": "NM_007294.4(BRCA1):c.190T>G (p.Cys64Gly) AND not specified",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Uncertain significance",
+                        "dateLastEvaluated": "2014-01-31T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000019228",
+                    "version": 23
+                  },
+                  "title": "NM_007294.4(BRCA1):c.190T>G (p.Cys64Gly) AND Breast-ovarian cancer, familial, susceptibility to, 1",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-06-08T00:00:00+00:00",
+                        "submissionCount": 8
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000047634",
+                    "version": 16
+                  },
+                  "title": "NM_007294.4(BRCA1):c.190T>G (p.Cys64Gly) AND Hereditary breast ovarian cancer syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-12-07T00:00:00+00:00",
+                        "submissionCount": 3
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000129894",
+                    "version": 13
+                  },
+                  "title": "NM_007294.4(BRCA1):c.190T>G (p.Cys64Gly) AND Hereditary cancer-predisposing syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-03-30T00:00:00+00:00",
+                        "submissionCount": 2
+                      }
+                    }
+                  }
                 }
-              ]
+              ],
+              "name": "NM_007294.4(BRCA1):c.190T>G (p.Cys64Gly)",
+              "variationType": "VARIATION_TYPE_SNV",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                  "description": "Pathogenic",
+                  "dateLastEvaluated": "2023-12-07T00:00:00+00:00",
+                  "dateCreated": "2014-04-01T00:00:00+00:00",
+                  "mostRecentSubmission": "2024-05-01T00:00:00+00:00",
+                  "numberOfSubmitters": 16,
+                  "numberOfSubmissions": 16
+                }
+              },
+              "sequenceLocation": {
+                "assembly": "GRCh37",
+                "chr": "CHROMOSOME_17",
+                "accession": "NC_000017.10",
+                "start": 41258495,
+                "stop": 41258495,
+                "displayStart": 41258495,
+                "displayStop": 41258495,
+                "variantLength": 1,
+                "positionVcf": 41258495,
+                "referenceAlleleVcf": "A",
+                "alternateAlleleVcf": "C"
+              },
+              "hgncIds": ["HGNC:1100"]
             },
             {
-              "release": "GRCh37",
-              "chromosome": "17",
-              "start": 41234473,
-              "stop": 41234473,
-              "reference": "G",
-              "alternative": "C",
-              "vcv": "VCV000182080",
-              "referenceAssertions": [
+              "accession": {
+                "accession": "VCV000017661",
+                "version": 116
+              },
+              "rcvs": [
                 {
-                  "rcv": "RCV000159851",
-                  "title": "NM_007294.4(BRCA1):c.4305C>G (p.Asp1435Glu) AND not provided",
-                  "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
-                  "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+                  "accession": {
+                    "accession": "RCV000019229",
+                    "version": 47
+                  },
+                  "title": "NM_007294.4(BRCA1):c.181T>G (p.Cys61Gly) AND Breast-ovarian cancer, familial, susceptibility to, 1",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2015-08-10T00:00:00+00:00",
+                        "submissionCount": 24
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000047597",
+                    "version": 38
+                  },
+                  "title": "NM_007294.4(BRCA1):c.181T>G (p.Cys61Gly) AND Hereditary breast ovarian cancer syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2024-01-31T00:00:00+00:00",
+                        "submissionCount": 8
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000159935",
+                    "version": 61
+                  },
+                  "title": "NM_007294.4(BRCA1):c.181T>G (p.Cys61Gly) AND not provided",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2024-03-01T00:00:00+00:00",
+                        "submissionCount": 16
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000131902",
+                    "version": 23
+                  },
+                  "title": "NM_007294.4(BRCA1):c.181T>G (p.Cys61Gly) AND Hereditary cancer-predisposing syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-09-05T00:00:00+00:00",
+                        "submissionCount": 4
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000239114",
+                    "version": 14
+                  },
+                  "title": "NM_007294.4(BRCA1):c.181T>G (p.Cys61Gly) AND Familial cancer of breast",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2022-11-29T00:00:00+00:00",
+                        "submissionCount": 4
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000415051",
+                    "version": 11
+                  },
+                  "title": "NM_007294.4(BRCA1):c.181T>G (p.Cys61Gly) AND Breast carcinoma",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2022-10-24T00:00:00+00:00",
+                        "submissionCount": 2
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000412714",
+                    "version": 9
+                  },
+                  "title": "NM_007294.4(BRCA1):c.181T>G (p.Cys61Gly) AND Breast neoplasm",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000763010",
+                    "version": 11
+                  },
+                  "title": "NM_007294.4(BRCA1):c.181T>G (p.Cys61Gly) AND multiple conditions",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2022-05-03T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000785199",
+                    "version": 10
+                  },
+                  "title": "NM_007294.4(BRCA1):c.181T>G (p.Cys61Gly) AND Neoplasm of ovary",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2018-12-01T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV001270967",
+                    "version": 9
+                  },
+                  "title": "NM_007294.4(BRCA1):c.181T>G (p.Cys61Gly) AND Breast and/or ovarian cancer",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2019-06-11T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
                 }
-              ]
+              ],
+              "name": "NM_007294.4(BRCA1):c.181T>G (p.Cys61Gly)",
+              "variationType": "VARIATION_TYPE_SNV",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                  "description": "Pathogenic",
+                  "dateLastEvaluated": "2015-08-10T00:00:00+00:00",
+                  "dateCreated": "2015-09-29T00:00:00+00:00",
+                  "mostRecentSubmission": "2024-05-12T00:00:00+00:00",
+                  "numberOfSubmitters": 57,
+                  "numberOfSubmissions": 62
+                }
+              },
+              "sequenceLocation": {
+                "assembly": "GRCh37",
+                "chr": "CHROMOSOME_17",
+                "accession": "NC_000017.10",
+                "start": 41258504,
+                "stop": 41258504,
+                "displayStart": 41258504,
+                "displayStop": 41258504,
+                "variantLength": 1,
+                "positionVcf": 41258504,
+                "referenceAlleleVcf": "A",
+                "alternateAlleleVcf": "C"
+              },
+              "hgncIds": ["HGNC:1100"]
             },
             {
-              "release": "GRCh37",
-              "chromosome": "17",
-              "start": 41234589,
-              "stop": 41234591,
-              "reference": "CTCT",
-              "alternative": "C",
-              "vcv": "VCV000182116",
-              "referenceAssertions": [
+              "accession": {
+                "accession": "VCV000017662",
+                "version": 141
+              },
+              "rcvs": [
                 {
-                  "rcv": "RCV000159925",
-                  "title": "NM_007294.4(BRCA1):c.4187_4189del (p.Gln1396del) AND not provided",
-                  "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
-                  "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+                  "accession": {
+                    "accession": "RCV000019230",
+                    "version": 56
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND Breast-ovarian cancer, familial, susceptibility to, 1",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-10-08T00:00:00+00:00",
+                        "submissionCount": 31
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000019231",
+                    "version": 12
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND Pancreatic cancer, susceptibility to, 4",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "risk factor",
+                        "dateLastEvaluated": "2008-10-01T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000056295",
+                    "version": 20
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND Familial cancer of breast",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2020-12-15T00:00:00+00:00",
+                        "submissionCount": 3
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000034761",
+                    "version": 50
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND Hereditary breast ovarian cancer syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2024-01-31T00:00:00+00:00",
+                        "submissionCount": 14
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000131394",
+                    "version": 24
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND Hereditary cancer-predisposing syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-03-13T00:00:00+00:00",
+                        "submissionCount": 4
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000213650",
+                    "version": 58
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND not provided",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2024-03-01T00:00:00+00:00",
+                        "submissionCount": 14
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000735481",
+                    "version": 13
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND Breast and/or ovarian cancer",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2022-03-04T00:00:00+00:00",
+                        "submissionCount": 3
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000785197",
+                    "version": 10
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND Neoplasm of ovary",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2018-12-01T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV001353942",
+                    "version": 9
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND Malignant tumor of breast",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV001836711",
+                    "version": 9
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND Invasive medullary breast carcinoma",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV002496414",
+                    "version": 8
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND multiple conditions",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2022-05-04T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV003128128",
+                    "version": 8
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND Endometrial carcinoma",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-02-21T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV003225925",
+                    "version": 8
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND Triple-negative breast cancer",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-03-11T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV004554604",
+                    "version": 1
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND BRCA1-related disorder",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2024-02-16T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
                 }
-              ]
+              ],
+              "name": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs)",
+              "variationType": "VARIATION_TYPE_MICROSATELLITE",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                  "description": "Pathogenic",
+                  "dateLastEvaluated": "2023-10-08T00:00:00+00:00",
+                  "dateCreated": "2013-04-12T00:00:00+00:00",
+                  "mostRecentSubmission": "2024-05-12T00:00:00+00:00",
+                  "numberOfSubmitters": 73,
+                  "numberOfSubmissions": 77
+                }
+              },
+              "sequenceLocation": {
+                "assembly": "GRCh37",
+                "chr": "CHROMOSOME_17",
+                "accession": "NC_000017.10",
+                "start": 41276045,
+                "stop": 41276046,
+                "displayStart": 41276045,
+                "displayStop": 41276046,
+                "variantLength": 2,
+                "positionVcf": 41276044,
+                "referenceAlleleVcf": "ACT",
+                "alternateAlleleVcf": "A"
+              },
+              "hgncIds": ["HGNC:1100"]
             },
             {
-              "release": "GRCh37",
-              "chromosome": "17",
-              "start": 41226408,
-              "stop": 41226409,
-              "reference": "GC",
-              "alternative": "AA",
-              "vcv": "VCV000182117",
-              "referenceAssertions": [
+              "accession": {
+                "accession": "VCV000017665",
+                "version": 49
+              },
+              "rcvs": [
                 {
-                  "rcv": "RCV000159926",
-                  "title": "NM_007294.4(BRCA1):c.4614_4615delinsTT (p.Gln1538His) AND not specified",
-                  "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
-                  "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+                  "accession": {
+                    "accession": "RCV000047372",
+                    "version": 23
+                  },
+                  "title": "NM_007294.4(BRCA1):c.1175_1214del (p.Leu392fs) AND Hereditary breast ovarian cancer syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-12-31T00:00:00+00:00",
+                        "submissionCount": 5
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000159899",
+                    "version": 20
+                  },
+                  "title": "NM_007294.4(BRCA1):c.1175_1214del (p.Leu392fs) AND not provided",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2022-11-18T00:00:00+00:00",
+                        "submissionCount": 4
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000238898",
+                    "version": 11
+                  },
+                  "title": "NM_007294.4(BRCA1):c.1175_1214del (p.Leu392fs) AND not specified",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2018-12-04T00:00:00+00:00",
+                        "submissionCount": 2
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV001798011",
+                    "version": 5
+                  },
+                  "title": "NM_007294.4(BRCA1):c.1175_1214del (p.Leu392fs) AND Breast and/or ovarian cancer",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2021-04-03T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV001353523",
+                    "version": 4
+                  },
+                  "title": "NM_007294.4(BRCA1):c.1175_1214del (p.Leu392fs) AND Malignant tumor of breast",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000019234",
+                    "version": 29
+                  },
+                  "title": "NM_007294.4(BRCA1):c.1175_1214del (p.Leu392fs) AND Breast-ovarian cancer, familial, susceptibility to, 1",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2016-04-22T00:00:00+00:00",
+                        "submissionCount": 11
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000131965",
+                    "version": 16
+                  },
+                  "title": "NM_007294.4(BRCA1):c.1175_1214del (p.Leu392fs) AND Hereditary cancer-predisposing syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-12-04T00:00:00+00:00",
+                        "submissionCount": 3
+                      }
+                    }
+                  }
                 }
-              ]
+              ],
+              "name": "NM_007294.4(BRCA1):c.1175_1214del (p.Leu392fs)",
+              "variationType": "VARIATION_TYPE_DELETION",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                  "description": "Pathogenic",
+                  "dateLastEvaluated": "2016-04-22T00:00:00+00:00",
+                  "dateCreated": "2014-04-01T00:00:00+00:00",
+                  "mostRecentSubmission": "2024-04-20T00:00:00+00:00",
+                  "numberOfSubmitters": 27,
+                  "numberOfSubmissions": 27
+                }
+              },
+              "sequenceLocation": {
+                "assembly": "GRCh37",
+                "chr": "CHROMOSOME_17",
+                "accession": "NC_000017.10",
+                "start": 41246334,
+                "stop": 41246373,
+                "displayStart": 41246334,
+                "displayStop": 41246373,
+                "variantLength": 40,
+                "positionVcf": 41246333,
+                "referenceAlleleVcf": "TGATTCAGACTCCCCATCATGTGAGTCATCAGAACCTAACA",
+                "alternateAlleleVcf": "T"
+              },
+              "hgncIds": ["HGNC:1100"]
             },
             {
-              "release": "GRCh37",
-              "chromosome": "17",
-              "start": 41276145,
-              "stop": 41276149,
-              "reference": "AGAAA",
-              "alternative": "TT",
-              "vcv": "VCV000246265",
-              "referenceAssertions": [
+              "accession": {
+                "accession": "VCV000017666",
+                "version": 24
+              },
+              "rcvs": [
                 {
-                  "rcv": "RCV000235381",
-                  "title": "NM_007294.4(BRCA1):c.-19-17_-19-13delinsAA AND not specified",
-                  "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
-                  "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+                  "accession": {
+                    "accession": "RCV000019235",
+                    "version": 22
+                  },
+                  "title": "NM_007294.4(BRCA1):c.2296_2297del (p.Glu765_Ser766insTer) AND Breast-ovarian cancer, familial, susceptibility to, 1",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2016-09-08T00:00:00+00:00",
+                        "submissionCount": 7
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000214000",
+                    "version": 16
+                  },
+                  "title": "NM_007294.4(BRCA1):c.2296_2297del (p.Glu765_Ser766insTer) AND Hereditary cancer-predisposing syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-09-06T00:00:00+00:00",
+                        "submissionCount": 2
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000496882",
+                    "version": 15
+                  },
+                  "title": "NM_007294.4(BRCA1):c.2296_2297del (p.Glu765_Ser766insTer) AND Hereditary breast ovarian cancer syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-09-29T00:00:00+00:00",
+                        "submissionCount": 4
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000759504",
+                    "version": 13
+                  },
+                  "title": "NM_007294.4(BRCA1):c.2296_2297del (p.Glu765_Ser766insTer) AND not provided",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-03-21T00:00:00+00:00",
+                        "submissionCount": 2
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV001170823",
+                    "version": 11
+                  },
+                  "title": "NM_007294.4(BRCA1):c.2296_2297del (p.Glu765_Ser766insTer) AND Breast and/or ovarian cancer",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2020-02-25T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
                 }
-              ]
+              ],
+              "name": "NM_007294.4(BRCA1):c.2296_2297del (p.Glu765_Ser766insTer)",
+              "variationType": "VARIATION_TYPE_MICROSATELLITE",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                  "description": "Pathogenic",
+                  "dateLastEvaluated": "2016-09-08T00:00:00+00:00",
+                  "dateCreated": "2014-04-01T00:00:00+00:00",
+                  "mostRecentSubmission": "2024-05-01T00:00:00+00:00",
+                  "numberOfSubmitters": 16,
+                  "numberOfSubmissions": 16
+                }
+              },
+              "sequenceLocation": {
+                "assembly": "GRCh37",
+                "chr": "CHROMOSOME_17",
+                "accession": "NC_000017.10",
+                "start": 41245251,
+                "stop": 41245252,
+                "displayStart": 41245251,
+                "displayStop": 41245252,
+                "variantLength": 2,
+                "positionVcf": 41245250,
+                "referenceAlleleVcf": "ACT",
+                "alternateAlleleVcf": "A"
+              },
+              "hgncIds": ["HGNC:1100"]
+            },
+            {
+              "accession": {
+                "accession": "VCV000017667",
+                "version": 44
+              },
+              "rcvs": [
+                {
+                  "accession": {
+                    "accession": "RCV000019236",
+                    "version": 31
+                  },
+                  "title": "NM_007294.4(BRCA1):c.2681_2682del (p.Lys894fs) AND Breast-ovarian cancer, familial, susceptibility to, 1",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2016-04-22T00:00:00+00:00",
+                        "submissionCount": 12
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000047927",
+                    "version": 32
+                  },
+                  "title": "NM_007294.4(BRCA1):c.2681_2682del (p.Lys894fs) AND Hereditary breast ovarian cancer syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2024-01-28T00:00:00+00:00",
+                        "submissionCount": 6
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000074575",
+                    "version": 27
+                  },
+                  "title": "NM_007294.4(BRCA1):c.2681_2682del (p.Lys894fs) AND not provided",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-09-21T00:00:00+00:00",
+                        "submissionCount": 3
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000131876",
+                    "version": 21
+                  },
+                  "title": "NM_007294.4(BRCA1):c.2681_2682del (p.Lys894fs) AND Hereditary cancer-predisposing syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2022-12-14T00:00:00+00:00",
+                        "submissionCount": 3
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000735499",
+                    "version": 9
+                  },
+                  "title": "NM_007294.4(BRCA1):c.2681_2682del (p.Lys894fs) AND Breast and/or ovarian cancer",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2003-09-24T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                }
+              ],
+              "name": "NM_007294.4(BRCA1):c.2681_2682del (p.Lys894fs)",
+              "variationType": "VARIATION_TYPE_DELETION",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                  "description": "Pathogenic",
+                  "dateLastEvaluated": "2016-04-22T00:00:00+00:00",
+                  "dateCreated": "2015-10-11T00:00:00+00:00",
+                  "mostRecentSubmission": "2024-05-01T00:00:00+00:00",
+                  "numberOfSubmitters": 25,
+                  "numberOfSubmissions": 25
+                }
+              },
+              "sequenceLocation": {
+                "assembly": "GRCh37",
+                "chr": "CHROMOSOME_17",
+                "accession": "NC_000017.10",
+                "start": 41244866,
+                "stop": 41244867,
+                "displayStart": 41244866,
+                "displayStop": 41244867,
+                "variantLength": 2,
+                "positionVcf": 41244865,
+                "referenceAlleleVcf": "GTT",
+                "alternateAlleleVcf": "G"
+              },
+              "hgncIds": ["HGNC:1100"]
+            },
+            {
+              "accession": {
+                "accession": "VCV000017669",
+                "version": 34
+              },
+              "rcvs": [
+                {
+                  "accession": {
+                    "accession": "RCV000019238",
+                    "version": 34
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3005del (p.Asn1002fs) AND Breast-ovarian cancer, familial, susceptibility to, 1",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2016-09-08T00:00:00+00:00",
+                        "submissionCount": 10
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000048039",
+                    "version": 27
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3005del (p.Asn1002fs) AND Hereditary breast ovarian cancer syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2024-01-25T00:00:00+00:00",
+                        "submissionCount": 4
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000163096",
+                    "version": 18
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3005del (p.Asn1002fs) AND Hereditary cancer-predisposing syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2022-06-09T00:00:00+00:00",
+                        "submissionCount": 2
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000159912",
+                    "version": 20
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3005del (p.Asn1002fs) AND not provided",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-09-20T00:00:00+00:00",
+                        "submissionCount": 4
+                      }
+                    }
+                  }
+                }
+              ],
+              "name": "NM_007294.4(BRCA1):c.3005del (p.Asn1002fs)",
+              "variationType": "VARIATION_TYPE_DELETION",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                  "description": "Pathogenic",
+                  "dateLastEvaluated": "2016-09-08T00:00:00+00:00",
+                  "dateCreated": "2014-04-04T00:00:00+00:00",
+                  "mostRecentSubmission": "2024-05-01T00:00:00+00:00",
+                  "numberOfSubmitters": 20,
+                  "numberOfSubmissions": 20
+                }
+              },
+              "sequenceLocation": {
+                "assembly": "GRCh37",
+                "chr": "CHROMOSOME_17",
+                "accession": "NC_000017.10",
+                "start": 41244543,
+                "stop": 41244543,
+                "displayStart": 41244543,
+                "displayStop": 41244543,
+                "variantLength": 1,
+                "positionVcf": 41244542,
+                "referenceAlleleVcf": "GT",
+                "alternateAlleleVcf": "G"
+              },
+              "hgncIds": ["HGNC:1100"]
+            },
+            {
+              "accession": {
+                "accession": "VCV000017670",
+                "version": 103
+              },
+              "rcvs": [
+                {
+                  "accession": {
+                    "accession": "RCV000019239",
+                    "version": 33
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3119G>A (p.Ser1040Asn) AND Breast-ovarian cancer, familial, susceptibility to, 1",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                      "description": {
+                        "value": "Benign",
+                        "dateLastEvaluated": "2015-08-10T00:00:00+00:00",
+                        "submissionCount": 14
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000034739",
+                    "version": 41
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3119G>A (p.Ser1040Asn) AND not provided",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Benign",
+                        "dateLastEvaluated": "2024-04-01T00:00:00+00:00",
+                        "submissionCount": 4
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000048074",
+                    "version": 29
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3119G>A (p.Ser1040Asn) AND Hereditary breast ovarian cancer syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Benign/Likely benign",
+                        "dateLastEvaluated": "2024-02-01T00:00:00+00:00",
+                        "submissionCount": 5
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000120293",
+                    "version": 36
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3119G>A (p.Ser1040Asn) AND not specified",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Benign",
+                        "dateLastEvaluated": "2023-08-15T00:00:00+00:00",
+                        "submissionCount": 12
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000128951",
+                    "version": 15
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3119G>A (p.Ser1040Asn) AND Hereditary cancer-predisposing syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Benign",
+                        "dateLastEvaluated": "2021-05-03T00:00:00+00:00",
+                        "submissionCount": 5
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000456692",
+                    "version": 9
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3119G>A (p.Ser1040Asn) AND Familial cancer of breast",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Benign",
+                        "dateLastEvaluated": "2017-02-23T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV002476991",
+                    "version": 8
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3119G>A (p.Ser1040Asn) AND multiple conditions",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Benign",
+                        "dateLastEvaluated": "2022-03-16T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                }
+              ],
+              "name": "NM_007294.4(BRCA1):c.3119G>A (p.Ser1040Asn)",
+              "variationType": "VARIATION_TYPE_SNV",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                  "description": "Benign",
+                  "dateLastEvaluated": "2015-08-10T00:00:00+00:00",
+                  "dateCreated": "2013-04-12T00:00:00+00:00",
+                  "mostRecentSubmission": "2024-05-12T00:00:00+00:00",
+                  "numberOfSubmitters": 42,
+                  "numberOfSubmissions": 42
+                }
+              },
+              "sequenceLocation": {
+                "assembly": "GRCh37",
+                "chr": "CHROMOSOME_17",
+                "accession": "NC_000017.10",
+                "start": 41244429,
+                "stop": 41244429,
+                "displayStart": 41244429,
+                "displayStop": 41244429,
+                "variantLength": 1,
+                "positionVcf": 41244429,
+                "referenceAlleleVcf": "C",
+                "alternateAlleleVcf": "T"
+              },
+              "hgncIds": ["HGNC:1100"]
+            },
+            {
+              "accession": {
+                "accession": "VCV000017671",
+                "version": 96
+              },
+              "rcvs": [
+                {
+                  "accession": {
+                    "accession": "RCV000019240",
+                    "version": 41
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter) AND Breast-ovarian cancer, familial, susceptibility to, 1",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2016-04-22T00:00:00+00:00",
+                        "submissionCount": 17
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000148389",
+                    "version": 11
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter) AND Breast neoplasm",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2014-06-01T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000048251",
+                    "version": 35
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter) AND Hereditary breast ovarian cancer syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-12-01T00:00:00+00:00",
+                        "submissionCount": 5
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000159978",
+                    "version": 31
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter) AND not provided",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-08-15T00:00:00+00:00",
+                        "submissionCount": 8
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000131818",
+                    "version": 20
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter) AND Hereditary cancer-predisposing syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-04-24T00:00:00+00:00",
+                        "submissionCount": 2
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000239343",
+                    "version": 16
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter) AND Familial cancer of breast",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-10-13T00:00:00+00:00",
+                        "submissionCount": 5
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000677815",
+                    "version": 9
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter) AND Ovarian cancer",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2017-02-16T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000785373",
+                    "version": 10
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter) AND Neoplasm of ovary",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2018-12-01T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000735444",
+                    "version": 11
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter) AND Breast and/or ovarian cancer",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2016-03-13T00:00:00+00:00",
+                        "submissionCount": 2
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV001642230",
+                    "version": 9
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter) AND Ovarian carcinoma",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2021-09-11T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV003332084",
+                    "version": 2
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter) AND Malignant tumor of urinary bladder",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV003162256",
+                    "version": 8
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter) AND Gastric cancer",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2021-07-01T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV004554605",
+                    "version": 1
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter) AND BRCA1-related disorder",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-05-16T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                }
+              ],
+              "name": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter)",
+              "variationType": "VARIATION_TYPE_SNV",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                  "description": "Pathogenic",
+                  "dateLastEvaluated": "2016-04-22T00:00:00+00:00",
+                  "dateCreated": "2014-04-01T00:00:00+00:00",
+                  "mostRecentSubmission": "2024-05-01T00:00:00+00:00",
+                  "numberOfSubmitters": 44,
+                  "numberOfSubmissions": 46
+                }
+              },
+              "sequenceLocation": {
+                "assembly": "GRCh37",
+                "chr": "CHROMOSOME_17",
+                "accession": "NC_000017.10",
+                "start": 41243941,
+                "stop": 41243941,
+                "displayStart": 41243941,
+                "displayStop": 41243941,
+                "variantLength": 1,
+                "positionVcf": 41243941,
+                "referenceAlleleVcf": "G",
+                "alternateAlleleVcf": "A"
+              },
+              "hgncIds": ["HGNC:1100"]
+            },
+            {
+              "accession": {
+                "accession": "VCV000017672",
+                "version": 55
+              },
+              "rcvs": [
+                {
+                  "accession": {
+                    "accession": "RCV000019241",
+                    "version": 32
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3748G>T (p.Glu1250Ter) AND Breast-ovarian cancer, familial, susceptibility to, 1",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2016-09-08T00:00:00+00:00",
+                        "submissionCount": 13
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000048311",
+                    "version": 26
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3748G>T (p.Glu1250Ter) AND Hereditary breast ovarian cancer syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2024-01-30T00:00:00+00:00",
+                        "submissionCount": 5
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000074586",
+                    "version": 30
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3748G>T (p.Glu1250Ter) AND not provided",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-07-18T00:00:00+00:00",
+                        "submissionCount": 6
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000131811",
+                    "version": 21
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3748G>T (p.Glu1250Ter) AND Hereditary cancer-predisposing syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-03-22T00:00:00+00:00",
+                        "submissionCount": 3
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000465125",
+                    "version": 9
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3748G>T (p.Glu1250Ter) AND Familial cancer of breast",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2017-02-23T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000506391",
+                    "version": 15
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3748G>T (p.Glu1250Ter) AND not specified",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2017-01-11T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                }
+              ],
+              "name": "NM_007294.4(BRCA1):c.3748G>T (p.Glu1250Ter)",
+              "variationType": "VARIATION_TYPE_SNV",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                  "description": "Pathogenic",
+                  "dateLastEvaluated": "2016-09-08T00:00:00+00:00",
+                  "dateCreated": "2014-09-27T00:00:00+00:00",
+                  "mostRecentSubmission": "2024-05-01T00:00:00+00:00",
+                  "numberOfSubmitters": 28,
+                  "numberOfSubmissions": 29
+                }
+              },
+              "sequenceLocation": {
+                "assembly": "GRCh37",
+                "chr": "CHROMOSOME_17",
+                "accession": "NC_000017.10",
+                "start": 41243800,
+                "stop": 41243800,
+                "displayStart": 41243800,
+                "displayStop": 41243800,
+                "variantLength": 1,
+                "positionVcf": 41243800,
+                "referenceAlleleVcf": "C",
+                "alternateAlleleVcf": "A"
+              },
+              "hgncIds": ["HGNC:1100"]
+            },
+            {
+              "accession": {
+                "accession": "VCV000017673",
+                "version": 79
+              },
+              "rcvs": [
+                {
+                  "accession": {
+                    "accession": "RCV000019242",
+                    "version": 44
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3756_3759del (p.Ser1253fs) AND Breast-ovarian cancer, familial, susceptibility to, 1",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2016-04-22T00:00:00+00:00",
+                        "submissionCount": 22
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000048314",
+                    "version": 51
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3756_3759del (p.Ser1253fs) AND not provided",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2024-02-06T00:00:00+00:00",
+                        "submissionCount": 10
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000131810",
+                    "version": 22
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3756_3759del (p.Ser1253fs) AND Hereditary cancer-predisposing syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-09-06T00:00:00+00:00",
+                        "submissionCount": 3
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000167859",
+                    "version": 31
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3756_3759del (p.Ser1253fs) AND Hereditary breast ovarian cancer syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2024-01-28T00:00:00+00:00",
+                        "submissionCount": 6
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000239051",
+                    "version": 14
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3756_3759del (p.Ser1253fs) AND Familial cancer of breast",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2020-01-01T00:00:00+00:00",
+                        "submissionCount": 3
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000735506",
+                    "version": 13
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3756_3759del (p.Ser1253fs) AND Breast and/or ovarian cancer",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-05-17T00:00:00+00:00",
+                        "submissionCount": 3
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000782127",
+                    "version": 9
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3756_3759del (p.Ser1253fs) AND Malignant tumor of breast",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000785410",
+                    "version": 10
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3756_3759del (p.Ser1253fs) AND Neoplasm of ovary",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2018-12-01T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                }
+              ],
+              "name": "NM_007294.4(BRCA1):c.3756_3759del (p.Ser1253fs)",
+              "variationType": "VARIATION_TYPE_MICROSATELLITE",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                  "description": "Pathogenic",
+                  "dateLastEvaluated": "2016-04-22T00:00:00+00:00",
+                  "dateCreated": "2014-04-01T00:00:00+00:00",
+                  "mostRecentSubmission": "2024-05-12T00:00:00+00:00",
+                  "numberOfSubmitters": 47,
+                  "numberOfSubmissions": 49
+                }
+              },
+              "sequenceLocation": {
+                "assembly": "GRCh37",
+                "chr": "CHROMOSOME_17",
+                "accession": "NC_000017.10",
+                "start": 41243789,
+                "stop": 41243792,
+                "displayStart": 41243789,
+                "displayStop": 41243792,
+                "variantLength": 4,
+                "positionVcf": 41243788,
+                "referenceAlleleVcf": "TAGAC",
+                "alternateAlleleVcf": "T"
+              },
+              "hgncIds": ["HGNC:1100"]
             }
           ]
         },
         {
-          "genomeRelease": "GRCh38",
+          "release": "GRCh38",
           "variants": [
             {
-              "release": "GRCh38",
-              "chromosome": "17",
-              "start": 43045691,
-              "stop": 43045691,
-              "reference": "T",
-              "alternative": "G",
-              "vcv": "VCV000041833",
-              "referenceAssertions": [
+              "accession": {
+                "accession": "VCV000017660",
+                "version": 35
+              },
+              "rcvs": [
                 {
-                  "rcv": "RCV000034760",
-                  "title": "NM_007294.4(BRCA1):c.5579A>C (p.His1860Pro) AND not provided",
-                  "clinicalSignificance": "CLINICAL_SIGNIFICANCE_BENIGN",
-                  "reviewStatus": "REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED"
+                  "accession": {
+                    "accession": "RCV000235121",
+                    "version": 10
+                  },
+                  "title": "NM_007294.4(BRCA1):c.190T>G (p.Cys64Gly) AND not provided",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-01-19T00:00:00+00:00",
+                        "submissionCount": 2
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000496255",
+                    "version": 2
+                  },
+                  "title": "NM_007294.4(BRCA1):c.190T>G (p.Cys64Gly) AND not specified",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Uncertain significance",
+                        "dateLastEvaluated": "2014-01-31T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000019228",
+                    "version": 23
+                  },
+                  "title": "NM_007294.4(BRCA1):c.190T>G (p.Cys64Gly) AND Breast-ovarian cancer, familial, susceptibility to, 1",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-06-08T00:00:00+00:00",
+                        "submissionCount": 8
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000047634",
+                    "version": 16
+                  },
+                  "title": "NM_007294.4(BRCA1):c.190T>G (p.Cys64Gly) AND Hereditary breast ovarian cancer syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-12-07T00:00:00+00:00",
+                        "submissionCount": 3
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000129894",
+                    "version": 13
+                  },
+                  "title": "NM_007294.4(BRCA1):c.190T>G (p.Cys64Gly) AND Hereditary cancer-predisposing syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-03-30T00:00:00+00:00",
+                        "submissionCount": 2
+                      }
+                    }
+                  }
                 }
-              ]
+              ],
+              "name": "NM_007294.4(BRCA1):c.190T>G (p.Cys64Gly)",
+              "variationType": "VARIATION_TYPE_SNV",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                  "description": "Pathogenic",
+                  "dateLastEvaluated": "2023-12-07T00:00:00+00:00",
+                  "dateCreated": "2014-04-01T00:00:00+00:00",
+                  "mostRecentSubmission": "2024-05-01T00:00:00+00:00",
+                  "numberOfSubmitters": 16,
+                  "numberOfSubmissions": 16
+                }
+              },
+              "sequenceLocation": {
+                "forDisplay": true,
+                "assembly": "GRCh38",
+                "chr": "CHROMOSOME_17",
+                "accession": "NC_000017.11",
+                "start": 43106478,
+                "stop": 43106478,
+                "displayStart": 43106478,
+                "displayStop": 43106478,
+                "variantLength": 1,
+                "positionVcf": 43106478,
+                "referenceAlleleVcf": "A",
+                "alternateAlleleVcf": "C"
+              },
+              "hgncIds": ["HGNC:1100"]
             },
             {
-              "release": "GRCh38",
-              "chromosome": "17",
-              "start": 43082456,
-              "stop": 43082456,
-              "reference": "G",
-              "alternative": "C",
-              "vcv": "VCV000182080",
-              "referenceAssertions": [
+              "accession": {
+                "accession": "VCV000017661",
+                "version": 116
+              },
+              "rcvs": [
                 {
-                  "rcv": "RCV000159851",
-                  "title": "NM_007294.4(BRCA1):c.4305C>G (p.Asp1435Glu) AND not provided",
-                  "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
-                  "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+                  "accession": {
+                    "accession": "RCV000019229",
+                    "version": 47
+                  },
+                  "title": "NM_007294.4(BRCA1):c.181T>G (p.Cys61Gly) AND Breast-ovarian cancer, familial, susceptibility to, 1",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2015-08-10T00:00:00+00:00",
+                        "submissionCount": 24
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000047597",
+                    "version": 38
+                  },
+                  "title": "NM_007294.4(BRCA1):c.181T>G (p.Cys61Gly) AND Hereditary breast ovarian cancer syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2024-01-31T00:00:00+00:00",
+                        "submissionCount": 8
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000159935",
+                    "version": 61
+                  },
+                  "title": "NM_007294.4(BRCA1):c.181T>G (p.Cys61Gly) AND not provided",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2024-03-01T00:00:00+00:00",
+                        "submissionCount": 16
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000131902",
+                    "version": 23
+                  },
+                  "title": "NM_007294.4(BRCA1):c.181T>G (p.Cys61Gly) AND Hereditary cancer-predisposing syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-09-05T00:00:00+00:00",
+                        "submissionCount": 4
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000239114",
+                    "version": 14
+                  },
+                  "title": "NM_007294.4(BRCA1):c.181T>G (p.Cys61Gly) AND Familial cancer of breast",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2022-11-29T00:00:00+00:00",
+                        "submissionCount": 4
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000415051",
+                    "version": 11
+                  },
+                  "title": "NM_007294.4(BRCA1):c.181T>G (p.Cys61Gly) AND Breast carcinoma",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2022-10-24T00:00:00+00:00",
+                        "submissionCount": 2
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000412714",
+                    "version": 9
+                  },
+                  "title": "NM_007294.4(BRCA1):c.181T>G (p.Cys61Gly) AND Breast neoplasm",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000763010",
+                    "version": 11
+                  },
+                  "title": "NM_007294.4(BRCA1):c.181T>G (p.Cys61Gly) AND multiple conditions",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2022-05-03T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000785199",
+                    "version": 10
+                  },
+                  "title": "NM_007294.4(BRCA1):c.181T>G (p.Cys61Gly) AND Neoplasm of ovary",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2018-12-01T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV001270967",
+                    "version": 9
+                  },
+                  "title": "NM_007294.4(BRCA1):c.181T>G (p.Cys61Gly) AND Breast and/or ovarian cancer",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2019-06-11T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
                 }
-              ]
+              ],
+              "name": "NM_007294.4(BRCA1):c.181T>G (p.Cys61Gly)",
+              "variationType": "VARIATION_TYPE_SNV",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                  "description": "Pathogenic",
+                  "dateLastEvaluated": "2015-08-10T00:00:00+00:00",
+                  "dateCreated": "2015-09-29T00:00:00+00:00",
+                  "mostRecentSubmission": "2024-05-12T00:00:00+00:00",
+                  "numberOfSubmitters": 57,
+                  "numberOfSubmissions": 62
+                }
+              },
+              "sequenceLocation": {
+                "forDisplay": true,
+                "assembly": "GRCh38",
+                "chr": "CHROMOSOME_17",
+                "accession": "NC_000017.11",
+                "start": 43106487,
+                "stop": 43106487,
+                "displayStart": 43106487,
+                "displayStop": 43106487,
+                "variantLength": 1,
+                "positionVcf": 43106487,
+                "referenceAlleleVcf": "A",
+                "alternateAlleleVcf": "C"
+              },
+              "hgncIds": ["HGNC:1100"]
             },
             {
-              "release": "GRCh38",
-              "chromosome": "17",
-              "start": 43082572,
-              "stop": 43082574,
-              "reference": "CTCT",
-              "alternative": "C",
-              "vcv": "VCV000182116",
-              "referenceAssertions": [
+              "accession": {
+                "accession": "VCV000017662",
+                "version": 141
+              },
+              "rcvs": [
                 {
-                  "rcv": "RCV000159925",
-                  "title": "NM_007294.4(BRCA1):c.4187_4189del (p.Gln1396del) AND not provided",
-                  "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
-                  "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+                  "accession": {
+                    "accession": "RCV000019230",
+                    "version": 56
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND Breast-ovarian cancer, familial, susceptibility to, 1",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-10-08T00:00:00+00:00",
+                        "submissionCount": 31
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000019231",
+                    "version": 12
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND Pancreatic cancer, susceptibility to, 4",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "risk factor",
+                        "dateLastEvaluated": "2008-10-01T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000056295",
+                    "version": 20
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND Familial cancer of breast",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2020-12-15T00:00:00+00:00",
+                        "submissionCount": 3
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000034761",
+                    "version": 50
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND Hereditary breast ovarian cancer syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2024-01-31T00:00:00+00:00",
+                        "submissionCount": 14
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000131394",
+                    "version": 24
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND Hereditary cancer-predisposing syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-03-13T00:00:00+00:00",
+                        "submissionCount": 4
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000213650",
+                    "version": 58
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND not provided",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2024-03-01T00:00:00+00:00",
+                        "submissionCount": 14
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000735481",
+                    "version": 13
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND Breast and/or ovarian cancer",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2022-03-04T00:00:00+00:00",
+                        "submissionCount": 3
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000785197",
+                    "version": 10
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND Neoplasm of ovary",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2018-12-01T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV001353942",
+                    "version": 9
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND Malignant tumor of breast",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV001836711",
+                    "version": 9
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND Invasive medullary breast carcinoma",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV002496414",
+                    "version": 8
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND multiple conditions",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2022-05-04T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV003128128",
+                    "version": 8
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND Endometrial carcinoma",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-02-21T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV003225925",
+                    "version": 8
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND Triple-negative breast cancer",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-03-11T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV004554604",
+                    "version": 1
+                  },
+                  "title": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND BRCA1-related disorder",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2024-02-16T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
                 }
-              ]
+              ],
+              "name": "NM_007294.4(BRCA1):c.68_69del (p.Glu23fs)",
+              "variationType": "VARIATION_TYPE_MICROSATELLITE",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                  "description": "Pathogenic",
+                  "dateLastEvaluated": "2023-10-08T00:00:00+00:00",
+                  "dateCreated": "2013-04-12T00:00:00+00:00",
+                  "mostRecentSubmission": "2024-05-12T00:00:00+00:00",
+                  "numberOfSubmitters": 73,
+                  "numberOfSubmissions": 77
+                }
+              },
+              "sequenceLocation": {
+                "forDisplay": true,
+                "assembly": "GRCh38",
+                "chr": "CHROMOSOME_17",
+                "accession": "NC_000017.11",
+                "start": 43124028,
+                "stop": 43124029,
+                "displayStart": 43124028,
+                "displayStop": 43124029,
+                "variantLength": 2,
+                "positionVcf": 43124027,
+                "referenceAlleleVcf": "ACT",
+                "alternateAlleleVcf": "A"
+              },
+              "hgncIds": ["HGNC:1100"]
             },
             {
-              "release": "GRCh38",
-              "chromosome": "17",
-              "start": 43074391,
-              "stop": 43074392,
-              "reference": "GC",
-              "alternative": "AA",
-              "vcv": "VCV000182117",
-              "referenceAssertions": [
+              "accession": {
+                "accession": "VCV000017665",
+                "version": 49
+              },
+              "rcvs": [
                 {
-                  "rcv": "RCV000159926",
-                  "title": "NM_007294.4(BRCA1):c.4614_4615delinsTT (p.Gln1538His) AND not specified",
-                  "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
-                  "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+                  "accession": {
+                    "accession": "RCV000047372",
+                    "version": 23
+                  },
+                  "title": "NM_007294.4(BRCA1):c.1175_1214del (p.Leu392fs) AND Hereditary breast ovarian cancer syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-12-31T00:00:00+00:00",
+                        "submissionCount": 5
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000159899",
+                    "version": 20
+                  },
+                  "title": "NM_007294.4(BRCA1):c.1175_1214del (p.Leu392fs) AND not provided",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2022-11-18T00:00:00+00:00",
+                        "submissionCount": 4
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000238898",
+                    "version": 11
+                  },
+                  "title": "NM_007294.4(BRCA1):c.1175_1214del (p.Leu392fs) AND not specified",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2018-12-04T00:00:00+00:00",
+                        "submissionCount": 2
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV001798011",
+                    "version": 5
+                  },
+                  "title": "NM_007294.4(BRCA1):c.1175_1214del (p.Leu392fs) AND Breast and/or ovarian cancer",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2021-04-03T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV001353523",
+                    "version": 4
+                  },
+                  "title": "NM_007294.4(BRCA1):c.1175_1214del (p.Leu392fs) AND Malignant tumor of breast",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000019234",
+                    "version": 29
+                  },
+                  "title": "NM_007294.4(BRCA1):c.1175_1214del (p.Leu392fs) AND Breast-ovarian cancer, familial, susceptibility to, 1",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2016-04-22T00:00:00+00:00",
+                        "submissionCount": 11
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000131965",
+                    "version": 16
+                  },
+                  "title": "NM_007294.4(BRCA1):c.1175_1214del (p.Leu392fs) AND Hereditary cancer-predisposing syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-12-04T00:00:00+00:00",
+                        "submissionCount": 3
+                      }
+                    }
+                  }
                 }
-              ]
+              ],
+              "name": "NM_007294.4(BRCA1):c.1175_1214del (p.Leu392fs)",
+              "variationType": "VARIATION_TYPE_DELETION",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                  "description": "Pathogenic",
+                  "dateLastEvaluated": "2016-04-22T00:00:00+00:00",
+                  "dateCreated": "2014-04-01T00:00:00+00:00",
+                  "mostRecentSubmission": "2024-04-20T00:00:00+00:00",
+                  "numberOfSubmitters": 27,
+                  "numberOfSubmissions": 27
+                }
+              },
+              "sequenceLocation": {
+                "forDisplay": true,
+                "assembly": "GRCh38",
+                "chr": "CHROMOSOME_17",
+                "accession": "NC_000017.11",
+                "start": 43094317,
+                "stop": 43094356,
+                "displayStart": 43094317,
+                "displayStop": 43094356,
+                "variantLength": 40,
+                "positionVcf": 43094316,
+                "referenceAlleleVcf": "TGATTCAGACTCCCCATCATGTGAGTCATCAGAACCTAACA",
+                "alternateAlleleVcf": "T"
+              },
+              "hgncIds": ["HGNC:1100"]
             },
             {
-              "release": "GRCh38",
-              "chromosome": "17",
-              "start": 43124128,
-              "stop": 43124132,
-              "reference": "AGAAA",
-              "alternative": "TT",
-              "vcv": "VCV000246265",
-              "referenceAssertions": [
+              "accession": {
+                "accession": "VCV000017666",
+                "version": 24
+              },
+              "rcvs": [
                 {
-                  "rcv": "RCV000235381",
-                  "title": "NM_007294.4(BRCA1):c.-19-17_-19-13delinsAA AND not specified",
-                  "clinicalSignificance": "CLINICAL_SIGNIFICANCE_UNCERTAIN_SIGNIFICANCE",
-                  "reviewStatus": "REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER"
+                  "accession": {
+                    "accession": "RCV000019235",
+                    "version": 22
+                  },
+                  "title": "NM_007294.4(BRCA1):c.2296_2297del (p.Glu765_Ser766insTer) AND Breast-ovarian cancer, familial, susceptibility to, 1",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2016-09-08T00:00:00+00:00",
+                        "submissionCount": 7
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000214000",
+                    "version": 16
+                  },
+                  "title": "NM_007294.4(BRCA1):c.2296_2297del (p.Glu765_Ser766insTer) AND Hereditary cancer-predisposing syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-09-06T00:00:00+00:00",
+                        "submissionCount": 2
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000496882",
+                    "version": 15
+                  },
+                  "title": "NM_007294.4(BRCA1):c.2296_2297del (p.Glu765_Ser766insTer) AND Hereditary breast ovarian cancer syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-09-29T00:00:00+00:00",
+                        "submissionCount": 4
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000759504",
+                    "version": 13
+                  },
+                  "title": "NM_007294.4(BRCA1):c.2296_2297del (p.Glu765_Ser766insTer) AND not provided",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-03-21T00:00:00+00:00",
+                        "submissionCount": 2
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV001170823",
+                    "version": 11
+                  },
+                  "title": "NM_007294.4(BRCA1):c.2296_2297del (p.Glu765_Ser766insTer) AND Breast and/or ovarian cancer",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2020-02-25T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
                 }
-              ]
+              ],
+              "name": "NM_007294.4(BRCA1):c.2296_2297del (p.Glu765_Ser766insTer)",
+              "variationType": "VARIATION_TYPE_MICROSATELLITE",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                  "description": "Pathogenic",
+                  "dateLastEvaluated": "2016-09-08T00:00:00+00:00",
+                  "dateCreated": "2014-04-01T00:00:00+00:00",
+                  "mostRecentSubmission": "2024-05-01T00:00:00+00:00",
+                  "numberOfSubmitters": 16,
+                  "numberOfSubmissions": 16
+                }
+              },
+              "sequenceLocation": {
+                "forDisplay": true,
+                "assembly": "GRCh38",
+                "chr": "CHROMOSOME_17",
+                "accession": "NC_000017.11",
+                "start": 43093234,
+                "stop": 43093235,
+                "displayStart": 43093234,
+                "displayStop": 43093235,
+                "variantLength": 2,
+                "positionVcf": 43093233,
+                "referenceAlleleVcf": "ACT",
+                "alternateAlleleVcf": "A"
+              },
+              "hgncIds": ["HGNC:1100"]
+            },
+            {
+              "accession": {
+                "accession": "VCV000017667",
+                "version": 44
+              },
+              "rcvs": [
+                {
+                  "accession": {
+                    "accession": "RCV000019236",
+                    "version": 31
+                  },
+                  "title": "NM_007294.4(BRCA1):c.2681_2682del (p.Lys894fs) AND Breast-ovarian cancer, familial, susceptibility to, 1",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2016-04-22T00:00:00+00:00",
+                        "submissionCount": 12
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000047927",
+                    "version": 32
+                  },
+                  "title": "NM_007294.4(BRCA1):c.2681_2682del (p.Lys894fs) AND Hereditary breast ovarian cancer syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2024-01-28T00:00:00+00:00",
+                        "submissionCount": 6
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000074575",
+                    "version": 27
+                  },
+                  "title": "NM_007294.4(BRCA1):c.2681_2682del (p.Lys894fs) AND not provided",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-09-21T00:00:00+00:00",
+                        "submissionCount": 3
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000131876",
+                    "version": 21
+                  },
+                  "title": "NM_007294.4(BRCA1):c.2681_2682del (p.Lys894fs) AND Hereditary cancer-predisposing syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2022-12-14T00:00:00+00:00",
+                        "submissionCount": 3
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000735499",
+                    "version": 9
+                  },
+                  "title": "NM_007294.4(BRCA1):c.2681_2682del (p.Lys894fs) AND Breast and/or ovarian cancer",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2003-09-24T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                }
+              ],
+              "name": "NM_007294.4(BRCA1):c.2681_2682del (p.Lys894fs)",
+              "variationType": "VARIATION_TYPE_DELETION",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                  "description": "Pathogenic",
+                  "dateLastEvaluated": "2016-04-22T00:00:00+00:00",
+                  "dateCreated": "2015-10-11T00:00:00+00:00",
+                  "mostRecentSubmission": "2024-05-01T00:00:00+00:00",
+                  "numberOfSubmitters": 25,
+                  "numberOfSubmissions": 25
+                }
+              },
+              "sequenceLocation": {
+                "forDisplay": true,
+                "assembly": "GRCh38",
+                "chr": "CHROMOSOME_17",
+                "accession": "NC_000017.11",
+                "start": 43092849,
+                "stop": 43092850,
+                "displayStart": 43092849,
+                "displayStop": 43092850,
+                "variantLength": 2,
+                "positionVcf": 43092848,
+                "referenceAlleleVcf": "GTT",
+                "alternateAlleleVcf": "G"
+              },
+              "hgncIds": ["HGNC:1100"]
+            },
+            {
+              "accession": {
+                "accession": "VCV000017669",
+                "version": 34
+              },
+              "rcvs": [
+                {
+                  "accession": {
+                    "accession": "RCV000019238",
+                    "version": 34
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3005del (p.Asn1002fs) AND Breast-ovarian cancer, familial, susceptibility to, 1",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2016-09-08T00:00:00+00:00",
+                        "submissionCount": 10
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000048039",
+                    "version": 27
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3005del (p.Asn1002fs) AND Hereditary breast ovarian cancer syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2024-01-25T00:00:00+00:00",
+                        "submissionCount": 4
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000163096",
+                    "version": 18
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3005del (p.Asn1002fs) AND Hereditary cancer-predisposing syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2022-06-09T00:00:00+00:00",
+                        "submissionCount": 2
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000159912",
+                    "version": 20
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3005del (p.Asn1002fs) AND not provided",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-09-20T00:00:00+00:00",
+                        "submissionCount": 4
+                      }
+                    }
+                  }
+                }
+              ],
+              "name": "NM_007294.4(BRCA1):c.3005del (p.Asn1002fs)",
+              "variationType": "VARIATION_TYPE_DELETION",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                  "description": "Pathogenic",
+                  "dateLastEvaluated": "2016-09-08T00:00:00+00:00",
+                  "dateCreated": "2014-04-04T00:00:00+00:00",
+                  "mostRecentSubmission": "2024-05-01T00:00:00+00:00",
+                  "numberOfSubmitters": 20,
+                  "numberOfSubmissions": 20
+                }
+              },
+              "sequenceLocation": {
+                "forDisplay": true,
+                "assembly": "GRCh38",
+                "chr": "CHROMOSOME_17",
+                "accession": "NC_000017.11",
+                "start": 43092526,
+                "stop": 43092526,
+                "displayStart": 43092526,
+                "displayStop": 43092526,
+                "variantLength": 1,
+                "positionVcf": 43092525,
+                "referenceAlleleVcf": "GT",
+                "alternateAlleleVcf": "G"
+              },
+              "hgncIds": ["HGNC:1100"]
+            },
+            {
+              "accession": {
+                "accession": "VCV000017670",
+                "version": 103
+              },
+              "rcvs": [
+                {
+                  "accession": {
+                    "accession": "RCV000019239",
+                    "version": 33
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3119G>A (p.Ser1040Asn) AND Breast-ovarian cancer, familial, susceptibility to, 1",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                      "description": {
+                        "value": "Benign",
+                        "dateLastEvaluated": "2015-08-10T00:00:00+00:00",
+                        "submissionCount": 14
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000034739",
+                    "version": 41
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3119G>A (p.Ser1040Asn) AND not provided",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Benign",
+                        "dateLastEvaluated": "2024-04-01T00:00:00+00:00",
+                        "submissionCount": 4
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000048074",
+                    "version": 29
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3119G>A (p.Ser1040Asn) AND Hereditary breast ovarian cancer syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Benign/Likely benign",
+                        "dateLastEvaluated": "2024-02-01T00:00:00+00:00",
+                        "submissionCount": 5
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000120293",
+                    "version": 36
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3119G>A (p.Ser1040Asn) AND not specified",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Benign",
+                        "dateLastEvaluated": "2023-08-15T00:00:00+00:00",
+                        "submissionCount": 12
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000128951",
+                    "version": 15
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3119G>A (p.Ser1040Asn) AND Hereditary cancer-predisposing syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Benign",
+                        "dateLastEvaluated": "2021-05-03T00:00:00+00:00",
+                        "submissionCount": 5
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000456692",
+                    "version": 9
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3119G>A (p.Ser1040Asn) AND Familial cancer of breast",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Benign",
+                        "dateLastEvaluated": "2017-02-23T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV002476991",
+                    "version": 8
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3119G>A (p.Ser1040Asn) AND multiple conditions",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Benign",
+                        "dateLastEvaluated": "2022-03-16T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                }
+              ],
+              "name": "NM_007294.4(BRCA1):c.3119G>A (p.Ser1040Asn)",
+              "variationType": "VARIATION_TYPE_SNV",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                  "description": "Benign",
+                  "dateLastEvaluated": "2015-08-10T00:00:00+00:00",
+                  "dateCreated": "2013-04-12T00:00:00+00:00",
+                  "mostRecentSubmission": "2024-05-12T00:00:00+00:00",
+                  "numberOfSubmitters": 42,
+                  "numberOfSubmissions": 42
+                }
+              },
+              "sequenceLocation": {
+                "forDisplay": true,
+                "assembly": "GRCh38",
+                "chr": "CHROMOSOME_17",
+                "accession": "NC_000017.11",
+                "start": 43092412,
+                "stop": 43092412,
+                "displayStart": 43092412,
+                "displayStop": 43092412,
+                "variantLength": 1,
+                "positionVcf": 43092412,
+                "referenceAlleleVcf": "C",
+                "alternateAlleleVcf": "T"
+              },
+              "hgncIds": ["HGNC:1100"]
+            },
+            {
+              "accession": {
+                "accession": "VCV000017671",
+                "version": 96
+              },
+              "rcvs": [
+                {
+                  "accession": {
+                    "accession": "RCV000019240",
+                    "version": 41
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter) AND Breast-ovarian cancer, familial, susceptibility to, 1",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2016-04-22T00:00:00+00:00",
+                        "submissionCount": 17
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000148389",
+                    "version": 11
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter) AND Breast neoplasm",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2014-06-01T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000048251",
+                    "version": 35
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter) AND Hereditary breast ovarian cancer syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-12-01T00:00:00+00:00",
+                        "submissionCount": 5
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000159978",
+                    "version": 31
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter) AND not provided",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-08-15T00:00:00+00:00",
+                        "submissionCount": 8
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000131818",
+                    "version": 20
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter) AND Hereditary cancer-predisposing syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-04-24T00:00:00+00:00",
+                        "submissionCount": 2
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000239343",
+                    "version": 16
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter) AND Familial cancer of breast",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-10-13T00:00:00+00:00",
+                        "submissionCount": 5
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000677815",
+                    "version": 9
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter) AND Ovarian cancer",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2017-02-16T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000785373",
+                    "version": 10
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter) AND Neoplasm of ovary",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2018-12-01T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000735444",
+                    "version": 11
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter) AND Breast and/or ovarian cancer",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2016-03-13T00:00:00+00:00",
+                        "submissionCount": 2
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV001642230",
+                    "version": 9
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter) AND Ovarian carcinoma",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2021-09-11T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV003332084",
+                    "version": 2
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter) AND Malignant tumor of urinary bladder",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV003162256",
+                    "version": 8
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter) AND Gastric cancer",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2021-07-01T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV004554605",
+                    "version": 1
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter) AND BRCA1-related disorder",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-05-16T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                }
+              ],
+              "name": "NM_007294.4(BRCA1):c.3607C>T (p.Arg1203Ter)",
+              "variationType": "VARIATION_TYPE_SNV",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                  "description": "Pathogenic",
+                  "dateLastEvaluated": "2016-04-22T00:00:00+00:00",
+                  "dateCreated": "2014-04-01T00:00:00+00:00",
+                  "mostRecentSubmission": "2024-05-01T00:00:00+00:00",
+                  "numberOfSubmitters": 44,
+                  "numberOfSubmissions": 46
+                }
+              },
+              "sequenceLocation": {
+                "forDisplay": true,
+                "assembly": "GRCh38",
+                "chr": "CHROMOSOME_17",
+                "accession": "NC_000017.11",
+                "start": 43091924,
+                "stop": 43091924,
+                "displayStart": 43091924,
+                "displayStop": 43091924,
+                "variantLength": 1,
+                "positionVcf": 43091924,
+                "referenceAlleleVcf": "G",
+                "alternateAlleleVcf": "A"
+              },
+              "hgncIds": ["HGNC:1100"]
+            },
+            {
+              "accession": {
+                "accession": "VCV000017672",
+                "version": 55
+              },
+              "rcvs": [
+                {
+                  "accession": {
+                    "accession": "RCV000019241",
+                    "version": 32
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3748G>T (p.Glu1250Ter) AND Breast-ovarian cancer, familial, susceptibility to, 1",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2016-09-08T00:00:00+00:00",
+                        "submissionCount": 13
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000048311",
+                    "version": 26
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3748G>T (p.Glu1250Ter) AND Hereditary breast ovarian cancer syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2024-01-30T00:00:00+00:00",
+                        "submissionCount": 5
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000074586",
+                    "version": 30
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3748G>T (p.Glu1250Ter) AND not provided",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-07-18T00:00:00+00:00",
+                        "submissionCount": 6
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000131811",
+                    "version": 21
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3748G>T (p.Glu1250Ter) AND Hereditary cancer-predisposing syndrome",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2023-03-22T00:00:00+00:00",
+                        "submissionCount": 3
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000465125",
+                    "version": 9
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3748G>T (p.Glu1250Ter) AND Familial cancer of breast",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2017-02-23T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "accession": {
+                    "accession": "RCV000506391",
+                    "version": 15
+                  },
+                  "title": "NM_007294.4(BRCA1):c.3748G>T (p.Glu1250Ter) AND not specified",
+                  "classifications": {
+                    "germlineClassification": {
+                      "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                      "description": {
+                        "value": "Pathogenic",
+                        "dateLastEvaluated": "2017-01-11T00:00:00+00:00",
+                        "submissionCount": 1
+                      }
+                    }
+                  }
+                }
+              ],
+              "name": "NM_007294.4(BRCA1):c.3748G>T (p.Glu1250Ter)",
+              "variationType": "VARIATION_TYPE_SNV",
+              "classifications": {
+                "germlineClassification": {
+                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                  "description": "Pathogenic",
+                  "dateLastEvaluated": "2016-09-08T00:00:00+00:00",
+                  "dateCreated": "2014-09-27T00:00:00+00:00",
+                  "mostRecentSubmission": "2024-05-01T00:00:00+00:00",
+                  "numberOfSubmitters": 28,
+                  "numberOfSubmissions": 29
+                }
+              },
+              "sequenceLocation": {
+                "forDisplay": true,
+                "assembly": "GRCh38",
+                "chr": "CHROMOSOME_17",
+                "accession": "NC_000017.11",
+                "start": 43091783,
+                "stop": 43091783,
+                "displayStart": 43091783,
+                "displayStop": 43091783,
+                "variantLength": 1,
+                "positionVcf": 43091783,
+                "referenceAlleleVcf": "C",
+                "alternateAlleleVcf": "A"
+              },
+              "hgncIds": ["HGNC:1100"]
             }
           ]
         }

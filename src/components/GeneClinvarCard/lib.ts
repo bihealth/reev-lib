@@ -48,3 +48,46 @@ export const downsample = (
   // Return only bins with count > 0
   return bins.filter((bin) => bin.count > 0)
 }
+
+/** Local enumeration for clinvar scale. */
+export enum ClinicalSignificance {
+  UNSPECIFIED,
+  PATHOGENIC,
+  LIKELY_PATHOGENIC,
+  UNCERTAIN_SIGNIFICANCE,
+  LIKELY_BENIGN,
+  BENIGN,
+  OTHER
+}
+
+export const CLINVAR_SIGNIFICANCE_TO_INT: { [Key in ClinicalSignificance]: number } = {
+  [ClinicalSignificance.UNSPECIFIED]: -3,
+  [ClinicalSignificance.OTHER]: -3,
+  [ClinicalSignificance.PATHOGENIC]: 2,
+  [ClinicalSignificance.LIKELY_PATHOGENIC]: 1,
+  [ClinicalSignificance.UNCERTAIN_SIGNIFICANCE]: 0,
+  [ClinicalSignificance.LIKELY_BENIGN]: -1,
+  [ClinicalSignificance.BENIGN]: -2
+}
+
+export const convertClinvarSignificance = (description?: string): ClinicalSignificance => {
+  if (description === undefined) {
+    return ClinicalSignificance.UNSPECIFIED
+  }
+  if (description.toLowerCase().includes('likely pathogenic')) {
+    return ClinicalSignificance.LIKELY_PATHOGENIC
+  } else if (description.toLowerCase().includes('likely benign')) {
+    return ClinicalSignificance.LIKELY_BENIGN
+  } else if (description.toLowerCase().includes('pathogenic')) {
+    return ClinicalSignificance.PATHOGENIC
+  } else if (description.toLowerCase().includes('benign')) {
+    return ClinicalSignificance.BENIGN
+  } else if (
+    description.toLowerCase().includes('uncertain') ||
+    description.toLowerCase().includes('conflicting')
+  ) {
+    return ClinicalSignificance.OTHER
+  } else {
+    return ClinicalSignificance.OTHER
+  }
+}

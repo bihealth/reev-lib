@@ -1,6 +1,6 @@
 import type { JsonValue } from '@protobuf-ts/runtime'
 
-import { Record as ClinvarSeqvarRecord } from '../../pbs/annonars/clinvar/minimal'
+import { ExtractedVcvRecordList } from '../../pbs/annonars/clinvar/minimal'
 import { ResponseRecord as ClinvarStrucvarResponseRecord } from '../../pbs/annonars/clinvar/sv'
 import { Record as UcscConservationRecord } from '../../pbs/annonars/cons/base'
 import { Record as DbsnpRecord } from '../../pbs/annonars/dbsnp/base'
@@ -260,7 +260,7 @@ export interface SeqvarInfoResult {
   gnomadGenomes?: Gnomad2Record | Gnomad3Record | Gnomad4Record
   helixmtdb?: HelixmtdbRecord
   ucscConservation: UcscConservationRecord[][]
-  clinvar?: ClinvarSeqvarRecord
+  clinvar?: ExtractedVcvRecordList
 }
 
 /**
@@ -298,7 +298,7 @@ class SeqvarInfoResult$Type {
         apiResult.clinvar === null
           ? undefined
           : // @ts-ignore
-            ClinvarSeqvarRecord.fromJson(apiResult.clinvar as JsonValue)
+            ExtractedVcvRecordList.fromJson(apiResult.clinvar as JsonValue)
     }
   }
 }
