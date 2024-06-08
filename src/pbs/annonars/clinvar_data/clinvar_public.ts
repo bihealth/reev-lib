@@ -566,48 +566,33 @@ export interface Trait_TraitRelationship {
   // nested elements
 
   /**
-   * names
-   *
-   * NB: in XSD this is explictely given as unbounded but XML always has
-   * one element
+   * Name(s) of the trait.
    *
    * @generated from protobuf field: repeated annonars.clinvar_data.clinvar_public.GenericSetElement names = 1;
    */
   names: GenericSetElement[]
   /**
-   * symbols (NB: never occur in the XML)
-   *
-   * @generated from protobuf field: repeated annonars.clinvar_data.clinvar_public.GenericSetElement symbols = 2;
-   */
-  symbols: GenericSetElement[]
-  /**
-   * attributes (NB: never occur in the XML)
-   *
-   * @generated from protobuf field: repeated annonars.clinvar_data.clinvar_public.AttributeSetElement attributes = 3;
-   */
-  attributes: AttributeSetElement[]
-  /**
    * Citation list.
    *
-   * @generated from protobuf field: repeated annonars.clinvar_data.clinvar_public.Citation citations = 4;
+   * @generated from protobuf field: repeated annonars.clinvar_data.clinvar_public.Citation citations = 2;
    */
   citations: Citation[]
   /**
    * Xref list.
    *
-   * @generated from protobuf field: repeated annonars.clinvar_data.clinvar_public.Xref xrefs = 5;
+   * @generated from protobuf field: repeated annonars.clinvar_data.clinvar_public.Xref xrefs = 3;
    */
   xrefs: Xref[]
   /**
    * Comment list.
    *
-   * @generated from protobuf field: repeated annonars.clinvar_data.clinvar_public.Comment comments = 6;
+   * @generated from protobuf field: repeated annonars.clinvar_data.clinvar_public.Comment comments = 4;
    */
   comments: Comment[]
   /**
    * Sources
    *
-   * @generated from protobuf field: repeated string sources = 7;
+   * @generated from protobuf field: repeated string sources = 5;
    */
   sources: string[]
   // attributes
@@ -615,7 +600,7 @@ export interface Trait_TraitRelationship {
   /**
    * Trait type.
    *
-   * @generated from protobuf field: annonars.clinvar_data.clinvar_public.Trait.TraitRelationship.Type type = 8;
+   * @generated from protobuf field: annonars.clinvar_data.clinvar_public.Trait.TraitRelationship.Type type = 6;
    */
   type: Trait_TraitRelationship_Type
 }
@@ -1159,9 +1144,9 @@ export interface AggregateClassificationSet {
   /**
    * The aggregate somatic clinical impact.
    *
-   * @generated from protobuf field: repeated annonars.clinvar_data.clinvar_public.AggregatedSomaticClinicalImpact somatic_clinical_impacts = 2;
+   * @generated from protobuf field: optional annonars.clinvar_data.clinvar_public.AggregatedSomaticClinicalImpact somatic_clinical_impact = 2;
    */
-  somaticClinicalImpacts: AggregatedSomaticClinicalImpact[]
+  somaticClinicalImpact?: AggregatedSomaticClinicalImpact
   /**
    * The aggregate oncogenicity classification.
    *
@@ -1376,9 +1361,9 @@ export interface ClassificationScv {
    * Information on the clinical impact; mutually exlusive with `germline_classification`
    * and `oncogenicity_classification`.
    *
-   * @generated from protobuf field: optional annonars.clinvar_data.clinvar_public.ClassificationScv.SomaticClinicalImpact somatic_clinical_impacts = 3;
+   * @generated from protobuf field: optional annonars.clinvar_data.clinvar_public.ClassificationScv.SomaticClinicalImpact somatic_clinical_impact = 3;
    */
-  somaticClinicalImpacts?: ClassificationScv_SomaticClinicalImpact
+  somaticClinicalImpact?: ClassificationScv_SomaticClinicalImpact
   /**
    * The oncogenicity classification; mutually exlusive with `germline_classification`
    * and `oncogenicity_classification`.
@@ -2850,9 +2835,9 @@ export interface AlleleScv {
   /**
    * Name provided by the submitter.
    *
-   * @generated from protobuf field: repeated annonars.clinvar_data.clinvar_public.OtherName names = 2;
+   * @generated from protobuf field: annonars.clinvar_data.clinvar_public.OtherName name = 2;
    */
-  names: OtherName[]
+  name?: OtherName
   /**
    * Variant type.
    *
@@ -3050,9 +3035,9 @@ export interface HaplotypeScv {
   /**
    * Classification of the variant.
    *
-   * @generated from protobuf field: optional annonars.clinvar_data.clinvar_public.AggregateClassificationSet classification = 4;
+   * @generated from protobuf field: optional annonars.clinvar_data.clinvar_public.AggregateClassificationSet classifications = 4;
    */
-  classification?: AggregateClassificationSet
+  classifications?: AggregateClassificationSet
   /**
    * Functional consequences of the variant.
    *
@@ -3608,11 +3593,11 @@ export interface ClinicalAssertion {
    */
   replaceds: ClinicalAssertionRecordHistory[]
   /**
-   * SCV classifications.
+   * SCV classification.
    *
-   * @generated from protobuf field: repeated annonars.clinvar_data.clinvar_public.ClassificationScv classifications = 7;
+   * @generated from protobuf field: annonars.clinvar_data.clinvar_public.ClassificationScv classifications = 7;
    */
-  classifications: ClassificationScv[]
+  classifications?: ClassificationScv
   /**
    * The assertion.
    *
@@ -7839,42 +7824,28 @@ class Trait_TraitRelationship$Type extends MessageType<Trait_TraitRelationship> 
       },
       {
         no: 2,
-        name: 'symbols',
-        kind: 'message',
-        repeat: 1 /*RepeatType.PACKED*/,
-        T: () => GenericSetElement
-      },
-      {
-        no: 3,
-        name: 'attributes',
-        kind: 'message',
-        repeat: 1 /*RepeatType.PACKED*/,
-        T: () => AttributeSetElement
-      },
-      {
-        no: 4,
         name: 'citations',
         kind: 'message',
         repeat: 1 /*RepeatType.PACKED*/,
         T: () => Citation
       },
-      { no: 5, name: 'xrefs', kind: 'message', repeat: 1 /*RepeatType.PACKED*/, T: () => Xref },
+      { no: 3, name: 'xrefs', kind: 'message', repeat: 1 /*RepeatType.PACKED*/, T: () => Xref },
       {
-        no: 6,
+        no: 4,
         name: 'comments',
         kind: 'message',
         repeat: 1 /*RepeatType.PACKED*/,
         T: () => Comment
       },
       {
-        no: 7,
+        no: 5,
         name: 'sources',
         kind: 'scalar',
         repeat: 2 /*RepeatType.UNPACKED*/,
         T: 9 /*ScalarType.STRING*/
       },
       {
-        no: 8,
+        no: 6,
         name: 'type',
         kind: 'enum',
         T: () => [
@@ -7887,8 +7858,6 @@ class Trait_TraitRelationship$Type extends MessageType<Trait_TraitRelationship> 
   create(value?: PartialMessage<Trait_TraitRelationship>): Trait_TraitRelationship {
     const message = globalThis.Object.create(this.messagePrototype!)
     message.names = []
-    message.symbols = []
-    message.attributes = []
     message.citations = []
     message.xrefs = []
     message.comments = []
@@ -7911,29 +7880,19 @@ class Trait_TraitRelationship$Type extends MessageType<Trait_TraitRelationship> 
         case /* repeated annonars.clinvar_data.clinvar_public.GenericSetElement names */ 1:
           message.names.push(GenericSetElement.internalBinaryRead(reader, reader.uint32(), options))
           break
-        case /* repeated annonars.clinvar_data.clinvar_public.GenericSetElement symbols */ 2:
-          message.symbols.push(
-            GenericSetElement.internalBinaryRead(reader, reader.uint32(), options)
-          )
-          break
-        case /* repeated annonars.clinvar_data.clinvar_public.AttributeSetElement attributes */ 3:
-          message.attributes.push(
-            AttributeSetElement.internalBinaryRead(reader, reader.uint32(), options)
-          )
-          break
-        case /* repeated annonars.clinvar_data.clinvar_public.Citation citations */ 4:
+        case /* repeated annonars.clinvar_data.clinvar_public.Citation citations */ 2:
           message.citations.push(Citation.internalBinaryRead(reader, reader.uint32(), options))
           break
-        case /* repeated annonars.clinvar_data.clinvar_public.Xref xrefs */ 5:
+        case /* repeated annonars.clinvar_data.clinvar_public.Xref xrefs */ 3:
           message.xrefs.push(Xref.internalBinaryRead(reader, reader.uint32(), options))
           break
-        case /* repeated annonars.clinvar_data.clinvar_public.Comment comments */ 6:
+        case /* repeated annonars.clinvar_data.clinvar_public.Comment comments */ 4:
           message.comments.push(Comment.internalBinaryRead(reader, reader.uint32(), options))
           break
-        case /* repeated string sources */ 7:
+        case /* repeated string sources */ 5:
           message.sources.push(reader.string())
           break
-        case /* annonars.clinvar_data.clinvar_public.Trait.TraitRelationship.Type type */ 8:
+        case /* annonars.clinvar_data.clinvar_public.Trait.TraitRelationship.Type type */ 6:
           message.type = reader.int32()
           break
         default:
@@ -7967,46 +7926,32 @@ class Trait_TraitRelationship$Type extends MessageType<Trait_TraitRelationship> 
         writer.tag(1, WireType.LengthDelimited).fork(),
         options
       ).join()
-    /* repeated annonars.clinvar_data.clinvar_public.GenericSetElement symbols = 2; */
-    for (let i = 0; i < message.symbols.length; i++)
-      GenericSetElement.internalBinaryWrite(
-        message.symbols[i],
-        writer.tag(2, WireType.LengthDelimited).fork(),
-        options
-      ).join()
-    /* repeated annonars.clinvar_data.clinvar_public.AttributeSetElement attributes = 3; */
-    for (let i = 0; i < message.attributes.length; i++)
-      AttributeSetElement.internalBinaryWrite(
-        message.attributes[i],
-        writer.tag(3, WireType.LengthDelimited).fork(),
-        options
-      ).join()
-    /* repeated annonars.clinvar_data.clinvar_public.Citation citations = 4; */
+    /* repeated annonars.clinvar_data.clinvar_public.Citation citations = 2; */
     for (let i = 0; i < message.citations.length; i++)
       Citation.internalBinaryWrite(
         message.citations[i],
-        writer.tag(4, WireType.LengthDelimited).fork(),
+        writer.tag(2, WireType.LengthDelimited).fork(),
         options
       ).join()
-    /* repeated annonars.clinvar_data.clinvar_public.Xref xrefs = 5; */
+    /* repeated annonars.clinvar_data.clinvar_public.Xref xrefs = 3; */
     for (let i = 0; i < message.xrefs.length; i++)
       Xref.internalBinaryWrite(
         message.xrefs[i],
-        writer.tag(5, WireType.LengthDelimited).fork(),
+        writer.tag(3, WireType.LengthDelimited).fork(),
         options
       ).join()
-    /* repeated annonars.clinvar_data.clinvar_public.Comment comments = 6; */
+    /* repeated annonars.clinvar_data.clinvar_public.Comment comments = 4; */
     for (let i = 0; i < message.comments.length; i++)
       Comment.internalBinaryWrite(
         message.comments[i],
-        writer.tag(6, WireType.LengthDelimited).fork(),
+        writer.tag(4, WireType.LengthDelimited).fork(),
         options
       ).join()
-    /* repeated string sources = 7; */
+    /* repeated string sources = 5; */
     for (let i = 0; i < message.sources.length; i++)
-      writer.tag(7, WireType.LengthDelimited).string(message.sources[i])
-    /* annonars.clinvar_data.clinvar_public.Trait.TraitRelationship.Type type = 8; */
-    if (message.type !== 0) writer.tag(8, WireType.Varint).int32(message.type)
+      writer.tag(5, WireType.LengthDelimited).string(message.sources[i])
+    /* annonars.clinvar_data.clinvar_public.Trait.TraitRelationship.Type type = 6; */
+    if (message.type !== 0) writer.tag(6, WireType.Varint).int32(message.type)
     const u = options.writeUnknownFields
     if (u !== false) (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer)
     return writer
@@ -9173,9 +9118,8 @@ class AggregateClassificationSet$Type extends MessageType<AggregateClassificatio
       },
       {
         no: 2,
-        name: 'somatic_clinical_impacts',
+        name: 'somatic_clinical_impact',
         kind: 'message',
-        repeat: 1 /*RepeatType.PACKED*/,
         T: () => AggregatedSomaticClinicalImpact
       },
       {
@@ -9188,7 +9132,6 @@ class AggregateClassificationSet$Type extends MessageType<AggregateClassificatio
   }
   create(value?: PartialMessage<AggregateClassificationSet>): AggregateClassificationSet {
     const message = globalThis.Object.create(this.messagePrototype!)
-    message.somaticClinicalImpacts = []
     if (value !== undefined)
       reflectionMergePartial<AggregateClassificationSet>(this, message, value)
     return message
@@ -9212,9 +9155,12 @@ class AggregateClassificationSet$Type extends MessageType<AggregateClassificatio
             message.germlineClassification
           )
           break
-        case /* repeated annonars.clinvar_data.clinvar_public.AggregatedSomaticClinicalImpact somatic_clinical_impacts */ 2:
-          message.somaticClinicalImpacts.push(
-            AggregatedSomaticClinicalImpact.internalBinaryRead(reader, reader.uint32(), options)
+        case /* optional annonars.clinvar_data.clinvar_public.AggregatedSomaticClinicalImpact somatic_clinical_impact */ 2:
+          message.somaticClinicalImpact = AggregatedSomaticClinicalImpact.internalBinaryRead(
+            reader,
+            reader.uint32(),
+            options,
+            message.somaticClinicalImpact
           )
           break
         case /* optional annonars.clinvar_data.clinvar_public.AggregatedOncogenicityClassification oncogenicity_classification */ 3:
@@ -9257,10 +9203,10 @@ class AggregateClassificationSet$Type extends MessageType<AggregateClassificatio
         writer.tag(1, WireType.LengthDelimited).fork(),
         options
       ).join()
-    /* repeated annonars.clinvar_data.clinvar_public.AggregatedSomaticClinicalImpact somatic_clinical_impacts = 2; */
-    for (let i = 0; i < message.somaticClinicalImpacts.length; i++)
+    /* optional annonars.clinvar_data.clinvar_public.AggregatedSomaticClinicalImpact somatic_clinical_impact = 2; */
+    if (message.somaticClinicalImpact)
       AggregatedSomaticClinicalImpact.internalBinaryWrite(
-        message.somaticClinicalImpacts[i],
+        message.somaticClinicalImpact,
         writer.tag(2, WireType.LengthDelimited).fork(),
         options
       ).join()
@@ -9673,7 +9619,7 @@ class ClassificationScv$Type extends MessageType<ClassificationScv> {
       },
       {
         no: 3,
-        name: 'somatic_clinical_impacts',
+        name: 'somatic_clinical_impact',
         kind: 'message',
         T: () => ClassificationScv_SomaticClinicalImpact
       },
@@ -9743,13 +9689,13 @@ class ClassificationScv$Type extends MessageType<ClassificationScv> {
         case /* optional string germline_classification */ 2:
           message.germlineClassification = reader.string()
           break
-        case /* optional annonars.clinvar_data.clinvar_public.ClassificationScv.SomaticClinicalImpact somatic_clinical_impacts */ 3:
-          message.somaticClinicalImpacts =
+        case /* optional annonars.clinvar_data.clinvar_public.ClassificationScv.SomaticClinicalImpact somatic_clinical_impact */ 3:
+          message.somaticClinicalImpact =
             ClassificationScv_SomaticClinicalImpact.internalBinaryRead(
               reader,
               reader.uint32(),
               options,
-              message.somaticClinicalImpacts
+              message.somaticClinicalImpact
             )
           break
         case /* optional string oncogenicity_classification */ 4:
@@ -9813,10 +9759,10 @@ class ClassificationScv$Type extends MessageType<ClassificationScv> {
     /* optional string germline_classification = 2; */
     if (message.germlineClassification !== undefined)
       writer.tag(2, WireType.LengthDelimited).string(message.germlineClassification)
-    /* optional annonars.clinvar_data.clinvar_public.ClassificationScv.SomaticClinicalImpact somatic_clinical_impacts = 3; */
-    if (message.somaticClinicalImpacts)
+    /* optional annonars.clinvar_data.clinvar_public.ClassificationScv.SomaticClinicalImpact somatic_clinical_impact = 3; */
+    if (message.somaticClinicalImpact)
       ClassificationScv_SomaticClinicalImpact.internalBinaryWrite(
-        message.somaticClinicalImpacts,
+        message.somaticClinicalImpact,
         writer.tag(3, WireType.LengthDelimited).fork(),
         options
       ).join()
@@ -12453,13 +12399,7 @@ class AlleleScv$Type extends MessageType<AlleleScv> {
         repeat: 1 /*RepeatType.PACKED*/,
         T: () => AlleleScv_Gene
       },
-      {
-        no: 2,
-        name: 'names',
-        kind: 'message',
-        repeat: 1 /*RepeatType.PACKED*/,
-        T: () => OtherName
-      },
+      { no: 2, name: 'name', kind: 'message', T: () => OtherName },
       { no: 3, name: 'variant_type', kind: 'scalar', opt: true, T: 9 /*ScalarType.STRING*/ },
       { no: 4, name: 'location', kind: 'message', T: () => Location },
       {
@@ -12518,7 +12458,6 @@ class AlleleScv$Type extends MessageType<AlleleScv> {
   create(value?: PartialMessage<AlleleScv>): AlleleScv {
     const message = globalThis.Object.create(this.messagePrototype!)
     message.genes = []
-    message.names = []
     message.otherNames = []
     message.proteinChanges = []
     message.xrefs = []
@@ -12544,8 +12483,13 @@ class AlleleScv$Type extends MessageType<AlleleScv> {
         case /* repeated annonars.clinvar_data.clinvar_public.AlleleScv.Gene genes */ 1:
           message.genes.push(AlleleScv_Gene.internalBinaryRead(reader, reader.uint32(), options))
           break
-        case /* repeated annonars.clinvar_data.clinvar_public.OtherName names */ 2:
-          message.names.push(OtherName.internalBinaryRead(reader, reader.uint32(), options))
+        case /* annonars.clinvar_data.clinvar_public.OtherName name */ 2:
+          message.name = OtherName.internalBinaryRead(
+            reader,
+            reader.uint32(),
+            options,
+            message.name
+          )
           break
         case /* optional string variant_type */ 3:
           message.variantType = reader.string()
@@ -12622,10 +12566,10 @@ class AlleleScv$Type extends MessageType<AlleleScv> {
         writer.tag(1, WireType.LengthDelimited).fork(),
         options
       ).join()
-    /* repeated annonars.clinvar_data.clinvar_public.OtherName names = 2; */
-    for (let i = 0; i < message.names.length; i++)
+    /* annonars.clinvar_data.clinvar_public.OtherName name = 2; */
+    if (message.name)
       OtherName.internalBinaryWrite(
-        message.names[i],
+        message.name,
         writer.tag(2, WireType.LengthDelimited).fork(),
         options
       ).join()
@@ -12959,7 +12903,7 @@ class HaplotypeScv$Type extends MessageType<HaplotypeScv> {
         repeat: 1 /*RepeatType.PACKED*/,
         T: () => OtherName
       },
-      { no: 4, name: 'classification', kind: 'message', T: () => AggregateClassificationSet },
+      { no: 4, name: 'classifications', kind: 'message', T: () => AggregateClassificationSet },
       {
         no: 5,
         name: 'functional_consequences',
@@ -13032,12 +12976,12 @@ class HaplotypeScv$Type extends MessageType<HaplotypeScv> {
         case /* repeated annonars.clinvar_data.clinvar_public.OtherName other_names */ 3:
           message.otherNames.push(OtherName.internalBinaryRead(reader, reader.uint32(), options))
           break
-        case /* optional annonars.clinvar_data.clinvar_public.AggregateClassificationSet classification */ 4:
-          message.classification = AggregateClassificationSet.internalBinaryRead(
+        case /* optional annonars.clinvar_data.clinvar_public.AggregateClassificationSet classifications */ 4:
+          message.classifications = AggregateClassificationSet.internalBinaryRead(
             reader,
             reader.uint32(),
             options,
-            message.classification
+            message.classifications
           )
           break
         case /* repeated annonars.clinvar_data.clinvar_public.FunctionalConsequence functional_consequences */ 5:
@@ -13108,10 +13052,10 @@ class HaplotypeScv$Type extends MessageType<HaplotypeScv> {
         writer.tag(3, WireType.LengthDelimited).fork(),
         options
       ).join()
-    /* optional annonars.clinvar_data.clinvar_public.AggregateClassificationSet classification = 4; */
-    if (message.classification)
+    /* optional annonars.clinvar_data.clinvar_public.AggregateClassificationSet classifications = 4; */
+    if (message.classifications)
       AggregateClassificationSet.internalBinaryWrite(
-        message.classification,
+        message.classifications,
         writer.tag(4, WireType.LengthDelimited).fork(),
         options
       ).join()
@@ -13835,13 +13779,7 @@ class ClinicalAssertion$Type extends MessageType<ClinicalAssertion> {
         repeat: 1 /*RepeatType.PACKED*/,
         T: () => ClinicalAssertionRecordHistory
       },
-      {
-        no: 7,
-        name: 'classifications',
-        kind: 'message',
-        repeat: 1 /*RepeatType.PACKED*/,
-        T: () => ClassificationScv
-      },
+      { no: 7, name: 'classifications', kind: 'message', T: () => ClassificationScv },
       {
         no: 8,
         name: 'assertion',
@@ -13908,7 +13846,6 @@ class ClinicalAssertion$Type extends MessageType<ClinicalAssertion> {
     message.recordStatus = 0
     message.replaces = []
     message.replaceds = []
-    message.classifications = []
     message.assertion = 0
     message.attributes = []
     message.observedIns = []
@@ -13961,9 +13898,12 @@ class ClinicalAssertion$Type extends MessageType<ClinicalAssertion> {
             ClinicalAssertionRecordHistory.internalBinaryRead(reader, reader.uint32(), options)
           )
           break
-        case /* repeated annonars.clinvar_data.clinvar_public.ClassificationScv classifications */ 7:
-          message.classifications.push(
-            ClassificationScv.internalBinaryRead(reader, reader.uint32(), options)
+        case /* annonars.clinvar_data.clinvar_public.ClassificationScv classifications */ 7:
+          message.classifications = ClassificationScv.internalBinaryRead(
+            reader,
+            reader.uint32(),
+            options,
+            message.classifications
           )
           break
         case /* annonars.clinvar_data.clinvar_public.Assertion assertion */ 8:
@@ -14115,10 +14055,10 @@ class ClinicalAssertion$Type extends MessageType<ClinicalAssertion> {
         writer.tag(6, WireType.LengthDelimited).fork(),
         options
       ).join()
-    /* repeated annonars.clinvar_data.clinvar_public.ClassificationScv classifications = 7; */
-    for (let i = 0; i < message.classifications.length; i++)
+    /* annonars.clinvar_data.clinvar_public.ClassificationScv classifications = 7; */
+    if (message.classifications)
       ClassificationScv.internalBinaryWrite(
-        message.classifications[i],
+        message.classifications,
         writer.tag(7, WireType.LengthDelimited).fork(),
         options
       ).join()

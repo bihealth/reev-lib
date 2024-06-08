@@ -24026,7 +24026,6 @@ exports[`geneInfo Store > should load data 2`] = `
               "reviewStatus": 4,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -24178,7 +24177,6 @@ exports[`geneInfo Store > should load data 2`] = `
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -24426,7 +24424,6 @@ exports[`geneInfo Store > should load data 2`] = `
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -24750,7 +24747,6 @@ exports[`geneInfo Store > should load data 2`] = `
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -24938,7 +24934,6 @@ exports[`geneInfo Store > should load data 2`] = `
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -25090,7 +25085,6 @@ exports[`geneInfo Store > should load data 2`] = `
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -25242,7 +25236,6 @@ exports[`geneInfo Store > should load data 2`] = `
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -25374,7 +25367,6 @@ exports[`geneInfo Store > should load data 2`] = `
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -25566,7 +25558,6 @@ exports[`geneInfo Store > should load data 2`] = `
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -25874,7 +25865,6 @@ exports[`geneInfo Store > should load data 2`] = `
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -26046,7 +26036,6 @@ exports[`geneInfo Store > should load data 2`] = `
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -26259,7 +26248,6 @@ exports[`geneInfo Store > should load data 2`] = `
               "reviewStatus": 4,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -26412,7 +26400,6 @@ exports[`geneInfo Store > should load data 2`] = `
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -26661,7 +26648,6 @@ exports[`geneInfo Store > should load data 2`] = `
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -26986,7 +26972,6 @@ exports[`geneInfo Store > should load data 2`] = `
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -27175,7 +27160,6 @@ exports[`geneInfo Store > should load data 2`] = `
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -27328,7 +27312,6 @@ exports[`geneInfo Store > should load data 2`] = `
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -27481,7 +27464,6 @@ exports[`geneInfo Store > should load data 2`] = `
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -27614,7 +27596,6 @@ exports[`geneInfo Store > should load data 2`] = `
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -27807,7 +27788,6 @@ exports[`geneInfo Store > should load data 2`] = `
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -28116,7 +28096,6 @@ exports[`geneInfo Store > should load data 2`] = `
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -53309,7 +53288,6 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 2`] = 
               "reviewStatus": 4,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -53461,7 +53439,6 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 2`] = 
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -53709,7 +53686,6 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 2`] = 
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -54033,7 +54009,6 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 2`] = 
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -54221,7 +54196,6 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 2`] = 
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -54373,7 +54347,6 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 2`] = 
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -54525,7 +54498,6 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 2`] = 
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -54657,7 +54629,6 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 2`] = 
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -54849,7 +54820,6 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 2`] = 
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -55157,7 +55127,6 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 2`] = 
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -55329,7 +55298,6 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 2`] = 
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -55542,7 +55510,6 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 2`] = 
               "reviewStatus": 4,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -55695,7 +55662,6 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 2`] = 
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -55944,7 +55910,6 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 2`] = 
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -56269,7 +56234,6 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 2`] = 
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -56458,7 +56422,6 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 2`] = 
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -56611,7 +56574,6 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 2`] = 
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -56764,7 +56726,6 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 2`] = 
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -56897,7 +56858,6 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 2`] = 
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -57090,7 +57050,6 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 2`] = 
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",
@@ -57399,7 +57358,6 @@ exports[`geneInfo Store > should not load data if gene symbol is the same 2`] = 
               "reviewStatus": 6,
               "xrefs": [],
             },
-            "somaticClinicalImpacts": [],
           },
           "hgncIds": [
             "HGNC:1100",

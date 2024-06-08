@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 
 import { ExtractedVcvRecordList } from '../../pbs/annonars/clinvar/minimal'
-import { AggregatedSomaticClinicalImpact } from '../../pbs/annonars/clinvar_data/clinvar_public'
 import DocsLink from '../DocsLink/DocsLink.vue'
 import GermlineClassification from './GermlineClassification.vue'
 import RcvRow from './RcvRow.vue'
@@ -15,17 +14,6 @@ const props = defineProps<{
   /** ClinVar record from annonars */
   clinvarRecords?: ExtractedVcvRecordList
 }>()
-
-type AggregatedSomaticClinicalImpactU = AggregatedSomaticClinicalImpact | undefined
-const clinicalImpacts = computed<AggregatedSomaticClinicalImpactU[]>(() => {
-  if (!props.clinvarRecords?.records?.length) {
-    return [undefined]
-  } else if (props.clinvarRecords?.records[0].classifications?.somaticClinicalImpacts?.length) {
-    return props.clinvarRecords?.records[0].classifications?.somaticClinicalImpacts
-  } else {
-    return [undefined]
-  }
-})
 
 /** Whether the card is expanded; component state. */
 const expand = ref<boolean>(false)
@@ -66,12 +54,9 @@ const expand = ref<boolean>(false)
       </v-row>
       <v-row no-gutters class="ml-4 mb-2">
         <v-col cols="6">
-          <template
-            v-for="somaticClinicalImpact in clinicalImpacts"
-            :key="somaticClinicalImpact?.description"
-          >
-            <SomaticClinicalImpact :clinical-impact="somaticClinicalImpact" />
-          </template>
+          <SomaticClinicalImpact
+            :clinical-impact="clinvarRecord?.classifications?.somaticClinicalImpact"
+          />
         </v-col>
         <v-col cols="6">
           <SomaticOncongenicity
