@@ -7,10 +7,7 @@ import { computed, ref } from 'vue'
 import { type Strucvar } from '../../lib/genomicVars'
 import { roundIt } from '../../lib/utils'
 import { ResponseRecord as ClinvarSvRecord } from '../../pbs/annonars/clinvar/sv'
-import {
-  AggregateClassificationSet,
-  AggregatedSomaticClinicalImpact
-} from '../../pbs/annonars/clinvar_data/clinvar_public'
+import { AggregateClassificationSet } from '../../pbs/annonars/clinvar_data/clinvar_public'
 import DocsLink from '../DocsLink/DocsLink.vue'
 import {
   AGGREGATE_GERMLINE_REVIEW_STATUS_LABEL,
@@ -64,12 +61,9 @@ const maxStars = (acs: AggregateClassificationSet) => {
   const starsOncogenicity = acs.oncogenicityClassification?.reviewStatus
     ? AGGREGATE_ONCOGENICITY_REVIEW_STATUS_STARS[acs.oncogenicityClassification?.reviewStatus]
     : 0
-  const starsClinicalImpacts = acs.somaticClinicalImpacts.map(
-    (asci: AggregatedSomaticClinicalImpact): number => {
-      return AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_STARS[asci.reviewStatus]
-    }
-  )
-  const starsClinicalImpact = Math.max(...starsClinicalImpacts)
+  const starsClinicalImpact = acs.somaticClinicalImpact?.reviewStatus
+    ? AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_STARS[acs.somaticClinicalImpact?.reviewStatus]
+    : 0
   return Math.max(starsGermline, starsOncogenicity, starsClinicalImpact)
 }
 
@@ -139,10 +133,7 @@ const expanded = ref<string[]>([])
               {{ record!.classifications!.germlineClassification!.description }}
             </v-chip>
           </div>
-          <div
-            v-for="(somaticClinicalImpact, idx) in record!.classifications?.somaticClinicalImpacts"
-            :key="idx"
-          >
+          <div v-if="record!.classifications?.somaticClinicalImpact">
             <v-chip
               bg-color="grey-darken-4"
               title="somatic clinical impact"
@@ -154,9 +145,9 @@ const expanded = ref<string[]>([])
             </v-chip>
             <v-chip
               density="compact"
-              :class="`bg-${clinsigColor(somaticClinicalImpact.description)}`"
+              :class="`bg-${clinsigColor(record!.classifications?.somaticClinicalImpact.description)}`"
             >
-              {{ somaticClinicalImpact.description }}
+              {{ record!.classifications?.somaticClinicalImpact.description }}
             </v-chip>
           </div>
           <div v-if="record!.classifications?.oncogenicityClassification">
@@ -215,10 +206,7 @@ const expanded = ref<string[]>([])
               </span>
             </span>
           </div>
-          <div
-            v-for="(somaticClinicalImpact, idx) in record!.classifications?.somaticClinicalImpacts"
-            :key="idx"
-          >
+          <div v-if="record!.classifications?.somaticClinicalImpact">
             <v-chip
               bg-color="grey-darken-4"
               title="somatic clinical impact"
@@ -232,7 +220,7 @@ const expanded = ref<string[]>([])
             <span
               :title="
                 AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_LABEL[
-                  somaticClinicalImpact.reviewStatus
+                  record!.classifications?.somaticClinicalImpact.reviewStatus
                 ]
               "
             >
@@ -241,7 +229,7 @@ const expanded = ref<string[]>([])
                   v-if="
                     i <=
                     AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_STARS[
-                      somaticClinicalImpact.reviewStatus
+                      record!.classifications?.somaticClinicalImpact.reviewStatus
                     ]
                   "
                 >
