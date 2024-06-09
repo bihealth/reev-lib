@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.1](https://github.com/bihealth/reev-frontend-lib/compare/v0.7.0...v0.7.1) (2024-06-09)
+
+
+### Continuous Integration
+
+* disable building package release ([#211](https://github.com/bihealth/reev-frontend-lib/issues/211)) ([d0d4496](https://github.com/bihealth/reev-frontend-lib/commit/d0d44964bc23627c0a48276d861dc68463a7fa5a))
+
 ## [0.7.0](https://github.com/bihealth/reev-frontend-lib/compare/v0.6.1...v0.7.0) (2024-06-09)
 
 
