@@ -1,5 +1,50 @@
 # Changelog
 
+## [0.7.0](https://github.com/bihealth/reev-frontend-lib/compare/v0.6.1...v0.7.0) (2024-06-09)
+
+
+### Features
+
+* adding breakpoint SV type support to library ([#142](https://github.com/bihealth/reev-frontend-lib/issues/142)) ([eb519cc](https://github.com/bihealth/reev-frontend-lib/commit/eb519cc0c6101d433cbf5ca6597ed6d5659a9f80))
+* Collapse Button for PubTator3 ([#585](https://github.com/bihealth/reev-frontend-lib/issues/585)) ([#173](https://github.com/bihealth/reev-frontend-lib/issues/173)) ([a67e225](https://github.com/bihealth/reev-frontend-lib/commit/a67e2253df0098112d15d9870fb9c56fa1934c1a))
+* implement SV type INS on the library level ([#146](https://github.com/bihealth/reev-frontend-lib/issues/146)) ([5125223](https://github.com/bihealth/reev-frontend-lib/commit/5125223041b73ef6f5bd0ca9fbbc88a91ce963c2))
+* make components more robust in case of store/api errors ([#160](https://github.com/bihealth/reev-frontend-lib/issues/160)) ([#161](https://github.com/bihealth/reev-frontend-lib/issues/161)) ([002a362](https://github.com/bihealth/reev-frontend-lib/commit/002a362541086ba5e2d0822d2135a2d8f40c843b))
+* use api/mehari rather than api/dotty in store/geneInfo ([#120](https://github.com/bihealth/reev-frontend-lib/issues/120)) ([5f50789](https://github.com/bihealth/reev-frontend-lib/commit/5f507890054c042a0ee9468f5a7b662932b4d8c2))
+
+
+### Bug Fixes
+
+* adjust to annonars clinvar_public cardinality changes ([#209](https://github.com/bihealth/reev-frontend-lib/issues/209)) ([#210](https://github.com/bihealth/reev-frontend-lib/issues/210)) ([18df4a5](https://github.com/bihealth/reev-frontend-lib/commit/18df4a5e46037331cc6cd48f1cf3868bcf4f4da8))
+* allow tuning of StrucvarGeneListCard ([#144](https://github.com/bihealth/reev-frontend-lib/issues/144)) ([bc98bdb](https://github.com/bihealth/reev-frontend-lib/commit/bc98bdb859f3fa2b27509479ce2674239270a87a))
+* annonars call wrong for grch38 and chromosomes prefixed with chr… ([#185](https://github.com/bihealth/reev-frontend-lib/issues/185)) ([a323f5d](https://github.com/bihealth/reev-frontend-lib/commit/a323f5d4dcdf0d1e2fb76592a102b540a3596acf))
+* annonarsClient.fetchClinvarStrucvars in case of no records ([#163](https://github.com/bihealth/reev-frontend-lib/issues/163)) ([4578e36](https://github.com/bihealth/reev-frontend-lib/commit/4578e362cd85939b1d6a424920d04bf01258510a))
+* Associated Conditions Card correctly sorts diseases and panels ([#513](https://github.com/bihealth/reev-frontend-lib/issues/513)) ([#159](https://github.com/bihealth/reev-frontend-lib/issues/159)) ([f35c4cb](https://github.com/bihealth/reev-frontend-lib/commit/f35c4cbe2e6394d3c6c64f1baad5ef3de0da2992))
+* Change hgvs.t and hgvs.p and fix pubator comments ([#176](https://github.com/bihealth/reev-frontend-lib/issues/176)) ([#177](https://github.com/bihealth/reev-frontend-lib/issues/177)) ([6ece409](https://github.com/bihealth/reev-frontend-lib/commit/6ece409ae6eb1bb314815577876d928f34760ff3))
+* Consequences skeleton is now message ([#506](https://github.com/bihealth/reev-frontend-lib/issues/506)) ([#130](https://github.com/bihealth/reev-frontend-lib/issues/130)) ([e58e0f9](https://github.com/bihealth/reev-frontend-lib/commit/e58e0f900bab95fb4df907c8ed0d8c9b5864770b))
+* do not prefix chromosomes with chr in igv link ([#189](https://github.com/bihealth/reev-frontend-lib/issues/189)) ([#190](https://github.com/bihealth/reev-frontend-lib/issues/190)) ([90b9218](https://github.com/bihealth/reev-frontend-lib/commit/90b9218f06635be81852935daabca4becd5aec42))
+* do not show skeleton loader if clinvar info is missing ([#208](https://github.com/bihealth/reev-frontend-lib/issues/208)) ([8ad0981](https://github.com/bihealth/reev-frontend-lib/commit/8ad0981c38bb3baf8ca40cd81e9a3a0886bd078e))
+* do not throw on missing gene ClinVar data ([#145](https://github.com/bihealth/reev-frontend-lib/issues/145)) ([6cbb057](https://github.com/bihealth/reev-frontend-lib/commit/6cbb057188836c929e4f4da0cd79272e3ba43baf))
+* genome browser not jumping to locus with grch38 ([#202](https://github.com/bihealth/reev-frontend-lib/issues/202)) ([#203](https://github.com/bihealth/reev-frontend-lib/issues/203)) ([9eeff66](https://github.com/bihealth/reev-frontend-lib/commit/9eeff66e0d55bd60f85729c6465990970f5ddb63))
+* GenomeBrowserCard with configuable nginx URL ([#147](https://github.com/bihealth/reev-frontend-lib/issues/147)) ([0d9c814](https://github.com/bihealth/reev-frontend-lib/commit/0d9c814f85313837c1a614027c3e525b72e2f949))
+* import plotly landscape statically ([#140](https://github.com/bihealth/reev-frontend-lib/issues/140)) ([9612373](https://github.com/bihealth/reev-frontend-lib/commit/9612373ffc032644592869f36593750841dd243f))
+* Make buttons in Seqvars Scores card smaller ([#520](https://github.com/bihealth/reev-frontend-lib/issues/520)) ([#137](https://github.com/bihealth/reev-frontend-lib/issues/137)) ([e5943bb](https://github.com/bihealth/reev-frontend-lib/commit/e5943bbcfa83f6820d321ebe208f44369b01acb6))
+* Make collapse buttons smaller for Population frqs card ([#521](https://github.com/bihealth/reev-frontend-lib/issues/521)) ([#138](https://github.com/bihealth/reev-frontend-lib/issues/138)) ([49230a2](https://github.com/bihealth/reev-frontend-lib/commit/49230a2c7b061943fa6ad6ed2f184bb38a0e7e80))
+* make rfl work with latest annonars clinvar changes ([#205](https://github.com/bihealth/reev-frontend-lib/issues/205)) ([#207](https://github.com/bihealth/reev-frontend-lib/issues/207)) ([6461700](https://github.com/bihealth/reev-frontend-lib/commit/646170098b187d04bd45caf77de3930c8dade0ed))
+* make StrucvarGeneListCard work without gene-details route ([#143](https://github.com/bihealth/reev-frontend-lib/issues/143)) ([39de318](https://github.com/bihealth/reev-frontend-lib/commit/39de318367bfb241ef95c3feb813263ca999d9eb))
+* Nginx response 500 fro tracks reqeusts ([#180](https://github.com/bihealth/reev-frontend-lib/issues/180)) ([8c5d219](https://github.com/bihealth/reev-frontend-lib/commit/8c5d219f0cefbc1a50745aa3b1741252c949bc16))
+* Omit permanent circular ncbi ([#512](https://github.com/bihealth/reev-frontend-lib/issues/512)) ([#139](https://github.com/bihealth/reev-frontend-lib/issues/139)) ([3836272](https://github.com/bihealth/reev-frontend-lib/commit/38362725d9bcd29963db6e0b46c2586e87b6c4e5))
+* proper conditions for VSkeletonLoader in GeneConditionsCard ([#164](https://github.com/bihealth/reev-frontend-lib/issues/164)) ([d18412c](https://github.com/bihealth/reev-frontend-lib/commit/d18412cf67cc2fa6969d89b2ca16a3d4c2816af3))
+* Proper counting in variation landscape plot ([#495](https://github.com/bihealth/reev-frontend-lib/issues/495)) ([#128](https://github.com/bihealth/reev-frontend-lib/issues/128)) ([8f4a0a7](https://github.com/bihealth/reev-frontend-lib/commit/8f4a0a7b1923807e820e55a1e63f55e5f55155f8))
+* Pubtator3 new API responses adaptation ([#643](https://github.com/bihealth/reev-frontend-lib/issues/643)) ([#188](https://github.com/bihealth/reev-frontend-lib/issues/188)) ([73436d9](https://github.com/bihealth/reev-frontend-lib/commit/73436d98d9cfea67d3f12ab97094fcbcadf8c336))
+* stores/sevarInfo can limit csq to HGNC ID ([#154](https://github.com/bihealth/reev-frontend-lib/issues/154)) ([3d15507](https://github.com/bihealth/reev-frontend-lib/commit/3d15507b84c0503777536a293165415361f34b2f))
+* Variation Landscape downsampling ([#462](https://github.com/bihealth/reev-frontend-lib/issues/462)) ([#122](https://github.com/bihealth/reev-frontend-lib/issues/122)) ([29e5a6d](https://github.com/bihealth/reev-frontend-lib/commit/29e5a6dbda42b85fe07cfe71222cb9bf3a1ccf8f))
+* VariationLandscapePlotly with empty clinvar info ([#148](https://github.com/bihealth/reev-frontend-lib/issues/148)) ([4f349ce](https://github.com/bihealth/reev-frontend-lib/commit/4f349ce26eebc877fa875fb60bb17c07418aa59b))
+
+
+### Miscellaneous Chores
+
+* set next release to v0.6.2 ([0a98997](https://github.com/bihealth/reev-frontend-lib/commit/0a9899742e21cca45565107f3937593f34aaea92))
+
 ## [0.6.1](https://github.com/bihealth/reev-frontend-lib/compare/v0.6.0...v0.6.1) (2024-02-09)
 
 
