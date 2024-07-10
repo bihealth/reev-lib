@@ -37,7 +37,7 @@ export class VariantValidatorClient {
     const release = genomeBuild === 'grch37' ? 'hg19' : 'hg38'
     const url =
       `${this.apiBaseUrl}/${release}/` +
-      `${chrom}-${pos}-${del}-${ins}/mane?content-type=application%2Fjson`
+      `${chrom}-${pos}-${del}-${ins}/mane/?content-type=application%2Fjson`
 
     const response = await fetch(url, { method: 'GET' })
     if (!response.ok) {
