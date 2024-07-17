@@ -60,9 +60,10 @@ export class VigunoClient {
    */
   async queryOmimTermsByName(
     query: string,
-    matchType: string = 'contains'
+    matchType: string = 'contains',
+    ignoreCase: boolean = true
   ): Promise<HpoOmimsResult> {
-    const url = `${this.apiBaseUrl}/hpo/omims?name=${query}&match=${matchType}`
+    const url = `${this.apiBaseUrl}/hpo/omims?name=${query}&match=${matchType}&ignore_case=${ignoreCase}`
     const response = await fetch(url, {
       method: 'GET'
     })
