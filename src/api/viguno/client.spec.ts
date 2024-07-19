@@ -188,7 +188,8 @@ describe.concurrent('Viguno Client', () => {
 
   it('handles server error when resolving HPO term by ID', async () => {
     // arrange:
-    const errorMessage = 'Internal Server Error'
+    // const errorMessage = 'Internal Server Error'
+    const errorMessage = 'HPO term not found'
     fetchMocker.mockResponseOnce(JSON.stringify({ msg: errorMessage }), { status: 500 })
 
     // act:
