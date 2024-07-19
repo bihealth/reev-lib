@@ -96,8 +96,12 @@ export class VigunoClient {
     })
 
     if (!response.ok) {
-      const errorBody = await response.json()
-      throw new StatusCodeNotOk(errorBody.msg || response.statusText)
+      // TODO viguno does not responde with a json body on 500 so we don't have a message.
+      // TODO once this is fixed in viguno, we can use the code below.
+      // TODO https://github.com/varfish-org/viguno/issues/186
+      // const errorBody = await response.json()
+      // throw new StatusCodeNotOk(errorBody.msg || response.statusText)
+      throw new StatusCodeNotOk('HPO term not found')
     }
 
     try {
