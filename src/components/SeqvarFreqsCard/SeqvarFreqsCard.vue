@@ -6,8 +6,6 @@ components when necessary.
 -->
 
 <script setup lang="ts">
-import { computed } from 'vue'
-
 import { SeqvarInfoResult } from '../../api/annonars/types'
 import { type Seqvar } from '../../lib/genomicVars'
 import DocsLink from '../DocsLink/DocsLink.vue'
