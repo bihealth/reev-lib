@@ -19,6 +19,7 @@ import {
   CohortAlleleCounts as Gnomad4CohortAlleleCounts,
   Record as Gnomad4Record
 } from '../../pbs/annonars/gnomad/gnomad4'
+import { chromIsXY, isInParRegion } from './lib'
 
 const props = defineProps<{
   /** Annotated sequence variant. */
@@ -71,7 +72,7 @@ const allPopLabels = {
   asj: 'Ashkenazy Jewish',
   eas: 'East Asian',
   fin: 'European (Finnish)',
-  nfe: 'European (North-Western)',
+  nfe: 'European (Non-Finnish)',
   amr: 'Latino/Admixed American',
   sas: 'South Asian',
   oth: 'Other',
@@ -83,6 +84,7 @@ const idKey = (token: string): string => {
 }
 
 const sexExpanded = ref<{ [key: string]: boolean }>({})
+const variantIsInParRegion = isInParRegion(props.seqvar)
 </script>
 
 <template>
@@ -131,6 +133,11 @@ const sexExpanded = ref<{ [key: string]: boolean }>({})
             <th class="text-right text-no-wrap">
               <abbr title="number of individuals with homozygote alleles"> Homozygotes </abbr>
             </th>
+            <th v-if="chromIsXY(seqvar)" class="text-right text-no-wrap">
+              <abbr title="frequency of variant alleles called with high quality">
+                Hemizygotes
+              </abbr>
+            </th>
             <th class="text-right text-no-wrap">
               <abbr title="frequency of variant alleles called with high quality">
                 Allele Frequency
@@ -167,6 +174,9 @@ const sexExpanded = ref<{ [key: string]: boolean }>({})
                 <td class="text-right text-no-wrap">
                   {{ sep(byPop[key]?.counts?.overall?.nhomalt ?? 0) }}
                 </td>
+                <td v-if="chromIsXY(seqvar)" class="text-right text-no-wrap">
+                  {{ variantIsInParRegion ? 0 : sep(byPop[key]?.counts?.xy?.ac ?? 0) }}
+                </td>
                 <!-- eslint-disable vue/no-v-html -->
                 <td
                   class="text-right text-no-wrap"
@@ -186,6 +196,7 @@ const sexExpanded = ref<{ [key: string]: boolean }>({})
                 <td class="text-right text-no-wrap">
                   {{ sep(byPop[key]?.counts?.xx?.nhomalt ?? 0) }}
                 </td>
+                <td v-if="chromIsXY(seqvar)" class="text-right text-no-wrap">0</td>
                 <!-- eslint-disable vue/no-v-html -->
                 <td
                   class="text-right text-no-wrap"
@@ -204,6 +215,9 @@ const sexExpanded = ref<{ [key: string]: boolean }>({})
                 </td>
                 <td class="text-right text-no-wrap">
                   {{ sep(byPop[key].counts?.xy?.nhomalt ?? 0) }}
+                </td>
+                <td v-if="chromIsXY(seqvar)" class="text-right text-no-wrap">
+                  {{ variantIsInParRegion ? 0 : sep(byPop[key]?.counts?.xy?.ac ?? 0) }}
                 </td>
                 <!-- eslint-disable vue/no-v-html -->
                 <td
@@ -227,6 +241,9 @@ const sexExpanded = ref<{ [key: string]: boolean }>({})
             <td class="text-right text-no-wrap">
               {{ sep(noCohort?.bySex?.overall?.nhomalt ?? 0) }}
             </td>
+            <td v-if="chromIsXY(seqvar)" class="text-right text-no-wrap">
+              {{ variantIsInParRegion ? 0 : sep(noCohort?.bySex?.xy?.ac ?? 0) }}
+            </td>
             <!-- eslint-disable vue/no-v-html -->
             <td
               class="text-right text-no-wrap"
@@ -247,6 +264,7 @@ const sexExpanded = ref<{ [key: string]: boolean }>({})
             <td class="text-right text-no-wrap">
               {{ sep(noCohort?.bySex?.xx?.nhomalt ?? 0) }}
             </td>
+            <td v-if="chromIsXY(seqvar)" class="text-right text-no-wrap">0</td>
             <!-- eslint-disable vue/no-v-html -->
             <td
               class="text-right text-no-wrap"
@@ -266,6 +284,9 @@ const sexExpanded = ref<{ [key: string]: boolean }>({})
             </td>
             <td class="text-right text-no-wrap">
               {{ sep(noCohort?.bySex?.xy?.nhomalt ?? 0) }}
+            </td>
+            <td v-if="chromIsXY(seqvar)" class="text-right text-no-wrap">
+              {{ variantIsInParRegion ? 0 : sep(noCohort?.bySex?.xy?.ac ?? 0) }}
             </td>
             <!-- eslint-disable vue/no-v-html -->
             <td

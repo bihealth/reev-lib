@@ -37,3 +37,51 @@ export const isVariantMtHomopolymer = (seqvar: Seqvar): boolean => {
     return false
   }
 }
+
+export const parRegions: {
+  [genomeBuild: string]: { [chrom: string]: { [par: string]: { [pos: string]: number } } }
+} = {
+  grch37: {
+    x: {
+      par1: { start: 60001, end: 2699520 },
+      par2: { start: 154931044, end: 155260560 }
+    },
+    y: {
+      par1: { start: 10001, end: 2649520 },
+      par2: { start: 59034050, end: 59363566 }
+    }
+  },
+  grch38: {
+    x: {
+      par1: { start: 10001, end: 2781479 },
+      par2: { start: 155701383, end: 156030895 }
+    },
+    y: {
+      par1: { start: 10001, end: 2781479 },
+      par2: { start: 56887903, end: 57217415 }
+    }
+  }
+}
+
+export const isInParRegion = (seqvar: Seqvar | undefined) => {
+  if (!seqvar) {
+    return false
+  }
+  const chrom = seqvar.chrom.replace(/^chr/, '').toLowerCase()
+  if (chrom !== 'x' && chrom !== 'y') {
+    return false
+  }
+  const parRegion = parRegions[seqvar.genomeBuild][chrom]
+  return (
+    (seqvar.pos >= parRegion.par1.start && seqvar.pos <= parRegion.par1.end) ||
+    (seqvar.pos >= parRegion.par2.start && seqvar.pos <= parRegion.par2.end)
+  )
+}
+
+export const chromIsXY = (seqvar: Seqvar | undefined) => {
+  if (!seqvar) {
+    return false
+  }
+  const chrom = seqvar.chrom.replace(/^chr/, '')
+  return chrom === 'X' || chrom === 'Y'
+}
