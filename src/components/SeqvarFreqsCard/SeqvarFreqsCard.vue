@@ -6,12 +6,14 @@ components when necessary.
 -->
 
 <script setup lang="ts">
+import { computed } from 'vue'
+
 import { SeqvarInfoResult } from '../../api/annonars/types'
 import { type Seqvar } from '../../lib/genomicVars'
 import DocsLink from '../DocsLink/DocsLink.vue'
 import AutosomalFreqs from './AutosomalFreqs.vue'
 import MitochondrialFreqs from './MitochondrialFreqs.vue'
-import { isVariantMt } from './lib'
+import { isInParRegion, isVariantMt } from './lib'
 
 /** The component's props with defaults applied. */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -36,6 +38,13 @@ const props = defineProps<{
         :var-annos="varAnnos"
       />
       <div v-else>
+        <v-alert
+          v-if="isInParRegion(seqvar)"
+          closable
+          text="This variant is located in a PAR region."
+          type="warning"
+          variant="tonal"
+        ></v-alert>
         <v-row no-gutters>
           <v-col cols="6">
             <AutosomalFreqs :seqvar="seqvar" :var-annos="varAnnos" dataset="gnomadExomes" />

@@ -45,6 +45,16 @@ const seqvarChrMt = {
   userRepr: 'grch37-MT-7497-G-A'
 }
 
+// Sequence Variant in X in PAR region
+const seqvarChrXPar: Seqvar = {
+  genomeBuild: 'grch37',
+  chrom: 'X',
+  pos: 1000001,
+  del: 'G',
+  ins: 'T',
+  userRepr: 'grch37-X-1000001-G-T'
+}
+
 describe.concurrent('SeqvarFreqsCard.vue', async () => {
   it('renders the Freqs info for Autosonmal Variants', async () => {
     // arrange:
@@ -82,5 +92,25 @@ describe.concurrent('SeqvarFreqsCard.vue', async () => {
     // assert:
     const freqsMitochondrial = wrapper.findComponent({ name: 'MitochondrialFreqs' })
     expect(freqsMitochondrial.exists()).toBe(true)
+  })
+
+  it('renders the Freqs warning for variants on X in PAR region', async () => {
+    // arrange:
+    const { wrapper } = await setupMountedComponents(
+      { component: SeqvarFreqsCard },
+      {
+        props: {
+          seqvar: seqvarChrXPar,
+          varAnnos: null
+        }
+      }
+    )
+
+    // act: nothing, only test rendering
+
+    // assert:
+    const alert = wrapper.find('.v-alert')
+    expect(alert.exists()).toBe(true)
+    expect(wrapper.text()).toContain('This variant is located in a PAR region.')
   })
 })

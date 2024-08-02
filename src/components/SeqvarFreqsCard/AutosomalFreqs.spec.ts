@@ -16,6 +16,14 @@ const seqvarInfoResponseBrca1 = SeqvarInfoResponse.fromJson(
     )
   )
 )
+const seqvarInfoResponseChrX = SeqvarInfoResponse.fromJson(
+  JSON.parse(
+    fs.readFileSync(
+      path.resolve(__dirname, '../../api/annonars/fixture.variantInfo.chrX.json'),
+      'utf-8'
+    )
+  )
+)
 
 // Sequence Variant in BRCA1
 const seqvarBrca1: Seqvar = {
@@ -25,6 +33,16 @@ const seqvarBrca1: Seqvar = {
   del: 'G',
   ins: 'T',
   userRepr: 'grch37-17-41215920-G-T'
+}
+
+// Sequence Variant in X in PAR region
+const seqvarChrX: Seqvar = {
+  genomeBuild: 'grch37',
+  chrom: 'X',
+  pos: 100871273,
+  del: 'C',
+  ins: 'G',
+  userRepr: 'grch37-X-100871273-C-G'
 }
 
 describe.concurrent('AutosomalFreqs.vue', async () => {
@@ -67,5 +85,24 @@ describe.concurrent('AutosomalFreqs.vue', async () => {
     // assert:
     expect(wrapper.text()).toContain('gnomAD Genomes')
     expect(wrapper.text()).toContain('No allele frequency information available in local database.')
+  })
+
+  it('renders hemizygote counts in X', async () => {
+    // arrange:
+    const { wrapper } = await setupMountedComponents(
+      { component: AutosomalFreqs },
+      {
+        props: {
+          seqvar: seqvarChrX,
+          varAnnos: seqvarInfoResponseChrX.result,
+          dataset: 'gnomadExomes'
+        }
+      }
+    )
+
+    // act: nothing, only test rendering
+
+    // assert:
+    expect(wrapper.text()).toContain('Hemizygote')
   })
 })
