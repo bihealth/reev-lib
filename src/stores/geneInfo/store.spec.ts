@@ -191,6 +191,6 @@ describe('geneInfo Store', () => {
     await store.initialize('HGNC:1100', 'grch37')
 
     // assert2:
-    expect(fetchMocker.mock.calls.length).toBe(4)
+    expect((fetchMocker as any).mock.calls.length).toBe(4)
   })
 })
