@@ -27,7 +27,7 @@ export const usePubtatorStore = defineStore('pubtator', () => {
    */
   const initialize = async (hgncSymbol$?: string, force: boolean = false) => {
     // Skip if already loaded
-    if (!force && hgncSymbol$ === hgncSymbol.value) {
+    if (!force && hgncSymbol$ && hgncSymbol$ === hgncSymbol.value) {
       return
     }
 
