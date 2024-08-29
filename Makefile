@@ -110,3 +110,76 @@ proto-ts:
 
 .PHONY: proto
 proto: proto-fetch proto-ts format lint
+
+.PHONY: openapi
+openapi: \
+	openapi-cadaPrio-ts \
+	openapi-dotty-ts \
+	openapi-variantValidator-ts \
+	openapi-viguno-ts \
+	format \
+	lint
+
+.PHONY: openapi-cadaPrio-fetch
+openapi-cadaPrio-fetch:
+	mkdir -p ext/cadaPrio-api
+
+	rm -f ext/cadaPrio-api/openapi.yaml
+	docker pull ghcr.io/bihealth/cada-prio:main
+	docker run ghcr.io/bihealth/cada-prio:main cada-prio utils dump-openapi-yaml /dev/stdout \
+	| grep -v '^+' \
+	> ext/cadaPrio-api/openapi.yaml
+
+.PHONY: openapi-cadaPrio-ts
+openapi-cadaPrio-ts: openapi-cadaPrio-fetch
+	rm -rf ext/cadaPrio-api/src/lib
+	mkdir -p ext/cadaPrio-api/src
+	npx @hey-api/openapi-ts --file openapi-ts.config.cadaPrio.ts
+
+.PHONY: openapi-dotty-fetch
+openapi-dotty-fetch:
+	mkdir -p ext/dotty-api
+
+	rm -f ext/dotty-api/openapi.yaml
+	docker pull ghcr.io/bihealth/dotty:main
+	docker run ghcr.io/bihealth/dotty:main python -m dotty.main \
+	| grep -v '^+' \
+	> ext/dotty-api/openapi.yaml
+
+.PHONY: openapi-dotty-ts
+openapi-dotty-ts: openapi-dotty-fetch
+	rm -rf ext/dotty-api/src/lib
+	mkdir -p ext/dotty-api/src
+	npx @hey-api/openapi-ts --file openapi-ts.config.dotty.ts
+
+.PHONY: openapi-variantValidator-fetch
+openapi-variantValidator-fetch:
+	mkdir -p ext/variantValidator-api
+
+	rm -f ext/variantValidator-api/openapi.yaml
+	wget -O ext/variantValidator-api/openapi.yaml \
+		https://rest.variantvalidator.org/swagger.json
+
+.PHONY: openapi-variantValidator-ts
+openapi-variantValidator-ts: openapi-variantValidator-fetch
+	rm -rf ext/variantValidator-api/src/lib
+	mkdir -p ext/variantValidator-api/src
+	npx @hey-api/openapi-ts --file openapi-ts.config.variantValidator.ts
+
+.PHONY: openapi-viguno-fetch
+openapi-viguno-fetch:
+	rm -rf ext/viguno-api/openapi.yaml
+	mkdir -p ext/viguno-api
+
+	docker pull ghcr.io/varfish-org/viguno:main
+	docker run -t ghcr.io/varfish-org/viguno:main \
+		exec viguno server schema --output-file /dev/stdout \
+	| grep -v ' INFO' \
+	| grep -v '^+' \
+	> ext/viguno-api/openapi.yaml
+
+.PHONY: openapi-viguno-ts
+openapi-viguno-ts: openapi-viguno-fetch
+	rm -rf ext/viguno-api/src/lib
+	mkdir -p ext/viguno-api/src
+	npx @hey-api/openapi-ts --file openapi-ts.config.viguno.ts
