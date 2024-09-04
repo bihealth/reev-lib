@@ -17,19 +17,33 @@ import genesTxsTgdsJson38 from './fixture.genesTxs.TGDS.38.json'
 // as in the tests fails with "process is not defined" error in the browser.
 
 // @ts-ignore
-const clinvarPerGeneTgds = ClinvarPerGeneRecord.fromJson(geneClinvarTgdsJson as JsonValue)
+const clinvarPerGeneTgds = ClinvarPerGeneRecord.fromJson(geneClinvarTgdsJson as JsonValue, {
+  ignoreUnknownFields: true
+})
 // @ts-ignore
-const clinvarPerGeneBrca1 = ClinvarPerGeneRecord.fromJson(geneClinvarBrca1Json as JsonValue)
+const clinvarPerGeneBrca1 = ClinvarPerGeneRecord.fromJson(geneClinvarBrca1Json as JsonValue, {
+  ignoreUnknownFields: true
+})
 // @ts-ignore
-const genesTxsTgds37 = GeneTranscriptsResponse.fromJson(genesTxsTgdsJson37 as JsonValue)
+const genesTxsTgds37 = GeneTranscriptsResponse.fromJson(genesTxsTgdsJson37 as JsonValue, {
+  ignoreUnknownFields: true
+})
 // @ts-ignore
-const genesTxsTgds38 = GeneTranscriptsResponse.fromJson(genesTxsTgdsJson38 as JsonValue)
+const genesTxsTgds38 = GeneTranscriptsResponse.fromJson(genesTxsTgdsJson38 as JsonValue, {
+  ignoreUnknownFields: true
+})
 // @ts-ignore
-const genesTxsBrca137 = GeneTranscriptsResponse.fromJson(genesTxsBrca1Json37 as JsonValue)
+const genesTxsBrca137 = GeneTranscriptsResponse.fromJson(genesTxsBrca1Json37 as JsonValue, {
+  ignoreUnknownFields: true
+})
 // @ts-ignore
-const geneInfoTgds = GeneInfoRecord.fromJson(geneInfoTgdsJson as JsonValue)
+const geneInfoTgds = GeneInfoRecord.fromJson(geneInfoTgdsJson as JsonValue, {
+  ignoreUnknownFields: true
+})
 // @ts-ignore
-const geneInfoBrca1 = GeneInfoRecord.fromJson(geneInfoBrca1Json as JsonValue)
+const geneInfoBrca1 = GeneInfoRecord.fromJson(geneInfoBrca1Json as JsonValue, {
+  ignoreUnknownFields: true
+})
 
 const meta = {
   title: 'Gene/Clinvar/GeneClinvarCard',

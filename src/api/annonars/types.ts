@@ -32,7 +32,9 @@ class ClinvarSvQueryResponse$Type {
   fromJson(apiResponse: ClinvarSvQueryResponse$Api): ClinvarSvQueryResponse {
     const records = apiResponse.records ?? []
     return {
-      records: records.map((value) => ClinvarStrucvarResponseRecord.fromJson(value))
+      records: records.map((value) =>
+        ClinvarStrucvarResponseRecord.fromJson(value, { ignoreUnknownFields: true })
+      )
     }
   }
 }
@@ -176,7 +178,7 @@ class GeneInfoResult$Type {
     return {
       genes: Object.values(apiResult.genes).map((gene$Api) =>
         // @ts-ignore
-        GeneInfoRecord.fromJson(gene$Api as JsonValue)
+        GeneInfoRecord.fromJson(gene$Api as JsonValue, { ignoreUnknownFields: true })
       )
     }
   }
@@ -278,27 +280,33 @@ class SeqvarInfoResult$Type {
         // @ts-ignore
         apiResult.dbsnp === null
           ? undefined // @ts-ignore
-          : DbsnpRecord.fromJson(apiResult.dbsnp as JsonValue),
+          : DbsnpRecord.fromJson(apiResult.dbsnp as JsonValue, { ignoreUnknownFields: true }),
       dbnsfp: apiResult.dbnsfp === null ? undefined : apiResult.dbnsfp,
       dbscsnv: apiResult.dbscsnv === null ? undefined : apiResult.dbscsnv,
       gnomadMtdna:
         apiResult.gnomad_mtdna === null
           ? undefined
           : // @ts-ignore
-            GnomadMtdnaRecord.fromJson(apiResult.gnomad_mtdna as JsonValue),
+            GnomadMtdnaRecord.fromJson(apiResult.gnomad_mtdna as JsonValue, {
+              ignoreUnknownFields: true
+            }),
       gnomadExomes: apiResult.gnomad_exomes === null ? undefined : apiResult.gnomad_exomes,
       gnomadGenomes: apiResult.gnomad_genomes === null ? undefined : apiResult.gnomad_genomes,
       helixmtdb:
         apiResult.helixmtdb === null
           ? undefined
           : // @ts-ignore
-            HelixmtdbRecord.fromJson(apiResult.helixmtdb as JsonValue),
+            HelixmtdbRecord.fromJson(apiResult.helixmtdb as JsonValue, {
+              ignoreUnknownFields: true
+            }),
       ucscConservation: apiResult.ucsc_conservation.map((cons) => cons.records),
       clinvar:
         apiResult.clinvar === null
           ? undefined
           : // @ts-ignore
-            ExtractedVcvRecordList.fromJson(apiResult.clinvar as JsonValue)
+            ExtractedVcvRecordList.fromJson(apiResult.clinvar as JsonValue, {
+              ignoreUnknownFields: true
+            })
     }
   }
 }

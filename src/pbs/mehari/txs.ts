@@ -59,6 +59,18 @@ export interface GeneToTxId {
    * @generated from protobuf field: repeated string tx_ids = 2;
    */
   txIds: string[]
+  /**
+   * Whether this gene has been filtered out because of missing transcripts.
+   *
+   * @generated from protobuf field: optional bool filtered = 3;
+   */
+  filtered?: boolean
+  /**
+   * Reason for filtering.
+   *
+   * @generated from protobuf field: optional uint32 filter_reason = 4;
+   */
+  filterReason?: number
 }
 /**
  * Container for the transcript-related database.
@@ -139,6 +151,18 @@ export interface Transcript {
    * @generated from protobuf field: repeated mehari.txs.GenomeAlignment genome_alignments = 9;
    */
   genomeAlignments: GenomeAlignment[]
+  /**
+   * Whether this transcript has an issue (e.g. MissingStopCodon), cf. `mehari::db::create::mod::Reason`.
+   *
+   * @generated from protobuf field: optional bool filtered = 10;
+   */
+  filtered?: boolean
+  /**
+   * Reason for filtering.
+   *
+   * @generated from protobuf field: optional uint32 filter_reason = 11;
+   */
+  filterReason?: number
 }
 /**
  * Store information about a transcript aligning to a genome.
@@ -329,7 +353,13 @@ export enum TranscriptTag {
    *
    * @generated from protobuf enum value: TRANSCRIPT_TAG_SELENOPROTEIN = 6;
    */
-  TRANSCRIPT_TAG_SELENOPROTEIN = 6
+  TRANSCRIPT_TAG_SELENOPROTEIN = 6,
+  /**
+   * Member of GENCODE Primary
+   *
+   * @generated from protobuf enum value: TRANSCRIPT_TAG_GENCODE_PRIMARY = 7;
+   */
+  TRANSCRIPT_TAG_GENCODE_PRIMARY = 7
 }
 /**
  * Enumeration for the known genome builds.
@@ -495,7 +525,9 @@ class GeneToTxId$Type extends MessageType<GeneToTxId> {
         kind: 'scalar',
         repeat: 2 /*RepeatType.UNPACKED*/,
         T: 9 /*ScalarType.STRING*/
-      }
+      },
+      { no: 3, name: 'filtered', kind: 'scalar', opt: true, T: 8 /*ScalarType.BOOL*/ },
+      { no: 4, name: 'filter_reason', kind: 'scalar', opt: true, T: 13 /*ScalarType.UINT32*/ }
     ])
   }
   create(value?: PartialMessage<GeneToTxId>): GeneToTxId {
@@ -521,6 +553,12 @@ class GeneToTxId$Type extends MessageType<GeneToTxId> {
           break
         case /* repeated string tx_ids */ 2:
           message.txIds.push(reader.string())
+          break
+        case /* optional bool filtered */ 3:
+          message.filtered = reader.bool()
+          break
+        case /* optional uint32 filter_reason */ 4:
+          message.filterReason = reader.uint32()
           break
         default:
           const u = options.readUnknownField
@@ -551,6 +589,11 @@ class GeneToTxId$Type extends MessageType<GeneToTxId> {
     /* repeated string tx_ids = 2; */
     for (let i = 0; i < message.txIds.length; i++)
       writer.tag(2, WireType.LengthDelimited).string(message.txIds[i])
+    /* optional bool filtered = 3; */
+    if (message.filtered !== undefined) writer.tag(3, WireType.Varint).bool(message.filtered)
+    /* optional uint32 filter_reason = 4; */
+    if (message.filterReason !== undefined)
+      writer.tag(4, WireType.Varint).uint32(message.filterReason)
     const u = options.writeUnknownFields
     if (u !== false) (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer)
     return writer
@@ -680,7 +723,9 @@ class Transcript$Type extends MessageType<Transcript> {
         kind: 'message',
         repeat: 1 /*RepeatType.PACKED*/,
         T: () => GenomeAlignment
-      }
+      },
+      { no: 10, name: 'filtered', kind: 'scalar', opt: true, T: 8 /*ScalarType.BOOL*/ },
+      { no: 11, name: 'filter_reason', kind: 'scalar', opt: true, T: 13 /*ScalarType.UINT32*/ }
     ])
   }
   create(value?: PartialMessage<Transcript>): Transcript {
@@ -737,6 +782,12 @@ class Transcript$Type extends MessageType<Transcript> {
             GenomeAlignment.internalBinaryRead(reader, reader.uint32(), options)
           )
           break
+        case /* optional bool filtered */ 10:
+          message.filtered = reader.bool()
+          break
+        case /* optional uint32 filter_reason */ 11:
+          message.filterReason = reader.uint32()
+          break
         default:
           const u = options.readUnknownField
           if (u === 'throw')
@@ -790,6 +841,11 @@ class Transcript$Type extends MessageType<Transcript> {
         writer.tag(9, WireType.LengthDelimited).fork(),
         options
       ).join()
+    /* optional bool filtered = 10; */
+    if (message.filtered !== undefined) writer.tag(10, WireType.Varint).bool(message.filtered)
+    /* optional uint32 filter_reason = 11; */
+    if (message.filterReason !== undefined)
+      writer.tag(11, WireType.Varint).uint32(message.filterReason)
     const u = options.writeUnknownFields
     if (u !== false) (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer)
     return writer
