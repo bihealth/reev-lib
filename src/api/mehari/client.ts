@@ -132,7 +132,7 @@ export class MehariClient {
     }
     try {
       const responseJson = await response.json()
-      return GeneTranscriptsResponse.fromJson(responseJson)
+      return GeneTranscriptsResponse.fromJson(responseJson, { ignoreUnknownFields: true })
     } catch (e) {
       throw new InvalidResponseContent(`Failed to parse transcript response: ${e}`)
     }

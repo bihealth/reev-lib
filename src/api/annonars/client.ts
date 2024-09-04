@@ -112,7 +112,9 @@ export class AnnonarsClient {
     const responseJson = await response.json()
     if (responseJson?.genes && responseJson?.genes[hgncId]) {
       try {
-        return ClinvarPerGeneRecord.fromJson(responseJson.genes[hgncId])
+        return ClinvarPerGeneRecord.fromJson(responseJson.genes[hgncId], {
+          ignoreUnknownFields: true
+        })
       } catch (e) {
         throw new InvalidResponseContent(`failed to parse gene clinvar info response: ${e}`)
       }
@@ -176,7 +178,7 @@ export class AnnonarsClient {
       resultJsons.forEach((chunk: any) => {
         for (const value of Object.values(chunk.genes)) {
           // @ts-ignore
-          result.push(GeneInfoRecord.fromJson(value as JsonValue))
+          result.push(GeneInfoRecord.fromJson(value as JsonValue, { ignoreUnknownFields: true }))
         }
       })
       return result

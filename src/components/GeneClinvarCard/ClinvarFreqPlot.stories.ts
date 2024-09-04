@@ -10,9 +10,13 @@ import geneClinvarTgdsJson from './fixture.clinvarPerGene.TGDS.json'
 // as in the tests fails with "process is not defined" error in the browser.
 
 // @ts-ignore
-const clinvarPerGeneTgds = ClinvarPerGeneRecord.fromJson(geneClinvarTgdsJson as JsonValue)
+const clinvarPerGeneTgds = ClinvarPerGeneRecord.fromJson(geneClinvarTgdsJson as JsonValue, {
+  ignoreUnknownFields: true
+})
 // @ts-ignore
-const clinvarPerGeneBrca1 = ClinvarPerGeneRecord.fromJson(geneClinvarBrca1Json as JsonValue)
+const clinvarPerGeneBrca1 = ClinvarPerGeneRecord.fromJson(geneClinvarBrca1Json as JsonValue, {
+  ignoreUnknownFields: true
+})
 
 const meta = {
   title: 'Gene/Clinvar/ClinvarFreqPlot',
