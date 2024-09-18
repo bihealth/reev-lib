@@ -11,6 +11,8 @@
 export interface UrlConfig {
   /** Base URL to the annonars backend. */
   baseUrlAnnonars?: string
+  /** Base URL to the autoACMG backend. */
+  baseUrlAutoACMG?: string
   /** Base URL to the mehari backend. */
   baseUrlMehari?: string
   /** Base URL to the viguno backend. */
@@ -38,6 +40,7 @@ export const urlConfig: UrlConfig = {}
  */
 export const setupUrlConfigForTesting = () => {
   urlConfig.baseUrlAnnonars = '/internal/proxy/annonars'
+  urlConfig.baseUrlAutoACMG = '/internal/proxy/autoacmg'
   urlConfig.baseUrlMehari = '/internal/proxy/mehari'
   urlConfig.baseUrlViguno = '/internal/proxy/viguno'
   urlConfig.baseUrlCadaPrio = '/internal/proxy/cada-prio'
@@ -52,6 +55,7 @@ export const setupUrlConfigForTesting = () => {
  */
 export const resetUrlConfig = () => {
   urlConfig.baseUrlAnnonars = undefined
+  urlConfig.baseUrlAutoACMG = undefined
   urlConfig.baseUrlMehari = undefined
   urlConfig.baseUrlViguno = undefined
   urlConfig.baseUrlCadaPrio = undefined
