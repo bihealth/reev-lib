@@ -17,11 +17,15 @@ enum VariantValidatorStates {
   Error = 3
 }
 
-interface Props {
-  seqvar?: Seqvar
-}
-
-const props = defineProps<Props>()
+/** This component's props. */
+const props = withDefaults(
+  defineProps<{
+    seqvar?: Seqvar
+  }>(),
+  {
+    seqvar: undefined
+  }
+)
 
 /** This component's emits. */
 const emit = defineEmits<{
