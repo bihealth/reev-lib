@@ -1,0 +1,82 @@
+components:
+  schemas:
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          title: Detail
+          type: array
+      title: HTTPValidationError
+      type: object
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          title: Location
+          type: array
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+      type: object
+info:
+  description: A phenotype-based gene prioritization tool.
+  title: cada-prio
+  version: 0.6.1
+openapi: 3.1.0
+paths:
+  /api/v1/predict:
+    get:
+      description: Predict genes for a given set of HPO terms and optionally genes.
+      operationId: handle_predict_api_v1_predict_get
+      parameters:
+      - example: HP:0000098,HP:0000218,HP:0000486
+        in: query
+        name: hpo_terms
+        required: true
+        schema:
+          title: Hpo Terms
+          type: string
+      - example: FBN1,TTN,BRCA1
+        in: query
+        name: genes
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Genes
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Handle Predict
+  /api/v1/version:
+    get:
+      operationId: version_api_v1_version_get
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+      summary: Version

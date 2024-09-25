@@ -1,0 +1,251 @@
+components:
+  schemas:
+    Assembly:
+      description: Enumeration for supported assemblies.
+      enum:
+        - GRCh37
+        - GRCh38
+      title: Assembly
+      type: string
+    ExonAlignment:
+      description: Alignment of an exon to an assembly.
+      properties:
+        alignment:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: Alignment
+        exon_no:
+          title: Exon No
+          type: integer
+        ref_end:
+          title: Ref End
+          type: integer
+        ref_start:
+          title: Ref Start
+          type: integer
+        tx_end:
+          title: Tx End
+          type: integer
+        tx_start:
+          title: Tx Start
+          type: integer
+      required:
+        - ref_start
+        - ref_end
+        - exon_no
+        - tx_start
+        - tx_end
+        - alignment
+      title: ExonAlignment
+      type: object
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          title: Detail
+          type: array
+      title: HTTPValidationError
+      type: object
+    Spdi:
+      description: SPDI representation of a variant.
+      properties:
+        alternate_inserted:
+          title: Alternate Inserted
+          type: string
+        assembly:
+          title: Assembly
+          type: string
+        contig:
+          title: Contig
+          type: string
+        pos:
+          title: Pos
+          type: integer
+        reference_deleted:
+          title: Reference Deleted
+          type: string
+      required:
+        - assembly
+        - contig
+        - pos
+        - reference_deleted
+        - alternate_inserted
+      title: Spdi
+      type: object
+    SpdiResult:
+      description: The result of the query.
+      properties:
+        message:
+          anyOf:
+            - type: string
+            - type: 'null'
+          title: Message
+        success:
+          title: Success
+          type: boolean
+        value:
+          anyOf:
+            - $ref: '#/components/schemas/Spdi'
+            - type: 'null'
+      required:
+        - success
+      title: SpdiResult
+      type: object
+    TanscriptAlignment:
+      description: Alignment of a `Transcript` to an assembly.
+      properties:
+        assembly:
+          title: Assembly
+          type: string
+        cds_end:
+          title: Cds End
+          type: integer
+        cds_start:
+          title: Cds Start
+          type: integer
+        contig:
+          title: Contig
+          type: string
+        exons:
+          items:
+            $ref: '#/components/schemas/ExonAlignment'
+          title: Exons
+          type: array
+      required:
+        - assembly
+        - contig
+        - cds_start
+        - cds_end
+        - exons
+      title: TanscriptAlignment
+      type: object
+    Transcript:
+      description: Transcript model.
+      properties:
+        alignments:
+          items:
+            $ref: '#/components/schemas/TanscriptAlignment'
+          title: Alignments
+          type: array
+        hgnc_id:
+          title: Hgnc Id
+          type: string
+        hgnc_symbol:
+          title: Hgnc Symbol
+          type: string
+        id:
+          title: Id
+          type: string
+      required:
+        - id
+        - hgnc_id
+        - hgnc_symbol
+        - alignments
+      title: Transcript
+      type: object
+    TranscriptResult:
+      description: The result of the query for searching for transcripts.
+      properties:
+        transcripts:
+          items:
+            $ref: '#/components/schemas/Transcript'
+          title: Transcripts
+          type: array
+      required:
+        - transcripts
+      title: TranscriptResult
+      type: object
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+              - type: string
+              - type: integer
+          title: Location
+          type: array
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+      required:
+        - loc
+        - msg
+        - type
+      title: ValidationError
+      type: object
+info:
+  title: dotty
+  version: 0.1.0
+openapi: 3.1.0
+paths:
+  /api/v1/find-transcripts:
+    get:
+      description: Find transcripts for the given HGNC ID.
+      operationId: find_transcripts_api_v1_find_transcripts_get
+      parameters:
+        - in: query
+          name: hgnc_id
+          required: true
+          schema:
+            title: Hgnc Id
+            type: string
+        - in: query
+          name: assembly
+          required: false
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/Assembly'
+            default: GRCh38
+            title: Assembly
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TranscriptResult'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Find Transcripts
+  /api/v1/to-spdi:
+    get:
+      description: Resolve the given HGVS variant to SPDI representation.
+      operationId: to_spdi_api_v1_to_spdi_get
+      parameters:
+        - in: query
+          name: q
+          required: true
+          schema:
+            title: Q
+            type: string
+        - in: query
+          name: assembly
+          required: false
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/Assembly'
+            default: GRCh38
+            title: Assembly
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpdiResult'
+          description: Successful Response
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: To Spdi
