@@ -112,99 +112,103 @@ const sortIcon = computed<string>(() => {
         <v-row no-gutter class="ma-0">
           <v-col cols="3" class="pr-3 align-self-end pa-1">
             <table :style="`width: ${columnWidth}`">
-              <tr>
-                <td
-                  class="text-no-wrap"
-                  :class="{
-                    'text-decoration-underline': sortKey === 'clingen.haploinsufficiencyScore'
-                  }"
-                >
-                  <v-icon
-                    v-if="sortKey === 'clingen.haploinsufficiencyScore'"
-                    :icon="sortIcon"
-                    class="ml-n2 mr-n1"
-                  />
-                  ClinGen haploinsufficiency
-                </td>
-                <td class="text-right text-no-wrap">
-                  <GeneDosage
-                    :dosage="item.raw.clingen?.haploinsufficiencyScore"
-                    :gene-symbol="item.raw.hgnc?.symbol"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td
-                  class="text-no-wrap"
-                  :class="{
-                    'text-decoration-underline': sortKey === 'clingen.triplosensitivityScore'
-                  }"
-                >
-                  <v-icon
-                    v-if="sortKey === 'clingen.triplosensitivityScore'"
-                    :icon="sortIcon"
-                    class="ml-n2 mr-n1"
-                  />
-                  ClinGen triplosensitivity
-                </td>
-                <td class="text-right text-no-wrap">
-                  <GeneDosage
-                    :dosage="item.raw.clingen?.triplosensitivityScore"
-                    :gene-symbol="item.raw.hgnc?.symbol"
-                  />
-                </td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td
+                    class="text-no-wrap"
+                    :class="{
+                      'text-decoration-underline': sortKey === 'clingen.haploinsufficiencyScore'
+                    }"
+                  >
+                    <v-icon
+                      v-if="sortKey === 'clingen.haploinsufficiencyScore'"
+                      :icon="sortIcon"
+                      class="ml-n2 mr-n1"
+                    />
+                    ClinGen haploinsufficiency
+                  </td>
+                  <td class="text-right text-no-wrap">
+                    <GeneDosage
+                      :dosage="item.raw.clingen?.haploinsufficiencyScore"
+                      :gene-symbol="item.raw.hgnc?.symbol"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="text-no-wrap"
+                    :class="{
+                      'text-decoration-underline': sortKey === 'clingen.triplosensitivityScore'
+                    }"
+                  >
+                    <v-icon
+                      v-if="sortKey === 'clingen.triplosensitivityScore'"
+                      :icon="sortIcon"
+                      class="ml-n2 mr-n1"
+                    />
+                    ClinGen triplosensitivity
+                  </td>
+                  <td class="text-right text-no-wrap">
+                    <GeneDosage
+                      :dosage="item.raw.clingen?.triplosensitivityScore"
+                      :gene-symbol="item.raw.hgnc?.symbol"
+                    />
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </v-col>
           <v-col cols="3" class="pr-3 align-self-end pa-1">
             <table :style="`width: ${columnWidth}`">
-              <tr>
-                <td
-                  class="text-no-wrap"
-                  :class="{ 'text-decoration-underline': sortKey === 'gnomadConstraints.pli' }"
-                >
-                  <v-icon
-                    v-if="sortKey === 'gnomadConstraints.pli'"
-                    :icon="sortIcon"
-                    class="ml-n2 mr-n1"
-                  />
-                  gnomAD pLI
-                </td>
-                <td class="text-right text-no-wrap">
-                  <ScoreChip
-                    :value="item.raw.gnomadConstraints?.pli"
-                    :href-url="
-                      item.raw.hgnc.ensemblGeneId
-                        ? `https://gnomad.broadinstitute.org/gene/${item.raw.hgnc.ensemblGeneId}?dataset=gnomad_r2_1`
-                        : undefined
-                    "
-                    :range-gray="[-9999, 0.9]"
-                    :range-red="[0.9, 9999]"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td class="text-no-wrap">
-                  <v-icon
-                    v-if="sortKey === 'gnomadConstraints.oeLofUpper'"
-                    :icon="sortIcon"
-                    class="ml-n2 mr-n1"
-                  />
-                  gnomAD LOEUF
-                </td>
-                <td class="text-right text-no-wrap">
-                  <ScoreChip
-                    :value="item.raw.gnomadConstraints?.oeLofUpper"
-                    :href-url="
-                      item.raw.hgnc.ensemblGeneId
-                        ? `https://gnomad.broadinstitute.org/gene/${item.raw.hgnc.ensemblGeneId}?dataset=gnomad_r2_1`
-                        : undefined
-                    "
-                    :range-gray="[-9999, 0.6]"
-                    :range-red="[0.6, 9999]"
-                  />
-                </td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td
+                    class="text-no-wrap"
+                    :class="{ 'text-decoration-underline': sortKey === 'gnomadConstraints.pli' }"
+                  >
+                    <v-icon
+                      v-if="sortKey === 'gnomadConstraints.pli'"
+                      :icon="sortIcon"
+                      class="ml-n2 mr-n1"
+                    />
+                    gnomAD pLI
+                  </td>
+                  <td class="text-right text-no-wrap">
+                    <ScoreChip
+                      :value="item.raw.gnomadConstraints?.pli"
+                      :href-url="
+                        item.raw.hgnc.ensemblGeneId
+                          ? `https://gnomad.broadinstitute.org/gene/${item.raw.hgnc.ensemblGeneId}?dataset=gnomad_r2_1`
+                          : undefined
+                      "
+                      :range-gray="[-9999, 0.9]"
+                      :range-red="[0.9, 9999]"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-no-wrap">
+                    <v-icon
+                      v-if="sortKey === 'gnomadConstraints.oeLofUpper'"
+                      :icon="sortIcon"
+                      class="ml-n2 mr-n1"
+                    />
+                    gnomAD LOEUF
+                  </td>
+                  <td class="text-right text-no-wrap">
+                    <ScoreChip
+                      :value="item.raw.gnomadConstraints?.oeLofUpper"
+                      :href-url="
+                        item.raw.hgnc.ensemblGeneId
+                          ? `https://gnomad.broadinstitute.org/gene/${item.raw.hgnc.ensemblGeneId}?dataset=gnomad_r2_1`
+                          : undefined
+                      "
+                      :range-gray="[-9999, 0.6]"
+                      :range-red="[0.6, 9999]"
+                    />
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </v-col>
           <v-col cols="3" class="pr-3 align-self-end pa-1">
@@ -215,37 +219,39 @@ const sortIcon = computed<string>(() => {
 
             -->
             <table :style="`width: ${columnWidth}`">
-              <tr>
-                <td
-                  class="text-no-wrap"
-                  :class="{ 'text-decoration-underline': sortKey === 'decipherHi.pHi' }"
-                >
-                  <v-icon
-                    v-if="sortKey === 'decipherHi.pHi'"
-                    :icon="sortIcon"
-                    class="ml-n2 mr-n1"
-                  />
-                  DECIPHER HI
-                </td>
-                <td class="text-right text-no-wrap">
-                  <ScoreChip
-                    :value="item.raw.decipherHi?.pHi"
-                    :href-url="
-                      item.raw.hgnc.symbol
-                        ? `https://www.deciphergenomics.org/gene/${item.raw.hgnc.symbol}/`
-                        : undefined
-                    "
-                    :range-gray="[-9999, 0.9]"
-                    :range-red="[0.9, 9999]"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <!-- placeholder-->
-                  &nbsp;
-                </td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td
+                    class="text-no-wrap"
+                    :class="{ 'text-decoration-underline': sortKey === 'decipherHi.pHi' }"
+                  >
+                    <v-icon
+                      v-if="sortKey === 'decipherHi.pHi'"
+                      :icon="sortIcon"
+                      class="ml-n2 mr-n1"
+                    />
+                    DECIPHER HI
+                  </td>
+                  <td class="text-right text-no-wrap">
+                    <ScoreChip
+                      :value="item.raw.decipherHi?.pHi"
+                      :href-url="
+                        item.raw.hgnc.symbol
+                          ? `https://www.deciphergenomics.org/gene/${item.raw.hgnc.symbol}/`
+                          : undefined
+                      "
+                      :range-gray="[-9999, 0.9]"
+                      :range-red="[0.9, 9999]"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <!-- placeholder-->
+                    &nbsp;
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </v-col>
           <v-col cols="3" class="pr-3 align-self-end pa-1">
@@ -253,52 +259,58 @@ const sortIcon = computed<string>(() => {
               https://europepmc.org/article/MED/35917817
             -->
             <table :style="`width: ${columnWidth}`">
-              <tr>
-                <td
-                  class="text-no-wrap"
-                  :class="{ 'text-decoration-underline': sortKey === 'rcnv.pHaplo' }"
-                >
-                  <v-icon v-if="sortKey === 'rcnv.pHaplo'" :icon="sortIcon" class="ml-n2 mr-n1" />
-                  RCNV pHaplo
-                </td>
-                <td class="text-right text-no-wrap">
-                  <ScoreChip
-                    :value="item.raw.rcnv?.pHaplo"
-                    :href-url="
-                      item.raw.hgnc.symbol
-                        ? `https://www.deciphergenomics.org/gene/${item.raw.hgnc.symbol}/`
-                        : undefined
-                    "
-                    :range-green="[0.0, 0.2]"
-                    :range-gray="[0.2, 0.7]"
-                    :range-orange="[0.7, 0.86]"
-                    :range-red="[0.86, 1.0]"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td
-                  class="text-no-wrap"
-                  :class="{ 'text-decoration-underline': sortKey === 'rcnv.pTriplo' }"
-                >
-                  <v-icon v-if="sortKey === 'rcnv.pTriplo'" :icon="sortIcon" class="ml-n2 mr-n1" />
-                  RCNV pTriplo
-                </td>
-                <td class="text-right text-no-wrap">
-                  <ScoreChip
-                    :value="item.raw.rcnv?.pTriplo"
-                    :href-url="
-                      item.raw.hgnc.symbol
-                        ? `https://www.deciphergenomics.org/gene/${item.raw.hgnc.symbol}/`
-                        : undefined
-                    "
-                    :range-green="[0.0, 0.2]"
-                    :range-gray="[0.2, 0.8]"
-                    :range-orange="[0.8, 0.94]"
-                    :range-red="[0.94, 1.0]"
-                  />
-                </td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td
+                    class="text-no-wrap"
+                    :class="{ 'text-decoration-underline': sortKey === 'rcnv.pHaplo' }"
+                  >
+                    <v-icon v-if="sortKey === 'rcnv.pHaplo'" :icon="sortIcon" class="ml-n2 mr-n1" />
+                    RCNV pHaplo
+                  </td>
+                  <td class="text-right text-no-wrap">
+                    <ScoreChip
+                      :value="item.raw.rcnv?.pHaplo"
+                      :href-url="
+                        item.raw.hgnc.symbol
+                          ? `https://www.deciphergenomics.org/gene/${item.raw.hgnc.symbol}/`
+                          : undefined
+                      "
+                      :range-green="[0.0, 0.2]"
+                      :range-gray="[0.2, 0.7]"
+                      :range-orange="[0.7, 0.86]"
+                      :range-red="[0.86, 1.0]"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="text-no-wrap"
+                    :class="{ 'text-decoration-underline': sortKey === 'rcnv.pTriplo' }"
+                  >
+                    <v-icon
+                      v-if="sortKey === 'rcnv.pTriplo'"
+                      :icon="sortIcon"
+                      class="ml-n2 mr-n1"
+                    />
+                    RCNV pTriplo
+                  </td>
+                  <td class="text-right text-no-wrap">
+                    <ScoreChip
+                      :value="item.raw.rcnv?.pTriplo"
+                      :href-url="
+                        item.raw.hgnc.symbol
+                          ? `https://www.deciphergenomics.org/gene/${item.raw.hgnc.symbol}/`
+                          : undefined
+                      "
+                      :range-green="[0.0, 0.2]"
+                      :range-gray="[0.2, 0.8]"
+                      :range-orange="[0.8, 0.94]"
+                      :range-red="[0.94, 1.0]"
+                    />
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </v-col>
         </v-row>
