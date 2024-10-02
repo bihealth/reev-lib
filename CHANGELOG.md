@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.8.0](https://github.com/bihealth/reev-frontend-lib/compare/v0.7.1...v0.8.0) (2024-10-02)
+
+
+### Features
+
+* Add url for AutoACMG ([#252](https://github.com/bihealth/reev-frontend-lib/issues/252)) ([#253](https://github.com/bihealth/reev-frontend-lib/issues/253)) ([9a7538a](https://github.com/bihealth/reev-frontend-lib/commit/9a7538a20cc19594b8530b45eca5af0c24fd0c0a))
+* display hemizgote counts for x chromosome ([#236](https://github.com/bihealth/reev-frontend-lib/issues/236)) ([#237](https://github.com/bihealth/reev-frontend-lib/issues/237)) ([d070c1d](https://github.com/bihealth/reev-frontend-lib/commit/d070c1df55d9dce33d7ae7608ddb96b0a871d5d2))
+* enable ignore case parameter for querying omim by name ([#229](https://github.com/bihealth/reev-frontend-lib/issues/229)) ([736c8f9](https://github.com/bihealth/reev-frontend-lib/commit/736c8f9fab0a51a8e20340e12b556c298c5615bf))
+* Increase height in BeaconNetwork card ([#240](https://github.com/bihealth/reev-frontend-lib/issues/240)) ([#241](https://github.com/bihealth/reev-frontend-lib/issues/241)) ([ca2bd83](https://github.com/bihealth/reev-frontend-lib/commit/ca2bd8373c728812c8a9f0f258b7650ffe4c2988))
+* migrate from pinia stores to TanStack Query ([#247](https://github.com/bihealth/reev-frontend-lib/issues/247)) ([#251](https://github.com/bihealth/reev-frontend-lib/issues/251)) ([60bd628](https://github.com/bihealth/reev-frontend-lib/commit/60bd628c2186fa88a4bf2d59ee7c5fa37a07fa5c))
+
+
+### Bug Fixes
+
+* added tbody to table elements ([#254](https://github.com/bihealth/reev-frontend-lib/issues/254)) ([b190d20](https://github.com/bihealth/reev-frontend-lib/commit/b190d20026247c841857284045b27702c18700ac))
+* linting ([#238](https://github.com/bihealth/reev-frontend-lib/issues/238)) ([3fe4d45](https://github.com/bihealth/reev-frontend-lib/commit/3fe4d4518b79ac4023d4e251b0a8b02a7167d7f5))
+* most recent mehari rest service causes unknown fields error ([#249](https://github.com/bihealth/reev-frontend-lib/issues/249)) ([#250](https://github.com/bihealth/reev-frontend-lib/issues/250)) ([74df3b9](https://github.com/bihealth/reev-frontend-lib/commit/74df3b985bf02c997487a5f6484e0e31cfcf89ce))
+* pubtator store loading with missing hgnc id ([#243](https://github.com/bihealth/reev-frontend-lib/issues/243)) ([#244](https://github.com/bihealth/reev-frontend-lib/issues/244)) ([ff0c661](https://github.com/bihealth/reev-frontend-lib/commit/ff0c66187f0becae41137c374d0b20ca44a98fdf))
+* varfish lint error ([#242](https://github.com/bihealth/reev-frontend-lib/issues/242)) ([0c2770f](https://github.com/bihealth/reev-frontend-lib/commit/0c2770f63a3aae83bd862c9225dde2fc7a81a335))
+* variant validator URL needs trailing slash "/" ([#226](https://github.com/bihealth/reev-frontend-lib/issues/226)) ([6475981](https://github.com/bihealth/reev-frontend-lib/commit/6475981dd6fbe95e74b5ccbb220b81572cef9a8c))
+* variantvalidator query doesnt work ([#234](https://github.com/bihealth/reev-frontend-lib/issues/234)) ([#235](https://github.com/bihealth/reev-frontend-lib/issues/235)) ([9e27292](https://github.com/bihealth/reev-frontend-lib/commit/9e27292528433a11bfc0dd4653429bdddca28c6e))
+* viguno hpo search response for not found ([#230](https://github.com/bihealth/reev-frontend-lib/issues/230)) ([2b47962](https://github.com/bihealth/reev-frontend-lib/commit/2b47962dc152d9d0b3121213cf2719d862bae3f0))
+
 ## [0.7.1](https://github.com/bihealth/reev-frontend-lib/compare/v0.7.0...v0.7.1) (2024-06-09)
 
 
