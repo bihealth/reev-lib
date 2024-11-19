@@ -113,12 +113,46 @@ proto: proto-fetch proto-ts format lint
 
 .PHONY: openapi
 openapi: \
+	openapi-annonars-ts \
+	openapi-mehari-ts \
 	openapi-cadaPrio-ts \
 	openapi-dotty-ts \
 	openapi-variantValidator-ts \
 	openapi-viguno-ts \
 	format \
 	lint
+
+.PHONY: openapi-annonars-fetch
+openapi-annonars-fetch:
+	mkdir -p ext/annonars-api
+
+	rm -f ext/annonars-api/openapi.yaml
+	docker pull ghcr.io/varfish-org/annonars:main
+	docker run --rm -v $(PWD)/ext/annonars-api:/opt/annonars-api --entrypoint /usr/local/bin/annonars \
+		ghcr.io/varfish-org/annonars:main \
+			server schema --output-file /opt/annonars-api/openapi.yaml
+
+.PHONY: openapi-annonars-ts
+openapi-annonars-ts: openapi-annonars-fetch
+	rm -rf ext/annonars-api/src/lib
+	mkdir -p ext/annonars-api/src
+	npx @hey-api/openapi-ts --file openapi-ts.config.annonars.ts
+
+.PHONY: openapi-mehari-fetch
+openapi-mehari-fetch:
+	mkdir -p ext/mehari-api
+
+	rm -f ext/mehari-api/openapi.yaml
+	docker pull ghcr.io/varfish-org/mehari:main
+	docker run --rm -v $(PWD)/ext/mehari-api:/opt/mehari-api --entrypoint /usr/local/bin/mehari \
+		ghcr.io/varfish-org/mehari:main \
+			server schema --output-file /opt/mehari-api/openapi.yaml
+
+.PHONY: openapi-mehari-ts
+openapi-mehari-ts: openapi-mehari-fetch
+	rm -rf ext/mehari-api/src/lib
+	mkdir -p ext/mehari-api/src
+	npx @hey-api/openapi-ts --file openapi-ts.config.mehari.ts
 
 .PHONY: openapi-cadaPrio-fetch
 openapi-cadaPrio-fetch:
