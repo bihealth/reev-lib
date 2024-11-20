@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SeqvarResultEntry } from '../../api/mehari/types'
+import { SeqvarsCsqResultEntry } from '../../ext/mehari-api/src/lib'
 import DocsLink from '../DocsLink/DocsLink.vue'
 
 /** This component's  */
@@ -7,7 +7,7 @@ import DocsLink from '../DocsLink/DocsLink.vue'
 const props = withDefaults(
   defineProps<{
     /** The variant consequences. */
-    consequences?: SeqvarResultEntry[]
+    consequences?: SeqvarsCsqResultEntry[]
   }>(),
   {
     consequences: () => []
@@ -53,19 +53,19 @@ const props = withDefaults(
           <tbody>
             <template v-if="consequences?.length">
               <tr v-for="(oneTxCsq, idx) in consequences" :key="idx">
-                <td>{{ oneTxCsq.geneSymbol }}</td>
+                <td>{{ oneTxCsq.gene_symbol }}</td>
                 <td>
-                  {{ oneTxCsq.featureId }}
-                  <small> ({{ oneTxCsq.featureBiotype }}) </small>
+                  {{ oneTxCsq.feature_id }}
+                  <small> ({{ oneTxCsq.feature_biotype }}) </small>
                   <v-chip
-                    v-if="(oneTxCsq.featureTag ?? []).includes('ManeSelect')"
+                    v-if="(oneTxCsq.feature_tag ?? []).includes('mane_select')"
                     color="primary"
                     class="ml-3"
                   >
                     MANE Select
                   </v-chip>
                   <v-chip
-                    v-if="(oneTxCsq.featureTag ?? []).includes('ManePlusClinical')"
+                    v-if="(oneTxCsq.feature_tag ?? []).includes('mane_plus_clinical')"
                     color="primary"
                     class="ml-3"
                   >
@@ -73,8 +73,8 @@ const props = withDefaults(
                   </v-chip>
                 </td>
                 <td>{{ oneTxCsq.consequences.join(', ') }}</td>
-                <td style="max-width: 400px">{{ oneTxCsq.hgvsT }}</td>
-                <td style="max-width: 400px">{{ oneTxCsq.hgvsP }}</td>
+                <td style="max-width: 400px">{{ oneTxCsq.hgvs_t }}</td>
+                <td style="max-width: 400px">{{ oneTxCsq.hgvs_p }}</td>
                 <template v-if="oneTxCsq.rank">
                   <td>{{ oneTxCsq.rank!.rank ?? 0 }} / {{ oneTxCsq.rank!.total ?? 0 }}</td>
                 </template>

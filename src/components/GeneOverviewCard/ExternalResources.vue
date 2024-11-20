@@ -1,16 +1,11 @@
 <script setup lang="ts">
-import { HgncRecord } from '../../pbs/annonars/genes/base'
+import { GenesHgncRecord } from '@/ext/annonars-api/src/lib';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const props = withDefaults(
-  defineProps<{
+const props = defineProps<{
     /** HGNC information to display for. */
-    hgnc?: HgncRecord
-  }>(),
-  {
-    hgnc: undefined
-  }
-)
+    hgnc?: GenesHgncRecord
+  }>()
 </script>
 
 <template>
@@ -36,7 +31,7 @@ const props = withDefaults(
       </a>
     </div>
     <div>
-      <a :href="`https://search.thegencc.org/genes/${hgnc?.hgncId}`" target="_blank">
+      <a :href="`https://search.thegencc.org/genes/${hgnc?.hgnc_id}`" target="_blank">
         <v-icon>mdi-launch</v-icon>
         GenCC
       </a>
@@ -58,8 +53,8 @@ const props = withDefaults(
     </div>
     <div>
       <a
-        v-if="hgnc?.omimId.length"
-        :href="`https://www.omim.org/entry/${hgnc?.omimId[0]}`"
+        v-if="hgnc?.omim_id.length"
+        :href="`https://www.omim.org/entry/${hgnc?.omim_id[0]}`"
         target="_blank"
       >
         <v-icon>mdi-launch</v-icon>
@@ -94,8 +89,8 @@ const props = withDefaults(
     </div>
 
     <div>
-      <template v-if="hgnc?.uniprotIds?.length">
-        <template v-for="(uniprotid, index) in hgnc.uniprotIds" :key="index">
+      <template v-if="hgnc?.uniprot_ids?.length">
+        <template v-for="(uniprotid, index) in hgnc.uniprot_ids" :key="index">
           <template v-if="index > 0"> , </template>
           <a
             :href="`http://missense3d.bc.ic.ac.uk:8080/search_direct?uniprot=${uniprotid}`"

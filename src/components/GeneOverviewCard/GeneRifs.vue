@@ -1,43 +1,38 @@
 <script setup lang="ts">
 import { onMounted, ref, watch } from 'vue'
 
-import { NcbiRecord, RifEntry } from '../../pbs/annonars/genes/base'
+import { GenesNcbiRecord, GenesRifEntry } from '@/ext/annonars-api/src/lib';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const props = withDefaults(
-  defineProps<{
+const props = defineProps<{
     /** NCBI information to use for display */
-    ncbi?: NcbiRecord
-  }>(),
-  {
-    ncbi: undefined
-  }
-)
+    ncbi?: GenesNcbiRecord
+  }>()
 
 // The data to display.
-const items = ref<RifEntry[]>([])
+const items = ref<GenesRifEntry[]>([])
 
 // Initialize `items`.
 const initializeItems = () => {
-  if (props.ncbi?.rifEntries?.length) {
-    items.value = props.ncbi.rifEntries.slice(0, 10)
+  if (props.ncbi?.rif_entries?.length) {
+    items.value = props.ncbi.rif_entries.slice(0, 10)
   }
 }
 
-// Initialize items on mounted and change of `ncbi.rifEntries`.
+// Initialize items on mounted and change of `ncbi.rif_entries`.
 onMounted(initializeItems)
-watch(() => props.ncbi?.rifEntries, initializeItems)
+watch(() => props.ncbi?.rif_entries, initializeItems)
 
 // Load more items.
 type Done = (status: 'error' | 'loading' | 'empty' | 'ok') => void
 type LoadItemsArgs = { done: Done }
 const loadItems = async ({ done }: LoadItemsArgs) => {
-  if (props.ncbi?.rifEntries?.length) {
-    if (items.value.length === props.ncbi.rifEntries.length) {
+  if (props.ncbi?.rif_entries?.length) {
+    if (items.value.length === props.ncbi.rif_entries.length) {
       done('empty')
     } else {
       setTimeout(() => {
-        const nextItems = (props.ncbi?.rifEntries ?? []).slice(
+        const nextItems = (props.ncbi?.rif_entries ?? []).slice(
           items.value.length,
           items.value.length + 10
         )
@@ -54,10 +49,10 @@ const loadItems = async ({ done }: LoadItemsArgs) => {
     <div class="d-flex flex-column">
       <div class="text-subtitle-1">
         NCBI References Into Function
-        <small>({{ ncbi?.rifEntries?.length ?? 0 }})</small>
+        <small>({{ ncbi?.rif_entries?.length ?? 0 }})</small>
       </div>
     </div>
-    <div v-if="ncbi?.rifEntries?.length" class="d-flex flex-column flex-grow-1">
+    <div v-if="ncbi?.rif_entries?.length" class="d-flex flex-column flex-grow-1">
       <v-infinite-scroll :height="200" style="font-size: 90%" :items="items" @load="loadItems">
         <template v-for="(item, index) in items" :key="index">
           <div v-if="item?.text?.length">

@@ -1,16 +1,11 @@
 <script setup lang="ts">
-import { HgncRecord } from '../../pbs/annonars/genes/base'
+import { GenesHgncRecord } from '../../ext/annonars-api/src/lib';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const props = withDefaults(
-  defineProps<{
+const props = defineProps<{
     /** HGNC information to display for. */
-    hgnc?: HgncRecord
-  }>(),
-  {
-    hgnc: undefined
-  }
-)
+    hgnc?: GenesHgncRecord
+  }>()
 </script>
 
 <template>

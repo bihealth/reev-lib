@@ -105,9 +105,9 @@ export const useSeqvarInfoStore = defineStore('seqvarInfo', () => {
             annonarsClient.fetchGeneClinvarInfo(localHgncId).then((data) => {
               geneClinvar.value = data
             }),
-            vigunoClient.fetchHpoTermsForHgncId(localHgncId).then((data) => {
-              hpoTerms.value = data.result
-            })
+            // vigunoClient.fetchHpoTermsForHgncId(localHgncId).then((data) => {
+            //   hpoTerms.value = data.result
+            // })
           ])
         } else {
           return Promise.resolve()

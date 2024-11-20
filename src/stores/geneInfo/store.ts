@@ -75,12 +75,7 @@ export const useGeneInfoStore = defineStore('geneInfo', () => {
         geneClinvar.value = undefined
       }
 
-      const vigunoClient = new VigunoClient()
-      const hpoTermsData = await vigunoClient.fetchHpoTermsForHgncId(hgncIdQuery)
-      if (hpoTermsData === null) {
-        throw new Error('Problem querying HPO terms data.')
-      }
-      hpoTerms.value = hpoTermsData.result
+      hpoTerms.value = []
 
       hgncId.value = hgncIdQuery
       storeState.value = StoreState.Active

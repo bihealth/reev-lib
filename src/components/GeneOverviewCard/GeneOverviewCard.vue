@@ -6,7 +6,7 @@ This includes the NCBI Summary display.
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 
-import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
+import { GenesGeneInfoRecord } from '../../ext/annonars-api/src/lib'
 import DocsLink from '../DocsLink/DocsLink.vue'
 import AlternativeIdentifiers from './AlternativeIdentifiers.vue'
 import ExternalResources from './ExternalResources.vue'
@@ -17,12 +17,11 @@ import LocusDatabases from './LocusDatabases.vue'
 const props = withDefaults(
   defineProps<{
     /** `GeneInfoRecord` to display for. */
-    geneInfo?: GeneInfoRecord
+    geneInfo?: GenesGeneInfoRecord
     /** Whether to show the "gene details" link. */
     showGeneDetailsLink?: boolean
   }>(),
   {
-    geneInfo: undefined,
     showGeneDetailsLink: false
   }
 )
@@ -82,10 +81,10 @@ const summaryText = computed<string>(() => {
           <abbr title="cytogenic location / band">
             {{ geneInfo?.hgnc?.location }}
           </abbr>
-          <template v-if="geneInfo?.hgnc?.aliasSymbol?.length">
+          <template v-if="geneInfo?.hgnc?.alias_symbol?.length">
             &mdash; aliases:
             <abbr title="alias gene symbols">
-              {{ geneInfo?.hgnc?.aliasSymbol?.join(', ') }}
+              {{ geneInfo?.hgnc?.alias_symbol?.join(', ') }}
             </abbr>
           </template>
         </div>
@@ -94,7 +93,7 @@ const summaryText = computed<string>(() => {
           <template v-if="showFullSummary">
             {{ summaryText }}
             <a
-              :href="`https://www.ncbi.nlm.nih.gov/gene/${geneInfo?.ncbi?.geneId}`"
+              :href="`https://www.ncbi.nlm.nih.gov/gene/${geneInfo?.ncbi?.gene_id}`"
               target="_blank"
             >
               <v-icon>mdi-launch</v-icon>
@@ -109,7 +108,7 @@ const summaryText = computed<string>(() => {
           </template>
         </template>
         <template v-else>
-          <a :href="`https://www.ncbi.nlm.nih.gov/gene/${geneInfo?.ncbi?.geneId}`" target="_blank">
+          <a :href="`https://www.ncbi.nlm.nih.gov/gene/${geneInfo?.ncbi?.gene_id}`" target="_blank">
             <v-icon>mdi-launch</v-icon>
             source
           </a>
@@ -122,16 +121,16 @@ const summaryText = computed<string>(() => {
           <v-card-text class="pt-3 pb-0">
             <v-row no-gutters>
               <v-col cols="3" class="pr-3">
-                <AlternativeIdentifiers :hgnc="geneInfo?.hgnc" />
+                <AlternativeIdentifiers :hgnc="geneInfo?.hgnc ?? undefined" />
               </v-col>
               <v-col cols="2" class="pr-3">
-                <ExternalResources :hgnc="geneInfo?.hgnc" />
+                <ExternalResources :hgnc="geneInfo?.hgnc ?? undefined" />
               </v-col>
               <v-col cols="2" class="pr-3">
-                <LocusDatabases :hgnc="geneInfo?.hgnc" />
+                <LocusDatabases :hgnc="geneInfo?.hgnc ?? undefined" />
               </v-col>
               <v-col cols="5" class="d-flex">
-                <GeneRifs :ncbi="geneInfo?.ncbi" />
+                <GeneRifs :ncbi="geneInfo?.ncbi ?? undefined" />
               </v-col>
             </v-row>
           </v-card-text>
@@ -154,31 +153,31 @@ const summaryText = computed<string>(() => {
           PubTator 3
         </v-btn>
         <v-btn
-          :href="`https://www.ensembl.org/Homo_sapiens/Gene/Summary?g=${geneInfo?.hgnc?.ensemblGeneId}`"
+          :href="`https://www.ensembl.org/Homo_sapiens/Gene/Summary?g=${geneInfo?.hgnc?.ensembl_gene_id}`"
           target="_blank"
           prepend-icon="mdi-launch"
         >
           ENSEMBL
         </v-btn>
         <v-btn
-          v-if="geneInfo?.hgnc?.refseqAccession?.length"
-          :href="`https://www.ncbi.nlm.nih.gov/nuccore/?term=${geneInfo?.hgnc?.refseqAccession[0]}+AND+srcdb_refseq[PROP]`"
+          v-if="geneInfo?.hgnc?.refseq_accession?.length"
+          :href="`https://www.ncbi.nlm.nih.gov/nuccore/?term=${geneInfo?.hgnc?.refseq_accession[0]}+AND+srcdb_refseq[PROP]`"
           target="_blank"
           prepend-icon="mdi-launch"
         >
           NCBI
         </v-btn>
         <v-btn
-          v-if="geneInfo?.hgnc?.uniprotIds?.length"
-          :href="`https://www.uniprot.org/uniprotkb/${geneInfo?.hgnc?.uniprotIds[0]}/entry`"
+          v-if="geneInfo?.hgnc?.uniprot_ids?.length"
+          :href="`https://www.uniprot.org/uniprotkb/${geneInfo?.hgnc?.uniprot_ids[0]}/entry`"
           target="_blank"
           prepend-icon="mdi-launch"
         >
           UniProt
         </v-btn>
         <v-btn
-          v-if="geneInfo?.hgnc?.mgdId?.length"
-          :href="`https://www.informatics.jax.org/marker/${geneInfo?.hgnc?.mgdId[0]}`"
+          v-if="geneInfo?.hgnc?.mgd_id?.length"
+          :href="`https://www.informatics.jax.org/marker/${geneInfo?.hgnc?.mgd_id[0]}`"
           target="_blank"
           prepend-icon="mdi-launch"
         >
@@ -202,8 +201,8 @@ const summaryText = computed<string>(() => {
           <template v-if="geneInfo?.hgnc?.lsdb?.length">
             &middot; Locus-Specific Databases
           </template>
-          <template v-if="geneInfo?.ncbi?.rifEntries?.length">
-            &middot; Gene RIF ({{ geneInfo?.ncbi?.rifEntries?.length ?? 0 }})
+          <template v-if="geneInfo?.ncbi?.rif_entries?.length">
+            &middot; Gene RIF ({{ geneInfo?.ncbi?.rif_entries?.length ?? 0 }})
           </template>
         </div>
         <v-btn

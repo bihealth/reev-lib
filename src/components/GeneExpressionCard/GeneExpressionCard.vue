@@ -4,17 +4,17 @@
  */
 import { computed, ref } from 'vue'
 
-import { GtexTissueRecord } from '../../pbs/annonars/genes/base'
 import DocsLink from '../DocsLink/DocsLink.vue'
 import VegaPlot from '../VegaPlot/VegaPlot.vue'
 import { TISSUE_DETAILED_LABELS, TISSUE_LABELS } from './constants'
+import { GenesGtexTissueRecord } from '@/ext/annonars-api/src/lib'
 
 const props = withDefaults(
   defineProps<{
     /** Gene symbol */
     geneSymbol?: string
     /** Expression records */
-    expressionRecords?: GtexTissueRecord[]
+    expressionRecords?: GenesGtexTissueRecord[]
     /** Ensembl gene ID */
     ensemblGeneId?: string
   }>(),
@@ -66,7 +66,7 @@ const vegaData = computed<VegaData[]>(() => {
 
   const expressionRecords = Object.assign([], props?.expressionRecords)
   if (sortOrder.value === SortOrder.ALPHA) {
-    expressionRecords.sort((a: GtexTissueRecord, b: GtexTissueRecord) => {
+    expressionRecords.sort((a: GenesGtexTissueRecord, b: GenesGtexTissueRecord) => {
       const aTissue = TISSUE_LABELS[a.tissue]
       const bTissue = TISSUE_LABELS[b.tissue]
       if (aTissue < bTissue) {
@@ -78,7 +78,7 @@ const vegaData = computed<VegaData[]>(() => {
       }
     })
   } else {
-    expressionRecords.sort((a: GtexTissueRecord, b: GtexTissueRecord) => {
+    expressionRecords.sort((a: GenesGtexTissueRecord, b: GenesGtexTissueRecord) => {
       if (a.tpms[2] < b.tpms[2]) {
         return 1
       } else if (a.tpms[2] > b.tpms[2]) {
@@ -88,10 +88,10 @@ const vegaData = computed<VegaData[]>(() => {
       }
     })
   }
-  return expressionRecords.map((record: GtexTissueRecord) => {
+  return expressionRecords.map((record: GenesGtexTissueRecord) => {
     return {
       tissue: TISSUE_LABELS[record.tissue],
-      tissueDetailed: TISSUE_DETAILED_LABELS[record.tissueDetailed],
+      tissueDetailed: TISSUE_DETAILED_LABELS[record.tissue_detailed],
       lower: record.tpms[0],
       q1: record.tpms[1],
       median: record.tpms[2],

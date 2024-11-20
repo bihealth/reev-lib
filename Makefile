@@ -124,9 +124,9 @@ openapi: \
 
 .PHONY: openapi-annonars-fetch
 openapi-annonars-fetch:
-	mkdir -p ext/annonars-api
+	mkdir -p src/ext/annonars-api
 
-	rm -f ext/annonars-api/openapi.yaml
+	rm -f src/ext/annonars-api/openapi.yaml
 	docker pull ghcr.io/varfish-org/annonars:main
 	docker run --rm -v $(PWD)/ext/annonars-api:/opt/annonars-api --entrypoint /usr/local/bin/annonars \
 		ghcr.io/varfish-org/annonars:main \
@@ -134,86 +134,86 @@ openapi-annonars-fetch:
 
 .PHONY: openapi-annonars-ts
 openapi-annonars-ts: openapi-annonars-fetch
-	rm -rf ext/annonars-api/src/lib
-	mkdir -p ext/annonars-api/src
+	rm -rf src/ext/annonars-api/src/lib
+	mkdir -p src/ext/annonars-api/src
 	npx @hey-api/openapi-ts --file openapi-ts.config.annonars.ts
 
 .PHONY: openapi-mehari-fetch
 openapi-mehari-fetch:
-	mkdir -p ext/mehari-api
+	mkdir -p src/ext/mehari-api
 
-	rm -f ext/mehari-api/openapi.yaml
+	rm -f src/ext/mehari-api/openapi.yaml
 	docker pull ghcr.io/varfish-org/mehari:main
-	docker run --rm -v $(PWD)/ext/mehari-api:/opt/mehari-api --entrypoint /usr/local/bin/mehari \
+	docker run --rm -v $(PWD)/src/ext/mehari-api:/opt/mehari-api --entrypoint /usr/local/bin/mehari \
 		ghcr.io/varfish-org/mehari:main \
 			server schema --output-file /opt/mehari-api/openapi.yaml
 
 .PHONY: openapi-mehari-ts
 openapi-mehari-ts: openapi-mehari-fetch
-	rm -rf ext/mehari-api/src/lib
-	mkdir -p ext/mehari-api/src
+	rm -rf src/ext/mehari-api/src/lib
+	mkdir -p src/ext/mehari-api/src
 	npx @hey-api/openapi-ts --file openapi-ts.config.mehari.ts
 
 .PHONY: openapi-cadaPrio-fetch
 openapi-cadaPrio-fetch:
-	mkdir -p ext/cadaPrio-api
+	mkdir -p src/ext/cadaPrio-api
 
-	rm -f ext/cadaPrio-api/openapi.yaml
+	rm -f src/ext/cadaPrio-api/openapi.yaml
 	docker pull ghcr.io/bihealth/cada-prio:main
 	docker run ghcr.io/bihealth/cada-prio:main cada-prio utils dump-openapi-yaml /dev/stdout \
 	| grep -v '^+' \
-	> ext/cadaPrio-api/openapi.yaml
+	> src/ext/cadaPrio-api/openapi.yaml
 
 .PHONY: openapi-cadaPrio-ts
 openapi-cadaPrio-ts: openapi-cadaPrio-fetch
-	rm -rf ext/cadaPrio-api/src/lib
-	mkdir -p ext/cadaPrio-api/src
+	rm -rf src/ext/cadaPrio-api/src/lib
+	mkdir -p src/ext/cadaPrio-api/src
 	npx @hey-api/openapi-ts --file openapi-ts.config.cadaPrio.ts
 
 .PHONY: openapi-dotty-fetch
 openapi-dotty-fetch:
-	mkdir -p ext/dotty-api
+	mkdir -p src/ext/dotty-api
 
-	rm -f ext/dotty-api/openapi.yaml
+	rm -f src/ext/dotty-api/openapi.yaml
 	docker pull ghcr.io/bihealth/dotty:main
 	docker run ghcr.io/bihealth/dotty:main python -m dotty.main \
 	| grep -v '^+' \
-	> ext/dotty-api/openapi.yaml
+	> src/ext/dotty-api/openapi.yaml
 
 .PHONY: openapi-dotty-ts
 openapi-dotty-ts: openapi-dotty-fetch
-	rm -rf ext/dotty-api/src/lib
-	mkdir -p ext/dotty-api/src
+	rm -rf src/ext/dotty-api/src/lib
+	mkdir -p src/ext/dotty-api/src
 	npx @hey-api/openapi-ts --file openapi-ts.config.dotty.ts
 
 .PHONY: openapi-variantValidator-fetch
 openapi-variantValidator-fetch:
-	mkdir -p ext/variantValidator-api
+	mkdir -p src/ext/variantValidator-api
 
-	rm -f ext/variantValidator-api/openapi.yaml
-	wget -O ext/variantValidator-api/openapi.yaml \
+	rm -f src/ext/variantValidator-api/openapi.yaml
+	wget -O src/ext/variantValidator-api/openapi.yaml \
 		https://rest.variantvalidator.org/swagger.json
 
 .PHONY: openapi-variantValidator-ts
 openapi-variantValidator-ts: openapi-variantValidator-fetch
-	rm -rf ext/variantValidator-api/src/lib
-	mkdir -p ext/variantValidator-api/src
+	rm -rf src/ext/variantValidator-api/src/lib
+	mkdir -p src/ext/variantValidator-api/src
 	npx @hey-api/openapi-ts --file openapi-ts.config.variantValidator.ts
 
 .PHONY: openapi-viguno-fetch
 openapi-viguno-fetch:
-	rm -rf ext/viguno-api/openapi.yaml
-	mkdir -p ext/viguno-api
+	rm -rf src/ext/viguno-api/openapi.yaml
+	mkdir -p src/ext/viguno-api
 
 	docker pull ghcr.io/varfish-org/viguno:main
 	docker run -t ghcr.io/varfish-org/viguno:main \
 		exec viguno server schema --output-file /dev/stdout \
 	| grep -v ' INFO' \
 	| grep -v '^+' \
-	> ext/viguno-api/openapi.yaml
+	> src/ext/viguno-api/openapi.yaml
 
 .PHONY: openapi-viguno-ts
 openapi-viguno-ts: openapi-viguno-fetch
-	rm -rf ext/viguno-api/src/lib
-	mkdir -p ext/viguno-api/src
+	rm -rf src/ext/viguno-api/src/lib
+	mkdir -p src/ext/viguno-api/src
 	npx @hey-api/openapi-ts --file openapi-ts.config.viguno.ts

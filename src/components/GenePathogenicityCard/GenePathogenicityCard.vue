@@ -3,20 +3,15 @@
  * This component displays a VCard with gene pathogenicity information.
  */
 import { roundIt } from '../../lib/utils'
-import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
+import { GenesGeneInfoRecord } from '../../ext/annonars-api/src/lib'
 import DocsLink from '../DocsLink/DocsLink.vue'
 import { CLINGEN_DOSAGE_COLOR, CLINGEN_DOSAGE_LABELS_SHORT } from './constants'
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const props = withDefaults(
-  defineProps<{
-    /** Gene information, if any. */
-    geneInfo?: GeneInfoRecord
-  }>(),
-  {
-    geneInfo: undefined
-  }
-)
+const props = defineProps<{
+  /** Gene information, if any. */
+  geneInfo?: GenesGeneInfoRecord
+}>()
 </script>
 
 <template>
@@ -43,7 +38,7 @@ const props = withDefaults(
                   ClinGen
                   <small>
                     <a
-                      :href="`https://search.clinicalgenome.org/kb/genes/${geneInfo?.hgnc!.hgncId}`"
+                      :href="`https://search.clinicalgenome.org/kb/genes/${geneInfo?.hgnc!.hgnc_id}`"
                     >
                       <v-icon>mdi-launch</v-icon>
                     </a>
@@ -57,11 +52,11 @@ const props = withDefaults(
                         <v-chip
                           density="compact"
                           :class="`bg-${
-                            CLINGEN_DOSAGE_COLOR[geneInfo?.clingen.haploinsufficiencyScore]
+                            CLINGEN_DOSAGE_COLOR[geneInfo?.clingen.haploinsufficiency_score!]
                           }`"
                         >
                           {{
-                            CLINGEN_DOSAGE_LABELS_SHORT[geneInfo?.clingen.haploinsufficiencyScore]
+                            CLINGEN_DOSAGE_LABELS_SHORT[geneInfo?.clingen.haploinsufficiency_score!]
                           }}
                         </v-chip>
                       </td>
@@ -72,11 +67,11 @@ const props = withDefaults(
                         <v-chip
                           density="compact"
                           :class="`bg-${
-                            CLINGEN_DOSAGE_COLOR[geneInfo?.clingen.triplosensitivityScore]
+                            CLINGEN_DOSAGE_COLOR[geneInfo?.clingen.triplosensitivity_score!]
                           }`"
                         >
                           {{
-                            CLINGEN_DOSAGE_LABELS_SHORT[geneInfo?.clingen.triplosensitivityScore]
+                            CLINGEN_DOSAGE_LABELS_SHORT[geneInfo?.clingen.triplosensitivity_score!]
                           }}
                         </v-chip>
                       </td>
@@ -90,13 +85,13 @@ const props = withDefaults(
 
           <v-col cols="3">
             <v-sheet class="pa-3 mx-1 h-100" color="background">
-              <template v-if="geneInfo?.gnomadConstraints">
+              <template v-if="geneInfo?.gnomad_constraints">
                 <div class="text-subtitle-1">
                   gnomAD
                   <small> v4.0 </small>
-                  <small v-if="geneInfo?.hgnc?.ensemblGeneId?.length">
+                  <small v-if="geneInfo?.hgnc?.ensembl_gene_id?.length">
                     <a
-                      :href="`https://gnomad.broadinstitute.org/gene/${geneInfo?.hgnc.ensemblGeneId}?dataset=gnomad_r4`"
+                      :href="`https://gnomad.broadinstitute.org/gene/${geneInfo?.hgnc.ensembl_gene_id}?dataset=gnomad_r4`"
                     >
                       <v-icon>mdi-launch</v-icon>
                     </a>
@@ -115,7 +110,7 @@ const props = withDefaults(
                       </td>
                       <td class="pa-0 text-right">
                         <!-- eslint-disable vue/no-v-html -->
-                        <span v-html="roundIt(geneInfo?.gnomadConstraints.pli)" />
+                        <span v-html="roundIt(geneInfo?.gnomad_constraints.pli ?? undefined)" />
                         <!-- eslint-enable -->
                       </td>
                     </tr>
@@ -125,7 +120,7 @@ const props = withDefaults(
                       </td>
                       <td class="pa-0 text-right">
                         <!-- eslint-disable vue/no-v-html -->
-                        <span v-html="roundIt(geneInfo?.gnomadConstraints.oeLofUpper)" />
+                        <span v-html="roundIt(geneInfo?.gnomad_constraints.oe_lof_upper ?? undefined)" />
                         <!-- eslint-enable -->
                       </td>
                     </tr>
@@ -140,7 +135,7 @@ const props = withDefaults(
                       </td>
                       <td class="pa-0 text-right">
                         <!-- eslint-disable vue/no-v-html -->
-                        <span v-html="roundIt(geneInfo?.gnomadConstraints.oeMisUpper)" />
+                        <span v-html="roundIt(geneInfo?.gnomad_constraints.oe_mis_upper ?? undefined)" />
                         <!-- eslint-enable -->
                       </td>
                     </tr>
@@ -152,7 +147,7 @@ const props = withDefaults(
                       </td>
                       <td class="pa-0 text-right">
                         <!-- eslint-disable vue/no-v-html -->
-                        <span v-html="roundIt(geneInfo?.gnomadConstraints.misZ)" />
+                        <span v-html="roundIt(geneInfo?.gnomad_constraints.mis_z ?? undefined)" />
                         <!-- eslint-enable -->
                       </td>
                     </tr>
@@ -181,7 +176,7 @@ const props = withDefaults(
                     <tr>
                       <td class="pa-0">
                         <abbr
-                          :title="`haploinsufficiency prediction percentile (raw score=${geneInfo?.decipherHi?.hiIndex})`"
+                          :title="`haploinsufficiency prediction percentile (raw score=${geneInfo?.decipher_hi?.hi_index})`"
                         >
                           %HI
                         </abbr>
@@ -189,8 +184,8 @@ const props = withDefaults(
                       <td class="pa-0 text-right">
                         <!-- eslint-disable vue/no-v-html -->
                         <span
-                          v-if="geneInfo?.decipherHi !== undefined"
-                          v-html="roundIt(geneInfo?.decipherHi?.pHi)"
+                          v-if="geneInfo?.decipher_hi !== undefined"
+                          v-html="roundIt(geneInfo?.decipher_hi?.p_hi)"
                         />
                         <span v-else> N/A </span>
                         <!-- eslint-enable -->
@@ -200,7 +195,7 @@ const props = withDefaults(
                       <td class="pa-0">sHet</td>
                       <td class="pa-0 text-right">
                         <!-- eslint-disable vue/no-v-html -->
-                        <span v-if="geneInfo?.shet" v-html="roundIt(geneInfo?.shet.sHet)" />
+                        <span v-if="geneInfo?.shet" v-html="roundIt(geneInfo?.shet.s_het)" />
                         <!-- eslint-enable -->
                         <span v-else> N/A </span>
                       </td>
@@ -209,7 +204,7 @@ const props = withDefaults(
                       <td class="pa-0">pHaplo</td>
                       <td class="pa-0 text-right">
                         <!-- eslint-disable vue/no-v-html -->
-                        <span v-if="geneInfo?.rcnv" v-html="roundIt(geneInfo?.rcnv.pHaplo)" />
+                        <span v-if="geneInfo?.rcnv" v-html="roundIt(geneInfo?.rcnv.p_haplo)" />
                         <!-- eslint-enable -->
                         <span v-else> N/A </span>
                       </td>
@@ -218,7 +213,7 @@ const props = withDefaults(
                       <td class="pa-0">pTriplo</td>
                       <td class="pa-0 text-right">
                         <!-- eslint-disable vue/no-v-html -->
-                        <span v-if="geneInfo?.rcnv" v-html="roundIt(geneInfo?.rcnv.pTriplo)" />
+                        <span v-if="geneInfo?.rcnv" v-html="roundIt(geneInfo?.rcnv.p_triplo)" />
                         <!-- eslint-enable -->
                         <span v-else> N/A </span>
                       </td>
