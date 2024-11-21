@@ -1,35 +1,25 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import { SeqvarInfoResult } from '../../api/annonars/types'
 import { type Seqvar } from '../../lib/genomicVars'
 import { roundIt, separateIt as sep } from '../../lib/utils'
-import { Record as GnomadMtdnaRecord } from '../../pbs/annonars/gnomad/mtdna'
-import { Record as HelixMtdbRecord } from '../../pbs/annonars/helixmtdb/base'
 import { isVariantMtHomopolymer } from './lib'
+import { GnomadMtdnaRecord, HelixMtDbRecord, SeqvarsAnnoResponseRecord } from '../../ext/annonars-api/src/lib'
 
 /** This component's props. */
 const props = defineProps<{
   /** Annotated sequence variant. */
   seqvar?: Seqvar
   /** Annotations. */
-  varAnnos?: SeqvarInfoResult
+  varAnnos?: SeqvarsAnnoResponseRecord
 }>()
 
-const helixMtDb = computed<HelixMtdbRecord | undefined>(() => {
-  if (props?.varAnnos?.helixmtdb) {
-    return props?.varAnnos?.helixmtdb
-  } else {
-    return undefined
-  }
+const helixMtDb = computed<HelixMtDbRecord | undefined>(() => {
+  return props?.varAnnos?.helixmtdb ?? undefined
 })
 
 const gnomadMtDna = computed<GnomadMtdnaRecord | undefined>(() => {
-  if (props?.varAnnos && props?.varAnnos.gnomadMtdna) {
-    return props?.varAnnos.gnomadMtdna
-  } else {
-    return undefined
-  }
+  return props?.varAnnos?.gnomad_mtdna ?? undefined
 })
 </script>
 
@@ -64,20 +54,20 @@ const gnomadMtDna = computed<GnomadMtdnaRecord | undefined>(() => {
               {{ sep(gnomadMtDna?.an ?? 0) }}
             </td>
             <td class="text-right">
-              {{ sep((gnomadMtDna?.acHet ?? 0) + (gnomadMtDna?.acHom ?? 0)) }}
+              {{ sep((gnomadMtDna?.ac_het ?? 0) + (gnomadMtDna?.ac_hom ?? 0)) }}
             </td>
             <td class="text-right">
-              {{ sep(gnomadMtDna?.acHet ?? 0) }}
+              {{ sep(gnomadMtDna?.ac_het ?? 0) }}
             </td>
             <td class="text-right">
-              {{ sep(gnomadMtDna?.acHom ?? 0) }}
+              {{ sep(gnomadMtDna?.ac_hom ?? 0) }}
             </td>
             <!-- eslint-disable vue/no-v-html -->
             <td
               class="text-right"
               v-html="
                 roundIt(
-                  ((gnomadMtDna?.acHet ?? 0) + (gnomadMtDna?.acHom ?? 0)) / (gnomadMtDna?.an ?? 0),
+                  ((gnomadMtDna?.ac_het ?? 0) + (gnomadMtDna?.ac_hom ?? 0)) / (gnomadMtDna?.an ?? 0),
                   4
                 )
               "
@@ -87,24 +77,24 @@ const gnomadMtDna = computed<GnomadMtdnaRecord | undefined>(() => {
           <tr>
             <td>HelixMTdb</td>
             <td class="text-right">
-              {{ sep(helixMtDb?.numTotal ?? 0) }}
+              {{ sep(helixMtDb?.num_total ?? 0) }}
             </td>
             <td class="text-right">
-              {{ sep((helixMtDb?.numHet ?? 0) + (helixMtDb?.numHom ?? 0)) }}
+              {{ sep((helixMtDb?.num_het ?? 0) + (helixMtDb?.num_hom ?? 0)) }}
             </td>
             <td class="text-right">
-              {{ sep(helixMtDb?.numHet ?? 0) }}
+              {{ sep(helixMtDb?.num_het ?? 0) }}
             </td>
             <td class="text-right">
-              {{ sep(helixMtDb?.numHom ?? 0) }}
+              {{ sep(helixMtDb?.num_hom ?? 0) }}
             </td>
             <!-- eslint-disable vue/no-v-html -->
             <td
               class="text-right"
               v-html="
                 roundIt(
-                  ((helixMtDb?.numHet ?? 0) + (helixMtDb?.numHom ?? 0)) /
-                    (helixMtDb?.numTotal ?? 0),
+                  ((helixMtDb?.num_het ?? 0) + (helixMtDb?.num_hom ?? 0)) /
+                    (helixMtDb?.num_total ?? 0),
                   4
                 )
               "

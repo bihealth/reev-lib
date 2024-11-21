@@ -1,4 +1,4 @@
-import { GenesClingenDosageScore } from "@/ext/annonars-api/src/lib"
+import { GenesClingenDosageScore } from "../../ext/annonars-api/src/lib"
 
 /** Scores for ClinGen dosage scores. */
 export const CLINGEN_DOSAGE_SCORES: { [Key in GenesClingenDosageScore]: number } = {

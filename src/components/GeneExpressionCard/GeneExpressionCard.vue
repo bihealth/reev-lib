@@ -7,7 +7,7 @@ import { computed, ref } from 'vue'
 import DocsLink from '../DocsLink/DocsLink.vue'
 import VegaPlot from '../VegaPlot/VegaPlot.vue'
 import { TISSUE_DETAILED_LABELS, TISSUE_LABELS } from './constants'
-import { GenesGtexTissueRecord } from '@/ext/annonars-api/src/lib'
+import { GenesGtexTissueRecord } from '../../ext/annonars-api/src/lib'
 
 const props = withDefaults(
   defineProps<{

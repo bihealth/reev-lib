@@ -43,6 +43,7 @@ export const useAnnonarsSeqvarsAnnosQuery = (
           alternative: toValue(alternative)
         })
       }),
+      staleTime: Infinity, // static data so no need to refetch
       enabled: () =>
         !!toValue(genome_release) &&
         !!toValue(chromosome) &&

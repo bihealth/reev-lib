@@ -154,6 +154,12 @@ openapi-mehari-ts: openapi-mehari-fetch
 	mkdir -p src/ext/mehari-api/src
 	npx @hey-api/openapi-ts --file openapi-ts.config.mehari.ts
 
+.PHONY: openapi-pubtator3-ts
+openapi-pubtator3-ts:
+	rm -rf src/ext/pubtator3-api/src/lib
+	mkdir -p src/ext/pubtator3-api/src
+	npx @hey-api/openapi-ts --file openapi-ts.config.pubtator3.ts
+
 .PHONY: openapi-cadaPrio-fetch
 openapi-cadaPrio-fetch:
 	mkdir -p src/ext/cadaPrio-api

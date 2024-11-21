@@ -6,7 +6,7 @@ components when necessary.
 -->
 
 <script setup lang="ts">
-import { SeqvarInfoResult } from '../../api/annonars/types'
+import { SeqvarsAnnoResponseRecord } from '../../ext/annonars-api/src/lib'
 import { type Seqvar } from '../../lib/genomicVars'
 import DocsLink from '../DocsLink/DocsLink.vue'
 import AutosomalFreqs from './AutosomalFreqs.vue'
@@ -19,7 +19,7 @@ const props = defineProps<{
   /** Annotated sequence variant. */
   seqvar?: Seqvar
   /** Annotations. */
-  varAnnos?: SeqvarInfoResult
+  varAnnos?: SeqvarsAnnoResponseRecord
 }>()
 </script>
 
@@ -45,10 +45,10 @@ const props = defineProps<{
         ></v-alert>
         <v-row no-gutters>
           <v-col cols="6">
-            <AutosomalFreqs :seqvar="seqvar" :var-annos="varAnnos" dataset="gnomadExomes" />
+            <AutosomalFreqs :seqvar="seqvar" :var-annos="varAnnos" dataset="gnomad_exomes" />
           </v-col>
           <v-col cols="6">
-            <AutosomalFreqs :seqvar="seqvar" :var-annos="varAnnos" dataset="gnomadGenomes" />
+            <AutosomalFreqs :seqvar="seqvar" :var-annos="varAnnos" dataset="gnomad_genomes" />
           </v-col>
         </v-row>
       </div>

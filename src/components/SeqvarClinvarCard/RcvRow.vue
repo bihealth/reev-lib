@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import { ExtractedRcvRecord } from '../../pbs/annonars/clinvar_data/extracted_vars'
 import {
   AGGREGATE_GERMLINE_REVIEW_STATUS_LABEL,
   AGGREGATE_GERMLINE_REVIEW_STATUS_STARS,
@@ -10,33 +9,34 @@ import {
   AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_LABEL,
   AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_STARS
 } from './constants'
+import { ClinvarExtractedRcvRecord } from '../../ext/annonars-api/src/lib';
 
 /** This component's props */
 const props = defineProps<{
   /** RCV record from annonars */
-  rcv: ExtractedRcvRecord
+  rcv: ClinvarExtractedRcvRecord
 }>()
 
 /** Whether or not has more than one of germline/clinical impact/oncogenicity. */
 const isMultiRecord = computed<boolean>(() => {
   const sum =
-    (props.rcv.classifications?.germlineClassification ? 1 : 0) +
-    (props.rcv.classifications?.somaticClinicalImpact ? 1 : 0) +
-    (props.rcv.classifications?.oncogenicityClassification ? 1 : 0)
+    (props.rcv.classifications?.germline_classification ? 1 : 0) +
+    (props.rcv.classifications?.somatic_clinical_impact ? 1 : 0) +
+    (props.rcv.classifications?.oncogenicity_classification ? 1 : 0)
   return sum > 1
 })
 </script>
 
 <template>
-  <tr v-if="rcv.classifications?.germlineClassification">
+  <tr v-if="rcv.classifications?.germline_classification">
     <td>
       <v-chip v-if="isMultiRecord" class="tonal mr-2" size="small"> germline </v-chip>
       {{ (rcv.title ?? 'AND not provided').split('AND')[1] }}
     </td>
     <td>
-      <template v-if="rcv.classifications?.germlineClassification!.description">
-        {{ rcv.classifications?.germlineClassification!.description.value }}
-        ({{ rcv.classifications?.germlineClassification!.description.submissionCount }})
+      <template v-if="rcv.classifications?.germline_classification!.description">
+        {{ rcv.classifications?.germline_classification!.description.value }}
+        ({{ rcv.classifications?.germline_classification!.description.submission_count }})
       </template>
       <template v-else> UNSPECIFIED </template>
     </td>
@@ -45,7 +45,7 @@ const isMultiRecord = computed<boolean>(() => {
         class="text-no-wrap"
         :title="
           AGGREGATE_GERMLINE_REVIEW_STATUS_LABEL[
-            rcv.classifications?.germlineClassification!.reviewStatus
+            rcv.classifications?.germline_classification!.review_status
           ]
         "
       >
@@ -54,7 +54,7 @@ const isMultiRecord = computed<boolean>(() => {
             v-if="
               i <=
               AGGREGATE_GERMLINE_REVIEW_STATUS_STARS[
-                rcv.classifications?.germlineClassification!.reviewStatus
+                rcv.classifications?.germline_classification!.review_status
               ]
             "
           >
@@ -78,20 +78,20 @@ const isMultiRecord = computed<boolean>(() => {
     </td>
   </tr>
 
-  <tr v-if="rcv.classifications?.somaticClinicalImpact">
+  <tr v-if="rcv.classifications?.somatic_clinical_impact">
     <td>
       <v-chip v-if="isMultiRecord" class="tonal mr-2" size="small"> oncogenicity </v-chip>
       {{ (rcv.title ?? 'AND not provided').split('AND')[1] }}
     </td>
     <td>
-      <template v-if="rcv.classifications?.somaticClinicalImpact?.descriptions?.length">
+      <template v-if="rcv.classifications?.somatic_clinical_impact?.descriptions?.length">
         <span
-          v-for="(description, idx) in rcv.classifications?.somaticClinicalImpact?.descriptions ??
+          v-for="(description, idx) in rcv.classifications?.somatic_clinical_impact?.descriptions ??
           []"
           :key="idx"
         >
           {{ description.value }}
-          ({{ description.submissionCount }})
+          ({{ description.submission_count }})
         </span>
       </template>
       <template v-else> UNSPECIFIED </template>
@@ -101,7 +101,7 @@ const isMultiRecord = computed<boolean>(() => {
         class="text-no-wrap"
         :title="
           AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_LABEL[
-            rcv.classifications!.somaticClinicalImpact!.reviewStatus
+            rcv.classifications!.somatic_clinical_impact!.review_status
           ]
         "
       >
@@ -110,7 +110,7 @@ const isMultiRecord = computed<boolean>(() => {
             v-if="
               i <=
               AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_STARS[
-                rcv.classifications!.somaticClinicalImpact!.reviewStatus
+                rcv.classifications!.somatic_clinical_impact!.review_status
               ]
             "
           >
@@ -134,15 +134,15 @@ const isMultiRecord = computed<boolean>(() => {
     </td>
   </tr>
 
-  <tr v-if="rcv.classifications?.oncogenicityClassification">
+  <tr v-if="rcv.classifications?.oncogenicity_classification">
     <td>
       <v-chip v-if="isMultiRecord" class="tonal mr-2" size="small"> oncogenicity </v-chip>
       {{ (rcv.title ?? 'AND not provided').split('AND')[1] }}
     </td>
     <td>
-      <template v-if="rcv.classifications?.oncogenicityClassification?.description">
-        {{ rcv.classifications?.oncogenicityClassification!.description.value }}
-        ({{ rcv.classifications?.oncogenicityClassification!.description.submissionCount }})
+      <template v-if="rcv.classifications?.oncogenicity_classification?.description">
+        {{ rcv.classifications?.oncogenicity_classification!.description.value }}
+        ({{ rcv.classifications?.oncogenicity_classification!.description.submission_count }})
       </template>
       <template v-else> UNSPECIFIED </template>
     </td>
@@ -151,7 +151,7 @@ const isMultiRecord = computed<boolean>(() => {
         class="text-no-wrap"
         :title="
           AGGREGATE_ONCOGENICITY_REVIEW_STATUS_LABEL[
-            rcv.classifications?.oncogenicityClassification!.reviewStatus
+            rcv.classifications?.oncogenicity_classification!.review_status
           ]
         "
       >
@@ -160,7 +160,7 @@ const isMultiRecord = computed<boolean>(() => {
             v-if="
               i <=
               AGGREGATE_ONCOGENICITY_REVIEW_STATUS_STARS[
-                rcv.classifications?.oncogenicityClassification!.reviewStatus
+                rcv.classifications?.oncogenicity_classification!.review_status
               ]
             "
           >

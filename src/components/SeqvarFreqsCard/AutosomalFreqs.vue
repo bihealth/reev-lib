@@ -1,49 +1,41 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 
-import { SeqvarInfoResult } from '../../api/annonars/types'
 import { type Seqvar } from '../../lib/genomicVars'
 import { roundIt, separateIt as sep } from '../../lib/utils'
-import {
-  CohortAlleleCounts as Gnomad2CohortAlleleCounts,
-  PopulationAlleleCounts as Gnomad2PopulationAlleleCounts,
-  Record as Gnomad2Record
-} from '../../pbs/annonars/gnomad/gnomad2'
-import {
-  CohortAlleleCounts as Gnomad3CohortAlleleCounts,
-  PopulationAlleleCounts as Gnomad3PopulationAlleleCounts,
-  Record as Gnomad3Record
-} from '../../pbs/annonars/gnomad/gnomad3'
-import {
-  AncestryGroupAlleleCounts as Gnomad4AncestryGroupAlleleCounts,
-  CohortAlleleCounts as Gnomad4CohortAlleleCounts,
-  Record as Gnomad4Record
-} from '../../pbs/annonars/gnomad/gnomad4'
 import { chromIsXY, isInParRegion } from './lib'
+import { Gnomad2CohortAlleleCounts, Gnomad2PopulationAlleleCounts, Gnomad2Record, Gnomad3CohortAlleleCounts, Gnomad3PopulationAlleleCounts, Gnomad3Record, Gnomad4AncestryGroupAlleleCounts, Gnomad4CohortAlleleCounts, Gnomad4Record, SeqvarsAnnoResponseRecord } from '../../ext/annonars-api/src/lib'
 
 const props = defineProps<{
   /** Annotated sequence variant. */
   seqvar?: Seqvar
   /** Annotations. */
-  varAnnos?: SeqvarInfoResult
+  varAnnos?: SeqvarsAnnoResponseRecord
   /** Dataset to use. */
-  dataset: 'gnomadExomes' | 'gnomadGenomes'
+  dataset: 'gnomad_exomes' | 'gnomad_genomes'
 }>()
 
 const FREQ_DIGITS = 5
 
 const selAnnos = computed<Gnomad2Record | Gnomad3Record | Gnomad4Record | undefined>(() => {
-  if (!props.varAnnos) {
+  const dataset = props.varAnnos?.[props.dataset]
+  if (!dataset) {
     return undefined
+  } else if ('gnomad2' in dataset) {
+    return dataset.gnomad2
+  } else if ('gnomad3' in dataset) {
+    return dataset.gnomad3
+  } else if ('gnomad4' in dataset) {
+    return dataset.gnomad4
   } else {
-    return props.varAnnos[props.dataset]
+    return undefined
   }
 })
 
 const noCohort = computed<
   Gnomad2CohortAlleleCounts | Gnomad3CohortAlleleCounts | Gnomad4CohortAlleleCounts | undefined
 >(() => {
-  for (const elem of selAnnos.value?.alleleCounts ?? []) {
+  for (const elem of selAnnos.value?.allele_counts ?? []) {
     if (!elem.cohort) {
       return elem
     }
@@ -95,8 +87,8 @@ const variantIsInParRegion = isInParRegion(props.seqvar)
     <div>
       <div>
         <v-card-subtitle class="px-0 mb-3 text-overline">
-          <template v-if="props.dataset === 'gnomadExomes'"> gnomAD Exomes </template>
-          <template v-if="props.dataset === 'gnomadGenomes'"> gnomAD Genomes </template>
+          <template v-if="props.dataset === 'gnomad_exomes'"> gnomAD Exomes </template>
+          <template v-if="props.dataset === 'gnomad_genomes'"> gnomAD Genomes </template>
           <a
             v-if="seqvar.genomeBuild == 'grch37'"
             :href="`https://gnomad.broadinstitute.org/variant/${seqvar.chrom.replace(/^chr/, '')}-${
@@ -233,21 +225,21 @@ const variantIsInParRegion = isInParRegion(props.seqvar)
             <th>Total</th>
             <td />
             <td class="text-right text-no-wrap">
-              {{ sep(noCohort?.bySex?.overall?.an ?? 0) }}
+              {{ sep(noCohort?.by_sex?.overall?.an ?? 0) }}
             </td>
             <td class="text-right text-no-wrap">
-              {{ sep(noCohort?.bySex?.overall?.ac ?? 0) }}
+              {{ sep(noCohort?.by_sex?.overall?.ac ?? 0) }}
             </td>
             <td class="text-right text-no-wrap">
-              {{ sep(noCohort?.bySex?.overall?.nhomalt ?? 0) }}
+              {{ sep(noCohort?.by_sex?.overall?.nhomalt ?? 0) }}
             </td>
             <td v-if="chromIsXY(seqvar)" class="text-right text-no-wrap">
-              {{ variantIsInParRegion ? 0 : sep(noCohort?.bySex?.xy?.ac ?? 0) }}
+              {{ variantIsInParRegion ? 0 : sep(noCohort?.by_sex?.xy?.ac ?? 0) }}
             </td>
             <!-- eslint-disable vue/no-v-html -->
             <td
               class="text-right text-no-wrap"
-              v-html="roundIt(noCohort?.bySex?.overall?.af ?? 0.0, FREQ_DIGITS)"
+              v-html="roundIt(noCohort?.by_sex?.overall?.af ?? 0.0, FREQ_DIGITS)"
             />
             <!-- eslint-enable -->
           </tr>
@@ -256,19 +248,19 @@ const variantIsInParRegion = isInParRegion(props.seqvar)
             <td />
             <td class="text-right text-no-wrap">XX</td>
             <td class="text-right text-no-wrap">
-              {{ sep(noCohort?.bySex?.xx?.an ?? 0) }}
+              {{ sep(noCohort?.by_sex?.xx?.an ?? 0) }}
             </td>
             <td class="text-right text-no-wrap">
-              {{ sep(noCohort?.bySex?.xx?.ac ?? 0) }}
+              {{ sep(noCohort?.by_sex?.xx?.ac ?? 0) }}
             </td>
             <td class="text-right text-no-wrap">
-              {{ sep(noCohort?.bySex?.xx?.nhomalt ?? 0) }}
+              {{ sep(noCohort?.by_sex?.xx?.nhomalt ?? 0) }}
             </td>
             <td v-if="chromIsXY(seqvar)" class="text-right text-no-wrap">0</td>
             <!-- eslint-disable vue/no-v-html -->
             <td
               class="text-right text-no-wrap"
-              v-html="roundIt(noCohort?.bySex?.xx?.af ?? 0.0, FREQ_DIGITS)"
+              v-html="roundIt(noCohort?.by_sex?.xx?.af ?? 0.0, FREQ_DIGITS)"
             />
             <!-- eslint-enable -->
           </tr>
@@ -277,21 +269,21 @@ const variantIsInParRegion = isInParRegion(props.seqvar)
             <td />
             <td class="text-right text-no-wrap">XY</td>
             <td class="text-right text-no-wrap">
-              {{ sep(noCohort?.bySex?.xy?.an ?? 0) }}
+              {{ sep(noCohort?.by_sex?.xy?.an ?? 0) }}
             </td>
             <td class="text-right text-no-wrap">
-              {{ sep(noCohort?.bySex?.xy?.ac ?? 0) }}
+              {{ sep(noCohort?.by_sex?.xy?.ac ?? 0) }}
             </td>
             <td class="text-right text-no-wrap">
-              {{ sep(noCohort?.bySex?.xy?.nhomalt ?? 0) }}
+              {{ sep(noCohort?.by_sex?.xy?.nhomalt ?? 0) }}
             </td>
             <td v-if="chromIsXY(seqvar)" class="text-right text-no-wrap">
-              {{ variantIsInParRegion ? 0 : sep(noCohort?.bySex?.xy?.ac ?? 0) }}
+              {{ variantIsInParRegion ? 0 : sep(noCohort?.by_sex?.xy?.ac ?? 0) }}
             </td>
             <!-- eslint-disable vue/no-v-html -->
             <td
               class="text-right text-no-wrap"
-              v-html="roundIt(noCohort?.bySex?.xy?.af ?? 0.0, FREQ_DIGITS)"
+              v-html="roundIt(noCohort?.by_sex?.xy?.af ?? 0.0, FREQ_DIGITS)"
             />
             <!-- eslint-enable -->
           </tr>

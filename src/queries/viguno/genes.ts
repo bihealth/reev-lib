@@ -36,6 +36,7 @@ export const useVigunoHpoGenesQuery = (
             max_results: toValue(max_results ?? (() => undefined))
           })
         }),
+        staleTime: Infinity, // static data so no need to refetch
         enabled: () => !!toValue(gene_id)
       },
       queryClient

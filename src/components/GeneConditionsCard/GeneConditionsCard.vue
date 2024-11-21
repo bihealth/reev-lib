@@ -3,8 +3,8 @@ import { titleCase } from 'title-case'
 import { computed, onMounted, ref, useSlots, watch } from 'vue'
 
 import DocsLink from '../DocsLink/DocsLink.vue'
-import { GenesConditionsRecord, GenesDiseaseAssociation, GenesDiseaseAssociationEntryConfidenceLevel, GenesDiseaseAssociationSource, GenesGeneInfoRecord, GenesPanelappAssociation, GenesPanelappAssociationConfidenceLevel, GenesPanelappRecordConfidenceLevel } from '@/ext/annonars-api/src/lib'
-import { ResultHpoTerm } from '@/ext/viguno-api/src/lib'
+import { GenesConditionsRecord, GenesDiseaseAssociation, GenesDiseaseAssociationEntryConfidenceLevel, GenesDiseaseAssociationSource, GenesGeneInfoRecord, GenesPanelappAssociation, GenesPanelappAssociationConfidenceLevel, GenesPanelappRecordConfidenceLevel } from '../../ext/annonars-api/src/lib'
+import { ResultHpoTerm } from '../../ext/viguno-api/src/lib'
 
 /** This component's props. */
 const props = withDefaults(

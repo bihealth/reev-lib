@@ -1,4 +1,4 @@
-import { GenesGtexTissue, GenesGtexTissueDetailed } from "@/ext/annonars-api/src/lib"
+import { GenesGtexTissue, GenesGtexTissueDetailed } from "../../ext/annonars-api/src/lib"
 
 export const TISSUE_LABELS: { [Key in GenesGtexTissue]: string } = {
  'AdiposeTissue' : 'Adipose Tissue',

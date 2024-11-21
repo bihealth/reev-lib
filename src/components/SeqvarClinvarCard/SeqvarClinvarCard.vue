@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-import { ExtractedVcvRecordList } from '../../pbs/annonars/clinvar/minimal'
 import DocsLink from '../DocsLink/DocsLink.vue'
 import GermlineClassification from './GermlineClassification.vue'
 import RcvRow from './RcvRow.vue'
 import SomaticClinicalImpact from './SomaticClinicalImpact.vue'
 import SomaticOncongenicity from './SomaticOncogenicity.vue'
+import { ExtractedVcvRecordList } from '../../ext/annonars-api/src/lib'
 
 /** This component's props */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -42,26 +42,26 @@ const expand = ref<boolean>(false)
       </template>
     </v-card-subtitle>
     <template
-      v-for="clinvarRecord in clinvarRecords?.records ?? []"
+      v-for="clinvarRecord in clinvarRecords.records ?? []"
       :key="clinvarRecord.accession!.accession"
     >
       <v-row>
         <v-col cols="6" class="ml-4 mb-3">
           <GermlineClassification
-            :germline-classification="clinvarRecord?.classifications?.germlineClassification"
+            :germline-classification="clinvarRecord.classifications?.germline_classification ?? undefined"
           />
         </v-col>
       </v-row>
       <v-row no-gutters class="ml-4 mb-2">
         <v-col cols="6">
           <SomaticClinicalImpact
-            :clinical-impact="clinvarRecord?.classifications?.somaticClinicalImpact"
+            :clinical-impact="clinvarRecord.classifications?.somatic_clinical_impact ?? undefined"
           />
         </v-col>
         <v-col cols="6">
           <SomaticOncongenicity
             :oncogenicity-classification="
-              clinvarRecord?.classifications?.oncogenicityClassification
+              clinvarRecord.classifications?.oncogenicity_classification
             "
           />
         </v-col>

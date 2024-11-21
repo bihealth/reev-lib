@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { GenesHgncRecord } from '@/ext/annonars-api/src/lib';
+import { GenesHgncRecord } from '../../ext/annonars-api/src/lib';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps<{

@@ -1,23 +1,23 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import { AggregatedGermlineClassification } from '../../pbs/annonars/clinvar_data/clinvar_public'
 import {
   AGGREGATE_GERMLINE_REVIEW_STATUS_LABEL,
   AGGREGATE_GERMLINE_REVIEW_STATUS_STARS
 } from './constants'
 import { clinsigColor } from './helpers'
+import { ClinvarAggregatedGermlineClassification } from '../../ext/annonars-api/src/lib';
 
 /** This component's props */
 const props = defineProps<{
   /** ClinVar record from annonars */
-  germlineClassification?: AggregatedGermlineClassification
+  germlineClassification?: ClinvarAggregatedGermlineClassification
 }>()
 
 /* The number of stars for the classification. */
 const classificationStars = computed<number>(() => {
-  if (props.germlineClassification?.reviewStatus) {
-    return AGGREGATE_GERMLINE_REVIEW_STATUS_STARS[props.germlineClassification?.reviewStatus]
+  if (props.germlineClassification?.review_status) {
+    return AGGREGATE_GERMLINE_REVIEW_STATUS_STARS[props.germlineClassification?.review_status]
   } else {
     return 0
   }
@@ -25,8 +25,8 @@ const classificationStars = computed<number>(() => {
 
 /* The label to display for for the classification. */
 const classificationLabel = computed<string>(() => {
-  if (props.germlineClassification?.reviewStatus) {
-    return AGGREGATE_GERMLINE_REVIEW_STATUS_LABEL[props.germlineClassification?.reviewStatus]
+  if (props.germlineClassification?.review_status) {
+    return AGGREGATE_GERMLINE_REVIEW_STATUS_LABEL[props.germlineClassification?.review_status]
   } else {
     return 'UNSPECIFIED'
   }
@@ -49,7 +49,7 @@ const classificationLabel = computed<string>(() => {
         Classification
       </v-col>
       <v-col cols="9">
-        <v-chip :color="clinsigColor(germlineClassification?.description)">
+        <v-chip :color="clinsigColor(germlineClassification?.description ?? undefined)">
           {{ germlineClassification?.description ?? 'UNSPECIFIED' }}
         </v-chip>
       </v-col>

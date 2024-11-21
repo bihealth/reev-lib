@@ -1,23 +1,23 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import { AggregatedSomaticClinicalImpact } from '../../pbs/annonars/clinvar_data/clinvar_public'
 import {
   AGGREGATE_ONCOGENICITY_REVIEW_STATUS_LABEL,
   AGGREGATE_ONCOGENICITY_REVIEW_STATUS_STARS
 } from './constants'
 import { clinsigColor } from './helpers'
+import { ClinvarAggregatedOncogenicityClassification } from '../../ext/annonars-api/src/lib';
 
 /** This component's props */
 const props = defineProps<{
   /** ClinVar record from annonars */
-  oncogenicity?: AggregatedSomaticClinicalImpact
+  oncogenicity?: ClinvarAggregatedOncogenicityClassification
 }>()
 
 /* The number of stars for the classification. */
 const classificationStars = computed<number>(() => {
-  if (props.oncogenicity?.reviewStatus) {
-    return AGGREGATE_ONCOGENICITY_REVIEW_STATUS_STARS[props.oncogenicity?.reviewStatus]
+  if (props.oncogenicity?.review_status) {
+    return AGGREGATE_ONCOGENICITY_REVIEW_STATUS_STARS[props.oncogenicity?.review_status]
   } else {
     return 0
   }
@@ -25,8 +25,8 @@ const classificationStars = computed<number>(() => {
 
 /* The label to display for for the classification. */
 const classificationLabel = computed<string>(() => {
-  if (props.oncogenicity?.reviewStatus) {
-    return AGGREGATE_ONCOGENICITY_REVIEW_STATUS_LABEL[props.oncogenicity?.reviewStatus]
+  if (props.oncogenicity?.review_status) {
+    return AGGREGATE_ONCOGENICITY_REVIEW_STATUS_LABEL[props.oncogenicity?.review_status]
   } else {
     return 'UNSPECIFIED'
   }
@@ -49,7 +49,7 @@ const classificationLabel = computed<string>(() => {
         Oncogenicity
       </v-col>
       <v-col cols="9">
-        <v-chip :color="clinsigColor(oncogenicity?.description)">
+        <v-chip :color="clinsigColor(oncogenicity?.description ?? undefined)">
           {{ oncogenicity?.description ?? 'UNSPECIFIED' }}
         </v-chip>
       </v-col>

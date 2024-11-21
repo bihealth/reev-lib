@@ -6,17 +6,16 @@ import Plotly from 'plotly.js-dist'
 import { computed, onMounted, ref, watch } from 'vue'
 
 import type { GenomeBuild } from '../../lib/genomeBuilds'
-import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
-import { ExtractedVcvRecord } from '../../pbs/annonars/clinvar_data/extracted_vars'
-import { Transcript } from '../../pbs/mehari/txs'
 import { CLINVAR_SIGNIFICANCE_TO_INT, convertClinvarSignificance } from './lib'
 import { type PlotlyDataPoint, downsample } from './lib'
+import { ClinvarExtractedVcvRecord, GenesClinvarPerGeneRecord } from '../../ext/annonars-api/src/lib'
+import { Transcript } from '../../ext/mehari-api/src/lib/types.gen'
 
 /** This component's props. */
 const props = withDefaults(
   defineProps<{
     /** Gene information from annonars. */
-    clinvarPerGene?: ClinvarPerGeneRecord
+    clinvarPerGene?: GenesClinvarPerGeneRecord
     /** Transctipts information. */
     transcripts?: Transcript[]
     /** The genome release. */
@@ -24,12 +23,7 @@ const props = withDefaults(
     /** Gene symbol */
     geneSymbol?: string
   }>(),
-  {
-    clinvarPerGene: undefined,
-    transcripts: undefined,
-    genomeBuild: 'grch37',
-    geneSymbol: undefined
-  }
+  { genomeBuild: 'grch37' }
 )
 
 /** The current plot boundaries. */
@@ -60,12 +54,12 @@ const clinvarData = computed<PlotlyDataPoint[]>(() => {
   if (!props.clinvarPerGene) {
     return []
   }
-  let clinvarInfo: ExtractedVcvRecord[] = []
-  for (const perRelease of props.clinvarPerGene.perReleaseVars) {
+  let clinvarInfo: ClinvarExtractedVcvRecord[] = []
+  for (const perRelease of props.clinvarPerGene.per_release_vars) {
     if (perRelease.release!.toLowerCase() == props.genomeBuild) {
       clinvarInfo = perRelease.variants.sort(
-        (a: ExtractedVcvRecord, b: ExtractedVcvRecord) =>
-          a.sequenceLocation!.start! - b.sequenceLocation!.start!
+        (a: ClinvarExtractedVcvRecord, b: ClinvarExtractedVcvRecord) =>
+          a.sequence_location!.start! - b.sequence_location!.start!
       )
     }
   }
@@ -75,18 +69,18 @@ const clinvarData = computed<PlotlyDataPoint[]>(() => {
   // Update plot boundaries
   // eslint-disable-next-line vue/no-side-effects-in-computed-properties
   currentPlotBoundaries.value = {
-    minX: clinvarInfo[0].sequenceLocation!.start!,
-    maxX: clinvarInfo[clinvarInfo.length - 1].sequenceLocation!.start!
+    minX: clinvarInfo[0].sequence_location!.start!,
+    maxX: clinvarInfo[clinvarInfo.length - 1].sequence_location!.start!
   }
   return clinvarInfo
     .filter(
-      (variant: ExtractedVcvRecord) =>
-        variant.classifications?.germlineClassification?.description?.length
+      (variant: ClinvarExtractedVcvRecord) =>
+        variant.classifications?.germline_classification?.description?.length
     )
-    .map((variant: ExtractedVcvRecord) => ({
-      x: variant.sequenceLocation!.start!,
+    .map((variant: ClinvarExtractedVcvRecord) => ({
+      x: variant.sequence_location!.start!,
       y: CLINVAR_SIGNIFICANCE_TO_INT[
-        convertClinvarSignificance(variant.classifications?.germlineClassification?.description)
+        convertClinvarSignificance(variant.classifications?.germline_classification?.description ?? undefined)
       ],
       count: 1
     }))
@@ -157,11 +151,11 @@ const exons = computed(() => {
   }
   const exons = []
   for (const transcript of props.transcripts) {
-    for (const ga of transcript.genomeAlignments) {
+    for (const ga of transcript.genome_alignments) {
       for (const exon of ga.exons) {
         exons.push({
-          start: exon.altStartI,
-          stop: exon.altEndI
+          start: exon.alt_start_i,
+          stop: exon.alt_end_i
         })
       }
     }

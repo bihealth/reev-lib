@@ -24,6 +24,7 @@ export const useAnnonarsGenesInfoQuery = (
         hgnc_id: toValue(hgnc_id),
       })
     }),
+    staleTime: Infinity, // static data so no need to refetch
     enabled: () => !!toValue(hgnc_id),
   }, queryClient
 )
@@ -47,6 +48,7 @@ export const useAnnonarsGenesClinvarQuery = (
         hgnc_id: toValue(hgnc_id),
       })
     }),
+    staleTime: Infinity, // static data so no need to refetch
     enabled: () => !!toValue(hgnc_id),
   }, queryClient
 )

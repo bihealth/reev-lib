@@ -4,21 +4,15 @@
  */
 import { computed } from 'vue'
 
-import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
-import { CoarseClinicalSignificance } from '../../pbs/annonars/clinvar_data/class_by_freq'
 import VegaPlot from '../VegaPlot/VegaPlot.vue'
+import { GenesClinvarPerGeneRecord } from '../../ext/annonars-api/src/lib';
 
 const props = defineProps<{
   /** Gene per clinvar */
-  clinvarPerGene?: ClinvarPerGeneRecord
+  clinvarPerGene?: GenesClinvarPerGeneRecord
 }>()
 
-const COARSE_CLINSIG_LABELS: { [key in CoarseClinicalSignificance]: string } = {
-  [CoarseClinicalSignificance.COARSE_CLINICAL_SIGNIFICANCE_BENIGN]: 'benign',
-  [CoarseClinicalSignificance.COARSE_CLINICAL_SIGNIFICANCE_UNCERTAIN]: 'uncertain',
-  [CoarseClinicalSignificance.COARSE_CLINICAL_SIGNIFICANCE_PATHOGENIC]: 'pathogenic',
-  [CoarseClinicalSignificance.COARSE_CLINICAL_SIGNIFICANCE_UNSPECIFIED]: 'UNSPECIFIED'
-}
+const COARSE_CLINSIG_LABELS = ['benign', 'uncertain', 'pathogenic', 'UNSPECIFIED']
 
 const bucketLabels = [
   'no frequency',
@@ -54,7 +48,7 @@ const vegaData = computed<any>(() => {
     freqBucketNo: number
     value: number
   }[] = []
-  const benignCounts = props.clinvarPerGene?.perFreqCounts?.benignCounts ?? []
+  const benignCounts = props.clinvarPerGene?.per_freq_counts?.benign_counts ?? []
   for (let i = 0; i < benignCounts.length; i++) {
     if (benignCounts[i]) {
       values.push({
@@ -65,7 +59,7 @@ const vegaData = computed<any>(() => {
       })
     }
   }
-  const uncertainCounts = props.clinvarPerGene?.perFreqCounts?.uncertainCounts ?? []
+  const uncertainCounts = props.clinvarPerGene?.per_freq_counts?.uncertain_counts ?? []
   for (let i = 0; i < uncertainCounts.length; i++) {
     if (uncertainCounts[i]) {
       values.push({
@@ -76,7 +70,7 @@ const vegaData = computed<any>(() => {
       })
     }
   }
-  const pathogenicCounts = props.clinvarPerGene?.perFreqCounts?.pathogenicCounts ?? []
+  const pathogenicCounts = props.clinvarPerGene?.per_freq_counts?.pathogenic_counts ?? []
   for (let i = 0; i < pathogenicCounts.length; i++) {
     if (pathogenicCounts[i]) {
       values.push({
@@ -133,15 +127,15 @@ const vegaEncoding = {
     field: 'coarseClinsig',
     title: 'clinical sig.',
     type: 'nominal',
-    sort: Object.values(COARSE_CLINSIG_LABELS)
+    sort: COARSE_CLINSIG_LABELS
   },
   color: {
     field: 'coarseClinsig',
     title: 'clinical sig.',
     type: 'nominal',
-    sort: Object.values(COARSE_CLINSIG_LABELS),
+    sort: COARSE_CLINSIG_LABELS,
     scale: {
-      domain: Object.values(COARSE_CLINSIG_LABELS).filter((label) => label !== 'UNSPECIFIED'),
+      domain: COARSE_CLINSIG_LABELS.filter((label) => label !== 'UNSPECIFIED'),
       range: ['#5d9936', '#f5c964', '#b05454']
     }
   }

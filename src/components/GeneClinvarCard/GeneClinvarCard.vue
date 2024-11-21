@@ -3,22 +3,21 @@
  * This component displays a Card with ClinVar variant information aggregated
  * to the gene level.
  */
+import { GenesClinvarPerGeneRecord, GenesGeneInfoRecord } from '../../ext/annonars-api/src/lib'
 import type { GenomeBuild } from '../../lib/genomeBuilds'
-import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
-import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
-import { Transcript } from '../../pbs/mehari/txs'
 import DocsLink from '../DocsLink/DocsLink.vue'
 import ClinvarFreqPlot from './ClinvarFreqPlot.vue'
 import ClinvarImpact from './ClinvarImpact.vue'
 import VariationLandscapePlotly from './VariationLandscapePlotly.vue'
+import { Transcript } from '../../ext/mehari-api/src/lib/types.gen'
 
 /** This component's props. */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps<{
   /** Gene per clinvar */
-  clinvarPerGene?: ClinvarPerGeneRecord
+  clinvarPerGene?: GenesClinvarPerGeneRecord
   /** Gene information, if any. */
-  geneInfo?: GeneInfoRecord
+  geneInfo?: GenesGeneInfoRecord
   /** The genome build to display for. */
   genomeBuild?: GenomeBuild
   /** Transctipts information. */

@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 
-import { SeqvarInfoResult } from '../../api/annonars/types'
 import { roundIt } from '../../lib/utils'
 import DocsLink from '../DocsLink/DocsLink.vue'
 import ScoreDisplay from './ScoreDisplay.vue'
 import Conservation from './UcscConservation.vue'
+import { SeqvarsAnnoResponseRecord } from '../../ext/annonars-api/src/lib'
 
 const props = defineProps<{
   /** Information to display scores for. */
-  varAnnos?: SeqvarInfoResult
+  varAnnos?: SeqvarsAnnoResponseRecord
 }>()
 
 const alphaMissenseScoreList = computed<number[]>(() => {

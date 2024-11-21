@@ -1,0 +1,255 @@
+openapi: 3.0.3
+
+info:
+  title: PubTator Search API
+  description: |
+    API for searching PubTator articles and retrieving metadata.
+
+    Note that only the minimal set of data required to support
+    embedding into reef-frontend-lib has been implemented.
+  version: 1.0.0
+
+paths:
+  /search/:
+    get:
+      operationId: search
+      summary: Search PubTator articles
+      description: >-
+        Search for PubTator articles and retrieve metadata like titles,
+        journals, authors, and more.
+      parameters:
+        - name: text
+          in: query
+          required: true
+          description: Search term(s) to query PubTator.
+          schema:
+            type: string
+            example: GENE_BRCA1
+        - name: page
+          in: query
+          required: false
+          description: Page number for paginated results.
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: A list of search results
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+
+  /publications/export/biocjson:
+    get:
+      operationId: publicationsExportBiocjson
+      summary: Export PubTator articles in BioC JSON format
+      description: >-
+        Export PubTator articles in BioC JSON format.
+      parameters:
+        - name: pmids
+          in: query
+          required: true
+          description: Comma-separated list of PubTator article PMIDs.
+          schema:
+            type: string
+            example: 123456,789012
+      responses:
+        '200':
+          description: A list of search results
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PublicationsExportBiocjsonResponse'
+
+components:
+  schemas:
+    SearchResponse:
+      type: object
+      additionalProperties: true
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchResponseArticle'
+        page_size:
+          type: integer
+        current:
+          type: integer
+        count:
+          type: integer
+        total_pages:
+          type: integer
+      required:
+        - results
+        - page_size
+        - current
+        - count
+        - total_pages
+
+    SearchResponseArticle:
+      type: object
+      additionalProperties: true
+      properties:
+        _id:
+          type: string
+        pmid:
+          type: integer
+        title:
+          type: string
+        journal:
+          type: string
+        authors:
+          type: array
+          items:
+            type: string
+      required:
+        - _id
+        - pmid
+        - title
+        - journal
+        - authors
+
+    PublicationsExportBiocjsonResponse:
+      type: object
+      properties:
+        PubTator3:
+          type: array
+          items:
+            $ref: '#/components/schemas/PublicationsExportBiocjsonResponseEntry'
+      required:
+        - PubTator3
+
+    PublicationsExportBiocjsonResponseEntry:
+      type: object
+      additionalProperties: true
+      properties:
+        _id:
+          type: string
+        id:
+          type: string
+        passages:
+          type: array
+          items:
+            $ref: '#/components/schemas/PublicationsExportBiocjsonResponseEntryPassage'
+        pmid:
+          type: integer
+        pmcid:
+          type: string
+        date:
+          type: string
+        journal:
+          type: string
+        authors:
+          type: array
+          items:
+            type: string
+      required:
+        - _id
+        - id
+        - passages
+        - pmid
+        - date
+        - journal
+        - authors
+
+    PublicationsExportBiocjsonResponseEntryPassage:
+      type: object
+      additionalProperties: true
+      properties:
+        infons:
+          $ref: '#/components/schemas/PublicationsExportBiocjsonResponseEntryPassageInfons'
+        offset:
+          type: integer
+        text:
+          type: string
+        annotations:
+          type: array
+          items:
+            $ref: '#/components/schemas/PublicationsExportBiocjsonResponseEntryPassageAnnotation'
+
+    PublicationsExportBiocjsonResponseEntryPassageInfons:
+      type: object
+      additionalProperties: true
+      properties:
+        journal:
+          type: string
+        year:
+          type: string
+        title:
+          type: string
+        authors:
+          type: string
+      required:
+        - journal
+        - year
+        - title
+        - authors
+
+    PublicationsExportBiocjsonResponseEntryPassageAnnotation:
+      type: object
+      additionalProperties: true
+      properties:
+        id:
+          type: string
+        infons:
+          $ref: '#/components/schemas/PublicationsExportBiocjsonResponseEntryPassageAnnotationInfons'
+        text:
+          type: string
+        locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/PublicationsExportBiocjsonResponseEntryPassageAnnotationLocation'
+      required:
+        - id
+        - infons
+        - text
+        - locations
+
+
+    PublicationsExportBiocjsonResponseEntryPassageAnnotationInfons:
+      type: object
+      additionalProperties: true
+      properties:
+        identifier:
+          type: string
+        type:
+          type: string
+        valid:
+          type: boolean
+        normalized:
+          type: array
+          items:
+            type: string
+        database:
+          type: string
+        normalized_id:
+          type: string
+        biotype:
+          $ref: '#/components/schemas/PublicationsExportBiocjsonResponseEntryPassageAnnotationInfonsBiotype'
+        name:
+          type: string
+        accession:
+          type: string
+
+    PublicationsExportBiocjsonResponseEntryPassageAnnotationInfonsBiotype:
+      type: string
+      enum:
+        - cellline
+        - chemical
+        - disease
+        - gene
+        - species
+        - variant
+
+    PublicationsExportBiocjsonResponseEntryPassageAnnotationLocation:
+      type: object
+      additionalProperties: true
+      properties:
+        offset:
+          type: integer
+        length:
+          type: integer
+      required:
+        - offset
+        - length

@@ -6,17 +6,11 @@
 import { computed } from 'vue'
 
 import { separateIt } from '../../lib/utils'
-import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
-import { GeneImpact } from '../../pbs/annonars/clinvar_data/gene_impact'
+import { GenesClinvarPerGeneRecord, GenesGeneImpact } from '../../ext/annonars-api/src/lib'
 
-const props = withDefaults(
-  defineProps<{
-    clinvarPerGene?: ClinvarPerGeneRecord
-  }>(),
-  {
-    clinvarPerGene: undefined
-  }
-)
+const props = defineProps<{
+    clinvarPerGene?: GenesClinvarPerGeneRecord
+  }>()
 
 /** Enumeration fo coarser impacts. */
 enum CoarseImpact {
@@ -52,24 +46,24 @@ const COARSE_IMPACT_LABELS: { [key in CoarseImpact]: string } = {
 }
 
 /** Mapping from raw to coarse impact.  */
-const IMPACT_RAW_TO_COARSE: { [key in GeneImpact]: CoarseImpact } = {
-  [GeneImpact.GENE_IMPACT_UNSPECIFIED]: CoarseImpact.UNSPECIFIED,
-  [GeneImpact.GENE_IMPACT_THREE_PRIME_UTR_VARIANT]: CoarseImpact.NON_CODING,
-  [GeneImpact.GENE_IMPACT_FIVE_PRIME_UTR_VARIANT]: CoarseImpact.NON_CODING,
-  [GeneImpact.GENE_IMPACT_DOWNSTREAM_TRANSCRIPT_VARIANT]: CoarseImpact.NON_CODING,
-  [GeneImpact.GENE_IMPACT_FRAMESHIFT_VARIANT]: CoarseImpact.NONSENSE,
-  [GeneImpact.GENE_IMPACT_INFRAME_INDEL]: CoarseImpact.MISSENSE_INFRAME,
-  [GeneImpact.GENE_IMPACT_START_LOST]: CoarseImpact.NONSENSE,
-  [GeneImpact.GENE_IMPACT_INTRON_VARIANT]: CoarseImpact.NON_CODING,
-  [GeneImpact.GENE_IMPACT_MISSENSE_VARIANT]: CoarseImpact.MISSENSE_INFRAME,
-  [GeneImpact.GENE_IMPACT_NON_CODING_TRANSCRIPT_VARIANT]: CoarseImpact.NON_CODING,
-  [GeneImpact.GENE_IMPACT_STOP_GAINED]: CoarseImpact.NONSENSE,
-  [GeneImpact.GENE_IMPACT_NO_SEQUENCE_ALTERATION]: CoarseImpact.SYNONYMOUS,
-  [GeneImpact.GENE_IMPACT_SPLICE_ACCEPTOR_VARIANT]: CoarseImpact.NONSENSE,
-  [GeneImpact.GENE_IMPACT_SPLICE_DONOR_VARIANT]: CoarseImpact.NONSENSE,
-  [GeneImpact.GENE_IMPACT_STOP_LOST]: CoarseImpact.MISSENSE_INFRAME,
-  [GeneImpact.GENE_IMPACT_SYNONYMOUS_VARIANT]: CoarseImpact.SYNONYMOUS,
-  [GeneImpact.GENE_IMPACT_UPSTREAM_TRANSCRIPT_VARIANT]: CoarseImpact.NON_CODING
+const IMPACT_RAW_TO_COARSE: { [key in GenesGeneImpact]: CoarseImpact } = {
+  'Unspecified': CoarseImpact.UNSPECIFIED,
+  'ThreePrimeUtrVariant': CoarseImpact.NON_CODING,
+  'FivePrimeUtrVariant': CoarseImpact.NON_CODING,
+  'DownstreamTranscriptVariant': CoarseImpact.NON_CODING,
+  'FrameshiftVariant': CoarseImpact.NONSENSE,
+  'InframeIndel': CoarseImpact.MISSENSE_INFRAME,
+  'StartLost': CoarseImpact.NONSENSE,
+  'IntronVariant': CoarseImpact.NON_CODING,
+  'MissenseVariant': CoarseImpact.MISSENSE_INFRAME,
+  'NonCodingTranscriptVariant': CoarseImpact.NON_CODING,
+  'StopGained': CoarseImpact.NONSENSE,
+  'NoSequenceAlteration': CoarseImpact.SYNONYMOUS,
+  'SpliceAcceptorVariant': CoarseImpact.NONSENSE,
+  'SpliceDonorVariant': CoarseImpact.NONSENSE,
+  'StopLost': CoarseImpact.MISSENSE_INFRAME,
+  'SynonymousVariant': CoarseImpact.SYNONYMOUS,
+  'UpstreamTranscriptVariant': CoarseImpact.NON_CODING
 }
 
 /** Mapping from clinsig order to coarse order */
@@ -100,18 +94,18 @@ const perCoarseImpactCounts = computed(() => {
       return [0, 0, 0, 0]
     })
 
-  if (props.clinvarPerGene?.perImpactCounts) {
-    for (const perImpactCount of props.clinvarPerGene.perImpactCounts!.impactCounts) {
-      const coarseImpact = IMPACT_RAW_TO_COARSE[perImpactCount.geneImpact]
+  if (props.clinvarPerGene?.per_impact_counts) {
+    for (const perImpactCount of props.clinvarPerGene.per_impact_counts!.impact_counts) {
+      const coarseImpact = IMPACT_RAW_TO_COARSE[perImpactCount.gene_impact]
       if (!showCoarseImpact(coarseImpact)) {
         continue
       }
       const localCounts = [
-        perImpactCount.countBenign,
-        perImpactCount.countLikelyBenign,
-        perImpactCount.countUncertainSignificance,
-        perImpactCount.countLikelyPathogenic,
-        perImpactCount.countPathogenic
+        perImpactCount.count_benign,
+        perImpactCount.count_likely_benign,
+        perImpactCount.count_uncertain_significance,
+        perImpactCount.count_likely_pathogenic,
+        perImpactCount.count_pathogenic
       ]
       for (let i = 0; i < 5; ++i) {
         const idx = COARSE_IMPACT_TO_INDEX[coarseImpact]
@@ -163,7 +157,7 @@ const clinsigColor = (coarseClinsigIdx: number, percent: number): string => {
 
 <template>
   <!-- no ClinVar data => display loader -->
-  <template v-if="!clinvarPerGene?.perImpactCounts?.impactCounts?.length">
+  <template v-if="!clinvarPerGene?.per_impact_counts?.impact_counts?.length">
     <v-skeleton-loader
       class="mt-3 mx-auto border"
       type="table-heading,table-row,table-row,table-row,table-row"

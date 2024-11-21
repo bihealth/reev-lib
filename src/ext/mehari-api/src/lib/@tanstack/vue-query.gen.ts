@@ -2,8 +2,8 @@
 
 import type { Options } from '@hey-api/client-fetch';
 import { queryOptions, infiniteQueryOptions, type InfiniteData } from '@tanstack/vue-query';
-import type { SeqvarsCsqData, StrucvarsCsqData, StrucvarsCsqError, StrucvarsCsqResponse2 } from '../types.gen';
-import { client, seqvarsCsq, strucvarsCsq, versionsInfo } from '../services.gen';
+import type { GenesTranscriptsListData, SeqvarsCsqData, StrucvarsCsqData, StrucvarsCsqError, StrucvarsCsqResponse2 } from '../types.gen';
+import { client, genesTranscriptsList, seqvarsCsq, strucvarsCsq, versionsInfo } from '../services.gen';
 
 type QueryKey<TOptions extends Options> = [
     Pick<TOptions, 'baseUrl' | 'body' | 'headers' | 'path' | 'query'> & {
@@ -30,6 +30,25 @@ const createQueryKey = <TOptions extends Options>(id: string, options?: TOptions
         params.query = options.query;
     }
     return params;
+};
+
+export const genesTranscriptsListQueryKey = (options: Options<GenesTranscriptsListData>) => [
+    createQueryKey('genesTranscriptsList', options)
+];
+
+export const genesTranscriptsListOptions = (options: Options<GenesTranscriptsListData>) => {
+    return queryOptions({
+        queryFn: async ({ queryKey, signal }) => {
+            const { data } = await genesTranscriptsList({
+                ...options,
+                ...queryKey[0],
+                signal,
+                throwOnError: true
+            });
+            return data;
+        },
+        queryKey: genesTranscriptsListQueryKey(options)
+    });
 };
 
 export const seqvarsCsqQueryKey = (options: Options<SeqvarsCsqData>) => [

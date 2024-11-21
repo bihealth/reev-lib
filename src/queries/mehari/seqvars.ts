@@ -3,7 +3,7 @@
  */
 import { seqvarsCsqOptions } from '../../ext/mehari-api/src/lib/@tanstack/vue-query.gen'
 import { QueryClient, useQuery } from '@tanstack/vue-query'
-import { ComputedRef, MaybeRefOrGetter, toValue } from 'vue'
+import { MaybeRefOrGetter, toValue } from 'vue'
 
 /**
  * Query for the consequence of a seqvar.
@@ -47,6 +47,7 @@ export const useMehariSeqvarsCsqQuery = (
           hgnc_id: toValue(hgnc_id) ?? undefined
         })
       }),
+      staleTime: Infinity, // static data so no need to refetch
       enabled: () =>
         !!toValue(genome_release) &&
         !!toValue(chromosome) &&

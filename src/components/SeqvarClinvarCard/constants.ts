@@ -1,121 +1,87 @@
 import {
-  AggregateGermlineReviewStatus,
-  AggregateOncogenicityReviewStatus,
-  AggregateSomaticClinicalImpactReviewStatus
-} from '../../pbs/annonars/clinvar_data/clinvar_public'
+  ClinvarAggregateGermlineReviewStatus,
+  ClinvarAggregateOncogenicityReviewStatus,
+  ClinvarAggregateSomaticClinicalImpactReviewStatus
+} from '../../ext/annonars-api/src/lib'
 
 export const AGGREGATE_GERMLINE_REVIEW_STATUS_LABEL: {
-  [key in AggregateGermlineReviewStatus]: string
+  [key in ClinvarAggregateGermlineReviewStatus]: string
 } = {
-  [AggregateGermlineReviewStatus.AGGREGATE_GERMLINE_REVIEW_STATUS_UNSPECIFIED]: 'UNSPECIFIED',
-  [AggregateGermlineReviewStatus.AGGREGATE_GERMLINE_REVIEW_STATUS_NO_CLASSIFICATION_PROVIDED]:
-    'no classification provided',
-  [AggregateGermlineReviewStatus.AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED]:
-    'no assertion criteria provided',
-  [AggregateGermlineReviewStatus.AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER]:
-    'criteria provided, single submitter',
-  [AggregateGermlineReviewStatus.AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS]:
-    'criteria provided, multiple submitters, no conflicts',
-  [AggregateGermlineReviewStatus.AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_CONFLICTING_CLASSIFICATIONS]:
-    'criteria provided, conflicting classifications',
-  [AggregateGermlineReviewStatus.AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL]:
-    'reviewed by expert panel',
-  [AggregateGermlineReviewStatus.AGGREGATE_GERMLINE_REVIEW_STATUS_PRACTICE_GUIDELINE]:
-    'practice guideline',
-  [AggregateGermlineReviewStatus.AGGREGATE_GERMLINE_REVIEW_STATUS_NO_CLASSIFICATIONS_FROM_UNFLAGGED_RECORDS]:
-    'no classifications from unflagged records',
-  [AggregateGermlineReviewStatus.AGGREGATE_GERMLINE_REVIEW_STATUS_NO_CLASSIFICATION_FOR_THE_SINGLE_VARIANT]:
-    'no classification for the single variant'
+  no_classification_provided: 'no classification provided',
+  no_assertion_criteria_provided: 'no assertion criteria provided',
+  criteria_provided_single_submitter:  'criteria provided, single submitter',
+  criteria_provided_multiple_submitters_no_conflicts: 'criteria provided, multiple submitters, no conflicts',
+  criteria_provided_conflicting_classifications: 'criteria provided, conflicting classifications',
+  reviewed_by_expert_panel: 'reviewed by expert panel',
+  practice_guideline: 'practice guideline',
+  no_classifications_from_unflagged_records: 'no classifications from unflagged records',
+  no_classification_for_the_single_variant: 'no classification for the single variant'
 }
 
 export const AGGREGATE_GERMLINE_REVIEW_STATUS_STARS: {
-  [key in AggregateGermlineReviewStatus]: number
+  [key in ClinvarAggregateGermlineReviewStatus]: number
 } = {
-  [AggregateGermlineReviewStatus.AGGREGATE_GERMLINE_REVIEW_STATUS_UNSPECIFIED]: 0,
-  [AggregateGermlineReviewStatus.AGGREGATE_GERMLINE_REVIEW_STATUS_NO_CLASSIFICATION_PROVIDED]: 0,
-  [AggregateGermlineReviewStatus.AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED]: 0,
-  [AggregateGermlineReviewStatus.AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER]: 1,
-  [AggregateGermlineReviewStatus.AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS]: 2,
-  [AggregateGermlineReviewStatus.AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_CONFLICTING_CLASSIFICATIONS]: 0,
-  [AggregateGermlineReviewStatus.AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL]: 3,
-  [AggregateGermlineReviewStatus.AGGREGATE_GERMLINE_REVIEW_STATUS_PRACTICE_GUIDELINE]: 4,
-  [AggregateGermlineReviewStatus.AGGREGATE_GERMLINE_REVIEW_STATUS_NO_CLASSIFICATIONS_FROM_UNFLAGGED_RECORDS]: 0,
-  [AggregateGermlineReviewStatus.AGGREGATE_GERMLINE_REVIEW_STATUS_NO_CLASSIFICATION_FOR_THE_SINGLE_VARIANT]: 0
+  no_classification_provided: 0,
+  no_assertion_criteria_provided: 0,
+  criteria_provided_single_submitter: 1,
+  criteria_provided_multiple_submitters_no_conflicts: 2,
+  criteria_provided_conflicting_classifications: 0,
+  reviewed_by_expert_panel: 3,
+  practice_guideline: 4,
+  no_classifications_from_unflagged_records: 0,
+  no_classification_for_the_single_variant: 0
 }
 
 export const AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_LABEL: {
-  [key in AggregateSomaticClinicalImpactReviewStatus]: string
+  [key in ClinvarAggregateSomaticClinicalImpactReviewStatus]: string
 } = {
-  [AggregateSomaticClinicalImpactReviewStatus.AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_UNSPECIFIED]:
-    'UNSPECIFIED',
-  [AggregateSomaticClinicalImpactReviewStatus.AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_NO_CLASSIFICATION_PROVIDED]:
-    'no classification provided',
-  [AggregateSomaticClinicalImpactReviewStatus.AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED]:
-    'no assertion criteria provided',
-  [AggregateSomaticClinicalImpactReviewStatus.AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER]:
-    'criteria provided, single submitter',
-  [AggregateSomaticClinicalImpactReviewStatus.AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS]:
-    'criteria provided, multiple submitters',
-  [AggregateSomaticClinicalImpactReviewStatus.AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL]:
-    'reviewed by expert panel',
-  [AggregateSomaticClinicalImpactReviewStatus.AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_PRACTICE_GUIDELINE]:
-    'practice guideline',
-  [AggregateSomaticClinicalImpactReviewStatus.AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_NO_CLASSIFICATIONS_FROM_UNFLAGGED_RECORDS]:
-    'no classifications from unflagged records',
-  [AggregateSomaticClinicalImpactReviewStatus.AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_NO_CLASSIFICATION_FOR_THE_SINGLE_VARIANT]:
-    'no classification for the single variant'
+  no_classification_provided: 'no classification provided',
+  no_assertion_criteria_provided: 'no assertion criteria provided',
+  criteria_provided_single_submitter: 'criteria provided, single submitter',
+  criteria_provided_multiple_submitters: 'criteria provided, multiple submitters',
+  reviewed_by_expert_panel: 'reviewed by expert panel',
+  practice_guideline: 'practice guideline',
+  no_classifications_from_unflagged_records: 'no classifications from unflagged records',
+  no_classification_for_the_single_variant: 'no classification for the single variant'
 }
 
 export const AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_STARS: {
-  [key in AggregateSomaticClinicalImpactReviewStatus]: number
+  [key in ClinvarAggregateSomaticClinicalImpactReviewStatus]: number
 } = {
-  [AggregateSomaticClinicalImpactReviewStatus.AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_UNSPECIFIED]: 0,
-  [AggregateSomaticClinicalImpactReviewStatus.AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_NO_CLASSIFICATION_PROVIDED]: 0,
-  [AggregateSomaticClinicalImpactReviewStatus.AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED]: 0,
-  [AggregateSomaticClinicalImpactReviewStatus.AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER]: 1,
-  [AggregateSomaticClinicalImpactReviewStatus.AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS]: 2,
-  [AggregateSomaticClinicalImpactReviewStatus.AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL]: 3,
-  [AggregateSomaticClinicalImpactReviewStatus.AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_PRACTICE_GUIDELINE]: 4,
-  [AggregateSomaticClinicalImpactReviewStatus.AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_NO_CLASSIFICATIONS_FROM_UNFLAGGED_RECORDS]: 0,
-  [AggregateSomaticClinicalImpactReviewStatus.AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_NO_CLASSIFICATION_FOR_THE_SINGLE_VARIANT]: 0
+  no_classification_provided: 0,
+  no_assertion_criteria_provided: 0,
+  criteria_provided_single_submitter: 1,
+  criteria_provided_multiple_submitters: 2,
+  reviewed_by_expert_panel: 3,
+  practice_guideline: 4,
+  no_classifications_from_unflagged_records: 0,
+  no_classification_for_the_single_variant: 0
 }
 
 export const AGGREGATE_ONCOGENICITY_REVIEW_STATUS_LABEL: {
-  [key in AggregateOncogenicityReviewStatus]: string
+  [key in ClinvarAggregateOncogenicityReviewStatus]: string
 } = {
-  [AggregateOncogenicityReviewStatus.AGGREGATE_ONCOGENICITY_REVIEW_STATUS_UNSPECIFIED]:
-    'UNSPECIFIED',
-  [AggregateOncogenicityReviewStatus.AGGREGATE_ONCOGENICITY_REVIEW_STATUS_NO_CLASSIFICATION_PROVIDED]:
-    'no classification provided',
-  [AggregateOncogenicityReviewStatus.AGGREGATE_ONCOGENICITY_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED]:
-    'no assertion criteria provided',
-  [AggregateOncogenicityReviewStatus.AGGREGATE_ONCOGENICITY_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER]:
-    'criteria provided, single submitter',
-  [AggregateOncogenicityReviewStatus.AGGREGATE_ONCOGENICITY_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS]:
-    'criteria provided, multiple submitters, no conflicts',
-  [AggregateOncogenicityReviewStatus.AGGREGATE_ONCOGENICITY_REVIEW_STATUS_CRITERIA_PROVIDED_CONFLICTING_CLASSIFICATIONS]:
-    'criteria provided, conflicting classifications',
-  [AggregateOncogenicityReviewStatus.AGGREGATE_ONCOGENICITY_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL]:
-    'reviewed by expert panel',
-  [AggregateOncogenicityReviewStatus.AGGREGATE_ONCOGENICITY_REVIEW_STATUS_PRACTICE_GUIDELINE]:
-    'practice guideline',
-  [AggregateOncogenicityReviewStatus.AGGREGATE_ONCOGENICITY_REVIEW_STATUS_NO_CLASSIFICATIONS_FROM_UNFLAGGED_RECORDS]:
-    'no classifications from unflagged records',
-  [AggregateOncogenicityReviewStatus.AGGREGATE_ONCOGENICITY_REVIEW_STATUS_NO_CLASSIFICATION_FOR_THE_SINGLE_VARIANT]:
-    'no classification for the single variant'
+  no_classification_provided: 'no classification provided',
+  no_assertion_criteria_provided: 'no assertion criteria provided',
+  criteria_provided_single_submitter: 'criteria provided, single submitter',
+  criteria_provided_multiple_submitters_no_conflicts: 'criteria provided, multiple submitters',
+  reviewed_by_expert_panel: 'reviewed by expert panel',
+  practice_guideline: 'practice guideline',
+  no_classifications_from_unflagged_records: 'no classifications from unflagged records',
+  no_classification_for_the_single_variant: 'no classification for the single variant',
+  criteria_provided_conflicting_classifications: 'criteria provided, conflicting classifications'
 }
 
 export const AGGREGATE_ONCOGENICITY_REVIEW_STATUS_STARS: {
-  [key in AggregateOncogenicityReviewStatus]: number
+  [key in ClinvarAggregateOncogenicityReviewStatus]: number
 } = {
-  [AggregateOncogenicityReviewStatus.AGGREGATE_ONCOGENICITY_REVIEW_STATUS_UNSPECIFIED]: 0,
-  [AggregateOncogenicityReviewStatus.AGGREGATE_ONCOGENICITY_REVIEW_STATUS_NO_CLASSIFICATION_PROVIDED]: 0,
-  [AggregateOncogenicityReviewStatus.AGGREGATE_ONCOGENICITY_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED]: 0,
-  [AggregateOncogenicityReviewStatus.AGGREGATE_ONCOGENICITY_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER]: 1,
-  [AggregateOncogenicityReviewStatus.AGGREGATE_ONCOGENICITY_REVIEW_STATUS_CRITERIA_PROVIDED_MULTIPLE_SUBMITTERS_NO_CONFLICTS]: 2,
-  [AggregateOncogenicityReviewStatus.AGGREGATE_ONCOGENICITY_REVIEW_STATUS_CRITERIA_PROVIDED_CONFLICTING_CLASSIFICATIONS]: 0,
-  [AggregateOncogenicityReviewStatus.AGGREGATE_ONCOGENICITY_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL]: 3,
-  [AggregateOncogenicityReviewStatus.AGGREGATE_ONCOGENICITY_REVIEW_STATUS_PRACTICE_GUIDELINE]: 4,
-  [AggregateOncogenicityReviewStatus.AGGREGATE_ONCOGENICITY_REVIEW_STATUS_NO_CLASSIFICATIONS_FROM_UNFLAGGED_RECORDS]: 0,
-  [AggregateOncogenicityReviewStatus.AGGREGATE_ONCOGENICITY_REVIEW_STATUS_NO_CLASSIFICATION_FOR_THE_SINGLE_VARIANT]: 0
+  no_classification_provided: 0,
+  no_assertion_criteria_provided: 0,
+  criteria_provided_single_submitter: 1,
+  criteria_provided_multiple_submitters_no_conflicts: 2,
+  criteria_provided_conflicting_classifications: 0,
+  reviewed_by_expert_panel: 3,
+  practice_guideline: 4,
+  no_classifications_from_unflagged_records: 0,
+  no_classification_for_the_single_variant: 0
 }

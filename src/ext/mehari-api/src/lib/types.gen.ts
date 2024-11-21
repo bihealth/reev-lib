@@ -36,6 +36,36 @@ export type DataVersionEntry = {
 };
 
 /**
+ * Store the alignment of one exon to the reference.
+ */
+export type ExonAlignment = {
+    /**
+     * Start position on reference.
+     */
+    alt_start_i: number;
+    /**
+     * End position on reference.
+     */
+    alt_end_i: number;
+    /**
+     * Exon number.
+     */
+    ord: number;
+    /**
+     * CDS start coordinate.
+     */
+    alt_cds_start_i?: (number) | null;
+    /**
+     * CDS end coordinate.
+     */
+    alt_cds_end_i?: (number) | null;
+    /**
+     * CIGAR string of alignment, empty indicates full matches.
+     */
+    cigar: string;
+};
+
+/**
  * Encode feature biotype.
  */
 export type FeatureBiotype = 'coding' | 'noncoding' | 'mane_select' | 'mane_plus_clinical';
@@ -51,6 +81,63 @@ export type FeatureType = {
     custom: {
         value: string;
     };
+};
+
+/**
+ * Query arguments for the `/api/v1/genes/transcripts` endpoint.
+ */
+export type GenesTranscriptsListQuery = {
+    /**
+     * HGNC gene ID.
+     */
+    hgnc_id: string;
+    genome_build: Assembly;
+    /**
+     * Page size.
+     */
+    page_size?: (number) | null;
+    /**
+     * Next page token.
+     */
+    next_page_token?: (string) | null;
+};
+
+/**
+ * Response of the `/api/v1/genes/transcripts` endpoint.
+ */
+export type GenesTranscriptsListResponse = {
+    /**
+     * The transcripts for the gene.
+     */
+    transcripts: Array<Transcript>;
+    /**
+     * The token to continue from a previous query.
+     */
+    next_page_token?: (string) | null;
+};
+
+/**
+ * Store information about a transcript aligning to a genome.
+ */
+export type GenomeAlignment = {
+    genome_build: Assembly;
+    /**
+     * Accession of the contig sequence.
+     */
+    contig: string;
+    /**
+     * CDS end position, `-1` to indicate `None`.
+     */
+    cds_start?: (number) | null;
+    /**
+     * CDS end position, `-1` to indicate `None`.
+     */
+    cds_end?: (number) | null;
+    strand: Strand;
+    /**
+     * Exons of the alignment.
+     */
+    exons: Array<ExonAlignment>;
 };
 
 /**
@@ -192,6 +279,11 @@ export type SoftwareVersions = {
 };
 
 /**
+ * Enumeration for the two strands of the genome.
+ */
+export type Strand = 'unknown' | 'plus' | 'minus';
+
+/**
  * Query parameters of the `/api/v1/strucvars/csq` endpoint.
  */
 export type StrucvarsCsqQuery = {
@@ -248,6 +340,60 @@ export type StrucvarsSvType = 'DEL' | 'DUP' | 'INS' | 'INV' | 'BND';
 export type StrucvarsTranscriptEffect = 'transcript_variant' | 'exon_variant' | 'splice_region_variant' | 'intron_variant' | 'upstream_variant' | 'downstream_variant' | 'intergenic_variant';
 
 /**
+ * Transcript information.
+ */
+export type Transcript = {
+    /**
+     * Transcript accession with version, e.g., `"NM_007294.3"` or `"ENST00000461574.1"` for BRCA1.
+     */
+    id: string;
+    /**
+     * HGNC symbol, e.g., `"BRCA1"`
+     */
+    gene_symbol: string;
+    /**
+     * HGNC gene identifier, e.g., `"1100"` for BRCA1.
+     */
+    gene_id: string;
+    biotype: TranscriptBiotype;
+    /**
+     * Transcript flags.
+     */
+    tags: Array<TranscriptTag>;
+    /**
+     * Identifier of the corresponding protein.
+     */
+    protein?: (string) | null;
+    /**
+     * CDS start codon.
+     */
+    start_codon?: (number) | null;
+    /**
+     * CDS stop codon.
+     */
+    stop_codon?: (number) | null;
+    /**
+     * Alignments on the different genome builds.
+     */
+    genome_alignments: Array<GenomeAlignment>;
+    /**
+     * Whether this transcript has an issue (e.g. MissingStopCodon), cf. `mehari::db::create::mod::Reason`.
+     */
+    filtered?: (boolean) | null;
+    /**
+     * Reason for filtering.
+     */
+    filter_reason?: (number) | null;
+};
+
+/**
+ * Enumeration for `Transcript::biotype`.
+ */
+export type TranscriptBiotype = 'coding' | 'non_coding';
+
+export type TranscriptTag = 'basic' | 'ensembl_canonical' | 'mane_select' | 'mane_plus_clinical' | 'ref_seq_select' | 'selenoprotein' | 'gencode_primary' | 'other';
+
+/**
  * Response of the `/api/v1/version` endpoint.
  */
 export type VersionsInfoResponse = {
@@ -257,6 +403,31 @@ export type VersionsInfoResponse = {
      */
     data: Array<DataVersionEntry>;
 };
+
+export type GenesTranscriptsListData = {
+    query: {
+        /**
+         * Genome build.
+         */
+        genome_build: Assembly;
+        /**
+         * HGNC gene ID.
+         */
+        hgnc_id: string;
+        /**
+         * Next page token.
+         */
+        next_page_token?: (string) | null;
+        /**
+         * Page size.
+         */
+        page_size?: (number) | null;
+    };
+};
+
+export type GenesTranscriptsListResponse2 = (GenesTranscriptsListResponse);
+
+export type GenesTranscriptsListError = (CustomError);
 
 export type SeqvarsCsqData = {
     query: {

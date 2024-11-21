@@ -3,32 +3,19 @@ This component displays related literature using the PubTator 3 API.
 -->
 <script setup lang="ts">
 import { DateTime } from 'luxon'
-import { onMounted, ref, watch } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import { useTheme } from 'vuetify'
 
-import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
-import {
-  type Annotation,
-  type AnnotationLocation,
-  AnnotationType,
-  usePubtatorStore
-} from '../../stores/pubtator'
-import { StoreState } from '../../stores/types'
 import DocsLink from '../DocsLink/DocsLink.vue'
+import { usePubtator3SearchQuery } from '../../queries/pubtator3/search'
+import { usePubtator3PublicationsExportBiocjsonQuery } from '../../queries/pubtator3/publications'
+import { PublicationsExportBiocjsonResponseEntryPassageAnnotationInfonsBiotype as AnnotationInfonsBiotype, PublicationsExportBiocjsonResponseEntryPassage as Passage,PublicationsExportBiocjsonResponseEntryPassageAnnotationLocation as PassageAnnotationLocation, PublicationsExportBiocjsonResponseEntry, SearchResponseArticle } from '../../ext/pubtator3-api/src/lib'
 
 /** This component's props. */
-const props = withDefaults(
-  defineProps<{
-    /** Gene information */
-    geneInfo?: GeneInfoRecord
-    /** Disable loading via `pubtatorStore` (e.g., for use in storybooks) */
-    skipLoadViaStore?: boolean
-  }>(),
-  {
-    geneInfo: undefined,
-    skipLoadViaStore: false
-  }
-)
+const props = defineProps<{
+    /** HGNC symbol */
+    hgncSymbol?: string
+  }>()
 
 /** This component's emits. */
 const emit = defineEmits<{
@@ -42,40 +29,64 @@ const theme = useTheme()
 /** Show all results */
 const showAllResults = ref(false)
 
-/** The PubTator store. */
-const pubtatorStore = usePubtatorStore()
+/** Query text to search for. */
+const pubtator3QueryText = computed(() => {
+  if (!!props.hgncSymbol) {
+    return `@GENE_${props.hgncSymbol}`
+  } else {
+    return undefined
+  }
+})
+/** The query to list PMIDs with for the gene. */
+const pubtator3SearchQuery = usePubtator3SearchQuery({
+  text: pubtator3QueryText
+})
+/** Pubmed IDs from Pubtator3. */
+const pubtator3Pmids = computed<number[] | undefined>(() => {
+  if (!!pubtator3SearchQuery.data?.value) {
+    return pubtator3SearchQuery.data?.value!.results!.map((doc: SearchResponseArticle) => doc.pmid)
+  } else {
+    return undefined
+  }
+})
+/** Query for export to JSON. */
+const pubtator3PublicationsExportBiocjsonQuery = usePubtator3PublicationsExportBiocjsonQuery({
+  pmids: pubtator3Pmids
+})
+/** Easy access to list of biocjson query results. */
+const queryResults = computed<PublicationsExportBiocjsonResponseEntry[] | undefined>(() => pubtator3PublicationsExportBiocjsonQuery.data.value?.PubTator3)
 
 /** Any error message to display. */
 const errorMessage = ref<string | undefined>(undefined)
 
 /** Mapping from annotation type to VChip color. */
-const TYPE_TO_CHIP_COLOR: { [key: string]: string } = {
-  [AnnotationType.Disease]: 'orange',
-  [AnnotationType.Gene]: '#8B2595',
-  [AnnotationType.Chemical]: 'green',
-  [AnnotationType.Species]: 'blue',
-  [AnnotationType.Variant]: 'red',
-  [AnnotationType.CellLine]: 'teal'
+const TYPE_TO_CHIP_COLOR: { [key in AnnotationInfonsBiotype]: string } = {
+  'disease': 'orange',
+  'gene': '#8B2595',
+  'chemical': 'green',
+  'species': 'blue',
+  'variant': 'red',
+  'cellline': 'teal'
 }
 
 /** Mapping from annotation type to raw CSS color in light mode. */
-const TYPE_TO_RAW_COLOR_LIGHT: { [key: string]: string } = {
-  [AnnotationType.Disease]: '#ffe0b2',
-  [AnnotationType.Gene]: '#e1bee7',
-  [AnnotationType.Chemical]: '#c8e6c9',
-  [AnnotationType.Species]: '#dcf1fc',
-  [AnnotationType.Variant]: '#d7ccc8',
-  [AnnotationType.CellLine]: '#b2ebf2'
+const TYPE_TO_RAW_COLOR_LIGHT: { [key in AnnotationInfonsBiotype]: string } = {
+  'disease': '#ffe0b2',
+  'gene': '#e1bee7',
+  'chemical': '#c8e6c9',
+  'species': '#dcf1fc',
+  'variant': '#d7ccc8',
+  'cellline': '#b2ebf2'
 }
 
 /** Mapping from annotation type to raw CSS color in dark mode. */
-const TYPE_TO_RAW_COLOR_DARK: { [key: string]: string } = {
-  [AnnotationType.Disease]: '#9c6b24',
-  [AnnotationType.Gene]: '#743d7d',
-  [AnnotationType.Chemical]: '#5c7d5e',
-  [AnnotationType.Species]: '#577c99',
-  [AnnotationType.Variant]: '#853a3a',
-  [AnnotationType.CellLine]: '#4e8c94'
+const TYPE_TO_RAW_COLOR_DARK: { [key in AnnotationInfonsBiotype]: string } = {
+  'disease': '#9c6b24',
+  'gene': '#743d7d',
+  'chemical': '#5c7d5e',
+  'species': '#577c99',
+  'variant': '#853a3a',
+  'cellline': '#4e8c94'
 }
 
 /** Mapping from annotation type to raw CSS color. */
@@ -85,22 +96,22 @@ let TYPE_TO_RAW_COLOR =
     : { ...TYPE_TO_RAW_COLOR_LIGHT }
 
 /** Mapping from annotation type to CSS font color in light mode. */
-const TYPE_TO_FONT_COLOR_LIGHT: { [key: string]: string } = {
-  [AnnotationType.Disease]: '#ff9800',
-  [AnnotationType.Gene]: '#673ab7',
-  [AnnotationType.Chemical]: '#4caf50',
-  [AnnotationType.Species]: '#2196f3',
-  [AnnotationType.Variant]: '#5d4037',
-  [AnnotationType.CellLine]: '#50b4b4'
+const TYPE_TO_FONT_COLOR_LIGHT: { [key in AnnotationInfonsBiotype]: string } = {
+  'disease': '#ff9800',
+  'gene': '#673ab7',
+  'chemical': '#4caf50',
+  'species': '#2196f3',
+  'variant': '#5d4037',
+  'cellline': '#50b4b4'
 }
 /** Mapping from annotation type to CSS font color in dark mode. */
-const TYPE_TO_FONT_COLOR_DARK: { [key: string]: string } = {
-  [AnnotationType.Disease]: '#e8d4b7',
-  [AnnotationType.Gene]: '#edcef2',
-  [AnnotationType.Chemical]: '#caedcc',
-  [AnnotationType.Species]: '#bedef7',
-  [AnnotationType.Variant]: '#fcd7d7',
-  [AnnotationType.CellLine]: '#c1f1f7'
+const TYPE_TO_FONT_COLOR_DARK: { [key in AnnotationInfonsBiotype]: string } = {
+  'disease': '#e8d4b7',
+  'gene': '#edcef2',
+  'chemical': '#caedcc',
+  'species': '#bedef7',
+  'variant': '#fcd7d7',
+  'cellline': '#c1f1f7'
 }
 
 /** Mapping from annotation type to CSS font color. */
@@ -109,33 +120,36 @@ let TYPE_TO_FONT_COLOR =
     ? { ...TYPE_TO_FONT_COLOR_DARK }
     : { ...TYPE_TO_FONT_COLOR_LIGHT }
 
-/** Helper that returns `Annotation.text` if name is just a number or empty. */
-const annotationName = (annotation: Annotation) => {
-  if (!annotation?.name?.length || annotation.name.match(/^\d+$/)) {
-    return annotation.text
-  }
-  return annotation.name
+
+/** Information extracted from annotations. */
+type Annotation = {
+  biotype: AnnotationInfonsBiotype
+  name: string
+  text: string
+  locations: PassageAnnotationLocation[]
 }
 
 /** Extract and normalize annotation from passage. */
-const extractPassageAnnotations = (passage: any): Annotation[] => {
+const extractPassageAnnotations = (passage: Passage): Annotation[] => {
   const result: Annotation[] = []
-  for (const annotation of passage.annotations) {
-    result.push({
-      type: annotation.infons.type as AnnotationType,
-      name: annotation.infons.name,
-      text: annotation.text,
-      locations: annotation.locations as AnnotationLocation[]
-    })
+  for (const annotation of passage.annotations ?? []) {
+    if (!!annotation.infons.biotype && !! annotation.infons.name) {
+      result.push({
+        biotype: annotation.infons.biotype,
+        name: annotation.infons.name,
+        text: annotation.text,
+        locations: annotation.locations
+      })
+    }
   }
   return result
 }
 
 /** Extract and normalize annotations from abstract. */
-const extractAnnotations = (abstract: any): Annotation[] => {
+const extractAnnotations = (entry: PublicationsExportBiocjsonResponseEntry): Annotation[] => {
   const seen: Set<string> = new Set()
   const annotations: Annotation[] = []
-  for (const passage of abstract?.passages ?? []) {
+  for (const passage of entry?.passages ?? []) {
     for (const annotation of extractPassageAnnotations(passage)) {
       if (seen.has(annotation.name ?? annotation.text ?? '')) {
         continue
@@ -147,23 +161,10 @@ const extractAnnotations = (abstract: any): Annotation[] => {
   return annotations
 }
 
-/** Load the information from PubTator 3 API via local proxy. */
-const loadPubTator = async () => {
-  if (props.skipLoadViaStore) {
-    return // data is set into store elsewhere, e.g., storybook
-  }
-  try {
-    await pubtatorStore.initialize(props.geneInfo?.hgnc?.symbol)
-  } catch (e) {
-    emit('error', `Error loading PubTator 3 data: ${e}`)
-    errorMessage.value = `Error loading PubTator 3 data: ${e}`
-  }
-}
-
 /** Local type for storing Location and annotation, location on top level. */
 interface LocationAnnotation {
   /** The location of the annotation. */
-  location: AnnotationLocation
+  location: PassageAnnotationLocation
   /** The annotation. */
   annotation: Annotation
 }
@@ -202,8 +203,8 @@ const highlight = (text: string, annotations: Annotation[], baseOffset: number):
     const annoEnd = locationAnnotation.location.offset + locationAnnotation.location.length
     arr.push(
       `<span style="
-        background-color: ${TYPE_TO_RAW_COLOR[locationAnnotation.annotation.type]};
-        color: ${TYPE_TO_FONT_COLOR[locationAnnotation.annotation.type]};
+        background-color: ${TYPE_TO_RAW_COLOR[locationAnnotation.annotation.biotype]};
+        color: ${TYPE_TO_FONT_COLOR[locationAnnotation.annotation.biotype]};
         border-radius: 5px;
         padding-left: 5px;
         padding-right: 5px;">`
@@ -222,10 +223,6 @@ const highlight = (text: string, annotations: Annotation[], baseOffset: number):
   return arr.join('')
 }
 
-// Load information on mount.
-onMounted(loadPubTator)
-// Load information when the gene symbol changes.
-watch(() => props.geneInfo?.hgnc?.symbol, loadPubTator)
 // Reload template when theme changes.
 watch(
   () => theme.global.current.value,
@@ -244,7 +241,7 @@ watch(
 
 <template>
   <!-- no HGNC symbol => display loader -->
-  <template v-if="!geneInfo?.hgnc?.symbol">
+  <template v-if="!hgncSymbol">
     <v-skeleton-loader class="mt-3 mx-auto border" type="heading,subtitle,text,text" />
   </template>
 
@@ -261,7 +258,7 @@ watch(
           {{ errorMessage }}
         </v-alert>
         <div
-          v-if="!errorMessage && pubtatorStore.storeState !== StoreState.Active"
+          v-if="!errorMessage && !queryResults"
           class="text-center"
         >
           <v-progress-circular indeterminate />
@@ -269,38 +266,39 @@ watch(
         <div v-else>
           <div v-if="showAllResults">
             <div
-              v-for="(pmid, idx) in Object.keys(pubtatorStore.searchResults)"
-              :key="pmid"
+              v-for="(entry, idx) in queryResults"
+              :key="idx"
               :class="{ 'mt-3 pt-3 border-top': idx > 0 }"
             >
               <span>
                 #{{ idx + 1 }}
                 &middot;
                 <a
-                  :href="`https://pubmed.ncbi.nlm.nih.gov/${pubtatorStore.searchResults[pmid]?.abstract.pmid}/`"
+                  :href="`https://pubmed.ncbi.nlm.nih.gov/${entry.pmid}/`"
                   target="_blank"
                 >
-                  {{ pubtatorStore.searchResults[pmid]?.abstract.pmid }}
+                  {{ entry.pmid }}
                   <small><v-icon>mdi-launch</v-icon></small>
                 </a>
                 &middot;
-                {{ pubtatorStore.searchResults[pmid]?.abstract.journal }}
+                {{ entry.journal }}
                 &middot;
                 {{
-                  DateTime.fromISO(pubtatorStore.searchResults[pmid]?.abstract.date).toFormat(
+                  DateTime.fromISO(entry.date).toFormat(
                     'yyyy/MM/dd'
                   )
                 }}
               </span>
 
               <div
-                v-for="passage in pubtatorStore.searchResults[pmid]?.abstract.passages"
-                :key="passage.offset"
+                v-for="(passage, idx) in entry.passages"
+                :key="idx"
               >
-                <div v-if="passage.infons.type === 'title'">
+                <div v-if="passage.infons?.type === 'title'">
                   <div class="text-h6">
                     <!-- eslint-disable vue/no-v-html -->
                     <span
+                      v-if="!!passage.text && !!passage.offset"
                       v-html="
                         highlight(passage.text, extractPassageAnnotations(passage), passage.offset)
                       "
@@ -314,13 +312,14 @@ watch(
                       'text-grey-darken-1': !theme.global.current.value.dark
                     }"
                   >
-                    {{ pubtatorStore.searchResults[pmid]?.abstract?.authors.join(', ') }}
+                    {{ entry.authors.join(', ') }}
                   </div>
                 </div>
-                <div v-else-if="passage.infons.type === 'abstract'">
+                <div v-else-if="passage.infons?.type === 'abstract'">
                   <div class="text-body-2">
                     <!-- eslint-disable vue/no-v-html -->
                     <span
+                      v-if="!!passage.text && !!passage.offset"
                       v-html="
                         highlight(passage.text, extractPassageAnnotations(passage), passage.offset)
                       "
@@ -331,18 +330,16 @@ watch(
               </div>
 
               <div
-                v-if="extractAnnotations(pubtatorStore.searchResults[pmid]?.abstract).length > 0"
+                v-if="extractAnnotations(entry).length > 0"
               >
                 <template
-                  v-for="(annotation, idxInner) in extractAnnotations(
-                    pubtatorStore.searchResults[pmid]?.abstract
-                  )"
+                  v-for="(annotation, idxInner) in extractAnnotations(entry)"
                   :key="idxInner"
                 >
                   <v-chip
-                    :text="annotationName(annotation)"
-                    :title="`'${annotation.text}' (${annotation.type})`"
-                    :color="TYPE_TO_CHIP_COLOR[annotation.type]"
+                    :text="annotation.name"
+                    :title="`'${annotation.text}' (${annotation.biotype})`"
+                    :color="TYPE_TO_CHIP_COLOR[annotation.biotype]"
                     class="mt-3"
                     :class="{ 'ml-1': idxInner > 0 }"
                   />
@@ -352,38 +349,39 @@ watch(
           </div>
           <div v-else>
             <div
-              v-for="(pmid, idx) in Object.keys(pubtatorStore.searchResults).slice(0, 2)"
-              :key="pmid"
+              v-for="(entry, idx) in (queryResults ?? []).slice(0, 3)"
+              :key="idx"
               :class="{ 'mt-3 pt-3 border-top': idx > 0 }"
             >
               <span>
                 #{{ idx + 1 }}
                 &middot;
                 <a
-                  :href="`https://pubmed.ncbi.nlm.nih.gov/${pubtatorStore.searchResults[pmid]?.abstract.pmid}/`"
+                  :href="`https://pubmed.ncbi.nlm.nih.gov/${entry.pmid}/`"
                   target="_blank"
                 >
-                  {{ pubtatorStore.searchResults[pmid]?.abstract.pmid }}
+                  {{ entry.pmid }}
                   <small><v-icon>mdi-launch</v-icon></small>
                 </a>
                 &middot;
-                {{ pubtatorStore.searchResults[pmid]?.abstract.journal }}
+                {{ entry.journal }}
                 &middot;
                 {{
-                  DateTime.fromISO(pubtatorStore.searchResults[pmid]?.abstract.date).toFormat(
+                  DateTime.fromISO(entry.date).toFormat(
                     'yyyy/MM/dd'
                   )
                 }}
               </span>
 
               <div
-                v-for="passage in pubtatorStore.searchResults[pmid]?.abstract.passages"
+                v-for="passage in entry.passages"
                 :key="passage.offset"
               >
-                <div v-if="passage.infons.type === 'title'">
+                <div v-if="passage.infons?.type === 'title'">
                   <div class="text-h6">
                     <!-- eslint-disable vue/no-v-html -->
                     <span
+                      v-if="!!passage.text && !!passage.offset"
                       v-html="
                         highlight(passage.text, extractPassageAnnotations(passage), passage.offset)
                       "
@@ -397,13 +395,14 @@ watch(
                       'text-grey-darken-1': !theme.global.current.value.dark
                     }"
                   >
-                    {{ pubtatorStore.searchResults[pmid]?.abstract?.authors.join(', ') }}
+                    {{ entry.authors.join(', ') }}
                   </div>
                 </div>
-                <div v-else-if="passage.infons.type === 'abstract'">
+                <div v-else-if="passage.infons?.type === 'abstract'">
                   <div class="text-body-2">
                     <!-- eslint-disable vue/no-v-html -->
                     <span
+                      v-if="!!passage.text && !!passage.offset"
                       v-html="
                         highlight(passage.text, extractPassageAnnotations(passage), passage.offset)
                       "
@@ -414,18 +413,16 @@ watch(
               </div>
 
               <div
-                v-if="extractAnnotations(pubtatorStore.searchResults[pmid]?.abstract).length > 0"
+                v-if="extractAnnotations(entry).length > 0"
               >
                 <template
-                  v-for="(annotation, idxInner) in extractAnnotations(
-                    pubtatorStore.searchResults[pmid]?.abstract
-                  )"
+                  v-for="(annotation, idxInner) in extractAnnotations(entry)"
                   :key="idxInner"
                 >
                   <v-chip
-                    :text="annotationName(annotation)"
-                    :title="`'${annotation.text}' (${annotation.type})`"
-                    :color="TYPE_TO_CHIP_COLOR[annotation.type]"
+                    :text="annotation.name"
+                    :title="`'${annotation.text}' (${annotation.biotype})`"
+                    :color="TYPE_TO_CHIP_COLOR[annotation.biotype]"
                     class="mt-3"
                     :class="{ 'ml-1': idxInner > 0 }"
                   />
@@ -444,7 +441,7 @@ watch(
           {{ showAllResults ? 'Show less' : 'Show more' }}
         </v-btn>
         <v-btn
-          :href="`https://www.ncbi.nlm.nih.gov/research/pubtator3/docsum?text=@GENE_${geneInfo?.hgnc?.symbol}`"
+          :href="`https://www.ncbi.nlm.nih.gov/research/pubtator3/docsum?text=@GENE_${hgncSymbol}`"
           target="_blank"
           prepend-icon="mdi-launch"
         >

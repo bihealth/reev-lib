@@ -1,16 +1,14 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import { SeqvarInfoResult } from '../../api/annonars/types'
 import { type Seqvar } from '../../lib/genomicVars'
 import DocsLink from '../DocsLink/DocsLink.vue'
+import { SeqvarsAnnoResponseRecord } from '../../ext/annonars-api/src/lib';
 
 /** This component's props. */
 const props = defineProps<{
   /** Annotated sequence variant. */
   seqvar?: Seqvar
-  /** Annotations. */
-  varAnnos?: SeqvarInfoResult
 }>()
 
 /** This component's emits. */
@@ -161,7 +159,7 @@ const resources = computed<Linkout[]>(() => {
 </script>
 
 <template>
-  <template v-if="seqvar === undefined || varAnnos === undefined">
+  <template v-if="seqvar === undefined">
     <v-skeleton-loader type="card" />
   </template>
   <template v-else>
