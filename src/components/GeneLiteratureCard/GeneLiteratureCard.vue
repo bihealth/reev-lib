@@ -296,7 +296,7 @@ watch(
                 <div class="text-h6">
                   <!-- eslint-disable vue/no-v-html -->
                   <span
-                    v-if="!!passage.text && !!passage.offset"
+                    v-if="!!passage.text && passage.offset !== undefined"
                     v-html="
                       highlight(passage.text, extractPassageAnnotations(passage), passage.offset)
                     "
@@ -317,7 +317,7 @@ watch(
                 <div class="text-body-2">
                   <!-- eslint-disable vue/no-v-html -->
                   <span
-                    v-if="!!passage.text && !!passage.offset"
+                    v-if="!!passage.text && passage.offset !== undefined"
                     v-html="
                       highlight(passage.text, extractPassageAnnotations(passage), passage.offset)
                     "

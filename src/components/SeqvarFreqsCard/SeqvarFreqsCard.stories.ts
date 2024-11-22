@@ -3,16 +3,15 @@ import type { Meta, StoryObj } from '@storybook/vue3'
 
 import fixtureSeqvarInfoBrca1Json from '../../api/annonars/fixture.variantInfo.BRCA1.json'
 import fixtureSeqvarInfoChrMtJson from '../../api/annonars/fixture.variantInfo.chrMT.json'
+import { SeqvarsAnnosResponse } from '../../ext/annonars-api/src/lib'
 import { SeqvarImpl } from '../../lib/genomicVars'
 import SeqvarFreqsCard from './SeqvarFreqsCard.vue'
 
 // Here, fixture data is loaded via `import` from JSON file.  Reading the file
 // as in the tests fails with "process is not defined" error in the browser.
 
-// @ts-ignore
-const seqvarInfoResponseBrca1 = SeqvarInfoResponse.fromJson(fixtureSeqvarInfoBrca1Json as JsonValue)
-// @ts-ignore
-const seqvarInfoResponseChrMt = SeqvarInfoResponse.fromJson(fixtureSeqvarInfoChrMtJson as JsonValue)
+const seqvarInfoResponseBrca1 = fixtureSeqvarInfoBrca1Json as SeqvarsAnnosResponse
+const seqvarInfoResponseChrMt = fixtureSeqvarInfoChrMtJson as SeqvarsAnnosResponse
 
 const seqvarBrca1 = new SeqvarImpl('grch37', '18', 41215920, 'G', 'T')
 const seqvarChrMt = new SeqvarImpl('grch37', 'MT', 7497, 'G', 'A')

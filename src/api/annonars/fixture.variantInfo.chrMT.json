@@ -1,12 +1,4 @@
 {
-  "server_version": "0.37.0",
-  "query": {
-    "genome_release": "grch37",
-    "chromosome": "MT",
-    "pos": 7497,
-    "reference": "G",
-    "alternative": "A"
-  },
   "result": {
     "cadd": null,
     "dbsnp": null,
@@ -15,16 +7,20 @@
     "gnomad_mtdna": {
       "chrom": "MT",
       "pos": 7497,
-      "refAllele": "G",
-      "altAllele": "A",
-      "variantCollapsed": "G7497A",
-      "excludedAc": 5,
+      "ref_allele": "G",
+      "alt_allele": "A",
+      "variant_collapsed": "G7497A",
+      "excluded_ac": 5,
       "an": 56429,
-      "acHet": 2,
-      "afHet": 0.00003544280116329901,
-      "mitotipScore": 18.480899810791016,
-      "mitotipTrnaPrediction": "likely_pathogenic",
-      "ponMtTrnaPrediction": "likely_pathogenic",
+      "ac_hom": 0,
+      "ac_het": 2,
+      "af_hom": 0,
+      "af_het": 0.0000354428,
+      "filters": [],
+      "mitotip_score": 18.4809,
+      "mitotip_trna_prediction": "likely_pathogenic",
+      "pon_mt_trna_prediction": "likely_pathogenic",
+      "pon_ml_probability_of_pathogenicity": null,
       "vep": [
         {
           "allele": "A",
@@ -32,124 +28,202 @@
           "impact": "MODIFIER",
           "symbol": "MT-TS1",
           "gene": "ENSG00000210151",
-          "featureType": "Transcript",
+          "feature_type": "Transcript",
           "feature": "ENST00000387416",
-          "featureBiotype": "Mt_tRNA",
+          "feature_biotype": "Mt_tRNA",
           "exon": "1/1",
-          "hgvsc": "ENST00000387416.2:n.18C>T",
-          "cdnaPosition": "18",
-          "dbsnpId": "1",
+          "intron": null,
+          "hgvsc": "ENST00000387416.2:n.18C\u003ET",
+          "hgvsp": null,
+          "cdna_position": "18",
+          "cds_position": null,
+          "protein_position": null,
+          "amino_acids": null,
+          "codons": null,
+          "dbsnp_id": "1",
+          "distance": null,
           "strand": "-1",
-          "variantClass": "SNV",
-          "symbolSource": "HGNC",
-          "hgncId": "HGNC:7497",
+          "variant_class": "SNV",
+          "minimised": null,
+          "symbol_source": "HGNC",
+          "hgnc_id": "HGNC:7497",
           "canonical": true,
-          "genePheno": "1"
+          "tsl": null,
+          "appris": null,
+          "ccds": null,
+          "ensp": null,
+          "swissprot": null,
+          "trembl": null,
+          "uniparc": null,
+          "gene_pheno": "1",
+          "sift": null,
+          "polyphen": null,
+          "domains": [],
+          "hgvs_offset": null,
+          "motif_name": null,
+          "motif_pos": null,
+          "high_inf_pos": null,
+          "motif_score_change": null,
+          "lof": null,
+          "lof_filter": null,
+          "lof_flags": null,
+          "lof_info": null
         }
-      ]
+      ],
+      "quality_info": null,
+      "heteroplasmy_info": null,
+      "filter_histograms": null,
+      "population_info": null,
+      "haplogroup_info": null,
+      "age_info": null,
+      "depth_info": null
     },
     "gnomad_exomes": null,
     "gnomad_genomes": null,
     "helixmtdb": {
       "chrom": "chrM",
       "pos": 7497,
-      "refAllele": "G",
-      "altAllele": "A",
-      "numTotal": 196554,
-      "numHet": 1,
-      "featureType": "tRNA_gene",
-      "geneName": "MT-TS1"
+      "ref_allele": "G",
+      "alt_allele": "A",
+      "num_total": 196554,
+      "num_het": 1,
+      "num_hom": 0,
+      "feature_type": "tRNA_gene",
+      "gene_name": "MT-TS1"
     },
-    "ucsc_conservation": [],
+    "ucsc_conservation": null,
     "clinvar": {
       "records": [
         {
-          "accession": { "accession": "VCV000009569", "version": 5 },
+          "accession": {
+            "accession": "VCV000009569",
+            "version": 5
+          },
           "rcvs": [
             {
-              "accession": { "accession": "RCV000010182", "version": 3 },
-              "title": "NC_012920.1(MT-TS1):m.7497G>A AND Exercise intolerance, muscle pain, and lactic acidemia",
+              "accession": {
+                "accession": "RCV000010182",
+                "version": 3
+              },
+              "title": "NC_012920.1(MT-TS1):m.7497G\u003EA AND Exercise intolerance, muscle pain, and lactic acidemia",
               "classifications": {
-                "germlineClassification": {
-                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_NO_ASSERTION_CRITERIA_PROVIDED",
+                "germline_classification": {
+                  "review_status": "no_assertion_criteria_provided",
                   "description": {
                     "value": "Pathogenic",
-                    "dateLastEvaluated": "2003-01-01T00:00:00+00:00",
-                    "submissionCount": 1
+                    "date_last_evaluated": "2003-01-01T00:00:00Z",
+                    "submission_count": 1
                   }
-                }
+                },
+                "somatic_clinical_impact": null,
+                "oncogenicity_classification": null
               }
             },
             {
-              "accession": { "accession": "RCV000850901", "version": 1 },
-              "title": "NC_012920.1(MT-TS1):m.7497G>A AND Juvenile myopathy, encephalopathy, lactic acidosis AND stroke",
+              "accession": {
+                "accession": "RCV000850901",
+                "version": 1
+              },
+              "title": "NC_012920.1(MT-TS1):m.7497G\u003EA AND Juvenile myopathy, encephalopathy, lactic acidosis AND stroke",
               "classifications": {
-                "germlineClassification": {
-                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                "germline_classification": {
+                  "review_status": "criteria_provided_single_submitter",
                   "description": {
                     "value": "Pathogenic",
-                    "dateLastEvaluated": "2019-07-12T00:00:00+00:00",
-                    "submissionCount": 1
+                    "date_last_evaluated": "2019-07-12T00:00:00Z",
+                    "submission_count": 1
                   }
-                }
+                },
+                "somatic_clinical_impact": null,
+                "oncogenicity_classification": null
               }
             },
             {
-              "accession": { "accession": "RCV002247288", "version": 1 },
-              "title": "NC_012920.1(MT-TS1):m.7497G>A AND Mitochondrial complex IV deficiency, nuclear type 1",
+              "accession": {
+                "accession": "RCV002247288",
+                "version": 1
+              },
+              "title": "NC_012920.1(MT-TS1):m.7497G\u003EA AND Mitochondrial complex IV deficiency, nuclear type 1",
               "classifications": {
-                "germlineClassification": {
-                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_CRITERIA_PROVIDED_SINGLE_SUBMITTER",
+                "germline_classification": {
+                  "review_status": "criteria_provided_single_submitter",
                   "description": {
                     "value": "Pathogenic",
-                    "dateLastEvaluated": "2022-05-04T00:00:00+00:00",
-                    "submissionCount": 1
+                    "date_last_evaluated": "2022-05-04T00:00:00Z",
+                    "submission_count": 1
                   }
-                }
+                },
+                "somatic_clinical_impact": null,
+                "oncogenicity_classification": null
               }
             },
             {
-              "accession": { "accession": "RCV003319162", "version": 1 },
-              "title": "NC_012920.1(MT-TS1):m.7497G>A AND Mitochondrial disease",
+              "accession": {
+                "accession": "RCV003319162",
+                "version": 1
+              },
+              "title": "NC_012920.1(MT-TS1):m.7497G\u003EA AND Mitochondrial disease",
               "classifications": {
-                "germlineClassification": {
-                  "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+                "germline_classification": {
+                  "review_status": "reviewed_by_expert_panel",
                   "description": {
                     "value": "Likely pathogenic",
-                    "dateLastEvaluated": "2023-04-17T00:00:00+00:00",
-                    "submissionCount": 1
+                    "date_last_evaluated": "2023-04-17T00:00:00Z",
+                    "submission_count": 1
                   }
-                }
+                },
+                "somatic_clinical_impact": null,
+                "oncogenicity_classification": null
               }
             }
           ],
-          "name": "NC_012920.1(MT-TS1):m.7497G>A",
-          "variationType": "VARIATION_TYPE_SNV",
+          "name": "NC_012920.1(MT-TS1):m.7497G\u003EA",
+          "variation_type": "snv",
           "classifications": {
-            "germlineClassification": {
-              "reviewStatus": "AGGREGATE_GERMLINE_REVIEW_STATUS_REVIEWED_BY_EXPERT_PANEL",
+            "germline_classification": {
+              "review_status": "reviewed_by_expert_panel",
               "description": "Likely pathogenic",
-              "dateLastEvaluated": "2023-04-17T00:00:00+00:00",
-              "dateCreated": "2013-04-04T00:00:00+00:00",
-              "mostRecentSubmission": "2023-08-05T00:00:00+00:00",
-              "numberOfSubmitters": 4,
-              "numberOfSubmissions": 4
-            }
+              "explanation": null,
+              "xrefs": [],
+              "citations": [],
+              "comments": [],
+              "history_records": [],
+              "conditions": [],
+              "date_last_evaluated": "2023-04-17T00:00:00Z",
+              "date_created": "2013-04-04T00:00:00Z",
+              "most_recent_submission": "2023-08-05T00:00:00Z",
+              "number_of_submitters": 4,
+              "number_of_submissions": 4
+            },
+            "somatic_clinical_impact": null,
+            "oncogenicity_classification": null
           },
-          "sequenceLocation": {
+          "clinical_assertions": [],
+          "sequence_location": {
+            "for_display": null,
             "assembly": "GRCh37",
-            "chr": "CHROMOSOME_MT",
+            "chr": "mt",
             "accession": "NC_012920.1",
+            "outer_start": null,
+            "inner_start": null,
             "start": 7497,
             "stop": 7497,
-            "displayStart": 7497,
-            "displayStop": 7497,
-            "variantLength": 1,
-            "positionVcf": 7497,
-            "referenceAlleleVcf": "G",
-            "alternateAlleleVcf": "A"
+            "inner_stop": null,
+            "outer_stop": null,
+            "display_start": 7497,
+            "display_stop": 7497,
+            "strand": null,
+            "variant_length": 1,
+            "reference_allele": null,
+            "alternate_allele": null,
+            "assembly_accession_version": null,
+            "assembly_status": null,
+            "position_vcf": 7497,
+            "reference_allele_vcf": "G",
+            "alternate_allele_vcf": "A",
+            "for_display_length": null
           },
-          "hgncIds": ["HGNC:7497"]
+          "hgnc_ids": ["HGNC:7497"]
         }
       ]
     }

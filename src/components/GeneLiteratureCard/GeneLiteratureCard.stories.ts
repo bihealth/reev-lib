@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 
-import { GenesGeneInfoRecord } from '@/ext/annonars-api/src/lib'
-
+import { GenesGeneInfoRecord } from '../../ext/annonars-api/src/lib'
 import { StoreState } from '../../stores'
 import { usePubtatorStore } from '../../stores/pubtator'
 import geneInfoBrca1Json from '../GenePathogenicityCard/fixture.geneInfo.BRCA1.json'

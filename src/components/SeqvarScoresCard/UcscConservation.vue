@@ -1,23 +1,20 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue'
 
-import { SeqvarInfoResult } from '../../api/annonars'
+import { SeqvarsAnnoResponseRecord, UcscConservationRecord } from '../../ext/annonars-api/src/lib'
 import { separateIt as sepIt } from '../../lib/utils'
-import { Record as UcscConservationRecord } from '../../pbs/annonars/cons/base'
 
 const props = defineProps<{
   /** Information to display conservation for. */
-  varAnnos?: SeqvarInfoResult
+  varAnnos?: SeqvarsAnnoResponseRecord
 }>()
 
 /** Return the conservation records. */
 const ucscConservation = computed<UcscConservationRecord[]>(() => {
-  if (props.varAnnos?.ucscConservation?.length) {
+  if (props.varAnnos?.ucsc_conservation?.records?.length) {
     const result = []
-    for (const records of props.varAnnos?.ucscConservation) {
-      for (const record of records) {
-        result.push(record)
-      }
+    for (const record of props.varAnnos.ucsc_conservation.records) {
+      result.push(record)
     }
     return result
   } else {
@@ -42,14 +39,14 @@ interface ConsInfo {
 const consInfo = computed<{ [key: string]: ConsInfo[] }>(() => {
   const seen = new Set<string>()
   const res: { [key: string]: ConsInfo[] } = {}
-  for (const { chrom, enstId, start, stop, alignment } of ucscConservation.value) {
-    const key = `${enstId}-${chrom}-${enstId}-${start}-${stop}`
+  for (const { chrom, enst_id, start, stop, alignment } of ucscConservation.value) {
+    const key = `${enst_id}-${chrom}-${enst_id}-${start}-${stop}`
     if (!seen.has(key)) {
       seen.add(key)
-      if (!(enstId in res)) {
-        res[enstId] = []
+      if (!(enst_id in res)) {
+        res[enst_id] = []
       }
-      res[enstId].push({ chrom, start, stop, alignment })
+      res[enst_id].push({ chrom, start, stop, alignment })
     }
   }
 
