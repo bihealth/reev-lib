@@ -2,9 +2,18 @@
 import { titleCase } from 'title-case'
 import { computed, onMounted, ref, useSlots, watch } from 'vue'
 
-import DocsLink from '../DocsLink/DocsLink.vue'
-import { GenesConditionsRecord, GenesDiseaseAssociation, GenesDiseaseAssociationEntryConfidenceLevel, GenesDiseaseAssociationSource, GenesGeneInfoRecord, GenesPanelappAssociation, GenesPanelappAssociationConfidenceLevel, GenesPanelappRecordConfidenceLevel } from '../../ext/annonars-api/src/lib'
+import {
+  GenesConditionsRecord,
+  GenesDiseaseAssociation,
+  GenesDiseaseAssociationEntryConfidenceLevel,
+  GenesDiseaseAssociationSource,
+  GenesGeneInfoRecord,
+  GenesPanelappAssociation,
+  GenesPanelappAssociationConfidenceLevel,
+  GenesPanelappRecordConfidenceLevel
+} from '../../ext/annonars-api/src/lib'
 import { ResultHpoTerm } from '../../ext/viguno-api/src/lib'
+import DocsLink from '../DocsLink/DocsLink.vue'
 
 /** This component's props. */
 const props = withDefaults(
@@ -15,6 +24,7 @@ const props = withDefaults(
     hpoTerms?: ResultHpoTerm[]
   }>(),
   {
+    geneInfo: undefined,
     hpoTerms: () => []
   }
 )
@@ -57,38 +67,35 @@ const hpoTermsToShow = computed<ResultHpoTerm[]>(() => {
 const GDA_LABELS: {
   [key in GenesDiseaseAssociationSource]: string
 } = {
-  'Omim':
-    'OMIM',
-  'Orphanet':
-    'Orphanet',
-  'Panelapp':
-    'PanelApp',
+  Omim: 'OMIM',
+  Orphanet: 'Orphanet',
+  Panelapp: 'PanelApp'
 }
 
 const CONFIDENCE_LEVEL_LABELS: {
   [key in GenesDiseaseAssociationEntryConfidenceLevel]: string
 } = {
-  'High': 'High',
-  'Medium': 'Medium',
-  'Low': 'Low',
+  High: 'High',
+  Medium: 'Medium',
+  Low: 'Low'
 }
 
 const PANELAPP_CONFIDENCE_LABELS: {
   [key in GenesPanelappAssociationConfidenceLevel]: string
 } = {
-  'Green': 'Green',
-  'Amber': 'Amber',
-  'Red': 'Red',
-  'None': 'None'
+  Green: 'Green',
+  Amber: 'Amber',
+  Red: 'Red',
+  None: 'None'
 }
 
 const PANELAPP_CONFIDENCE_ORDER: {
   [key in GenesPanelappAssociationConfidenceLevel]: number
 } = {
-  'Green': 0,
-  'Amber': 1,
-  'Red': 2,
-  'None': 0
+  Green: 0,
+  Amber: 1,
+  Red: 2,
+  None: 0
 }
 
 const conditions = computed<GenesConditionsRecord>(() => {
@@ -251,8 +258,8 @@ const conditionsCols = computed<number>(() => {
                 <div>
                   The gene <span class="font-italic">{{ geneInfo.hgnc!.symbol }}</span> is on the
                   <abbr title="American College of Medical Genetics and Genomics"> ACMG </abbr>
-                  Supplementary Findings (SF) list since v{{ geneInfo.acmg_sf.sf_list_version }}. The
-                  disease phenotype is
+                  Supplementary Findings (SF) list since v{{ geneInfo.acmg_sf.sf_list_version }}.
+                  The disease phenotype is
                   <strong>{{ titleCase(geneInfo.acmg_sf.disease_phenotype) }}</strong> for
                   <strong>{{ geneInfo.acmg_sf.inheritance }}</strong> inheritance. The SF list
                   recommends to report
@@ -341,27 +348,16 @@ const conditionsCols = computed<number>(() => {
                             class="text-no-wrap"
                             :title="
                               CONFIDENCE_LEVEL_LABELS[
-                                item.raw
-                                  .confidence as GenesDiseaseAssociationEntryConfidenceLevel
+                                item.raw.confidence as GenesDiseaseAssociationEntryConfidenceLevel
                               ]
                             "
                           >
-                            <template
-                              v-if="
-                                item.raw.confidence ===
-                                'High'
-                              "
-                            >
+                            <template v-if="item.raw.confidence === 'High'">
                               <v-icon>mdi-star</v-icon>
                               <v-icon>mdi-star</v-icon>
                               <v-icon>mdi-star</v-icon>
                             </template>
-                            <template
-                              v-else-if="
-                                item.raw.confidence ===
-                                'Medium'
-                              "
-                            >
+                            <template v-else-if="item.raw.confidence === 'Medium'">
                               <v-icon>mdi-star</v-icon>
                               <v-icon>mdi-star</v-icon>
                               <v-icon>mdi-star-outline</v-icon>
@@ -513,29 +509,14 @@ const conditionsCols = computed<number>(() => {
                           <span class="font-weight-bold"> Confidence: </span>
                           <span
                             class="text-no-wrap"
-                            :title="
-                              PANELAPP_CONFIDENCE_LABELS[
-                                item.raw
-                                  .confidence_level
-                              ]
-                            "
+                            :title="PANELAPP_CONFIDENCE_LABELS[item.raw.confidence_level]"
                           >
-                            <template
-                              v-if="
-                                item.raw.confidence_level ===
-                                'Green'
-                              "
-                            >
+                            <template v-if="item.raw.confidence_level === 'Green'">
                               <v-icon>mdi-star</v-icon>
                               <v-icon>mdi-star</v-icon>
                               <v-icon>mdi-star</v-icon>
                             </template>
-                            <template
-                              v-else-if="
-                                item.raw.confidence_level ===
-                                'Amber'
-                              "
-                            >
+                            <template v-else-if="item.raw.confidence_level === 'Amber'">
                               <v-icon>mdi-star</v-icon>
                               <v-icon>mdi-star</v-icon>
                               <v-icon>mdi-star-outline</v-icon>
@@ -620,7 +601,10 @@ const conditionsCols = computed<number>(() => {
                 <template v-for="(term, idx) in hpoTermsToShow" :key="idx">
                   <template v-if="idx > 0"> , </template>
                   <template v-if="showTermLinks">
-                    <a :href="`https://hpo.jax.org/app/browse/term/${term.term_id}`" target="_blank">
+                    <a
+                      :href="`https://hpo.jax.org/app/browse/term/${term.term_id}`"
+                      target="_blank"
+                    >
                       <v-icon>mdi-launch</v-icon>
                       <template v-if="showTermIds"> [{{ term.term_id }}] </template>
                       {{ term.name }}

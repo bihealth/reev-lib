@@ -3,16 +3,12 @@ import path from 'path'
 import { describe, expect, it, test } from 'vitest'
 
 import { setupMountedComponents } from '../../lib/testUtils'
-import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
+import { GenesClinvarPerGeneRecord } from '../../ext/annonars-api/src/lib'
 import ClinvarFreqPlot from './ClinvarFreqPlot.vue'
 
 // Load fixture data for gene TGDS (little data) and BRCA1 (lots of data).
-const clinvarPerGeneTgds = ClinvarPerGeneRecord.fromJsonString(
-  fs.readFileSync(path.resolve(__dirname, './fixture.clinvarPerGene.TGDS.json'), 'utf8')
-)
-const clinvarPerGeneBrca1 = ClinvarPerGeneRecord.fromJsonString(
-  fs.readFileSync(path.resolve(__dirname, './fixture.clinvarPerGene.BRCA1.json'), 'utf8')
-)
+const clinvarPerGeneTgds = JSON.parse(fs.readFileSync(path.resolve(__dirname, './fixture.clinvarPerGene.TGDS.json'), 'utf8')) as GenesClinvarPerGeneRecord
+const clinvarPerGeneBrca1 = JSON.parse(fs.readFileSync(path.resolve(__dirname, './fixture.clinvarPerGene.BRCA1.json'), 'utf8')) as GenesClinvarPerGeneRecord
 
 describe.concurrent('ClinvarFreqPlot.vue', async () => {
   test.each([
@@ -20,7 +16,7 @@ describe.concurrent('ClinvarFreqPlot.vue', async () => {
     ['BRCA1', clinvarPerGeneBrca1]
   ])(
     'renders the ClinvarFreqPlot for %s',
-    async (geneSymbol: string, clinvarPerGene: ClinvarPerGeneRecord) => {
+    async (geneSymbol: string, clinvarPerGene: GenesClinvarPerGeneRecord) => {
       // arrange:
       const { wrapper } = await setupMountedComponents(
         { component: ClinvarFreqPlot },

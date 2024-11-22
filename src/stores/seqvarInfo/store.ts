@@ -10,7 +10,7 @@ import { ref } from 'vue'
 import { StoreState } from '..'
 import { AnnonarsClient, SeqvarInfoResult } from '../../api/annonars'
 import { MehariClient, SeqvarResultEntry } from '../../api/mehari'
-import { type HpoTerm, VigunoClient } from '../../api/viguno'
+import { type HpoTerm } from '../../api/viguno'
 import { type Seqvar } from '../../lib/genomicVars'
 import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
@@ -80,7 +80,6 @@ export const useSeqvarInfoStore = defineStore('seqvarInfo', () => {
     storeState.value = StoreState.Loading
     const annonarsClient = new AnnonarsClient()
     const mehariClient = new MehariClient()
-    const vigunoClient = new VigunoClient()
 
     // Retrieve variant information from annonars and mehari.
     initializeRes.value = Promise.all([
@@ -104,7 +103,7 @@ export const useSeqvarInfoStore = defineStore('seqvarInfo', () => {
             }),
             annonarsClient.fetchGeneClinvarInfo(localHgncId).then((data) => {
               geneClinvar.value = data
-            }),
+            })
             // vigunoClient.fetchHpoTermsForHgncId(localHgncId).then((data) => {
             //   hpoTerms.value = data.result
             // })

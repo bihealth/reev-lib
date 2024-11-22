@@ -2,8 +2,8 @@
 /**
  * This component displays a VCard with gene pathogenicity information.
  */
-import { roundIt } from '../../lib/utils'
 import { GenesGeneInfoRecord } from '../../ext/annonars-api/src/lib'
+import { roundIt } from '../../lib/utils'
 import DocsLink from '../DocsLink/DocsLink.vue'
 import { CLINGEN_DOSAGE_COLOR, CLINGEN_DOSAGE_LABELS_SHORT } from './constants'
 
@@ -120,7 +120,9 @@ const props = defineProps<{
                       </td>
                       <td class="pa-0 text-right">
                         <!-- eslint-disable vue/no-v-html -->
-                        <span v-html="roundIt(geneInfo?.gnomad_constraints.oe_lof_upper ?? undefined)" />
+                        <span
+                          v-html="roundIt(geneInfo?.gnomad_constraints.oe_lof_upper ?? undefined)"
+                        />
                         <!-- eslint-enable -->
                       </td>
                     </tr>
@@ -135,7 +137,9 @@ const props = defineProps<{
                       </td>
                       <td class="pa-0 text-right">
                         <!-- eslint-disable vue/no-v-html -->
-                        <span v-html="roundIt(geneInfo?.gnomad_constraints.oe_mis_upper ?? undefined)" />
+                        <span
+                          v-html="roundIt(geneInfo?.gnomad_constraints.oe_mis_upper ?? undefined)"
+                        />
                         <!-- eslint-enable -->
                       </td>
                     </tr>

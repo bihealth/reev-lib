@@ -1,10 +1,21 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 
+import {
+  Gnomad2CohortAlleleCounts,
+  Gnomad2PopulationAlleleCounts,
+  Gnomad2Record,
+  Gnomad3CohortAlleleCounts,
+  Gnomad3PopulationAlleleCounts,
+  Gnomad3Record,
+  Gnomad4AncestryGroupAlleleCounts,
+  Gnomad4CohortAlleleCounts,
+  Gnomad4Record,
+  SeqvarsAnnoResponseRecord
+} from '../../ext/annonars-api/src/lib'
 import { type Seqvar } from '../../lib/genomicVars'
 import { roundIt, separateIt as sep } from '../../lib/utils'
 import { chromIsXY, isInParRegion } from './lib'
-import { Gnomad2CohortAlleleCounts, Gnomad2PopulationAlleleCounts, Gnomad2Record, Gnomad3CohortAlleleCounts, Gnomad3PopulationAlleleCounts, Gnomad3Record, Gnomad4AncestryGroupAlleleCounts, Gnomad4CohortAlleleCounts, Gnomad4Record, SeqvarsAnnoResponseRecord } from '../../ext/annonars-api/src/lib'
 
 const props = defineProps<{
   /** Annotated sequence variant. */

@@ -8,7 +8,7 @@ import { ref } from 'vue'
 
 import { AnnonarsClient } from '../../api/annonars'
 import { MehariClient } from '../../api/mehari'
-import { type HpoTerm, VigunoClient } from '../../api/viguno'
+import { type HpoTerm } from '../../api/viguno'
 import { type GenomeBuild } from '../../lib/genomeBuilds'
 import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'

@@ -3,21 +3,28 @@ This component displays related literature using the PubTator 3 API.
 -->
 <script setup lang="ts">
 import { DateTime } from 'luxon'
-import { computed, onMounted, ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useTheme } from 'vuetify'
 
-import DocsLink from '../DocsLink/DocsLink.vue'
-import { usePubtator3SearchQuery } from '../../queries/pubtator3/search'
+import {
+  PublicationsExportBiocjsonResponseEntryPassageAnnotationInfonsBiotype as AnnotationInfonsBiotype,
+  PublicationsExportBiocjsonResponseEntryPassage as Passage,
+  PublicationsExportBiocjsonResponseEntryPassageAnnotationLocation as PassageAnnotationLocation,
+  PublicationsExportBiocjsonResponseEntry,
+  SearchResponseArticle
+} from '../../ext/pubtator3-api/src/lib'
 import { usePubtator3PublicationsExportBiocjsonQuery } from '../../queries/pubtator3/publications'
-import { PublicationsExportBiocjsonResponseEntryPassageAnnotationInfonsBiotype as AnnotationInfonsBiotype, PublicationsExportBiocjsonResponseEntryPassage as Passage,PublicationsExportBiocjsonResponseEntryPassageAnnotationLocation as PassageAnnotationLocation, PublicationsExportBiocjsonResponseEntry, SearchResponseArticle } from '../../ext/pubtator3-api/src/lib'
+import { usePubtator3SearchQuery } from '../../queries/pubtator3/search'
+import DocsLink from '../DocsLink/DocsLink.vue'
 
 /** This component's props. */
 const props = defineProps<{
-    /** HGNC symbol */
-    hgncSymbol?: string
-  }>()
+  /** HGNC symbol */
+  hgncSymbol?: string
+}>()
 
 /** This component's emits. */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const emit = defineEmits<{
   /** An error occured, e.g., communicating with server. */
   error: [msg: string]
@@ -54,39 +61,45 @@ const pubtator3PublicationsExportBiocjsonQuery = usePubtator3PublicationsExportB
   pmids: pubtator3Pmids
 })
 /** Easy access to list of biocjson query results. */
-const queryResults = computed<PublicationsExportBiocjsonResponseEntry[] | undefined>(() => pubtator3PublicationsExportBiocjsonQuery.data.value?.PubTator3)
+const queryResults = computed<PublicationsExportBiocjsonResponseEntry[] | undefined>(() => {
+  if (showAllResults.value) {
+    return pubtator3PublicationsExportBiocjsonQuery.data.value?.PubTator3
+  } else {
+    return pubtator3PublicationsExportBiocjsonQuery.data.value?.PubTator3?.slice(0, 3)
+  }
+})
 
 /** Any error message to display. */
 const errorMessage = ref<string | undefined>(undefined)
 
 /** Mapping from annotation type to VChip color. */
 const TYPE_TO_CHIP_COLOR: { [key in AnnotationInfonsBiotype]: string } = {
-  'disease': 'orange',
-  'gene': '#8B2595',
-  'chemical': 'green',
-  'species': 'blue',
-  'variant': 'red',
-  'cellline': 'teal'
+  disease: 'orange',
+  gene: '#8B2595',
+  chemical: 'green',
+  species: 'blue',
+  variant: 'red',
+  cellline: 'teal'
 }
 
 /** Mapping from annotation type to raw CSS color in light mode. */
 const TYPE_TO_RAW_COLOR_LIGHT: { [key in AnnotationInfonsBiotype]: string } = {
-  'disease': '#ffe0b2',
-  'gene': '#e1bee7',
-  'chemical': '#c8e6c9',
-  'species': '#dcf1fc',
-  'variant': '#d7ccc8',
-  'cellline': '#b2ebf2'
+  disease: '#ffe0b2',
+  gene: '#e1bee7',
+  chemical: '#c8e6c9',
+  species: '#dcf1fc',
+  variant: '#d7ccc8',
+  cellline: '#b2ebf2'
 }
 
 /** Mapping from annotation type to raw CSS color in dark mode. */
 const TYPE_TO_RAW_COLOR_DARK: { [key in AnnotationInfonsBiotype]: string } = {
-  'disease': '#9c6b24',
-  'gene': '#743d7d',
-  'chemical': '#5c7d5e',
-  'species': '#577c99',
-  'variant': '#853a3a',
-  'cellline': '#4e8c94'
+  disease: '#9c6b24',
+  gene: '#743d7d',
+  chemical: '#5c7d5e',
+  species: '#577c99',
+  variant: '#853a3a',
+  cellline: '#4e8c94'
 }
 
 /** Mapping from annotation type to raw CSS color. */
@@ -97,21 +110,21 @@ let TYPE_TO_RAW_COLOR =
 
 /** Mapping from annotation type to CSS font color in light mode. */
 const TYPE_TO_FONT_COLOR_LIGHT: { [key in AnnotationInfonsBiotype]: string } = {
-  'disease': '#ff9800',
-  'gene': '#673ab7',
-  'chemical': '#4caf50',
-  'species': '#2196f3',
-  'variant': '#5d4037',
-  'cellline': '#50b4b4'
+  disease: '#ff9800',
+  gene: '#673ab7',
+  chemical: '#4caf50',
+  species: '#2196f3',
+  variant: '#5d4037',
+  cellline: '#50b4b4'
 }
 /** Mapping from annotation type to CSS font color in dark mode. */
 const TYPE_TO_FONT_COLOR_DARK: { [key in AnnotationInfonsBiotype]: string } = {
-  'disease': '#e8d4b7',
-  'gene': '#edcef2',
-  'chemical': '#caedcc',
-  'species': '#bedef7',
-  'variant': '#fcd7d7',
-  'cellline': '#c1f1f7'
+  disease: '#e8d4b7',
+  gene: '#edcef2',
+  chemical: '#caedcc',
+  species: '#bedef7',
+  variant: '#fcd7d7',
+  cellline: '#c1f1f7'
 }
 
 /** Mapping from annotation type to CSS font color. */
@@ -119,7 +132,6 @@ let TYPE_TO_FONT_COLOR =
   theme.global.current.value.dark === true
     ? { ...TYPE_TO_FONT_COLOR_DARK }
     : { ...TYPE_TO_FONT_COLOR_LIGHT }
-
 
 /** Information extracted from annotations. */
 type Annotation = {
@@ -133,7 +145,7 @@ type Annotation = {
 const extractPassageAnnotations = (passage: Passage): Annotation[] => {
   const result: Annotation[] = []
   for (const annotation of passage.annotations ?? []) {
-    if (!!annotation.infons.biotype && !! annotation.infons.name) {
+    if (!!annotation.infons.biotype && !!annotation.infons.name) {
       result.push({
         biotype: annotation.infons.biotype,
         name: annotation.infons.name,
@@ -257,177 +269,74 @@ watch(
         <v-alert v-if="errorMessage" type="error" dismissible>
           {{ errorMessage }}
         </v-alert>
-        <div
-          v-if="!errorMessage && !queryResults"
-          class="text-center"
-        >
+        <div v-if="!errorMessage && !queryResults" class="text-center">
           <v-progress-circular indeterminate />
         </div>
         <div v-else>
-          <div v-if="showAllResults">
-            <div
-              v-for="(entry, idx) in queryResults"
-              :key="idx"
-              :class="{ 'mt-3 pt-3 border-top': idx > 0 }"
-            >
-              <span>
-                #{{ idx + 1 }}
-                &middot;
-                <a
-                  :href="`https://pubmed.ncbi.nlm.nih.gov/${entry.pmid}/`"
-                  target="_blank"
-                >
-                  {{ entry.pmid }}
-                  <small><v-icon>mdi-launch</v-icon></small>
-                </a>
-                &middot;
-                {{ entry.journal }}
-                &middot;
-                {{
-                  DateTime.fromISO(entry.date).toFormat(
-                    'yyyy/MM/dd'
-                  )
-                }}
-              </span>
+          <div
+            v-for="(entry, idx) in queryResults"
+            :key="idx"
+            :class="{ 'mt-3 pt-3 border-top': idx > 0 }"
+          >
+            <span>
+              #{{ idx + 1 }}
+              &middot;
+              <a :href="`https://pubmed.ncbi.nlm.nih.gov/${entry.pmid}/`" target="_blank">
+                {{ entry.pmid }}
+                <small><v-icon>mdi-launch</v-icon></small>
+              </a>
+              &middot;
+              {{ entry.journal }}
+              &middot;
+              {{ DateTime.fromISO(entry.date).toFormat('yyyy/MM/dd') }}
+            </span>
 
-              <div
-                v-for="(passage, idx) in entry.passages"
-                :key="idx"
-              >
-                <div v-if="passage.infons?.type === 'title'">
-                  <div class="text-h6">
-                    <!-- eslint-disable vue/no-v-html -->
-                    <span
-                      v-if="!!passage.text && !!passage.offset"
-                      v-html="
-                        highlight(passage.text, extractPassageAnnotations(passage), passage.offset)
-                      "
-                    />
-                    <!-- eslint-enable -->
-                  </div>
-                  <div
-                    class="text-body-2"
-                    :class="{
-                      'text-grey-lighten-1': theme.global.current.value.dark,
-                      'text-grey-darken-1': !theme.global.current.value.dark
-                    }"
-                  >
-                    {{ entry.authors.join(', ') }}
-                  </div>
+            <div v-for="(passage, innerIdx) in entry.passages" :key="innerIdx">
+              <div v-if="passage.infons?.type === 'title'">
+                <div class="text-h6">
+                  <!-- eslint-disable vue/no-v-html -->
+                  <span
+                    v-if="!!passage.text && !!passage.offset"
+                    v-html="
+                      highlight(passage.text, extractPassageAnnotations(passage), passage.offset)
+                    "
+                  />
+                  <!-- eslint-enable -->
                 </div>
-                <div v-else-if="passage.infons?.type === 'abstract'">
-                  <div class="text-body-2">
-                    <!-- eslint-disable vue/no-v-html -->
-                    <span
-                      v-if="!!passage.text && !!passage.offset"
-                      v-html="
-                        highlight(passage.text, extractPassageAnnotations(passage), passage.offset)
-                      "
-                    />
-                    <!-- eslint-enable -->
-                  </div>
+                <div
+                  class="text-body-2"
+                  :class="{
+                    'text-grey-lighten-1': theme.global.current.value.dark,
+                    'text-grey-darken-1': !theme.global.current.value.dark
+                  }"
+                >
+                  {{ entry.authors.join(', ') }}
                 </div>
               </div>
-
-              <div
-                v-if="extractAnnotations(entry).length > 0"
-              >
-                <template
-                  v-for="(annotation, idxInner) in extractAnnotations(entry)"
-                  :key="idxInner"
-                >
-                  <v-chip
-                    :text="annotation.name"
-                    :title="`'${annotation.text}' (${annotation.biotype})`"
-                    :color="TYPE_TO_CHIP_COLOR[annotation.biotype]"
-                    class="mt-3"
-                    :class="{ 'ml-1': idxInner > 0 }"
+              <div v-else-if="passage.infons?.type === 'abstract'">
+                <div class="text-body-2">
+                  <!-- eslint-disable vue/no-v-html -->
+                  <span
+                    v-if="!!passage.text && !!passage.offset"
+                    v-html="
+                      highlight(passage.text, extractPassageAnnotations(passage), passage.offset)
+                    "
                   />
-                </template>
+                  <!-- eslint-enable -->
+                </div>
               </div>
             </div>
-          </div>
-          <div v-else>
-            <div
-              v-for="(entry, idx) in (queryResults ?? []).slice(0, 3)"
-              :key="idx"
-              :class="{ 'mt-3 pt-3 border-top': idx > 0 }"
-            >
-              <span>
-                #{{ idx + 1 }}
-                &middot;
-                <a
-                  :href="`https://pubmed.ncbi.nlm.nih.gov/${entry.pmid}/`"
-                  target="_blank"
-                >
-                  {{ entry.pmid }}
-                  <small><v-icon>mdi-launch</v-icon></small>
-                </a>
-                &middot;
-                {{ entry.journal }}
-                &middot;
-                {{
-                  DateTime.fromISO(entry.date).toFormat(
-                    'yyyy/MM/dd'
-                  )
-                }}
-              </span>
 
-              <div
-                v-for="passage in entry.passages"
-                :key="passage.offset"
-              >
-                <div v-if="passage.infons?.type === 'title'">
-                  <div class="text-h6">
-                    <!-- eslint-disable vue/no-v-html -->
-                    <span
-                      v-if="!!passage.text && !!passage.offset"
-                      v-html="
-                        highlight(passage.text, extractPassageAnnotations(passage), passage.offset)
-                      "
-                    />
-                    <!-- eslint-enable -->
-                  </div>
-                  <div
-                    class="text-body-2"
-                    :class="{
-                      'text-grey-lighten-1': theme.global.current.value.dark,
-                      'text-grey-darken-1': !theme.global.current.value.dark
-                    }"
-                  >
-                    {{ entry.authors.join(', ') }}
-                  </div>
-                </div>
-                <div v-else-if="passage.infons?.type === 'abstract'">
-                  <div class="text-body-2">
-                    <!-- eslint-disable vue/no-v-html -->
-                    <span
-                      v-if="!!passage.text && !!passage.offset"
-                      v-html="
-                        highlight(passage.text, extractPassageAnnotations(passage), passage.offset)
-                      "
-                    />
-                    <!-- eslint-enable -->
-                  </div>
-                </div>
-              </div>
-
-              <div
-                v-if="extractAnnotations(entry).length > 0"
-              >
-                <template
-                  v-for="(annotation, idxInner) in extractAnnotations(entry)"
-                  :key="idxInner"
-                >
-                  <v-chip
-                    :text="annotation.name"
-                    :title="`'${annotation.text}' (${annotation.biotype})`"
-                    :color="TYPE_TO_CHIP_COLOR[annotation.biotype]"
-                    class="mt-3"
-                    :class="{ 'ml-1': idxInner > 0 }"
-                  />
-                </template>
-              </div>
+            <div v-if="extractAnnotations(entry).length > 0">
+              <template v-for="(annotation, idxInner) in extractAnnotations(entry)" :key="idxInner">
+                <v-chip
+                  :text="annotation.name"
+                  :title="`'${annotation.text}' (${annotation.biotype})`"
+                  :color="TYPE_TO_CHIP_COLOR[annotation.biotype]"
+                  class="mt-3"
+                  :class="{ 'ml-1': idxInner > 0 }"
+                />
+              </template>
             </div>
           </div>
         </div>

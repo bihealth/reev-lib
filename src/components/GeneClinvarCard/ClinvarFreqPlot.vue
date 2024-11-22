@@ -4,8 +4,8 @@
  */
 import { computed } from 'vue'
 
+import { GenesClinvarPerGeneRecord } from '../../ext/annonars-api/src/lib'
 import VegaPlot from '../VegaPlot/VegaPlot.vue'
-import { GenesClinvarPerGeneRecord } from '../../ext/annonars-api/src/lib';
 
 const props = defineProps<{
   /** Gene per clinvar */

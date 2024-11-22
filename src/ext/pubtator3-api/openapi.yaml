@@ -206,7 +206,6 @@ components:
         - text
         - locations
 
-
     PublicationsExportBiocjsonResponseEntryPassageAnnotationInfons:
       type: object
       additionalProperties: true

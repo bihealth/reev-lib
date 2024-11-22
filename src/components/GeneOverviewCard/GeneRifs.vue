@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { onMounted, ref, watch } from 'vue'
 
-import { GenesNcbiRecord, GenesRifEntry } from '../../ext/annonars-api/src/lib';
+import { GenesNcbiRecord, GenesRifEntry } from '../../ext/annonars-api/src/lib'
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps<{
-    /** NCBI information to use for display */
-    ncbi?: GenesNcbiRecord
-  }>()
+  /** NCBI information to use for display */
+  ncbi?: GenesNcbiRecord
+}>()
 
 // The data to display.
 const items = ref<GenesRifEntry[]>([])

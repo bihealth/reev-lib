@@ -3,7 +3,7 @@ import path from 'path'
 import { describe, expect, test } from 'vitest'
 
 import { setupMountedComponents } from '../../lib/testUtils'
-import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
+import { GenesClinvarPerGeneRecord } from '../../ext/annonars-api/src/lib'
 import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
 import { GeneTranscriptsResponse } from '../../pbs/mehari/server'
 import { type Transcript } from '../../pbs/mehari/txs'
@@ -22,12 +22,8 @@ const geneInfoBrca1 = GeneInfoRecord.fromJsonString(
     'utf8'
   )
 )
-const clinvarPerGeneTgds = ClinvarPerGeneRecord.fromJsonString(
-  fs.readFileSync(path.resolve(__dirname, './fixture.clinvarPerGene.TGDS.json'), 'utf8')
-)
-const clinvarPerGeneBrca1 = ClinvarPerGeneRecord.fromJsonString(
-  fs.readFileSync(path.resolve(__dirname, './fixture.clinvarPerGene.BRCA1.json'), 'utf8')
-)
+const clinvarPerGeneTgds = JSON.parse(fs.readFileSync(path.resolve(__dirname, './fixture.clinvarPerGene.TGDS.json'), 'utf8')) as GenesClinvarPerGeneRecord
+const clinvarPerGeneBrca1 = JSON.parse(fs.readFileSync(path.resolve(__dirname, './fixture.clinvarPerGene.BRCA1.json'), 'utf8')) as GenesClinvarPerGeneRecord
 const genesTxsTgds37 = GeneTranscriptsResponse.fromJsonString(
   fs.readFileSync(path.resolve(__dirname, './fixture.genesTxs.TGDS.37.json'), 'utf8')
 )

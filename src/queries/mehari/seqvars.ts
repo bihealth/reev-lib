@@ -1,9 +1,10 @@
 /**
  * Queries for seqvars information powered by TanStack Query.
  */
-import { seqvarsCsqOptions } from '../../ext/mehari-api/src/lib/@tanstack/vue-query.gen'
 import { QueryClient, useQuery } from '@tanstack/vue-query'
 import { MaybeRefOrGetter, toValue } from 'vue'
+
+import { seqvarsCsqOptions } from '../../ext/mehari-api/src/lib/@tanstack/vue-query.gen'
 
 /**
  * Query for the consequence of a seqvar.
@@ -25,12 +26,12 @@ export const useMehariSeqvarsCsqQuery = (
     alternative,
     hgnc_id
   }: {
-    genome_release: MaybeRefOrGetter<string | undefined>,
-    chromosome: MaybeRefOrGetter<string | undefined>,
-    position: MaybeRefOrGetter<number | undefined>,
-    reference: MaybeRefOrGetter<string | undefined>,
-    alternative: MaybeRefOrGetter<string | undefined>,
-    hgnc_id: MaybeRefOrGetter<string | undefined>,
+    genome_release: MaybeRefOrGetter<string | undefined>
+    chromosome: MaybeRefOrGetter<string | undefined>
+    position: MaybeRefOrGetter<number | undefined>
+    reference: MaybeRefOrGetter<string | undefined>
+    alternative: MaybeRefOrGetter<string | undefined>
+    hgnc_id: MaybeRefOrGetter<string | undefined>
   },
   queryClient?: QueryClient
 ) =>

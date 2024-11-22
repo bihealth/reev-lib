@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
+import { ExtractedVcvRecordList } from '../../ext/annonars-api/src/lib'
 import DocsLink from '../DocsLink/DocsLink.vue'
 import GermlineClassification from './GermlineClassification.vue'
 import RcvRow from './RcvRow.vue'
 import SomaticClinicalImpact from './SomaticClinicalImpact.vue'
 import SomaticOncongenicity from './SomaticOncogenicity.vue'
-import { ExtractedVcvRecordList } from '../../ext/annonars-api/src/lib'
 
 /** This component's props */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -48,7 +48,9 @@ const expand = ref<boolean>(false)
       <v-row>
         <v-col cols="6" class="ml-4 mb-3">
           <GermlineClassification
-            :germline-classification="clinvarRecord.classifications?.germline_classification ?? undefined"
+            :germline-classification="
+              clinvarRecord.classifications?.germline_classification ?? undefined
+            "
           />
         </v-col>
       </v-row>

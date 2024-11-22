@@ -1,9 +1,10 @@
 /**
  * Queries for seqvars information powered by TanStack Query.
  */
-import { seqvarsAnnosQueryOptions } from '../../ext/annonars-api/src/lib/@tanstack/vue-query.gen'
 import { QueryClient, useQuery } from '@tanstack/vue-query'
-import { ComputedRef, MaybeRefOrGetter, toValue } from 'vue'
+import { MaybeRefOrGetter, toValue } from 'vue'
+
+import { seqvarsAnnosQueryOptions } from '../../ext/annonars-api/src/lib/@tanstack/vue-query.gen'
 
 /**
  * Query for information related to sequence variants.

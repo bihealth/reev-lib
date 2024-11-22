@@ -1,9 +1,10 @@
 /**
  * Search via Pubtator3 API.
  */
-import { searchOptions } from '../../ext/pubtator3-api/src/lib/@tanstack/vue-query.gen'
 import { QueryClient, useQuery } from '@tanstack/vue-query'
 import { MaybeRefOrGetter, toValue } from 'vue'
+
+import { searchOptions } from '../../ext/pubtator3-api/src/lib/@tanstack/vue-query.gen'
 
 /** Enumeration for genome assembly. */
 export type Assembly = 'grch37' | 'grch38'
@@ -18,11 +19,10 @@ export type Assembly = 'grch37' | 'grch38'
 export const usePubtator3SearchQuery = (
   {
     text,
-    page,
-
+    page
   }: {
-    text: MaybeRefOrGetter<string | undefined>;
-    page?: MaybeRefOrGetter<number | undefined>;
+    text: MaybeRefOrGetter<string | undefined>
+    page?: MaybeRefOrGetter<number | undefined>
   },
   queryClient?: QueryClient
 ) =>
@@ -32,7 +32,7 @@ export const usePubtator3SearchQuery = (
         // @ts-ignore // https://github.com/hey-api/openapi-ts/issues/653#issuecomment-2314847011
         query: () => ({
           text: toValue(text),
-          page: toValue(page ?? (() => undefined)),
+          page: toValue(page ?? (() => undefined))
         })
       }),
       staleTime: Infinity, // static data so no need to refetch

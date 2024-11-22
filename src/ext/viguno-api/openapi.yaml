@@ -12,7 +12,7 @@ paths:
   /api/v1/hpo/genes:
     get:
       tags:
-      - hpo_genes
+        - hpo_genes
       summary: Query for genes in the HPO database.
       description: |-
         # Errors
@@ -20,43 +20,43 @@ paths:
         In the case that there is an error running the server.
       operationId: hpoGenes
       parameters:
-      - name: gene_id
-        in: query
-        description: The gene ID to search for.
-        required: false
-        schema:
-          type:
-          - string
-          - 'null'
-      - name: gene_symbol
-        in: query
-        description: The gene symbol to search for.
-        required: false
-        schema:
-          type:
-          - string
-          - 'null'
-      - name: match_
-        in: query
-        description: The match mode.
-        required: false
-        schema:
-          oneOf:
-          - type: 'null'
-          - $ref: '#/components/schemas/Match'
-      - name: max_results
-        in: query
-        description: Maximal number of results to return.
-        required: false
-        schema:
-          type: integer
-          minimum: 0
-      - name: hpo_terms
-        in: query
-        description: Whether to include HPO terms.
-        required: false
-        schema:
-          type: boolean
+        - name: gene_id
+          in: query
+          description: The gene ID to search for.
+          required: false
+          schema:
+            type:
+              - string
+              - 'null'
+        - name: gene_symbol
+          in: query
+          description: The gene symbol to search for.
+          required: false
+          schema:
+            type:
+              - string
+              - 'null'
+        - name: match_
+          in: query
+          description: The match mode.
+          required: false
+          schema:
+            oneOf:
+              - type: 'null'
+              - $ref: '#/components/schemas/Match'
+        - name: max_results
+          in: query
+          description: Maximal number of results to return.
+          required: false
+          schema:
+            type: integer
+            minimum: 0
+        - name: hpo_terms
+          in: query
+          description: Whether to include HPO terms.
+          required: false
+          schema:
+            type: boolean
       responses:
         '200':
           description: The query was successful.
@@ -73,55 +73,55 @@ paths:
   /api/v1/hpo/omims:
     get:
       tags:
-      - hpo_omims
+        - hpo_omims
       summary: Query for OMIM diseases in the HPO database.
       operationId: hpoOmims
       parameters:
-      - name: omim_id
-        in: query
-        description: The OMIM ID to search for.
-        required: false
-        schema:
-          type:
-          - string
-          - 'null'
-      - name: name
-        in: query
-        description: The disease name to search for.
-        required: false
-        schema:
-          type:
-          - string
-          - 'null'
-      - name: match
-        in: query
-        description: The match mode, default is `Match::Exact`.
-        required: false
-        schema:
-          oneOf:
-          - type: 'null'
-          - $ref: '#/components/schemas/Match'
-      - name: ignore_case
-        in: query
-        description: Whether case is insentivie, default is `false`.
-        required: false
-        schema:
-          type:
-          - boolean
-          - 'null'
-      - name: max_results
-        in: query
-        description: Maximal number of results to return.
-        required: false
-        schema:
-          type: integer
-          minimum: 0
-      - name: hpo_terms
-        in: query
-        description: Whether to include HPO terms.
-        required: false
-        schema:
-          type: boolean
+        - name: omim_id
+          in: query
+          description: The OMIM ID to search for.
+          required: false
+          schema:
+            type:
+              - string
+              - 'null'
+        - name: name
+          in: query
+          description: The disease name to search for.
+          required: false
+          schema:
+            type:
+              - string
+              - 'null'
+        - name: match
+          in: query
+          description: The match mode, default is `Match::Exact`.
+          required: false
+          schema:
+            oneOf:
+              - type: 'null'
+              - $ref: '#/components/schemas/Match'
+        - name: ignore_case
+          in: query
+          description: Whether case is insentivie, default is `false`.
+          required: false
+          schema:
+            type:
+              - boolean
+              - 'null'
+        - name: max_results
+          in: query
+          description: Maximal number of results to return.
+          required: false
+          schema:
+            type: integer
+            minimum: 0
+        - name: hpo_terms
+          in: query
+          description: Whether to include HPO terms.
+          required: false
+          schema:
+            type: boolean
       responses:
         '200':
           description: The query was successful.
@@ -138,40 +138,40 @@ paths:
   /api/v1/hpo/sim/term-gene:
     get:
       tags:
-      - hpo_sim::term_gene
+        - hpo_sim::term_gene
       summary: |-
         Query for similarity between a set of terms to each entry in a
         list of genes.
       operationId: hpoSimTermGene
       parameters:
-      - name: terms
-        in: query
-        description: Set of terms to use as query.
-        required: true
-        schema:
-          type: array
-          items:
-            type: string
-      - name: gene_ids
-        in: query
-        description: The set of ids for genes to use as "database".
-        required: false
-        schema:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-      - name: gene_symbols
-        in: query
-        description: The set of symbols for genes to use as "database".
-        required: false
-        schema:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
+        - name: terms
+          in: query
+          description: Set of terms to use as query.
+          required: true
+          schema:
+            type: array
+            items:
+              type: string
+        - name: gene_ids
+          in: query
+          description: The set of ids for genes to use as "database".
+          required: false
+          schema:
+            type:
+              - array
+              - 'null'
+            items:
+              type: string
+        - name: gene_symbols
+          in: query
+          description: The set of symbols for genes to use as "database".
+          required: false
+          schema:
+            type:
+              - array
+              - 'null'
+            items:
+              type: string
       responses:
         '200':
           description: The query was successful.
@@ -188,7 +188,7 @@ paths:
   /api/v1/hpo/sim/term-term:
     get:
       tags:
-      - hpo_sim::term_term
+        - hpo_sim::term_term
       summary: Query for pairwise term similarity.
       description: |-
         In the case of Resnik, this corresponds to `IC(MICA(t_1, t_2))`.
@@ -198,40 +198,40 @@ paths:
         In the case that there is an error running the server.
       operationId: hpoSimTermTerm
       parameters:
-      - name: lhs
-        in: query
-        description: The one set of HPO terms to compute similarity for.
-        required: true
-        schema:
-          type: array
-          items:
-            type: string
-      - name: rhs
-        in: query
-        description: The second set of HPO terms to compute similarity for.
-        required: true
-        schema:
-          type: array
-          items:
-            type: string
-      - name: ic_base
-        in: query
-        description: What should information content be based on.
-        required: false
-        schema:
-          $ref: '#/components/schemas/IcBasedOn'
-      - name: similarity
-        in: query
-        description: The similarity method to use.
-        required: false
-        schema:
-          $ref: '#/components/schemas/SimilarityMethod'
-      - name: combiner
-        in: query
-        description: The score combiner.
-        required: false
-        schema:
-          $ref: '#/components/schemas/ScoreCombiner'
+        - name: lhs
+          in: query
+          description: The one set of HPO terms to compute similarity for.
+          required: true
+          schema:
+            type: array
+            items:
+              type: string
+        - name: rhs
+          in: query
+          description: The second set of HPO terms to compute similarity for.
+          required: true
+          schema:
+            type: array
+            items:
+              type: string
+        - name: ic_base
+          in: query
+          description: What should information content be based on.
+          required: false
+          schema:
+            $ref: '#/components/schemas/IcBasedOn'
+        - name: similarity
+          in: query
+          description: The similarity method to use.
+          required: false
+          schema:
+            $ref: '#/components/schemas/SimilarityMethod'
+        - name: combiner
+          in: query
+          description: The score combiner.
+          required: false
+          schema:
+            $ref: '#/components/schemas/ScoreCombiner'
       responses:
         '200':
           description: The query was successful.
@@ -248,7 +248,7 @@ paths:
   /api/v1/hpo/terms:
     get:
       tags:
-      - hpo_terms
+        - hpo_terms
       summary: Query for terms in the HPO database.
       description: |-
         # Errors
@@ -256,35 +256,35 @@ paths:
         In the case that there is an error running the server.
       operationId: hpoTerms
       parameters:
-      - name: term_id
-        in: query
-        description: The term ID to search for.
-        required: false
-        schema:
-          type:
-          - string
-          - 'null'
-      - name: name
-        in: query
-        description: The term name to search for.
-        required: false
-        schema:
-          type:
-          - string
-          - 'null'
-      - name: max_results
-        in: query
-        description: Maximal number of results to return.
-        required: false
-        schema:
-          type: integer
-          minimum: 0
-      - name: genes
-        in: query
-        description: Whether to include genes.
-        required: false
-        schema:
-          type: boolean
+        - name: term_id
+          in: query
+          description: The term ID to search for.
+          required: false
+          schema:
+            type:
+              - string
+              - 'null'
+        - name: name
+          in: query
+          description: The term name to search for.
+          required: false
+          schema:
+            type:
+              - string
+              - 'null'
+        - name: max_results
+          in: query
+          description: Maximal number of results to return.
+          required: false
+          schema:
+            type: integer
+            minimum: 0
+        - name: genes
+          in: query
+          description: Whether to include genes.
+          required: false
+          schema:
+            type: boolean
       responses:
         '200':
           description: The query was successful.
@@ -303,7 +303,7 @@ components:
     CustomError:
       type: object
       required:
-      - err
+        - err
       properties:
         err:
           type: string
@@ -311,8 +311,8 @@ components:
       type: object
       description: Struct for storing gene information in the result.
       required:
-      - entrez_id
-      - gene_symbol
+        - entrez_id
+        - gene_symbol
       properties:
         entrez_id:
           type: integer
@@ -324,8 +324,8 @@ components:
           description: The gene symbol.
         hgnc_id:
           type:
-          - string
-          - 'null'
+            - string
+            - 'null'
           description: The HGNC ID.
     HpoGenesQuery:
       type: object
@@ -346,19 +346,19 @@ components:
       properties:
         gene_id:
           type:
-          - string
-          - 'null'
+            - string
+            - 'null'
           description: The gene ID to search for.
         gene_symbol:
           type:
-          - string
-          - 'null'
+            - string
+            - 'null'
           description: The gene symbol to search for.
         match_:
           oneOf:
-          - type: 'null'
-          - $ref: '#/components/schemas/Match'
-            description: The match mode.
+            - type: 'null'
+            - $ref: '#/components/schemas/Match'
+              description: The match mode.
         max_results:
           type: integer
           description: Maximal number of results to return.
@@ -370,9 +370,9 @@ components:
       type: object
       description: Container for the result.
       required:
-      - version
-      - query
-      - result
+        - version
+        - query
+        - result
       properties:
         version:
           $ref: '#/components/schemas/Version'
@@ -389,8 +389,8 @@ components:
       type: object
       description: Result entry for `handle`.
       required:
-      - gene_ncbi_id
-      - gene_symbol
+        - gene_ncbi_id
+        - gene_symbol
       properties:
         gene_ncbi_id:
           type: integer
@@ -402,13 +402,13 @@ components:
           description: The gene's HGNC symbol.
         hgnc_id:
           type:
-          - string
-          - 'null'
+            - string
+            - 'null'
           description: The gene's HGNC ID.
         hpo_terms:
           type:
-          - array
-          - 'null'
+            - array
+            - 'null'
           items:
             $ref: '#/components/schemas/ResultHpoTerm'
           description: The gene's associated HPO terms.
@@ -431,23 +431,23 @@ components:
       properties:
         omim_id:
           type:
-          - string
-          - 'null'
+            - string
+            - 'null'
           description: The OMIM ID to search for.
         name:
           type:
-          - string
-          - 'null'
+            - string
+            - 'null'
           description: The disease name to search for.
         match:
           oneOf:
-          - type: 'null'
-          - $ref: '#/components/schemas/Match'
-            description: The match mode, default is `Match::Exact`.
+            - type: 'null'
+            - $ref: '#/components/schemas/Match'
+              description: The match mode, default is `Match::Exact`.
         ignore_case:
           type:
-          - boolean
-          - 'null'
+            - boolean
+            - 'null'
           description: Whether case is insentivie, default is `false`.
         max_results:
           type: integer
@@ -460,9 +460,9 @@ components:
       type: object
       description: Container for the result.
       required:
-      - version
-      - query
-      - result
+        - version
+        - query
+        - result
       properties:
         version:
           $ref: '#/components/schemas/Version'
@@ -479,8 +479,8 @@ components:
       type: object
       description: Result entry for `handle`.
       required:
-      - omim_id
-      - name
+        - omim_id
+        - name
       properties:
         omim_id:
           type: string
@@ -490,8 +490,8 @@ components:
           description: The OMIM disease name.
         hpo_terms:
           type:
-          - array
-          - 'null'
+            - array
+            - 'null'
           items:
             $ref: '#/components/schemas/ResultHpoTerm'
           description: The gene's associated HPO terms.
@@ -499,8 +499,8 @@ components:
       type: object
       description: The performed query.
       required:
-      - terms
-      - genes
+        - terms
+        - genes
       properties:
         terms:
           type: array
@@ -516,9 +516,9 @@ components:
       type: object
       description: Result container data structure.
       required:
-      - version
-      - query
-      - result
+        - version
+        - query
+        - result
       properties:
         version:
           $ref: '#/components/schemas/Version'
@@ -535,8 +535,8 @@ components:
       type: object
       description: Store score for a record with information on individual terms.
       required:
-      - gene_symbol
-      - raw_score
+        - gene_symbol
+        - raw_score
       properties:
         gene_symbol:
           type: string
@@ -547,8 +547,8 @@ components:
           description: The raw Phenomizer score.
         terms:
           type:
-          - array
-          - 'null'
+            - array
+            - 'null'
           items:
             $ref: '#/components/schemas/HpoSimTermGeneTermDetails'
           description: Details on individual terms.
@@ -556,14 +556,14 @@ components:
       type: object
       description: Detailed term scores.
       required:
-      - term_gene
-      - score
+        - term_gene
+        - score
       properties:
         term_query:
           oneOf:
-          - type: 'null'
-          - $ref: '#/components/schemas/HpoTerm'
-            description: The query HPO term.
+            - type: 'null'
+            - $ref: '#/components/schemas/HpoTerm'
+              description: The query HPO term.
         term_gene:
           $ref: '#/components/schemas/HpoTerm'
           description: The gene's HPO term.
@@ -578,8 +578,8 @@ components:
 
         The difference is that the `lhs` and `rhs` fields are replaced by vecs.
       required:
-      - lhs
-      - rhs
+        - lhs
+        - rhs
       properties:
         lhs:
           type: array
@@ -604,9 +604,9 @@ components:
       type: object
       description: Result container.
       required:
-      - version
-      - query
-      - result
+        - version
+        - query
+        - result
       properties:
         version:
           $ref: '#/components/schemas/Version'
@@ -623,9 +623,9 @@ components:
       type: object
       description: Result entry for `handle`.
       required:
-      - lhs
-      - rhs
-      - score
+        - lhs
+        - rhs
+        - score
       properties:
         lhs:
           type: string
@@ -641,15 +641,15 @@ components:
       type: object
       description: Struct for loading an HPO term from JSON.
       required:
-      - term_id
+        - term_id
       properties:
         term_id:
           type: string
           description: The term ID.
         term_name:
           type:
-          - string
-          - 'null'
+            - string
+            - 'null'
           description: The term name (optional).
     HpoTermsQuery:
       type: object
@@ -666,13 +666,13 @@ components:
       properties:
         term_id:
           type:
-          - string
-          - 'null'
+            - string
+            - 'null'
           description: The term ID to search for.
         name:
           type:
-          - string
-          - 'null'
+            - string
+            - 'null'
           description: The term name to search for.
         max_results:
           type: integer
@@ -685,9 +685,9 @@ components:
       type: object
       description: Container for the result.
       required:
-      - version
-      - query
-      - result
+        - version
+        - query
+        - result
       properties:
         version:
           $ref: '#/components/schemas/Version'
@@ -704,8 +704,8 @@ components:
       type: object
       description: Result entry for `fetch_hpo_genes`.
       required:
-      - term_id
-      - name
+        - term_id
+        - name
       properties:
         term_id:
           type: string
@@ -715,27 +715,27 @@ components:
           description: The HPO term's name.
         definition:
           type:
-          - string
-          - 'null'
+            - string
+            - 'null'
           description: Any matching description.
         synonyms:
           type:
-          - array
-          - 'null'
+            - array
+            - 'null'
           items:
             type: string
           description: Any matching synonyms.
         xrefs:
           type:
-          - array
-          - 'null'
+            - array
+            - 'null'
           items:
             type: string
           description: Any matching xref.
         genes:
           type:
-          - array
-          - 'null'
+            - array
+            - 'null'
           items:
             $ref: '#/components/schemas/ResultGene'
           description: The gene's associated HPO terms.
@@ -747,22 +747,22 @@ components:
         We replicate what is in the `hpo` create so we can put them on the command line and use
         them in HTTP queries more easily.
       enum:
-      - gene
-      - omim
+        - gene
+        - omim
     Match:
       type: string
       description: Specify how to perform query matches in the API calls.
       enum:
-      - exact
-      - prefix
-      - suffix
-      - contains
+        - exact
+        - prefix
+        - suffix
+        - contains
     ResultGene:
       type: object
       description: Representation of a gene.
       required:
-      - ncbi_gene_id
-      - gene_symbol
+        - ncbi_gene_id
+        - gene_symbol
       properties:
         ncbi_gene_id:
           type: integer
@@ -774,15 +774,15 @@ components:
           description: The description.
         hgnc_id:
           type:
-          - string
-          - 'null'
+            - string
+            - 'null'
           description: The HGNC ID.
     ResultHpoTerm:
       type: object
       description: Representation of an HPO term.
       required:
-      - term_id
-      - name
+        - term_id
+        - name
       properties:
         term_id:
           type: string
@@ -798,9 +798,9 @@ components:
         We replicate what is in the `hpo` create so we can put them on the command line and use
         them in HTTP queries more easily.
       enum:
-      - fun-sim-avg
-      - fun-sim-max
-      - bma
+        - fun-sim-avg
+        - fun-sim-max
+        - bma
     SimilarityMethod:
       type: string
       description: |-
@@ -809,20 +809,20 @@ components:
         We replicate what is in the `hpo` create so we can put them on the command line and use
         them in HTTP queries more easily.
       enum:
-      - distance-gene
-      - graph-ic
-      - information-coefficient
-      - jc
-      - lin
-      - mutation
-      - relevance
-      - resnik
+        - distance-gene
+        - graph-ic
+        - information-coefficient
+        - jc
+        - lin
+        - mutation
+        - relevance
+        - resnik
     Version:
       type: object
       description: Version information that is returned by the HTTP server.
       required:
-      - hpo
-      - viguno
+        - hpo
+        - viguno
       properties:
         hpo:
           type: string

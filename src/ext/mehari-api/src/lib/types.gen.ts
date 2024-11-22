@@ -5,492 +5,561 @@
  *
  * Copy from annonars with extension to derive `utoipa::ToSchema`.
  */
-export type Assembly = 'grch37' | 'grch38';
+export type Assembly = 'grch37' | 'grch38'
 
 /**
  * Putative impact.
  */
-export type Consequence = 'transcript_ablation' | 'exon_loss_variant' | 'splice_acceptor_variant' | 'splice_donor_variant' | 'stop_gained' | 'frameshift_variant' | 'stop_lost' | 'start_lost' | 'transcript_amplification' | 'feature_elongation' | 'feature_truncation' | 'disruptive_inframe_insertion' | 'disruptive_inframe_deletion' | 'conservative_inframe_insertion' | 'conservative_inframe_deletion' | 'missense_variant' | 'splice_donor_5th_base_variant' | 'splice_region_variant' | 'splice_donor_region_variant' | 'splice_polypyrimidine_tract_variant' | 'start_retained_variant' | 'stop_retained_variant' | 'synonymous_variant' | 'coding_sequence_variant' | 'mature_miRNA_variant' | '5_prime_UTR_exon_variant' | '5_prime_UTR_intron_variant' | '3_prime_UTR_exon_variant' | '3_prime_UTR_intron_variant' | 'non_coding_transcript_exon_variant' | 'non_coding_transcript_intron_variant' | 'upstream_gene_variant' | 'downstream_gene_variant' | 'TFBS_ablation' | 'TFBS_amplification' | 'TF_binding_site_variant' | 'regulatory_region_ablation' | 'regulatory_region_amplification' | 'regulatory_region_variant' | 'intergenic_variant' | 'intron_variant' | 'gene_variant';
+export type Consequence =
+  | 'transcript_ablation'
+  | 'exon_loss_variant'
+  | 'splice_acceptor_variant'
+  | 'splice_donor_variant'
+  | 'stop_gained'
+  | 'frameshift_variant'
+  | 'stop_lost'
+  | 'start_lost'
+  | 'transcript_amplification'
+  | 'feature_elongation'
+  | 'feature_truncation'
+  | 'disruptive_inframe_insertion'
+  | 'disruptive_inframe_deletion'
+  | 'conservative_inframe_insertion'
+  | 'conservative_inframe_deletion'
+  | 'missense_variant'
+  | 'splice_donor_5th_base_variant'
+  | 'splice_region_variant'
+  | 'splice_donor_region_variant'
+  | 'splice_polypyrimidine_tract_variant'
+  | 'start_retained_variant'
+  | 'stop_retained_variant'
+  | 'synonymous_variant'
+  | 'coding_sequence_variant'
+  | 'mature_miRNA_variant'
+  | '5_prime_UTR_exon_variant'
+  | '5_prime_UTR_intron_variant'
+  | '3_prime_UTR_exon_variant'
+  | '3_prime_UTR_intron_variant'
+  | 'non_coding_transcript_exon_variant'
+  | 'non_coding_transcript_intron_variant'
+  | 'upstream_gene_variant'
+  | 'downstream_gene_variant'
+  | 'TFBS_ablation'
+  | 'TFBS_amplification'
+  | 'TF_binding_site_variant'
+  | 'regulatory_region_ablation'
+  | 'regulatory_region_amplification'
+  | 'regulatory_region_variant'
+  | 'intergenic_variant'
+  | 'intron_variant'
+  | 'gene_variant'
 
 export type CustomError = {
-    err: string;
-};
+  err: string
+}
 
 /**
  * Specification of data version for a given genome build.
  */
 export type DataVersionEntry = {
-    genome_build: Assembly;
-    /**
-     * Version of the RefSeq database, if any.
-     */
-    version_refseq?: (string) | null;
-    /**
-     * Version of the Ensembl database, if any.
-     */
-    version_ensembl?: (string) | null;
-    /**
-     * Version of cdot used.
-     */
-    version_cdot: string;
-};
+  genome_build: Assembly
+  /**
+   * Version of the RefSeq database, if any.
+   */
+  version_refseq?: string | null
+  /**
+   * Version of the Ensembl database, if any.
+   */
+  version_ensembl?: string | null
+  /**
+   * Version of cdot used.
+   */
+  version_cdot: string
+}
 
 /**
  * Store the alignment of one exon to the reference.
  */
 export type ExonAlignment = {
-    /**
-     * Start position on reference.
-     */
-    alt_start_i: number;
-    /**
-     * End position on reference.
-     */
-    alt_end_i: number;
-    /**
-     * Exon number.
-     */
-    ord: number;
-    /**
-     * CDS start coordinate.
-     */
-    alt_cds_start_i?: (number) | null;
-    /**
-     * CDS end coordinate.
-     */
-    alt_cds_end_i?: (number) | null;
-    /**
-     * CIGAR string of alignment, empty indicates full matches.
-     */
-    cigar: string;
-};
+  /**
+   * Start position on reference.
+   */
+  alt_start_i: number
+  /**
+   * End position on reference.
+   */
+  alt_end_i: number
+  /**
+   * Exon number.
+   */
+  ord: number
+  /**
+   * CDS start coordinate.
+   */
+  alt_cds_start_i?: number | null
+  /**
+   * CDS end coordinate.
+   */
+  alt_cds_end_i?: number | null
+  /**
+   * CIGAR string of alignment, empty indicates full matches.
+   */
+  cigar: string
+}
 
 /**
  * Encode feature biotype.
  */
-export type FeatureBiotype = 'coding' | 'noncoding' | 'mane_select' | 'mane_plus_clinical';
+export type FeatureBiotype = 'coding' | 'noncoding' | 'mane_select' | 'mane_plus_clinical'
 
 /**
  * Enum for `AnnField::feature_type`.
  */
-export type FeatureType = {
-    so_term: {
-        term: SoFeature;
-    };
-} | {
-    custom: {
-        value: string;
-    };
-};
+export type FeatureType =
+  | {
+      so_term: {
+        term: SoFeature
+      }
+    }
+  | {
+      custom: {
+        value: string
+      }
+    }
 
 /**
  * Query arguments for the `/api/v1/genes/transcripts` endpoint.
  */
 export type GenesTranscriptsListQuery = {
-    /**
-     * HGNC gene ID.
-     */
-    hgnc_id: string;
-    genome_build: Assembly;
-    /**
-     * Page size.
-     */
-    page_size?: (number) | null;
-    /**
-     * Next page token.
-     */
-    next_page_token?: (string) | null;
-};
+  /**
+   * HGNC gene ID.
+   */
+  hgnc_id: string
+  genome_build: Assembly
+  /**
+   * Page size.
+   */
+  page_size?: number | null
+  /**
+   * Next page token.
+   */
+  next_page_token?: string | null
+}
 
 /**
  * Response of the `/api/v1/genes/transcripts` endpoint.
  */
 export type GenesTranscriptsListResponse = {
-    /**
-     * The transcripts for the gene.
-     */
-    transcripts: Array<Transcript>;
-    /**
-     * The token to continue from a previous query.
-     */
-    next_page_token?: (string) | null;
-};
+  /**
+   * The transcripts for the gene.
+   */
+  transcripts: Array<Transcript>
+  /**
+   * The token to continue from a previous query.
+   */
+  next_page_token?: string | null
+}
 
 /**
  * Store information about a transcript aligning to a genome.
  */
 export type GenomeAlignment = {
-    genome_build: Assembly;
-    /**
-     * Accession of the contig sequence.
-     */
-    contig: string;
-    /**
-     * CDS end position, `-1` to indicate `None`.
-     */
-    cds_start?: (number) | null;
-    /**
-     * CDS end position, `-1` to indicate `None`.
-     */
-    cds_end?: (number) | null;
-    strand: Strand;
-    /**
-     * Exons of the alignment.
-     */
-    exons: Array<ExonAlignment>;
-};
+  genome_build: Assembly
+  /**
+   * Accession of the contig sequence.
+   */
+  contig: string
+  /**
+   * CDS end position, `-1` to indicate `None`.
+   */
+  cds_start?: number | null
+  /**
+   * CDS end position, `-1` to indicate `None`.
+   */
+  cds_end?: number | null
+  strand: Strand
+  /**
+   * Exons of the alignment.
+   */
+  exons: Array<ExonAlignment>
+}
 
 /**
  * Select the genome release to use.
  */
-export type GenomeRelease = 'grch37' | 'grch38';
+export type GenomeRelease = 'grch37' | 'grch38'
 
 /**
  * A message to be used in `AnnField::messages`.
  */
-export type Message = 'error_chromosome_not_found' | 'error_out_of_chromosome_range' | 'warning_ref_does_not_match_genome' | 'warning_sequence_not_available' | 'warning_transcript_incomplete' | 'warning_transcript_multiple_stop_codons' | 'warning_transcripts_no_start_codon' | 'info_realign_three_prime' | 'info_compound_annotation' | 'info_non_reference_annotation';
+export type Message =
+  | 'error_chromosome_not_found'
+  | 'error_out_of_chromosome_range'
+  | 'warning_ref_does_not_match_genome'
+  | 'warning_sequence_not_available'
+  | 'warning_transcript_incomplete'
+  | 'warning_transcript_multiple_stop_codons'
+  | 'warning_transcripts_no_start_codon'
+  | 'info_realign_three_prime'
+  | 'info_compound_annotation'
+  | 'info_non_reference_annotation'
 
 /**
  * Position, optionally with total length.
  */
 export type Pos = {
-    ord: number;
-    total?: (number) | null;
-};
+  ord: number
+  total?: number | null
+}
 
 /**
  * Putative impact level.
  */
-export type PutativeImpact = 'high' | 'moderate' | 'low' | 'modifier';
+export type PutativeImpact = 'high' | 'moderate' | 'low' | 'modifier'
 
 /**
  * Encode exon/intron rank.
  */
 export type Rank = {
-    ord: number;
-    total: number;
-};
+  ord: number
+  total: number
+}
 
 /**
  * Query parameters of the `/api/v1/seqvars/csq` endpoint.
  */
 export type SeqvarsCsqQuery = {
-    genome_release: GenomeRelease;
-    /**
-     * SPDI sequence.
-     */
-    chromosome: string;
-    /**
-     * SPDI position.
-     */
-    position: number;
-    /**
-     * SPDI deletion.
-     */
-    reference: string;
-    /**
-     * SPDI insertion.
-     */
-    alternative: string;
-    /**
-     * Optionally, the HGNC ID of the gene to limit to.
-     */
-    hgnc_id?: (string) | null;
-};
+  genome_release: GenomeRelease
+  /**
+   * SPDI sequence.
+   */
+  chromosome: string
+  /**
+   * SPDI position.
+   */
+  position: number
+  /**
+   * SPDI deletion.
+   */
+  reference: string
+  /**
+   * SPDI insertion.
+   */
+  alternative: string
+  /**
+   * Optionally, the HGNC ID of the gene to limit to.
+   */
+  hgnc_id?: string | null
+}
 
 /**
  * Response of the `/api/v1/seqvars/csq` endpoint.
  */
 export type SeqvarsCsqResponse = {
-    version: VersionsInfoResponse;
-    query: SeqvarsCsqQuery;
-    /**
-     * The resulting records for the scored genes.
-     */
-    result: Array<SeqvarsCsqResultEntry>;
-};
+  version: VersionsInfoResponse
+  query: SeqvarsCsqQuery
+  /**
+   * The resulting records for the scored genes.
+   */
+  result: Array<SeqvarsCsqResultEntry>
+}
 
 /**
  * One entry in `SeqvarsCsqResponse`.
  */
 export type SeqvarsCsqResultEntry = {
-    /**
-     * The consequences of the allele.
-     */
-    consequences: Array<Consequence>;
-    putative_impact: PutativeImpact;
-    /**
-     * The gene symbol.
-     */
-    gene_symbol: string;
-    /**
-     * The gene identifier.
-     */
-    gene_id: string;
-    feature_type: FeatureType;
-    /**
-     * The feature identifier.
-     */
-    feature_id: string;
-    feature_biotype: FeatureBiotype;
-    /**
-     * The feature tags.
-     */
-    feature_tag: Array<FeatureBiotype>;
-    rank?: ((Rank) | null);
-    /**
-     * HGVS c. notation.
-     */
-    hgvs_t?: (string) | null;
-    /**
-     * HGVS p. notation.
-     */
-    hgvs_p?: (string) | null;
-    tx_pos?: ((Pos) | null);
-    cds_pos?: ((Pos) | null);
-    protein_pos?: ((Pos) | null);
-    /**
-     * Distance to feature.
-     */
-    distance?: (number) | null;
-    /**
-     * Optional list of warnings and error messages.
-     */
-    messages?: Array<Message> | null;
-};
+  /**
+   * The consequences of the allele.
+   */
+  consequences: Array<Consequence>
+  putative_impact: PutativeImpact
+  /**
+   * The gene symbol.
+   */
+  gene_symbol: string
+  /**
+   * The gene identifier.
+   */
+  gene_id: string
+  feature_type: FeatureType
+  /**
+   * The feature identifier.
+   */
+  feature_id: string
+  feature_biotype: FeatureBiotype
+  /**
+   * The feature tags.
+   */
+  feature_tag: Array<FeatureBiotype>
+  rank?: Rank | null
+  /**
+   * HGVS c. notation.
+   */
+  hgvs_t?: string | null
+  /**
+   * HGVS p. notation.
+   */
+  hgvs_p?: string | null
+  tx_pos?: Pos | null
+  cds_pos?: Pos | null
+  protein_pos?: Pos | null
+  /**
+   * Distance to feature.
+   */
+  distance?: number | null
+  /**
+   * Optional list of warnings and error messages.
+   */
+  messages?: Array<Message> | null
+}
 
 /**
  * Sequence ontology feature.
  */
-export type SoFeature = 'Transcript';
+export type SoFeature = 'Transcript'
 
 /**
  * Software version specification.
  */
 export type SoftwareVersions = {
-    /**
-     * Version of `mehari`.
-     */
-    mehari: string;
-    /**
-     * Version of the `hgvs` crate.
-     */
-    hgvs_rs: string;
-};
+  /**
+   * Version of `mehari`.
+   */
+  mehari: string
+  /**
+   * Version of the `hgvs` crate.
+   */
+  hgvs_rs: string
+}
 
 /**
  * Enumeration for the two strands of the genome.
  */
-export type Strand = 'unknown' | 'plus' | 'minus';
+export type Strand = 'unknown' | 'plus' | 'minus'
 
 /**
  * Query parameters of the `/api/v1/strucvars/csq` endpoint.
  */
 export type StrucvarsCsqQuery = {
-    genome_release: GenomeRelease;
-    /**
-     * Chromosome.
-     */
-    chromosome: string;
-    /**
-     * 1-based start position.
-     */
-    start: number;
-    /**
-     * 1-based stop position, ignored for INS.
-     */
-    stop?: (number) | null;
-    sv_type: StrucvarsSvType;
-};
+  genome_release: GenomeRelease
+  /**
+   * Chromosome.
+   */
+  chromosome: string
+  /**
+   * 1-based start position.
+   */
+  start: number
+  /**
+   * 1-based stop position, ignored for INS.
+   */
+  stop?: number | null
+  sv_type: StrucvarsSvType
+}
 
 /**
  * Response of the `/api/v1/strucvars/csq` endpoint.
  */
 export type StrucvarsCsqResponse = {
-    version: VersionsInfoResponse;
-    query: StrucvarsCsqQuery;
-    /**
-     * The resulting records for the affected genes.
-     */
-    result: Array<StrucvarsGeneTranscriptEffects>;
-};
+  version: VersionsInfoResponse
+  query: StrucvarsCsqQuery
+  /**
+   * The resulting records for the affected genes.
+   */
+  result: Array<StrucvarsGeneTranscriptEffects>
+}
 
 /**
  * Explanation of transcript effect per individual gene.
  */
 export type StrucvarsGeneTranscriptEffects = {
-    /**
-     * HGNC identifier
-     */
-    hgnc_id: string;
-    /**
-     * Transcript effects for the gene.
-     */
-    transcript_effects: Array<StrucvarsTranscriptEffect>;
-};
+  /**
+   * HGNC identifier
+   */
+  hgnc_id: string
+  /**
+   * Transcript effects for the gene.
+   */
+  transcript_effects: Array<StrucvarsTranscriptEffect>
+}
 
 /**
  * Structural Variant type.
  */
-export type StrucvarsSvType = 'DEL' | 'DUP' | 'INS' | 'INV' | 'BND';
+export type StrucvarsSvType = 'DEL' | 'DUP' | 'INS' | 'INV' | 'BND'
 
 /**
  * Enumeration for effect on transcript.
  */
-export type StrucvarsTranscriptEffect = 'transcript_variant' | 'exon_variant' | 'splice_region_variant' | 'intron_variant' | 'upstream_variant' | 'downstream_variant' | 'intergenic_variant';
+export type StrucvarsTranscriptEffect =
+  | 'transcript_variant'
+  | 'exon_variant'
+  | 'splice_region_variant'
+  | 'intron_variant'
+  | 'upstream_variant'
+  | 'downstream_variant'
+  | 'intergenic_variant'
 
 /**
  * Transcript information.
  */
 export type Transcript = {
-    /**
-     * Transcript accession with version, e.g., `"NM_007294.3"` or `"ENST00000461574.1"` for BRCA1.
-     */
-    id: string;
-    /**
-     * HGNC symbol, e.g., `"BRCA1"`
-     */
-    gene_symbol: string;
-    /**
-     * HGNC gene identifier, e.g., `"1100"` for BRCA1.
-     */
-    gene_id: string;
-    biotype: TranscriptBiotype;
-    /**
-     * Transcript flags.
-     */
-    tags: Array<TranscriptTag>;
-    /**
-     * Identifier of the corresponding protein.
-     */
-    protein?: (string) | null;
-    /**
-     * CDS start codon.
-     */
-    start_codon?: (number) | null;
-    /**
-     * CDS stop codon.
-     */
-    stop_codon?: (number) | null;
-    /**
-     * Alignments on the different genome builds.
-     */
-    genome_alignments: Array<GenomeAlignment>;
-    /**
-     * Whether this transcript has an issue (e.g. MissingStopCodon), cf. `mehari::db::create::mod::Reason`.
-     */
-    filtered?: (boolean) | null;
-    /**
-     * Reason for filtering.
-     */
-    filter_reason?: (number) | null;
-};
+  /**
+   * Transcript accession with version, e.g., `"NM_007294.3"` or `"ENST00000461574.1"` for BRCA1.
+   */
+  id: string
+  /**
+   * HGNC symbol, e.g., `"BRCA1"`
+   */
+  gene_symbol: string
+  /**
+   * HGNC gene identifier, e.g., `"1100"` for BRCA1.
+   */
+  gene_id: string
+  biotype: TranscriptBiotype
+  /**
+   * Transcript flags.
+   */
+  tags: Array<TranscriptTag>
+  /**
+   * Identifier of the corresponding protein.
+   */
+  protein?: string | null
+  /**
+   * CDS start codon.
+   */
+  start_codon?: number | null
+  /**
+   * CDS stop codon.
+   */
+  stop_codon?: number | null
+  /**
+   * Alignments on the different genome builds.
+   */
+  genome_alignments: Array<GenomeAlignment>
+  /**
+   * Whether this transcript has an issue (e.g. MissingStopCodon), cf. `mehari::db::create::mod::Reason`.
+   */
+  filtered?: boolean | null
+  /**
+   * Reason for filtering.
+   */
+  filter_reason?: number | null
+}
 
 /**
  * Enumeration for `Transcript::biotype`.
  */
-export type TranscriptBiotype = 'coding' | 'non_coding';
+export type TranscriptBiotype = 'coding' | 'non_coding'
 
-export type TranscriptTag = 'basic' | 'ensembl_canonical' | 'mane_select' | 'mane_plus_clinical' | 'ref_seq_select' | 'selenoprotein' | 'gencode_primary' | 'other';
+export type TranscriptTag =
+  | 'basic'
+  | 'ensembl_canonical'
+  | 'mane_select'
+  | 'mane_plus_clinical'
+  | 'ref_seq_select'
+  | 'selenoprotein'
+  | 'gencode_primary'
+  | 'other'
 
 /**
  * Response of the `/api/v1/version` endpoint.
  */
 export type VersionsInfoResponse = {
-    software: SoftwareVersions;
-    /**
-     * Data versions specification.
-     */
-    data: Array<DataVersionEntry>;
-};
+  software: SoftwareVersions
+  /**
+   * Data versions specification.
+   */
+  data: Array<DataVersionEntry>
+}
 
 export type GenesTranscriptsListData = {
-    query: {
-        /**
-         * Genome build.
-         */
-        genome_build: Assembly;
-        /**
-         * HGNC gene ID.
-         */
-        hgnc_id: string;
-        /**
-         * Next page token.
-         */
-        next_page_token?: (string) | null;
-        /**
-         * Page size.
-         */
-        page_size?: (number) | null;
-    };
-};
+  query: {
+    /**
+     * Genome build.
+     */
+    genome_build: Assembly
+    /**
+     * HGNC gene ID.
+     */
+    hgnc_id: string
+    /**
+     * Next page token.
+     */
+    next_page_token?: string | null
+    /**
+     * Page size.
+     */
+    page_size?: number | null
+  }
+}
 
-export type GenesTranscriptsListResponse2 = (GenesTranscriptsListResponse);
+export type GenesTranscriptsListResponse2 = GenesTranscriptsListResponse
 
-export type GenesTranscriptsListError = (CustomError);
+export type GenesTranscriptsListError = CustomError
 
 export type SeqvarsCsqData = {
-    query: {
-        /**
-         * SPDI insertion.
-         */
-        alternative: string;
-        /**
-         * SPDI sequence.
-         */
-        chromosome: string;
-        /**
-         * The assembly.
-         */
-        genome_release: GenomeRelease;
-        /**
-         * Optionally, the HGNC ID of the gene to limit to.
-         */
-        hgnc_id?: (string) | null;
-        /**
-         * SPDI position.
-         */
-        position: number;
-        /**
-         * SPDI deletion.
-         */
-        reference: string;
-    };
-};
+  query: {
+    /**
+     * SPDI insertion.
+     */
+    alternative: string
+    /**
+     * SPDI sequence.
+     */
+    chromosome: string
+    /**
+     * The assembly.
+     */
+    genome_release: GenomeRelease
+    /**
+     * Optionally, the HGNC ID of the gene to limit to.
+     */
+    hgnc_id?: string | null
+    /**
+     * SPDI position.
+     */
+    position: number
+    /**
+     * SPDI deletion.
+     */
+    reference: string
+  }
+}
 
-export type SeqvarsCsqResponse2 = (SeqvarsCsqResponse);
+export type SeqvarsCsqResponse2 = SeqvarsCsqResponse
 
-export type SeqvarsCsqError = (CustomError);
+export type SeqvarsCsqError = CustomError
 
 export type StrucvarsCsqData = {
-    query: {
-        /**
-         * Chromosome.
-         */
-        chromosome: string;
-        /**
-         * The assembly.
-         */
-        genome_release: GenomeRelease;
-        /**
-         * 1-based start position.
-         */
-        start: number;
-        /**
-         * 1-based stop position, ignored for INS.
-         */
-        stop?: (number) | null;
-        /**
-         * The variant type to use for annotation.
-         */
-        sv_type: StrucvarsSvType;
-    };
-};
+  query: {
+    /**
+     * Chromosome.
+     */
+    chromosome: string
+    /**
+     * The assembly.
+     */
+    genome_release: GenomeRelease
+    /**
+     * 1-based start position.
+     */
+    start: number
+    /**
+     * 1-based stop position, ignored for INS.
+     */
+    stop?: number | null
+    /**
+     * The variant type to use for annotation.
+     */
+    sv_type: StrucvarsSvType
+  }
+}
 
-export type StrucvarsCsqResponse2 = (StrucvarsCsqResponse);
+export type StrucvarsCsqResponse2 = StrucvarsCsqResponse
 
-export type StrucvarsCsqError = (CustomError);
+export type StrucvarsCsqError = CustomError
 
-export type VersionsInfoResponse2 = (VersionsInfoResponse);
+export type VersionsInfoResponse2 = VersionsInfoResponse
 
-export type VersionsInfoError = (CustomError);
+export type VersionsInfoError = CustomError

@@ -9,8 +9,9 @@ export const AGGREGATE_GERMLINE_REVIEW_STATUS_LABEL: {
 } = {
   no_classification_provided: 'no classification provided',
   no_assertion_criteria_provided: 'no assertion criteria provided',
-  criteria_provided_single_submitter:  'criteria provided, single submitter',
-  criteria_provided_multiple_submitters_no_conflicts: 'criteria provided, multiple submitters, no conflicts',
+  criteria_provided_single_submitter: 'criteria provided, single submitter',
+  criteria_provided_multiple_submitters_no_conflicts:
+    'criteria provided, multiple submitters, no conflicts',
   criteria_provided_conflicting_classifications: 'criteria provided, conflicting classifications',
   reviewed_by_expert_panel: 'reviewed by expert panel',
   practice_guideline: 'practice guideline',

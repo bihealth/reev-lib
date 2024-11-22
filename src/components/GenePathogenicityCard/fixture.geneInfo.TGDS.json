@@ -1,30 +1,38 @@
 {
+  "acmg_sf": null,
+  "clingen": null,
   "dbnsfp": {
-    "geneName": "TGDS",
-    "ensemblGene": "ENSG00000088451",
+    "gene_name": "TGDS",
+    "ensembl_gene": "ENSG00000088451",
     "chr": "13",
-    "geneOtherNames": ["TDPGD", "SDR2E1"],
-    "uniprotAcc": "O95455",
-    "uniprotId": "TGDS_HUMAN",
-    "entrezGeneId": "23483",
-    "ccdsId": ["CCDS9471"],
-    "refseqId": ["NM_014305", "NM_001304430"],
-    "ucscId": "uc001vlw.4",
-    "mimId": ["616146"],
-    "omimId": ["616146"],
-    "geneFullName": "TDP-glucose 4,6-dehydratase",
-    "pathwayUniprot": ".",
-    "pathwayKeggId": ["hsa00520", "hsa00521"],
-    "pathwayKeggFull": ["Nucleotide sugars metabolism", "Streptomycin biosynthesis"],
-    "diseaseDescription": [
+    "gene_old_names": [],
+    "gene_other_names": ["TDPGD", "SDR2E1"],
+    "uniprot_acc": "O95455",
+    "uniprot_id": "TGDS_HUMAN",
+    "entrez_gene_id": "23483",
+    "ccds_id": ["CCDS9471"],
+    "refseq_id": ["NM_014305", "NM_001304430"],
+    "ucsc_id": "uc001vlw.4",
+    "mim_id": ["616146"],
+    "omim_id": ["616146"],
+    "gene_full_name": "TDP-glucose 4,6-dehydratase",
+    "pathway_uniprot": ".",
+    "pathway_biocarta_short": [],
+    "pathway_biocarta_full": [],
+    "pathway_consensus_path_db": [],
+    "pathway_kegg_id": ["hsa00520", "hsa00521"],
+    "pathway_kegg_full": ["Nucleotide sugars metabolism", "Streptomycin biosynthesis"],
+    "function_description": [],
+    "disease_description": [
       "DISEASE: Catel-Manzke syndrome (CATMANS) [MIM:616145]: A syndrome characterized by Pierre Robin sequence and a unique form of bilateral hyperphalangy causing a clinodactyly of the index finger. Pierre Robin sequence includes an opening in the roof of the mouth (a cleft palate), a large tongue (macroglossia), and a small lower jaw (micrognathia). {ECO:0000269|PubMed:25480037}. Note=The disease is caused by mutations affecting the gene represented in this entry."
     ],
-    "mimPhenotypeId": ["616145"],
-    "mimDisease": ["[MIM:616145]Catel-Manzke syndrome"],
-    "orphanetDisorderId": ["1388"],
-    "orphanetDisorder": ["Catel-Manzke syndrome"],
-    "orphanetAssociationType": ["Disease-causing germline mutation(s) in"],
-    "hpoId": [
+    "mim_phenotype_id": ["616145"],
+    "mim_disease": ["[MIM:616145]Catel-Manzke syndrome"],
+    "orphanet_disorder_id": ["1388"],
+    "orphanet_disorder": ["Catel-Manzke syndrome"],
+    "orphanet_association_type": ["Disease-causing germline mutation(s) in"],
+    "trait_association_gwas": [],
+    "hpo_id": [
       "HP:0002553",
       "HP:0002650",
       "HP:0100490",
@@ -81,7 +89,7 @@
       "HP:0000954",
       "HP:0001373"
     ],
-    "hpoName": [
+    "hpo_name": [
       "Highly arched eyebrow",
       "Scoliosis",
       "Camptodactyly of finger",
@@ -138,8 +146,11 @@
       "Single transverse palmar crease",
       "Joint dislocation"
     ],
-    "goMolecularFunction": ["dTDP-glucose 4,6-dehydratase activity"],
-    "expressionEgenetics": [
+    "go_biological_process": [],
+    "go_cellular_component": [],
+    "go_molecular_function": ["dTDP-glucose 4,6-dehydratase activity"],
+    "tissue_specificity_uniprot": [],
+    "expression_egenetics": [
       "skin",
       "stomach",
       "testis",
@@ -170,7 +181,7 @@
       "breast",
       "hypothalamus"
     ],
-    "expressionGnfAtlas": [
+    "expression_gnf_atlas": [
       "ciliary ganglion",
       "dorsal root ganglion",
       "trigeminal ganglion",
@@ -178,8 +189,8 @@
       "superior cervical ganglion",
       "parietal lobe"
     ],
-    "interactionsIntact": ["PIK3R1[17474147]", "NCK1[17474147]"],
-    "interactionsBiogrid": [
+    "interactions_intact": ["PIK3R1[17474147]", "NCK1[17474147]"],
+    "interactions_biogrid": [
       "LYN[23503679]",
       "MTF2[28514442]",
       "POTEE[28514442]",
@@ -187,7 +198,7 @@
       "FAM115A[28514442]",
       "GABARAP[28514442]"
     ],
-    "interactionsConsensusPathDb": [
+    "interactions_consensus_path_db": [
       "PIK3R1[0.005]",
       "NCK1[0.005]",
       "HSD17B10[0.004]",
@@ -198,126 +209,148 @@
       "TCAF1[0.004]"
     ],
     "haploinsufficiency": 0.23284,
-    "hipredScore": 0.349531322717667,
+    "hipred_score": 0.349531322717667,
     "hipred": "N",
     "ghis": 0.620644581,
     "prec": 0.22502,
-    "knownRecInfo": ".",
-    "rvisEvs": -0.25,
-    "rvisPercentileEvs": 35.75,
-    "lofFdrExac": 0.7176002,
-    "rvisExac": -0.147207574,
-    "rvisPercentileExac": 40.17830251,
-    "exacPli": 0.00000878036163423323,
-    "exacPrec": 0.765575523684583,
-    "exacPnull": 0.234415695953783,
-    "exacNontcgaPli": 0.000183136445198107,
-    "exacNontcgaPrec": 0.89358443677958,
-    "exacNontcgaPnull": 0.106232426775222,
-    "exacNonpsychPli": 0.000926737024427086,
-    "exacNonpsychPrec": 0.930124726722036,
-    "exacNonpsychPnull": 0.0689485362535364,
-    "gnomadPli": 1.268e-8,
-    "gnomadPrec": 0.57299,
-    "gnomadPnull": 0.42701,
-    "exacDelScore": 0.920186270666877,
-    "exacDupScore": 0.753446639712336,
-    "exacCnvScore": 1.03332673478924,
-    "exacCnvFlag": "N",
+    "known_rec_info": ".",
+    "rvis_evs": -0.25,
+    "rvis_percentile_evs": 35.75,
+    "lof_fdr_exac": 0.7176002,
+    "rvis_exac": -0.147207574,
+    "rvis_percentile_exac": 40.17830251,
+    "exac_pli": 0.00000878036163423323,
+    "exac_prec": 0.765575523684583,
+    "exac_pnull": 0.234415695953783,
+    "exac_nontcga_pli": 0.000183136445198107,
+    "exac_nontcga_prec": 0.89358443677958,
+    "exac_nontcga_pnull": 0.106232426775222,
+    "exac_nonpsych_pli": 0.000926737024427086,
+    "exac_nonpsych_prec": 0.930124726722036,
+    "exac_nonpsych_pnull": 0.0689485362535364,
+    "gnomad_pli": 1.268e-8,
+    "gnomad_prec": 0.57299,
+    "gnomad_pnull": 0.42701,
+    "exac_del_score": 0.920186270666877,
+    "exac_dup_score": 0.753446639712336,
+    "exac_cnv_score": 1.03332673478924,
+    "exac_cnv_flag": "N",
     "gdi": 36.19789,
-    "gdiPhred": 1.0851,
-    "gdpAllDiseaseCausing": "Medium",
-    "gdpAllMendelian": "Medium",
-    "gdpAllMendelianAd": "Medium",
-    "gdpMendelianAr": "Medium",
-    "gdpPid": "Medium",
-    "gdpPidAd": "Medium",
-    "gdpPidAr": "Medium",
-    "gdpCancer": "Medium",
-    "gdbCancerRec": "Medium",
-    "gdpCancerDom": "Medium",
-    "loftoolScore": 0.49,
-    "sorvaLofMaf5HetOrHom": 0,
-    "sorvaLofMaf5HomOrComphet": 0,
-    "sorvaLofMaf1HetOrHom": 0,
-    "sorvaLofMaf1HomOrComphet": 0,
-    "sorvaLofOrMisMaf5HetOrHom": 0.016773162939297124,
-    "sorvaLofOrMisMaf5HomOrComphet": 0,
-    "sorvaLofOrMisMaf1HetOrHom": 0.006789137380191693,
-    "sorvaLofOrMisMaf1HomOrComphet": 0,
-    "essentialGene": ".",
-    "essentialGeneCrispr": "N",
-    "essentialGeneCrispr2": "N",
-    "essentialGeneGeneTrap": "N",
-    "geneIndispensabilityScore": 0.754605270336056,
-    "geneIndispensabilityPred": "E",
-    "mgiMouseGene": "Tgds",
-    "mgiMousePhenotype": "craniofacial phenotype; growth/size/body region phenotype; digestive/alimentary phenotype; skeleton phenotype; ",
-    "zfinZebrafishGene": ".",
-    "zfinZebrafishStructure": ".",
-    "zfinZebrafishPhenotypeQuality": ".",
-    "zfinZebrafishPhenotypeTag": "."
+    "gdi_phred": 1.0851,
+    "gdp_all_disease_causing": "Medium",
+    "gdp_all_mendelian": "Medium",
+    "gdp_all_mendelian_ad": "Medium",
+    "gdp_mendelian_ar": "Medium",
+    "gdp_pid": "Medium",
+    "gdp_pid_ad": "Medium",
+    "gdp_pid_ar": "Medium",
+    "gdp_cancer": "Medium",
+    "gdb_cancer_rec": "Medium",
+    "gdp_cancer_dom": "Medium",
+    "loftool_score": 0.49,
+    "sorva_lof_maf_5_het_or_hom": 0,
+    "sorva_lof_maf_5_hom_or_comphet": 0,
+    "sorva_lof_maf_1_het_or_hom": 0,
+    "sorva_lof_maf_1_hom_or_comphet": 0,
+    "sorva_lof_or_mis_maf_5_het_or_hom": 0.016773162939297124,
+    "sorva_lof_or_mis_maf_5_hom_or_comphet": 0,
+    "sorva_lof_or_mis_maf_1_het_or_hom": 0.006789137380191693,
+    "sorva_lof_or_mis_maf_1_hom_or_comphet": 0,
+    "essential_gene": ".",
+    "essential_gene_crispr": "N",
+    "essential_gene_crispr2": "N",
+    "essential_gene_gene_trap": "N",
+    "gene_indispensability_score": 0.754605270336056,
+    "gene_indispensability_pred": "E",
+    "mgi_mouse_gene": "Tgds",
+    "mgi_mouse_phenotype": "craniofacial phenotype; growth/size/body region phenotype; digestive/alimentary phenotype; skeleton phenotype; ",
+    "zfin_zebrafish_gene": ".",
+    "zfin_zebrafish_structure": ".",
+    "zfin_zebrafish_phenotype_quality": ".",
+    "zfin_zebrafish_phenotype_tag": "."
   },
-  "gnomadConstraints": {
-    "ensemblGeneId": "ENSG00000088451",
-    "entrezId": "23483",
-    "geneSymbol": "TGDS",
-    "expLof": 21.511,
-    "expMis": 243.89,
-    "expSyn": 86.952,
-    "misZ": 0.81559,
-    "obsLof": 17,
-    "obsMis": 209,
-    "obsSyn": 69,
-    "oeLof": 0.79029,
-    "oeLofLower": 0.54,
-    "oeLofUpper": 1.185,
-    "oeMis": 0.85695,
-    "oeMisLower": 0.765,
-    "oeMisUpper": 0.961,
-    "oeSyn": 0.79354,
-    "oeSynLower": 0.653,
-    "oeSynUpper": 0.97,
+  "gnomad_constraints": {
+    "ensembl_gene_id": "ENSG00000088451",
+    "entrez_id": "23483",
+    "gene_symbol": "TGDS",
+    "exp_lof": 21.511,
+    "exp_mis": 243.89,
+    "exp_syn": 86.952,
+    "mis_z": 0.81559,
+    "obs_lof": 17,
+    "obs_mis": 209,
+    "obs_syn": 69,
+    "oe_lof": 0.79029,
+    "oe_lof_lower": 0.54,
+    "oe_lof_upper": 1.185,
+    "oe_mis": 0.85695,
+    "oe_mis_lower": 0.765,
+    "oe_mis_upper": 0.961,
+    "oe_syn": 0.79354,
+    "oe_syn_lower": 0.653,
+    "oe_syn_upper": 0.97,
     "pli": 0.000017168,
-    "synZ": 1.0498
+    "syn_z": 1.0498,
+    "exac_pli": null,
+    "exac_obs_lof": null,
+    "exac_exp_lof": null,
+    "exac_oe_lof": null
   },
   "hgnc": {
-    "hgncId": "HGNC:20324",
+    "hgnc_id": "HGNC:20324",
     "symbol": "TGDS",
     "name": "TDP-glucose 4,6-dehydratase",
-    "locusGroup": "protein-coding gene",
-    "locusType": "gene with protein product",
-    "status": "HGNC_STATUS_APPROVED",
+    "locus_group": "protein-coding gene",
+    "locus_type": "gene with protein product",
+    "status": 1,
     "location": "13q32.1",
-    "locationSortable": "13q32.1",
-    "aliasSymbol": ["TDPGD", "SDR2E1"],
-    "aliasName": ["short chain dehydrogenase/reductase family 2E, member 1"],
-    "geneGroup": ["Short chain dehydrogenase/reductase superfamily"],
-    "geneGroupId": [743],
-    "dateApprovedReserved": "2003-04-10",
-    "dateNameChanged": "2016-07-06",
-    "dateModified": "2023-01-20",
-    "entrezId": "23483",
-    "ensemblGeneId": "ENSG00000088451",
-    "vegaId": "OTTHUMG00000046308",
-    "ucscId": "uc001vlw.4",
+    "location_sortable": "13q32.1",
+    "alias_symbol": ["TDPGD", "SDR2E1"],
+    "alias_name": ["short chain dehydrogenase/reductase family 2E, member 1"],
+    "prev_symbol": [],
+    "prev_name": [],
+    "gene_group": ["Short chain dehydrogenase/reductase superfamily"],
+    "gene_group_id": [743],
+    "date_approved_reserved": "2003-04-10",
+    "date_symbol_changed": null,
+    "date_name_changed": "2016-07-06",
+    "date_modified": "2023-01-20",
+    "entrez_id": "23483",
+    "ensembl_gene_id": "ENSG00000088451",
+    "vega_id": "OTTHUMG00000046308",
+    "ucsc_id": "uc001vlw.4",
     "ena": ["AF048686"],
-    "refseqAccession": ["NM_014305"],
-    "ccdsId": ["CCDS9471"],
-    "uniprotIds": ["O95455"],
-    "pubmedId": [19027726],
-    "mgdId": ["MGI:1923605"],
-    "rgdId": ["RGD:1306544"],
-    "omimId": ["616146"],
+    "refseq_accession": ["NM_014305"],
+    "ccds_id": ["CCDS9471"],
+    "uniprot_ids": ["O95455"],
+    "pubmed_id": [19027726],
+    "mgd_id": ["MGI:1923605"],
+    "rgd_id": ["RGD:1306544"],
+    "lsdb": [],
+    "cosmic": null,
+    "omim_id": ["616146"],
+    "mirbase": null,
+    "homeodb": null,
+    "snornabase": null,
+    "bioparadigms_slc": null,
     "orphanet": 419174,
-    "enzymeId": ["4.2.1.46"],
+    "pseudogene_org": null,
+    "horde_id": null,
+    "merops": null,
+    "imgt": null,
+    "iuphar": null,
+    "cd": null,
+    "mamit_trnadb": null,
+    "lncrnadb": null,
+    "enzyme_id": ["4.2.1.46"],
+    "intermediate_filament_db": null,
     "agr": "HGNC:20324",
-    "maneSelect": ["ENST00000261296.7", "NM_014305.4"]
+    "mane_select": ["ENST00000261296.7", "NM_014305.4"]
   },
   "ncbi": {
-    "geneId": "23483",
+    "gene_id": "23483",
     "summary": "The protein encoded by this gene is a member of the short-chain dehydrogenases/reductases (SDR) superfamily, and is thought to contain a nicotinamide adenine dinucleotide (NAD) binding domain. This large SDR family of enzymes is involved in the metabolism of a variety of compounds, including prostaglandins, retinoids, lipids, steroid hormones, and xenobiotics. Mutations in this gene have been associated with Catel-Manzke syndrome, which is characterized by Pierre Robin sequence, and radial deviation of the index finger due to the presence of an accessory bone between the index finger and its proximal phalanx. Pierre Robin sequence is defined by an undersized jaw, backwards displacement of the tongue base that causes an obstruction of the airways, and can also be associated with a cleft palate. Alternative splicing results in multiple transcript variants. [provided by RefSeq, Jan 2015]",
-    "rifEntries": [
+    "rif_entries": [
       { "text": "Catel-Manzke syndrome without Manzke dysostosis.", "pmids": [31833187] },
       {
         "text": "TGDS pathogenic variants cause Catel-Manzke syndrome without hyperphalangy.",
@@ -331,313 +364,320 @@
         "text": "By using haplotype reconstruction we showed that the mutation c.298G>T is probably a founder mutation. Due to the spectrum of the amino acid changes, we suggest that loss of function in TGDS is the underlying mechanism of Catel-Manzke syndrome.",
         "pmids": [25480037]
       },
-      {}
+      { "text": "", "pmids": [] }
     ]
   },
   "omim": {
-    "hgncId": "HGNC:20324",
-    "omimDiseases": [{ "omimId": "OMIM:616145", "label": "Catel-Manzke syndrome" }]
+    "hgnc_id": "HGNC:20324",
+    "omim_diseases": [{ "omim_id": "OMIM:616145", "label": "Catel-Manzke syndrome" }]
   },
-  "rcnv": { "hgncId": "HGNC:20324", "pHaplo": 0.755996173161275, "pTriplo": 0.328498945904239 },
-  "shet": { "hgncId": "HGNC:20324", "sHet": 0.004 },
+  "orpha": null,
+  "rcnv": {
+    "hgnc_id": "HGNC:20324",
+    "p_haplo": 0.755996173161275,
+    "p_triplo": 0.328498945904239
+  },
+  "shet": { "hgnc_id": "HGNC:20324", "s_het": 0.004 },
   "gtex": {
-    "hgncId": "HGNC:20324",
-    "ensemblGeneId": "ENSG00000088451",
-    "ensemblGeneVersion": "10",
+    "hgnc_id": "HGNC:20324",
+    "ensembl_gene_id": "ENSG00000088451",
+    "ensembl_gene_version": "10",
     "records": [
       {
-        "tissue": "GTEX_TISSUE_ADIPOSE_TISSUE",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ADIPOSE_SUBCUTANEOUS",
+        "tissue": "AdiposeTissue",
+        "tissue_detailed": "AdiposeSubcutaneous",
         "tpms": [7.357, 12.695, 14.5, 16.74, 31.88]
       },
       {
-        "tissue": "GTEX_TISSUE_ADIPOSE_TISSUE",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ADIPOSE_VISCERAL_OMENTUM",
+        "tissue": "AdiposeTissue",
+        "tissue_detailed": "AdiposeVisceralOmentum",
         "tpms": [1.562, 12.45, 15.63, 19.15, 31.99]
       },
       {
-        "tissue": "GTEX_TISSUE_ADRENAL_GLAND",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ADRENAL_GLAND",
+        "tissue": "AdrenalGland",
+        "tissue_detailed": "AdrenalGland",
         "tpms": [2.171, 10.375, 12.23, 14.1975, 32.68]
       },
       {
-        "tissue": "GTEX_TISSUE_BLADDER",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BLADDER",
+        "tissue": "Bladder",
+        "tissue_detailed": "Bladder",
         "tpms": [8.908, 11.08, 14.4, 15.73, 21.98]
       },
       {
-        "tissue": "GTEX_TISSUE_BLOOD",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_CELLS_EBV_TRANSFORMED_LYMPHOCYTES",
+        "tissue": "Blood",
+        "tissue_detailed": "CellsEbvTransformedLymphocytes",
         "tpms": [21.8, 29.0325, 32.16, 34.975, 57.92]
       },
       {
-        "tissue": "GTEX_TISSUE_BLOOD",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_WHOLE_BLOOD",
+        "tissue": "Blood",
+        "tissue_detailed": "WholeBlood",
         "tpms": [0.06339, 1.0795, 2.02, 3.5705, 11.76]
       },
       {
-        "tissue": "GTEX_TISSUE_BLOOD_VESSEL",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ARTERY_AORTA",
+        "tissue": "BloodVessel",
+        "tissue_detailed": "ArteryAorta",
         "tpms": [3.002, 10.5475, 12.515, 14.515, 22.32]
       },
       {
-        "tissue": "GTEX_TISSUE_BLOOD_VESSEL",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ARTERY_CORONARY",
+        "tissue": "BloodVessel",
+        "tissue_detailed": "ArteryCoronary",
         "tpms": [3.742, 12.165, 13.795, 15.7125, 33.85]
       },
       {
-        "tissue": "GTEX_TISSUE_BLOOD_VESSEL",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ARTERY_TIBIAL",
+        "tissue": "BloodVessel",
+        "tissue_detailed": "ArteryTibial",
         "tpms": [4.233, 9.1435, 10.87, 12.815, 27.52]
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_AMYGDALA",
+        "tissue": "Brain",
+        "tissue_detailed": "BrainAmygdala",
         "tpms": [1.145, 3.1935, 4.1365, 5.352, 31.66]
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_ANTERIOR_CINGULATE_CORTEX",
+        "tissue": "Brain",
+        "tissue_detailed": "BrainAnteriorCingulateCortex",
         "tpms": [1.64, 3.22, 4.018, 4.94375, 28.28]
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_CAUDATE_BASAL_GANGLIA",
+        "tissue": "Brain",
+        "tissue_detailed": "BrainCaudateBasalGanglia",
         "tpms": [0.9442, 3.691, 4.7445, 5.7765, 12.66]
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_CEREBELLAR_HEMISPHERE",
+        "tissue": "Brain",
+        "tissue_detailed": "BrainCerebellarHemisphere",
         "tpms": [2.103, 7.8295, 9.706, 11.2, 23.02]
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_CEREBELLUM",
+        "tissue": "Brain",
+        "tissue_detailed": "BrainCerebellum",
         "tpms": [3.188, 7.35, 8.703, 10.47, 19.98]
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_CORTEX",
+        "tissue": "Brain",
+        "tissue_detailed": "BrainCortex",
         "tpms": [2.056, 3.5725, 4.404, 5.1825, 10.09]
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_FRONTAL_CORTEX",
+        "tissue": "Brain",
+        "tissue_detailed": "BrainFrontalCortex",
         "tpms": [1.244, 3.855, 4.588, 5.629, 22.28]
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_HIPPOCAMPUS",
+        "tissue": "Brain",
+        "tissue_detailed": "BrainHippocampus",
         "tpms": [0.9339, 2.899, 3.999, 5.482, 26.01]
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_HYPOTHALAMUS",
+        "tissue": "Brain",
+        "tissue_detailed": "BrainHypothalamus",
         "tpms": [0.9064, 3.807, 5.309, 6.575, 45.98]
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_NUCLEUS_ACCUMBENS",
+        "tissue": "Brain",
+        "tissue_detailed": "BrainNucleusAccumbens",
         "tpms": [0.5922, 3.31025, 4.441, 5.4255, 22.81]
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_PUTAMEN_BASAL_GANGLIA",
+        "tissue": "Brain",
+        "tissue_detailed": "BrainPutamenBasalGanglia",
         "tpms": [1.029, 2.877, 3.993, 5.123, 16.9]
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_SPINAL_CORD",
+        "tissue": "Brain",
+        "tissue_detailed": "BrainSpinalCord",
         "tpms": [1.586, 6.3115, 9.256, 12.34, 16.77]
       },
       {
-        "tissue": "GTEX_TISSUE_BRAIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BRAIN_SUBSTANTIA_NIGRA",
+        "tissue": "Brain",
+        "tissue_detailed": "BrainSubstantiaNigra",
         "tpms": [1.284, 3.7865, 4.933, 6.376, 17.42]
       },
       {
-        "tissue": "GTEX_TISSUE_BREAST",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_BREAST_MAMMARY_TISSUE",
+        "tissue": "Breast",
+        "tissue_detailed": "BreastMammaryTissue",
         "tpms": [5.533, 12.865, 15.01, 17.465, 30.17]
       },
       {
-        "tissue": "GTEX_TISSUE_CERVIX_UTERI",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_CERVIX_ECTOCERVIX",
+        "tissue": "CervixUteri",
+        "tissue_detailed": "CervixEctocervix",
         "tpms": [8.422, 14.1, 14.3, 20.09, 21.12]
       },
       {
-        "tissue": "GTEX_TISSUE_CERVIX_UTERI",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_CERVIX_ENDOCERVIX",
+        "tissue": "CervixUteri",
+        "tissue_detailed": "CervixEndocervix",
         "tpms": [14.62, 16.3275, 19.15, 21.0525, 24.49]
       },
       {
-        "tissue": "GTEX_TISSUE_COLON",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_COLON_SIGMOID",
+        "tissue": "Colon",
+        "tissue_detailed": "ColonSigmoid",
         "tpms": [4.307, 8.93, 11.03, 12.86, 20.48]
       },
       {
-        "tissue": "GTEX_TISSUE_COLON",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_COLON_TRANSVERSE",
+        "tissue": "Colon",
+        "tissue_detailed": "ColonTransverse",
         "tpms": [2.756, 8.31175, 10.23, 12.1375, 26.92]
       },
       {
-        "tissue": "GTEX_TISSUE_ESOPHAGUS",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ESOPHAGUS_GASTROESOPHAGEAL_JUNCTION",
+        "tissue": "Esophagus",
+        "tissue_detailed": "EsophagusGastroesophagealJunction",
         "tpms": [4.1, 7.9825, 9.786, 11.835, 21.33]
       },
       {
-        "tissue": "GTEX_TISSUE_ESOPHAGUS",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ESOPHAGUS_MUCOSA",
+        "tissue": "Esophagus",
+        "tissue_detailed": "EsophagusMucosa",
         "tpms": [3.046, 8.768, 10.39, 13, 26.01]
       },
       {
-        "tissue": "GTEX_TISSUE_ESOPHAGUS",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_ESOPHAGUS_MUSCULARIS",
+        "tissue": "Esophagus",
+        "tissue_detailed": "EsophagusMuscularis",
         "tpms": [4.147, 8.0615, 9.439, 11.225, 19.88]
       },
       {
-        "tissue": "GTEX_TISSUE_FALLOPIAN_TUBE",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_FALLOPIAN_TUBE",
+        "tissue": "FallopianTube",
+        "tissue_detailed": "FallopianTube",
         "tpms": [13.28, 15.35, 17.14, 20.05, 24.22]
       },
       {
-        "tissue": "GTEX_TISSUE_HEART",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_HEART_ATRIAL_APPENDAGE",
+        "tissue": "Heart",
+        "tissue_detailed": "HeartAtrialAppendage",
         "tpms": [0.8516, 3.753, 4.673, 6.1, 18.12]
       },
       {
-        "tissue": "GTEX_TISSUE_HEART",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_HEART_LEFT_VENTRICLE",
+        "tissue": "Heart",
+        "tissue_detailed": "HeartLeftVentricle",
         "tpms": [0.4222, 2.30825, 3.162, 3.9485, 21.41]
       },
       {
-        "tissue": "GTEX_TISSUE_KIDNEY",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_KIDNEY_CORTEX",
+        "tissue": "Kidney",
+        "tissue_detailed": "KidneyCortex",
         "tpms": [2.788, 5.342, 7.159, 10.63, 19.92]
       },
       {
-        "tissue": "GTEX_TISSUE_KIDNEY",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_KIDNEY_MEDULLA",
+        "tissue": "Kidney",
+        "tissue_detailed": "KidneyMedulla",
         "tpms": [8.092, 11.668, 13.955, 15.18, 15.57]
       },
       {
-        "tissue": "GTEX_TISSUE_LIVER",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_LIVER",
+        "tissue": "Liver",
+        "tissue_detailed": "Liver",
         "tpms": [4.291, 12.0575, 15.44, 21.51, 102.7]
       },
       {
-        "tissue": "GTEX_TISSUE_LUNG",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_LUNG",
+        "tissue": "Lung",
+        "tissue_detailed": "Lung",
         "tpms": [1.629, 8.931, 12.08, 14.555, 33.53]
       },
       {
-        "tissue": "GTEX_TISSUE_MUSCLE",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_MUSCLE_SKELETAL",
+        "tissue": "Muscle",
+        "tissue_detailed": "MuscleSkeletal",
         "tpms": [0.9235, 2.4295, 3.113, 3.9505, 10.76]
       },
       {
-        "tissue": "GTEX_TISSUE_NERVE",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_NERVE_TIBIAL",
+        "tissue": "Nerve",
+        "tissue_detailed": "NerveTibial",
         "tpms": [9.045, 16.91, 18.94, 21.535, 35.6]
       },
       {
-        "tissue": "GTEX_TISSUE_OVARY",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_OVARY",
+        "tissue": "Ovary",
+        "tissue_detailed": "Ovary",
         "tpms": [8.806, 15.0075, 18.975, 21.95, 36.07]
       },
       {
-        "tissue": "GTEX_TISSUE_PANCREAS",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_PANCREAS",
+        "tissue": "Pancreas",
+        "tissue_detailed": "Pancreas",
         "tpms": [2.423, 5.69775, 7.0115, 8.6645, 18.34]
       },
       {
-        "tissue": "GTEX_TISSUE_PITUITARY",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_PITUITARY",
+        "tissue": "Pituitary",
+        "tissue_detailed": "Pituitary",
         "tpms": [5.981, 14.555, 17.41, 20.07, 29.95]
       },
       {
-        "tissue": "GTEX_TISSUE_PROSTATE",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_PROSTATE",
+        "tissue": "Prostate",
+        "tissue_detailed": "Prostate",
         "tpms": [5.541, 11.68, 13.87, 16.49, 28.83]
       },
       {
-        "tissue": "GTEX_TISSUE_SALIVARY_GLAND",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_MINOR_SALIVARY_GLAND",
+        "tissue": "SalivaryGland",
+        "tissue_detailed": "MinorSalivaryGland",
         "tpms": [3.124, 10.84, 12.785, 14.9425, 23.55]
       },
       {
-        "tissue": "GTEX_TISSUE_SKIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_CELLS_CULTURED_FIBROBLASTS",
+        "tissue": "Skin",
+        "tissue_detailed": "CellsCulturedFibroblasts",
         "tpms": [11.42, 15.49, 17.17, 19.185, 31.05]
       },
       {
-        "tissue": "GTEX_TISSUE_SKIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_SKIN_NOT_SUN_EXPOSED_SUPRAPUBIC",
+        "tissue": "Skin",
+        "tissue_detailed": "SkinNotSunExposedSuprapubic",
         "tpms": [2.338, 7.22725, 9.6675, 12.36, 24.11]
       },
       {
-        "tissue": "GTEX_TISSUE_SKIN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_SKIN_SUN_EXPOSED_LOWER_LEG",
+        "tissue": "Skin",
+        "tissue_detailed": "SkinSunExposedLowerLeg",
         "tpms": [1.939, 7.162, 9.373, 11.89, 23.13]
       },
       {
-        "tissue": "GTEX_TISSUE_SMALL_INTESTINE",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_SMALL_INTESTINE_TERMINAL_ILEUM",
+        "tissue": "SmallIntestine",
+        "tissue_detailed": "SmallIntestineTerminalIleum",
         "tpms": [5.429, 9.961, 12.53, 15.37, 27.35]
       },
       {
-        "tissue": "GTEX_TISSUE_SPLEEN",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_SPLEEN",
+        "tissue": "Spleen",
+        "tissue_detailed": "Spleen",
         "tpms": [6.755, 12.49, 14.14, 16.65, 24.57]
       },
       {
-        "tissue": "GTEX_TISSUE_STOMACH",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_STOMACH",
+        "tissue": "Stomach",
+        "tissue_detailed": "Stomach",
         "tpms": [2.444, 7.678, 9.163, 11.325, 18.35]
       },
       {
-        "tissue": "GTEX_TISSUE_TESTIS",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_TESTIS",
+        "tissue": "Testis",
+        "tissue_detailed": "Testis",
         "tpms": [5.525, 10.01, 11.47, 13.34, 23.37]
       },
       {
-        "tissue": "GTEX_TISSUE_THYROID",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_THYROID",
+        "tissue": "Thyroid",
+        "tissue_detailed": "Thyroid",
         "tpms": [5.431, 16.73, 19.52, 22.71, 36.63]
       },
       {
-        "tissue": "GTEX_TISSUE_UTERUS",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_UTERUS",
+        "tissue": "Uterus",
+        "tissue_detailed": "Uterus",
         "tpms": [8.691, 13.6325, 15.685, 18.1075, 29.06]
       },
       {
-        "tissue": "GTEX_TISSUE_VAGINA",
-        "tissueDetailed": "GTEX_TISSUE_DETAILED_VAGINA",
+        "tissue": "Vagina",
+        "tissue_detailed": "Vagina",
         "tpms": [5.867, 11.575, 13.96, 17.1975, 25.46]
       }
     ]
   },
-  "domino": { "geneSymbol": "TGDS", "score": 0.08799167 },
+  "domino": { "gene_symbol": "TGDS", "score": 0.08799167 },
+  "decipher_hi": null,
   "panelapp": [
     {
-      "geneData": { "hgncId": "HGNC:20324", "hgncSymbol": "TGDS", "geneSymbol": "TGDS" },
-      "entityType": "ENTITY_TYPE_GENE",
-      "entityName": "TGDS",
-      "confidenceLevel": "CONFIDENCE_LEVEL_RED",
+      "gene_data": { "hgnc_id": "HGNC:20324", "hgnc_symbol": "TGDS", "gene_symbol": "TGDS" },
+      "entity_type": "Gene",
+      "entity_name": "TGDS",
+      "confidence_level": "None",
+      "penetrance": null,
       "publications": ["25480037"],
       "evidence": ["Expert Review Red", "NHS GMS"],
       "phenotypes": ["Catel-Manzke syndrome 616145"],
-      "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
+      "mode_of_inheritance": "BIALLELIC, autosomal or pseudoautosomal",
       "panel": {
         "id": 309,
-        "hashId": "5693952f22c1fc251660fb1e",
+        "hash_id": "5693952f22c1fc251660fb1e",
         "name": "Skeletal dysplasia",
-        "diseaseGroup": "Skeletal disorders",
-        "diseaseSubGroup": "Skeletal dysplasias",
+        "disease_group": "Skeletal disorders",
+        "disease_sub_group": "Skeletal dysplasias",
         "version": "4.38",
-        "versionCreated": "2024-01-17T10:52:36.118539Z",
-        "relevantDisorders": ["Unexplained skeletal dysplasia", "Skeletal dysplasia", "R104"],
-        "stats": { "numberOfGenes": 618, "numberOfStrs": 1, "numberOfRegions": 6 },
+        "version_created": "2024-01-17T10:52:36.118539Z",
+        "relevant_disorders": ["Unexplained skeletal dysplasia", "Skeletal dysplasia", "R104"],
+        "stats": { "number_of_genes": 618, "number_of_strs": 1, "number_of_regions": 6 },
         "types": [
           {
             "name": "Rare Disease 100K",
@@ -663,25 +703,30 @@
       }
     },
     {
-      "geneData": { "hgncId": "HGNC:20324", "hgncSymbol": "TGDS", "geneSymbol": "TGDS" },
-      "entityType": "ENTITY_TYPE_GENE",
-      "entityName": "TGDS",
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "gene_data": { "hgnc_id": "HGNC:20324", "hgnc_symbol": "TGDS", "gene_symbol": "TGDS" },
+      "entity_type": "Gene",
+      "entity_name": "TGDS",
+      "confidence_level": "None",
+      "penetrance": null,
+      "publications": [],
       "evidence": ["PAGE DD-Gene2Phenotype", "Expert Review Green"],
       "phenotypes": ["CATEL-MANZKE SYNDROME"],
-      "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
+      "mode_of_inheritance": "BIALLELIC, autosomal or pseudoautosomal",
       "panel": {
         "id": 478,
+        "hash_id": null,
         "name": "Fetal anomalies",
+        "disease_group": "",
+        "disease_sub_group": "",
         "version": "3.124",
-        "versionCreated": "2024-01-07T18:02:14.275504Z",
-        "relevantDisorders": [
+        "version_created": "2024-01-07T18:02:14.275504Z",
+        "relevant_disorders": [
           "R21",
           "Fetal anomalies with a likely genetic cause",
           "Fetal anomalies with a likely genetic cause - non urgent",
           "R412"
         ],
-        "stats": { "numberOfGenes": 1987, "numberOfStrs": 2, "numberOfRegions": 1 },
+        "stats": { "number_of_genes": 1987, "number_of_strs": 2, "number_of_regions": 1 },
         "types": [
           {
             "name": "GMS Rare Disease Virtual",
@@ -702,20 +747,25 @@
       }
     },
     {
-      "geneData": { "hgncId": "HGNC:20324", "hgncSymbol": "TGDS", "geneSymbol": "TGDS" },
-      "entityType": "ENTITY_TYPE_GENE",
-      "entityName": "TGDS",
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "gene_data": { "hgnc_id": "HGNC:20324", "hgnc_symbol": "TGDS", "gene_symbol": "TGDS" },
+      "entity_type": "Gene",
+      "entity_name": "TGDS",
+      "confidence_level": "None",
+      "penetrance": null,
       "publications": ["25480037"],
       "evidence": ["DD-Gene2Phenotype", "Expert Review Green"],
       "phenotypes": ["CATEL-MANZKE SYNDROME 616145"],
-      "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
+      "mode_of_inheritance": "BIALLELIC, autosomal or pseudoautosomal",
       "panel": {
         "id": 484,
+        "hash_id": null,
         "name": "DDG2P",
+        "disease_group": "",
+        "disease_sub_group": "",
         "version": "3.79",
-        "versionCreated": "2023-12-05T11:30:39.638529Z",
-        "stats": { "numberOfGenes": 2349, "numberOfStrs": 1 },
+        "version_created": "2023-12-05T11:30:39.638529Z",
+        "relevant_disorders": [],
+        "stats": { "number_of_genes": 2349, "number_of_strs": 1, "number_of_regions": 0 },
         "types": [
           {
             "name": "GMS Rare Disease",
@@ -736,30 +786,30 @@
       }
     },
     {
-      "geneData": { "hgncId": "HGNC:20324", "hgncSymbol": "TGDS", "geneSymbol": "TGDS" },
-      "entityType": "ENTITY_TYPE_GENE",
-      "entityName": "TGDS",
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
-      "penetrance": "PENETRANCE_COMPLETE",
+      "gene_data": { "hgnc_id": "HGNC:20324", "hgnc_symbol": "TGDS", "gene_symbol": "TGDS" },
+      "entity_type": "Gene",
+      "entity_name": "TGDS",
+      "confidence_level": "None",
+      "penetrance": "Complete",
       "publications": ["25480037"],
       "evidence": ["Victorian Clinical Genetics Services", "Expert Review Green"],
       "phenotypes": ["CATEL-MANZKE SYNDROME", "CATMANS", "Cleft palate"],
-      "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
+      "mode_of_inheritance": "BIALLELIC, autosomal or pseudoautosomal",
       "panel": {
         "id": 81,
-        "hashId": "57acb8268f620364dc61afd3",
+        "hash_id": "57acb8268f620364dc61afd3",
         "name": "Clefting",
-        "diseaseGroup": "Dysmorphic and congenital abnormality syndromes",
-        "diseaseSubGroup": "Dysmorphic disorders",
+        "disease_group": "Dysmorphic and congenital abnormality syndromes",
+        "disease_sub_group": "Dysmorphic disorders",
         "version": "4.102",
-        "versionCreated": "2023-10-25T21:33:18.337179Z",
-        "relevantDisorders": [
+        "version_created": "2023-10-25T21:33:18.337179Z",
+        "relevant_disorders": [
           "Familial non-syndromic cleft lip and or familial cleft palate",
           "Familial non-syndromic clefting",
           "Syndromic cleft lip and or cleft palate",
           "Syndromic clefting"
         ],
-        "stats": { "numberOfGenes": 305, "numberOfRegions": 6 },
+        "stats": { "number_of_genes": 305, "number_of_strs": 0, "number_of_regions": 6 },
         "types": [
           {
             "name": "Rare Disease 100K",
@@ -785,27 +835,28 @@
       }
     },
     {
-      "geneData": { "hgncId": "HGNC:20324", "hgncSymbol": "TGDS", "geneSymbol": "TGDS" },
-      "entityType": "ENTITY_TYPE_GENE",
-      "entityName": "TGDS",
-      "confidenceLevel": "CONFIDENCE_LEVEL_RED",
-      "penetrance": "PENETRANCE_COMPLETE",
+      "gene_data": { "hgnc_id": "HGNC:20324", "hgnc_symbol": "TGDS", "gene_symbol": "TGDS" },
+      "entity_type": "Gene",
+      "entity_name": "TGDS",
+      "confidence_level": "None",
+      "penetrance": "Complete",
+      "publications": [],
       "evidence": [
         "Victorian Clinical Genetics Services",
         "Expert Review Red",
         "BRIDGE study SPEED NEURO Tier1 Gene"
       ],
       "phenotypes": ["Catel-Manzke syndrome, 616145"],
-      "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
+      "mode_of_inheritance": "BIALLELIC, autosomal or pseudoautosomal",
       "panel": {
         "id": 285,
-        "hashId": "558aa423bb5a16630e15b63c",
+        "hash_id": "558aa423bb5a16630e15b63c",
         "name": "Intellectual disability - microarray and sequencing",
-        "diseaseGroup": "Neurology and neurodevelopmental disorders",
-        "diseaseSubGroup": "Neurodevelopmental disorders",
+        "disease_group": "Neurology and neurodevelopmental disorders",
+        "disease_sub_group": "Neurodevelopmental disorders",
         "version": "5.405",
-        "versionCreated": "2024-01-17T17:22:12.816088Z",
-        "relevantDisorders": [
+        "version_created": "2024-01-17T17:22:12.816088Z",
+        "relevant_disorders": [
           "Coarse facial features including Coffin-Siris-like disorders",
           "ID",
           "Moderate",
@@ -816,7 +867,7 @@
           "Intellectual disability",
           "R29"
         ],
-        "stats": { "numberOfGenes": 2669, "numberOfStrs": 12, "numberOfRegions": 62 },
+        "stats": { "number_of_genes": 2669, "number_of_strs": 12, "number_of_regions": 62 },
         "types": [
           {
             "name": "Rare Disease 100K",
@@ -842,20 +893,25 @@
       }
     },
     {
-      "geneData": { "hgncId": "HGNC:20324", "hgncSymbol": "TGDS", "geneSymbol": "TGDS" },
-      "entityType": "ENTITY_TYPE_GENE",
-      "entityName": "TGDS",
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "gene_data": { "hgnc_id": "HGNC:20324", "hgnc_symbol": "TGDS", "gene_symbol": "TGDS" },
+      "entity_type": "Gene",
+      "entity_name": "TGDS",
+      "confidence_level": "None",
+      "penetrance": null,
       "publications": ["25480037"],
       "evidence": ["Expert Review Green", "Literature"],
       "phenotypes": ["Catel-Manzke syndrome 616145"],
-      "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
+      "mode_of_inheritance": "BIALLELIC, autosomal or pseudoautosomal",
       "panel": {
         "id": 384,
+        "hash_id": null,
         "name": "Limb disorders",
+        "disease_group": "",
+        "disease_sub_group": "",
         "version": "4.14",
-        "versionCreated": "2024-01-15T14:22:00.291022Z",
-        "stats": { "numberOfGenes": 260, "numberOfRegions": 2 },
+        "version_created": "2024-01-15T14:22:00.291022Z",
+        "relevant_disorders": [],
+        "stats": { "number_of_genes": 260, "number_of_strs": 0, "number_of_regions": 2 },
         "types": [
           {
             "name": "Rare Disease 100K",
@@ -881,20 +937,25 @@
       }
     },
     {
-      "geneData": { "hgncId": "HGNC:20324", "hgncSymbol": "TGDS", "geneSymbol": "TGDS" },
-      "entityType": "ENTITY_TYPE_GENE",
-      "entityName": "TGDS",
-      "confidenceLevel": "CONFIDENCE_LEVEL_GREEN",
+      "gene_data": { "hgnc_id": "HGNC:20324", "hgnc_symbol": "TGDS", "gene_symbol": "TGDS" },
+      "entity_type": "Gene",
+      "entity_name": "TGDS",
+      "confidence_level": "None",
+      "penetrance": null,
       "publications": ["30847515"],
       "evidence": ["Next Generation Children Project", "Expert Review Green", "Expert list"],
       "phenotypes": ["Catel-Manzke syndrome, 616145"],
-      "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
+      "mode_of_inheritance": "BIALLELIC, autosomal or pseudoautosomal",
       "panel": {
         "id": 921,
+        "hash_id": null,
         "name": "Severe Paediatric Disorders",
+        "disease_group": "",
+        "disease_sub_group": "",
         "version": "1.178",
-        "versionCreated": "2023-12-05T11:31:06.728258Z",
-        "stats": { "numberOfGenes": 2691 },
+        "version_created": "2023-12-05T11:31:06.728258Z",
+        "relevant_disorders": [],
+        "stats": { "number_of_genes": 2691, "number_of_strs": 0, "number_of_regions": 0 },
         "types": [
           {
             "name": "Research",
@@ -906,78 +967,74 @@
     }
   ],
   "conditions": {
-    "hgncId": "HGNC:20324",
-    "diseaseAssociations": [
+    "hgnc_id": "HGNC:20324",
+    "disease_associations": [
       {
-        "hgncId": "HGNC:20324",
-        "labeledDisorders": [
-          { "termId": "OMIM:616145", "title": "Catel-Manzke syndrome" },
-          { "termId": "ORPHA:1388", "title": "Catel-Manzke syndrome" }
+        "hgnc_id": "HGNC:20324",
+        "labeled_disorders": [
+          { "term_id": "OMIM:616145", "title": "Catel-Manzke syndrome" },
+          { "term_id": "ORPHA:1388", "title": "Catel-Manzke syndrome" }
         ],
-        "diseaseName": "Catel-Manzke syndrome",
-        "diseaseDefinition": "Catel-Manzke syndrome is a rare bone disease characterized by bilateral hyperphalangy and clinodactyly of the index finger typically in association with Pierre Robin sequence (see this term) comprising micrognathia, cleft palate and glossoptosis.",
-        "sources": [
-          "GENE_DISEASE_ASSOCIATION_SOURCE_OMIM",
-          "GENE_DISEASE_ASSOCIATION_SOURCE_ORPHANET",
-          "GENE_DISEASE_ASSOCIATION_SOURCE_PANELAPP"
-        ],
-        "confidence": "CONFIDENCE_LEVEL_HIGH"
+        "disease_name": "Catel-Manzke syndrome",
+        "disease_definition": "Catel-Manzke syndrome is a rare bone disease characterized by bilateral hyperphalangy and clinodactyly of the index finger typically in association with Pierre Robin sequence (see this term) comprising micrognathia, cleft palate and glossoptosis.",
+        "sources": ["Omim", "Orphanet", "Panelapp"],
+        "confidence": "High"
       }
     ],
-    "panelappAssociations": [
+    "panelapp_associations": [
       {
-        "hgncId": "HGNC:20324",
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
-        "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
+        "hgnc_id": "HGNC:20324",
+        "confidence_level": "Green",
+        "entity_type": "Gene",
+        "mode_of_inheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "phenotypes": ["CATEL-MANZKE SYNDROME"],
         "panel": { "id": 478, "name": "Fetal anomalies", "version": "3.124" }
       },
       {
-        "hgncId": "HGNC:20324",
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
-        "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
+        "hgnc_id": "HGNC:20324",
+        "confidence_level": "Green",
+        "entity_type": "Gene",
+        "mode_of_inheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "phenotypes": ["CATEL-MANZKE SYNDROME 616145"],
         "panel": { "id": 484, "name": "DDG2P", "version": "3.79" }
       },
       {
-        "hgncId": "HGNC:20324",
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
-        "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
+        "hgnc_id": "HGNC:20324",
+        "confidence_level": "Green",
+        "entity_type": "Gene",
+        "mode_of_inheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "phenotypes": ["CATEL-MANZKE SYNDROME", "CATMANS", "Cleft palate"],
         "panel": { "id": 81, "name": "Clefting", "version": "4.102" }
       },
       {
-        "hgncId": "HGNC:20324",
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
-        "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
+        "hgnc_id": "HGNC:20324",
+        "confidence_level": "Green",
+        "entity_type": "Gene",
+        "mode_of_inheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "phenotypes": ["Catel-Manzke syndrome 616145"],
         "panel": { "id": 384, "name": "Limb disorders", "version": "4.14" }
       },
       {
-        "hgncId": "HGNC:20324",
-        "confidenceLevel": "PANELAPP_CONFIDENCE_GREEN",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
-        "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
+        "hgnc_id": "HGNC:20324",
+        "confidence_level": "Green",
+        "entity_type": "Gene",
+        "mode_of_inheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "phenotypes": ["Catel-Manzke syndrome, 616145"],
         "panel": { "id": 921, "name": "Severe Paediatric Disorders", "version": "1.178" }
       },
       {
-        "hgncId": "HGNC:20324",
-        "confidenceLevel": "PANELAPP_CONFIDENCE_RED",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
-        "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
+        "hgnc_id": "HGNC:20324",
+        "confidence_level": "Red",
+        "entity_type": "Gene",
+        "mode_of_inheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "phenotypes": ["Catel-Manzke syndrome 616145"],
         "panel": { "id": 309, "name": "Skeletal dysplasia", "version": "4.38" }
       },
       {
-        "hgncId": "HGNC:20324",
-        "confidenceLevel": "PANELAPP_CONFIDENCE_RED",
-        "entityType": "PANELAPP_ENTITY_TYPE_GENE",
-        "modeOfInheritance": "BIALLELIC, autosomal or pseudoautosomal",
+        "hgnc_id": "HGNC:20324",
+        "confidence_level": "Red",
+        "entity_type": "Gene",
+        "mode_of_inheritance": "BIALLELIC, autosomal or pseudoautosomal",
         "phenotypes": ["Catel-Manzke syndrome, 616145"],
         "panel": {
           "id": 285,

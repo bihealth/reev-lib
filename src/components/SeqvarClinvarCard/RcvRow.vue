@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
+import { ClinvarExtractedRcvRecord } from '../../ext/annonars-api/src/lib'
 import {
   AGGREGATE_GERMLINE_REVIEW_STATUS_LABEL,
   AGGREGATE_GERMLINE_REVIEW_STATUS_STARS,
@@ -9,7 +10,6 @@ import {
   AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_LABEL,
   AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_STARS
 } from './constants'
-import { ClinvarExtractedRcvRecord } from '../../ext/annonars-api/src/lib';
 
 /** This component's props */
 const props = defineProps<{

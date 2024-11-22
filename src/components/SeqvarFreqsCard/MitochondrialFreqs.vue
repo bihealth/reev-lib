@@ -1,10 +1,14 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
+import {
+  GnomadMtdnaRecord,
+  HelixMtDbRecord,
+  SeqvarsAnnoResponseRecord
+} from '../../ext/annonars-api/src/lib'
 import { type Seqvar } from '../../lib/genomicVars'
 import { roundIt, separateIt as sep } from '../../lib/utils'
 import { isVariantMtHomopolymer } from './lib'
-import { GnomadMtdnaRecord, HelixMtDbRecord, SeqvarsAnnoResponseRecord } from '../../ext/annonars-api/src/lib'
 
 /** This component's props. */
 const props = defineProps<{
@@ -67,7 +71,8 @@ const gnomadMtDna = computed<GnomadMtdnaRecord | undefined>(() => {
               class="text-right"
               v-html="
                 roundIt(
-                  ((gnomadMtDna?.ac_het ?? 0) + (gnomadMtDna?.ac_hom ?? 0)) / (gnomadMtDna?.an ?? 0),
+                  ((gnomadMtDna?.ac_het ?? 0) + (gnomadMtDna?.ac_hom ?? 0)) /
+                    (gnomadMtDna?.an ?? 0),
                   4
                 )
               "

@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
+import { ClinvarAggregatedOncogenicityClassification } from '../../ext/annonars-api/src/lib'
 import {
   AGGREGATE_ONCOGENICITY_REVIEW_STATUS_LABEL,
   AGGREGATE_ONCOGENICITY_REVIEW_STATUS_STARS
 } from './constants'
 import { clinsigColor } from './helpers'
-import { ClinvarAggregatedOncogenicityClassification } from '../../ext/annonars-api/src/lib';
 
 /** This component's props */
 const props = defineProps<{

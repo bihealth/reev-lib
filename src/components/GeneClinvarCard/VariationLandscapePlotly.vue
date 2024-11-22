@@ -5,11 +5,14 @@
 import Plotly from 'plotly.js-dist'
 import { computed, onMounted, ref, watch } from 'vue'
 
+import {
+  ClinvarExtractedVcvRecord,
+  GenesClinvarPerGeneRecord
+} from '../../ext/annonars-api/src/lib'
+import { Transcript } from '../../ext/mehari-api/src/lib/types.gen'
 import type { GenomeBuild } from '../../lib/genomeBuilds'
 import { CLINVAR_SIGNIFICANCE_TO_INT, convertClinvarSignificance } from './lib'
 import { type PlotlyDataPoint, downsample } from './lib'
-import { ClinvarExtractedVcvRecord, GenesClinvarPerGeneRecord } from '../../ext/annonars-api/src/lib'
-import { Transcript } from '../../ext/mehari-api/src/lib/types.gen'
 
 /** This component's props. */
 const props = withDefaults(
@@ -23,7 +26,12 @@ const props = withDefaults(
     /** Gene symbol */
     geneSymbol?: string
   }>(),
-  { genomeBuild: 'grch37' }
+  {
+    clinvarPerGene: undefined,
+    transcripts: undefined,
+    genomeBuild: 'grch37',
+    geneSymbol: undefined
+  }
 )
 
 /** The current plot boundaries. */
@@ -80,7 +88,9 @@ const clinvarData = computed<PlotlyDataPoint[]>(() => {
     .map((variant: ClinvarExtractedVcvRecord) => ({
       x: variant.sequence_location!.start!,
       y: CLINVAR_SIGNIFICANCE_TO_INT[
-        convertClinvarSignificance(variant.classifications?.germline_classification?.description ?? undefined)
+        convertClinvarSignificance(
+          variant.classifications?.germline_classification?.description ?? undefined
+        )
       ],
       count: 1
     }))

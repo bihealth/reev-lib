@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 
+import { SeqvarsAnnoResponseRecord } from '../../ext/annonars-api/src/lib'
 import { roundIt } from '../../lib/utils'
 import DocsLink from '../DocsLink/DocsLink.vue'
 import ScoreDisplay from './ScoreDisplay.vue'
 import Conservation from './UcscConservation.vue'
-import { SeqvarsAnnoResponseRecord } from '../../ext/annonars-api/src/lib'
 
 const props = defineProps<{
   /** Information to display scores for. */

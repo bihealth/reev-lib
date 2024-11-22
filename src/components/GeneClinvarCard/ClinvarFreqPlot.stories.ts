@@ -1,7 +1,7 @@
-import type { JsonValue } from '@protobuf-ts/runtime'
 import type { Meta, StoryObj } from '@storybook/vue3'
 
-import { ClinvarPerGeneRecord } from '../../pbs/annonars/clinvar/per_gene'
+import { GenesClinvarPerGeneRecord } from '../../ext/annonars-api/src/lib'
+
 import ClinvarFreqPlot from './ClinvarFreqPlot.vue'
 import geneClinvarBrca1Json from './fixture.clinvarPerGene.BRCA1.json'
 import geneClinvarTgdsJson from './fixture.clinvarPerGene.TGDS.json'
@@ -9,10 +9,8 @@ import geneClinvarTgdsJson from './fixture.clinvarPerGene.TGDS.json'
 // Here, fixture data is loaded via `import` from JSON file.  Reading the file
 // as in the tests fails with "process is not defined" error in the browser.
 
-// @ts-ignore
-const clinvarPerGeneTgds = ClinvarPerGeneRecord.fromJson(geneClinvarTgdsJson as JsonValue)
-// @ts-ignore
-const clinvarPerGeneBrca1 = ClinvarPerGeneRecord.fromJson(geneClinvarBrca1Json as JsonValue)
+const clinvarPerGeneTgds = geneClinvarTgdsJson as GenesClinvarPerGeneRecord
+const clinvarPerGeneBrca1 = geneClinvarBrca1Json as GenesClinvarPerGeneRecord
 
 const meta = {
   title: 'Gene/Clinvar/ClinvarFreqPlot',

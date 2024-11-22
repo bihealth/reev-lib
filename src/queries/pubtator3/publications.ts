@@ -1,9 +1,10 @@
 /**
  * Search via Pubtator3 API.
  */
-import { publicationsExportBiocjsonOptions } from '../../ext/pubtator3-api/src/lib/@tanstack/vue-query.gen'
 import { QueryClient, useQuery } from '@tanstack/vue-query'
 import { MaybeRefOrGetter, toValue } from 'vue'
+
+import { publicationsExportBiocjsonOptions } from '../../ext/pubtator3-api/src/lib/@tanstack/vue-query.gen'
 
 /** Enumeration for genome assembly. */
 export type Assembly = 'grch37' | 'grch38'

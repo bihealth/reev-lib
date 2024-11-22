@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
+import { ClinvarAggregatedSomaticClinicalImpact } from '../../ext/annonars-api/src/lib'
 import {
   AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_LABEL,
   AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_STARS
 } from './constants'
 import { clinsigColor } from './helpers'
-import { ClinvarAggregatedSomaticClinicalImpact } from '../../ext/annonars-api/src/lib';
 
 /** This component's props */
 const props = defineProps<{
@@ -17,7 +17,9 @@ const props = defineProps<{
 /* The number of stars for the classification. */
 const classificationStars = computed<number>(() => {
   if (props.clinicalImpact?.review_status) {
-    return AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_STARS[props.clinicalImpact?.review_status]
+    return AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_STARS[
+      props.clinicalImpact?.review_status
+    ]
   } else {
     return 0
   }
@@ -26,7 +28,9 @@ const classificationStars = computed<number>(() => {
 /* The label to display for for the classification. */
 const classificationLabel = computed<string>(() => {
   if (props.clinicalImpact?.review_status) {
-    return AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_LABEL[props.clinicalImpact?.review_status]
+    return AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_LABEL[
+      props.clinicalImpact?.review_status
+    ]
   } else {
     return 'UNSPECIFIED'
   }

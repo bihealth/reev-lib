@@ -22,6 +22,7 @@ const props = withDefaults(
     showGeneDetailsLink?: boolean
   }>(),
   {
+    geneInfo: undefined,
     showGeneDetailsLink: false
   }
 )

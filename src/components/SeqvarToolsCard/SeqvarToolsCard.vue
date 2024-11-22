@@ -3,13 +3,15 @@ import { computed } from 'vue'
 
 import { type Seqvar } from '../../lib/genomicVars'
 import DocsLink from '../DocsLink/DocsLink.vue'
-import { SeqvarsAnnoResponseRecord } from '../../ext/annonars-api/src/lib';
 
 /** This component's props. */
-const props = defineProps<{
-  /** Annotated sequence variant. */
-  seqvar?: Seqvar
-}>()
+const props = withDefaults(
+  defineProps<{
+    /** Annotated sequence variant. */
+    seqvar?: Seqvar
+  }>(),
+  { seqvar: undefined }
+)
 
 /** This component's emits. */
 const emit = defineEmits<{

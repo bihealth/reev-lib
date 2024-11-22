@@ -5,12 +5,12 @@
  */
 import { computed } from 'vue'
 
-import { separateIt } from '../../lib/utils'
 import { GenesClinvarPerGeneRecord, GenesGeneImpact } from '../../ext/annonars-api/src/lib'
+import { separateIt } from '../../lib/utils'
 
 const props = defineProps<{
-    clinvarPerGene?: GenesClinvarPerGeneRecord
-  }>()
+  clinvarPerGene?: GenesClinvarPerGeneRecord
+}>()
 
 /** Enumeration fo coarser impacts. */
 enum CoarseImpact {
@@ -47,23 +47,23 @@ const COARSE_IMPACT_LABELS: { [key in CoarseImpact]: string } = {
 
 /** Mapping from raw to coarse impact.  */
 const IMPACT_RAW_TO_COARSE: { [key in GenesGeneImpact]: CoarseImpact } = {
-  'Unspecified': CoarseImpact.UNSPECIFIED,
-  'ThreePrimeUtrVariant': CoarseImpact.NON_CODING,
-  'FivePrimeUtrVariant': CoarseImpact.NON_CODING,
-  'DownstreamTranscriptVariant': CoarseImpact.NON_CODING,
-  'FrameshiftVariant': CoarseImpact.NONSENSE,
-  'InframeIndel': CoarseImpact.MISSENSE_INFRAME,
-  'StartLost': CoarseImpact.NONSENSE,
-  'IntronVariant': CoarseImpact.NON_CODING,
-  'MissenseVariant': CoarseImpact.MISSENSE_INFRAME,
-  'NonCodingTranscriptVariant': CoarseImpact.NON_CODING,
-  'StopGained': CoarseImpact.NONSENSE,
-  'NoSequenceAlteration': CoarseImpact.SYNONYMOUS,
-  'SpliceAcceptorVariant': CoarseImpact.NONSENSE,
-  'SpliceDonorVariant': CoarseImpact.NONSENSE,
-  'StopLost': CoarseImpact.MISSENSE_INFRAME,
-  'SynonymousVariant': CoarseImpact.SYNONYMOUS,
-  'UpstreamTranscriptVariant': CoarseImpact.NON_CODING
+  Unspecified: CoarseImpact.UNSPECIFIED,
+  ThreePrimeUtrVariant: CoarseImpact.NON_CODING,
+  FivePrimeUtrVariant: CoarseImpact.NON_CODING,
+  DownstreamTranscriptVariant: CoarseImpact.NON_CODING,
+  FrameshiftVariant: CoarseImpact.NONSENSE,
+  InframeIndel: CoarseImpact.MISSENSE_INFRAME,
+  StartLost: CoarseImpact.NONSENSE,
+  IntronVariant: CoarseImpact.NON_CODING,
+  MissenseVariant: CoarseImpact.MISSENSE_INFRAME,
+  NonCodingTranscriptVariant: CoarseImpact.NON_CODING,
+  StopGained: CoarseImpact.NONSENSE,
+  NoSequenceAlteration: CoarseImpact.SYNONYMOUS,
+  SpliceAcceptorVariant: CoarseImpact.NONSENSE,
+  SpliceDonorVariant: CoarseImpact.NONSENSE,
+  StopLost: CoarseImpact.MISSENSE_INFRAME,
+  SynonymousVariant: CoarseImpact.SYNONYMOUS,
+  UpstreamTranscriptVariant: CoarseImpact.NON_CODING
 }
 
 /** Mapping from clinsig order to coarse order */
