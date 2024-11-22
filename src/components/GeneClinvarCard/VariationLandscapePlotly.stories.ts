@@ -2,7 +2,7 @@ import type { JsonValue } from '@protobuf-ts/runtime'
 import type { Meta, StoryObj } from '@storybook/vue3'
 
 import { GenesClinvarPerGeneRecord } from '../../ext/annonars-api/src/lib'
-import { GeneTranscriptsResponse } from '../../pbs/mehari/server'
+import { GenesTranscriptsListResponse } from '../../ext/mehari-api/src/lib'
 import VariationLandscapePlotly from './VariationLandscapePlotly.vue'
 import geneClinvarBrca1Json from './fixture.clinvarPerGene.BRCA1.json'
 import geneClinvarTgdsJson from './fixture.clinvarPerGene.TGDS.json'
@@ -15,12 +15,9 @@ import genesTxsTgdsJson38 from './fixture.genesTxs.TGDS.38.json'
 
 const clinvarPerGeneTgds = geneClinvarTgdsJson as GenesClinvarPerGeneRecord
 const clinvarPerGeneBrca1 = geneClinvarBrca1Json as GenesClinvarPerGeneRecord
-// @ts-ignore
-const genesTxsTgds37 = GeneTranscriptsResponse.fromJson(genesTxsTgdsJson37 as JsonValue)
-// @ts-ignore
-const genesTxsTgds38 = GeneTranscriptsResponse.fromJson(genesTxsTgdsJson38 as JsonValue)
-// @ts-ignore
-const genesTxsBrca137 = GeneTranscriptsResponse.fromJson(genesTxsBrca1Json37 as JsonValue)
+const genesTxsTgds37 = genesTxsTgdsJson37 as GenesTranscriptsListResponse
+const genesTxsTgds38 = genesTxsTgdsJson38 as GenesTranscriptsListResponse
+const genesTxsBrca137 = genesTxsBrca1Json37 as GenesTranscriptsListResponse
 
 const meta = {
   title: 'Gene/Clinvar/VariationLandscapePlotly',

@@ -642,7 +642,7 @@ const conditionsCols = computed<number>(() => {
                 <template v-if="idx > 0"> , </template>
                 <template v-if="showTermLinks">
                   <a
-                    :href="`https://www.orpha.net/consor/cgi-bin/Disease_Search_Simple.php?lng=EN&Disease_Disease_Search_diseaseGroup=${disease.orphaId.replace(
+                    :href="`https://www.orpha.net/consor/cgi-bin/Disease_Search_Simple.php?lng=EN&Disease_Disease_Search_diseaseGroup=${disease.orpha_id.replace(
                       ':',
                       ' '
                     )}&Disease_Disease_Search_diseaseType=ORPHA`"

@@ -1,7 +1,7 @@
-import type { JsonValue } from '@protobuf-ts/runtime'
 import type { Meta, StoryObj } from '@storybook/vue3'
 
-import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
+import { GenesGeneInfoRecord } from '@/ext/annonars-api/src/lib'
+
 import { StoreState } from '../../stores'
 import { usePubtatorStore } from '../../stores/pubtator'
 import geneInfoBrca1Json from '../GenePathogenicityCard/fixture.geneInfo.BRCA1.json'
@@ -13,21 +13,18 @@ import searchResultsTgdsJson from './fixture.pubtatorResults.TGDS.json'
 // Here, fixture data is loaded via `import` from JSON file.  Reading the file
 // as in the tests fails with "process is not defined" error in the browser.
 
-// @ts-ignore
-const geneInfoTgds = GeneInfoRecord.fromJson(geneInfoTgdsJson as JsonValue)
-// @ts-ignore
-const geneInfoBrca1 = GeneInfoRecord.fromJson(geneInfoBrca1Json as JsonValue)
+const geneInfoTgds = geneInfoTgdsJson as GenesGeneInfoRecord
+const geneInfoBrca1 = geneInfoBrca1Json as GenesGeneInfoRecord
 
 const meta = {
   title: 'Gene/GeneLiteratureCard',
   component: GeneLiteratureCard,
   tags: ['autodocs'],
   argTypes: {
-    geneInfo: { control: { type: 'object' } }
+    hgncSymbol: { control: { type: 'text' } }
   },
   args: {
-    geneInfo: geneInfoTgds,
-    skipLoadViaStore: true
+    hgncSymbol: geneInfoTgds.hgnc!.symbol
   }
 } satisfies Meta<typeof GeneLiteratureCard>
 
@@ -37,7 +34,7 @@ type Story = StoryObj<typeof meta>
 
 export const TGDS: Story = {
   args: {
-    geneInfo: geneInfoTgds
+    hgncSymbol: geneInfoTgds.hgnc!.symbol
   },
   play: async () => {
     // Setup the store contents after story selection.
@@ -51,7 +48,7 @@ export const TGDS: Story = {
 
 export const BRCA1: Story = {
   args: {
-    geneInfo: geneInfoBrca1
+    hgncSymbol: geneInfoTgds.hgnc!.symbol
   },
   play: async () => {
     // Setup the store contents after story selection.

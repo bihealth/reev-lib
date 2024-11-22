@@ -2,16 +2,20 @@ import fs from 'fs'
 import path from 'path'
 import { describe, expect, test } from 'vitest'
 
+import { GenesClinvarPerGeneRecord } from '../../ext/annonars-api/src/lib'
 import type { GenomeBuild } from '../../lib/genomeBuilds'
 import { setupMountedComponents } from '../../lib/testUtils'
-import { GenesClinvarPerGeneRecord } from '../../ext/annonars-api/src/lib'
 import { GeneTranscriptsResponse } from '../../pbs/mehari/server'
 import { type Transcript } from '../../pbs/mehari/txs'
 import VariationLandscapePlotly from './VariationLandscapePlotly.vue'
 
 // Load fixture data for gene TGDS (little data) and BRCA1 (lots of data).
-const clinvarPerGeneTgds = JSON.parse(fs.readFileSync(path.resolve(__dirname, './fixture.clinvarPerGene.TGDS.json'), 'utf8')) as GenesClinvarPerGeneRecord
-const clinvarPerGeneBrca1 = JSON.parse(fs.readFileSync(path.resolve(__dirname, './fixture.clinvarPerGene.BRCA1.json'), 'utf8')) as GenesClinvarPerGeneRecord
+const clinvarPerGeneTgds = JSON.parse(
+  fs.readFileSync(path.resolve(__dirname, './fixture.clinvarPerGene.TGDS.json'), 'utf8')
+) as GenesClinvarPerGeneRecord
+const clinvarPerGeneBrca1 = JSON.parse(
+  fs.readFileSync(path.resolve(__dirname, './fixture.clinvarPerGene.BRCA1.json'), 'utf8')
+) as GenesClinvarPerGeneRecord
 const genesTxsTgds37 = GeneTranscriptsResponse.fromJsonString(
   fs.readFileSync(path.resolve(__dirname, './fixture.genesTxs.TGDS.37.json'), 'utf8')
 )
@@ -33,7 +37,7 @@ describe.concurrent('VariationLandscapePlotly.vue', async () => {
       geneSymbol: string,
       genomeBuild: string,
       transcripts: Transcript[],
-      clinvarPerGene: ClinvarPerGeneRecord
+      clinvarPerGene: GenesClinvarPerGeneRecord
     ) => {
       // arrange:
       const { wrapper } = await setupMountedComponents(

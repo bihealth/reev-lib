@@ -3,7 +3,6 @@ import type { Meta, StoryObj } from '@storybook/vue3'
 
 import fixtureSeqvarInfoBrca1Json from '../../api/annonars/fixture.variantInfo.BRCA1.json'
 import fixtureSeqvarInfoChrMtJson from '../../api/annonars/fixture.variantInfo.chrMT.json'
-import { SeqvarInfoResponse } from '../../api/annonars/types'
 import { SeqvarImpl } from '../../lib/genomicVars'
 import SeqvarFreqsCard from './SeqvarFreqsCard.vue'
 

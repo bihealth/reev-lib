@@ -1,7 +1,7 @@
-import type { JsonValue } from '@protobuf-ts/runtime'
 import type { Meta, StoryObj } from '@storybook/vue3'
 
-import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
+import { GenesGeneInfoRecord } from '@/ext/annonars-api/src/lib'
+
 import geneInfoBrca1Json from '../GenePathogenicityCard/fixture.geneInfo.BRCA1.json'
 import geneInfoTgdsJson from '../GenePathogenicityCard/fixture.geneInfo.TGDS.json'
 import GeneConditionsCard from './GeneConditionsCard.vue'
@@ -9,10 +9,8 @@ import GeneConditionsCard from './GeneConditionsCard.vue'
 // Here, fixture data is loaded via `import` from JSON file.  Reading the file
 // as in the tests fails with "process is not defined" error in the browser.
 
-// @ts-ignore
-const geneInfoTgds = GeneInfoRecord.fromJson(geneInfoTgdsJson as JsonValue)
-// @ts-ignore
-const geneInfoBrca1 = GeneInfoRecord.fromJson(geneInfoBrca1Json as JsonValue)
+const geneInfoTgds = geneInfoTgdsJson as GenesGeneInfoRecord
+const geneInfoBrca1 = geneInfoBrca1Json as GenesGeneInfoRecord
 
 const meta = {
   title: 'Gene/GeneConditionsCard',
@@ -26,7 +24,7 @@ const meta = {
     geneInfo: geneInfoTgds,
     hpoTerms: [
       {
-        termId: 'HP:0001654',
+        term_id: 'HP:0001654',
         name: 'Abnormal heart valve morphology'
       }
     ]

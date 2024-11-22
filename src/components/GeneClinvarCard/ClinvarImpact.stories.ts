@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 
+import { GenesClinvarPerGeneRecord } from '../../ext/annonars-api/src/lib'
 import ClinvarImpact from './ClinvarImpact.vue'
 import geneClinvarBrca1Json from './fixture.clinvarPerGene.BRCA1.json'
 import geneClinvarTgdsJson from './fixture.clinvarPerGene.TGDS.json'
-import { GenesClinvarPerGeneRecord } from '../../ext/annonars-api/src/lib'
 
 // Here, fixture data is loaded via `import` from JSON file.  Reading the file
 // as in the tests fails with "process is not defined" error in the browser.

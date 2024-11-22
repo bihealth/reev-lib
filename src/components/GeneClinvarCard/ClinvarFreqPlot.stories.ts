@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 
 import { GenesClinvarPerGeneRecord } from '../../ext/annonars-api/src/lib'
-
 import ClinvarFreqPlot from './ClinvarFreqPlot.vue'
 import geneClinvarBrca1Json from './fixture.clinvarPerGene.BRCA1.json'
 import geneClinvarTgdsJson from './fixture.clinvarPerGene.TGDS.json'

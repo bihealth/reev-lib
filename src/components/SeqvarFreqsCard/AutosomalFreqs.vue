@@ -64,7 +64,7 @@ type ByPop = {
 const byPop = computed<ByPop>(() => {
   const res: ByPop = {}
   // @ts-ignore
-  for (const record of noCohort.value?.byPopulation ?? noCohort.value?.byAncestryGroup ?? []) {
+  for (const record of noCohort.value?.by_population ?? noCohort.value?.by_ancestry_group ?? []) {
     res[record.population ?? record.ancestryGroup] = record
   }
   return res

@@ -76,7 +76,7 @@ const props = withDefaults(
                 <td style="max-width: 400px">{{ oneTxCsq.hgvs_t }}</td>
                 <td style="max-width: 400px">{{ oneTxCsq.hgvs_p }}</td>
                 <template v-if="oneTxCsq.rank">
-                  <td>{{ oneTxCsq.rank!.rank ?? 0 }} / {{ oneTxCsq.rank!.total ?? 0 }}</td>
+                  <td>{{ oneTxCsq.rank!.ord ?? 0 }} / {{ oneTxCsq.rank!.total ?? 0 }}</td>
                 </template>
                 <template v-else>
                   <td>-</td>

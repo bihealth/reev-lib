@@ -105,7 +105,7 @@ const props = defineProps<{
       <span v-else> <v-icon>mdi-launch</v-icon> Missense3D </span>
     </div>
     <div>
-      <a :href="`https://varsome.com/gene/hg19/${hgnc?.hgncId}`" target="_blank">
+      <a :href="`https://varsome.com/gene/hg19/${hgnc?.hgnc_id}`" target="_blank">
         <v-icon>mdi-launch</v-icon>
         VarSome
       </a>

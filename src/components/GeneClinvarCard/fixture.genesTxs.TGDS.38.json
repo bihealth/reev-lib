@@ -1,235 +1,1024 @@
 {
   "transcripts": [
     {
-      "id": "NM_001304430.2",
-      "geneSymbol": "TGDS",
-      "geneId": "HGNC:20324",
-      "biotype": "TRANSCRIPT_BIOTYPE_CODING",
-      "protein": "NP_001291359.1",
-      "startCodon": 188,
-      "stopCodon": 1145,
-      "genomeAlignments": [
+      "id": "NM_007294.4",
+      "gene_symbol": "BRCA1",
+      "gene_id": "HGNC:1100",
+      "biotype": "coding",
+      "tags": ["mane_select"],
+      "protein": "NP_009225.1",
+      "start_codon": 113,
+      "stop_codon": 5705,
+      "genome_alignments": [
         {
-          "genomeBuild": "GENOME_BUILD_GRCH38",
-          "contig": "NC_000013.11",
-          "cdsStart": 94574781,
-          "cdsEnd": 94593897,
-          "strand": "STRAND_MINUS",
+          "genome_build": "grch38",
+          "contig": "NC_000017.11",
+          "cds_start": 43045677,
+          "cds_end": 43124096,
+          "strand": "minus",
           "exons": [
             {
-              "altStartI": 94574053,
-              "altEndI": 94574852,
+              "alt_start_i": 43044294,
+              "alt_end_i": 43045802,
+              "ord": 22,
+              "alt_cds_start_i": 5581,
+              "alt_cds_end_i": 7088,
+              "cigar": "1508M"
+            },
+            {
+              "alt_start_i": 43047642,
+              "alt_end_i": 43047703,
+              "ord": 21,
+              "alt_cds_start_i": 5520,
+              "alt_cds_end_i": 5580,
+              "cigar": "61M"
+            },
+            {
+              "alt_start_i": 43049120,
+              "alt_end_i": 43049194,
+              "ord": 20,
+              "alt_cds_start_i": 5446,
+              "alt_cds_end_i": 5519,
+              "cigar": "74M"
+            },
+            {
+              "alt_start_i": 43051062,
+              "alt_end_i": 43051117,
+              "ord": 19,
+              "alt_cds_start_i": 5391,
+              "alt_cds_end_i": 5445,
+              "cigar": "55M"
+            },
+            {
+              "alt_start_i": 43057051,
+              "alt_end_i": 43057135,
+              "ord": 18,
+              "alt_cds_start_i": 5307,
+              "alt_cds_end_i": 5390,
+              "cigar": "84M"
+            },
+            {
+              "alt_start_i": 43063332,
+              "alt_end_i": 43063373,
+              "ord": 17,
+              "alt_cds_start_i": 5266,
+              "alt_cds_end_i": 5306,
+              "cigar": "41M"
+            },
+            {
+              "alt_start_i": 43063873,
+              "alt_end_i": 43063951,
+              "ord": 16,
+              "alt_cds_start_i": 5188,
+              "alt_cds_end_i": 5265,
+              "cigar": "78M"
+            },
+            {
+              "alt_start_i": 43067607,
+              "alt_end_i": 43067695,
+              "ord": 15,
+              "alt_cds_start_i": 5100,
+              "alt_cds_end_i": 5187,
+              "cigar": "88M"
+            },
+            {
+              "alt_start_i": 43070927,
+              "alt_end_i": 43071238,
+              "ord": 14,
+              "alt_cds_start_i": 4789,
+              "alt_cds_end_i": 5099,
+              "cigar": "311M"
+            },
+            {
+              "alt_start_i": 43074330,
+              "alt_end_i": 43074521,
+              "ord": 13,
+              "alt_cds_start_i": 4598,
+              "alt_cds_end_i": 4788,
+              "cigar": "191M"
+            },
+            {
+              "alt_start_i": 43076487,
+              "alt_end_i": 43076614,
+              "ord": 12,
+              "alt_cds_start_i": 4471,
+              "alt_cds_end_i": 4597,
+              "cigar": "127M"
+            },
+            {
+              "alt_start_i": 43082403,
+              "alt_end_i": 43082575,
               "ord": 11,
-              "altCdsStartI": 1075,
-              "altCdsEndI": 1873,
-              "cigar": "799M"
+              "alt_cds_start_i": 4299,
+              "alt_cds_end_i": 4470,
+              "cigar": "172M"
             },
             {
-              "altStartI": 94576313,
-              "altEndI": 94576411,
+              "alt_start_i": 43090943,
+              "alt_end_i": 43091032,
               "ord": 10,
-              "altCdsStartI": 977,
-              "altCdsEndI": 1074,
-              "cigar": "98M"
+              "alt_cds_start_i": 4210,
+              "alt_cds_end_i": 4298,
+              "cigar": "89M"
             },
             {
-              "altStartI": 94577370,
-              "altEndI": 94577429,
+              "alt_start_i": 43091434,
+              "alt_end_i": 43094860,
               "ord": 9,
-              "altCdsStartI": 918,
-              "altCdsEndI": 976,
-              "cigar": "59M"
+              "alt_cds_start_i": 784,
+              "alt_cds_end_i": 4209,
+              "cigar": "3426M"
             },
             {
-              "altStartI": 94578004,
-              "altEndI": 94578170,
+              "alt_start_i": 43095845,
+              "alt_end_i": 43095922,
               "ord": 8,
-              "altCdsStartI": 752,
-              "altCdsEndI": 917,
-              "cigar": "166M"
+              "alt_cds_start_i": 707,
+              "alt_cds_end_i": 783,
+              "cigar": "77M"
             },
             {
-              "altStartI": 94578729,
-              "altEndI": 94578773,
+              "alt_start_i": 43097243,
+              "alt_end_i": 43097289,
               "ord": 7,
-              "altCdsStartI": 708,
-              "altCdsEndI": 751,
-              "cigar": "44M"
+              "alt_cds_start_i": 661,
+              "alt_cds_end_i": 706,
+              "cigar": "46M"
             },
             {
-              "altStartI": 94579893,
-              "altEndI": 94579953,
+              "alt_start_i": 43099774,
+              "alt_end_i": 43099880,
               "ord": 6,
-              "altCdsStartI": 648,
-              "altCdsEndI": 707,
-              "cigar": "60M"
+              "alt_cds_start_i": 555,
+              "alt_cds_end_i": 660,
+              "cigar": "106M"
             },
             {
-              "altStartI": 94581090,
-              "altEndI": 94581189,
+              "alt_start_i": 43104121,
+              "alt_end_i": 43104261,
               "ord": 5,
-              "altCdsStartI": 549,
-              "altCdsEndI": 647,
+              "alt_cds_start_i": 415,
+              "alt_cds_end_i": 554,
+              "cigar": "140M"
+            },
+            {
+              "alt_start_i": 43104867,
+              "alt_end_i": 43104956,
+              "ord": 4,
+              "alt_cds_start_i": 326,
+              "alt_cds_end_i": 414,
+              "cigar": "89M"
+            },
+            {
+              "alt_start_i": 43106455,
+              "alt_end_i": 43106533,
+              "ord": 3,
+              "alt_cds_start_i": 248,
+              "alt_cds_end_i": 325,
+              "cigar": "78M"
+            },
+            {
+              "alt_start_i": 43115725,
+              "alt_end_i": 43115779,
+              "ord": 2,
+              "alt_cds_start_i": 194,
+              "alt_cds_end_i": 247,
+              "cigar": "54M"
+            },
+            {
+              "alt_start_i": 43124016,
+              "alt_end_i": 43124115,
+              "ord": 1,
+              "alt_cds_start_i": 95,
+              "alt_cds_end_i": 193,
               "cigar": "99M"
             },
             {
-              "altStartI": 94583093,
-              "altEndI": 94583236,
-              "ord": 4,
-              "altCdsStartI": 406,
-              "altCdsEndI": 548,
-              "cigar": "143M"
-            },
-            {
-              "altStartI": 94590852,
-              "altEndI": 94590943,
-              "ord": 3,
-              "altCdsStartI": 315,
-              "altCdsEndI": 405,
-              "cigar": "91M"
-            },
-            {
-              "altStartI": 94592240,
-              "altEndI": 94592309,
-              "ord": 2,
-              "altCdsStartI": 246,
-              "altCdsEndI": 314,
-              "cigar": "69M"
-            },
-            {
-              "altStartI": 94593840,
-              "altEndI": 94593907,
-              "ord": 1,
-              "altCdsStartI": 179,
-              "altCdsEndI": 245,
-              "cigar": "67M"
-            },
-            {
-              "altStartI": 94595974,
-              "altEndI": 94596152,
-              "altCdsStartI": 1,
-              "altCdsEndI": 178,
-              "cigar": "178M"
+              "alt_start_i": 43125270,
+              "alt_end_i": 43125364,
+              "ord": 0,
+              "alt_cds_start_i": 1,
+              "alt_cds_end_i": 94,
+              "cigar": "94M"
             }
           ]
         }
-      ]
+      ],
+      "filtered": false,
+      "filter_reason": null
     },
     {
-      "id": "NM_014305.4",
-      "geneSymbol": "TGDS",
-      "geneId": "HGNC:20324",
-      "biotype": "TRANSCRIPT_BIOTYPE_CODING",
-      "tags": ["TRANSCRIPT_TAG_MANE_SELECT"],
-      "protein": "NP_055120.1",
-      "startCodon": 16,
-      "stopCodon": 1069,
-      "genomeAlignments": [
+      "id": "NM_007297.4",
+      "gene_symbol": "BRCA1",
+      "gene_id": "HGNC:1100",
+      "biotype": "coding",
+      "tags": [],
+      "protein": "NP_009228.2",
+      "start_codon": 194,
+      "stop_codon": 5645,
+      "genome_alignments": [
         {
-          "genomeBuild": "GENOME_BUILD_GRCH38",
-          "contig": "NC_000013.11",
-          "cdsStart": 94574781,
-          "cdsEnd": 94596136,
-          "strand": "STRAND_MINUS",
+          "genome_build": "grch38",
+          "contig": "NC_000017.11",
+          "cds_start": 43045677,
+          "cds_end": 43106526,
+          "strand": "minus",
           "exons": [
             {
-              "altStartI": 94574053,
-              "altEndI": 94574852,
+              "alt_start_i": 43044294,
+              "alt_end_i": 43045802,
+              "ord": 21,
+              "alt_cds_start_i": 5521,
+              "alt_cds_end_i": 7028,
+              "cigar": "1508M"
+            },
+            {
+              "alt_start_i": 43047642,
+              "alt_end_i": 43047703,
+              "ord": 20,
+              "alt_cds_start_i": 5460,
+              "alt_cds_end_i": 5520,
+              "cigar": "61M"
+            },
+            {
+              "alt_start_i": 43049120,
+              "alt_end_i": 43049194,
+              "ord": 19,
+              "alt_cds_start_i": 5386,
+              "alt_cds_end_i": 5459,
+              "cigar": "74M"
+            },
+            {
+              "alt_start_i": 43051062,
+              "alt_end_i": 43051117,
+              "ord": 18,
+              "alt_cds_start_i": 5331,
+              "alt_cds_end_i": 5385,
+              "cigar": "55M"
+            },
+            {
+              "alt_start_i": 43057051,
+              "alt_end_i": 43057135,
+              "ord": 17,
+              "alt_cds_start_i": 5247,
+              "alt_cds_end_i": 5330,
+              "cigar": "84M"
+            },
+            {
+              "alt_start_i": 43063332,
+              "alt_end_i": 43063373,
+              "ord": 16,
+              "alt_cds_start_i": 5206,
+              "alt_cds_end_i": 5246,
+              "cigar": "41M"
+            },
+            {
+              "alt_start_i": 43063873,
+              "alt_end_i": 43063951,
+              "ord": 15,
+              "alt_cds_start_i": 5128,
+              "alt_cds_end_i": 5205,
+              "cigar": "78M"
+            },
+            {
+              "alt_start_i": 43067607,
+              "alt_end_i": 43067695,
+              "ord": 14,
+              "alt_cds_start_i": 5040,
+              "alt_cds_end_i": 5127,
+              "cigar": "88M"
+            },
+            {
+              "alt_start_i": 43070927,
+              "alt_end_i": 43071238,
+              "ord": 13,
+              "alt_cds_start_i": 4729,
+              "alt_cds_end_i": 5039,
+              "cigar": "311M"
+            },
+            {
+              "alt_start_i": 43074330,
+              "alt_end_i": 43074521,
+              "ord": 12,
+              "alt_cds_start_i": 4538,
+              "alt_cds_end_i": 4728,
+              "cigar": "191M"
+            },
+            {
+              "alt_start_i": 43076487,
+              "alt_end_i": 43076614,
               "ord": 11,
-              "altCdsStartI": 999,
-              "altCdsEndI": 1797,
-              "cigar": "799M"
+              "alt_cds_start_i": 4411,
+              "alt_cds_end_i": 4537,
+              "cigar": "127M"
             },
             {
-              "altStartI": 94576313,
-              "altEndI": 94576411,
+              "alt_start_i": 43082403,
+              "alt_end_i": 43082575,
               "ord": 10,
-              "altCdsStartI": 901,
-              "altCdsEndI": 998,
-              "cigar": "98M"
+              "alt_cds_start_i": 4239,
+              "alt_cds_end_i": 4410,
+              "cigar": "172M"
             },
             {
-              "altStartI": 94577370,
-              "altEndI": 94577429,
+              "alt_start_i": 43090943,
+              "alt_end_i": 43091032,
               "ord": 9,
-              "altCdsStartI": 842,
-              "altCdsEndI": 900,
-              "cigar": "59M"
+              "alt_cds_start_i": 4150,
+              "alt_cds_end_i": 4238,
+              "cigar": "89M"
             },
             {
-              "altStartI": 94578004,
-              "altEndI": 94578170,
+              "alt_start_i": 43091434,
+              "alt_end_i": 43094860,
               "ord": 8,
-              "altCdsStartI": 676,
-              "altCdsEndI": 841,
-              "cigar": "166M"
+              "alt_cds_start_i": 724,
+              "alt_cds_end_i": 4149,
+              "cigar": "3426M"
             },
             {
-              "altStartI": 94578729,
-              "altEndI": 94578773,
+              "alt_start_i": 43095845,
+              "alt_end_i": 43095922,
               "ord": 7,
-              "altCdsStartI": 632,
-              "altCdsEndI": 675,
-              "cigar": "44M"
+              "alt_cds_start_i": 647,
+              "alt_cds_end_i": 723,
+              "cigar": "77M"
             },
             {
-              "altStartI": 94579893,
-              "altEndI": 94579953,
+              "alt_start_i": 43097243,
+              "alt_end_i": 43097289,
               "ord": 6,
-              "altCdsStartI": 572,
-              "altCdsEndI": 631,
-              "cigar": "60M"
+              "alt_cds_start_i": 601,
+              "alt_cds_end_i": 646,
+              "cigar": "46M"
             },
             {
-              "altStartI": 94581090,
-              "altEndI": 94581189,
+              "alt_start_i": 43099774,
+              "alt_end_i": 43099880,
               "ord": 5,
-              "altCdsStartI": 473,
-              "altCdsEndI": 571,
+              "alt_cds_start_i": 495,
+              "alt_cds_end_i": 600,
+              "cigar": "106M"
+            },
+            {
+              "alt_start_i": 43104121,
+              "alt_end_i": 43104261,
+              "ord": 4,
+              "alt_cds_start_i": 355,
+              "alt_cds_end_i": 494,
+              "cigar": "140M"
+            },
+            {
+              "alt_start_i": 43104867,
+              "alt_end_i": 43104956,
+              "ord": 3,
+              "alt_cds_start_i": 266,
+              "alt_cds_end_i": 354,
+              "cigar": "89M"
+            },
+            {
+              "alt_start_i": 43106455,
+              "alt_end_i": 43106533,
+              "ord": 2,
+              "alt_cds_start_i": 188,
+              "alt_cds_end_i": 265,
+              "cigar": "78M"
+            },
+            {
+              "alt_start_i": 43124016,
+              "alt_end_i": 43124115,
+              "ord": 1,
+              "alt_cds_start_i": 89,
+              "alt_cds_end_i": 187,
               "cigar": "99M"
             },
             {
-              "altStartI": 94583093,
-              "altEndI": 94583236,
-              "ord": 4,
-              "altCdsStartI": 330,
-              "altCdsEndI": 472,
-              "cigar": "143M"
-            },
-            {
-              "altStartI": 94590852,
-              "altEndI": 94590943,
-              "ord": 3,
-              "altCdsStartI": 239,
-              "altCdsEndI": 329,
-              "cigar": "91M"
-            },
-            {
-              "altStartI": 94592240,
-              "altEndI": 94592309,
-              "ord": 2,
-              "altCdsStartI": 170,
-              "altCdsEndI": 238,
-              "cigar": "69M"
-            },
-            {
-              "altStartI": 94593840,
-              "altEndI": 94593907,
-              "ord": 1,
-              "altCdsStartI": 103,
-              "altCdsEndI": 169,
-              "cigar": "67M"
-            },
-            {
-              "altStartI": 94596050,
-              "altEndI": 94596152,
-              "altCdsStartI": 1,
-              "altCdsEndI": 102,
-              "cigar": "102M"
+              "alt_start_i": 43125276,
+              "alt_end_i": 43125364,
+              "ord": 0,
+              "alt_cds_start_i": 1,
+              "alt_cds_end_i": 88,
+              "cigar": "88M"
             }
           ]
         }
-      ]
+      ],
+      "filtered": false,
+      "filter_reason": null
+    },
+    {
+      "id": "NM_007298.3",
+      "gene_symbol": "BRCA1",
+      "gene_id": "HGNC:1100",
+      "biotype": "coding",
+      "tags": [],
+      "protein": "NP_009229.2",
+      "start_codon": 19,
+      "stop_codon": 2299,
+      "genome_alignments": [
+        {
+          "genome_build": "grch38",
+          "contig": "NC_000017.11",
+          "cds_start": 43045677,
+          "cds_end": 43124096,
+          "strand": "minus",
+          "exons": [
+            {
+              "alt_start_i": 43044294,
+              "alt_end_i": 43045802,
+              "ord": 21,
+              "alt_cds_start_i": 2175,
+              "alt_cds_end_i": 3682,
+              "cigar": "1508M"
+            },
+            {
+              "alt_start_i": 43047642,
+              "alt_end_i": 43047703,
+              "ord": 20,
+              "alt_cds_start_i": 2114,
+              "alt_cds_end_i": 2174,
+              "cigar": "61M"
+            },
+            {
+              "alt_start_i": 43049120,
+              "alt_end_i": 43049194,
+              "ord": 19,
+              "alt_cds_start_i": 2040,
+              "alt_cds_end_i": 2113,
+              "cigar": "74M"
+            },
+            {
+              "alt_start_i": 43051062,
+              "alt_end_i": 43051117,
+              "ord": 18,
+              "alt_cds_start_i": 1985,
+              "alt_cds_end_i": 2039,
+              "cigar": "55M"
+            },
+            {
+              "alt_start_i": 43057051,
+              "alt_end_i": 43057135,
+              "ord": 17,
+              "alt_cds_start_i": 1901,
+              "alt_cds_end_i": 1984,
+              "cigar": "84M"
+            },
+            {
+              "alt_start_i": 43063332,
+              "alt_end_i": 43063373,
+              "ord": 16,
+              "alt_cds_start_i": 1860,
+              "alt_cds_end_i": 1900,
+              "cigar": "41M"
+            },
+            {
+              "alt_start_i": 43063873,
+              "alt_end_i": 43063951,
+              "ord": 15,
+              "alt_cds_start_i": 1782,
+              "alt_cds_end_i": 1859,
+              "cigar": "78M"
+            },
+            {
+              "alt_start_i": 43067607,
+              "alt_end_i": 43067695,
+              "ord": 14,
+              "alt_cds_start_i": 1694,
+              "alt_cds_end_i": 1781,
+              "cigar": "88M"
+            },
+            {
+              "alt_start_i": 43070927,
+              "alt_end_i": 43071238,
+              "ord": 13,
+              "alt_cds_start_i": 1383,
+              "alt_cds_end_i": 1693,
+              "cigar": "311M"
+            },
+            {
+              "alt_start_i": 43074330,
+              "alt_end_i": 43074521,
+              "ord": 12,
+              "alt_cds_start_i": 1192,
+              "alt_cds_end_i": 1382,
+              "cigar": "191M"
+            },
+            {
+              "alt_start_i": 43076487,
+              "alt_end_i": 43076611,
+              "ord": 11,
+              "alt_cds_start_i": 1068,
+              "alt_cds_end_i": 1191,
+              "cigar": "124M"
+            },
+            {
+              "alt_start_i": 43082403,
+              "alt_end_i": 43082575,
+              "ord": 10,
+              "alt_cds_start_i": 896,
+              "alt_cds_end_i": 1067,
+              "cigar": "172M"
+            },
+            {
+              "alt_start_i": 43090943,
+              "alt_end_i": 43091032,
+              "ord": 9,
+              "alt_cds_start_i": 807,
+              "alt_cds_end_i": 895,
+              "cigar": "89M"
+            },
+            {
+              "alt_start_i": 43094743,
+              "alt_end_i": 43094860,
+              "ord": 8,
+              "alt_cds_start_i": 690,
+              "alt_cds_end_i": 806,
+              "cigar": "117M"
+            },
+            {
+              "alt_start_i": 43095845,
+              "alt_end_i": 43095922,
+              "ord": 7,
+              "alt_cds_start_i": 613,
+              "alt_cds_end_i": 689,
+              "cigar": "77M"
+            },
+            {
+              "alt_start_i": 43097243,
+              "alt_end_i": 43097289,
+              "ord": 6,
+              "alt_cds_start_i": 567,
+              "alt_cds_end_i": 612,
+              "cigar": "46M"
+            },
+            {
+              "alt_start_i": 43099774,
+              "alt_end_i": 43099880,
+              "ord": 5,
+              "alt_cds_start_i": 461,
+              "alt_cds_end_i": 566,
+              "cigar": "106M"
+            },
+            {
+              "alt_start_i": 43104121,
+              "alt_end_i": 43104261,
+              "ord": 4,
+              "alt_cds_start_i": 321,
+              "alt_cds_end_i": 460,
+              "cigar": "140M"
+            },
+            {
+              "alt_start_i": 43104867,
+              "alt_end_i": 43104956,
+              "ord": 3,
+              "alt_cds_start_i": 232,
+              "alt_cds_end_i": 320,
+              "cigar": "89M"
+            },
+            {
+              "alt_start_i": 43106455,
+              "alt_end_i": 43106533,
+              "ord": 2,
+              "alt_cds_start_i": 154,
+              "alt_cds_end_i": 231,
+              "cigar": "78M"
+            },
+            {
+              "alt_start_i": 43115725,
+              "alt_end_i": 43115779,
+              "ord": 1,
+              "alt_cds_start_i": 100,
+              "alt_cds_end_i": 153,
+              "cigar": "54M"
+            },
+            {
+              "alt_start_i": 43124016,
+              "alt_end_i": 43124115,
+              "ord": 0,
+              "alt_cds_start_i": 1,
+              "alt_cds_end_i": 99,
+              "cigar": "99M"
+            }
+          ]
+        }
+      ],
+      "filtered": false,
+      "filter_reason": null
+    },
+    {
+      "id": "NM_007299.4",
+      "gene_symbol": "BRCA1",
+      "gene_id": "HGNC:1100",
+      "biotype": "coding",
+      "tags": [],
+      "protein": "NP_009230.2",
+      "start_codon": 107,
+      "stop_codon": 2207,
+      "genome_alignments": [
+        {
+          "genome_build": "grch38",
+          "contig": "NC_000017.11",
+          "cds_start": 43045783,
+          "cds_end": 43124096,
+          "strand": "minus",
+          "exons": [
+            {
+              "alt_start_i": 43044294,
+              "alt_end_i": 43045802,
+              "ord": 21,
+              "alt_cds_start_i": 2189,
+              "alt_cds_end_i": 3696,
+              "cigar": "1508M"
+            },
+            {
+              "alt_start_i": 43047642,
+              "alt_end_i": 43047703,
+              "ord": 20,
+              "alt_cds_start_i": 2128,
+              "alt_cds_end_i": 2188,
+              "cigar": "61M"
+            },
+            {
+              "alt_start_i": 43051062,
+              "alt_end_i": 43051117,
+              "ord": 19,
+              "alt_cds_start_i": 2073,
+              "alt_cds_end_i": 2127,
+              "cigar": "55M"
+            },
+            {
+              "alt_start_i": 43057051,
+              "alt_end_i": 43057135,
+              "ord": 18,
+              "alt_cds_start_i": 1989,
+              "alt_cds_end_i": 2072,
+              "cigar": "84M"
+            },
+            {
+              "alt_start_i": 43063332,
+              "alt_end_i": 43063373,
+              "ord": 17,
+              "alt_cds_start_i": 1948,
+              "alt_cds_end_i": 1988,
+              "cigar": "41M"
+            },
+            {
+              "alt_start_i": 43063873,
+              "alt_end_i": 43063951,
+              "ord": 16,
+              "alt_cds_start_i": 1870,
+              "alt_cds_end_i": 1947,
+              "cigar": "78M"
+            },
+            {
+              "alt_start_i": 43067607,
+              "alt_end_i": 43067695,
+              "ord": 15,
+              "alt_cds_start_i": 1782,
+              "alt_cds_end_i": 1869,
+              "cigar": "88M"
+            },
+            {
+              "alt_start_i": 43070927,
+              "alt_end_i": 43071238,
+              "ord": 14,
+              "alt_cds_start_i": 1471,
+              "alt_cds_end_i": 1781,
+              "cigar": "311M"
+            },
+            {
+              "alt_start_i": 43074330,
+              "alt_end_i": 43074521,
+              "ord": 13,
+              "alt_cds_start_i": 1280,
+              "alt_cds_end_i": 1470,
+              "cigar": "191M"
+            },
+            {
+              "alt_start_i": 43076487,
+              "alt_end_i": 43076611,
+              "ord": 12,
+              "alt_cds_start_i": 1156,
+              "alt_cds_end_i": 1279,
+              "cigar": "124M"
+            },
+            {
+              "alt_start_i": 43082403,
+              "alt_end_i": 43082575,
+              "ord": 11,
+              "alt_cds_start_i": 984,
+              "alt_cds_end_i": 1155,
+              "cigar": "172M"
+            },
+            {
+              "alt_start_i": 43090943,
+              "alt_end_i": 43091032,
+              "ord": 10,
+              "alt_cds_start_i": 895,
+              "alt_cds_end_i": 983,
+              "cigar": "89M"
+            },
+            {
+              "alt_start_i": 43094743,
+              "alt_end_i": 43094860,
+              "ord": 9,
+              "alt_cds_start_i": 778,
+              "alt_cds_end_i": 894,
+              "cigar": "117M"
+            },
+            {
+              "alt_start_i": 43095845,
+              "alt_end_i": 43095922,
+              "ord": 8,
+              "alt_cds_start_i": 701,
+              "alt_cds_end_i": 777,
+              "cigar": "77M"
+            },
+            {
+              "alt_start_i": 43097243,
+              "alt_end_i": 43097289,
+              "ord": 7,
+              "alt_cds_start_i": 655,
+              "alt_cds_end_i": 700,
+              "cigar": "46M"
+            },
+            {
+              "alt_start_i": 43099774,
+              "alt_end_i": 43099880,
+              "ord": 6,
+              "alt_cds_start_i": 549,
+              "alt_cds_end_i": 654,
+              "cigar": "106M"
+            },
+            {
+              "alt_start_i": 43104121,
+              "alt_end_i": 43104261,
+              "ord": 5,
+              "alt_cds_start_i": 409,
+              "alt_cds_end_i": 548,
+              "cigar": "140M"
+            },
+            {
+              "alt_start_i": 43104867,
+              "alt_end_i": 43104956,
+              "ord": 4,
+              "alt_cds_start_i": 320,
+              "alt_cds_end_i": 408,
+              "cigar": "89M"
+            },
+            {
+              "alt_start_i": 43106455,
+              "alt_end_i": 43106533,
+              "ord": 3,
+              "alt_cds_start_i": 242,
+              "alt_cds_end_i": 319,
+              "cigar": "78M"
+            },
+            {
+              "alt_start_i": 43115725,
+              "alt_end_i": 43115779,
+              "ord": 2,
+              "alt_cds_start_i": 188,
+              "alt_cds_end_i": 241,
+              "cigar": "54M"
+            },
+            {
+              "alt_start_i": 43124016,
+              "alt_end_i": 43124115,
+              "ord": 1,
+              "alt_cds_start_i": 89,
+              "alt_cds_end_i": 187,
+              "cigar": "99M"
+            },
+            {
+              "alt_start_i": 43125276,
+              "alt_end_i": 43125364,
+              "ord": 0,
+              "alt_cds_start_i": 1,
+              "alt_cds_end_i": 88,
+              "cigar": "88M"
+            }
+          ]
+        }
+      ],
+      "filtered": false,
+      "filter_reason": null
+    },
+    {
+      "id": "NM_007300.4",
+      "gene_symbol": "BRCA1",
+      "gene_id": "HGNC:1100",
+      "biotype": "coding",
+      "tags": [],
+      "protein": "NP_009231.2",
+      "start_codon": 113,
+      "stop_codon": 5768,
+      "genome_alignments": [
+        {
+          "genome_build": "grch38",
+          "contig": "NC_000017.11",
+          "cds_start": 43045677,
+          "cds_end": 43124096,
+          "strand": "minus",
+          "exons": [
+            {
+              "alt_start_i": 43044294,
+              "alt_end_i": 43045802,
+              "ord": 23,
+              "alt_cds_start_i": 5644,
+              "alt_cds_end_i": 7151,
+              "cigar": "1508M"
+            },
+            {
+              "alt_start_i": 43047642,
+              "alt_end_i": 43047703,
+              "ord": 22,
+              "alt_cds_start_i": 5583,
+              "alt_cds_end_i": 5643,
+              "cigar": "61M"
+            },
+            {
+              "alt_start_i": 43049120,
+              "alt_end_i": 43049194,
+              "ord": 21,
+              "alt_cds_start_i": 5509,
+              "alt_cds_end_i": 5582,
+              "cigar": "74M"
+            },
+            {
+              "alt_start_i": 43051062,
+              "alt_end_i": 43051117,
+              "ord": 20,
+              "alt_cds_start_i": 5454,
+              "alt_cds_end_i": 5508,
+              "cigar": "55M"
+            },
+            {
+              "alt_start_i": 43057051,
+              "alt_end_i": 43057135,
+              "ord": 19,
+              "alt_cds_start_i": 5370,
+              "alt_cds_end_i": 5453,
+              "cigar": "84M"
+            },
+            {
+              "alt_start_i": 43063332,
+              "alt_end_i": 43063373,
+              "ord": 18,
+              "alt_cds_start_i": 5329,
+              "alt_cds_end_i": 5369,
+              "cigar": "41M"
+            },
+            {
+              "alt_start_i": 43063873,
+              "alt_end_i": 43063951,
+              "ord": 17,
+              "alt_cds_start_i": 5251,
+              "alt_cds_end_i": 5328,
+              "cigar": "78M"
+            },
+            {
+              "alt_start_i": 43067607,
+              "alt_end_i": 43067695,
+              "ord": 16,
+              "alt_cds_start_i": 5163,
+              "alt_cds_end_i": 5250,
+              "cigar": "88M"
+            },
+            {
+              "alt_start_i": 43070927,
+              "alt_end_i": 43071238,
+              "ord": 15,
+              "alt_cds_start_i": 4852,
+              "alt_cds_end_i": 5162,
+              "cigar": "311M"
+            },
+            {
+              "alt_start_i": 43074330,
+              "alt_end_i": 43074521,
+              "ord": 14,
+              "alt_cds_start_i": 4661,
+              "alt_cds_end_i": 4851,
+              "cigar": "191M"
+            },
+            {
+              "alt_start_i": 43076487,
+              "alt_end_i": 43076611,
+              "ord": 13,
+              "alt_cds_start_i": 4537,
+              "alt_cds_end_i": 4660,
+              "cigar": "124M"
+            },
+            {
+              "alt_start_i": 43079333,
+              "alt_end_i": 43079399,
+              "ord": 12,
+              "alt_cds_start_i": 4471,
+              "alt_cds_end_i": 4536,
+              "cigar": "66M"
+            },
+            {
+              "alt_start_i": 43082403,
+              "alt_end_i": 43082575,
+              "ord": 11,
+              "alt_cds_start_i": 4299,
+              "alt_cds_end_i": 4470,
+              "cigar": "172M"
+            },
+            {
+              "alt_start_i": 43090943,
+              "alt_end_i": 43091032,
+              "ord": 10,
+              "alt_cds_start_i": 4210,
+              "alt_cds_end_i": 4298,
+              "cigar": "89M"
+            },
+            {
+              "alt_start_i": 43091434,
+              "alt_end_i": 43094860,
+              "ord": 9,
+              "alt_cds_start_i": 784,
+              "alt_cds_end_i": 4209,
+              "cigar": "3426M"
+            },
+            {
+              "alt_start_i": 43095845,
+              "alt_end_i": 43095922,
+              "ord": 8,
+              "alt_cds_start_i": 707,
+              "alt_cds_end_i": 783,
+              "cigar": "77M"
+            },
+            {
+              "alt_start_i": 43097243,
+              "alt_end_i": 43097289,
+              "ord": 7,
+              "alt_cds_start_i": 661,
+              "alt_cds_end_i": 706,
+              "cigar": "46M"
+            },
+            {
+              "alt_start_i": 43099774,
+              "alt_end_i": 43099880,
+              "ord": 6,
+              "alt_cds_start_i": 555,
+              "alt_cds_end_i": 660,
+              "cigar": "106M"
+            },
+            {
+              "alt_start_i": 43104121,
+              "alt_end_i": 43104261,
+              "ord": 5,
+              "alt_cds_start_i": 415,
+              "alt_cds_end_i": 554,
+              "cigar": "140M"
+            },
+            {
+              "alt_start_i": 43104867,
+              "alt_end_i": 43104956,
+              "ord": 4,
+              "alt_cds_start_i": 326,
+              "alt_cds_end_i": 414,
+              "cigar": "89M"
+            },
+            {
+              "alt_start_i": 43106455,
+              "alt_end_i": 43106533,
+              "ord": 3,
+              "alt_cds_start_i": 248,
+              "alt_cds_end_i": 325,
+              "cigar": "78M"
+            },
+            {
+              "alt_start_i": 43115725,
+              "alt_end_i": 43115779,
+              "ord": 2,
+              "alt_cds_start_i": 194,
+              "alt_cds_end_i": 247,
+              "cigar": "54M"
+            },
+            {
+              "alt_start_i": 43124016,
+              "alt_end_i": 43124115,
+              "ord": 1,
+              "alt_cds_start_i": 95,
+              "alt_cds_end_i": 193,
+              "cigar": "99M"
+            },
+            {
+              "alt_start_i": 43125270,
+              "alt_end_i": 43125364,
+              "ord": 0,
+              "alt_cds_start_i": 1,
+              "alt_cds_end_i": 94,
+              "cigar": "94M"
+            }
+          ]
+        }
+      ],
+      "filtered": false,
+      "filter_reason": null
     }
-  ]
+  ],
+  "next_page_token": null
 }
