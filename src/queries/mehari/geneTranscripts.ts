@@ -1,8 +1,8 @@
 /**
  * Queries for Mehari gene transcripts by TanStack Query.
  */
-import { QueryClient, useQuery } from '@tanstack/vue-query'
-import { MaybeRefOrGetter, toValue } from 'vue'
+import { QueryClient, useQueries, useQuery } from '@tanstack/vue-query'
+import { MaybeRefOrGetter, toValue, computed } from 'vue'
 
 import { genesTranscriptsListOptions } from '../../ext/mehari-api/src/lib/@tanstack/vue-query.gen'
 

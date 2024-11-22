@@ -6,8 +6,6 @@ import { computed, ref } from 'vue'
 
 import { type Strucvar } from '../../lib/genomicVars'
 import { roundIt } from '../../lib/utils'
-import { ResponseRecord as ClinvarSvRecord } from '../../pbs/annonars/clinvar/sv'
-import { AggregateClassificationSet } from '../../pbs/annonars/clinvar_data/clinvar_public'
 import DocsLink from '../DocsLink/DocsLink.vue'
 import {
   AGGREGATE_GERMLINE_REVIEW_STATUS_LABEL,
@@ -18,13 +16,14 @@ import {
   AGGREGATE_SOMATIC_CLINICAL_IMPACT_REVIEW_STATUS_STARS
 } from '../SeqvarClinvarCard/constants'
 import { clinsigColor } from '../SeqvarClinvarCard/helpers'
+import { StrucvarsClinvarResponseRecord } from '../../ext/annonars-api/src/lib'
 
 /** This component's props. */
 const props = defineProps<{
   /** Structural variant to display the card for. */
   strucvar?: Strucvar
   /** ClinVar records to display for. */
-  clinvarSvRecords?: ClinvarSvRecord[]
+  clinvarSvRecords?: StrucvarsClinvarResponseRecord[]
 }>()
 
 const vcvUrl = (vcv: string): string => {

@@ -1,8 +1,8 @@
 /**
  * Queries for HPO queries and related powered by TanStack Query.
  */
-import { QueryClient, useQuery } from '@tanstack/vue-query'
-import { MaybeRefOrGetter, toValue } from 'vue'
+import { QueryClient, useQueries, useQuery } from '@tanstack/vue-query'
+import { MaybeRefOrGetter, toValue, computed } from 'vue'
 
 import { hpoGenesOptions } from '../../ext/viguno-api/src/lib/@tanstack/vue-query.gen'
 

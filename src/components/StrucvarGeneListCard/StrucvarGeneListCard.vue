@@ -3,12 +3,11 @@ import { computed, ref, watch } from 'vue'
 import { onMounted } from 'vue'
 
 import { TX_EFFECT_LABELS } from '../../api/mehari/constants'
-import type { GeneTranscriptEffects } from '../../api/mehari/types'
 import { type Strucvar } from '../../lib/genomicVars'
-import { Record as GeneInfoRecord } from '../../pbs/annonars/genes/base'
-import { StoreState } from '../../stores'
 import DocsLink from '../DocsLink/DocsLink.vue'
 import GeneListEntry from './GeneListEntry.vue'
+import { StrucvarsGeneTranscriptEffects } from '../../ext/mehari-api/src/lib'
+import { GenesGeneInfoRecord } from '../../ext/annonars-api/src/lib'
 
 /** This component's props. */
 const props = withDefaults(
@@ -16,11 +15,9 @@ const props = withDefaults(
     /** Strucvar to be displayed for. */
     currentStrucvarRecord?: Strucvar
     /** The consequences to be displayed. */
-    csq?: GeneTranscriptEffects[]
+    csq?: StrucvarsGeneTranscriptEffects[]
     /** Gene info records to list for. */
-    genesInfos?: GeneInfoRecord[]
-    /** The state of the store that we display for. */
-    storeState?: StoreState
+    genesInfos?: GenesGeneInfoRecord[]
     /** The HGNC ID of the selected gene. */
     selectedGeneHgncId?: string
     /** Column width of the entry. */
@@ -30,7 +27,6 @@ const props = withDefaults(
     currentStrucvarRecord: undefined,
     csq: undefined,
     genesInfos: undefined,
-    storeState: StoreState.Initial,
     selectedGeneHgncId: undefined,
     entryColumnWidth: '280px'
   }
@@ -50,12 +46,12 @@ const itemsPerPage = ref<number>(10)
 const currentPage = ref<number>(1)
 
 /** Whether the list of genes is currently loading. */
-const isLoading = computed<boolean>(() => {
-  return (
-    props.storeState === undefined ||
-    [StoreState.Initial, StoreState.Loading].includes(props.storeState)
-  )
-})
+const isLoading = computed<boolean>(() => (
+  props.currentStrucvarRecord === undefined ||
+  props.genesInfos === undefined ||
+  props.selectedGeneHgncId === undefined ||
+  props.csq === undefined
+))
 
 /** Helper mapping from gene HGNC ID to worst transcript effect. */
 const hgncToEffect = computed<{ [key: string]: string }>(() => {
